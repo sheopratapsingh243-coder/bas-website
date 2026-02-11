@@ -78,9 +78,6 @@
     .two{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
     @media(min-width:950px){.two{grid-template-columns:1fr 1fr}}
 
-    .three{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:950px){.three{grid-template-columns:1fr 1fr 1fr}}
-
     .workGrid{
       display:grid;
       grid-template-columns:1fr;
@@ -148,7 +145,7 @@
 
       <nav class="menu">
         <a href="#about" id="mAbout">परिचय</a>
-        <a href="#work" id="mWork">कार्य</a>
+        <a href="#work" id="mWork">हमारे प्रयास</a>
         <a href="#documents" id="mDocs">दस्तावेज़</a>
         <a href="#donate" id="mDonate">दान</a>
         <a href="#contact" id="mContact">संपर्क</a>
@@ -209,49 +206,52 @@
   <section id="work">
     <div class="wrap">
       <h2 id="workT">हमारे प्रयास</h2>
-      <p class="muted" id="workSub">
-        समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण एवं संस्कृति से जुड़े प्रमुख कार्य
-      </p>
+      <p class="muted" id="workSub"></p>
 
       <div class="workGrid">
         <div class="card">
-          <b id="w1t">शिक्षा सहायता</b>
+          <b id="w1t"></b>
           <p class="small muted" id="w1d"></p>
         </div>
 
         <div class="card">
-          <b id="w2t">स्वास्थ्य एवं जागरूकता</b>
+          <b id="w2t"></b>
           <p class="small muted" id="w2d"></p>
         </div>
 
         <div class="card">
-          <b id="w3t">महिला सशक्तिकरण</b>
+          <b id="w3t"></b>
           <p class="small muted" id="w3d"></p>
         </div>
 
         <div class="card">
-          <b id="w4t">गरीब एवं जरूरतमंद सहायता</b>
+          <b id="w4t"></b>
           <p class="small muted" id="w4d"></p>
         </div>
 
         <div class="card">
-          <b id="w5t">रोजगार एवं कौशल विकास</b>
+          <b id="w5t"></b>
           <p class="small muted" id="w5d"></p>
         </div>
 
         <div class="card">
-          <b id="w6t">पर्यावरण, स्वच्छता एवं जल संरक्षण</b>
+          <b id="w6t"></b>
           <p class="small muted" id="w6d"></p>
         </div>
 
         <div class="card">
-          <b id="w7t">संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण</b>
+          <b id="w7t"></b>
           <p class="small muted" id="w7d"></p>
         </div>
 
         <div class="card">
-          <b id="w8t">वृद्धजन सेवा एवं सामाजिक कल्याण</b>
+          <b id="w8t"></b>
           <p class="small muted" id="w8d"></p>
+        </div>
+
+        <div class="card">
+          <b id="w9t"></b>
+          <p class="small muted" id="w9d"></p>
         </div>
       </div>
     </div>
@@ -259,19 +259,17 @@
 
   <section id="documents">
     <div class="wrap">
-      <h2 id="docT">दस्तावेज़</h2>
+      <h2 id="docT"></h2>
       <div class="two">
         <div class="card">
-          <b id="pdfT">Registration & Bylaws (PDF)</b>
+          <b id="pdfT"></b>
           <p class="small muted" id="pdfD"></p>
           <div class="btnRow">
-            <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="pdfBtn">
-              PDF Open / Download
-            </a>
+            <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="pdfBtn"></a>
           </div>
         </div>
         <div class="card">
-          <b id="memT">सदस्यता</b>
+          <b id="memT"></b>
           <p class="small muted" id="memD"></p>
         </div>
       </div>
@@ -280,17 +278,17 @@
 
   <section id="donate">
     <div class="wrap">
-      <h2 id="donT">दान / सहयोग</h2>
+      <h2 id="donT"></h2>
       <div class="two">
         <div class="card">
-          <b id="don1">Donate (Coming Soon)</b>
+          <b id="don1"></b>
           <p class="small muted" id="don2"></p>
         </div>
         <div class="card">
-          <b id="don3">WhatsApp पर सहायता</b>
+          <b id="don3"></b>
           <p class="small muted" id="don4"></p>
           <div class="btnRow">
-            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waNow">WhatsApp Now</a>
+            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waNow"></a>
           </div>
         </div>
       </div>
@@ -299,10 +297,10 @@
 
   <section id="contact">
     <div class="wrap">
-      <h2 id="conT">संपर्क करें</h2>
+      <h2 id="conT"></h2>
       <div class="two">
         <div class="card">
-          <b id="con1">संपर्क विवरण</b>
+          <b id="con1"></b>
           <p class="small muted" id="conAddr"></p>
           <p class="small muted"><b id="phLbl2">फोन:</b> 8604669454, 7355181465</p>
           <p class="small muted"><b id="emLbl2">Email:</b> sheopratapsingh243@gmail.com</p>
@@ -314,20 +312,18 @@
         </div>
 
         <div class="card">
-          <b id="formT">संदेश (Demo)</b>
+          <b id="formT"></b>
           <p class="small muted" id="formD"></p>
 
-          <input id="fName" placeholder="आपका नाम">
+          <input id="fName" placeholder="">
           <div class="sp8"></div>
 
-          <input id="fPhone" placeholder="मोबाइल नंबर">
+          <input id="fPhone" placeholder="">
           <div class="sp8"></div>
 
-          <textarea id="fMsg" placeholder="आपका संदेश"></textarea>
+          <textarea id="fMsg" placeholder=""></textarea>
 
-          <button class="btn secondary" style="width:100%;margin-top:10px" type="button" id="submitDemo">
-            Submit (Demo)
-          </button>
+          <button class="btn secondary" style="width:100%;margin-top:10px" type="button" id="submitDemo"></button>
         </div>
       </div>
     </div>
@@ -366,7 +362,7 @@
       aboutD3:"संस्था पारदर्शिता, सेवा-भाव, अनुशासन और सामाजिक उत्तरदायित्व के सिद्धांतों पर आधारित है। हम समाज के हर उस व्यक्ति को साथ जोड़ना चाहते हैं जो सेवा और राष्ट्र निर्माण में योगदान देना चाहता है।",
 
       workT:"हमारे प्रयास",
-      workSub:"समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण एवं संस्कृति से जुड़े प्रमुख कार्य",
+      workSub:"समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण, संस्कृति तथा पशु कल्याण से जुड़े प्रमुख कार्य",
 
       w1t:"शिक्षा सहायता",
       w1d:"हम बच्चों एवं युवाओं को गुणवत्तापूर्ण शिक्षा से जोड़ने के लिए कार्य करते हैं। इसके अंतर्गत शिक्षा मार्गदर्शन, प्रतियोगी परीक्षाओं की तैयारी, पुस्तक/स्टडी मटेरियल सहायता, डिजिटल साक्षरता तथा करियर काउंसलिंग जैसे प्रयास किए जाते हैं, ताकि हर विद्यार्थी आत्मविश्वास के साथ आगे बढ़ सके।",
@@ -390,7 +386,10 @@
       w7d:"हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार और राष्ट्रीय चेतना को सशक्त करने हेतु कार्य करते हैं। संस्था द्वारा सांस्कृतिक जागरूकता, परंपराओं का संरक्षण, धरोहर/हेरिटेज संरक्षण, सामाजिक सद्भाव तथा नैतिक मूल्यों को बढ़ावा देने वाले कार्यक्रम आयोजित किए जाते हैं।",
 
       w8t:"वृद्धजन सेवा एवं सामाजिक कल्याण",
-      w8d:"हम समाज के वरिष्ठ नागरिकों को सम्मान और सहयोग देने के लिए प्रतिबद्ध हैं। इसके अंतर्गत वृद्धजन सहायता, सेवा कार्य, जरूरतमंद वृद्धों को सहयोग, तथा भविष्य में वृद्ध सहायता केंद्र/वृद्धाश्रम जैसी सामाजिक पहल को मजबूत करने की दिशा में कार्य किया जाता है।",
+      w8d:"हम समाज के वरिष्ठ नागरिकों को सम्मान और सहयोग देने के लिए प्रतिबद्ध हैं। इसके अंतर्गत वृद्धजन सहायता, सेवा कार्य, जरूरतमंद वृद्धों को सहयोग, तथा भविष्य में वृद्ध सहायता केंद्र/वृद्धाश्रम (Old Age Home) जैसी सामाजिक पहल को मजबूत करने की दिशा में कार्य किया जाता है।",
+
+      w9t:"गौ-सेवा, गौशाला एवं पशु कल्याण",
+      w9d:"हम गौ-सेवा, गौ-सुरक्षा एवं गौ-संरक्षण के साथ-साथ पशु कल्याण को भी महत्वपूर्ण मानते हैं। संस्था द्वारा निराश्रित/आवारा पशुओं (गाय, कुत्ते आदि) की देखभाल, भोजन, उपचार, टीकाकरण जागरूकता तथा आवश्यक सहायता उपलब्ध कराने के प्रयास किए जाते हैं। आवश्यकता पड़ने पर संस्था गौशाला/पशु आश्रय (Shelter Home) की स्थापना या सहयोग भी कर सकती है। साथ ही, घायल वन्यजीवों की सहायता हेतु संबंधित विभागों के साथ समन्वय कर कार्य किया जा सकता है।",
 
       docT:"दस्तावेज़",
       pdfT:"Registration & Bylaws (PDF)",
@@ -439,7 +438,7 @@
       aboutD3:"The organization stands on the principles of transparency, service, discipline, and social responsibility. We welcome everyone who wishes to contribute to social change and nation-building.",
 
       workT:"Our Initiatives",
-      workSub:"Our key focus areas across education, health, empowerment, service, environment and culture",
+      workSub:"Our key focus areas across education, health, empowerment, service, environment, culture and animal welfare",
 
       w1t:"Education Support",
       w1d:"We work to connect children and youth with quality education and meaningful opportunities. Our initiatives include academic guidance, exam preparation support, study resources, digital literacy programs, and career mentorship—so that every student can move forward with confidence and direction.",
@@ -463,7 +462,10 @@
       w7d:"We actively promote Indian culture, Sanatan values, social ethics, and national consciousness. Our initiatives support cultural awareness, preservation of traditions, heritage conservation, social harmony, and value-based programs that strengthen our identity and connect society to its roots.",
 
       w8t:"Elderly Care & Social Welfare",
-      w8d:"We are dedicated to supporting senior citizens with respect and care. Our initiatives include welfare activities, assistance for needy elders, service-based programs, and long-term efforts towards strengthening social support systems—such as elderly support centers or similar initiatives where required.",
+      w8d:"We are dedicated to supporting senior citizens with respect and care. Our initiatives include welfare activities, assistance for needy elders, service-based programs, and long-term efforts towards strengthening social support systems—such as elderly support centers or old age homes where required.",
+
+      w9t:"Cow Service, Gaushala & Animal Welfare",
+      w9d:"We consider cow service, protection and conservation as an important part of social responsibility. Along with this, we support animal welfare initiatives for stray and abandoned animals (such as cows, dogs, and other domestic animals) through food support, medical care, vaccination awareness, and basic assistance. Where required, the organization may also establish or support gaushalas and shelter homes for proper care and safety. We also promote sensitivity towards wildlife and coordinate with relevant authorities to help injured wildlife whenever possible.",
 
       docT:"Documents",
       pdfT:"Registration & Bylaws (PDF)",
@@ -546,6 +548,9 @@
 
     document.getElementById("w8t").textContent=d.w8t;
     document.getElementById("w8d").textContent=d.w8d;
+
+    document.getElementById("w9t").textContent=d.w9t;
+    document.getElementById("w9d").textContent=d.w9d;
 
     document.getElementById("docT").textContent=d.docT;
     document.getElementById("pdfT").textContent=d.pdfT;
