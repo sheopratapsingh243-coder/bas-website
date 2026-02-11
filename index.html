@@ -4,87 +4,399 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Upliftment to Self-Reliant India" />
 
   <style>
     :root{
+      --brand:#0b5aa6;
+      --accent:#f58b1f;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
-      --brand:#0b5aa6;
-      --accent:#f58b1f;
-      --shadow:0 16px 50px rgba(2, 6, 23, .10);
-      --max:1120px;
-      --radius:22px;
+      --shadow:0 16px 40px rgba(2,6,23,.10);
+      --radius:20px;
+      --max:1100px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--fg);
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
         #fff;
-      line-height:1.55;
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 16px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+    section{padding:28px 0}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    p{margin:10px 0 0}
+    .muted{color:var(--muted)}
+    .small{font-size:14px}
 
-    /* Header */
     header{
-      position:sticky; top:0; z-index:50;
-      background:#ffffff;
-      border-bottom:1px solid rgba(226,232,240,.95);
+      position:sticky;top:0;z-index:50;
+      background:#fff;border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-      gap:12px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;gap:10px;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      text-decoration:none;
-      min-width: 220px;
-    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:230px}
     .logo{
-      width:44px; height:44px;
-      border-radius:999px;
+      width:44px;height:44px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
-      object-fit:cover;
-      background:#fff;
-      display:block;
+      object-fit:cover;background:#fff;
     }
-    .brandTitle{display:flex; flex-direction:column; line-height:1.15}
-    .brandTitle b{font-size:14px}
-    .brandTitle span{font-size:12px; color:var(--muted)}
+    .brand b{display:block;font-size:14px;line-height:1.1}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
+    .menu a:hover{color:var(--brand)}
+    @media(min-width:950px){.menu{display:flex}}
 
-    nav.menu{display:none; gap:18px; font-size:14px; color:var(--muted)}
-    nav.menu a{text-decoration:none}
-    nav.menu a:hover{color:var(--brand)}
-    @media(min-width:950px){nav.menu{display:flex}}
-
-    .toggle{display:flex; gap:8px}
+    .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-      cursor:pointer;
-      user-select:none;
+      background:#fff;padding:8px 12px;border-radius:999px;
+      font-size:13px;cursor:pointer;
     }
     .pill.active{
-      background:linear-gradient(135deg, var(--brand), #083a6c);
-      color:#fff;
-      border-color:transparent;
-      font-weight:700;
+      background:linear-gradient(135deg,var(--brand),#083a6c);
+      color:#fff;border-color:transparent;font-weight:700;
     }
 
-    section{padding:26px 0}
-    .hero{padding:38px 0 8px}
-    .grid{display:grid; grid-template-columns:1fr; gap:16px}
-    @media(min-width:950px){.grid{grid-template-columns:1.15fr .85fr; gap:22px}}
+    .card{
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+    }
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:950px){.grid{grid-template-columns:1.15fr .85fr;gap:22px}}
+    .two{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    .three{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:950px){
+      .two{grid-template-columns:1fr 1fr}
+      .three{grid-template-columns:1fr 1fr 1fr}
+    }
 
-    h1{margin:10px 0 0; font-size:34px; letter-spacing:-.7px
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btn{
+      border-radius:16px;padding:12px 16px;font-size:14px;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;cursor:pointer;
+      display:inline-flex;align-items:center;gap:10px;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),#ff7a00);
+      border-color:transparent;font-weight:800;
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg,var(--brand),#083a6c);
+      color:#fff;border-color:transparent;font-weight:800;
+    }
+
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:999;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#fff;padding:12px 14px;border-radius:999px;
+      box-shadow:0 18px 45px rgba(2,6,23,.22);
+      font-weight:800;
+    }
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top">
+        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
+        <div>
+          <b id="brandText">भारत अभ्युदय संस्थान</b>
+          <span id="brandSub">Bharat Abhyudaya Sansthan</span>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="#about" id="mAbout">परिचय</a>
+        <a href="#work" id="mWork">कार्य</a>
+        <a href="#documents" id="mDocs">दस्तावेज़</a>
+        <a href="#donate" id="mDonate">दान</a>
+        <a href="#contact" id="mContact">संपर्क</a>
+      </nav>
+
+      <div class="toggle">
+        <button class="pill active" id="btnHi" type="button">हिन्दी</button>
+        <button class="pill" id="btnEn" type="button">English</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section>
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <h1 id="title">भारत अभ्युदय संस्थान</h1>
+          <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="#documents" id="docsBtn">Registration PDF</a>
+            <a class="btn primary" href="#contact" id="joinBtn">हमसे जुड़ें</a>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <b id="quick">Quick Info</b>
+            <p class="small muted" id="addr">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</p>
+            <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
+            <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <b id="regTitle">पंजीकरण विवरण</b>
+          <p class="small muted" style="margin-top:10px">
+            Registration No.: <b>FAT/02340/2024-2025</b><br>
+            Date: <b>05/07/2024</b><br>
+            Valid: <b>04/07/2029</b><br>
+            PAN: <b>AANAB2855N</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 id="aboutT">हमारे बारे में</h2>
+      <p id="aboutD">
+        Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं विरासत संरक्षण जैसे क्षेत्रों में कार्य करती है।
+      </p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2 id="workT">हमारा कार्य</h2>
+      <div class="three">
+        <div class="card">
+          <b id="w1t">शिक्षा सहायता</b>
+          <p class="small muted" id="w1d">बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।</p>
+        </div>
+        <div class="card">
+          <b id="w2t">स्वास्थ्य एवं जागरूकता</b>
+          <p class="small muted" id="w2d">स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।</p>
+        </div>
+        <div class="card">
+          <b id="w3t">संस्कृति एवं विरासत</b>
+          <p class="small muted" id="w3d">सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="documents">
+    <div class="wrap">
+      <h2 id="docT">दस्तावेज़</h2>
+      <div class="two">
+        <div class="card">
+          <b id="pdfT">Registration & Bylaws (PDF)</b>
+          <p class="small muted" id="pdfD">संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="pdfBtn">
+              PDF Open / Download
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <b id="memT">सदस्यता</b>
+          <p class="small muted" id="memD">आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="donate">
+    <div class="wrap">
+      <h2 id="donT">दान / सहयोग</h2>
+      <div class="two">
+        <div class="card">
+          <b id="don1">Donate (Coming Soon)</b>
+          <p class="small muted" id="don2">UPI ID, QR Code और Bank Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।</p>
+        </div>
+        <div class="card">
+          <b id="don3">WhatsApp पर सहायता</b>
+          <p class="small muted" id="don4">दान/सहयोग की जानकारी के लिए WhatsApp पर संदेश करें।</p>
+          <div class="btnRow">
+            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waNow">WhatsApp Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 id="conT">संपर्क करें</h2>
+      <div class="two">
+        <div class="card">
+          <b id="con1">संपर्क विवरण</b>
+          <p class="small muted" id="conAddr"><b>पता:</b> 481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</p>
+          <p class="small muted"><b id="phLbl2">फोन:</b> 8604669454, 7355181465</p>
+          <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+
+          <div class="btnRow">
+            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
+            <a class="btn" href="mailto:sheopratapsingh243@gmail.com" id="mailBtn">Email</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <b id="formT">संदेश (Demo)</b>
+          <p class="small muted" id="formD">यह demo form है। Future में इसे active कर देंगे।</p>
+          <input placeholder="आपका नाम">
+          <div style="height:10px"></div>
+          <input placeholder="मोबाइल नंबर">
+          <div style="height:10px"></div>
+          <textarea placeholder="आपका संदेश"></textarea>
+          <button class="btn secondary" style="width:100%;margin-top:10px" type="button">Submit (Demo)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
+
+<script>
+  const ADDRESS_HI = "481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)";
+  const ADDRESS_EN = "481, Shadipur Khurd, Jayram Nagar, Vidhayak Road, Tehsil Sadar, Fatehpur, 212601 (U.P.)";
+
+  const t = {
+    hi:{
+      brand:"भारत अभ्युदय संस्थान",
+      sub:"Bharat Abhyudaya Sansthan",
+      title:"भारत अभ्युदय संस्थान",
+      tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
+      menu:{a:"परिचय",w:"कार्य",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      join:"हमसे जुड़ें",
+      aboutT:"हमारे बारे में",
+      aboutD:"Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं विरासत संरक्षण जैसे क्षेत्रों में कार्य करती है।",
+      workT:"हमारा कार्य",
+      w1t:"शिक्षा सहायता", w1d:"बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।",
+      w2t:"स्वास्थ्य एवं जागरूकता", w2d:"स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।",
+      w3t:"संस्कृति एवं विरासत", w3d:"सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।",
+      docT:"दस्तावेज़",
+      pdfD:"संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।",
+      memT:"सदस्यता",
+      memD:"आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201",
+      donT:"दान / सहयोग",
+      don2:"UPI ID, QR Code और Bank Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।",
+      conT:"संपर्क करें",
+      ph:"फोन:",
+      foot:"भारत अभ्युदय संस्थान",
+      addrLabel:"पता:"
+    },
+    en:{
+      brand:"Bharat Abhyudaya Sansthan",
+      sub:"Registered Social Organization",
+      title:"Bharat Abhyudaya Sansthan",
+      tagline:"Upliftment to Self-Reliant India",
+      menu:{a:"About",w:"Work",d:"Documents",dn:"Donate",c:"Contact"},
+      join:"Get Involved",
+      aboutT:"About Us",
+      aboutD:"Bharat Abhyudaya Sansthan is a registered social organization working in education, health, women empowerment, public welfare, Sanatan protection, and heritage conservation.",
+      workT:"Our Work",
+      w1t:"Education Support", w1d:"Education, guidance and resource support for children and youth.",
+      w2t:"Health & Awareness", w2d:"Health awareness, camps and support for people in need.",
+      w3t:"Culture & Heritage", w3d:"Sanatan protection, social values and heritage conservation.",
+      docT:"Documents",
+      pdfD:"Official registration certificate and bylaws of the organization.",
+      memT:"Membership",
+      memD:"Lifetime Member: ₹10,000 | General Member: ₹201",
+      donT:"Donate / Support",
+      don2:"UPI ID, QR Code and Bank Details will be updated on the website soon.",
+      conT:"Contact Us",
+      ph:"Phone:",
+      foot:"Bharat Abhyudaya Sansthan",
+      addrLabel:"Address:"
+    }
+  };
+
+  function setLang(lang){
+    const d=t[lang];
+    document.documentElement.lang=(lang==="hi")?"hi":"en";
+
+    document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandSub").textContent=d.sub;
+    document.getElementById("title").textContent=d.title;
+    document.getElementById("tagline").textContent=d.tagline;
+
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mContact").textContent=d.menu.c;
+
+    document.getElementById("joinBtn").textContent=d.join;
+
+    document.getElementById("aboutT").textContent=d.aboutT;
+    document.getElementById("aboutD").textContent=d.aboutD;
+
+    document.getElementById("workT").textContent=d.workT;
+    document.getElementById("w1t").textContent=d.w1t;
+    document.getElementById("w1d").textContent=d.w1d;
+    document.getElementById("w2t").textContent=d.w2t;
+    document.getElementById("w2d").textContent=d.w2d;
+    document.getElementById("w3t").textContent=d.w3t;
+    document.getElementById("w3d").textContent=d.w3d;
+
+    document.getElementById("docT").textContent=d.docT;
+    document.getElementById("pdfD").textContent=d.pdfD;
+    document.getElementById("memT").textContent=d.memT;
+    document.getElementById("memD").textContent=d.memD;
+
+    document.getElementById("donT").textContent=d.donT;
+    document.getElementById("don2").textContent=d.don2;
+
+    document.getElementById("conT").textContent=d.conT;
+    document.getElementById("phLbl").textContent=d.ph;
+    document.getElementById("phLbl2").textContent=d.ph;
+
+    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
+    document.getElementById("conAddr").innerHTML="<b>"+d.addrLabel+":</b> "+((lang==="hi")?ADDRESS_HI:ADDRESS_EN);
+
+    document.getElementById("foot").textContent=d.foot;
+  }
+
+  document.getElementById("btnHi").addEventListener("click",()=>{
+    btnHi.classList.add("active"); btnEn.classList.remove("active");
+    setLang("hi");
+  });
+  document.getElementById("btnEn").addEventListener("click",()=>{
+    btnEn.classList.add("active"); btnHi.classList.remove("active");
+    setLang("en");
+  });
+
+  document.getElementById("year").textContent=new Date().getFullYear();
+  setLang("hi");
+</script>
+
+</body>
+</html>
