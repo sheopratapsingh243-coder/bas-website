@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -9,55 +9,89 @@
   <style>
     :root{
       --bg:#ffffff;
-      --fg:#0f172a;
+      --fg:#0b1220;
       --muted:#475569;
       --card:#ffffff;
       --border:#e2e8f0;
       --soft:#f8fafc;
-      --btn:#0f172a;
-      --btnText:#ffffff;
-      --radius:18px;
-      --shadow:0 10px 30px rgba(15,23,42,.06);
-      --max:1100px;
+
+      --brand:#0b5aa6;     /* deep blue */
+      --accent:#f58b1f;    /* saffron */
+      --accent2:#ffcc66;
+
+      --radius:20px;
+      --shadow:0 16px 50px rgba(2, 6, 23, .10);
+      --max:1120px;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--fg);
-      background:var(--bg);
-      line-height:1.5;
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
+                  radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
+                  #fff;
+      line-height:1.55;
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 16px}
+
+    /* header */
     header{
       position:sticky; top:0; z-index:50;
       background:rgba(255,255,255,.82);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--border);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(226,232,240,.7);
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
+      padding:12px 0;
       gap:12px;
     }
+
     .brand{
-      font-weight:700; letter-spacing:-.2px;
+      display:flex; align-items:center; gap:10px;
       text-decoration:none;
+      min-width: 220px;
     }
+    .logo{
+      width:44px; height:44px;
+      border-radius: 999px;
+      border:1px solid rgba(226,232,240,.9);
+      background:#fff;
+      box-shadow: 0 10px 25px rgba(2,6,23,.08);
+      object-fit: cover;
+    }
+    .brandTitle{
+      display:flex; flex-direction:column;
+      line-height:1.15;
+    }
+    .brandTitle b{
+      font-size:14px;
+      letter-spacing:.1px;
+    }
+    .brandTitle span{
+      font-size:12px;
+      color:var(--muted);
+    }
+
     .menu{
       display:none;
       gap:18px;
       font-size:14px;
       color:var(--muted);
+      align-items:center;
     }
     .menu a{text-decoration:none}
-    .menu a:hover{text-decoration:underline}
+    .menu a:hover{color:var(--brand)}
+
     .toggle{
       display:flex; gap:8px;
     }
     .pill{
-      border:1px solid var(--border);
+      border:1px solid rgba(226,232,240,.9);
       background:#fff;
       padding:8px 12px;
       border-radius:999px;
@@ -65,68 +99,101 @@
       cursor:pointer;
     }
     .pill.active{
-      background:var(--btn);
-      color:var(--btnText);
-      border-color:var(--btn);
+      background:linear-gradient(135deg, var(--brand), #083a6c);
+      color:#fff;
+      border-color:transparent;
     }
 
-    .hero{
-      padding:44px 0 10px;
-    }
+    /* hero */
+    .hero{padding:46px 0 10px}
     .grid{
       display:grid;
       grid-template-columns: 1fr;
       gap:18px;
     }
-    @media(min-width:900px){
-      .grid{grid-template-columns: 1.1fr .9fr; gap:22px}
+    @media(min-width:950px){
+      .grid{grid-template-columns: 1.12fr .88fr; gap:22px}
       .menu{display:flex}
     }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:#0b1220;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(226,232,240,.9);
+      background:rgba(255,255,255,.85);
+      width: fit-content;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(245,139,31,.18);
+    }
+
     h1{
-      margin:8px 0 0;
+      margin:10px 0 0;
       font-size:34px;
-      letter-spacing:-.6px;
-      line-height:1.15;
+      letter-spacing:-.7px;
+      line-height:1.12;
     }
-    @media(min-width:900px){
-      h1{font-size:52px}
+    @media(min-width:950px){
+      h1{font-size:54px}
     }
+
     .tag{
       font-size:18px;
       color:var(--muted);
       margin-top:14px;
+      max-width: 60ch;
     }
+
     .btnRow{
       display:flex; flex-wrap:wrap; gap:10px;
       margin-top:18px;
     }
     .btn{
-      border-radius: var(--radius);
+      border-radius: 18px;
       padding:12px 16px;
       font-size:14px;
-      border:1px solid var(--border);
+      border:1px solid rgba(226,232,240,.9);
       background:#fff;
       cursor:pointer;
       text-decoration:none;
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition: transform .08s ease, box-shadow .15s ease, border-color .15s ease;
     }
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 14px 30px rgba(2,6,23,.08)}
     .btn.primary{
-      background:var(--btn);
-      color:var(--btnText);
-      border-color:var(--btn);
+      background:linear-gradient(135deg, var(--accent), #ff7a00);
+      color:#111827;
+      border-color:transparent;
+      font-weight:700;
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg, var(--brand), #083a6c);
+      color:#fff;
+      border-color:transparent;
+      font-weight:700;
     }
 
+    /* cards */
     .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius: 22px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(226,232,240,.9);
+      border-radius: 24px;
       padding:18px;
       box-shadow: var(--shadow);
     }
     .muted{color:var(--muted)}
     .small{font-size:13px}
     section{padding:26px 0}
-    h2{margin:0; font-size:24px; letter-spacing:-.3px}
+    h2{margin:0; font-size:24px; letter-spacing:-.35px}
     p{margin:10px 0 0}
 
     .two{
@@ -135,7 +202,7 @@
       gap:14px;
       margin-top:16px;
     }
-    @media(min-width:900px){
+    @media(min-width:950px){
       .two{grid-template-columns: 1fr 1fr}
     }
 
@@ -145,53 +212,93 @@
       gap:14px;
       margin-top:16px;
     }
-    @media(min-width:900px){
+    @media(min-width:950px){
       .three{grid-template-columns: 1fr 1fr 1fr}
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:16px;
-    }
-    @media(min-width:900px){
-      .gallery{grid-template-columns: repeat(4, 1fr)}
-    }
-    .ph{
-      aspect-ratio: 1/1;
-      border-radius: 20px;
-      border:1px solid var(--border);
-      background: var(--soft);
-      display:flex; align-items:center; justify-content:center;
-      color:#94a3b8;
-      font-size:13px;
     }
 
     .kv{
       display:flex; justify-content:space-between; gap:10px;
       padding:8px 0;
-      border-bottom:1px dashed var(--border);
+      border-bottom:1px dashed rgba(226,232,240,.95);
       font-size:14px;
     }
     .kv:last-child{border-bottom:none}
+
+    .objective{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .tick{
+      flex:0 0 auto;
+      width:26px;height:26px;border-radius:10px;
+      background:rgba(11,90,166,.10);
+      border:1px solid rgba(11,90,166,.20);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      color:var(--brand);
+      margin-top:1px;
+    }
+
+    /* footer */
     footer{
-      border-top:1px solid var(--border);
+      border-top:1px solid rgba(226,232,240,.9);
       padding:18px 0;
       margin-top:10px;
       color:var(--muted);
       font-size:14px;
+      background:rgba(255,255,255,.7);
     }
 
-    input, textarea{
-      width:100%;
-      border:1px solid var(--border);
-      border-radius: 14px;
-      padding:10px 12px;
-      font-size:14px;
-      outline:none;
+    /* WhatsApp floating */
+    .wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:100;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color:#fff;
+      box-shadow: 0 18px 45px rgba(2,6,23,.22);
+      border: 1px solid rgba(255,255,255,.25);
+      font-weight:700;
     }
-    textarea{min-height:120px; resize:vertical}
+    .wa span{font-size:14px}
+    .waIcon{
+      width:18px;height:18px;
+      background:#fff;
+      border-radius: 6px;
+      display:flex; align-items:center; justify-content:center;
+      color:#16a34a;
+      font-weight:900;
+    }
+
+    /* small helper */
+    .line{
+      margin-top:16px;
+      padding:12px 14px;
+      border-radius: 18px;
+      background: rgba(245,139,31,.10);
+      border:1px solid rgba(245,139,31,.20);
+      color:#1f2937;
+      font-size:14px;
+    }
+
+    /* mobile menu hint */
+    .menuHint{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+      margin-top:10px;
+    }
+    @media(min-width:950px){
+      .menuHint{display:none}
+    }
   </style>
 </head>
 
@@ -200,13 +307,23 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="#top" id="brandText">भारत अभ्युदय संस्थान</a>
+      <a class="brand" href="#top">
+        <!-- IMPORTANT:
+          Replace assets/logo.jpg with your uploaded logo file path.
+          We'll upload it to GitHub as assets/logo.jpg
+        -->
+        <img class="logo" src="assets/logo.jpg" alt="Bharat Abhyudaya Sansthan Logo" />
+        <div class="brandTitle">
+          <b id="brandText">भारत अभ्युदय संस्थान</b>
+          <span id="brandSub">Bharat Abhyudaya Sansthan</span>
+        </div>
+      </a>
 
       <nav class="menu">
         <a href="#about" id="mAbout">परिचय</a>
         <a href="#work" id="mWork">कार्य</a>
-        <a href="#gallery" id="mGallery">गैलरी</a>
         <a href="#documents" id="mDocs">दस्तावेज़</a>
+        <a href="#donate" id="mDonate">दान</a>
         <a href="#contact" id="mContact">संपर्क</a>
       </nav>
 
@@ -224,370 +341,27 @@
     <div class="wrap">
       <div class="grid">
         <div>
-          <div class="small muted" id="registeredText">पंजीकृत संस्था</div>
+          <div class="badge">
+            <div class="dot"></div>
+            <span id="registeredText">पंजीकृत संस्था</span>
+          </div>
+
           <h1 id="titleText">भारत अभ्युदय संस्थान</h1>
           <div class="tag" id="taglineText">अभ्युदय से आत्मनिर्भर भारत तक</div>
 
           <div class="btnRow">
+            <a class="btn secondary" href="#documents" id="docsBtn">Registration PDF</a>
             <a class="btn primary" href="#contact" id="ctaBtn">हमसे जुड़ें</a>
-            <a class="btn" href="#documents" id="docsBtn">दस्तावेज़ देखें</a>
           </div>
 
-          <div style="margin-top:16px" class="small muted">
-            <div><b id="lblAddress">पता:</b> <span id="addressText">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</span></div>
-            <div style="margin-top:6px"><b id="lblPhone">फोन:</b> <span id="phoneText">8604669454, 7355181465</span></div>
-            <div style="margin-top:6px"><b>Email:</b> <span id="emailText">sheopratapsingh243@gmail.com</span></div>
-          </div>
-        </div>
+          <div class="menuHint">⬇ नीचे स्क्रॉल करके संस्था की जानकारी देखें</div>
 
-        <div class="card">
-          <div class="small muted" id="regTitle">पंजीकरण विवरण</div>
-          <div style="margin-top:10px">
-            <div class="kv"><span class="muted" id="lblRegNo">रजिस्ट्रेशन नं.</span><b>FAT/02340/2024-2025</b></div>
-            <div class="kv"><span class="muted" id="lblDate">दिनांक</span><b>05/07/2024</b></div>
-            <div class="kv"><span class="muted" id="lblValid">मान्य</span><b>04/07/2029</b></div>
-            <div class="kv"><span class="muted">PAN</span><b>AANAB2855N</b></div>
-          </div>
-          <p class="small muted" id="noteText" style="margin-top:12px">
-            यह वेबसाइट Bharat Abhyudaya Sansthan की आधिकारिक जानकारी के लिए है।
-          </p>
-        </div>
+          <div class="line">
+            <b id="quickTitle">Quick Info:</b>
+            <div style="margin-top:6px">
+              <span id="addressText">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</span>
+            </div>
+            <div style="margin-top:6px">
+              <b id="lb
 
-      </div>
-    </div>
-  </section>
 
-  <section id="about">
-    <div class="wrap">
-      <h2 id="aboutTitle">हमारे बारे में</h2>
-      <p id="aboutText">
-        Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं विरासत संरक्षण जैसे क्षेत्रों में कार्य करती है। हमारा उद्देश्य समाज के हर वर्ग तक सहायता और विकास के अवसर पहुँचाना है।
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2 id="objTitle">मुख्य उद्देश्य</h2>
-      <div class="two" id="objList"></div>
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="wrap">
-      <h2 id="workTitle">हमारा कार्य</h2>
-      <div class="three">
-        <div class="card">
-          <b id="w1t">शिक्षा सहायता</b>
-          <p class="small muted" id="w1d">बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।</p>
-        </div>
-        <div class="card">
-          <b id="w2t">स्वास्थ्य एवं जागरूकता</b>
-          <p class="small muted" id="w2d">स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।</p>
-        </div>
-        <div class="card">
-          <b id="w3t">संस्कृति एवं विरासत</b>
-          <p class="small muted" id="w3d">सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="wrap">
-      <h2 id="galTitle">गैलरी</h2>
-      <p class="small muted" id="galDesc">यहाँ आप भविष्य में संस्था की गतिविधियों की तस्वीरें जोड़ सकते हैं।</p>
-      <div class="gallery">
-        <div class="ph">Photo 1</div><div class="ph">Photo 2</div><div class="ph">Photo 3</div><div class="ph">Photo 4</div>
-        <div class="ph">Photo 5</div><div class="ph">Photo 6</div><div class="ph">Photo 7</div><div class="ph">Photo 8</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="documents">
-    <div class="wrap">
-      <h2 id="docTitle">दस्तावेज़</h2>
-      <div class="two">
-        <div class="card">
-          <b id="doc1t">Registration & Bylaws (PDF)</b>
-          <p class="small muted" id="doc1d">
-            यहाँ आप अपनी Registration PDF फाइल अपलोड करके लिंक जोड़ सकते हैं।
-          </p>
-          <p class="small"><a href="#" id="pdfLink">PDF लिंक (बाद में जोड़ें)</a></p>
-        </div>
-        <div class="card">
-          <b id="memTitle">सदस्यता</b>
-          <p class="small muted" id="memText">आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2 id="teamTitle">प्रबंधन समिति</h2>
-      <div class="two">
-        <div class="card"><div class="small muted" id="r1">अध्यक्ष</div><b>Sheo Pratap Singh</b></div>
-        <div class="card"><div class="small muted" id="r2">उपाध्यक्ष</div><b>Sukhdev Singh</b></div>
-        <div class="card"><div class="small muted" id="r3">सचिव</div><b>Paras Mani</b></div>
-        <div class="card"><div class="small muted" id="r4">कोषाध्यक्ष</div><b>Kailash Pratap Singh</b></div>
-        <div class="card"><div class="small muted" id="r5">सदस्य</div><b>Gyan Singh</b></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <h2 id="contactTitle">संपर्क करें</h2>
-      <div class="two">
-        <div class="card">
-          <b id="contactDetails">संपर्क विवरण</b>
-          <div class="small muted" style="margin-top:10px; line-height:1.7">
-            <div><b id="lblAddress2">पता:</b> <span id="addressText2">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</span></div>
-            <div style="margin-top:6px"><b id="lblPhone2">फोन:</b> <span id="phoneText2">8604669454, 7355181465</span></div>
-            <div style="margin-top:6px"><b>Email:</b> <span id="emailText2">sheopratapsingh243@gmail.com</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <b id="msgTitle">संदेश भेजें</b>
-          <p class="small muted" id="msgDesc">यह demo form है। अभी submit button काम नहीं करेगा।</p>
-
-          <div style="margin-top:12px">
-            <input id="fName" placeholder="आपका नाम"/>
-          </div>
-          <div style="margin-top:10px">
-            <input id="fPhone" placeholder="मोबाइल नंबर"/>
-          </div>
-          <div style="margin-top:10px">
-            <textarea id="fMsg" placeholder="आपका संदेश"></textarea>
-          </div>
-          <button class="btn primary" style="width:100%; margin-top:10px" id="submitBtn" type="button">
-            Submit (Demo)
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap" style="display:flex; flex-direction:column; gap:8px">
-    <div>© <span id="year"></span> <span id="footName">भारत अभ्युदय संस्थान</span></div>
-    <div id="footContact">8604669454 • 7355181465 • sheopratapsingh243@gmail.com</div>
-  </div>
-</footer>
-
-<script>
-  const data = {
-    hi: {
-      brand: "भारत अभ्युदय संस्थान",
-      title: "भारत अभ्युदय संस्थान",
-      registered: "पंजीकृत संस्था",
-      tagline: "अभ्युदय से आत्मनिर्भर भारत तक",
-      menu: { about:"परिचय", work:"कार्य", gallery:"गैलरी", docs:"दस्तावेज़", contact:"संपर्क" },
-      labels: { address:"पता:", phone:"फोन:", reg:"पंजीकरण विवरण", regno:"रजिस्ट्रेशन नं.", date:"दिनांक", valid:"मान्य" },
-      note: "यह वेबसाइट Bharat Abhyudaya Sansthan की आधिकारिक जानकारी के लिए है।",
-      aboutTitle:"हमारे बारे में",
-      aboutText:"Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं विरासत संरक्षण जैसे क्षेत्रों में कार्य करती है। हमारा उद्देश्य समाज के हर वर्ग तक सहायता और विकास के अवसर पहुँचाना है।",
-      objTitle:"मुख्य उद्देश्य",
-      objectives:[
-        "शिक्षा एवं साक्षरता को बढ़ावा देना",
-        "स्वास्थ्य जागरूकता एवं सहायता कार्य",
-        "महिला सशक्तिकरण एवं स्वावलंबन",
-        "गरीब एवं जरूरतमंद व्यक्तियों की सहायता",
-        "रोजगार एवं कौशल विकास कार्यक्रम",
-        "पर्यावरण संरक्षण एवं स्वच्छता अभियान",
-        "सामाजिक जागरूकता एवं जनकल्याण कार्य",
-        "वृद्धाश्रम/वरिष्ठजन सहायता",
-        "सनातन संरक्षण एवं सांस्कृतिक जागरूकता",
-        "विरासत (Heritage) संरक्षण"
-      ],
-      workTitle:"हमारा कार्य",
-      work:[
-        {t:"शिक्षा सहायता", d:"बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।"},
-        {t:"स्वास्थ्य एवं जागरूकता", d:"स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।"},
-        {t:"संस्कृति एवं विरासत", d:"सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।"}
-      ],
-      galTitle:"गैलरी",
-      galDesc:"यहाँ आप भविष्य में संस्था की गतिविधियों की तस्वीरें जोड़ सकते हैं।",
-      docTitle:"दस्तावेज़",
-      doc1t:"Registration & Bylaws (PDF)",
-      doc1d:"यहाँ आप अपनी Registration PDF फाइल अपलोड करके लिंक जोड़ सकते हैं।",
-      pdf:"PDF लिंक (बाद में जोड़ें)",
-      memTitle:"सदस्यता",
-      memText:"आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201",
-      teamTitle:"प्रबंधन समिति",
-      roles:["अध्यक्ष","उपाध्यक्ष","सचिव","कोषाध्यक्ष","सदस्य"],
-      contactTitle:"संपर्क करें",
-      contactDetails:"संपर्क विवरण",
-      msgTitle:"संदेश भेजें",
-      msgDesc:"यह demo form है। अभी submit button काम नहीं करेगा।",
-      cta:"हमसे जुड़ें",
-      docsBtn:"दस्तावेज़ देखें"
-    },
-    en: {
-      brand: "Bharat Abhyudaya Sansthan",
-      title: "Bharat Abhyudaya Sansthan",
-      registered: "Registered NGO",
-      tagline: "Upliftment to Self-Reliant India",
-      menu: { about:"About", work:"Work", gallery:"Gallery", docs:"Documents", contact:"Contact" },
-      labels: { address:"Address:", phone:"Phone:", reg:"Registration Details", regno:"Reg. No.", date:"Date", valid:"Valid Upto" },
-      note: "This website provides official information about Bharat Abhyudaya Sansthan.",
-      aboutTitle:"About Us",
-      aboutText:"Bharat Abhyudaya Sansthan is a registered social organization working in education, health, women empowerment, public welfare, Sanatan protection, and heritage conservation. Our mission is to bring support and development opportunities to every section of society.",
-      objTitle:"Key Objectives",
-      objectives:[
-        "Promoting education and literacy",
-        "Health awareness and support initiatives",
-        "Women empowerment and self-reliance",
-        "Support for poor and needy people",
-        "Employment and skill development programs",
-        "Environmental protection and cleanliness drives",
-        "Social awareness and public welfare activities",
-        "Old-age care / elderly support",
-        "Sanatan protection and cultural awareness",
-        "Heritage conservation"
-      ],
-      workTitle:"Our Work",
-      work:[
-        {t:"Education Support", d:"Education, guidance, and resource support for children and youth."},
-        {t:"Health & Awareness", d:"Health awareness, camps, and support for people in need."},
-        {t:"Culture & Heritage", d:"Sanatan protection, social values, and heritage conservation."}
-      ],
-      galTitle:"Gallery",
-      galDesc:"You can add photos of the organization’s activities here in the future.",
-      docTitle:"Documents",
-      doc1t:"Registration & Bylaws (PDF)",
-      doc1d:"Upload your registration PDF and add the link here.",
-      pdf:"PDF Link (Add later)",
-      memTitle:"Membership",
-      memText:"Life Member: ₹10,000 | General Member: ₹201",
-      teamTitle:"Management Committee",
-      roles:["President","Vice President","Secretary","Treasurer","Member"],
-      contactTitle:"Contact Us",
-      contactDetails:"Contact Details",
-      msgTitle:"Send a Message",
-      msgDesc:"This is a demo form. The submit button will not work yet.",
-      cta:"Get Involved",
-      docsBtn:"View Documents"
-    }
-  };
-
-  const ADDRESS_HI = "481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)";
-  const ADDRESS_EN = "481, Shadipur Khurd, Jayram Nagar, Vidhayak Road, Tehsil Sadar, Fatehpur, 212601 (U.P.)";
-  const PHONES = "8604669454, 7355181465";
-  const EMAIL = "sheopratapsingh243@gmail.com";
-
-  function setLang(lang){
-    const d = data[lang];
-
-    document.getElementById("brandText").textContent = d.brand;
-    document.getElementById("titleText").textContent = d.title;
-    document.getElementById("registeredText").textContent = d.registered;
-    document.getElementById("taglineText").textContent = d.tagline;
-
-    document.getElementById("mAbout").textContent = d.menu.about;
-    document.getElementById("mWork").textContent = d.menu.work;
-    document.getElementById("mGallery").textContent = d.menu.gallery;
-    document.getElementById("mDocs").textContent = d.menu.docs;
-    document.getElementById("mContact").textContent = d.menu.contact;
-
-    document.getElementById("lblAddress").textContent = d.labels.address;
-    document.getElementById("lblPhone").textContent = d.labels.phone;
-
-    document.getElementById("regTitle").textContent = d.labels.reg;
-    document.getElementById("lblRegNo").textContent = d.labels.regno;
-    document.getElementById("lblDate").textContent = d.labels.date;
-    document.getElementById("lblValid").textContent = d.labels.valid;
-
-    document.getElementById("noteText").textContent = d.note;
-
-    document.getElementById("aboutTitle").textContent = d.aboutTitle;
-    document.getElementById("aboutText").textContent = d.aboutText;
-
-    document.getElementById("objTitle").textContent = d.objTitle;
-
-    document.getElementById("workTitle").textContent = d.workTitle;
-    document.getElementById("w1t").textContent = d.work[0].t;
-    document.getElementById("w1d").textContent = d.work[0].d;
-    document.getElementById("w2t").textContent = d.work[1].t;
-    document.getElementById("w2d").textContent = d.work[1].d;
-    document.getElementById("w3t").textContent = d.work[2].t;
-    document.getElementById("w3d").textContent = d.work[2].d;
-
-    document.getElementById("galTitle").textContent = d.galTitle;
-    document.getElementById("galDesc").textContent = d.galDesc;
-
-    document.getElementById("docTitle").textContent = d.docTitle;
-    document.getElementById("doc1t").textContent = d.doc1t;
-    document.getElementById("doc1d").textContent = d.doc1d;
-    document.getElementById("pdfLink").textContent = d.pdf;
-    document.getElementById("memTitle").textContent = d.memTitle;
-    document.getElementById("memText").textContent = d.memText;
-
-    document.getElementById("teamTitle").textContent = d.teamTitle;
-    document.getElementById("r1").textContent = d.roles[0];
-    document.getElementById("r2").textContent = d.roles[1];
-    document.getElementById("r3").textContent = d.roles[2];
-    document.getElementById("r4").textContent = d.roles[3];
-    document.getElementById("r5").textContent = d.roles[4];
-
-    document.getElementById("contactTitle").textContent = d.contactTitle;
-    document.getElementById("contactDetails").textContent = d.contactDetails;
-    document.getElementById("msgTitle").textContent = d.msgTitle;
-    document.getElementById("msgDesc").textContent = d.msgDesc;
-
-    document.getElementById("ctaBtn").textContent = d.cta;
-    document.getElementById("docsBtn").textContent = d.docsBtn;
-
-    document.getElementById("lblAddress2").textContent = d.labels.address;
-    document.getElementById("lblPhone2").textContent = d.labels.phone;
-
-    document.getElementById("addressText").textContent = (lang==="hi") ? ADDRESS_HI : ADDRESS_EN;
-    document.getElementById("addressText2").textContent = (lang==="hi") ? ADDRESS_HI : ADDRESS_EN;
-
-    document.getElementById("phoneText").textContent = PHONES;
-    document.getElementById("phoneText2").textContent = PHONES;
-    document.getElementById("emailText").textContent = EMAIL;
-    document.getElementById("emailText2").textContent = EMAIL;
-
-    document.getElementById("footName").textContent = d.brand;
-    document.getElementById("footContact").textContent = PHONES.replace(", "," • ") + " • " + EMAIL;
-
-    // objectives list
-    const list = document.getElementById("objList");
-    list.innerHTML = "";
-    d.objectives.forEach((x)=>{
-      const div = document.createElement("div");
-      div.className = "card";
-      div.textContent = x;
-      list.appendChild(div);
-    });
-
-    // placeholders
-    document.getElementById("fName").placeholder = (lang==="hi") ? "आपका नाम" : "Your Name";
-    document.getElementById("fPhone").placeholder = (lang==="hi") ? "मोबाइल नंबर" : "Phone Number";
-    document.getElementById("fMsg").placeholder = (lang==="hi") ? "आपका संदेश" : "Your Message";
-    document.getElementById("submitBtn").textContent = "Submit (Demo)";
-  }
-
-  document.getElementById("btnHi").addEventListener("click", ()=>{
-    document.getElementById("btnHi").classList.add("active");
-    document.getElementById("btnEn").classList.remove("active");
-    setLang("hi");
-  });
-
-  document.getElementById("btnEn").addEventListener("click", ()=>{
-    document.getElementById("btnEn").classList.add("active");
-    document.getElementById("btnHi").classList.remove("active");
-    setLang("en");
-  });
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-  setLang("hi");
-</script>
-
-</body>
-</html>
