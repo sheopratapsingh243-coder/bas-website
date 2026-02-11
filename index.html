@@ -4,19 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Upliftment to Self-Reliant India" />
+  <meta name="description" content="Bharat Abhyudaya Sansthan — Upliftment to Self-Reliant India" />
 
   <style>
     :root{
       --brand:#0b5aa6;
+      --brand2:#0ea5e9;
       --accent:#f58b1f;
+      --accent2:#ff4d6d;
+
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
-      --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:20px;
-      --max:1100px;
+
+      --shadow:0 18px 50px rgba(2,6,23,.12);
+      --radius:22px;
+      --max:1150px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -24,104 +29,215 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--fg);
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        #fff;
+        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
+        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.20), transparent 55%),
+        radial-gradient(900px 600px at 40% 90%, rgba(255,77,109,.10), transparent 55%),
+        #ffffff;
     }
+
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:28px 0}
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    p{margin:10px 0 0; line-height:1.7}
+    section{padding:44px 0}
+    h1{margin:0;font-size:40px;letter-spacing:-1px;line-height:1.15}
+    h2{margin:0;font-size:28px;letter-spacing:-.6px}
+    p{margin:12px 0 0; line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
-    .sp8{height:8px}
+    .sp10{height:10px}
+    .sp14{height:14px}
 
+    /* Header */
     header{
-      position:sticky;top:0;z-index:50;
-      background:#fff;border-bottom:1px solid rgba(226,232,240,.95);
+      position:sticky;top:0;z-index:999;
+      backdrop-filter:saturate(180%) blur(12px);
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid rgba(226,232,240,.8);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:230px}
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      min-width:250px;
+    }
     .logo{
-      width:44px;height:44px;border-radius:999px;
+      width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
     .brand b{display:block;font-size:14px;line-height:1.1}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a:hover{color:var(--brand)}
-    @media(min-width:950px){.menu{display:flex}}
 
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
+    .menu a{
+      padding:8px 10px;border-radius:999px;
+      transition:.2s;
+    }
+    .menu a:hover{
+      color:#0b5aa6;
+      background:rgba(11,90,166,.07);
+    }
+    @media(min-width:980px){.menu{display:flex}}
+
+    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
+      transition:.2s;
     }
+    .pill:hover{transform:translateY(-1px)}
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:700;
+      color:#fff;border-color:transparent;font-weight:800;
     }
 
+    /* Hero */
+    .hero{
+      padding:26px 0 10px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media(min-width:980px){
+      .heroGrid{grid-template-columns:1.2fr .8fr;gap:22px}
+    }
+
+    .heroCard{
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(226,232,240,.95);
+      background:
+        radial-gradient(900px 500px at 15% 0%, rgba(14,165,233,.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(245,139,31,.18), transparent 60%),
+        #fff;
+    }
+
+    .badgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;
+      font-size:13px;
+      color:var(--muted);
+      box-shadow:0 12px 28px rgba(2,6,23,.06);
+    }
+
+    /* Buttons */
+    .btnRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{
+      border-radius:18px;padding:13px 16px;font-size:14px;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;cursor:pointer;
+      display:inline-flex;align-items:center;gap:10px;
+      transition:.18s;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),#ff7a00);
+      border-color:transparent;font-weight:900;
+      box-shadow:0 18px 45px rgba(245,139,31,.22);
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg,var(--brand),#083a6c);
+      color:#fff;border-color:transparent;font-weight:900;
+      box-shadow:0 18px 45px rgba(11,90,166,.18);
+    }
+
+    /* Cards */
     .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
     }
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:950px){.grid{grid-template-columns:1.15fr .85fr;gap:22px}}
-    .two{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:950px){.two{grid-template-columns:1fr 1fr}}
 
-    .workGrid{
+    .two{
       display:grid;
       grid-template-columns:1fr;
       gap:14px;
       margin-top:14px;
     }
-    @media(min-width:950px){
-      .workGrid{grid-template-columns:1fr 1fr}
+    @media(min-width:980px){.two{grid-template-columns:1fr 1fr}}
+
+    /* Work grid */
+    .workGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width:980px){
+      .workGrid{grid-template-columns:1fr 1fr 1fr}
     }
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
+    .workCard{
+      position:relative;
+      overflow:hidden;
+      transition:.2s;
+    }
+    .workCard:hover{
+      transform:translateY(-2px);
+      box-shadow:0 22px 60px rgba(2,6,23,.14);
+    }
+    .workIcon{
+      width:46px;height:46px;border-radius:16px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:22px;
+      background:linear-gradient(135deg, rgba(11,90,166,.16), rgba(245,139,31,.16));
       border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:800;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:800;
+      margin-bottom:10px;
     }
 
+    /* Section title line */
+    .titleLine{
+      margin-top:10px;
+      width:110px;
+      height:5px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--accent),var(--brand2));
+    }
+
+    /* Form */
     input, textarea{
       width:100%;
       padding:12px 14px;
-      border-radius:14px;
+      border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
       font-family:inherit;
       font-size:14px;
       outline:none;
+      background:#fff;
     }
-    textarea{min-height:90px; resize:vertical}
+    textarea{min-height:95px; resize:vertical}
 
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:800;
+      font-weight:900;
+      transition:.18s;
     }
+    .wa:hover{transform:translateY(-2px)}
+
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
@@ -161,27 +277,36 @@
 
 <main id="top">
 
-  <section>
+  <!-- HERO -->
+  <section class="hero">
     <div class="wrap">
-      <div class="grid">
-        <div>
+      <div class="heroGrid">
+        <div class="heroCard">
           <h1 id="title">भारत अभ्युदय संस्थान</h1>
-          <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
+          <p class="muted" id="tagline" style="font-size:16px;margin-top:10px">
+            अभ्युदय से आत्मनिर्भर भारत तक
+          </p>
+
+          <div class="badgeRow">
+            <div class="badge" id="b1">📍 Fatehpur (U.P.)</div>
+            <div class="badge" id="b2">🧡 Education • Health • Empowerment</div>
+            <div class="badge" id="b3">🕉️ Culture • Heritage • Sanatan</div>
+          </div>
 
           <div class="btnRow">
             <a class="btn secondary" href="#documents" id="docsBtn">Registration PDF</a>
             <a class="btn primary" href="#contact" id="joinBtn">हमसे जुड़ें</a>
           </div>
-
-          <div class="card" style="margin-top:16px">
-            <b id="quick">Quick Info</b>
-            <p class="small muted" id="addr">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</p>
-            <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
-            <p class="small muted"><b id="emLbl">Email:</b> sheopratapsingh243@gmail.com</p>
-          </div>
         </div>
 
         <div class="card">
+          <b id="quick">Quick Info</b>
+          <p class="small muted" id="addr" style="margin-top:10px"></p>
+          <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
+          <p class="small muted"><b id="emLbl">Email:</b> sheopratapsingh243@gmail.com</p>
+
+          <div class="sp14"></div>
+
           <b id="regTitle">पंजीकरण विवरण</b>
           <p class="small muted" style="margin-top:10px" id="regBody">
             Registration No.: <b>FAT/02340/2024-2025</b><br>
@@ -194,72 +319,105 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <div class="wrap">
       <h2 id="aboutT">हमारे बारे में</h2>
-      <p id="aboutD"></p>
-      <p id="aboutD2"></p>
-      <p id="aboutD3"></p>
-    </div>
-  </section>
+      <div class="titleLine"></div>
 
-  <section id="work">
-    <div class="wrap">
-      <h2 id="workT">हमारे प्रयास</h2>
-      <p class="muted" id="workSub"></p>
-
-      <div class="workGrid">
+      <div class="two">
         <div class="card">
-          <b id="w1t"></b>
-          <p class="small muted" id="w1d"></p>
+          <p id="aboutD"></p>
+          <p id="aboutD2"></p>
+          <p id="aboutD3"></p>
         </div>
 
         <div class="card">
-          <b id="w2t"></b>
-          <p class="small muted" id="w2d"></p>
-        </div>
+          <b id="visionT">Vision</b>
+          <p class="muted small" id="visionD"></p>
 
-        <div class="card">
-          <b id="w3t"></b>
-          <p class="small muted" id="w3d"></p>
-        </div>
+          <div class="sp14"></div>
 
-        <div class="card">
-          <b id="w4t"></b>
-          <p class="small muted" id="w4d"></p>
-        </div>
-
-        <div class="card">
-          <b id="w5t"></b>
-          <p class="small muted" id="w5d"></p>
-        </div>
-
-        <div class="card">
-          <b id="w6t"></b>
-          <p class="small muted" id="w6d"></p>
-        </div>
-
-        <div class="card">
-          <b id="w7t"></b>
-          <p class="small muted" id="w7d"></p>
-        </div>
-
-        <div class="card">
-          <b id="w8t"></b>
-          <p class="small muted" id="w8d"></p>
-        </div>
-
-        <div class="card">
-          <b id="w9t"></b>
-          <p class="small muted" id="w9d"></p>
+          <b id="missionT">Mission</b>
+          <p class="muted small" id="missionD"></p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <h2 id="workT">हमारे प्रयास</h2>
+      <div class="titleLine"></div>
+      <p class="muted" id="workSub"></p>
+
+      <div class="workGrid">
+
+        <div class="card workCard">
+          <div class="workIcon">📚</div>
+          <b id="w1t"></b>
+          <p class="small muted" id="w1d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">🩺</div>
+          <b id="w2t"></b>
+          <p class="small muted" id="w2d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">👩‍🎓</div>
+          <b id="w3t"></b>
+          <p class="small muted" id="w3d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">🤝</div>
+          <b id="w4t"></b>
+          <p class="small muted" id="w4d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">🧑‍💻</div>
+          <b id="w5t"></b>
+          <p class="small muted" id="w5d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">🌱</div>
+          <b id="w6t"></b>
+          <p class="small muted" id="w6d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">🕉️</div>
+          <b id="w7t"></b>
+          <p class="small muted" id="w7d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">👴</div>
+          <b id="w8t"></b>
+          <p class="small muted" id="w8d"></p>
+        </div>
+
+        <div class="card workCard">
+          <div class="workIcon">🐄</div>
+          <b id="w9t"></b>
+          <p class="small muted" id="w9d"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
   <section id="documents">
     <div class="wrap">
       <h2 id="docT"></h2>
+      <div class="titleLine"></div>
+
       <div class="two">
         <div class="card">
           <b id="pdfT"></b>
@@ -268,6 +426,7 @@
             <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="pdfBtn"></a>
           </div>
         </div>
+
         <div class="card">
           <b id="memT"></b>
           <p class="small muted" id="memD"></p>
@@ -276,14 +435,18 @@
     </div>
   </section>
 
+  <!-- DONATE -->
   <section id="donate">
     <div class="wrap">
       <h2 id="donT"></h2>
+      <div class="titleLine"></div>
+
       <div class="two">
         <div class="card">
           <b id="don1"></b>
           <p class="small muted" id="don2"></p>
         </div>
+
         <div class="card">
           <b id="don3"></b>
           <p class="small muted" id="don4"></p>
@@ -295,9 +458,12 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <h2 id="conT"></h2>
+      <div class="titleLine"></div>
+
       <div class="two">
         <div class="card">
           <b id="con1"></b>
@@ -316,14 +482,14 @@
           <p class="small muted" id="formD"></p>
 
           <input id="fName" placeholder="">
-          <div class="sp8"></div>
+          <div class="sp10"></div>
 
           <input id="fPhone" placeholder="">
-          <div class="sp8"></div>
+          <div class="sp10"></div>
 
           <textarea id="fMsg" placeholder=""></textarea>
 
-          <button class="btn secondary" style="width:100%;margin-top:10px" type="button" id="submitDemo"></button>
+          <button class="btn secondary" style="width:100%;margin-top:12px" type="button" id="submitDemo"></button>
         </div>
       </div>
     </div>
@@ -350,6 +516,12 @@
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
 
+      badges:{
+        b1:"📍 फतेहपुर (उ.प्र.)",
+        b2:"🧡 शिक्षा • स्वास्थ्य • सशक्तिकरण",
+        b3:"🕉️ संस्कृति • विरासत • सनातन"
+      },
+
       menu:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
       docsBtn:"Registration PDF",
       join:"हमसे जुड़ें",
@@ -361,35 +533,41 @@
       aboutD2:"हमारा उद्देश्य केवल सहायता करना नहीं, बल्कि लोगों को आत्मनिर्भर बनाना, उन्हें अवसर देना, और समाज में सकारात्मक परिवर्तन लाना है।",
       aboutD3:"संस्था पारदर्शिता, सेवा-भाव, अनुशासन और सामाजिक उत्तरदायित्व के सिद्धांतों पर आधारित है। हम समाज के हर उस व्यक्ति को साथ जोड़ना चाहते हैं जो सेवा और राष्ट्र निर्माण में योगदान देना चाहता है।",
 
+      visionT:"दृष्टि (Vision)",
+      visionD:"एक ऐसा समाज जहाँ प्रत्येक व्यक्ति शिक्षा, स्वास्थ्य, सम्मान, सुरक्षा और अवसर के साथ आत्मनिर्भर जीवन जी सके।",
+
+      missionT:"लक्ष्य (Mission)",
+      missionD:"सेवा, जागरूकता, प्रशिक्षण और सहयोग के माध्यम से समाज में स्थायी सकारात्मक परिवर्तन लाना तथा ‘आत्मनिर्भर भारत’ की दिशा में योगदान देना।",
+
       workT:"हमारे प्रयास",
       workSub:"समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण, संस्कृति तथा पशु कल्याण से जुड़े प्रमुख कार्य",
 
       w1t:"शिक्षा सहायता",
-      w1d:"हम बच्चों एवं युवाओं को गुणवत्तापूर्ण शिक्षा से जोड़ने के लिए कार्य करते हैं। इसके अंतर्गत शिक्षा मार्गदर्शन, प्रतियोगी परीक्षाओं की तैयारी, पुस्तक/स्टडी मटेरियल सहायता, डिजिटल साक्षरता तथा करियर काउंसलिंग जैसे प्रयास किए जाते हैं, ताकि हर विद्यार्थी आत्मविश्वास के साथ आगे बढ़ सके।",
+      w1d:"हम बच्चों एवं युवाओं को गुणवत्तापूर्ण शिक्षा से जोड़ने के लिए कार्य करते हैं। इसके अंतर्गत शिक्षा मार्गदर्शन, प्रतियोगी परीक्षाओं की तैयारी, पुस्तक/स्टडी मटेरियल सहायता, डिजिटल साक्षरता तथा करियर काउंसलिंग जैसे प्रयास किए जाते हैं।",
 
       w2t:"स्वास्थ्य एवं जागरूकता",
-      w2d:"हम स्वास्थ्य को समाज की प्राथमिक आवश्यकता मानते हैं। संस्था द्वारा स्वास्थ्य जागरूकता अभियान, निःशुल्क चिकित्सा शिविर, रक्तदान कार्यक्रम, पोषण जागरूकता, स्वच्छता संदेश तथा जरूरतमंदों को प्राथमिक चिकित्सा/सहायता उपलब्ध कराने जैसे कार्य किए जाते हैं।",
+      w2d:"संस्था द्वारा स्वास्थ्य जागरूकता अभियान, निःशुल्क चिकित्सा शिविर, रक्तदान कार्यक्रम, पोषण जागरूकता, स्वच्छता संदेश तथा जरूरतमंदों को प्राथमिक चिकित्सा/सहायता उपलब्ध कराने जैसे कार्य किए जाते हैं।",
 
       w3t:"महिला सशक्तिकरण",
-      w3d:"हम महिलाओं को आत्मनिर्भर, सुरक्षित और सम्मानजनक जीवन की ओर आगे बढ़ाने हेतु कार्य करते हैं। इसके लिए जागरूकता अभियान, कौशल प्रशिक्षण, स्वरोजगार सहायता, शिक्षा सहयोग तथा महिलाओं के अधिकारों एवं सामाजिक सहभागिता को मजबूत करने वाली गतिविधियाँ संचालित की जाती हैं।",
+      w3d:"हम महिलाओं को आत्मनिर्भर, सुरक्षित और सम्मानजनक जीवन की ओर आगे बढ़ाने हेतु जागरूकता, कौशल प्रशिक्षण, स्वरोजगार सहायता, शिक्षा सहयोग तथा अधिकारों के प्रति जागरूकता कार्यक्रम संचालित करते हैं।",
 
       w4t:"गरीब एवं जरूरतमंद सहायता",
-      w4d:"संस्था का उद्देश्य संकट के समय किसी भी जरूरतमंद को अकेला न छोड़ना है। हम जरूरतमंद परिवारों को भोजन, वस्त्र, शिक्षा सामग्री, दवा, आपदा राहत, तथा दैनिक आवश्यक सहायता प्रदान करते हैं, जिससे मानवता और सेवा का भाव समाज में मजबूत हो।",
+      w4d:"हम जरूरतमंद परिवारों को भोजन, वस्त्र, शिक्षा सामग्री, दवा, आपदा राहत, तथा दैनिक आवश्यक सहायता प्रदान करते हैं, जिससे मानवता और सेवा का भाव समाज में मजबूत हो।",
 
       w5t:"रोजगार एवं कौशल विकास",
-      w5d:"हम युवाओं को केवल रोजगार खोजने वाला नहीं, बल्कि रोजगार देने वाला बनाने के लिए प्रयासरत हैं। संस्था द्वारा कौशल प्रशिक्षण, मार्गदर्शन, करियर सपोर्ट, तकनीकी प्रशिक्षण, तथा स्वरोजगार/उद्यमिता को बढ़ावा देने वाली गतिविधियाँ की जाती हैं।",
+      w5d:"हम युवाओं को कौशल प्रशिक्षण, मार्गदर्शन, करियर सपोर्ट, तकनीकी प्रशिक्षण, तथा स्वरोजगार/उद्यमिता को बढ़ावा देने वाली गतिविधियों के माध्यम से आत्मनिर्भर बनाने हेतु कार्य करते हैं।",
 
       w6t:"पर्यावरण, स्वच्छता एवं जल संरक्षण",
-      w6d:"हम स्वच्छ, हरित और स्वस्थ समाज के निर्माण के लिए पर्यावरण संरक्षण को महत्वपूर्ण मानते हैं। संस्था द्वारा स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण, और जनभागीदारी आधारित कार्यक्रम आयोजित किए जाते हैं।",
+      w6d:"स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण, और जनभागीदारी आधारित कार्यक्रमों के माध्यम से हम स्वच्छ और हरित समाज के निर्माण में योगदान देते हैं।",
 
       w7t:"संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण",
-      w7d:"हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार और राष्ट्रीय चेतना को सशक्त करने हेतु कार्य करते हैं। संस्था द्वारा सांस्कृतिक जागरूकता, परंपराओं का संरक्षण, धरोहर/हेरिटेज संरक्षण, सामाजिक सद्भाव तथा नैतिक मूल्यों को बढ़ावा देने वाले कार्यक्रम आयोजित किए जाते हैं।",
+      w7d:"हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार और राष्ट्रीय चेतना को सशक्त करने हेतु सांस्कृतिक जागरूकता, परंपरा संरक्षण, धरोहर/हेरिटेज संरक्षण एवं सद्भाव कार्यक्रम आयोजित करते हैं।",
 
       w8t:"वृद्धजन सेवा एवं सामाजिक कल्याण",
-      w8d:"हम समाज के वरिष्ठ नागरिकों को सम्मान और सहयोग देने के लिए प्रतिबद्ध हैं। इसके अंतर्गत वृद्धजन सहायता, सेवा कार्य, जरूरतमंद वृद्धों को सहयोग, तथा भविष्य में वृद्ध सहायता केंद्र/वृद्धाश्रम (Old Age Home) जैसी सामाजिक पहल को मजबूत करने की दिशा में कार्य किया जाता है।",
+      w8d:"हम वरिष्ठ नागरिकों को सम्मान और सहयोग देने के लिए प्रतिबद्ध हैं। भविष्य में वृद्ध सहायता केंद्र/वृद्धाश्रम (Old Age Home) जैसी सामाजिक पहल को मजबूत करने की दिशा में भी कार्य किया जाएगा।",
 
       w9t:"गौ-सेवा, गौशाला एवं पशु कल्याण",
-      w9d:"हम गौ-सेवा, गौ-सुरक्षा एवं गौ-संरक्षण के साथ-साथ पशु कल्याण को भी महत्वपूर्ण मानते हैं। संस्था द्वारा निराश्रित/आवारा पशुओं (गाय, कुत्ते आदि) की देखभाल, भोजन, उपचार, टीकाकरण जागरूकता तथा आवश्यक सहायता उपलब्ध कराने के प्रयास किए जाते हैं। आवश्यकता पड़ने पर संस्था गौशाला/पशु आश्रय (Shelter Home) की स्थापना या सहयोग भी कर सकती है। साथ ही, घायल वन्यजीवों की सहायता हेतु संबंधित विभागों के साथ समन्वय कर कार्य किया जा सकता है।",
+      w9d:"हम गौ-सेवा, गौ-सुरक्षा एवं गौ-संरक्षण के साथ पशु कल्याण को भी महत्वपूर्ण मानते हैं। निराश्रित/आवारा पशुओं (गाय, कुत्ते आदि) की देखभाल, भोजन, उपचार, टीकाकरण जागरूकता तथा आवश्यक सहायता उपलब्ध कराई जाती है। आवश्यकता पड़ने पर गौशाला/पशु आश्रय (Shelter Home) की स्थापना या सहयोग भी किया जा सकता है।",
 
       docT:"दस्तावेज़",
       pdfT:"Registration & Bylaws (PDF)",
@@ -426,6 +604,12 @@
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
 
+      badges:{
+        b1:"📍 Fatehpur (U.P.)",
+        b2:"🧡 Education • Health • Empowerment",
+        b3:"🕉️ Culture • Heritage • Sanatan"
+      },
+
       menu:{a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
       docsBtn:"Registration PDF",
       join:"Get Involved",
@@ -433,39 +617,45 @@
       regTitle:"Registration Details",
 
       aboutT:"About Us",
-      aboutD:"Bharat Abhyudaya Sansthan is a registered social organization dedicated to uplifting society through education, health support, awareness initiatives, women empowerment, public welfare, Sanatan protection, and heritage conservation.",
+      aboutD:"Bharat Abhyudaya Sansthan is a registered social organization dedicated to uplifting society through education, health support, awareness initiatives, women empowerment, public welfare, Sanatan protection, heritage conservation and community service.",
       aboutD2:"Our mission is not only to provide help, but to create long-term impact by empowering individuals and communities to become self-reliant and confident.",
       aboutD3:"The organization stands on the principles of transparency, service, discipline, and social responsibility. We welcome everyone who wishes to contribute to social change and nation-building.",
+
+      visionT:"Vision",
+      visionD:"A society where every individual can live with education, health, dignity, safety and equal opportunity.",
+
+      missionT:"Mission",
+      missionD:"To create sustainable positive change through service, awareness, training and support—contributing to a Self-Reliant India.",
 
       workT:"Our Initiatives",
       workSub:"Our key focus areas across education, health, empowerment, service, environment, culture and animal welfare",
 
       w1t:"Education Support",
-      w1d:"We work to connect children and youth with quality education and meaningful opportunities. Our initiatives include academic guidance, exam preparation support, study resources, digital literacy programs, and career mentorship—so that every student can move forward with confidence and direction.",
+      w1d:"We work to connect children and youth with quality education and meaningful opportunities through guidance, exam support, learning resources, digital literacy and mentorship.",
 
       w2t:"Health & Awareness",
-      w2d:"We believe that a healthy society is the foundation of a strong nation. Our organization conducts health awareness drives, free medical camps, blood donation initiatives, nutrition awareness programs, hygiene campaigns, and support for people in need—ensuring that basic health support reaches the underserved.",
+      w2d:"We conduct health awareness drives, free medical camps, blood donation initiatives, nutrition awareness programs, hygiene campaigns, and support for people in need.",
 
       w3t:"Women Empowerment",
-      w3d:"We are committed to empowering women to live with dignity, safety, and self-reliance. Through awareness programs, skill training, self-employment support, educational assistance, and community participation initiatives, we aim to strengthen women’s role in society and build a more balanced, inclusive future.",
+      w3d:"We empower women through awareness programs, skill training, self-employment support, educational assistance, and initiatives focused on dignity, safety and participation.",
 
       w4t:"Support for the Poor & Needy",
-      w4d:"Our mission is to ensure that no person is left helpless during hardship. We provide essential support such as food, clothing, educational materials, medicines, emergency relief, and basic assistance to families facing difficulties—building a culture of compassion, service, and responsibility.",
+      w4d:"We provide essential help such as food, clothing, educational materials, medicines, emergency relief, and basic support to families facing hardship.",
 
       w5t:"Employment & Skill Development",
-      w5d:"We aim to transform youth into skilled and self-reliant individuals. Our initiatives focus on skill development, career guidance, employability support, technical training, and promoting entrepreneurship—helping youth become job-ready and, eventually, job-creators.",
+      w5d:"We build self-reliant youth through skill training, career guidance, employability support, technical training and promoting entrepreneurship.",
 
       w6t:"Environment, Cleanliness & Water Conservation",
-      w6d:"We work towards a clean, green, and sustainable society. Our efforts include cleanliness drives, plantation campaigns, plastic-free awareness, water conservation initiatives, and community participation programs—encouraging citizens to protect nature and build a healthier environment.",
+      w6d:"We organize cleanliness campaigns, plantation drives, plastic-free awareness, water conservation initiatives and public participation programs for a greener future.",
 
       w7t:"Culture, Sanatan Protection & Heritage Conservation",
-      w7d:"We actively promote Indian culture, Sanatan values, social ethics, and national consciousness. Our initiatives support cultural awareness, preservation of traditions, heritage conservation, social harmony, and value-based programs that strengthen our identity and connect society to its roots.",
+      w7d:"We promote Indian culture, Sanatan values, social ethics, heritage preservation and awareness about traditions and historical assets.",
 
       w8t:"Elderly Care & Social Welfare",
-      w8d:"We are dedicated to supporting senior citizens with respect and care. Our initiatives include welfare activities, assistance for needy elders, service-based programs, and long-term efforts towards strengthening social support systems—such as elderly support centers or old age homes where required.",
+      w8d:"We support senior citizens through welfare initiatives, service activities, and long-term efforts such as elderly support centers or old age homes where required.",
 
       w9t:"Cow Service, Gaushala & Animal Welfare",
-      w9d:"We consider cow service, protection and conservation as an important part of social responsibility. Along with this, we support animal welfare initiatives for stray and abandoned animals (such as cows, dogs, and other domestic animals) through food support, medical care, vaccination awareness, and basic assistance. Where required, the organization may also establish or support gaushalas and shelter homes for proper care and safety. We also promote sensitivity towards wildlife and coordinate with relevant authorities to help injured wildlife whenever possible.",
+      w9d:"We support cow service, protection and conservation as a social responsibility. We also help stray and abandoned animals (cows, dogs and others) with food support, medical care and basic assistance. Where required, we may establish or support gaushalas and shelter homes for proper care and safety.",
 
       docT:"Documents",
       pdfT:"Registration & Bylaws (PDF)",
@@ -506,6 +696,10 @@
     document.getElementById("title").textContent=d.title;
     document.getElementById("tagline").textContent=d.tagline;
 
+    document.getElementById("b1").textContent=d.badges.b1;
+    document.getElementById("b2").textContent=d.badges.b2;
+    document.getElementById("b3").textContent=d.badges.b3;
+
     document.getElementById("mAbout").textContent=d.menu.a;
     document.getElementById("mWork").textContent=d.menu.w;
     document.getElementById("mDocs").textContent=d.menu.d;
@@ -521,6 +715,11 @@
     document.getElementById("aboutD").textContent=d.aboutD;
     document.getElementById("aboutD2").textContent=d.aboutD2;
     document.getElementById("aboutD3").textContent=d.aboutD3;
+
+    document.getElementById("visionT").textContent=d.visionT;
+    document.getElementById("visionD").textContent=d.visionD;
+    document.getElementById("missionT").textContent=d.missionT;
+    document.getElementById("missionD").textContent=d.missionD;
 
     document.getElementById("workT").textContent=d.workT;
     document.getElementById("workSub").textContent=d.workSub;
