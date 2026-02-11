@@ -27,14 +27,13 @@
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
         #fff;
-      line-height:1.55;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:28px 0}
     h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
     h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    p{margin:10px 0 0}
+    p{margin:10px 0 0; line-height:1.65}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
@@ -51,7 +50,6 @@
       width:44px;height:44px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
-      display:block;
     }
     .brand b{display:block;font-size:14px;line-height:1.1}
     .brand span{display:block;font-size:12px;color:var(--muted)}
@@ -101,14 +99,14 @@
 
     input, textarea{
       width:100%;
-      padding:12px 12px;
+      padding:12px 14px;
       border-radius:14px;
       border:1px solid rgba(226,232,240,.95);
-      font-size:14px;
       font-family:inherit;
+      font-size:14px;
       outline:none;
     }
-    textarea{min-height:90px;resize:vertical}
+    textarea{min-height:90px; resize:vertical}
 
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
@@ -172,13 +170,13 @@
             <b id="quick">Quick Info</b>
             <p class="small muted" id="addr">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</p>
             <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
-            <p class="small muted"><b id="emailLbl">ईमेल:</b> sheopratapsingh243@gmail.com</p>
+            <p class="small muted"><b id="emLbl">Email:</b> sheopratapsingh243@gmail.com</p>
           </div>
         </div>
 
         <div class="card">
           <b id="regTitle">पंजीकरण विवरण</b>
-          <p class="small muted" style="margin-top:10px" id="regText">
+          <p class="small muted" style="margin-top:10px" id="regBody">
             Registration No.: <b>FAT/02340/2024-2025</b><br>
             Date: <b>05/07/2024</b><br>
             Valid: <b>04/07/2029</b><br>
@@ -192,9 +190,9 @@
   <section id="about">
     <div class="wrap">
       <h2 id="aboutT">हमारे बारे में</h2>
-      <p id="aboutD">
-        Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं विरासत संरक्षण जैसे क्षेत्रों में कार्य करती है।
-      </p>
+      <p id="aboutD"></p>
+      <p id="aboutD2"></p>
+      <p id="aboutD3"></p>
     </div>
   </section>
 
@@ -264,9 +262,9 @@
       <div class="two">
         <div class="card">
           <b id="con1">संपर्क विवरण</b>
-          <p class="small muted" id="conAddr"><b>पता:</b> 481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</p>
+          <p class="small muted" id="conAddr"></p>
           <p class="small muted"><b id="phLbl2">फोन:</b> 8604669454, 7355181465</p>
-          <p class="small muted"><b id="emailLbl2">ईमेल:</b> sheopratapsingh243@gmail.com</p>
+          <p class="small muted"><b id="emLbl2">Email:</b> sheopratapsingh243@gmail.com</p>
 
           <div class="btnRow">
             <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
@@ -286,7 +284,7 @@
 
           <textarea id="fMsg" placeholder="आपका संदेश"></textarea>
 
-          <button class="btn secondary" style="width:100%;margin-top:10px" type="button" id="submitBtn">
+          <button class="btn secondary" style="width:100%;margin-top:10px" type="button" id="submitDemo">
             Submit (Demo)
           </button>
         </div>
@@ -311,83 +309,102 @@
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
-      sub:"Registered Social Organization",
+      sub:"Bharat Abhyudaya Sansthan",
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
       menu:{a:"परिचय",w:"कार्य",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
-      join:"हमसे जुड़ें",
       docsBtn:"Registration PDF",
+      join:"हमसे जुड़ें",
       quick:"Quick Info",
       regTitle:"पंजीकरण विवरण",
+
       aboutT:"हमारे बारे में",
-      aboutD:"Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं विरासत संरक्षण जैसे क्षेत्रों में कार्य करती है।",
+      aboutD:"भारत अभ्युदय संस्थान एक पंजीकृत सामाजिक संस्था है, जो समाज के कमजोर, जरूरतमंद और उपेक्षित वर्गों के लिए शिक्षा, स्वास्थ्य, जागरूकता, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं सांस्कृतिक विरासत संरक्षण जैसे क्षेत्रों में निरंतर कार्य कर रही है।",
+      aboutD2:"हमारा उद्देश्य केवल सहायता करना नहीं, बल्कि लोगों को आत्मनिर्भर बनाना, उन्हें अवसर देना, और समाज में सकारात्मक परिवर्तन लाना है।",
+      aboutD3:"संस्था पारदर्शिता, सेवा-भाव, अनुशासन और सामाजिक उत्तरदायित्व के सिद्धांतों पर आधारित है। हम समाज के हर उस व्यक्ति को साथ जोड़ना चाहते हैं जो सेवा और राष्ट्र निर्माण में योगदान देना चाहता है।",
+
       workT:"हमारा कार्य",
       w1t:"शिक्षा सहायता", w1d:"बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।",
       w2t:"स्वास्थ्य एवं जागरूकता", w2d:"स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।",
       w3t:"संस्कृति एवं विरासत", w3d:"सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।",
+
       docT:"दस्तावेज़",
+      pdfT:"Registration & Bylaws (PDF)",
       pdfD:"संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।",
       pdfBtn:"PDF Open / Download",
       memT:"सदस्यता",
       memD:"आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201",
+
       donT:"दान / सहयोग",
       don1:"Donate (Coming Soon)",
       don2:"UPI ID, QR Code और Bank Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।",
       don3:"WhatsApp पर सहायता",
       don4:"दान/सहयोग की जानकारी के लिए WhatsApp पर संदेश करें।",
       waNow:"WhatsApp Now",
+
       conT:"संपर्क करें",
       con1:"संपर्क विवरण",
       formT:"संदेश (Demo)",
       formD:"यह demo form है। Future में इसे active कर देंगे।",
-      submit:"Submit (Demo)",
-      ph:"फोन:",
-      email:"ईमेल:",
-      addrLabel:"पता:",
       fName:"आपका नाम",
       fPhone:"मोबाइल नंबर",
       fMsg:"आपका संदेश",
-      foot:"भारत अभ्युदय संस्थान"
+      submit:"Submit (Demo)",
+
+      ph:"फोन:",
+      addrLabel:"पता:",
+      foot:"भारत अभ्युदय संस्थान",
+      email:"Email:"
     },
+
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Registered Social Organization",
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
       menu:{a:"About",w:"Work",d:"Documents",dn:"Donate",c:"Contact"},
-      join:"Get Involved",
       docsBtn:"Registration PDF",
+      join:"Get Involved",
       quick:"Quick Info",
       regTitle:"Registration Details",
+
       aboutT:"About Us",
-      aboutD:"Bharat Abhyudaya Sansthan is a registered social organization working in education, health, women empowerment, public welfare, Sanatan protection, and heritage conservation.",
+      aboutD:"Bharat Abhyudaya Sansthan is a registered social organization dedicated to uplifting society through education, health support, awareness initiatives, women empowerment, public welfare, Sanatan protection, and heritage conservation.",
+      aboutD2:"Our mission is not only to provide help, but to create long-term impact by empowering individuals and communities to become self-reliant and confident.",
+      aboutD3:"The organization stands on the principles of transparency, service, discipline, and social responsibility. We welcome everyone who wishes to contribute to social change and nation-building.",
+
       workT:"Our Work",
       w1t:"Education Support", w1d:"Education, guidance and resource support for children and youth.",
       w2t:"Health & Awareness", w2d:"Health awareness, camps and support for people in need.",
       w3t:"Culture & Heritage", w3d:"Sanatan protection, social values and heritage conservation.",
+
       docT:"Documents",
+      pdfT:"Registration & Bylaws (PDF)",
       pdfD:"Official registration certificate and bylaws of the organization.",
       pdfBtn:"Open / Download PDF",
       memT:"Membership",
       memD:"Lifetime Member: ₹10,000 | General Member: ₹201",
+
       donT:"Donate / Support",
       don1:"Donate (Coming Soon)",
       don2:"UPI ID, QR Code and Bank Details will be updated on the website soon.",
       don3:"Support on WhatsApp",
       don4:"Message us on WhatsApp for donation/support details.",
       waNow:"WhatsApp Now",
+
       conT:"Contact Us",
       con1:"Contact Details",
       formT:"Message (Demo)",
       formD:"This is a demo form. We will enable it in future.",
-      submit:"Submit (Demo)",
-      ph:"Phone:",
-      email:"Email:",
-      addrLabel:"Address:",
       fName:"Your Name",
       fPhone:"Mobile Number",
       fMsg:"Your Message",
-      foot:"Bharat Abhyudaya Sansthan"
+      submit:"Submit (Demo)",
+
+      ph:"Phone:",
+      addrLabel:"Address:",
+      foot:"Bharat Abhyudaya Sansthan",
+      email:"Email:"
     }
   };
 
@@ -395,32 +412,27 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
-    // Top branding
     document.getElementById("brandText").textContent=d.brand;
     document.getElementById("brandSub").textContent=d.sub;
     document.getElementById("title").textContent=d.title;
     document.getElementById("tagline").textContent=d.tagline;
 
-    // Menu
     document.getElementById("mAbout").textContent=d.menu.a;
     document.getElementById("mWork").textContent=d.menu.w;
     document.getElementById("mDocs").textContent=d.menu.d;
     document.getElementById("mDonate").textContent=d.menu.dn;
     document.getElementById("mContact").textContent=d.menu.c;
 
-    // Buttons
-    document.getElementById("joinBtn").textContent=d.join;
     document.getElementById("docsBtn").textContent=d.docsBtn;
-
-    // Quick + reg
+    document.getElementById("joinBtn").textContent=d.join;
     document.getElementById("quick").textContent=d.quick;
     document.getElementById("regTitle").textContent=d.regTitle;
 
-    // About
     document.getElementById("aboutT").textContent=d.aboutT;
     document.getElementById("aboutD").textContent=d.aboutD;
+    document.getElementById("aboutD2").textContent=d.aboutD2;
+    document.getElementById("aboutD3").textContent=d.aboutD3;
 
-    // Work
     document.getElementById("workT").textContent=d.workT;
     document.getElementById("w1t").textContent=d.w1t;
     document.getElementById("w1d").textContent=d.w1d;
@@ -429,14 +441,13 @@
     document.getElementById("w3t").textContent=d.w3t;
     document.getElementById("w3d").textContent=d.w3d;
 
-    // Docs
     document.getElementById("docT").textContent=d.docT;
+    document.getElementById("pdfT").textContent=d.pdfT;
     document.getElementById("pdfD").textContent=d.pdfD;
     document.getElementById("pdfBtn").textContent=d.pdfBtn;
     document.getElementById("memT").textContent=d.memT;
     document.getElementById("memD").textContent=d.memD;
 
-    // Donate
     document.getElementById("donT").textContent=d.donT;
     document.getElementById("don1").textContent=d.don1;
     document.getElementById("don2").textContent=d.don2;
@@ -444,41 +455,35 @@
     document.getElementById("don4").textContent=d.don4;
     document.getElementById("waNow").textContent=d.waNow;
 
-    // Contact
     document.getElementById("conT").textContent=d.conT;
     document.getElementById("con1").textContent=d.con1;
+    document.getElementById("formT").textContent=d.formT;
+    document.getElementById("formD").textContent=d.formD;
+
+    document.getElementById("fName").placeholder=d.fName;
+    document.getElementById("fPhone").placeholder=d.fPhone;
+    document.getElementById("fMsg").placeholder=d.fMsg;
+    document.getElementById("submitDemo").textContent=d.submit;
 
     document.getElementById("phLbl").textContent=d.ph;
     document.getElementById("phLbl2").textContent=d.ph;
 
-    document.getElementById("emailLbl").textContent=d.email;
-    document.getElementById("emailLbl2").textContent=d.email;
+    document.getElementById("emLbl").textContent=d.email;
+    document.getElementById("emLbl2").textContent=d.email;
 
     document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
     document.getElementById("conAddr").innerHTML="<b>"+d.addrLabel+"</b> "+((lang==="hi")?ADDRESS_HI:ADDRESS_EN);
 
-    // Form texts
-    document.getElementById("formT").textContent=d.formT;
-    document.getElementById("formD").textContent=d.formD;
-    document.getElementById("submitBtn").textContent=d.submit;
-
-    // Placeholders
-    document.getElementById("fName").placeholder=d.fName;
-    document.getElementById("fPhone").placeholder=d.fPhone;
-    document.getElementById("fMsg").placeholder=d.fMsg;
-
-    // Footer
     document.getElementById("foot").textContent=d.foot;
   }
 
-  const btnHi = document.getElementById("btnHi");
-  const btnEn = document.getElementById("btnEn");
+  const btnHi=document.getElementById("btnHi");
+  const btnEn=document.getElementById("btnEn");
 
   btnHi.addEventListener("click",()=>{
     btnHi.classList.add("active"); btnEn.classList.remove("active");
     setLang("hi");
   });
-
   btnEn.addEventListener("click",()=>{
     btnEn.classList.add("active"); btnHi.classList.remove("active");
     setLang("en");
