@@ -4,24 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Bharat Abhyudaya Sansthan — Upliftment to Self-Reliant India" />
+  <meta name="description" content="Bharat Abhyudaya Sansthan is a registered social organization working in education, health, women empowerment, welfare, skills, environment, culture, gaushala and elderly care." />
 
   <style>
     :root{
       --brand:#0b5aa6;
-      --brand2:#0ea5e9;
       --accent:#f58b1f;
-      --accent2:#ff4d6d;
-
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
-
-      --shadow:0 18px 50px rgba(2,6,23,.12);
+      --shadow:0 18px 45px rgba(2,6,23,.12);
       --radius:22px;
       --max:1150px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -30,39 +25,39 @@
       color:var(--fg);
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.20), transparent 55%),
-        radial-gradient(900px 600px at 40% 90%, rgba(255,77,109,.10), transparent 55%),
-        #ffffff;
+        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.18), transparent 55%),
+        radial-gradient(800px 500px at 40% 110%, rgba(34,197,94,.12), transparent 55%),
+        #fff;
     }
-
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:44px 0}
-    h1{margin:0;font-size:40px;letter-spacing:-1px;line-height:1.15}
-    h2{margin:0;font-size:28px;letter-spacing:-.6px}
-    p{margin:12px 0 0; line-height:1.75}
+    section{padding:34px 0}
+    h1{margin:0;font-size:42px;letter-spacing:-1.1px;line-height:1.05}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    p{margin:12px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
-    .sp10{height:10px}
-    .sp14{height:14px}
+    .kicker{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:7px 12px;border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.7);
+      font-weight:950;font-size:13px;
+    }
 
-    /* Header */
     header{
-      position:sticky;top:0;z-index:999;
-      backdrop-filter:saturate(180%) blur(12px);
-      background:rgba(255,255,255,.78);
-      border-bottom:1px solid rgba(226,232,240,.8);
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:10px;
+      padding:12px 0;gap:12px;
     }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      min-width:250px;
-    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:230px}
     .logo{
-      width:46px;height:46px;border-radius:999px;
+      width:44px;height:44px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
@@ -70,178 +65,106 @@
     .brand span{display:block;font-size:12px;color:var(--muted)}
 
     .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a{
-      padding:8px 10px;border-radius:999px;
-      transition:.2s;
-    }
-    .menu a:hover{
-      color:#0b5aa6;
-      background:rgba(11,90,166,.07);
-    }
+    .menu a{padding:8px 10px;border-radius:12px}
+    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
     @media(min-width:980px){.menu{display:flex}}
 
-    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
-      transition:.2s;
     }
-    .pill:hover{transform:translateY(-1px)}
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:800;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
-    /* Hero */
-    .hero{
-      padding:26px 0 10px;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media(min-width:980px){
-      .heroGrid{grid-template-columns:1.2fr .8fr;gap:22px}
-    }
-
-    .heroCard{
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
+    .hero{padding:26px 0 0}
+    .heroBox{
+      border-radius:30px;
       border:1px solid rgba(226,232,240,.95);
       background:
-        radial-gradient(900px 500px at 15% 0%, rgba(14,165,233,.18), transparent 55%),
-        radial-gradient(900px 500px at 90% 20%, rgba(245,139,31,.18), transparent 60%),
-        #fff;
-    }
-
-    .badgeRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    .badge{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      font-size:13px;
-      color:var(--muted);
-      box-shadow:0 12px 28px rgba(2,6,23,.06);
-    }
-
-    /* Buttons */
-    .btnRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{
-      border-radius:18px;padding:13px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      transition:.18s;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:900;
-      box-shadow:0 18px 45px rgba(245,139,31,.22);
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:900;
-      box-shadow:0 18px 45px rgba(11,90,166,.18);
-    }
-
-    /* Cards */
-    .card{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);
-      padding:18px;
+        radial-gradient(900px 520px at 15% 0%, rgba(245,139,31,.25), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(11,90,166,.20), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.96));
       box-shadow:var(--shadow);
+      padding:22px;
+      overflow:hidden;
+      position:relative;
     }
 
-    .two{
+    .grid{
       display:grid;
       grid-template-columns:1fr;
-      gap:14px;
-      margin-top:14px;
-    }
-    @media(min-width:980px){.two{grid-template-columns:1fr 1fr}}
-
-    /* Work grid */
-    .workGrid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+      gap:16px;
       margin-top:16px;
     }
     @media(min-width:980px){
-      .workGrid{grid-template-columns:1fr 1fr 1fr}
+      .grid{grid-template-columns:1.15fr .85fr;gap:18px}
     }
 
-    .workCard{
-      position:relative;
-      overflow:hidden;
-      transition:.2s;
-    }
-    .workCard:hover{
-      transform:translateY(-2px);
-      box-shadow:0 22px 60px rgba(2,6,23,.14);
-    }
-    .workIcon{
-      width:46px;height:46px;border-radius:16px;
-      display:flex;align-items:center;justify-content:center;
-      font-size:22px;
-      background:linear-gradient(135deg, rgba(11,90,166,.16), rgba(245,139,31,.16));
+    .card{
+      background:rgba(255,255,255,.96);
       border:1px solid rgba(226,232,240,.95);
-      margin-bottom:10px;
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 10px 30px rgba(2,6,23,.06);
     }
 
-    /* Section title line */
-    .titleLine{
-      margin-top:10px;
-      width:110px;
-      height:5px;
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btn{
+      border-radius:16px;padding:12px 16px;font-size:14px;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;cursor:pointer;
+      display:inline-flex;align-items:center;gap:10px;
+      font-weight:950;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),#ff7a00);
+      border-color:transparent;font-weight:950;
+    }
+    .btn.secondary{
+      background:linear-gradient(135deg,var(--brand),#083a6c);
+      color:#fff;border-color:transparent;font-weight:950;
+    }
+
+    .miniGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(min-width:980px){
+      .miniGrid{grid-template-columns:1fr 1fr;gap:12px}
+    }
+
+    .tagRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{
+      font-size:12px;
+      font-weight:900;
+      padding:6px 10px;
       border-radius:999px;
-      background:linear-gradient(90deg,var(--accent),var(--brand2));
-    }
-
-    /* Form */
-    input, textarea{
-      width:100%;
-      padding:12px 14px;
-      border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
-      font-family:inherit;
-      font-size:14px;
-      outline:none;
-      background:#fff;
+      background:rgba(11,90,166,.04);
+      color:#0b5aa6;
     }
-    textarea{min-height:95px; resize:vertical}
+    .tag.orange{background:rgba(245,139,31,.08);color:#b45309}
+    .tag.green{background:rgba(34,197,94,.08);color:#166534}
 
-    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:900;
-      transition:.18s;
+      font-weight:950;
     }
-    .wa:hover{transform:translateY(-2px)}
 
     footer{
       border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
+      padding:18px 0;margin-top:14px;color:var(--muted);
+      background:rgba(255,255,255,.9);
+      font-size:14px;
     }
   </style>
 </head>
@@ -259,9 +182,9 @@
         </div>
       </a>
 
-      href="about.html"
+      <nav class="menu">
         <a href="about.html" id="mAbout">परिचय</a>
-         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
+        <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
         <a href="donate.html" id="mDonate">दान</a>
         <a href="contact.html" id="mContact">संपर्क</a>
@@ -275,224 +198,81 @@
   </div>
 </header>
 
-<main id="top">
+<main>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="heroGrid">
-        <div class="heroCard">
-          <h1 id="title">भारत अभ्युदय संस्थान</h1>
-          <p class="muted" id="tagline" style="font-size:16px;margin-top:10px">
-            अभ्युदय से आत्मनिर्भर भारत तक
-          </p>
+      <div class="heroBox">
 
-          <div class="badgeRow">
-            <div class="badge" id="b1">📍 Fatehpur (U.P.)</div>
-            <div class="badge" id="b2">🧡 Education • Health • Empowerment</div>
-            <div class="badge" id="b3">🕉️ Culture • Heritage • Sanatan</div>
+        <span class="kicker" id="kicker">Registered Social Organization</span>
+
+        <div class="grid">
+
+          <div>
+            <h1 id="title">भारत अभ्युदय संस्थान</h1>
+            <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
+
+            <div class="tagRow" id="tags">
+              <span class="tag">Education</span>
+              <span class="tag orange">Health</span>
+              <span class="tag green">Women Empowerment</span>
+              <span class="tag">Welfare</span>
+              <span class="tag orange">Culture</span>
+              <span class="tag green">Gaushala</span>
+            </div>
+
+            <div class="btnRow">
+              <a class="btn secondary" href="documents.html" id="docsBtn">Registration PDF</a>
+              <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
+              <a class="btn" href="initiatives.html" id="workBtn">Our Initiatives</a>
+            </div>
+
+            <div class="card" style="margin-top:16px">
+              <b id="quick">Quick Info</b>
+              <p class="small muted" id="addr">
+                481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
+              </p>
+              <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
+              <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+            </div>
           </div>
 
-          <div class="btnRow">
-            <a class="btn secondary" href="documents.html" id="docsBtn">Registration PDF</a>
+          <div class="card">
+            <b id="regTitle">पंजीकरण विवरण</b>
+            <p class="small muted" style="margin-top:10px" id="regD">
+              Registration No.: <b>FAT/02340/2024-2025</b><br>
+              Date: <b>05/07/2024</b><br>
+              Valid: <b>04/07/2029</b><br>
+              PAN: <b>AANAB2855N</b>
+            </p>
 
-            <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
-
+            <div class="btnRow">
+              <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
+              <a class="btn secondary" href="about.html" id="aboutBtn">About Us</a>
+              <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
+            </div>
           </div>
+
         </div>
 
-        <div class="card">
-          <b id="quick">Quick Info</b>
-          <p class="small muted" id="addr" style="margin-top:10px"></p>
-          <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
-          <p class="small muted"><b id="emLbl">Email:</b> sheopratapsingh243@gmail.com</p>
+        <div class="miniGrid">
+          <div class="card">
+            <h2 id="mini1t">हमारा उद्देश्य</h2>
+            <p class="muted small" id="mini1d">
+              समाज के जरूरतमंद वर्गों तक शिक्षा, स्वास्थ्य, जागरूकता, सेवा और अवसर पहुँचाना तथा आत्मनिर्भर भारत की दिशा में
+              वास्तविक परिवर्तन लाना।
+            </p>
+          </div>
 
-          <div class="sp14"></div>
-
-          <b id="regTitle">पंजीकरण विवरण</b>
-          <p class="small muted" style="margin-top:10px" id="regBody">
-            Registration No.: <b>FAT/02340/2024-2025</b><br>
-            Date: <b>05/07/2024</b><br>
-            Valid: <b>04/07/2029</b><br>
-            PAN: <b>AANAB2855N</b>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap">
-      <h2 id="aboutT">हमारे बारे में</h2>
-      <div class="titleLine"></div>
-
-      <div class="two">
-        <div class="card">
-          <p id="aboutD"></p>
-          <p id="aboutD2"></p>
-          <p id="aboutD3"></p>
-        </div>
-
-        <div class="card">
-          <b id="visionT">Vision</b>
-          <p class="muted small" id="visionD"></p>
-
-          <div class="sp14"></div>
-
-          <b id="missionT">Mission</b>
-          <p class="muted small" id="missionD"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work">
-    <div class="wrap">
-      <h2 id="workT">हमारे प्रयास</h2>
-      <div class="titleLine"></div>
-      <p class="muted" id="workSub"></p>
-
-      <div class="workGrid">
-
-        <div class="card workCard">
-          <div class="workIcon">📚</div>
-          <b id="w1t"></b>
-          <p class="small muted" id="w1d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">🩺</div>
-          <b id="w2t"></b>
-          <p class="small muted" id="w2d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">👩‍🎓</div>
-          <b id="w3t"></b>
-          <p class="small muted" id="w3d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">🤝</div>
-          <b id="w4t"></b>
-          <p class="small muted" id="w4d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">🧑‍💻</div>
-          <b id="w5t"></b>
-          <p class="small muted" id="w5d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">🌱</div>
-          <b id="w6t"></b>
-          <p class="small muted" id="w6d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">🕉️</div>
-          <b id="w7t"></b>
-          <p class="small muted" id="w7d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">👴</div>
-          <b id="w8t"></b>
-          <p class="small muted" id="w8d"></p>
-        </div>
-
-        <div class="card workCard">
-          <div class="workIcon">🐄</div>
-          <b id="w9t"></b>
-          <p class="small muted" id="w9d"></p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DOCUMENTS -->
-  <section id="documents">
-    <div class="wrap">
-      <h2 id="docT"></h2>
-      <div class="titleLine"></div>
-
-      <div class="two">
-        <div class="card">
-          <b id="pdfT"></b>
-          <p class="small muted" id="pdfD"></p>
-          <div class="btnRow">
-            <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="pdfBtn"></a>
+          <div class="card">
+            <h2 id="mini2t">हमारा तरीका</h2>
+            <p class="muted small" id="mini2d">
+              हम जागरूकता अभियान, शिविर, प्रशिक्षण कार्यक्रम, जरूरतमंद सहायता, परामर्श और जनभागीदारी के माध्यम से
+              चरणबद्ध तरीके से कार्य करते हैं।
+            </p>
           </div>
         </div>
 
-        <div class="card">
-          <b id="memT"></b>
-          <p class="small muted" id="memD"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DONATE -->
-  <section id="donate">
-    <div class="wrap">
-      <h2 id="donT"></h2>
-      <div class="titleLine"></div>
-
-      <div class="two">
-        <div class="card">
-          <b id="don1"></b>
-          <p class="small muted" id="don2"></p>
-        </div>
-
-        <div class="card">
-          <b id="don3"></b>
-          <p class="small muted" id="don4"></p>
-          <div class="btnRow">
-            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waNow"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <h2 id="conT"></h2>
-      <div class="titleLine"></div>
-
-      <div class="two">
-        <div class="card">
-          <b id="con1"></b>
-          <p class="small muted" id="conAddr"></p>
-          <p class="small muted"><b id="phLbl2">फोन:</b> 8604669454, 7355181465</p>
-          <p class="small muted"><b id="emLbl2">Email:</b> sheopratapsingh243@gmail.com</p>
-
-          <div class="btnRow">
-            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
-            <a class="btn" href="mailto:sheopratapsingh243@gmail.com" id="mailBtn">Email</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <b id="formT"></b>
-          <p class="small muted" id="formD"></p>
-
-          <input id="fName" placeholder="">
-          <div class="sp10"></div>
-
-          <input id="fPhone" placeholder="">
-          <div class="sp10"></div>
-
-          <textarea id="fMsg" placeholder=""></textarea>
-
-          <button class="btn secondary" style="width:100%;margin-top:12px" type="button" id="submitDemo"></button>
-        </div>
       </div>
     </div>
   </section>
@@ -501,11 +281,11 @@
 
 <footer>
   <div class="wrap">
-    © <span id="year"></span> <span id="foot"></span> • 8604669454 • 7355181465
+    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waFloat">WhatsApp</a>
+<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
 <script>
   const ADDRESS_HI = "481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)";
@@ -515,177 +295,67 @@
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"Bharat Abhyudaya Sansthan",
+      m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+
+      kicker:"Registered Social Organization",
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
 
-      badges:{
-        b1:"📍 फतेहपुर (उ.प्र.)",
-        b2:"🧡 शिक्षा • स्वास्थ्य • सशक्तिकरण",
-        b3:"🕉️ संस्कृति • विरासत • सनातन"
-      },
+      tags:["Education","Health","Women Empowerment","Welfare","Culture","Gaushala"],
 
-      menu:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
       docsBtn:"Registration PDF",
-      join:"हमसे जुड़ें",
+      joinBtn:"हमसे जुड़ें",
+      workBtn:"Our Initiatives",
+
       quick:"Quick Info",
+      ph:"फोन:",
+
       regTitle:"पंजीकरण विवरण",
 
-      aboutT:"हमारे बारे में",
-      aboutD:"भारत अभ्युदय संस्थान एक पंजीकृत सामाजिक संस्था है, जो समाज के कमजोर, जरूरतमंद और उपेक्षित वर्गों के लिए शिक्षा, स्वास्थ्य, जागरूकता, महिला सशक्तिकरण, जनकल्याण, सनातन संरक्षण एवं सांस्कृतिक विरासत संरक्षण जैसे क्षेत्रों में निरंतर कार्य कर रही है।",
-      aboutD2:"हमारा उद्देश्य केवल सहायता करना नहीं, बल्कि लोगों को आत्मनिर्भर बनाना, उन्हें अवसर देना, और समाज में सकारात्मक परिवर्तन लाना है।",
-      aboutD3:"संस्था पारदर्शिता, सेवा-भाव, अनुशासन और सामाजिक उत्तरदायित्व के सिद्धांतों पर आधारित है। हम समाज के हर उस व्यक्ति को साथ जोड़ना चाहते हैं जो सेवा और राष्ट्र निर्माण में योगदान देना चाहता है।",
+      donBtn:"Donate",
+      aboutBtn:"About Us",
+      waBtn:"WhatsApp",
 
-      visionT:"दृष्टि (Vision)",
-      visionD:"एक ऐसा समाज जहाँ प्रत्येक व्यक्ति शिक्षा, स्वास्थ्य, सम्मान, सुरक्षा और अवसर के साथ आत्मनिर्भर जीवन जी सके।",
+      mini1t:"हमारा उद्देश्य",
+      mini1d:"समाज के जरूरतमंद वर्गों तक शिक्षा, स्वास्थ्य, जागरूकता, सेवा और अवसर पहुँचाना तथा आत्मनिर्भर भारत की दिशा में वास्तविक परिवर्तन लाना।",
 
-      missionT:"लक्ष्य (Mission)",
-      missionD:"सेवा, जागरूकता, प्रशिक्षण और सहयोग के माध्यम से समाज में स्थायी सकारात्मक परिवर्तन लाना तथा ‘आत्मनिर्भर भारत’ की दिशा में योगदान देना।",
+      mini2t:"हमारा तरीका",
+      mini2d:"हम जागरूकता अभियान, शिविर, प्रशिक्षण कार्यक्रम, जरूरतमंद सहायता, परामर्श और जनभागीदारी के माध्यम से चरणबद्ध तरीके से कार्य करते हैं।",
 
-      workT:"हमारे प्रयास",
-      workSub:"समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण, संस्कृति तथा पशु कल्याण से जुड़े प्रमुख कार्य",
-
-      w1t:"शिक्षा सहायता",
-      w1d:"हम बच्चों एवं युवाओं को गुणवत्तापूर्ण शिक्षा से जोड़ने के लिए कार्य करते हैं। इसके अंतर्गत शिक्षा मार्गदर्शन, प्रतियोगी परीक्षाओं की तैयारी, पुस्तक/स्टडी मटेरियल सहायता, डिजिटल साक्षरता तथा करियर काउंसलिंग जैसे प्रयास किए जाते हैं।",
-
-      w2t:"स्वास्थ्य एवं जागरूकता",
-      w2d:"संस्था द्वारा स्वास्थ्य जागरूकता अभियान, निःशुल्क चिकित्सा शिविर, रक्तदान कार्यक्रम, पोषण जागरूकता, स्वच्छता संदेश तथा जरूरतमंदों को प्राथमिक चिकित्सा/सहायता उपलब्ध कराने जैसे कार्य किए जाते हैं।",
-
-      w3t:"महिला सशक्तिकरण",
-      w3d:"हम महिलाओं को आत्मनिर्भर, सुरक्षित और सम्मानजनक जीवन की ओर आगे बढ़ाने हेतु जागरूकता, कौशल प्रशिक्षण, स्वरोजगार सहायता, शिक्षा सहयोग तथा अधिकारों के प्रति जागरूकता कार्यक्रम संचालित करते हैं।",
-
-      w4t:"गरीब एवं जरूरतमंद सहायता",
-      w4d:"हम जरूरतमंद परिवारों को भोजन, वस्त्र, शिक्षा सामग्री, दवा, आपदा राहत, तथा दैनिक आवश्यक सहायता प्रदान करते हैं, जिससे मानवता और सेवा का भाव समाज में मजबूत हो।",
-
-      w5t:"रोजगार एवं कौशल विकास",
-      w5d:"हम युवाओं को कौशल प्रशिक्षण, मार्गदर्शन, करियर सपोर्ट, तकनीकी प्रशिक्षण, तथा स्वरोजगार/उद्यमिता को बढ़ावा देने वाली गतिविधियों के माध्यम से आत्मनिर्भर बनाने हेतु कार्य करते हैं।",
-
-      w6t:"पर्यावरण, स्वच्छता एवं जल संरक्षण",
-      w6d:"स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण, और जनभागीदारी आधारित कार्यक्रमों के माध्यम से हम स्वच्छ और हरित समाज के निर्माण में योगदान देते हैं।",
-
-      w7t:"संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण",
-      w7d:"हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार और राष्ट्रीय चेतना को सशक्त करने हेतु सांस्कृतिक जागरूकता, परंपरा संरक्षण, धरोहर/हेरिटेज संरक्षण एवं सद्भाव कार्यक्रम आयोजित करते हैं।",
-
-      w8t:"वृद्धजन सेवा एवं सामाजिक कल्याण",
-      w8d:"हम वरिष्ठ नागरिकों को सम्मान और सहयोग देने के लिए प्रतिबद्ध हैं। भविष्य में वृद्ध सहायता केंद्र/वृद्धाश्रम (Old Age Home) जैसी सामाजिक पहल को मजबूत करने की दिशा में भी कार्य किया जाएगा।",
-
-      w9t:"गौ-सेवा, गौशाला एवं पशु कल्याण",
-      w9d:"हम गौ-सेवा, गौ-सुरक्षा एवं गौ-संरक्षण के साथ पशु कल्याण को भी महत्वपूर्ण मानते हैं। निराश्रित/आवारा पशुओं (गाय, कुत्ते आदि) की देखभाल, भोजन, उपचार, टीकाकरण जागरूकता तथा आवश्यक सहायता उपलब्ध कराई जाती है। आवश्यकता पड़ने पर गौशाला/पशु आश्रय (Shelter Home) की स्थापना या सहयोग भी किया जा सकता है।",
-
-      docT:"दस्तावेज़",
-      pdfT:"Registration & Bylaws (PDF)",
-      pdfD:"संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।",
-      pdfBtn:"PDF Open / Download",
-      memT:"सदस्यता",
-      memD:"आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201",
-
-      donT:"दान / सहयोग",
-      don1:"Donate (Coming Soon)",
-      don2:"UPI ID, QR Code और Bank Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।",
-      don3:"WhatsApp पर सहायता",
-      don4:"दान/सहयोग की जानकारी के लिए WhatsApp पर संदेश करें।",
-      waNow:"WhatsApp Now",
-
-      conT:"संपर्क करें",
-      con1:"संपर्क विवरण",
-      formT:"संदेश (Demo)",
-      formD:"यह demo form है। Future में इसे active कर देंगे।",
-      fName:"आपका नाम",
-      fPhone:"मोबाइल नंबर",
-      fMsg:"आपका संदेश",
-      submit:"Submit (Demo)",
-
-      ph:"फोन:",
-      addrLabel:"पता:",
-      foot:"भारत अभ्युदय संस्थान",
-      email:"Email:"
+      foot:"भारत अभ्युदय संस्थान"
     },
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Registered Social Organization",
+      m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+
+      kicker:"Registered Social Organization",
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
 
-      badges:{
-        b1:"📍 Fatehpur (U.P.)",
-        b2:"🧡 Education • Health • Empowerment",
-        b3:"🕉️ Culture • Heritage • Sanatan"
-      },
+      tags:["Education","Health","Women Empowerment","Welfare","Environment","Heritage"],
 
-      menu:{a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
       docsBtn:"Registration PDF",
-      join:"Get Involved",
+      joinBtn:"Get Involved",
+      workBtn:"Our Initiatives",
+
       quick:"Quick Info",
+      ph:"Phone:",
+
       regTitle:"Registration Details",
 
-      aboutT:"About Us",
-      aboutD:"Bharat Abhyudaya Sansthan is a registered social organization dedicated to uplifting society through education, health support, awareness initiatives, women empowerment, public welfare, Sanatan protection, heritage conservation and community service.",
-      aboutD2:"Our mission is not only to provide help, but to create long-term impact by empowering individuals and communities to become self-reliant and confident.",
-      aboutD3:"The organization stands on the principles of transparency, service, discipline, and social responsibility. We welcome everyone who wishes to contribute to social change and nation-building.",
+      donBtn:"Donate",
+      aboutBtn:"About Us",
+      waBtn:"WhatsApp",
 
-      visionT:"Vision",
-      visionD:"A society where every individual can live with education, health, dignity, safety and equal opportunity.",
+      mini1t:"Our Purpose",
+      mini1d:"To deliver education, health support, awareness, service and opportunities to the sections of society that need them most — and create real impact towards a self-reliant India.",
 
-      missionT:"Mission",
-      missionD:"To create sustainable positive change through service, awareness, training and support—contributing to a Self-Reliant India.",
+      mini2t:"How We Work",
+      mini2d:"We work through awareness drives, camps, training programs, support for the needy, guidance and strong community participation.",
 
-      workT:"Our Initiatives",
-      workSub:"Our key focus areas across education, health, empowerment, service, environment, culture and animal welfare",
-
-      w1t:"Education Support",
-      w1d:"We work to connect children and youth with quality education and meaningful opportunities through guidance, exam support, learning resources, digital literacy and mentorship.",
-
-      w2t:"Health & Awareness",
-      w2d:"We conduct health awareness drives, free medical camps, blood donation initiatives, nutrition awareness programs, hygiene campaigns, and support for people in need.",
-
-      w3t:"Women Empowerment",
-      w3d:"We empower women through awareness programs, skill training, self-employment support, educational assistance, and initiatives focused on dignity, safety and participation.",
-
-      w4t:"Support for the Poor & Needy",
-      w4d:"We provide essential help such as food, clothing, educational materials, medicines, emergency relief, and basic support to families facing hardship.",
-
-      w5t:"Employment & Skill Development",
-      w5d:"We build self-reliant youth through skill training, career guidance, employability support, technical training and promoting entrepreneurship.",
-
-      w6t:"Environment, Cleanliness & Water Conservation",
-      w6d:"We organize cleanliness campaigns, plantation drives, plastic-free awareness, water conservation initiatives and public participation programs for a greener future.",
-
-      w7t:"Culture, Sanatan Protection & Heritage Conservation",
-      w7d:"We promote Indian culture, Sanatan values, social ethics, heritage preservation and awareness about traditions and historical assets.",
-
-      w8t:"Elderly Care & Social Welfare",
-      w8d:"We support senior citizens through welfare initiatives, service activities, and long-term efforts such as elderly support centers or old age homes where required.",
-
-      w9t:"Cow Service, Gaushala & Animal Welfare",
-      w9d:"We support cow service, protection and conservation as a social responsibility. We also help stray and abandoned animals (cows, dogs and others) with food support, medical care and basic assistance. Where required, we may establish or support gaushalas and shelter homes for proper care and safety.",
-
-      docT:"Documents",
-      pdfT:"Registration & Bylaws (PDF)",
-      pdfD:"Official registration certificate and bylaws of the organization.",
-      pdfBtn:"Open / Download PDF",
-      memT:"Membership",
-      memD:"Lifetime Member: ₹10,000 | General Member: ₹201",
-
-      donT:"Donate / Support",
-      don1:"Donate (Coming Soon)",
-      don2:"UPI ID, QR Code and Bank Details will be updated on the website soon.",
-      don3:"Support on WhatsApp",
-      don4:"Message us on WhatsApp for donation/support details.",
-      waNow:"WhatsApp Now",
-
-      conT:"Contact Us",
-      con1:"Contact Details",
-      formT:"Message (Demo)",
-      formD:"This is a demo form. We will enable it in future.",
-      fName:"Your Name",
-      fPhone:"Mobile Number",
-      fMsg:"Your Message",
-      submit:"Submit (Demo)",
-
-      ph:"Phone:",
-      addrLabel:"Address:",
-      foot:"Bharat Abhyudaya Sansthan",
-      email:"Email:"
+      foot:"Bharat Abhyudaya Sansthan"
     }
   };
 
@@ -695,109 +365,61 @@
 
     document.getElementById("brandText").textContent=d.brand;
     document.getElementById("brandSub").textContent=d.sub;
+
+    document.getElementById("mAbout").textContent=d.m.a;
+    document.getElementById("mWork").textContent=d.m.w;
+    document.getElementById("mDocs").textContent=d.m.d;
+    document.getElementById("mDonate").textContent=d.m.dn;
+    document.getElementById("mContact").textContent=d.m.c;
+
+    document.getElementById("kicker").textContent=d.kicker;
     document.getElementById("title").textContent=d.title;
     document.getElementById("tagline").textContent=d.tagline;
 
-    document.getElementById("b1").textContent=d.badges.b1;
-    document.getElementById("b2").textContent=d.badges.b2;
-    document.getElementById("b3").textContent=d.badges.b3;
-
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mContact").textContent=d.menu.c;
+    const tags=document.getElementById("tags");
+    tags.innerHTML="";
+    d.tags.forEach((x,i)=>{
+      const s=document.createElement("span");
+      s.className="tag "+(i%3===1?"orange":(i%3===2?"green":""));
+      s.textContent=x;
+      tags.appendChild(s);
+    });
 
     document.getElementById("docsBtn").textContent=d.docsBtn;
-    document.getElementById("joinBtn").textContent=d.join;
+    document.getElementById("joinBtn").textContent=d.joinBtn;
+    document.getElementById("workBtn").textContent=d.workBtn;
+
     document.getElementById("quick").textContent=d.quick;
-    document.getElementById("regTitle").textContent=d.regTitle;
-
-    document.getElementById("aboutT").textContent=d.aboutT;
-    document.getElementById("aboutD").textContent=d.aboutD;
-    document.getElementById("aboutD2").textContent=d.aboutD2;
-    document.getElementById("aboutD3").textContent=d.aboutD3;
-
-    document.getElementById("visionT").textContent=d.visionT;
-    document.getElementById("visionD").textContent=d.visionD;
-    document.getElementById("missionT").textContent=d.missionT;
-    document.getElementById("missionD").textContent=d.missionD;
-
-    document.getElementById("workT").textContent=d.workT;
-    document.getElementById("workSub").textContent=d.workSub;
-
-    document.getElementById("w1t").textContent=d.w1t;
-    document.getElementById("w1d").textContent=d.w1d;
-
-    document.getElementById("w2t").textContent=d.w2t;
-    document.getElementById("w2d").textContent=d.w2d;
-
-    document.getElementById("w3t").textContent=d.w3t;
-    document.getElementById("w3d").textContent=d.w3d;
-
-    document.getElementById("w4t").textContent=d.w4t;
-    document.getElementById("w4d").textContent=d.w4d;
-
-    document.getElementById("w5t").textContent=d.w5t;
-    document.getElementById("w5d").textContent=d.w5d;
-
-    document.getElementById("w6t").textContent=d.w6t;
-    document.getElementById("w6d").textContent=d.w6d;
-
-    document.getElementById("w7t").textContent=d.w7t;
-    document.getElementById("w7d").textContent=d.w7d;
-
-    document.getElementById("w8t").textContent=d.w8t;
-    document.getElementById("w8d").textContent=d.w8d;
-
-    document.getElementById("w9t").textContent=d.w9t;
-    document.getElementById("w9d").textContent=d.w9d;
-
-    document.getElementById("docT").textContent=d.docT;
-    document.getElementById("pdfT").textContent=d.pdfT;
-    document.getElementById("pdfD").textContent=d.pdfD;
-    document.getElementById("pdfBtn").textContent=d.pdfBtn;
-    document.getElementById("memT").textContent=d.memT;
-    document.getElementById("memD").textContent=d.memD;
-
-    document.getElementById("donT").textContent=d.donT;
-    document.getElementById("don1").textContent=d.don1;
-    document.getElementById("don2").textContent=d.don2;
-    document.getElementById("don3").textContent=d.don3;
-    document.getElementById("don4").textContent=d.don4;
-    document.getElementById("waNow").textContent=d.waNow;
-
-    document.getElementById("conT").textContent=d.conT;
-    document.getElementById("con1").textContent=d.con1;
-    document.getElementById("formT").textContent=d.formT;
-    document.getElementById("formD").textContent=d.formD;
-
-    document.getElementById("fName").placeholder=d.fName;
-    document.getElementById("fPhone").placeholder=d.fPhone;
-    document.getElementById("fMsg").placeholder=d.fMsg;
-    document.getElementById("submitDemo").textContent=d.submit;
-
     document.getElementById("phLbl").textContent=d.ph;
-    document.getElementById("phLbl2").textContent=d.ph;
-
-    document.getElementById("emLbl").textContent=d.email;
-    document.getElementById("emLbl2").textContent=d.email;
 
     document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
-    document.getElementById("conAddr").innerHTML="<b>"+d.addrLabel+"</b> "+((lang==="hi")?ADDRESS_HI:ADDRESS_EN);
+
+    document.getElementById("regTitle").textContent=d.regTitle;
+
+    document.getElementById("donBtn").textContent=d.donBtn;
+    document.getElementById("aboutBtn").textContent=d.aboutBtn;
+    document.getElementById("waBtn").textContent=d.waBtn;
+
+    document.getElementById("mini1t").textContent=d.mini1t;
+    document.getElementById("mini1d").textContent=d.mini1d;
+
+    document.getElementById("mini2t").textContent=d.mini2t;
+    document.getElementById("mini2d").textContent=d.mini2d;
 
     document.getElementById("foot").textContent=d.foot;
   }
 
-  const btnHi=document.getElementById("btnHi");
-  const btnEn=document.getElementById("btnEn");
+  const btnHi = document.getElementById("btnHi");
+  const btnEn = document.getElementById("btnEn");
 
   btnHi.addEventListener("click",()=>{
-    btnHi.classList.add("active"); btnEn.classList.remove("active");
+    btnHi.classList.add("active");
+    btnEn.classList.remove("active");
     setLang("hi");
   });
   btnEn.addEventListener("click",()=>{
-    btnEn.classList.add("active"); btnHi.classList.remove("active");
+    btnEn.classList.add("active");
+    btnHi.classList.remove("active");
     setLang("en");
   });
 
@@ -807,5 +429,3 @@
 
 </body>
 </html>
-
-
