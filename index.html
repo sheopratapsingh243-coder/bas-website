@@ -33,9 +33,10 @@
     section{padding:28px 0}
     h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
     h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    p{margin:10px 0 0; line-height:1.65}
+    p{margin:10px 0 0; line-height:1.7}
     .muted{color:var(--muted)}
     .small{font-size:14px}
+    .sp8{height:8px}
 
     header{
       position:sticky;top:0;z-index:50;
@@ -75,10 +76,19 @@
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:950px){.grid{grid-template-columns:1.15fr .85fr;gap:22px}}
     .two{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:950px){.two{grid-template-columns:1fr 1fr}}
+
     .three{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:950px){.three{grid-template-columns:1fr 1fr 1fr}}
+
+    .workGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:14px;
+    }
     @media(min-width:950px){
-      .two{grid-template-columns:1fr 1fr}
-      .three{grid-template-columns:1fr 1fr 1fr}
+      .workGrid{grid-template-columns:1fr 1fr}
     }
 
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
@@ -198,19 +208,50 @@
 
   <section id="work">
     <div class="wrap">
-      <h2 id="workT">हमारा कार्य</h2>
-      <div class="three">
+      <h2 id="workT">हमारे प्रयास</h2>
+      <p class="muted" id="workSub">
+        समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण एवं संस्कृति से जुड़े प्रमुख कार्य
+      </p>
+
+      <div class="workGrid">
         <div class="card">
           <b id="w1t">शिक्षा सहायता</b>
-          <p class="small muted" id="w1d">बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।</p>
+          <p class="small muted" id="w1d"></p>
         </div>
+
         <div class="card">
           <b id="w2t">स्वास्थ्य एवं जागरूकता</b>
-          <p class="small muted" id="w2d">स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।</p>
+          <p class="small muted" id="w2d"></p>
         </div>
+
         <div class="card">
-          <b id="w3t">संस्कृति एवं विरासत</b>
-          <p class="small muted" id="w3d">सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।</p>
+          <b id="w3t">महिला सशक्तिकरण</b>
+          <p class="small muted" id="w3d"></p>
+        </div>
+
+        <div class="card">
+          <b id="w4t">गरीब एवं जरूरतमंद सहायता</b>
+          <p class="small muted" id="w4d"></p>
+        </div>
+
+        <div class="card">
+          <b id="w5t">रोजगार एवं कौशल विकास</b>
+          <p class="small muted" id="w5d"></p>
+        </div>
+
+        <div class="card">
+          <b id="w6t">पर्यावरण, स्वच्छता एवं जल संरक्षण</b>
+          <p class="small muted" id="w6d"></p>
+        </div>
+
+        <div class="card">
+          <b id="w7t">संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण</b>
+          <p class="small muted" id="w7d"></p>
+        </div>
+
+        <div class="card">
+          <b id="w8t">वृद्धजन सेवा एवं सामाजिक कल्याण</b>
+          <p class="small muted" id="w8d"></p>
         </div>
       </div>
     </div>
@@ -222,7 +263,7 @@
       <div class="two">
         <div class="card">
           <b id="pdfT">Registration & Bylaws (PDF)</b>
-          <p class="small muted" id="pdfD">संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।</p>
+          <p class="small muted" id="pdfD"></p>
           <div class="btnRow">
             <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="pdfBtn">
               PDF Open / Download
@@ -231,7 +272,7 @@
         </div>
         <div class="card">
           <b id="memT">सदस्यता</b>
-          <p class="small muted" id="memD">आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201</p>
+          <p class="small muted" id="memD"></p>
         </div>
       </div>
     </div>
@@ -243,11 +284,11 @@
       <div class="two">
         <div class="card">
           <b id="don1">Donate (Coming Soon)</b>
-          <p class="small muted" id="don2">UPI ID, QR Code और Bank Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।</p>
+          <p class="small muted" id="don2"></p>
         </div>
         <div class="card">
           <b id="don3">WhatsApp पर सहायता</b>
-          <p class="small muted" id="don4">दान/सहयोग की जानकारी के लिए WhatsApp पर संदेश करें।</p>
+          <p class="small muted" id="don4"></p>
           <div class="btnRow">
             <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waNow">WhatsApp Now</a>
           </div>
@@ -274,13 +315,13 @@
 
         <div class="card">
           <b id="formT">संदेश (Demo)</b>
-          <p class="small muted" id="formD">यह demo form है। Future में इसे active कर देंगे।</p>
+          <p class="small muted" id="formD"></p>
 
           <input id="fName" placeholder="आपका नाम">
-          <div style="height:10px"></div>
+          <div class="sp8"></div>
 
           <input id="fPhone" placeholder="मोबाइल नंबर">
-          <div style="height:10px"></div>
+          <div class="sp8"></div>
 
           <textarea id="fMsg" placeholder="आपका संदेश"></textarea>
 
@@ -296,7 +337,7 @@
 
 <footer>
   <div class="wrap">
-    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
+    © <span id="year"></span> <span id="foot"></span> • 8604669454 • 7355181465
   </div>
 </footer>
 
@@ -312,7 +353,8 @@
       sub:"Bharat Abhyudaya Sansthan",
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{a:"परिचय",w:"कार्य",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+
+      menu:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
       docsBtn:"Registration PDF",
       join:"हमसे जुड़ें",
       quick:"Quick Info",
@@ -323,10 +365,32 @@
       aboutD2:"हमारा उद्देश्य केवल सहायता करना नहीं, बल्कि लोगों को आत्मनिर्भर बनाना, उन्हें अवसर देना, और समाज में सकारात्मक परिवर्तन लाना है।",
       aboutD3:"संस्था पारदर्शिता, सेवा-भाव, अनुशासन और सामाजिक उत्तरदायित्व के सिद्धांतों पर आधारित है। हम समाज के हर उस व्यक्ति को साथ जोड़ना चाहते हैं जो सेवा और राष्ट्र निर्माण में योगदान देना चाहता है।",
 
-      workT:"हमारा कार्य",
-      w1t:"शिक्षा सहायता", w1d:"बच्चों एवं युवाओं के लिए शिक्षा, मार्गदर्शन और संसाधन सहायता।",
-      w2t:"स्वास्थ्य एवं जागरूकता", w2d:"स्वास्थ्य जागरूकता, कैंप एवं जरूरतमंदों को सहायता।",
-      w3t:"संस्कृति एवं विरासत", w3d:"सनातन संरक्षण, सामाजिक संस्कार एवं विरासत संरक्षण।",
+      workT:"हमारे प्रयास",
+      workSub:"समाज के उत्थान हेतु शिक्षा, स्वास्थ्य, सशक्तिकरण, सेवा, पर्यावरण एवं संस्कृति से जुड़े प्रमुख कार्य",
+
+      w1t:"शिक्षा सहायता",
+      w1d:"हम बच्चों एवं युवाओं को गुणवत्तापूर्ण शिक्षा से जोड़ने के लिए कार्य करते हैं। इसके अंतर्गत शिक्षा मार्गदर्शन, प्रतियोगी परीक्षाओं की तैयारी, पुस्तक/स्टडी मटेरियल सहायता, डिजिटल साक्षरता तथा करियर काउंसलिंग जैसे प्रयास किए जाते हैं, ताकि हर विद्यार्थी आत्मविश्वास के साथ आगे बढ़ सके।",
+
+      w2t:"स्वास्थ्य एवं जागरूकता",
+      w2d:"हम स्वास्थ्य को समाज की प्राथमिक आवश्यकता मानते हैं। संस्था द्वारा स्वास्थ्य जागरूकता अभियान, निःशुल्क चिकित्सा शिविर, रक्तदान कार्यक्रम, पोषण जागरूकता, स्वच्छता संदेश तथा जरूरतमंदों को प्राथमिक चिकित्सा/सहायता उपलब्ध कराने जैसे कार्य किए जाते हैं।",
+
+      w3t:"महिला सशक्तिकरण",
+      w3d:"हम महिलाओं को आत्मनिर्भर, सुरक्षित और सम्मानजनक जीवन की ओर आगे बढ़ाने हेतु कार्य करते हैं। इसके लिए जागरूकता अभियान, कौशल प्रशिक्षण, स्वरोजगार सहायता, शिक्षा सहयोग तथा महिलाओं के अधिकारों एवं सामाजिक सहभागिता को मजबूत करने वाली गतिविधियाँ संचालित की जाती हैं।",
+
+      w4t:"गरीब एवं जरूरतमंद सहायता",
+      w4d:"संस्था का उद्देश्य संकट के समय किसी भी जरूरतमंद को अकेला न छोड़ना है। हम जरूरतमंद परिवारों को भोजन, वस्त्र, शिक्षा सामग्री, दवा, आपदा राहत, तथा दैनिक आवश्यक सहायता प्रदान करते हैं, जिससे मानवता और सेवा का भाव समाज में मजबूत हो।",
+
+      w5t:"रोजगार एवं कौशल विकास",
+      w5d:"हम युवाओं को केवल रोजगार खोजने वाला नहीं, बल्कि रोजगार देने वाला बनाने के लिए प्रयासरत हैं। संस्था द्वारा कौशल प्रशिक्षण, मार्गदर्शन, करियर सपोर्ट, तकनीकी प्रशिक्षण, तथा स्वरोजगार/उद्यमिता को बढ़ावा देने वाली गतिविधियाँ की जाती हैं।",
+
+      w6t:"पर्यावरण, स्वच्छता एवं जल संरक्षण",
+      w6d:"हम स्वच्छ, हरित और स्वस्थ समाज के निर्माण के लिए पर्यावरण संरक्षण को महत्वपूर्ण मानते हैं। संस्था द्वारा स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण, और जनभागीदारी आधारित कार्यक्रम आयोजित किए जाते हैं।",
+
+      w7t:"संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण",
+      w7d:"हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार और राष्ट्रीय चेतना को सशक्त करने हेतु कार्य करते हैं। संस्था द्वारा सांस्कृतिक जागरूकता, परंपराओं का संरक्षण, धरोहर/हेरिटेज संरक्षण, सामाजिक सद्भाव तथा नैतिक मूल्यों को बढ़ावा देने वाले कार्यक्रम आयोजित किए जाते हैं।",
+
+      w8t:"वृद्धजन सेवा एवं सामाजिक कल्याण",
+      w8d:"हम समाज के वरिष्ठ नागरिकों को सम्मान और सहयोग देने के लिए प्रतिबद्ध हैं। इसके अंतर्गत वृद्धजन सहायता, सेवा कार्य, जरूरतमंद वृद्धों को सहयोग, तथा भविष्य में वृद्ध सहायता केंद्र/वृद्धाश्रम जैसी सामाजिक पहल को मजबूत करने की दिशा में कार्य किया जाता है।",
 
       docT:"दस्तावेज़",
       pdfT:"Registration & Bylaws (PDF)",
@@ -362,7 +426,8 @@
       sub:"Registered Social Organization",
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
-      menu:{a:"About",w:"Work",d:"Documents",dn:"Donate",c:"Contact"},
+
+      menu:{a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
       docsBtn:"Registration PDF",
       join:"Get Involved",
       quick:"Quick Info",
@@ -373,10 +438,32 @@
       aboutD2:"Our mission is not only to provide help, but to create long-term impact by empowering individuals and communities to become self-reliant and confident.",
       aboutD3:"The organization stands on the principles of transparency, service, discipline, and social responsibility. We welcome everyone who wishes to contribute to social change and nation-building.",
 
-      workT:"Our Work",
-      w1t:"Education Support", w1d:"Education, guidance and resource support for children and youth.",
-      w2t:"Health & Awareness", w2d:"Health awareness, camps and support for people in need.",
-      w3t:"Culture & Heritage", w3d:"Sanatan protection, social values and heritage conservation.",
+      workT:"Our Initiatives",
+      workSub:"Our key focus areas across education, health, empowerment, service, environment and culture",
+
+      w1t:"Education Support",
+      w1d:"We work to connect children and youth with quality education and meaningful opportunities. Our initiatives include academic guidance, exam preparation support, study resources, digital literacy programs, and career mentorship—so that every student can move forward with confidence and direction.",
+
+      w2t:"Health & Awareness",
+      w2d:"We believe that a healthy society is the foundation of a strong nation. Our organization conducts health awareness drives, free medical camps, blood donation initiatives, nutrition awareness programs, hygiene campaigns, and support for people in need—ensuring that basic health support reaches the underserved.",
+
+      w3t:"Women Empowerment",
+      w3d:"We are committed to empowering women to live with dignity, safety, and self-reliance. Through awareness programs, skill training, self-employment support, educational assistance, and community participation initiatives, we aim to strengthen women’s role in society and build a more balanced, inclusive future.",
+
+      w4t:"Support for the Poor & Needy",
+      w4d:"Our mission is to ensure that no person is left helpless during hardship. We provide essential support such as food, clothing, educational materials, medicines, emergency relief, and basic assistance to families facing difficulties—building a culture of compassion, service, and responsibility.",
+
+      w5t:"Employment & Skill Development",
+      w5d:"We aim to transform youth into skilled and self-reliant individuals. Our initiatives focus on skill development, career guidance, employability support, technical training, and promoting entrepreneurship—helping youth become job-ready and, eventually, job-creators.",
+
+      w6t:"Environment, Cleanliness & Water Conservation",
+      w6d:"We work towards a clean, green, and sustainable society. Our efforts include cleanliness drives, plantation campaigns, plastic-free awareness, water conservation initiatives, and community participation programs—encouraging citizens to protect nature and build a healthier environment.",
+
+      w7t:"Culture, Sanatan Protection & Heritage Conservation",
+      w7d:"We actively promote Indian culture, Sanatan values, social ethics, and national consciousness. Our initiatives support cultural awareness, preservation of traditions, heritage conservation, social harmony, and value-based programs that strengthen our identity and connect society to its roots.",
+
+      w8t:"Elderly Care & Social Welfare",
+      w8d:"We are dedicated to supporting senior citizens with respect and care. Our initiatives include welfare activities, assistance for needy elders, service-based programs, and long-term efforts towards strengthening social support systems—such as elderly support centers or similar initiatives where required.",
 
       docT:"Documents",
       pdfT:"Registration & Bylaws (PDF)",
@@ -434,12 +521,31 @@
     document.getElementById("aboutD3").textContent=d.aboutD3;
 
     document.getElementById("workT").textContent=d.workT;
+    document.getElementById("workSub").textContent=d.workSub;
+
     document.getElementById("w1t").textContent=d.w1t;
     document.getElementById("w1d").textContent=d.w1d;
+
     document.getElementById("w2t").textContent=d.w2t;
     document.getElementById("w2d").textContent=d.w2d;
+
     document.getElementById("w3t").textContent=d.w3t;
     document.getElementById("w3d").textContent=d.w3d;
+
+    document.getElementById("w4t").textContent=d.w4t;
+    document.getElementById("w4d").textContent=d.w4d;
+
+    document.getElementById("w5t").textContent=d.w5t;
+    document.getElementById("w5d").textContent=d.w5d;
+
+    document.getElementById("w6t").textContent=d.w6t;
+    document.getElementById("w6d").textContent=d.w6d;
+
+    document.getElementById("w7t").textContent=d.w7t;
+    document.getElementById("w7d").textContent=d.w7d;
+
+    document.getElementById("w8t").textContent=d.w8t;
+    document.getElementById("w8d").textContent=d.w8d;
 
     document.getElementById("docT").textContent=d.docT;
     document.getElementById("pdfT").textContent=d.pdfT;
