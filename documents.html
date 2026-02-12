@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Documents • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Bharat Abhyudaya Sansthan registration certificate and bylaws PDF." />
+  <meta name="description" content="Official documents — registration certificate and bylaws of Bharat Abhyudaya Sansthan." />
 
   <style>
     :root{
@@ -14,8 +14,8 @@
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 18px 45px rgba(2,6,23,.12);
-      --radius:22px;
-      --max:1150px;
+      --radius:24px;
+      --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,72 +26,86 @@
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.18), transparent 55%),
-        radial-gradient(800px 500px at 40% 110%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.12), transparent 55%),
         #fff;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:34px 0}
-    h1{margin:0;font-size:38px;letter-spacing:-.9px;line-height:1.1}
+    h1{margin:0;font-size:40px;letter-spacing:-1px;line-height:1.08}
     h2{margin:0;font-size:24px;letter-spacing:-.4px}
     p{margin:12px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
-    .kicker{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:7px 12px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.7);
-      font-weight:950;font-size:13px;
-    }
 
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.85);
-      backdrop-filter: blur(10px);
+      background:rgba(255,255,255,.86);
+      backdrop-filter: blur(12px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:12px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:230px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:260px}
     .logo{
-      width:44px;height:44px;border-radius:999px;
+      width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
     .brand b{display:block;font-size:14px;line-height:1.1}
     .brand span{display:block;font-size:12px;color:var(--muted)}
+    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
 
     .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
     .menu a{padding:8px 10px;border-radius:12px}
     .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
     @media(min-width:980px){.menu{display:flex}}
 
+    .homeIcon{
+      font-size:18px;
+      font-weight:950;
+      padding:8px 12px;
+      border-radius:12px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.9);
+      line-height:1;
+    }
+    .homeIcon:hover{
+      background:rgba(11,90,166,.08);
+      color:var(--brand);
+    }
+
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
+      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
+      color:#fff;border-color:transparent;
     }
 
-    .hero{padding:28px 0 0}
     .heroBox{
-      border-radius:28px;
+      border-radius:30px;
       border:1px solid rgba(226,232,240,.95);
       background:
-        radial-gradient(900px 420px at 15% 0%, rgba(245,139,31,.22), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.95));
+        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.24), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.20), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.97));
       box-shadow:var(--shadow);
       padding:22px;
-      overflow:hidden;
-      position:relative;
+    }
+
+    .kicker{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:7px 12px;border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.7);
+      font-weight:950;font-size:13px;
     }
 
     .grid{
@@ -105,14 +119,14 @@
     }
 
     .card{
-      background:rgba(255,255,255,.96);
+      background:rgba(255,255,255,.97);
       border:1px solid rgba(226,232,240,.95);
       border-radius:var(--radius);
       padding:18px;
       box-shadow:0 10px 30px rgba(2,6,23,.06);
     }
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
@@ -122,28 +136,17 @@
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
+      border-color:transparent;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
+      color:#fff;border-color:transparent;
     }
 
-    .pdfBox{
-      border:1px dashed rgba(148,163,184,.8);
-      border-radius:22px;
-      padding:16px;
-      background:rgba(2,6,23,.02);
-      margin-top:14px;
-    }
-    .pdfBox b{display:block}
-
-    .note{
-      border-left:4px solid var(--accent);
-      padding:12px 14px;
-      background:rgba(245,139,31,.07);
-      border-radius:16px;
-      margin-top:14px;
+    .line{
+      margin-top:12px;
+      border-top:1px dashed rgba(148,163,184,.65);
+      padding-top:12px;
     }
 
     .wa{
@@ -171,11 +174,13 @@
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
+          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
           <span id="brandSub">Bharat Abhyudaya Sansthan</span>
         </div>
       </a>
 
       <nav class="menu">
+        <a href="index.html" id="mHome" class="homeIcon" aria-label="Home" title="Home">⌂</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
@@ -193,70 +198,60 @@
 
 <main>
 
-  <section class="hero">
+  <section style="padding-top:28px">
     <div class="wrap">
       <div class="heroBox">
         <span class="kicker" id="kicker">Official Documents</span>
-        <h1 id="title" style="margin-top:10px">दस्तावेज़</h1>
+        <h1 style="margin-top:10px" id="title">दस्तावेज़</h1>
         <p class="muted" id="subtitle">
-          यहाँ संस्था के Registration Certificate और Bylaws उपलब्ध हैं।
-          आप इन्हें open या download कर सकते हैं।
+          इस पेज पर संस्था के आधिकारिक दस्तावेज़ उपलब्ध हैं। आप इन्हें देख सकते हैं और डाउनलोड भी कर सकते हैं।
         </p>
 
         <div class="grid">
 
           <div class="card">
             <h2 id="pdfT">Registration & Bylaws (PDF)</h2>
-
-            <div class="pdfBox">
-              <b id="pdfName">File:</b>
-              <p class="small muted" style="margin-top:8px" id="pdfPath">
-                assets/registration.pdf
-              </p>
-            </div>
+            <p class="small muted" id="pdfD">
+              संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।
+            </p>
 
             <div class="btnRow">
               <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="openBtn">
-                Open PDF
+                Open in New Tab
               </a>
               <a class="btn primary" href="./assets/registration.pdf" download id="downBtn">
                 Download PDF
               </a>
-              <a class="btn" href="donate.html" id="supportBtn">
-                Support Our Work
-              </a>
             </div>
 
-            <div class="note">
-              <b id="noteT">Note</b>
-              <p class="small muted" id="noteD">
-                यदि PDF open नहीं हो रहा हो, तो “Download PDF” पर क्लिक करें।
-                कुछ मोबाइल browsers में PDF download होकर files में खुलता है।
+            <div class="line">
+              <p class="small muted" id="pdfNote">
+                अगर PDF open नहीं हो रहा है, तो कृपया एक बार refresh करें या दूसरा browser try करें।
               </p>
             </div>
           </div>
 
           <div class="card">
-            <h2 id="regT">Registration Details</h2>
-            <p class="small muted" style="margin-top:10px" id="regD">
-              Registration No.: <b>FAT/02340/2024-2025</b><br>
-              Date: <b>05/07/2024</b><br>
-              Valid: <b>04/07/2029</b><br>
-              PAN: <b>AANAB2855N</b>
+            <h2 id="memT">सदस्यता</h2>
+            <p class="muted small" id="memD">
+              आप संस्था से जुड़कर सेवा कार्यों में सहयोग कर सकते हैं।
             </p>
 
-            <div class="btnRow">
-              <a class="btn secondary" href="about.html" id="aboutBtn">About Us</a>
-              <a class="btn" href="initiatives.html" id="workBtn">Our Initiatives</a>
-              <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">
-                WhatsApp
-              </a>
+            <div class="line">
+              <p class="muted small" id="memFees">
+                <b>आजीवन सदस्य:</b> ₹10,000<br>
+                <b>सामान्य सदस्य:</b> ₹201
+              </p>
             </div>
 
-            <div class="note">
-              <b id="trustT">Transparency</b>
-              <p class="small muted" id="trustD">
-                Bharat Abhyudaya Sansthan अपने सभी सेवा कार्यों में पारदर्शिता, अनुशासन और सामाजिक जिम्मेदारी को सर्वोच्च मानता है।
+            <div class="btnRow">
+              <a class="btn secondary" href="contact.html" id="joinBtn">Contact</a>
+              <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
+            </div>
+
+            <div class="line">
+              <p class="small muted" id="memNote">
+                Membership के लिए WhatsApp पर message करके प्रक्रिया जानें।
               </p>
             </div>
           </div>
@@ -281,58 +276,52 @@
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
+      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
       sub:"Bharat Abhyudaya Sansthan",
-      m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
       kicker:"Official Documents",
       title:"दस्तावेज़",
-      subtitle:"यहाँ संस्था के Registration Certificate और Bylaws उपलब्ध हैं। आप इन्हें open या download कर सकते हैं।",
+      subtitle:"इस पेज पर संस्था के आधिकारिक दस्तावेज़ उपलब्ध हैं। आप इन्हें देख सकते हैं और डाउनलोड भी कर सकते हैं।",
 
       pdfT:"Registration & Bylaws (PDF)",
-      pdfName:"File:",
-      openBtn:"PDF Open",
-      downBtn:"PDF Download",
-      supportBtn:"Support Our Work",
+      pdfD:"संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।",
+      openBtn:"Open in New Tab",
+      downBtn:"Download PDF",
+      pdfNote:"अगर PDF open नहीं हो रहा है, तो कृपया एक बार refresh करें या दूसरा browser try करें।",
 
-      noteT:"Note",
-      noteD:"यदि PDF open नहीं हो रहा हो, तो “PDF Download” पर क्लिक करें। कुछ मोबाइल browsers में PDF download होकर files में खुलता है।",
-
-      regT:"पंजीकरण विवरण",
-      aboutBtn:"About Us",
-      workBtn:"Our Initiatives",
-      waBtn:"WhatsApp",
-
-      trustT:"Transparency",
-      trustD:"Bharat Abhyudaya Sansthan अपने सभी सेवा कार्यों में पारदर्शिता, अनुशासन और सामाजिक जिम्मेदारी को सर्वोच्च मानता है।",
+      memT:"सदस्यता",
+      memD:"आप संस्था से जुड़कर सेवा कार्यों में सहयोग कर सकते हैं।",
+      memFees:"<b>आजीवन सदस्य:</b> ₹10,000<br><b>सामान्य सदस्य:</b> ₹201",
+      joinBtn:"Contact",
+      donBtn:"Donate",
+      memNote:"Membership के लिए WhatsApp पर message करके प्रक्रिया जानें।",
 
       foot:"भारत अभ्युदय संस्थान"
     },
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
+      brandTag:"Upliftment to Self-Reliant India",
       sub:"Registered Social Organization",
-      m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
       kicker:"Official Documents",
       title:"Documents",
-      subtitle:"Registration Certificate and Bylaws are available here. You can open or download the PDF.",
+      subtitle:"This page contains official documents of the organization. You can view and download them.",
 
       pdfT:"Registration & Bylaws (PDF)",
-      pdfName:"File:",
-      openBtn:"Open PDF",
+      pdfD:"Official registration certificate and bylaws of the organization.",
+      openBtn:"Open in New Tab",
       downBtn:"Download PDF",
-      supportBtn:"Support Our Work",
+      pdfNote:"If the PDF does not open, please refresh once or try another browser.",
 
-      noteT:"Note",
-      noteD:"If the PDF does not open, click “Download PDF”. On some mobile browsers the file downloads and opens in the files app.",
-
-      regT:"Registration Details",
-      aboutBtn:"About Us",
-      workBtn:"Our Initiatives",
-      waBtn:"WhatsApp",
-
-      trustT:"Transparency",
-      trustD:"Bharat Abhyudaya Sansthan values transparency, discipline and social responsibility in all service activities.",
+      memT:"Membership",
+      memD:"You can join the organization and support our service initiatives.",
+      memFees:"<b>Lifetime Member:</b> ₹10,000<br><b>General Member:</b> ₹201",
+      joinBtn:"Contact",
+      donBtn:"Donate",
+      memNote:"For membership, message us on WhatsApp to know the process.",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -343,8 +332,10 @@
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
     document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
+    document.getElementById("mHome").textContent=d.m.home;
     document.getElementById("mAbout").textContent=d.m.a;
     document.getElementById("mWork").textContent=d.m.w;
     document.getElementById("mDocs").textContent=d.m.d;
@@ -356,27 +347,22 @@
     document.getElementById("subtitle").textContent=d.subtitle;
 
     document.getElementById("pdfT").textContent=d.pdfT;
-    document.getElementById("pdfName").textContent=d.pdfName;
-
+    document.getElementById("pdfD").textContent=d.pdfD;
     document.getElementById("openBtn").textContent=d.openBtn;
     document.getElementById("downBtn").textContent=d.downBtn;
-    document.getElementById("supportBtn").textContent=d.supportBtn;
+    document.getElementById("pdfNote").textContent=d.pdfNote;
 
-    document.getElementById("noteT").textContent=d.noteT;
-    document.getElementById("noteD").textContent=d.noteD;
-
-    document.getElementById("regT").textContent=d.regT;
-    document.getElementById("aboutBtn").textContent=d.aboutBtn;
-    document.getElementById("workBtn").textContent=d.workBtn;
-    document.getElementById("waBtn").textContent=d.waBtn;
-
-    document.getElementById("trustT").textContent=d.trustT;
-    document.getElementById("trustD").textContent=d.trustD;
+    document.getElementById("memT").textContent=d.memT;
+    document.getElementById("memD").textContent=d.memD;
+    document.getElementById("memFees").innerHTML=d.memFees;
+    document.getElementById("joinBtn").textContent=d.joinBtn;
+    document.getElementById("donBtn").textContent=d.donBtn;
+    document.getElementById("memNote").textContent=d.memNote;
 
     document.getElementById("foot").textContent=d.foot;
   }
 
-  // ---- language persistence (works across all pages) ----
+  // ---- language persistence ----
   const btnHi = document.getElementById("btnHi");
   const btnEn = document.getElementById("btnEn");
 
