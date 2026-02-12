@@ -491,41 +491,37 @@
     document.getElementById("foot").textContent=d.foot;
   }
 
+  // ---- language persistence (works across all pages) ----
   const btnHi = document.getElementById("btnHi");
   const btnEn = document.getElementById("btnEn");
 
-  const btnHi = document.getElementById("btnHi");
-const btnEn = document.getElementById("btnEn");
-
-function applyActive(lang){
-  if(lang === "en"){
-    btnEn.classList.add("active");
-    btnHi.classList.remove("active");
-  }else{
-    btnHi.classList.add("active");
-    btnEn.classList.remove("active");
+  function applyActive(lang){
+    if(lang === "en"){
+      btnEn.classList.add("active");
+      btnHi.classList.remove("active");
+    }else{
+      btnHi.classList.add("active");
+      btnEn.classList.remove("active");
+    }
   }
-}
 
-btnHi.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","hi");
-  applyActive("hi");
-  setLang("hi");
-});
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    applyActive("hi");
+    setLang("hi");
+  });
 
-btnEn.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","en");
-  applyActive("en");
-  setLang("en");
-});
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    applyActive("en");
+    setLang("en");
+  });
 
-document.getElementById("year").textContent=new Date().getFullYear();
+  document.getElementById("year").textContent=new Date().getFullYear();
 
-// Load saved language (works across all pages)
-const savedLang = localStorage.getItem("bas_lang") || "hi";
-applyActive(savedLang);
-setLang(savedLang);
-
+  const savedLang = localStorage.getItem("bas_lang") || "hi";
+  applyActive(savedLang);
+  setLang(savedLang);
 </script>
 
 </body>
