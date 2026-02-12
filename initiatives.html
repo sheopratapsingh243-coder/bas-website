@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Initiatives • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Bharat Abhyudaya Sansthan initiatives: education, health, women empowerment, welfare, skill development, environment, culture, gaushala, animal care, elderly care." />
+  <meta name="description" content="Our initiatives — education, health, women empowerment, welfare, environment, gaushala, animal care and heritage conservation." />
 
   <style>
     :root{
       --brand:#0b5aa6;
       --accent:#f58b1f;
+      --green:#16a34a;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 18px 45px rgba(2,6,23,.12);
-      --radius:22px;
-      --max:1150px;
+      --radius:24px;
+      --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,17 +27,81 @@
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.18), transparent 55%),
-        radial-gradient(800px 500px at 40% 110%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.12), transparent 55%),
         #fff;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:34px 0}
-    h1{margin:0;font-size:38px;letter-spacing:-.9px;line-height:1.1}
+    h1{margin:0;font-size:40px;letter-spacing:-1px;line-height:1.08}
     h2{margin:0;font-size:24px;letter-spacing:-.4px}
     p{margin:12px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.86);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(226,232,240,.95);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;gap:12px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:260px}
+    .logo{
+      width:46px;height:46px;border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      object-fit:cover;background:#fff;
+    }
+    .brand b{display:block;font-size:14px;line-height:1.1}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
+
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
+    .menu a{padding:8px 10px;border-radius:12px}
+    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
+    @media(min-width:980px){.menu{display:flex}}
+
+    .homeIcon{
+      font-size:18px;
+      font-weight:950;
+      padding:8px 12px;
+      border-radius:12px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.9);
+      line-height:1;
+    }
+    .homeIcon:hover{
+      background:rgba(11,90,166,.08);
+      color:var(--brand);
+    }
+
+    .toggle{display:flex;gap:8px}
+    .pill{
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;padding:8px 12px;border-radius:999px;
+      font-size:13px;cursor:pointer;
+      font-weight:900;
+    }
+    .pill.active{
+      background:linear-gradient(135deg,var(--brand),#083a6c);
+      color:#fff;border-color:transparent;
+    }
+
+    .heroBox{
+      border-radius:30px;
+      border:1px solid rgba(226,232,240,.95);
+      background:
+        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.24), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.20), transparent 60%),
+        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.97));
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
     .kicker{
       display:inline-flex;gap:8px;align-items:center;
       padding:7px 12px;border-radius:999px;
@@ -45,67 +110,18 @@
       font-weight:950;font-size:13px;
     }
 
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.85);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(226,232,240,.95);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:12px;
-    }
-    .brand{display:flex;align-items:center;gap:10px;min-width:230px}
-    .logo{
-      width:44px;height:44px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      object-fit:cover;background:#fff;
-    }
-    .brand b{display:block;font-size:14px;line-height:1.1}
-    .brand span{display:block;font-size:12px;color:var(--muted)}
-
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a{padding:8px 10px;border-radius:12px}
-    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
-    @media(min-width:980px){.menu{display:flex}}
-
-    .toggle{display:flex;gap:8px}
-    .pill{
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;padding:8px 12px;border-radius:999px;
-      font-size:13px;cursor:pointer;
-    }
-    .pill.active{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
-
-    .hero{padding:28px 0 0}
-    .heroBox{
-      border-radius:28px;
-      border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 15% 0%, rgba(245,139,31,.22), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.95));
-      box-shadow:var(--shadow);
-      padding:22px;
-      overflow:hidden;
-      position:relative;
-    }
-
-    .cards{
+    .grid{
       display:grid;
       grid-template-columns:1fr;
       gap:14px;
       margin-top:16px;
     }
     @media(min-width:980px){
-      .cards{grid-template-columns:1fr 1fr;gap:14px}
+      .grid{grid-template-columns:1fr 1fr;gap:14px}
     }
 
     .card{
-      background:rgba(255,255,255,.96);
+      background:rgba(255,255,255,.97);
       border:1px solid rgba(226,232,240,.95);
       border-radius:var(--radius);
       padding:18px;
@@ -114,19 +130,20 @@
       overflow:hidden;
     }
 
-    .card b{font-size:16px}
-    .tagRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .tag{
-      font-size:12px;font-weight:950;
-      padding:6px 10px;border-radius:999px;
+    .badge{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:950;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.05);
+      background:rgba(11,90,166,.08);
       color:#0b5aa6;
     }
-    .tag.orange{background:rgba(245,139,31,.08);color:#b45309}
-    .tag.green{background:rgba(34,197,94,.08);color:#166534}
+    .badge.orange{background:rgba(245,139,31,.08);color:#b45309}
+    .badge.green{background:rgba(34,197,94,.10);color:#166534}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
@@ -136,11 +153,11 @@
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
+      border-color:transparent;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
+      color:#fff;border-color:transparent;
     }
 
     .note{
@@ -151,18 +168,18 @@
       margin-top:16px;
     }
 
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:14px;color:var(--muted);
+      background:rgba(255,255,255,.9);
+      font-size:14px;
+    }
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
-    }
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:14px;color:var(--muted);
-      background:rgba(255,255,255,.9);
-      font-size:14px;
     }
   </style>
 </head>
@@ -176,11 +193,13 @@
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
+          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
           <span id="brandSub">Bharat Abhyudaya Sansthan</span>
         </div>
       </a>
 
       <nav class="menu">
+        <a href="index.html" id="mHome" class="homeIcon" aria-label="Home" title="Home">⌂</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
@@ -198,195 +217,157 @@
 
 <main>
 
-  <section class="hero">
+  <section style="padding-top:28px">
     <div class="wrap">
       <div class="heroBox">
-        <span class="kicker" id="kicker">What We Do</span>
-        <h1 id="title" style="margin-top:10px">हमारे प्रयास</h1>
+
+        <span class="kicker" id="kicker">What We Do • How We Do</span>
+        <h1 style="margin-top:10px" id="title">हमारे प्रयास</h1>
         <p class="muted" id="subtitle">
-          हमारा उद्देश्य केवल सहायता करना नहीं, बल्कि समाज में जागरूकता, आत्मविश्वास और आत्मनिर्भरता का निर्माण करना है।
-          हम हर पहल को “Impact + Dignity + Sustainability” के सिद्धांत पर आगे बढ़ाते हैं।
+          हम सेवा कार्यों को केवल “सहायता” नहीं, बल्कि “स्थायी समाधान” के रूप में देखते हैं।
+          इसलिए हम जागरूकता, प्रशिक्षण, संसाधन सहायता और जनभागीदारी के माध्यम से कार्य करते हैं।
         </p>
 
         <div class="note">
-          <b id="howT">How We Work</b>
-          <p class="small muted" id="howD">
-            हम स्थानीय स्तर पर जरूरतों की पहचान करते हैं, समुदाय के साथ मिलकर योजना बनाते हैं,
-            संसाधन जुटाते हैं और पारदर्शिता के साथ सेवा कार्यों को लागू करते हैं।
+          <b id="noteT">How We Work</b>
+          <p class="small muted" id="noteD">
+            हमारी कार्यपद्धति सरल है — पहचान (Need Identification), योजना (Planning),
+            क्रियान्वयन (Execution), पारदर्शिता (Transparency) और सतत प्रभाव (Sustainable Impact)।
           </p>
         </div>
 
-        <div class="cards">
+        <div class="grid">
 
           <div class="card">
-            <b id="i1t">1) Education Support</b>
-            <p class="small muted" id="i1d">
-              हम बच्चों और युवाओं को शिक्षा मार्गदर्शन, परीक्षा तैयारी, पुस्तक/कॉपी सहायता,
-              डिजिटल साक्षरता, करियर काउंसलिंग और mentorship के माध्यम से आगे बढ़ाते हैं।
-              हमारा लक्ष्य है कि कोई भी बच्चा संसाधन की कमी के कारण पढ़ाई से पीछे न रहे।
+            <span class="badge" id="b1">Education</span>
+            <h2 style="margin-top:10px" id="t1">शिक्षा सहायता</h2>
+            <p class="muted small" id="d1">
+              बच्चों और युवाओं के लिए शिक्षा मार्गदर्शन, परीक्षा तैयारी सहयोग, learning resources,
+              डिजिटल साक्षरता, career mentorship और जरूरतमंद छात्रों को शैक्षिक सामग्री सहायता।
             </p>
-            <div class="tagRow">
-              <span class="tag">Literacy</span>
-              <span class="tag orange">Digital</span>
-              <span class="tag green">Mentorship</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i1don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i1join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don1">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join1">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i2t">2) Health & Awareness</b>
-            <p class="small muted" id="i2d">
-              हम स्वास्थ्य जागरूकता अभियान, निःशुल्क चिकित्सा शिविर, रक्तदान प्रेरणा,
-              पोषण जागरूकता तथा जरूरतमंदों को उपचार सहायता जैसे कार्य करते हैं।
-              हमारा प्रयास है कि स्वास्थ्य के प्रति जागरूकता गाँव-गाँव तक पहुँचे।
+            <span class="badge green" id="b2">Health</span>
+            <h2 style="margin-top:10px" id="t2">स्वास्थ्य एवं जागरूकता</h2>
+            <p class="muted small" id="d2">
+              स्वास्थ्य जागरूकता अभियान, मुफ्त चिकित्सा शिविर सहयोग, रक्तदान प्रेरणा,
+              पोषण जागरूकता, तथा जरूरतमंद व्यक्तियों को आवश्यक सहायता।
             </p>
-            <div class="tagRow">
-              <span class="tag">Camps</span>
-              <span class="tag orange">Blood Donation</span>
-              <span class="tag green">Nutrition</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i2don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i2join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don2">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join2">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i3t">3) Women Empowerment</b>
-            <p class="small muted" id="i3d">
-              हम महिलाओं को जागरूकता, प्रशिक्षण, कौशल विकास, आत्मरोजगार सहायता,
-              सम्मान एवं सुरक्षा से जुड़े कार्यक्रमों के माध्यम से सशक्त बनाते हैं।
-              हमारा विश्वास है — महिला सशक्तिकरण ही परिवार और समाज की वास्तविक प्रगति है।
+            <span class="badge orange" id="b3">Women</span>
+            <h2 style="margin-top:10px" id="t3">महिला सशक्तिकरण</h2>
+            <p class="muted small" id="d3">
+              महिलाओं के लिए जागरूकता, प्रशिक्षण, skill development, आत्मरोजगार सहायता,
+              dignity & safety initiatives और आत्मनिर्भरता को बढ़ावा।
             </p>
-            <div class="tagRow">
-              <span class="tag">Awareness</span>
-              <span class="tag orange">Training</span>
-              <span class="tag green">Self Employment</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i3don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i3join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don3">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join3">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i4t">4) Support for the Poor & Needy</b>
-            <p class="small muted" id="i4d">
-              हम जरूरतमंद परिवारों को भोजन, वस्त्र, शिक्षा सामग्री, आपातकालीन राहत,
-              तथा कठिन परिस्थितियों में सहायता प्रदान करते हैं।
-              हमारा प्रयास है कि संकट के समय कोई भी परिवार अकेला न महसूस करे।
+            <span class="badge" id="b4">Welfare</span>
+            <h2 style="margin-top:10px" id="t4">गरीब/जरूरतमंद की सहायता</h2>
+            <p class="muted small" id="d4">
+              भोजन, वस्त्र, शिक्षा सामग्री, आपातकालीन राहत, तथा कठिन परिस्थितियों से जूझ रहे
+              परिवारों को आवश्यक सहायता और सहयोग।
             </p>
-            <div class="tagRow">
-              <span class="tag">Relief</span>
-              <span class="tag orange">Emergency</span>
-              <span class="tag green">Support</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i4don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i4join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don4">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join4">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i5t">5) Employment & Skill Development</b>
-            <p class="small muted" id="i5d">
-              हम युवाओं को कौशल प्रशिक्षण, करियर मार्गदर्शन, employability support,
-              तथा entrepreneurship को बढ़ावा देकर आत्मनिर्भर बनाते हैं।
-              हमारा लक्ष्य है — हर युवा के पास “Skill + Confidence + Opportunity” हो।
+            <span class="badge green" id="b5">Skills</span>
+            <h2 style="margin-top:10px" id="t5">रोजगार एवं कौशल विकास</h2>
+            <p class="muted small" id="d5">
+              युवाओं के लिए skill training, career guidance, employability support,
+              entrepreneurship promotion और self-reliant youth initiatives।
             </p>
-            <div class="tagRow">
-              <span class="tag">Skills</span>
-              <span class="tag orange">Career</span>
-              <span class="tag green">Entrepreneurship</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i5don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i5join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don5">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join5">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i6t">6) Environment, Cleanliness & Water Conservation</b>
-            <p class="small muted" id="i6d">
-              हम स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता,
-              जल संरक्षण और जनभागीदारी आधारित पर्यावरण कार्यक्रम आयोजित करते हैं।
-              हमारा संदेश स्पष्ट है — स्वच्छ और हरित भारत, स्वस्थ भारत।
+            <span class="badge green" id="b6">Environment</span>
+            <h2 style="margin-top:10px" id="t6">पर्यावरण, स्वच्छता एवं जल संरक्षण</h2>
+            <p class="muted small" id="d6">
+              स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण,
+              तथा जनभागीदारी के साथ हरित भविष्य की दिशा में कार्य।
             </p>
-            <div class="tagRow">
-              <span class="tag">Cleanliness</span>
-              <span class="tag orange">Plantation</span>
-              <span class="tag green">Water</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i6don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i6join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don6">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join6">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i7t">7) Culture, Sanatan Protection & Heritage Conservation</b>
-            <p class="small muted" id="i7d">
-              हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार,
-              नैतिकता तथा विरासत संरक्षण को बढ़ावा देते हैं।
-              हमारा प्रयास है कि हमारी परंपराएँ, ऐतिहासिक धरोहर और सामाजिक मूल्य आने वाली पीढ़ियों तक सुरक्षित रहें।
+            <span class="badge" id="b7">Culture</span>
+            <h2 style="margin-top:10px" id="t7">सनातन संरक्षण, संस्कृति एवं विरासत संरक्षण</h2>
+            <p class="muted small" id="d7">
+              भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार, heritage conservation,
+              तथा ऐतिहासिक/सांस्कृतिक धरोहर के संरक्षण हेतु जागरूकता।
             </p>
-            <div class="tagRow">
-              <span class="tag">Culture</span>
-              <span class="tag orange">Sanatan</span>
-              <span class="tag green">Heritage</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i7don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i7join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don7">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join7">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i8t">8) Gaushala, Animal Care & Shelter Support</b>
-            <p class="small muted" id="i8d">
-              हम गौ सेवा, सुरक्षा और संरक्षण को अपने प्रमुख कार्यों में शामिल करते हैं।
-              इसके साथ ही हम आवारा पशुओं, पालित जीवों (जैसे कुत्ते) तथा जरूरतमंद वन्यजीवों के लिए
-              care, rescue, feeding और shelter support जैसी पहल भी कर सकते हैं।
-              आवश्यकता होने पर “Shelter Homes / Gaushala” की स्थापना एवं संचालन हेतु प्रयास किए जा सकते हैं।
+            <span class="badge orange" id="b8">Elderly</span>
+            <h2 style="margin-top:10px" id="t8">वृद्धजन सेवा एवं सामाजिक कल्याण</h2>
+            <p class="muted small" id="d8">
+              वरिष्ठ नागरिकों के लिए सेवा, सहयोग, welfare activities, तथा आवश्यकता अनुसार
+              वृद्धाश्रम (Old Age Home) जैसी पहल का समर्थन।
             </p>
-            <div class="tagRow">
-              <span class="tag">Gaushala</span>
-              <span class="tag orange">Shelter</span>
-              <span class="tag green">Animal Welfare</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i8don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i8join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don8">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join8">Join</a>
             </div>
           </div>
 
           <div class="card">
-            <b id="i9t">9) Elderly Care & Social Welfare</b>
-            <p class="small muted" id="i9d">
-              हम वृद्धजनों के लिए सेवा, सहायता, सम्मान एवं कल्याण कार्यक्रम आयोजित करते हैं।
-              भविष्य में आवश्यकता और संसाधनों के अनुसार वृद्धाश्रम / old-age home जैसी
-              सेवा-आधारित पहल भी विकसित की जा सकती है, ताकि कोई भी वृद्धजन उपेक्षित न रहे।
+            <span class="badge green" id="b9">Gaushala</span>
+            <h2 style="margin-top:10px" id="t9">गौ सेवा, पशु संरक्षण एवं Shelter Homes</h2>
+            <p class="muted small" id="d9">
+              गौ सेवा, गौशाला, आवारा कुत्तों एवं अन्य पालतू पशुओं की देखभाल, rescue support,
+              तथा वन्य जीवों की सुरक्षा/संरक्षण हेतु जागरूकता। आवश्यकता होने पर shelter homes की पहल।
             </p>
-            <div class="tagRow">
-              <span class="tag">Elderly Care</span>
-              <span class="tag orange">Support</span>
-              <span class="tag green">Old Age Home</span>
-            </div>
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="i9don">Donate</a>
-              <a class="btn secondary" href="contact.html" id="i9join">Join / Volunteer</a>
+              <a class="btn primary" href="donate.html" id="don9">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join9">Join</a>
             </div>
           </div>
 
-        </div>
+          <div class="card">
+            <span class="badge" id="b10">Community</span>
+            <h2 style="margin-top:10px" id="t10">सामाजिक जागरूकता एवं जनकल्याण</h2>
+            <p class="muted small" id="d10">
+              सामाजिक जागरूकता अभियान, जनहित कार्यक्रम, नैतिकता एवं जिम्मेदारी को बढ़ावा,
+              तथा समाज में सकारात्मक बदलाव हेतु जनभागीदारी।
+            </p>
+            <div class="btnRow">
+              <a class="btn primary" href="donate.html" id="don10">Donate</a>
+              <a class="btn secondary" href="contact.html" id="join10">Join</a>
+            </div>
+          </div>
 
-        <div class="btnRow" style="margin-top:18px">
-          <a class="btn secondary" href="donate.html" id="mainDonate">Donate / Support</a>
-          <a class="btn primary" href="contact.html" id="mainJoin">Join / Volunteer</a>
-          <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="mainWA">WhatsApp</a>
         </div>
 
       </div>
@@ -407,97 +388,59 @@
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
+      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
       sub:"Bharat Abhyudaya Sansthan",
-      m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
-      kicker:"What We Do",
+      kicker:"What We Do • How We Do",
       title:"हमारे प्रयास",
-      subtitle:"हमारा उद्देश्य केवल सहायता करना नहीं, बल्कि समाज में जागरूकता, आत्मविश्वास और आत्मनिर्भरता का निर्माण करना है। हम हर पहल को “Impact + Dignity + Sustainability” के सिद्धांत पर आगे बढ़ाते हैं।",
+      subtitle:"हम सेवा कार्यों को केवल “सहायता” नहीं, बल्कि “स्थायी समाधान” के रूप में देखते हैं। इसलिए हम जागरूकता, प्रशिक्षण, संसाधन सहायता और जनभागीदारी के माध्यम से कार्य करते हैं।",
 
-      howT:"How We Work",
-      howD:"हम स्थानीय स्तर पर जरूरतों की पहचान करते हैं, समुदाय के साथ मिलकर योजना बनाते हैं, संसाधन जुटाते हैं और पारदर्शिता के साथ सेवा कार्यों को लागू करते हैं।",
+      noteT:"How We Work",
+      noteD:"हमारी कार्यपद्धति सरल है — पहचान (Need Identification), योजना (Planning), क्रियान्वयन (Execution), पारदर्शिता (Transparency) और सतत प्रभाव (Sustainable Impact)।",
 
-      i1t:"1) शिक्षा सहायता",
-      i1d:"हम बच्चों और युवाओं को शिक्षा मार्गदर्शन, परीक्षा तैयारी, पुस्तक/कॉपी सहायता, डिजिटल साक्षरता, करियर काउंसलिंग और mentorship के माध्यम से आगे बढ़ाते हैं। हमारा लक्ष्य है कि कोई भी बच्चा संसाधन की कमी के कारण पढ़ाई से पीछे न रहे।",
-
-      i2t:"2) स्वास्थ्य एवं जागरूकता",
-      i2d:"हम स्वास्थ्य जागरूकता अभियान, निःशुल्क चिकित्सा शिविर, रक्तदान प्रेरणा, पोषण जागरूकता तथा जरूरतमंदों को उपचार सहायता जैसे कार्य करते हैं। हमारा प्रयास है कि स्वास्थ्य के प्रति जागरूकता गाँव-गाँव तक पहुँचे।",
-
-      i3t:"3) महिला सशक्तिकरण",
-      i3d:"हम महिलाओं को जागरूकता, प्रशिक्षण, कौशल विकास, आत्मरोजगार सहायता, सम्मान एवं सुरक्षा से जुड़े कार्यक्रमों के माध्यम से सशक्त बनाते हैं। हमारा विश्वास है — महिला सशक्तिकरण ही परिवार और समाज की वास्तविक प्रगति है।",
-
-      i4t:"4) गरीब/जरूरतमंद की सहायता",
-      i4d:"हम जरूरतमंद परिवारों को भोजन, वस्त्र, शिक्षा सामग्री, आपातकालीन राहत, तथा कठिन परिस्थितियों में सहायता प्रदान करते हैं। हमारा प्रयास है कि संकट के समय कोई भी परिवार अकेला न महसूस करे।",
-
-      i5t:"5) रोजगार एवं कौशल विकास",
-      i5d:"हम युवाओं को कौशल प्रशिक्षण, करियर मार्गदर्शन, employability support, तथा entrepreneurship को बढ़ावा देकर आत्मनिर्भर बनाते हैं। हमारा लक्ष्य है — हर युवा के पास “Skill + Confidence + Opportunity” हो।",
-
-      i6t:"6) पर्यावरण, स्वच्छता एवं जल संरक्षण",
-      i6d:"हम स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण और जनभागीदारी आधारित पर्यावरण कार्यक्रम आयोजित करते हैं। हमारा संदेश स्पष्ट है — स्वच्छ और हरित भारत, स्वस्थ भारत।",
-
-      i7t:"7) संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण",
-      i7d:"हम भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार, नैतिकता तथा विरासत संरक्षण को बढ़ावा देते हैं। हमारा प्रयास है कि हमारी परंपराएँ, ऐतिहासिक धरोहर और सामाजिक मूल्य आने वाली पीढ़ियों तक सुरक्षित रहें।",
-
-      i8t:"8) गौशाला, पशु सेवा, सुरक्षा एवं Shelter Support",
-      i8d:"हम गौ सेवा, सुरक्षा और संरक्षण को अपने प्रमुख कार्यों में शामिल करते हैं। इसके साथ ही हम आवारा पशुओं, पालित जीवों (जैसे कुत्ते) तथा जरूरतमंद वन्यजीवों के लिए care, rescue, feeding और shelter support जैसी पहल भी कर सकते हैं। आवश्यकता होने पर “Shelter Homes / Gaushala” की स्थापना एवं संचालन हेतु प्रयास किए जा सकते हैं।",
-
-      i9t:"9) वृद्धजन सेवा एवं सामाजिक कल्याण",
-      i9d:"हम वृद्धजनों के लिए सेवा, सहायता, सम्मान एवं कल्याण कार्यक्रम आयोजित करते हैं। भविष्य में आवश्यकता और संसाधनों के अनुसार वृद्धाश्रम / old-age home जैसी सेवा-आधारित पहल भी विकसित की जा सकती है, ताकि कोई भी वृद्धजन उपेक्षित न रहे।",
+      b1:"Education", t1:"शिक्षा सहायता", d1:"बच्चों और युवाओं के लिए शिक्षा मार्गदर्शन, परीक्षा तैयारी सहयोग, learning resources, डिजिटल साक्षरता, career mentorship और जरूरतमंद छात्रों को शैक्षिक सामग्री सहायता।",
+      b2:"Health", t2:"स्वास्थ्य एवं जागरूकता", d2:"स्वास्थ्य जागरूकता अभियान, मुफ्त चिकित्सा शिविर सहयोग, रक्तदान प्रेरणा, पोषण जागरूकता, तथा जरूरतमंद व्यक्तियों को आवश्यक सहायता।",
+      b3:"Women", t3:"महिला सशक्तिकरण", d3:"महिलाओं के लिए जागरूकता, प्रशिक्षण, skill development, आत्मरोजगार सहायता, dignity & safety initiatives और आत्मनिर्भरता को बढ़ावा।",
+      b4:"Welfare", t4:"गरीब/जरूरतमंद की सहायता", d4:"भोजन, वस्त्र, शिक्षा सामग्री, आपातकालीन राहत, तथा कठिन परिस्थितियों से जूझ रहे परिवारों को आवश्यक सहायता और सहयोग।",
+      b5:"Skills", t5:"रोजगार एवं कौशल विकास", d5:"युवाओं के लिए skill training, career guidance, employability support, entrepreneurship promotion और self-reliant youth initiatives।",
+      b6:"Environment", t6:"पर्यावरण, स्वच्छता एवं जल संरक्षण", d6:"स्वच्छता अभियान, वृक्षारोपण, प्लास्टिक मुक्त जागरूकता, जल संरक्षण, तथा जनभागीदारी के साथ हरित भविष्य की दिशा में कार्य।",
+      b7:"Culture", t7:"सनातन संरक्षण, संस्कृति एवं विरासत संरक्षण", d7:"भारतीय संस्कृति, सनातन मूल्यों, सामाजिक संस्कार, heritage conservation, तथा ऐतिहासिक/सांस्कृतिक धरोहर के संरक्षण हेतु जागरूकता।",
+      b8:"Elderly", t8:"वृद्धजन सेवा एवं सामाजिक कल्याण", d8:"वरिष्ठ नागरिकों के लिए सेवा, सहयोग, welfare activities, तथा आवश्यकता अनुसार वृद्धाश्रम (Old Age Home) जैसी पहल का समर्थन।",
+      b9:"Gaushala", t9:"गौ सेवा, पशु संरक्षण एवं Shelter Homes", d9:"गौ सेवा, गौशाला, आवारा कुत्तों एवं अन्य पालतू पशुओं की देखभाल, rescue support, तथा वन्य जीवों की सुरक्षा/संरक्षण हेतु जागरूकता। आवश्यकता होने पर shelter homes की पहल।",
+      b10:"Community", t10:"सामाजिक जागरूकता एवं जनकल्याण", d10:"सामाजिक जागरूकता अभियान, जनहित कार्यक्रम, नैतिकता एवं जिम्मेदारी को बढ़ावा, तथा समाज में सकारात्मक बदलाव हेतु जनभागीदारी।",
 
       donate:"Donate",
-      join:"Join / Volunteer",
-      mainDonate:"Donate / Support",
-      mainJoin:"Join / Volunteer",
-      mainWA:"WhatsApp",
-
+      join:"Join",
       foot:"भारत अभ्युदय संस्थान"
     },
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
+      brandTag:"Upliftment to Self-Reliant India",
       sub:"Registered Social Organization",
-      m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
-      kicker:"What We Do",
+      kicker:"What We Do • How We Do",
       title:"Our Initiatives",
-      subtitle:"Our purpose is not only to provide help, but to build awareness, confidence and self-reliance in society. We move forward with the principles of “Impact + Dignity + Sustainability”.",
+      subtitle:"We do not see social work as only ‘help’, but as ‘long-term solutions’. That is why we focus on awareness, training, resource support and public participation.",
 
-      howT:"How We Work",
-      howD:"We identify local needs, plan with the community, mobilize resources, and implement service initiatives with transparency and responsibility.",
+      noteT:"How We Work",
+      noteD:"Our approach is simple — Need Identification, Planning, Execution, Transparency and Sustainable Impact.",
 
-      i1t:"1) Education Support",
-      i1d:"We support children and youth through education guidance, exam preparation, notebooks and learning material, digital literacy, career counselling and mentorship. Our goal is that no child falls behind due to lack of resources.",
-
-      i2t:"2) Health & Awareness",
-      i2d:"We conduct health awareness drives, free medical camps, blood donation initiatives, nutrition awareness and support for people in need. Our aim is to take health awareness to every community.",
-
-      i3t:"3) Women Empowerment",
-      i3d:"We empower women through awareness, training, skill development, self-employment support and initiatives focused on dignity and safety. We believe women empowerment is real progress for families and society.",
-
-      i4t:"4) Support for the Poor & Needy",
-      i4d:"We provide essential help such as food, clothing, education material, emergency relief and support to families facing hardship. Our effort is that no family feels alone in difficult times.",
-
-      i5t:"5) Employment & Skill Development",
-      i5d:"We build self-reliant youth through skill training, career guidance, employability support and promoting entrepreneurship. Our goal is: “Skill + Confidence + Opportunity” for every youth.",
-
-      i6t:"6) Environment, Cleanliness & Water Conservation",
-      i6d:"We organize cleanliness campaigns, plantation drives, plastic-free awareness, water conservation and public participation initiatives. Our message is clear: Clean & Green India, Healthy India.",
-
-      i7t:"7) Culture, Sanatan Protection & Heritage Conservation",
-      i7d:"We promote Indian culture, Sanatan values, social ethics and heritage conservation. Our effort is to preserve our traditions, historical heritage and values for future generations.",
-
-      i8t:"8) Gaushala, Animal Care & Shelter Support",
-      i8d:"We include cow service, protection and care as a key initiative. Along with this, we may also support stray animals (such as dogs) and needy wildlife through care, rescue, feeding and shelter support. Where required, we can work towards establishing and supporting Shelter Homes / Gaushala.",
-
-      i9t:"9) Elderly Care & Social Welfare",
-      i9d:"We support senior citizens through service initiatives, welfare activities and dignity-based programs. In the future, depending on need and resources, we may also develop service initiatives such as elderly support centers and old-age homes.",
+      b1:"Education", t1:"Education Support", d1:"Supporting children and youth through education guidance, exam preparation, learning resources, digital literacy and mentorship.",
+      b2:"Health", t2:"Health & Awareness", d2:"Health awareness drives, free medical camp support, blood donation motivation, nutrition awareness and support for people in need.",
+      b3:"Women", t3:"Women Empowerment", d3:"Empowering women through awareness, training, skill development, self-employment support and dignity & safety initiatives.",
+      b4:"Welfare", t4:"Support for the Poor & Needy", d4:"Providing food, clothing, education materials, emergency relief and support to families facing hardship.",
+      b5:"Skills", t5:"Employment & Skill Development", d5:"Building self-reliant youth through skill training, career guidance, employability support and entrepreneurship promotion.",
+      b6:"Environment", t6:"Environment, Cleanliness & Water Conservation", d6:"Organizing cleanliness campaigns, plantation drives, plastic-free awareness, water conservation and public participation for a greener future.",
+      b7:"Culture", t7:"Culture, Sanatan Protection & Heritage Conservation", d7:"Promoting Indian culture, Sanatan values, social ethics, heritage preservation and awareness about our traditions and historical assets.",
+      b8:"Elderly", t8:"Elderly Care & Social Welfare", d8:"Supporting senior citizens through service initiatives, welfare activities and, where needed, initiatives like an Old Age Home.",
+      b9:"Gaushala", t9:"Gaushala, Animal Care & Shelter Homes", d9:"Cow service, gaushala, care for stray dogs and other animals, rescue support, and awareness for wildlife protection. Shelter home initiatives may also be developed where required.",
+      b10:"Community", t10:"Social Awareness & Public Welfare", d10:"Social awareness drives, public welfare initiatives, promoting responsibility and building positive change through public participation.",
 
       donate:"Donate",
-      join:"Join / Volunteer",
-      mainDonate:"Donate / Support",
-      mainJoin:"Join / Volunteer",
-      mainWA:"WhatsApp",
-
+      join:"Join",
       foot:"Bharat Abhyudaya Sansthan"
     }
   };
@@ -507,8 +450,10 @@
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
     document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
+    document.getElementById("mHome").textContent=d.m.home;
     document.getElementById("mAbout").textContent=d.m.a;
     document.getElementById("mWork").textContent=d.m.w;
     document.getElementById("mDocs").textContent=d.m.d;
@@ -519,25 +464,22 @@
     document.getElementById("title").textContent=d.title;
     document.getElementById("subtitle").textContent=d.subtitle;
 
-    document.getElementById("howT").textContent=d.howT;
-    document.getElementById("howD").textContent=d.howD;
+    document.getElementById("noteT").textContent=d.noteT;
+    document.getElementById("noteD").textContent=d.noteD;
 
-    // initiatives
-    for(let i=1;i<=9;i++){
-      document.getElementById("i"+i+"t").textContent=d["i"+i+"t"];
-      document.getElementById("i"+i+"d").textContent=d["i"+i+"d"];
-      document.getElementById("i"+i+"don").textContent=d.donate;
-      document.getElementById("i"+i+"join").textContent=d.join;
+    for(let i=1;i<=10;i++){
+      document.getElementById("b"+i).textContent=d["b"+i];
+      document.getElementById("t"+i).textContent=d["t"+i];
+      document.getElementById("d"+i).textContent=d["d"+i];
+
+      document.getElementById("don"+i).textContent=d.donate;
+      document.getElementById("join"+i).textContent=d.join;
     }
-
-    document.getElementById("mainDonate").textContent=d.mainDonate;
-    document.getElementById("mainJoin").textContent=d.mainJoin;
-    document.getElementById("mainWA").textContent=d.mainWA;
 
     document.getElementById("foot").textContent=d.foot;
   }
 
-  // ---- language persistence (works across all pages) ----
+  // ---- language persistence ----
   const btnHi = document.getElementById("btnHi");
   const btnEn = document.getElementById("btnEn");
 
