@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Contact • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Contact Bharat Abhyudaya Sansthan. Address, phone numbers, WhatsApp, email and message form." />
+  <meta name="description" content="Contact Bharat Abhyudaya Sansthan. Address, phone, WhatsApp and email." />
 
   <style>
     :root{
@@ -80,9 +80,7 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .hero{
-      padding:28px 0 0;
-    }
+    .hero{padding:28px 0 0}
     .heroBox{
       border-radius:28px;
       border:1px solid rgba(226,232,240,.95);
@@ -96,14 +94,6 @@
       position:relative;
     }
 
-    .card{
-      background:rgba(255,255,255,.96);
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:0 10px 30px rgba(2,6,23,.06);
-    }
-
     .grid{
       display:grid;
       grid-template-columns:1fr;
@@ -111,7 +101,15 @@
       margin-top:16px;
     }
     @media(min-width:980px){
-      .grid{grid-template-columns:1fr 1fr;gap:16px}
+      .grid{grid-template-columns:1fr 1fr;gap:18px}
+    }
+
+    .card{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 10px 30px rgba(2,6,23,.06);
     }
 
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
@@ -142,16 +140,20 @@
       font-family:inherit;
     }
     textarea{min-height:120px;resize:vertical}
-    input:focus, textarea:focus{
-      border-color:rgba(11,90,166,.55);
-      box-shadow:0 0 0 5px rgba(11,90,166,.10);
-    }
 
     .note{
-      border-left:4px solid var(--accent);
+      border-left:4px solid var(--brand);
       padding:12px 14px;
-      background:rgba(245,139,31,.07);
+      background:rgba(11,90,166,.06);
       border-radius:16px;
+      margin-top:14px;
+    }
+
+    .map{
+      border-radius:22px;
+      border:1px dashed rgba(148,163,184,.85);
+      background:rgba(2,6,23,.02);
+      padding:18px;
       margin-top:14px;
     }
 
@@ -205,70 +207,82 @@
   <section class="hero">
     <div class="wrap">
       <div class="heroBox">
-        <span class="kicker" id="kicker">Let’s Connect</span>
+        <span class="kicker" id="kicker">Get in Touch</span>
         <h1 id="title" style="margin-top:10px">संपर्क करें</h1>
         <p class="muted" id="subtitle">
-          आप संस्था से जुड़ने, सदस्यता, दान, या किसी भी सहयोग हेतु नीचे दिए गए माध्यमों से संपर्क कर सकते हैं।
+          हमसे जुड़ें, सहयोग करें या कोई भी जानकारी के लिए संदेश करें। हम जल्द उत्तर देने का प्रयास करेंगे।
         </p>
 
         <div class="grid">
 
           <div class="card">
-            <h2 id="cT">संपर्क विवरण</h2>
+            <h2 id="infoT">Contact Details</h2>
 
-            <p class="small muted" id="addrLine" style="margin-top:10px">
-              <b id="addrLbl">पता:</b>
+            <p class="small muted" id="addr">
+              <b id="addrLbl">पता:</b><br>
               481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
             </p>
 
-            <p class="small muted" style="margin-top:10px">
-              <b id="phLbl">फोन:</b>
-              <a href="tel:+918604669454">8604669454</a>, <a href="tel:+917355181465">7355181465</a>
+            <p class="small muted" style="margin-top:12px">
+              <b id="phLbl">फोन:</b> 8604669454, 7355181465
             </p>
 
-            <p class="small muted" style="margin-top:10px">
-              <b>Email:</b>
-              <a href="mailto:sheopratapsingh243@gmail.com">sheopratapsingh243@gmail.com</a>
+            <p class="small muted">
+              <b>Email:</b> sheopratapsingh243@gmail.com
             </p>
 
             <div class="btnRow">
-              <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">
-                WhatsApp
-              </a>
-              <a class="btn secondary" href="mailto:sheopratapsingh243@gmail.com" id="mailBtn">
-                Email
-              </a>
-              <a class="btn" href="tel:+918604669454" id="callBtn">
-                Call Now
-              </a>
+              <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
+              <a class="btn secondary" href="tel:+918604669454" id="callBtn">Call</a>
+              <a class="btn" href="mailto:sheopratapsingh243@gmail.com" id="mailBtn">Email</a>
             </div>
 
             <div class="note">
               <b id="noteT">Note</b>
               <p class="small muted" id="noteD">
-                संस्था के कार्यक्रम, सदस्यता और दान से संबंधित जानकारी के लिए WhatsApp पर संदेश करना सबसे तेज़ माध्यम है।
+                अगर आप donation, membership या volunteering से जुड़ी जानकारी चाहते हैं,
+                तो WhatsApp पर message करना सबसे तेज़ तरीका है।
+              </p>
+            </div>
+
+            <div class="map">
+              <b id="mapT">Map (Coming Soon)</b>
+              <p class="small muted" id="mapD">
+                भविष्य में यहाँ Google Map embed किया जाएगा ताकि location आसानी से मिल सके।
               </p>
             </div>
           </div>
 
           <div class="card">
-            <h2 id="fT">संदेश भेजें (Demo)</h2>
-            <p class="small muted" id="fD">
-              यह demo form है। भविष्य में इसे official form / Google Form से connect कर देंगे।
+            <h2 id="formT">Message (Demo)</h2>
+            <p class="small muted" id="formD">
+              यह demo form है। Future में इसे active कर देंगे।
             </p>
 
-            <div style="height:12px"></div>
-            <input id="name" placeholder="आपका नाम" />
             <div style="height:10px"></div>
-            <input id="mobile" placeholder="मोबाइल नंबर" />
+            <input id="name" placeholder="आपका नाम">
+
+            <div style="height:10px"></div>
+            <input id="mobile" placeholder="मोबाइल नंबर">
+
             <div style="height:10px"></div>
             <textarea id="msg" placeholder="आपका संदेश"></textarea>
 
-            <button class="btn secondary" style="width:100%;margin-top:12px" type="button" id="demoBtn">
+            <button class="btn secondary" style="width:100%;margin-top:12px" type="button" id="submitBtn">
               Submit (Demo)
             </button>
 
-            <p class="small muted" id="demoMsg" style="margin-top:12px;display:none"></p>
+            <div class="note" style="margin-top:14px">
+              <b id="helpT">Quick Help</b>
+              <p class="small muted" id="helpD">
+                हम आपके संदेश का उत्तर WhatsApp/Call के माध्यम से भी दे सकते हैं।
+              </p>
+            </div>
+
+            <div class="btnRow">
+              <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
+              <a class="btn" href="initiatives.html" id="workBtn">Our Initiatives</a>
+            </div>
           </div>
 
         </div>
@@ -297,30 +311,36 @@
       sub:"Bharat Abhyudaya Sansthan",
       m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
-      kicker:"Let’s Connect",
+      kicker:"Get in Touch",
       title:"संपर्क करें",
-      subtitle:"आप संस्था से जुड़ने, सदस्यता, दान, या किसी भी सहयोग हेतु नीचे दिए गए माध्यमों से संपर्क कर सकते हैं।",
+      subtitle:"हमसे जुड़ें, सहयोग करें या कोई भी जानकारी के लिए संदेश करें। हम जल्द उत्तर देने का प्रयास करेंगे।",
 
-      cT:"संपर्क विवरण",
+      infoT:"संपर्क विवरण",
       addrLbl:"पता:",
       phLbl:"फोन:",
-
       waBtn:"WhatsApp",
+      callBtn:"Call",
       mailBtn:"Email",
-      callBtn:"Call Now",
 
       noteT:"Note",
-      noteD:"संस्था के कार्यक्रम, सदस्यता और दान से संबंधित जानकारी के लिए WhatsApp पर संदेश करना सबसे तेज़ माध्यम है।",
+      noteD:"अगर आप donation, membership या volunteering से जुड़ी जानकारी चाहते हैं, तो WhatsApp पर message करना सबसे तेज़ तरीका है।",
 
-      fT:"संदेश भेजें (Demo)",
-      fD:"यह demo form है। भविष्य में इसे official form / Google Form से connect कर देंगे।",
+      mapT:"Map (Coming Soon)",
+      mapD:"भविष्य में यहाँ Google Map embed किया जाएगा ताकि location आसानी से मिल सके।",
+
+      formT:"संदेश (Demo)",
+      formD:"यह demo form है। Future में इसे active कर देंगे।",
 
       namePH:"आपका नाम",
       mobPH:"मोबाइल नंबर",
       msgPH:"आपका संदेश",
+      submitBtn:"Submit (Demo)",
 
-      demoBtn:"Submit (Demo)",
-      demoMsg:"धन्यवाद! यह demo form है। कृपया WhatsApp या Email के माध्यम से संपर्क करें।",
+      helpT:"Quick Help",
+      helpD:"हम आपके संदेश का उत्तर WhatsApp/Call के माध्यम से भी दे सकते हैं।",
+
+      donBtn:"Donate",
+      workBtn:"Initiatives देखें",
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -330,30 +350,36 @@
       sub:"Registered Social Organization",
       m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
-      kicker:"Let’s Connect",
+      kicker:"Get in Touch",
       title:"Contact Us",
-      subtitle:"You can contact the organization for membership, donations, volunteering or any kind of support using the details below.",
+      subtitle:"Connect with us for volunteering, support, or any information. We will try to respond as soon as possible.",
 
-      cT:"Contact Details",
+      infoT:"Contact Details",
       addrLbl:"Address:",
       phLbl:"Phone:",
-
       waBtn:"WhatsApp",
+      callBtn:"Call",
       mailBtn:"Email",
-      callBtn:"Call Now",
 
       noteT:"Note",
-      noteD:"For program details, membership and donation support, WhatsApp is the fastest way to reach us.",
+      noteD:"For donation, membership or volunteering related information, WhatsApp message is the fastest way.",
 
-      fT:"Send a Message (Demo)",
-      fD:"This is a demo form. In the future, we will connect it with an official form / Google Form.",
+      mapT:"Map (Coming Soon)",
+      mapD:"A Google Map will be embedded here in the future for easier navigation.",
+
+      formT:"Message (Demo)",
+      formD:"This is a demo form. We will activate it in the future.",
 
       namePH:"Your Name",
       mobPH:"Mobile Number",
       msgPH:"Your Message",
+      submitBtn:"Submit (Demo)",
 
-      demoBtn:"Submit (Demo)",
-      demoMsg:"Thank you! This is a demo form. Please contact us via WhatsApp or Email.",
+      helpT:"Quick Help",
+      helpD:"We can also reply to your query via WhatsApp or phone call.",
+
+      donBtn:"Donate",
+      workBtn:"Our Initiatives",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -376,68 +402,81 @@
     document.getElementById("title").textContent=d.title;
     document.getElementById("subtitle").textContent=d.subtitle;
 
-    document.getElementById("cT").textContent=d.cT;
+    document.getElementById("infoT").textContent=d.infoT;
     document.getElementById("addrLbl").textContent=d.addrLbl;
     document.getElementById("phLbl").textContent=d.phLbl;
 
     document.getElementById("waBtn").textContent=d.waBtn;
-    document.getElementById("mailBtn").textContent=d.mailBtn;
     document.getElementById("callBtn").textContent=d.callBtn;
+    document.getElementById("mailBtn").textContent=d.mailBtn;
 
     document.getElementById("noteT").textContent=d.noteT;
     document.getElementById("noteD").textContent=d.noteD;
 
-    document.getElementById("fT").textContent=d.fT;
-    document.getElementById("fD").textContent=d.fD;
+    document.getElementById("mapT").textContent=d.mapT;
+    document.getElementById("mapD").textContent=d.mapD;
+
+    document.getElementById("formT").textContent=d.formT;
+    document.getElementById("formD").textContent=d.formD;
 
     document.getElementById("name").placeholder=d.namePH;
     document.getElementById("mobile").placeholder=d.mobPH;
     document.getElementById("msg").placeholder=d.msgPH;
+    document.getElementById("submitBtn").textContent=d.submitBtn;
 
-    document.getElementById("demoBtn").textContent=d.demoBtn;
+    document.getElementById("helpT").textContent=d.helpT;
+    document.getElementById("helpD").textContent=d.helpD;
 
-    // address line
-    document.getElementById("addrLine").innerHTML =
-      "<b id='addrLbl'>"+d.addrLbl+"</b> " + ((lang==="hi")?ADDRESS_HI:ADDRESS_EN);
+    document.getElementById("donBtn").textContent=d.donBtn;
+    document.getElementById("workBtn").textContent=d.workBtn;
 
     document.getElementById("foot").textContent=d.foot;
+
+    // address
+    const addrText = (lang==="hi") ? ADDRESS_HI : ADDRESS_EN;
+    document.getElementById("addr").innerHTML =
+      "<b>"+d.addrLbl+"</b><br>"+addrText;
   }
 
+  // ---- language persistence (works across all pages) ----
   const btnHi = document.getElementById("btnHi");
   const btnEn = document.getElementById("btnEn");
 
-  const btnHi = document.getElementById("btnHi");
-const btnEn = document.getElementById("btnEn");
-
-function applyActive(lang){
-  if(lang === "en"){
-    btnEn.classList.add("active");
-    btnHi.classList.remove("active");
-  }else{
-    btnHi.classList.add("active");
-    btnEn.classList.remove("active");
+  function applyActive(lang){
+    if(lang === "en"){
+      btnEn.classList.add("active");
+      btnHi.classList.remove("active");
+    }else{
+      btnHi.classList.add("active");
+      btnEn.classList.remove("active");
+    }
   }
-}
 
-btnHi.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","hi");
-  applyActive("hi");
-  setLang("hi");
-});
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    applyActive("hi");
+    setLang("hi");
+  });
 
-btnEn.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","en");
-  applyActive("en");
-  setLang("en");
-});
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    applyActive("en");
+    setLang("en");
+  });
 
-document.getElementById("year").textContent=new Date().getFullYear();
+  document.getElementById("year").textContent=new Date().getFullYear();
 
-// Load saved language (works across all pages)
-const savedLang = localStorage.getItem("bas_lang") || "hi";
-applyActive(savedLang);
-setLang(savedLang);
+  const savedLang = localStorage.getItem("bas_lang") || "hi";
+  applyActive(savedLang);
+  setLang(savedLang);
 
+  // demo submit
+  document.getElementById("submitBtn").addEventListener("click",()=>{
+    alert(savedLang==="en"
+      ? "Demo form. Please contact us on WhatsApp for now."
+      : "यह demo form है। अभी WhatsApp पर संपर्क करें।"
+    );
+  });
 </script>
 
 </body>
