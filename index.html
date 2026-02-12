@@ -49,7 +49,7 @@
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:12px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:240px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:260px}
     .logo{
       width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
@@ -57,6 +57,7 @@
     }
     .brand b{display:block;font-size:14px;line-height:1.1}
     .brand span{display:block;font-size:12px;color:var(--muted)}
+    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
 
     .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
     .menu a{padding:8px 10px;border-radius:12px}
@@ -186,6 +187,14 @@
     .badge.orange{background:rgba(245,139,31,.08);color:#b45309}
     .badge.blue{background:rgba(11,90,166,.08);color:#0b5aa6}
 
+    .note{
+      border-left:4px solid var(--brand);
+      padding:12px 14px;
+      background:rgba(11,90,166,.06);
+      border-radius:16px;
+      margin-top:14px;
+    }
+
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
@@ -211,11 +220,13 @@
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
+          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
           <span id="brandSub">Bharat Abhyudaya Sansthan</span>
         </div>
       </a>
 
       <nav class="menu">
+        <a href="index.html" id="mHome">Home</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
@@ -312,6 +323,13 @@
                 PAN: <b>AANAB2855N</b>
               </p>
             </div>
+
+            <div class="note">
+              <b id="noteT">Transparency</b>
+              <p class="small muted" id="noteD">
+                संस्था अपने सभी सेवा कार्यों में पारदर्शिता, अनुशासन और सामाजिक जिम्मेदारी को सर्वोच्च मानती है।
+              </p>
+            </div>
           </div>
         </div>
 
@@ -319,21 +337,22 @@
     </div>
   </section>
 
-  <!-- CURRENT PROGRAMS -->
+  <!-- CURRENT PROGRAMS (PLACEHOLDER) -->
   <section>
     <div class="wrap">
       <h2 id="progT">Current Running Initiatives / Programs</h2>
       <p class="muted" id="progD">
-        ये programs ongoing/regular basis पर चलाए जा सकते हैं। आप donate करके या volunteer बनकर इनसे जुड़ सकते हैं।
+        यहाँ हम वर्तमान में चल रहे initiatives/programs दिखाएँगे। आप जो programs बताएँगे,
+        उसी के अनुसार इसे update कर दिया जाएगा।
       </p>
 
       <div class="programs">
 
         <div class="program">
-          <span class="badge blue" id="p1b">Education</span>
-          <h2 style="margin-top:10px" id="p1t">Student Support & Learning Kit Drive</h2>
+          <span class="badge blue" id="p1b">Program 1</span>
+          <h2 style="margin-top:10px" id="p1t">Program Title (To be Updated)</h2>
           <p class="small muted" id="p1d">
-            जरूरतमंद बच्चों को कॉपी-किताब, स्टेशनरी, learning resources, digital support और mentorship देना।
+            Program description यहाँ आएगा। आप program बताइए, मैं इसे impactful तरीके से लिख दूँगा।
           </p>
           <div class="btnRow">
             <a class="btn primary" href="donate.html" id="p1don">Donate for this</a>
@@ -342,38 +361,14 @@
         </div>
 
         <div class="program">
-          <span class="badge green" id="p2b">Health</span>
-          <h2 style="margin-top:10px" id="p2t">Health Awareness & Free Camp Support</h2>
+          <span class="badge orange" id="p2b">Program 2</span>
+          <h2 style="margin-top:10px" id="p2t">Program Title (To be Updated)</h2>
           <p class="small muted" id="p2d">
-            स्वास्थ्य जागरूकता, basic checkup camp, रक्तदान प्रेरणा और जरूरतमंदों को सहायता।
+            Program description यहाँ आएगा। आप program बताइए, मैं इसे impactful तरीके से लिख दूँगा।
           </p>
           <div class="btnRow">
             <a class="btn primary" href="donate.html" id="p2don">Donate for this</a>
             <a class="btn secondary" href="contact.html" id="p2join">Join as Volunteer</a>
-          </div>
-        </div>
-
-        <div class="program">
-          <span class="badge orange" id="p3b">Women</span>
-          <h2 style="margin-top:10px" id="p3t">Women Skill & Self-Employment Support</h2>
-          <p class="small muted" id="p3d">
-            महिलाओं के लिए training, skill development, awareness और आत्मरोजगार हेतु support।
-          </p>
-          <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="p3don">Donate for this</a>
-            <a class="btn secondary" href="contact.html" id="p3join">Join as Volunteer</a>
-          </div>
-        </div>
-
-        <div class="program">
-          <span class="badge green" id="p4b">Gaushala</span>
-          <h2 style="margin-top:10px" id="p4t">Gaushala & Animal Care Support</h2>
-          <p class="small muted" id="p4d">
-            गौ सेवा, आवारा पशु/कुत्तों की देखभाल, feeding, rescue तथा shelter support की पहल।
-          </p>
-          <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="p4don">Donate for this</a>
-            <a class="btn secondary" href="contact.html" id="p4join">Join as Volunteer</a>
           </div>
         </div>
 
@@ -398,8 +393,10 @@
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
+      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
       sub:"Bharat Abhyudaya Sansthan",
-      m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+
+      m:{home:"Home",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
       kicker:"Upliftment to Self-Reliant India",
       title:"भारत अभ्युदय संस्थान",
@@ -422,24 +419,19 @@
       callBtn:"Call",
       regT:"Registration",
 
+      noteT:"Transparency",
+      noteD:"संस्था अपने सभी सेवा कार्यों में पारदर्शिता, अनुशासन और सामाजिक जिम्मेदारी को सर्वोच्च मानती है।",
+
       progT:"Current Running Initiatives / Programs",
-      progD:"ये programs ongoing/regular basis पर चलाए जा सकते हैं। आप donate करके या volunteer बनकर इनसे जुड़ सकते हैं।",
+      progD:"यहाँ हम वर्तमान में चल रहे initiatives/programs दिखाएँगे। आप जो programs बताएँगे, उसी के अनुसार इसे update कर दिया जाएगा।",
 
-      p1b:"Education",
-      p1t:"Student Support & Learning Kit Drive",
-      p1d:"जरूरतमंद बच्चों को कॉपी-किताब, स्टेशनरी, learning resources, digital support और mentorship देना।",
+      p1b:"Program 1",
+      p1t:"Program Title (To be Updated)",
+      p1d:"Program description यहाँ आएगा। आप program बताइए, मैं इसे impactful तरीके से लिख दूँगा।",
 
-      p2b:"Health",
-      p2t:"Health Awareness & Free Camp Support",
-      p2d:"स्वास्थ्य जागरूकता, basic checkup camp, रक्तदान प्रेरणा और जरूरतमंदों को सहायता।",
-
-      p3b:"Women",
-      p3t:"Women Skill & Self-Employment Support",
-      p3d:"महिलाओं के लिए training, skill development, awareness और आत्मरोजगार हेतु support।",
-
-      p4b:"Gaushala",
-      p4t:"Gaushala & Animal Care Support",
-      p4d:"गौ सेवा, आवारा पशु/कुत्तों की देखभाल, feeding, rescue तथा shelter support की पहल।",
+      p2b:"Program 2",
+      p2t:"Program Title (To be Updated)",
+      p2d:"Program description यहाँ आएगा। आप program बताइए, मैं इसे impactful तरीके से लिख दूँगा।",
 
       pDon:"Donate for this",
       pJoin:"Join as Volunteer",
@@ -449,8 +441,10 @@
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
+      brandTag:"Upliftment to Self-Reliant India",
       sub:"Registered Social Organization",
-      m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+
+      m:{home:"Home",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
       kicker:"Upliftment to Self-Reliant India",
       title:"Bharat Abhyudaya Sansthan",
@@ -473,24 +467,19 @@
       callBtn:"Call",
       regT:"Registration",
 
+      noteT:"Transparency",
+      noteD:"The organization values transparency, discipline and social responsibility in all service initiatives.",
+
       progT:"Current Running Initiatives / Programs",
-      progD:"These programs can be run on an ongoing/regular basis. You can join by donating or volunteering.",
+      progD:"We will show the currently running programs here. Once you share the program list, we will update it accordingly with impactful descriptions.",
 
-      p1b:"Education",
-      p1t:"Student Support & Learning Kit Drive",
-      p1d:"Providing notebooks, stationery, learning resources, digital support and mentorship to students in need.",
+      p1b:"Program 1",
+      p1t:"Program Title (To be Updated)",
+      p1d:"Program description will appear here. Share the program details and we will update it.",
 
-      p2b:"Health",
-      p2t:"Health Awareness & Free Camp Support",
-      p2d:"Health awareness drives, basic checkup camps, blood donation motivation and support for people in need.",
-
-      p3b:"Women",
-      p3t:"Women Skill & Self-Employment Support",
-      p3d:"Training, skill development, awareness and self-employment support for women.",
-
-      p4b:"Gaushala",
-      p4t:"Gaushala & Animal Care Support",
-      p4d:"Cow service, care for stray animals/dogs, feeding, rescue and shelter support initiatives.",
+      p2b:"Program 2",
+      p2t:"Program Title (To be Updated)",
+      p2d:"Program description will appear here. Share the program details and we will update it.",
 
       pDon:"Donate for this",
       pJoin:"Join as Volunteer",
@@ -504,8 +493,10 @@
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
     document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
+    document.getElementById("mHome").textContent=d.m.home;
     document.getElementById("mAbout").textContent=d.m.a;
     document.getElementById("mWork").textContent=d.m.w;
     document.getElementById("mDocs").textContent=d.m.d;
@@ -533,6 +524,9 @@
 
     document.getElementById("regT").textContent=d.regT;
 
+    document.getElementById("noteT").textContent=d.noteT;
+    document.getElementById("noteD").textContent=d.noteD;
+
     document.getElementById("progT").textContent=d.progT;
     document.getElementById("progD").textContent=d.progD;
 
@@ -544,23 +538,11 @@
     document.getElementById("p2t").textContent=d.p2t;
     document.getElementById("p2d").textContent=d.p2d;
 
-    document.getElementById("p3b").textContent=d.p3b;
-    document.getElementById("p3t").textContent=d.p3t;
-    document.getElementById("p3d").textContent=d.p3d;
-
-    document.getElementById("p4b").textContent=d.p4b;
-    document.getElementById("p4t").textContent=d.p4t;
-    document.getElementById("p4d").textContent=d.p4d;
-
     document.getElementById("p1don").textContent=d.pDon;
     document.getElementById("p2don").textContent=d.pDon;
-    document.getElementById("p3don").textContent=d.pDon;
-    document.getElementById("p4don").textContent=d.pDon;
 
     document.getElementById("p1join").textContent=d.pJoin;
     document.getElementById("p2join").textContent=d.pJoin;
-    document.getElementById("p3join").textContent=d.pJoin;
-    document.getElementById("p4join").textContent=d.pJoin;
 
     document.getElementById("foot").textContent=d.foot;
 
