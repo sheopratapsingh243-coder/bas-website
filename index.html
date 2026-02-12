@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Bharat Abhyudaya Sansthan is a registered social organization working in education, health, women empowerment, welfare, skills, environment, culture, gaushala and elderly care." />
+  <meta name="description" content="Bharat Abhyudaya Sansthan: Upliftment to Self-Reliant India. Education, health, women empowerment, welfare, environment, culture, gaushala, elderly care." />
 
   <style>
     :root{
@@ -33,7 +33,7 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:34px 0}
     h1{margin:0;font-size:42px;letter-spacing:-1.1px;line-height:1.05}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    h2{margin:0;font-size:26px;letter-spacing:-.6px}
     p{margin:12px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
@@ -119,7 +119,9 @@
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
       font-weight:950;
+      transition:transform .15s ease, box-shadow .15s ease;
     }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(2,6,23,.10)}
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
       border-color:transparent;font-weight:950;
@@ -129,28 +131,71 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .miniGrid{
+    .tiles{
       display:grid;
       grid-template-columns:1fr;
-      gap:12px;
-      margin-top:14px;
+      gap:14px;
+      margin-top:16px;
     }
     @media(min-width:980px){
-      .miniGrid{grid-template-columns:1fr 1fr;gap:12px}
+      .tiles{grid-template-columns:1fr 1fr 1fr;gap:14px}
     }
-
-    .tagRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .tag{
+    .tile{
+      border-radius:22px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.96);
+      padding:16px;
+      box-shadow:0 10px 30px rgba(2,6,23,.06);
+      transition:transform .15s ease, box-shadow .15s ease;
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+      min-height:140px;
+    }
+    .tile:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(2,6,23,.12)}
+    .tile b{display:block;font-size:16px}
+    .tile p{margin-top:8px}
+    .chip{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
       font-size:12px;
       font-weight:900;
+      margin-top:12px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(11,90,166,.05);
+      color:#0b5aa6;
+    }
+    .chip.orange{background:rgba(245,139,31,.08);color:#b45309}
+    .chip.green{background:rgba(34,197,94,.08);color:#166534}
+
+    .programs{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width:980px){
+      .programs{grid-template-columns:1fr 1fr;gap:14px}
+    }
+
+    .progHead{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .progHead b{font-size:16px}
+    .status{
+      font-size:12px;
+      font-weight:950;
       padding:6px 10px;
       border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.04);
-      color:#0b5aa6;
+      background:rgba(34,197,94,.08);
+      color:#166534;
+      white-space:nowrap;
     }
-    .tag.orange{background:rgba(245,139,31,.08);color:#b45309}
-    .tag.green{background:rgba(34,197,94,.08);color:#166534}
 
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
@@ -200,6 +245,7 @@
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <div class="heroBox">
@@ -212,19 +258,15 @@
             <h1 id="title">भारत अभ्युदय संस्थान</h1>
             <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
 
-            <div class="tagRow" id="tags">
-              <span class="tag">Education</span>
-              <span class="tag orange">Health</span>
-              <span class="tag green">Women Empowerment</span>
-              <span class="tag">Welfare</span>
-              <span class="tag orange">Culture</span>
-              <span class="tag green">Gaushala</span>
-            </div>
+            <p class="muted" id="intro">
+              हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गरीब/जरूरतमंद सहायता, कौशल विकास, पर्यावरण संरक्षण,
+              संस्कृति-सनातन एवं विरासत संरक्षण, गौ सेवा, पशु कल्याण और वृद्धजन सेवा जैसे क्षेत्रों में कार्य करते हैं।
+            </p>
 
             <div class="btnRow">
               <a class="btn secondary" href="documents.html" id="docsBtn">Registration PDF</a>
               <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
-              <a class="btn" href="initiatives.html" id="workBtn">Our Initiatives</a>
+              <a class="btn" href="donate.html" id="donBtn">Donate</a>
             </div>
 
             <div class="card" style="margin-top:16px">
@@ -247,29 +289,131 @@
             </p>
 
             <div class="btnRow">
-              <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
               <a class="btn secondary" href="about.html" id="aboutBtn">About Us</a>
-              <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
+              <a class="btn" href="initiatives.html" id="workBtn">Our Initiatives</a>
+              <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
             </div>
           </div>
 
         </div>
 
-        <div class="miniGrid">
-          <div class="card">
-            <h2 id="mini1t">हमारा उद्देश्य</h2>
-            <p class="muted small" id="mini1d">
-              समाज के जरूरतमंद वर्गों तक शिक्षा, स्वास्थ्य, जागरूकता, सेवा और अवसर पहुँचाना तथा आत्मनिर्भर भारत की दिशा में
-              वास्तविक परिवर्तन लाना।
-            </p>
-          </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="card">
-            <h2 id="mini2t">हमारा तरीका</h2>
-            <p class="muted small" id="mini2d">
-              हम जागरूकता अभियान, शिविर, प्रशिक्षण कार्यक्रम, जरूरतमंद सहायता, परामर्श और जनभागीदारी के माध्यम से
-              चरणबद्ध तरीके से कार्य करते हैं।
-            </p>
+  <!-- NAV TILES -->
+  <section>
+    <div class="wrap">
+      <h2 id="tilesT">Explore</h2>
+      <p class="muted" id="tilesD">आप जिस section को देखना चाहें, उस पर क्लिक करें।</p>
+
+      <div class="tiles">
+        <a class="tile" href="about.html">
+          <b id="t1t">About Us</b>
+          <p class="small muted" id="t1d">संस्था का परिचय, Mission, Vision, Committee और values.</p>
+          <span class="chip" id="t1c">Know More</span>
+        </a>
+
+        <a class="tile" href="initiatives.html">
+          <b id="t2t">Our Initiatives</b>
+          <p class="small muted" id="t2d">शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौ सेवा, पर्यावरण आदि.</p>
+          <span class="chip orange" id="t2c">See Work</span>
+        </a>
+
+        <a class="tile" href="documents.html">
+          <b id="t3t">Documents</b>
+          <p class="small muted" id="t3d">Registration Certificate & Bylaws PDF.</p>
+          <span class="chip green" id="t3c">Open PDF</span>
+        </a>
+
+        <a class="tile" href="donate.html">
+          <b id="t4t">Donate</b>
+          <p class="small muted" id="t4d">दान/सहयोग से सेवा कार्यों को मजबूती दें।</p>
+          <span class="chip orange" id="t4c">Support</span>
+        </a>
+
+        <a class="tile" href="contact.html">
+          <b id="t5t">Contact</b>
+          <p class="small muted" id="t5d">WhatsApp, Phone, Email और message form.</p>
+          <span class="chip green" id="t5c">Connect</span>
+        </a>
+
+        <a class="tile" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">
+          <b id="t6t">WhatsApp Direct</b>
+          <p class="small muted" id="t6d">तेज़ सहायता और जानकारी के लिए direct WhatsApp करें।</p>
+          <span class="chip" id="t6c">Chat Now</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT PROGRAMS -->
+  <section>
+    <div class="wrap">
+      <h2 id="progT">Current Running Programs</h2>
+      <p class="muted" id="progD">
+        नीचे कुछ current initiatives के उदाहरण दिए गए हैं। आप चाहें तो इनके नाम/विवरण बदल सकते हैं।
+      </p>
+
+      <div class="programs">
+
+        <div class="card">
+          <div class="progHead">
+            <b id="p1t">Education Support Drive</b>
+            <span class="status" id="p1s">Active</span>
+          </div>
+          <p class="small muted" id="p1d">
+            जरूरतमंद बच्चों के लिए कॉपी-किताब, मार्गदर्शन, डिजिटल साक्षरता और परीक्षा तैयारी सहायता।
+          </p>
+          <div class="btnRow">
+            <a class="btn primary" href="donate.html" id="p1don">Donate</a>
+            <a class="btn secondary" href="contact.html" id="p1join">Join / Volunteer</a>
+            <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="p1wa">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="progHead">
+            <b id="p2t">Health Awareness & Camp</b>
+            <span class="status" id="p2s">Active</span>
+          </div>
+          <p class="small muted" id="p2d">
+            स्वास्थ्य जागरूकता अभियान, free checkup camps, रक्तदान प्रेरणा और पोषण जागरूकता।
+          </p>
+          <div class="btnRow">
+            <a class="btn primary" href="donate.html" id="p2don">Donate</a>
+            <a class="btn secondary" href="contact.html" id="p2join">Join / Volunteer</a>
+            <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="p2wa">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="progHead">
+            <b id="p3t">Gaushala & Animal Care Support</b>
+            <span class="status" id="p3s">Active</span>
+          </div>
+          <p class="small muted" id="p3d">
+            गौ सेवा, सुरक्षा, संरक्षण, तथा आवारा पशुओं/कुत्तों और जरूरतमंद जीवों के लिए care व shelter support।
+          </p>
+          <div class="btnRow">
+            <a class="btn primary" href="donate.html" id="p3don">Donate</a>
+            <a class="btn secondary" href="contact.html" id="p3join">Join / Volunteer</a>
+            <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="p3wa">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="progHead">
+            <b id="p4t">Women Empowerment & Skill Training</b>
+            <span class="status" id="p4s">Active</span>
+          </div>
+          <p class="small muted" id="p4d">
+            महिलाओं के लिए जागरूकता, प्रशिक्षण, कौशल विकास, आत्मरोजगार और सम्मान/सुरक्षा से जुड़े कार्यक्रम।
+          </p>
+          <div class="btnRow">
+            <a class="btn primary" href="donate.html" id="p4don">Donate</a>
+            <a class="btn secondary" href="contact.html" id="p4join">Join / Volunteer</a>
+            <a class="btn" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="p4wa">WhatsApp</a>
           </div>
         </div>
 
@@ -300,27 +444,63 @@
       kicker:"Registered Social Organization",
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
-
-      tags:["Education","Health","Women Empowerment","Welfare","Culture","Gaushala"],
+      intro:"हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गरीब/जरूरतमंद सहायता, कौशल विकास, पर्यावरण संरक्षण, संस्कृति-सनातन एवं विरासत संरक्षण, गौ सेवा, पशु कल्याण और वृद्धजन सेवा जैसे क्षेत्रों में कार्य करते हैं।",
 
       docsBtn:"Registration PDF",
       joinBtn:"हमसे जुड़ें",
-      workBtn:"Our Initiatives",
-
+      donBtn:"Donate",
       quick:"Quick Info",
       ph:"फोन:",
-
       regTitle:"पंजीकरण विवरण",
-
-      donBtn:"Donate",
       aboutBtn:"About Us",
+      workBtn:"Our Initiatives",
       waBtn:"WhatsApp",
 
-      mini1t:"हमारा उद्देश्य",
-      mini1d:"समाज के जरूरतमंद वर्गों तक शिक्षा, स्वास्थ्य, जागरूकता, सेवा और अवसर पहुँचाना तथा आत्मनिर्भर भारत की दिशा में वास्तविक परिवर्तन लाना।",
+      tilesT:"Explore",
+      tilesD:"आप जिस section को देखना चाहें, उस पर क्लिक करें।",
 
-      mini2t:"हमारा तरीका",
-      mini2d:"हम जागरूकता अभियान, शिविर, प्रशिक्षण कार्यक्रम, जरूरतमंद सहायता, परामर्श और जनभागीदारी के माध्यम से चरणबद्ध तरीके से कार्य करते हैं।",
+      t1t:"About Us",
+      t1d:"संस्था का परिचय, Mission, Vision, Committee और values.",
+      t1c:"Know More",
+
+      t2t:"Our Initiatives",
+      t2d:"शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौ सेवा, पर्यावरण आदि.",
+      t2c:"See Work",
+
+      t3t:"Documents",
+      t3d:"Registration Certificate & Bylaws PDF.",
+      t3c:"Open PDF",
+
+      t4t:"Donate",
+      t4d:"दान/सहयोग से सेवा कार्यों को मजबूती दें।",
+      t4c:"Support",
+
+      t5t:"Contact",
+      t5d:"WhatsApp, Phone, Email और message form.",
+      t5c:"Connect",
+
+      t6t:"WhatsApp Direct",
+      t6d:"तेज़ सहायता और जानकारी के लिए direct WhatsApp करें।",
+      t6c:"Chat Now",
+
+      progT:"Current Running Programs",
+      progD:"नीचे कुछ current initiatives के उदाहरण दिए गए हैं। आप चाहें तो इनके नाम/विवरण बदल सकते हैं।",
+
+      p1t:"Education Support Drive",
+      p1d:"जरूरतमंद बच्चों के लिए कॉपी-किताब, मार्गदर्शन, डिजिटल साक्षरता और परीक्षा तैयारी सहायता।",
+
+      p2t:"Health Awareness & Camp",
+      p2d:"स्वास्थ्य जागरूकता अभियान, free checkup camps, रक्तदान प्रेरणा और पोषण जागरूकता।",
+
+      p3t:"Gaushala & Animal Care Support",
+      p3d:"गौ सेवा, सुरक्षा, संरक्षण, तथा आवारा पशुओं/कुत्तों और जरूरतमंद जीवों के लिए care व shelter support।",
+
+      p4t:"Women Empowerment & Skill Training",
+      p4d:"महिलाओं के लिए जागरूकता, प्रशिक्षण, कौशल विकास, आत्मरोजगार और सम्मान/सुरक्षा से जुड़े कार्यक्रम।",
+
+      donate:"Donate",
+      join:"Join / Volunteer",
+      wa:"WhatsApp",
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -333,27 +513,63 @@
       kicker:"Registered Social Organization",
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
-
-      tags:["Education","Health","Women Empowerment","Welfare","Environment","Heritage"],
+      intro:"We work in education, health, women empowerment, support for the poor and needy, skill development, environment and cleanliness, culture & Sanatan values, heritage conservation, gaushala, animal welfare and elderly care.",
 
       docsBtn:"Registration PDF",
       joinBtn:"Get Involved",
-      workBtn:"Our Initiatives",
-
+      donBtn:"Donate",
       quick:"Quick Info",
       ph:"Phone:",
-
       regTitle:"Registration Details",
-
-      donBtn:"Donate",
       aboutBtn:"About Us",
+      workBtn:"Our Initiatives",
       waBtn:"WhatsApp",
 
-      mini1t:"Our Purpose",
-      mini1d:"To deliver education, health support, awareness, service and opportunities to the sections of society that need them most — and create real impact towards a self-reliant India.",
+      tilesT:"Explore",
+      tilesD:"Click any section you want to explore.",
 
-      mini2t:"How We Work",
-      mini2d:"We work through awareness drives, camps, training programs, support for the needy, guidance and strong community participation.",
+      t1t:"About Us",
+      t1d:"Introduction, mission, vision, committee and values.",
+      t1c:"Know More",
+
+      t2t:"Our Initiatives",
+      t2d:"Education, health, women empowerment, gaushala, environment and more.",
+      t2c:"See Work",
+
+      t3t:"Documents",
+      t3d:"Registration certificate and bylaws PDF.",
+      t3c:"Open PDF",
+
+      t4t:"Donate",
+      t4d:"Support our social service initiatives through donations.",
+      t4c:"Support",
+
+      t5t:"Contact",
+      t5d:"WhatsApp, phone, email and message form.",
+      t5c:"Connect",
+
+      t6t:"WhatsApp Direct",
+      t6d:"For quick help and information, message us on WhatsApp.",
+      t6c:"Chat Now",
+
+      progT:"Current Running Programs",
+      progD:"These are example active programs. You can edit the names and details anytime.",
+
+      p1t:"Education Support Drive",
+      p1d:"Support for children through study material, guidance, digital literacy and exam preparation.",
+
+      p2t:"Health Awareness & Camp",
+      p2d:"Health awareness drives, free checkup camps, blood donation initiatives and nutrition awareness.",
+
+      p3t:"Gaushala & Animal Care Support",
+      p3d:"Cow service, protection and care — including support for stray animals and shelter initiatives.",
+
+      p4t:"Women Empowerment & Skill Training",
+      p4d:"Awareness, training, skill development, self-employment support, dignity and safety initiatives.",
+
+      donate:"Donate",
+      join:"Join / Volunteer",
+      wa:"WhatsApp",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -375,19 +591,11 @@
     document.getElementById("kicker").textContent=d.kicker;
     document.getElementById("title").textContent=d.title;
     document.getElementById("tagline").textContent=d.tagline;
-
-    const tags=document.getElementById("tags");
-    tags.innerHTML="";
-    d.tags.forEach((x,i)=>{
-      const s=document.createElement("span");
-      s.className="tag "+(i%3===1?"orange":(i%3===2?"green":""));
-      s.textContent=x;
-      tags.appendChild(s);
-    });
+    document.getElementById("intro").textContent=d.intro;
 
     document.getElementById("docsBtn").textContent=d.docsBtn;
     document.getElementById("joinBtn").textContent=d.joinBtn;
-    document.getElementById("workBtn").textContent=d.workBtn;
+    document.getElementById("donBtn").textContent=d.donBtn;
 
     document.getElementById("quick").textContent=d.quick;
     document.getElementById("phLbl").textContent=d.ph;
@@ -396,56 +604,104 @@
 
     document.getElementById("regTitle").textContent=d.regTitle;
 
-    document.getElementById("donBtn").textContent=d.donBtn;
     document.getElementById("aboutBtn").textContent=d.aboutBtn;
+    document.getElementById("workBtn").textContent=d.workBtn;
     document.getElementById("waBtn").textContent=d.waBtn;
 
-    document.getElementById("mini1t").textContent=d.mini1t;
-    document.getElementById("mini1d").textContent=d.mini1d;
+    document.getElementById("tilesT").textContent=d.tilesT;
+    document.getElementById("tilesD").textContent=d.tilesD;
 
-    document.getElementById("mini2t").textContent=d.mini2t;
-    document.getElementById("mini2d").textContent=d.mini2d;
+    document.getElementById("t1t").textContent=d.t1t;
+    document.getElementById("t1d").textContent=d.t1d;
+    document.getElementById("t1c").textContent=d.t1c;
+
+    document.getElementById("t2t").textContent=d.t2t;
+    document.getElementById("t2d").textContent=d.t2d;
+    document.getElementById("t2c").textContent=d.t2c;
+
+    document.getElementById("t3t").textContent=d.t3t;
+    document.getElementById("t3d").textContent=d.t3d;
+    document.getElementById("t3c").textContent=d.t3c;
+
+    document.getElementById("t4t").textContent=d.t4t;
+    document.getElementById("t4d").textContent=d.t4d;
+    document.getElementById("t4c").textContent=d.t4c;
+
+    document.getElementById("t5t").textContent=d.t5t;
+    document.getElementById("t5d").textContent=d.t5d;
+    document.getElementById("t5c").textContent=d.t5c;
+
+    document.getElementById("t6t").textContent=d.t6t;
+    document.getElementById("t6d").textContent=d.t6d;
+    document.getElementById("t6c").textContent=d.t6c;
+
+    document.getElementById("progT").textContent=d.progT;
+    document.getElementById("progD").textContent=d.progD;
+
+    document.getElementById("p1t").textContent=d.p1t;
+    document.getElementById("p1d").textContent=d.p1d;
+
+    document.getElementById("p2t").textContent=d.p2t;
+    document.getElementById("p2d").textContent=d.p2d;
+
+    document.getElementById("p3t").textContent=d.p3t;
+    document.getElementById("p3d").textContent=d.p3d;
+
+    document.getElementById("p4t").textContent=d.p4t;
+    document.getElementById("p4d").textContent=d.p4d;
+
+    // buttons inside programs
+    document.getElementById("p1don").textContent=d.donate;
+    document.getElementById("p1join").textContent=d.join;
+    document.getElementById("p1wa").textContent=d.wa;
+
+    document.getElementById("p2don").textContent=d.donate;
+    document.getElementById("p2join").textContent=d.join;
+    document.getElementById("p2wa").textContent=d.wa;
+
+    document.getElementById("p3don").textContent=d.donate;
+    document.getElementById("p3join").textContent=d.join;
+    document.getElementById("p3wa").textContent=d.wa;
+
+    document.getElementById("p4don").textContent=d.donate;
+    document.getElementById("p4join").textContent=d.join;
+    document.getElementById("p4wa").textContent=d.wa;
 
     document.getElementById("foot").textContent=d.foot;
   }
 
+  // ---- language persistence (works across all pages) ----
   const btnHi = document.getElementById("btnHi");
   const btnEn = document.getElementById("btnEn");
 
-  const btnHi = document.getElementById("btnHi");
-const btnEn = document.getElementById("btnEn");
-
-function applyActive(lang){
-  if(lang === "en"){
-    btnEn.classList.add("active");
-    btnHi.classList.remove("active");
-  }else{
-    btnHi.classList.add("active");
-    btnEn.classList.remove("active");
+  function applyActive(lang){
+    if(lang === "en"){
+      btnEn.classList.add("active");
+      btnHi.classList.remove("active");
+    }else{
+      btnHi.classList.add("active");
+      btnEn.classList.remove("active");
+    }
   }
-}
 
-btnHi.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","hi");
-  applyActive("hi");
-  setLang("hi");
-});
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    applyActive("hi");
+    setLang("hi");
+  });
 
-btnEn.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","en");
-  applyActive("en");
-  setLang("en");
-});
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    applyActive("en");
+    setLang("en");
+  });
 
-document.getElementById("year").textContent=new Date().getFullYear();
+  document.getElementById("year").textContent=new Date().getFullYear();
 
-// Load saved language (works across all pages)
-const savedLang = localStorage.getItem("bas_lang") || "hi";
-applyActive(savedLang);
-setLang(savedLang);
-
+  const savedLang = localStorage.getItem("bas_lang") || "hi";
+  applyActive(savedLang);
+  setLang(savedLang);
 </script>
 
 </body>
 </html>
-
