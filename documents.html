@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Documents • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Official documents — registration certificate and bylaws of Bharat Abhyudaya Sansthan." />
+  <title>Documents | Bharat Abhyudaya Sansthan</title>
 
   <style>
     :root{
@@ -13,9 +12,9 @@
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
-      --shadow:0 18px 45px rgba(2,6,23,.12);
-      --radius:24px;
-      --max:1180px;
+      --shadow:0 16px 40px rgba(2,6,23,.10);
+      --radius:22px;
+      --max:1100px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -24,33 +23,33 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--fg);
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.18), transparent 55%),
-        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
+        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
         #fff;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:34px 0}
-    h1{margin:0;font-size:40px;letter-spacing:-1px;line-height:1.08}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    p{margin:12px 0 0;line-height:1.75}
+    section{padding:28px 0}
+    h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
+    h2{margin:0;font-size:20px;letter-spacing:-.35px}
+    p{margin:10px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.86);
+      background:rgba(255,255,255,.88);
       backdrop-filter: blur(12px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:12px;
+      padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:260px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
     .logo{
-      width:46px;height:46px;border-radius:999px;
+      width:44px;height:44px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
@@ -58,6 +57,7 @@
     .brand span{display:block;font-size:12px;color:var(--muted)}
     .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
 
+    /* Desktop menu */
     .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
     .menu a{padding:8px 10px;border-radius:12px}
     .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
@@ -77,6 +77,7 @@
       color:var(--brand);
     }
 
+    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
@@ -89,42 +90,65 @@
       color:#fff;border-color:transparent;
     }
 
-    .heroBox{
-      border-radius:30px;
+    /* Mobile menu button */
+    .mobBtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:42px;height:42px;
+      border-radius:14px;
       border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.24), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.20), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.97));
-      box-shadow:var(--shadow);
-      padding:22px;
+      background:#fff;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:950;
     }
+    @media(min-width:980px){.mobBtn{display:none}}
 
-    .kicker{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:7px 12px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.7);
-      font-weight:950;font-size:13px;
+    /* Mobile dropdown panel */
+    .mobilePanel{
+      display:none;
+      padding:12px 0 14px;
+      border-top:1px solid rgba(226,232,240,.95);
     }
+    .mobilePanel.open{display:block}
+    @media(min-width:980px){.mobilePanel{display:none !important}}
 
-    .grid{
+    .mnav{
       display:grid;
       grid-template-columns:1fr;
-      gap:16px;
-      margin-top:16px;
+      gap:10px;
     }
-    @media(min-width:980px){
-      .grid{grid-template-columns:1.1fr .9fr;gap:18px}
+    .mnav a{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.9);
+      font-weight:900;
+      color:var(--fg);
+    }
+    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
+
+    /* Content */
+    .hero{
+      border:1px solid rgba(226,232,240,.95);
+      background:
+        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
+      border-radius:28px;
+      padding:18px;
+      box-shadow:var(--shadow);
     }
 
     .card{
-      background:rgba(255,255,255,.97);
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:0 10px 30px rgba(2,6,23,.06);
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);padding:18px;
+      box-shadow:0 12px 34px rgba(2,6,23,.06);
     }
+
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
 
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
@@ -143,24 +167,25 @@
       color:#fff;border-color:transparent;
     }
 
-    .line{
+    .note{
+      border:1px dashed rgba(148,163,184,.9);
+      background:rgba(248,250,252,.9);
+      border-radius:18px;
+      padding:14px;
       margin-top:12px;
-      border-top:1px dashed rgba(148,163,184,.65);
-      padding-top:12px;
     }
 
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
+    }
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
-    }
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:14px;color:var(--muted);
-      background:rgba(255,255,255,.9);
-      font-size:14px;
     }
   </style>
 </head>
@@ -188,77 +213,84 @@
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
-      <div class="toggle">
-        <button class="pill active" id="btnHi" type="button">हिन्दी</button>
-        <button class="pill" id="btnEn" type="button">English</button>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
+
+        <div class="toggle">
+          <button class="pill active" id="btnHi" type="button">हिन्दी</button>
+          <button class="pill" id="btnEn" type="button">English</button>
+        </div>
       </div>
     </div>
+
+    <!-- Mobile dropdown -->
+    <div class="mobilePanel" id="mobilePanel">
+      <div class="mnav">
+        <a href="index.html" id="mmHome">⌂ Home</a>
+        <a href="about.html" id="mmAbout">परिचय</a>
+        <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
+        <a href="documents.html" id="mmDocs">दस्तावेज़</a>
+        <a href="donate.html" id="mmDonate">दान</a>
+        <a href="contact.html" id="mmContact">संपर्क</a>
+      </div>
+    </div>
+
   </div>
 </header>
 
 <main>
 
-  <section style="padding-top:28px">
+  <section>
     <div class="wrap">
-      <div class="heroBox">
-        <span class="kicker" id="kicker">Official Documents</span>
-        <h1 style="margin-top:10px" id="title">दस्तावेज़</h1>
+      <div class="hero">
+        <h1 id="title">दस्तावेज़</h1>
         <p class="muted" id="subtitle">
-          इस पेज पर संस्था के आधिकारिक दस्तावेज़ उपलब्ध हैं। आप इन्हें देख सकते हैं और डाउनलोड भी कर सकते हैं।
+          संस्था के पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws) नीचे उपलब्ध हैं।
         </p>
 
-        <div class="grid">
+        <div class="btnRow">
+          <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="openBtn">
+            PDF Open
+          </a>
+          <a class="btn primary" href="./assets/registration.pdf" download id="downBtn">
+            Download PDF
+          </a>
+        </div>
+      </div>
 
-          <div class="card">
-            <h2 id="pdfT">Registration & Bylaws (PDF)</h2>
-            <p class="small muted" id="pdfD">
-              संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।
+      <div class="grid">
+
+        <div class="card">
+          <h2 id="h2a">Registration & Bylaws (PDF)</h2>
+          <p class="muted small" id="p1">
+            यह दस्तावेज़ संस्था के पंजीकरण प्रमाणपत्र, Memorandum of Association तथा Bylaws से संबंधित है।
+            इसे आप PDF Open पर क्लिक करके देख सकते हैं या Download कर सकते हैं।
+          </p>
+
+          <div class="note">
+            <p class="small muted" id="note">
+              अगर PDF mobile पर open नहीं हो रही है, तो “Download PDF” पर क्लिक करके अपने फोन में save करके खोलें।
             </p>
-
-            <div class="btnRow">
-              <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="openBtn">
-                Open in New Tab
-              </a>
-              <a class="btn primary" href="./assets/registration.pdf" download id="downBtn">
-                Download PDF
-              </a>
-            </div>
-
-            <div class="line">
-              <p class="small muted" id="pdfNote">
-                अगर PDF open नहीं हो रहा है, तो कृपया एक बार refresh करें या दूसरा browser try करें।
-              </p>
-            </div>
           </div>
+        </div>
 
-          <div class="card">
-            <h2 id="memT">सदस्यता</h2>
-            <p class="muted small" id="memD">
-              आप संस्था से जुड़कर सेवा कार्यों में सहयोग कर सकते हैं।
-            </p>
+        <div class="card">
+          <h2 id="h2b">Quick Details</h2>
+          <p class="small muted" id="q1" style="margin-top:10px">
+            Registration No.: <b>FAT/02340/2024-2025</b><br>
+            Date: <b>05/07/2024</b><br>
+            Valid: <b>04/07/2029</b><br>
+            PAN: <b>AANAB2855N</b>
+          </p>
 
-            <div class="line">
-              <p class="muted small" id="memFees">
-                <b>आजीवन सदस्य:</b> ₹10,000<br>
-                <b>सामान्य सदस्य:</b> ₹201
-              </p>
-            </div>
-
-            <div class="btnRow">
-              <a class="btn secondary" href="contact.html" id="joinBtn">Contact</a>
-              <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
-            </div>
-
-            <div class="line">
-              <p class="small muted" id="memNote">
-                Membership के लिए WhatsApp पर message करके प्रक्रिया जानें।
-              </p>
-            </div>
+          <div class="btnRow">
+            <a class="btn" href="contact.html" id="contactBtn">Contact</a>
+            <a class="btn secondary" href="donate.html" id="donBtn">Donate</a>
           </div>
-
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -280,22 +312,20 @@
       sub:"Bharat Abhyudaya Sansthan",
       m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
-      kicker:"Official Documents",
       title:"दस्तावेज़",
-      subtitle:"इस पेज पर संस्था के आधिकारिक दस्तावेज़ उपलब्ध हैं। आप इन्हें देख सकते हैं और डाउनलोड भी कर सकते हैं।",
+      subtitle:"संस्था के पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws) नीचे उपलब्ध हैं।",
 
-      pdfT:"Registration & Bylaws (PDF)",
-      pdfD:"संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।",
-      openBtn:"Open in New Tab",
+      openBtn:"PDF Open",
       downBtn:"Download PDF",
-      pdfNote:"अगर PDF open नहीं हो रहा है, तो कृपया एक बार refresh करें या दूसरा browser try करें।",
 
-      memT:"सदस्यता",
-      memD:"आप संस्था से जुड़कर सेवा कार्यों में सहयोग कर सकते हैं।",
-      memFees:"<b>आजीवन सदस्य:</b> ₹10,000<br><b>सामान्य सदस्य:</b> ₹201",
-      joinBtn:"Contact",
+      h2a:"Registration & Bylaws (PDF)",
+      p1:"यह दस्तावेज़ संस्था के पंजीकरण प्रमाणपत्र, Memorandum of Association तथा Bylaws से संबंधित है। इसे आप PDF Open पर क्लिक करके देख सकते हैं या Download कर सकते हैं।",
+
+      note:"अगर PDF mobile पर open नहीं हो रही है, तो “Download PDF” पर क्लिक करके अपने फोन में save करके खोलें।",
+
+      h2b:"Quick Details",
+      contactBtn:"Contact",
       donBtn:"Donate",
-      memNote:"Membership के लिए WhatsApp पर message करके प्रक्रिया जानें।",
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -306,22 +336,20 @@
       sub:"Registered Social Organization",
       m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
-      kicker:"Official Documents",
       title:"Documents",
-      subtitle:"This page contains official documents of the organization. You can view and download them.",
+      subtitle:"The organization’s registration certificate and bylaws are available below.",
 
-      pdfT:"Registration & Bylaws (PDF)",
-      pdfD:"Official registration certificate and bylaws of the organization.",
-      openBtn:"Open in New Tab",
+      openBtn:"Open PDF",
       downBtn:"Download PDF",
-      pdfNote:"If the PDF does not open, please refresh once or try another browser.",
 
-      memT:"Membership",
-      memD:"You can join the organization and support our service initiatives.",
-      memFees:"<b>Lifetime Member:</b> ₹10,000<br><b>General Member:</b> ₹201",
-      joinBtn:"Contact",
+      h2a:"Registration & Bylaws (PDF)",
+      p1:"This document contains the organization’s registration certificate, Memorandum of Association and bylaws. You can view it by clicking Open PDF or download it.",
+
+      note:"If the PDF does not open on mobile, click “Download PDF”, save it on your phone and then open it.",
+
+      h2b:"Quick Details",
+      contactBtn:"Contact",
       donBtn:"Donate",
-      memNote:"For membership, message us on WhatsApp to know the process.",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -335,6 +363,7 @@
     document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
+    // Desktop menu
     document.getElementById("mHome").textContent=d.m.home;
     document.getElementById("mAbout").textContent=d.m.a;
     document.getElementById("mWork").textContent=d.m.w;
@@ -342,22 +371,27 @@
     document.getElementById("mDonate").textContent=d.m.dn;
     document.getElementById("mContact").textContent=d.m.c;
 
-    document.getElementById("kicker").textContent=d.kicker;
+    // Mobile menu
+    document.getElementById("mmHome").textContent="⌂ Home";
+    document.getElementById("mmAbout").textContent=d.m.a;
+    document.getElementById("mmWork").textContent=d.m.w;
+    document.getElementById("mmDocs").textContent=d.m.d;
+    document.getElementById("mmDonate").textContent=d.m.dn;
+    document.getElementById("mmContact").textContent=d.m.c;
+
     document.getElementById("title").textContent=d.title;
     document.getElementById("subtitle").textContent=d.subtitle;
 
-    document.getElementById("pdfT").textContent=d.pdfT;
-    document.getElementById("pdfD").textContent=d.pdfD;
     document.getElementById("openBtn").textContent=d.openBtn;
     document.getElementById("downBtn").textContent=d.downBtn;
-    document.getElementById("pdfNote").textContent=d.pdfNote;
 
-    document.getElementById("memT").textContent=d.memT;
-    document.getElementById("memD").textContent=d.memD;
-    document.getElementById("memFees").innerHTML=d.memFees;
-    document.getElementById("joinBtn").textContent=d.joinBtn;
+    document.getElementById("h2a").textContent=d.h2a;
+    document.getElementById("p1").textContent=d.p1;
+    document.getElementById("note").textContent=d.note;
+
+    document.getElementById("h2b").textContent=d.h2b;
+    document.getElementById("contactBtn").textContent=d.contactBtn;
     document.getElementById("donBtn").textContent=d.donBtn;
-    document.getElementById("memNote").textContent=d.memNote;
 
     document.getElementById("foot").textContent=d.foot;
   }
@@ -386,6 +420,23 @@
     localStorage.setItem("bas_lang","en");
     applyActive("en");
     setLang("en");
+  });
+
+  // ---- Mobile menu open/close ----
+  const mobBtn = document.getElementById("mobBtn");
+  const mobilePanel = document.getElementById("mobilePanel");
+
+  mobBtn.addEventListener("click",()=>{
+    mobilePanel.classList.toggle("open");
+    mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
+  });
+
+  // Close mobile panel when clicking any link
+  document.querySelectorAll(".mnav a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      mobilePanel.classList.remove("open");
+      mobBtn.textContent="☰";
+    });
   });
 
   document.getElementById("year").textContent=new Date().getFullYear();
