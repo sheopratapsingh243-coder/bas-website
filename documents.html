@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Documents • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Documents of Bharat Abhyudaya Sansthan: Registration Certificate and Bylaws PDF." />
+  <meta name="description" content="Bharat Abhyudaya Sansthan registration certificate and bylaws PDF." />
 
   <style>
     :root{
@@ -24,9 +24,9 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--fg);
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.20), transparent 60%),
+        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.18), transparent 55%),
-        radial-gradient(800px 500px at 40% 110%, rgba(34,197,94,.10), transparent 55%),
+        radial-gradient(800px 500px at 40% 110%, rgba(34,197,94,.12), transparent 55%),
         #fff;
     }
     a{color:inherit;text-decoration:none}
@@ -37,6 +37,13 @@
     p{margin:12px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
+    .kicker{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:7px 12px;border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.7);
+      font-weight:950;font-size:13px;
+    }
 
     header{
       position:sticky;top:0;z-index:50;
@@ -70,23 +77,31 @@
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:900;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .hero{
-      padding:28px 0 0;
-    }
+    .hero{padding:28px 0 0}
     .heroBox{
       border-radius:28px;
       border:1px solid rgba(226,232,240,.95);
       background:
-        radial-gradient(900px 420px at 15% 0%, rgba(245,139,31,.20), transparent 60%),
+        radial-gradient(900px 420px at 15% 0%, rgba(245,139,31,.22), transparent 60%),
         radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.95));
       box-shadow:var(--shadow);
       padding:22px;
       overflow:hidden;
       position:relative;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media(min-width:980px){
+      .grid{grid-template-columns:1.1fr .9fr;gap:18px}
     }
 
     .card{
@@ -97,23 +112,13 @@
       box-shadow:0 10px 30px rgba(2,6,23,.06);
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      margin-top:16px;
-    }
-    @media(min-width:980px){
-      .grid{grid-template-columns:1.05fr .95fr;gap:18px}
-    }
-
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:900;
+      font-weight:950;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -124,23 +129,19 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .docRow{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+    .pdfBox{
+      border:1px dashed rgba(148,163,184,.8);
+      border-radius:22px;
+      padding:16px;
+      background:rgba(2,6,23,.02);
       margin-top:14px;
     }
-    @media(min-width:980px){
-      .docRow{grid-template-columns:1fr 1fr}
-    }
-
-    .docItem b{font-size:16px}
-    .docItem p{margin-top:8px}
+    .pdfBox b{display:block}
 
     .note{
-      border-left:4px solid var(--brand);
+      border-left:4px solid var(--accent);
       padding:12px 14px;
-      background:rgba(11,90,166,.06);
+      background:rgba(245,139,31,.07);
       border-radius:16px;
       margin-top:14px;
     }
@@ -195,53 +196,71 @@
   <section class="hero">
     <div class="wrap">
       <div class="heroBox">
-        <h1 id="title">दस्तावेज़</h1>
+        <span class="kicker" id="kicker">Official Documents</span>
+        <h1 id="title" style="margin-top:10px">दस्तावेज़</h1>
         <p class="muted" id="subtitle">
-          यहाँ संस्था के आधिकारिक दस्तावेज़ उपलब्ध हैं। आप इन्हें online देख सकते हैं या download कर सकते हैं।
+          यहाँ संस्था के Registration Certificate और Bylaws उपलब्ध हैं।
+          आप इन्हें open या download कर सकते हैं।
         </p>
 
         <div class="grid">
-          <div class="card docItem">
-            <b id="pdfT">Registration & Bylaws (PDF)</b>
-            <p class="small muted" id="pdfD">
-              संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।
-            </p>
+
+          <div class="card">
+            <h2 id="pdfT">Registration & Bylaws (PDF)</h2>
+
+            <div class="pdfBox">
+              <b id="pdfName">File:</b>
+              <p class="small muted" style="margin-top:8px" id="pdfPath">
+                assets/registration.pdf
+              </p>
+            </div>
 
             <div class="btnRow">
               <a class="btn secondary" href="./assets/registration.pdf" target="_blank" rel="noreferrer" id="openBtn">
-                PDF Open
+                Open PDF
               </a>
               <a class="btn primary" href="./assets/registration.pdf" download id="downBtn">
-                Download
+                Download PDF
+              </a>
+              <a class="btn" href="donate.html" id="supportBtn">
+                Support Our Work
               </a>
             </div>
 
             <div class="note">
               <b id="noteT">Note</b>
               <p class="small muted" id="noteD">
-                यदि PDF मोबाइल पर नहीं खुल रहा है, तो “Download” करके अपने फोन में open करें।
+                यदि PDF open नहीं हो रहा हो, तो “Download PDF” पर क्लिक करें।
+                कुछ मोबाइल browsers में PDF download होकर files में खुलता है।
               </p>
             </div>
           </div>
 
-          <div class="card docItem">
-            <b id="memT">Membership</b>
-            <p class="small muted" id="memD">
-              आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201
+          <div class="card">
+            <h2 id="regT">Registration Details</h2>
+            <p class="small muted" style="margin-top:10px" id="regD">
+              Registration No.: <b>FAT/02340/2024-2025</b><br>
+              Date: <b>05/07/2024</b><br>
+              Valid: <b>04/07/2029</b><br>
+              PAN: <b>AANAB2855N</b>
             </p>
 
-            <div class="note">
-              <b id="memNoteT">Membership Note</b>
-              <p class="small muted" id="memNoteD">
-                सदस्यता प्रक्रिया एवं भुगतान विवरण जल्द ही वेबसाइट पर अपडेट किए जाएंगे।
-              </p>
+            <div class="btnRow">
+              <a class="btn secondary" href="about.html" id="aboutBtn">About Us</a>
+              <a class="btn" href="initiatives.html" id="workBtn">Our Initiatives</a>
+              <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">
+                WhatsApp
+              </a>
             </div>
 
-            <div class="btnRow">
-              <a class="btn primary" href="contact.html" id="memBtn">Contact Us</a>
-              <a class="btn" href="donate.html" id="donBtn">Donate</a>
+            <div class="note">
+              <b id="trustT">Transparency</b>
+              <p class="small muted" id="trustD">
+                Bharat Abhyudaya Sansthan अपने सभी सेवा कार्यों में पारदर्शिता, अनुशासन और सामाजिक जिम्मेदारी को सर्वोच्च मानता है।
+              </p>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -265,23 +284,26 @@
       sub:"Bharat Abhyudaya Sansthan",
       m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
+      kicker:"Official Documents",
       title:"दस्तावेज़",
-      subtitle:"यहाँ संस्था के आधिकारिक दस्तावेज़ उपलब्ध हैं। आप इन्हें online देख सकते हैं या download कर सकते हैं।",
+      subtitle:"यहाँ संस्था के Registration Certificate और Bylaws उपलब्ध हैं। आप इन्हें open या download कर सकते हैं।",
 
       pdfT:"Registration & Bylaws (PDF)",
-      pdfD:"संस्था का पंजीकरण प्रमाणपत्र एवं उपविधि (Bylaws)।",
+      pdfName:"File:",
       openBtn:"PDF Open",
-      downBtn:"Download",
+      downBtn:"PDF Download",
+      supportBtn:"Support Our Work",
 
       noteT:"Note",
-      noteD:"यदि PDF मोबाइल पर नहीं खुल रहा है, तो “Download” करके अपने फोन में open करें।",
+      noteD:"यदि PDF open नहीं हो रहा हो, तो “PDF Download” पर क्लिक करें। कुछ मोबाइल browsers में PDF download होकर files में खुलता है।",
 
-      memT:"सदस्यता",
-      memD:"आजीवन सदस्य: ₹10,000 | सामान्य सदस्य: ₹201",
-      memNoteT:"सदस्यता सूचना",
-      memNoteD:"सदस्यता प्रक्रिया एवं भुगतान विवरण जल्द ही वेबसाइट पर अपडेट किए जाएंगे।",
-      memBtn:"Contact Us",
-      donBtn:"Donate",
+      regT:"पंजीकरण विवरण",
+      aboutBtn:"About Us",
+      workBtn:"Our Initiatives",
+      waBtn:"WhatsApp",
+
+      trustT:"Transparency",
+      trustD:"Bharat Abhyudaya Sansthan अपने सभी सेवा कार्यों में पारदर्शिता, अनुशासन और सामाजिक जिम्मेदारी को सर्वोच्च मानता है।",
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -291,23 +313,26 @@
       sub:"Registered Social Organization",
       m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
+      kicker:"Official Documents",
       title:"Documents",
-      subtitle:"Official documents of the organization are available here. You can view them online or download them.",
+      subtitle:"Registration Certificate and Bylaws are available here. You can open or download the PDF.",
 
       pdfT:"Registration & Bylaws (PDF)",
-      pdfD:"Official registration certificate and bylaws of the organization.",
+      pdfName:"File:",
       openBtn:"Open PDF",
-      downBtn:"Download",
+      downBtn:"Download PDF",
+      supportBtn:"Support Our Work",
 
       noteT:"Note",
-      noteD:"If the PDF does not open on mobile, please download it first and then open it from your device.",
+      noteD:"If the PDF does not open, click “Download PDF”. On some mobile browsers the file downloads and opens in the files app.",
 
-      memT:"Membership",
-      memD:"Lifetime Member: ₹10,000 | General Member: ₹201",
-      memNoteT:"Membership Note",
-      memNoteD:"Membership process and payment details will be updated on the website soon.",
-      memBtn:"Contact Us",
-      donBtn:"Donate",
+      regT:"Registration Details",
+      aboutBtn:"About Us",
+      workBtn:"Our Initiatives",
+      waBtn:"WhatsApp",
+
+      trustT:"Transparency",
+      trustD:"Bharat Abhyudaya Sansthan values transparency, discipline and social responsibility in all service activities.",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -326,65 +351,62 @@
     document.getElementById("mDonate").textContent=d.m.dn;
     document.getElementById("mContact").textContent=d.m.c;
 
+    document.getElementById("kicker").textContent=d.kicker;
     document.getElementById("title").textContent=d.title;
     document.getElementById("subtitle").textContent=d.subtitle;
 
     document.getElementById("pdfT").textContent=d.pdfT;
-    document.getElementById("pdfD").textContent=d.pdfD;
+    document.getElementById("pdfName").textContent=d.pdfName;
 
     document.getElementById("openBtn").textContent=d.openBtn;
     document.getElementById("downBtn").textContent=d.downBtn;
+    document.getElementById("supportBtn").textContent=d.supportBtn;
 
     document.getElementById("noteT").textContent=d.noteT;
     document.getElementById("noteD").textContent=d.noteD;
 
-    document.getElementById("memT").textContent=d.memT;
-    document.getElementById("memD").textContent=d.memD;
+    document.getElementById("regT").textContent=d.regT;
+    document.getElementById("aboutBtn").textContent=d.aboutBtn;
+    document.getElementById("workBtn").textContent=d.workBtn;
+    document.getElementById("waBtn").textContent=d.waBtn;
 
-    document.getElementById("memNoteT").textContent=d.memNoteT;
-    document.getElementById("memNoteD").textContent=d.memNoteD;
-
-    document.getElementById("memBtn").textContent=d.memBtn;
-    document.getElementById("donBtn").textContent=d.donBtn;
+    document.getElementById("trustT").textContent=d.trustT;
+    document.getElementById("trustD").textContent=d.trustD;
 
     document.getElementById("foot").textContent=d.foot;
   }
 
+  // ---- language persistence (works across all pages) ----
   const btnHi = document.getElementById("btnHi");
   const btnEn = document.getElementById("btnEn");
 
-  const btnHi = document.getElementById("btnHi");
-const btnEn = document.getElementById("btnEn");
-
-function applyActive(lang){
-  if(lang === "en"){
-    btnEn.classList.add("active");
-    btnHi.classList.remove("active");
-  }else{
-    btnHi.classList.add("active");
-    btnEn.classList.remove("active");
+  function applyActive(lang){
+    if(lang === "en"){
+      btnEn.classList.add("active");
+      btnHi.classList.remove("active");
+    }else{
+      btnHi.classList.add("active");
+      btnEn.classList.remove("active");
+    }
   }
-}
 
-btnHi.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","hi");
-  applyActive("hi");
-  setLang("hi");
-});
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    applyActive("hi");
+    setLang("hi");
+  });
 
-btnEn.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","en");
-  applyActive("en");
-  setLang("en");
-});
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    applyActive("en");
+    setLang("en");
+  });
 
-document.getElementById("year").textContent=new Date().getFullYear();
+  document.getElementById("year").textContent=new Date().getFullYear();
 
-// Load saved language (works across all pages)
-const savedLang = localStorage.getItem("bas_lang") || "hi";
-applyActive(savedLang);
-setLang(savedLang);
-
+  const savedLang = localStorage.getItem("bas_lang") || "hi";
+  applyActive(savedLang);
+  setLang(savedLang);
 </script>
 
 </body>
