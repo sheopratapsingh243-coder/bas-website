@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Upliftment to Self-Reliant India" />
 
   <style>
     :root{
       --brand:#0b5aa6;
       --accent:#f58b1f;
-      --green:#16a34a;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:22px;
-      --max:1100px;
+      --radius:20px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,42 +26,42 @@
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
         #fff;
+      overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:28px 0}
-    h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
-    h2{margin:0;font-size:20px;letter-spacing:-.35px}
-    p{margin:10px 0 0;line-height:1.75}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.88);
-      backdrop-filter: blur(12px);
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      min-width:220px;
+    }
     .logo{
-      width:44px;height:44px;border-radius:999px;
+      width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
-    .brand b{display:block;font-size:14px;line-height:1.1}
+    .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
-
-    /* Desktop menu */
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a{padding:8px 10px;border-radius:12px}
-    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:700}
+    .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
     /* Toggle */
@@ -70,11 +70,10 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
-      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:800;
     }
 
     /* Mobile menu button */
@@ -92,7 +91,6 @@
     }
     @media(min-width:980px){.mobBtn{display:none}}
 
-    /* Mobile dropdown panel */
     .mobilePanel{
       display:none;
       padding:12px 0 14px;
@@ -110,98 +108,89 @@
       padding:12px 14px;
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.95);
       font-weight:900;
       color:var(--fg);
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Content */
-    .hero{
-      border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
-        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.10), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
-      border-radius:28px;
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
+    /* Layout */
     .card{
       background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;
-      box-shadow:0 12px 34px rgba(2,6,23,.06);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
     }
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:980px){.grid{grid-template-columns:1.15fr .85fr;gap:22px}}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
-
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
+      font-weight:800;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;
+      border-color:transparent;font-weight:900;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:900;
     }
-    .btn.green{
+
+    /* Programs */
+    #programs{padding:34px 0}
+    .programGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media(min-width:900px){
+      .programGrid{grid-template-columns:1fr 1fr}
+    }
+
+    .programCard{
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:22px;
+      box-shadow:0 16px 40px rgba(2,6,23,.10);
+      overflow:hidden;
+      padding:12px;
+    }
+
+    .poster{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:16px;
+      border:1px solid rgba(226,232,240,.95);
+    }
+
+    .programBtns{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+    }
+    .programBtns a{
+      flex:1;
+      justify-content:center;
+    }
+
+    /* Floating WhatsApp */
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;border-color:transparent;
-    }
-
-    .badgeRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .badge{
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
-      padding:8px 12px;border-radius:999px;
-      font-size:13px;
+      color:#fff;padding:12px 14px;border-radius:999px;
+      box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:900;
-      color:var(--muted);
-    }
-
-    .tag{
-      display:inline-flex;
-      padding:7px 12px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:950;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(248,250,252,.9);
-      color:var(--muted);
-      margin-top:10px;
-      gap:8px;
-      align-items:center;
-    }
-
-    .mini{
-      margin-top:10px;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.8;
-      font-size:14px;
     }
 
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
       background:#fff;font-size:14px;
-    }
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
     }
   </style>
 </head>
@@ -211,16 +200,17 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="index.html">
+
+      <a class="brand" href="index.html" title="Home">
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
-          <span id="brandSub">Bharat Abhyudaya Sansthan</span>
+          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
         </div>
       </a>
 
       <nav class="menu">
+        <a href="index.html" id="mHome" title="Home">⌂</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
@@ -230,17 +220,18 @@
 
       <div style="display:flex;gap:10px;align-items:center">
         <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-
         <div class="toggle">
           <button class="pill active" id="btnHi" type="button">हिन्दी</button>
           <button class="pill" id="btnEn" type="button">English</button>
         </div>
       </div>
+
     </div>
 
     <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
+        <a href="index.html" id="mmHome">⌂ Home</a>
         <a href="about.html" id="mmAbout">परिचय</a>
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
@@ -252,181 +243,103 @@
   </div>
 </header>
 
-<main>
+<main id="top">
 
+  <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="hero">
-        <h1 id="title">भारत अभ्युदय संस्थान</h1>
-        <p class="muted" id="subtitle">
-          हम शिक्षा, स्वास्थ्य, आपात सेवा, आत्मनिर्भरता, पर्यावरण, संस्कृति, गौसेवा और जनकल्याण के माध्यम से
-          समाज के लिए वास्तविक बदलाव लाने का प्रयास करते हैं।
-        </p>
-
-        <div class="badgeRow">
-          <div class="badge" id="b1">Education</div>
-          <div class="badge" id="b2">Health</div>
-          <div class="badge" id="b3">Emergency Support</div>
-          <div class="badge" id="b4">Heritage</div>
-        </div>
-
-        <div class="btnRow">
-          <a class="btn secondary" href="about.html" id="aboutBtn">About Us</a>
-          <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
-          <a class="btn green" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
-        </div>
-      </div>
-
       <div class="grid">
 
+        <div>
+          <h1 id="title">भारत अभ्युदय संस्थान</h1>
+          <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="documents.html" id="docsBtn">Documents</a>
+            <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <b id="quick">Quick Info</b>
+            <p class="small muted" id="addr">
+              481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
+            </p>
+            <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
+            <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+          </div>
+        </div>
+
         <div class="card">
-          <h2 id="regTitle">Quick Info</h2>
-          <p class="small muted" id="regText" style="margin-top:10px">
+          <b id="regTitle">पंजीकरण विवरण</b>
+          <p class="small muted" style="margin-top:10px" id="regBox">
             Registration No.: <b>FAT/02340/2024-2025</b><br>
             Date: <b>05/07/2024</b><br>
             Valid: <b>04/07/2029</b><br>
             PAN: <b>AANAB2855N</b>
           </p>
-
-          <div class="btnRow">
-            <a class="btn secondary" href="documents.html" id="pdfBtn">Registration PDF</a>
-            <a class="btn" href="contact.html" id="contactBtn">Contact</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2 id="addrTitle">Address & Contact</h2>
-          <p class="small muted" id="addr" style="margin-top:10px">
-            481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
-          </p>
-          <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
-          <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <section style="padding:24px 0 0">
-        <div class="wrap" style="padding:0">
-          <h2 id="progTitle">Current Programs</h2>
-          <p class="muted" id="progSub">
-            यह वे कार्यक्रम हैं जिन पर संस्था अभी सक्रिय रूप से कार्य कर रही है।
-          </p>
+  <!-- CURRENT PROGRAMS -->
+  <section id="programs">
+    <div class="wrap">
+      <h2 id="programTitle">Current Running Programs</h2>
+      <p class="muted" id="programSub">Click a program to read more or donate.</p>
 
-          <div class="grid">
+      <div class="programGrid">
 
-            <!-- 1 -->
-            <div class="card">
-              <h2 id="p1t">शिक्षा सारथी (Shiksha Sarathi)</h2>
-              <div class="tag" id="p1tag">📚 Education • Future Building</div>
-
-              <p class="muted small" id="p1d">
-                शिक्षा सारथी कार्यक्रम के माध्यम से हम आर्थिक रूप से कमजोर बच्चों को स्टेशनरी किट, आवश्यक अध्ययन सामग्री,
-                तथा सीखने के लिए प्रेरणा प्रदान करते हैं।
-                हमारा लक्ष्य केवल सामग्री देना नहीं, बल्कि बच्चों के भीतर “सीखने की निरंतर आदत” विकसित करना है।
-              </p>
-
-              <p class="muted small" id="p1d2">
-                कई परिवारों में शिक्षा का खर्च सबसे पहले कटता है। ऐसे में एक छोटी-सी सहायता भी बच्चे को स्कूल से जुड़ा रखने में
-                बड़ा योगदान देती है। यही कारण है कि शिक्षा सारथी कार्यक्रम सीधे “भविष्य निर्माण” का कार्य करता है।
-              </p>
-
-              <div class="btnRow">
-                <a class="btn primary" href="donate.html" id="p1don">इस कार्यक्रम के लिए दान करें</a>
-                <a class="btn secondary" href="contact.html" id="p1join">Volunteer बनें</a>
-              </div>
-            </div>
-
-            <!-- 2 -->
-            <div class="card">
-              <h2 id="p2t">एम्बुलेंस सेवा (Ambulance Seva)</h2>
-              <div class="tag" id="p2tag">🚑 Emergency • First Aid • Life Saving</div>
-
-              <p class="muted small" id="p2d">
-                सड़क दुर्घटना या अचानक गंभीर बीमारी की स्थिति में “पहला 1 घंटा” सबसे महत्वपूर्ण होता है।
-                इस समय में सही first aid और तेज़ी से अस्पताल पहुँचाना कई बार जीवन और मृत्यु का अंतर बन जाता है।
-              </p>
-
-              <p class="muted small" id="p2d2">
-                भारत में हर वर्ष बड़ी संख्या में लोग सड़क दुर्घटनाओं में जान गंवाते हैं।
-                बहुत-से मामलों में देरी, प्राथमिक उपचार न मिलना, और अस्पताल तक समय पर न पहुँच पाना मुख्य कारण होता है।
-                हमारा प्रयास है कि एम्बुलेंस सेवा के माध्यम से घायल व्यक्ति को first aid देते हुए त्वरित अस्पताल पहुँचाया जाए।
-              </p>
-
-              <ul class="mini" id="p2mini">
-                <li>प्राथमिक उपचार (First Aid) के साथ सुरक्षित transport</li>
-                <li>आपातकाल में तुरंत सहायता पहुँचाने का प्रयास</li>
-                <li>लोगों को जागरूक करना: “Golden Hour” का महत्व</li>
-              </ul>
-
-              <div class="btnRow">
-                <a class="btn primary" href="donate.html" id="p2don">Ambulance Service Support</a>
-                <a class="btn green" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="p2wa">Emergency WhatsApp</a>
-              </div>
-            </div>
-
-            <!-- 3 -->
-            <div class="card">
-              <h2 id="p3t">गौसेवा एवं गौशाला पहल (Gau Seva & Gaushala Initiative)</h2>
-              <div class="tag" id="p3tag">🐄 Compassion • Dharma • Protection</div>
-
-              <p class="muted small" id="p3d">
-                भारत की संस्कृति में गाय केवल पशु नहीं, बल्कि करुणा, मातृत्व और सेवा का प्रतीक है।
-                दुर्भाग्यवश आज बहुत-सी गौमाताएँ भूख, बीमारी, दुर्घटना, और उपेक्षा का शिकार हो रही हैं।
-                हमारा उद्देश्य है कि गौसेवा को केवल भावना नहीं, बल्कि एक व्यवस्थित सेवा-कार्य बनाया जाए।
-              </p>
-
-              <p class="muted small" id="p3d2">
-                संस्था गौशालाओं में गायों के लिए चारा, भोजन, स्वच्छ जल की व्यवस्था, आवश्यक दवाइयाँ एवं चिकित्सा सहायता,
-                तथा घायल/बीमार गायों की देखभाल में सहयोग करती है।
-                भविष्य में संस्था द्वारा कुछ गौशालाओं के निर्माण कार्य को भी चरणबद्ध रूप से आगे बढ़ाने का लक्ष्य है,
-                ताकि बेसहारा गायों को सुरक्षित आश्रय मिल सके।
-              </p>
-
-              <ul class="mini" id="p3mini">
-                <li>चारा/भोजन/दवा सहयोग (Gaushala Support)</li>
-                <li>घायल/बीमार गायों की चिकित्सा एवं देखभाल</li>
-                <li>भविष्य: गौशाला निर्माण एवं सुरक्षित shelter</li>
-              </ul>
-
-              <div class="btnRow">
-                <a class="btn primary" href="donate.html" id="p3don">गौसेवा हेतु सहयोग करें</a>
-                <a class="btn secondary" href="contact.html" id="p3join">सेवा में जुड़ें</a>
-              </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="card">
-              <h2 id="p4t">विरासत संरक्षण (Heritage Conservation)</h2>
-              <div class="tag" id="p4tag">🏛️ History • Identity • Preservation</div>
-
-              <p class="muted small" id="p4d">
-                हमारी विरासत — पुराने कुएँ, बावड़ियाँ (वापी), मंदिर, किले और ऐतिहासिक स्मारक —
-                केवल पत्थर नहीं हैं; ये हमारी पहचान, इतिहास और संस्कृति की जीवित धरोहर हैं।
-                जब कोई स्मारक नष्ट होता है, तो केवल एक इमारत नहीं गिरती — एक पीढ़ी का इतिहास भी टूट जाता है।
-              </p>
-
-              <p class="muted small" id="p4d2">
-                संस्था का प्रयास है कि स्थानीय स्तर पर विरासत संरक्षण को सेवा कार्य के रूप में आगे बढ़ाया जाए।
-                इसके अंतर्गत संरचनाओं को बचाने, मूल स्वरूप में सुरक्षित रखने, और क्षतिग्रस्त स्मारकों के जीर्णोद्धार
-                जैसे कार्य चरणबद्ध रूप से किए जा सकते हैं।
-              </p>
-
-              <ul class="mini" id="p4mini">
-                <li><b>संरक्षण (Conservation):</b> संरचना को नष्ट होने से बचाने हेतु स्थिरता बनाए रखना</li>
-                <li><b>परिरक्षण (Preservation):</b> स्मारक को उसके मूल स्वरूप में सुरक्षित रखना</li>
-                <li><b>जीर्णोद्धार (Restoration):</b> क्षतिग्रस्त संरचना की मरम्मत कर पुनः पूर्व स्थिति में लाना</li>
-              </ul>
-
-              <div class="btnRow">
-                <a class="btn primary" href="donate.html" id="p4don">Virasat Sanrakshan Support</a>
-                <a class="btn secondary" href="contact.html" id="p4join">हमसे जुड़ें</a>
-              </div>
-            </div>
-
+        <!-- 1) Shiksha Sarathi -->
+        <div class="programCard">
+          <a href="initiatives.html#shiksha-sarathi">
+            <img class="poster lang-hi" src="./assets/shiksha-sarathi-hi.png" alt="Shiksha Sarathi Poster Hindi">
+            <img class="poster lang-en" src="./assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi Poster English">
+          </a>
+          <div class="programBtns">
+            <a class="btn secondary" href="initiatives.html#shiksha-sarathi" id="read1">Read More</a>
+            <a class="btn primary" href="donate.html" id="don1">Donate</a>
           </div>
         </div>
-      </section>
 
+        <!-- 2) Ambulance -->
+        <div class="programCard">
+          <a href="initiatives.html#ambulance-seva">
+            <img class="poster lang-hi" src="./assets/ambulance-hi.png" alt="Ambulance Poster Hindi">
+            <img class="poster lang-en" src="./assets/ambulance-en.png" alt="Ambulance Poster English">
+          </a>
+          <div class="programBtns">
+            <a class="btn secondary" href="initiatives.html#ambulance-seva" id="read2">Read More</a>
+            <a class="btn primary" href="donate.html" id="don2">Donate</a>
+          </div>
+        </div>
+
+        <!-- 3) GauSeva -->
+        <div class="programCard">
+          <a href="initiatives.html#gauseva">
+            <img class="poster lang-hi" src="./assets/gauseva-hi.png" alt="Gauseva Poster Hindi">
+            <img class="poster lang-en" src="./assets/gauseva-en.png" alt="Gauseva Poster English">
+          </a>
+          <div class="programBtns">
+            <a class="btn secondary" href="initiatives.html#gauseva" id="read3">Read More</a>
+            <a class="btn primary" href="donate.html" id="don3">Donate</a>
+          </div>
+        </div>
+
+        <!-- 4) Heritage -->
+        <div class="programCard">
+          <a href="initiatives.html#heritage-conservation">
+            <img class="poster lang-hi" src="./assets/heritage-hi.png" alt="Heritage Poster Hindi">
+            <img class="poster lang-en" src="./assets/heritage-en.png" alt="Heritage Poster English">
+          </a>
+          <div class="programBtns">
+            <a class="btn secondary" href="initiatives.html#heritage-conservation" id="read4">Read More</a>
+            <a class="btn primary" href="donate.html" id="don4">Donate</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -447,152 +360,39 @@
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
-      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
-      sub:"Bharat Abhyudaya Sansthan",
-      m:{a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
-
+      sub:"अभ्युदय से आत्मनिर्भर भारत तक",
       title:"भारत अभ्युदय संस्थान",
-      subtitle:"हम शिक्षा, स्वास्थ्य, आपात सेवा, आत्मनिर्भरता, पर्यावरण, संस्कृति, गौसेवा और जनकल्याण के माध्यम से समाज के लिए वास्तविक बदलाव लाने का प्रयास करते हैं।",
-
-      b1:"Education",
-      b2:"Health",
-      b3:"Emergency Support",
-      b4:"Heritage",
-
-      aboutBtn:"हमारे बारे में",
-      donBtn:"दान करें",
-      waBtn:"WhatsApp",
-
-      regTitle:"Quick Info",
-      pdfBtn:"Registration PDF",
-      contactBtn:"Contact",
-
-      addrTitle:"पता व संपर्क",
+      tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
+      quick:"त्वरित जानकारी",
+      menu:{home:"⌂", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      docsBtn:"दस्तावेज़ देखें",
+      join:"हमसे जुड़ें",
+      regTitle:"पंजीकरण विवरण",
+      programs:"वर्तमान संचालित कार्यक्रम",
+      programSub:"किसी भी कार्यक्रम पर क्लिक करके विवरण पढ़ें या दान करें।",
+      read:"पूरा पढ़ें",
+      donate:"दान करें",
       ph:"फोन:",
-
-      progTitle:"वर्तमान कार्यक्रम (Current Programs)",
-      progSub:"यह वे कार्यक्रम हैं जिन पर संस्था अभी सक्रिय रूप से कार्य कर रही है।",
-
-      p1tag:"📚 Education • Future Building",
-      p2tag:"🚑 Emergency • First Aid • Life Saving",
-      p3tag:"🐄 Compassion • Dharma • Protection",
-      p4tag:"🏛️ History • Identity • Preservation",
-
-      p1t:"शिक्षा सारथी (Shiksha Sarathi)",
-      p1d:"शिक्षा सारथी कार्यक्रम के माध्यम से हम आर्थिक रूप से कमजोर बच्चों को स्टेशनरी किट, आवश्यक अध्ययन सामग्री, तथा सीखने के लिए प्रेरणा प्रदान करते हैं। हमारा लक्ष्य केवल सामग्री देना नहीं, बल्कि बच्चों के भीतर “सीखने की निरंतर आदत” विकसित करना है।",
-      p1d2:"कई परिवारों में शिक्षा का खर्च सबसे पहले कटता है। ऐसे में एक छोटी-सी सहायता भी बच्चे को स्कूल से जुड़ा रखने में बड़ा योगदान देती है। यही कारण है कि शिक्षा सारथी कार्यक्रम सीधे “भविष्य निर्माण” का कार्य करता है।",
-      p1don:"इस कार्यक्रम के लिए दान करें",
-      p1join:"Volunteer बनें",
-
-      p2t:"एम्बुलेंस सेवा (Ambulance Seva)",
-      p2d:"सड़क दुर्घटना या अचानक गंभीर बीमारी की स्थिति में “पहला 1 घंटा” सबसे महत्वपूर्ण होता है। इस समय में सही first aid और तेज़ी से अस्पताल पहुँचाना कई बार जीवन और मृत्यु का अंतर बन जाता है।",
-      p2d2:"भारत में हर वर्ष बड़ी संख्या में लोग सड़क दुर्घटनाओं में जान गंवाते हैं। बहुत-से मामलों में देरी, प्राथमिक उपचार न मिलना, और अस्पताल तक समय पर न पहुँच पाना मुख्य कारण होता है। हमारा प्रयास है कि एम्बुलेंस सेवा के माध्यम से घायल व्यक्ति को first aid देते हुए त्वरित अस्पताल पहुँचाया जाए।",
-      p2mini:[
-        "प्राथमिक उपचार (First Aid) के साथ सुरक्षित transport",
-        "आपातकाल में तुरंत सहायता पहुँचाने का प्रयास",
-        "लोगों को जागरूक करना: “Golden Hour” का महत्व"
-      ],
-      p2don:"Ambulance Service Support",
-      p2wa:"Emergency WhatsApp",
-
-      p3t:"गौसेवा एवं गौशाला पहल (Gau Seva & Gaushala Initiative)",
-      p3d:"भारत की संस्कृति में गाय केवल पशु नहीं, बल्कि करुणा, मातृत्व और सेवा का प्रतीक है। दुर्भाग्यवश आज बहुत-सी गौमाताएँ भूख, बीमारी, दुर्घटना, और उपेक्षा का शिकार हो रही हैं। हमारा उद्देश्य है कि गौसेवा को केवल भावना नहीं, बल्कि एक व्यवस्थित सेवा-कार्य बनाया जाए।",
-      p3d2:"संस्था गौशालाओं में गायों के लिए चारा, भोजन, स्वच्छ जल की व्यवस्था, आवश्यक दवाइयाँ एवं चिकित्सा सहायता, तथा घायल/बीमार गायों की देखभाल में सहयोग करती है। भविष्य में संस्था द्वारा कुछ गौशालाओं के निर्माण कार्य को भी चरणबद्ध रूप से आगे बढ़ाने का लक्ष्य है, ताकि बेसहारा गायों को सुरक्षित आश्रय मिल सके।",
-      p3mini:[
-        "चारा/भोजन/दवा सहयोग (Gaushala Support)",
-        "घायल/बीमार गायों की चिकित्सा एवं देखभाल",
-        "भविष्य: गौशाला निर्माण एवं सुरक्षित shelter"
-      ],
-      p3don:"गौसेवा हेतु सहयोग करें",
-      p3join:"सेवा में जुड़ें",
-
-      p4t:"विरासत संरक्षण (Heritage Conservation)",
-      p4d:"हमारी विरासत — पुराने कुएँ, बावड़ियाँ (वापी), मंदिर, किले और ऐतिहासिक स्मारक — केवल पत्थर नहीं हैं; ये हमारी पहचान, इतिहास और संस्कृति की जीवित धरोहर हैं। जब कोई स्मारक नष्ट होता है, तो केवल एक इमारत नहीं गिरती — एक पीढ़ी का इतिहास भी टूट जाता है।",
-      p4d2:"संस्था का प्रयास है कि स्थानीय स्तर पर विरासत संरक्षण को सेवा कार्य के रूप में आगे बढ़ाया जाए। इसके अंतर्गत संरचनाओं को बचाने, मूल स्वरूप में सुरक्षित रखने, और क्षतिग्रस्त स्मारकों के जीर्णोद्धार जैसे कार्य चरणबद्ध रूप से किए जा सकते हैं।",
-      p4mini:[
-        "<b>संरक्षण (Conservation):</b> संरचना को नष्ट होने से बचाने हेतु स्थिरता बनाए रखना",
-        "<b>परिरक्षण (Preservation):</b> स्मारक को उसके मूल स्वरूप में सुरक्षित रखना",
-        "<b>जीर्णोद्धार (Restoration):</b> क्षतिग्रस्त संरचना की मरम्मत कर पुनः पूर्व स्थिति में लाना"
-      ],
-      p4don:"Virasat Sanrakshan Support",
-      p4join:"हमसे जुड़ें",
-
-      foot:"भारत अभ्युदय संस्थान"
+      foot:"भारत अभ्युदय संस्थान",
+      addrLabel:"पता:"
     },
-
     en:{
       brand:"Bharat Abhyudaya Sansthan",
-      brandTag:"Upliftment to Self-Reliant India",
-      sub:"Registered Social Organization",
-      m:{a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
-
+      sub:"Upliftment to Self-Reliant India",
       title:"Bharat Abhyudaya Sansthan",
-      subtitle:"We work to create real change through education, health, emergency support, self-reliance, environment, culture, gaushala initiatives and public welfare.",
-
-      b1:"Education",
-      b2:"Health",
-      b3:"Emergency Support",
-      b4:"Heritage",
-
-      aboutBtn:"About Us",
-      donBtn:"Donate",
-      waBtn:"WhatsApp",
-
-      regTitle:"Quick Info",
-      pdfBtn:"Registration PDF",
-      contactBtn:"Contact",
-
-      addrTitle:"Address & Contact",
+      tagline:"Upliftment to Self-Reliant India",
+      quick:"Quick Info",
+      menu:{home:"⌂", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      docsBtn:"View Documents",
+      join:"Get Involved",
+      regTitle:"Registration Details",
+      programs:"Current Running Programs",
+      programSub:"Click any program to read more or donate.",
+      read:"Read More",
+      donate:"Donate",
       ph:"Phone:",
-
-      progTitle:"Current Programs",
-      progSub:"These are the key programs the organization is currently running actively.",
-
-      p1tag:"📚 Education • Future Building",
-      p2tag:"🚑 Emergency • First Aid • Life Saving",
-      p3tag:"🐄 Compassion • Dharma • Protection",
-      p4tag:"🏛️ History • Identity • Preservation",
-
-      p1t:"Shiksha Sarathi Program",
-      p1d:"Through the Shiksha Sarathi program, we support economically weaker children with stationery kits, essential study materials, and motivation to keep learning. Our goal is not just to distribute supplies, but to build a strong learning habit and confidence.",
-      p1d2:"In many families, education expenses are the first to be cut. Even small support can keep a child connected to school. That is why Shiksha Sarathi is a direct investment in the future.",
-      p1don:"Donate for this Program",
-      p1join:"Become a Volunteer",
-
-      p2t:"Ambulance Service",
-      p2d:"In road accidents or sudden medical emergencies, the first hour is critical. Timely first aid and quick transport to the hospital can often be the difference between life and death.",
-      p2d2:"Every year, a very large number of people lose their lives in road accidents in India. In many cases, delay, lack of first aid and late hospital reach are key reasons. Our goal is to provide first aid support and transport the injured to the hospital quickly through ambulance service.",
-      p2mini:[
-        "Safe transport with first aid support",
-        "Rapid help during emergencies",
-        "Public awareness about the importance of the Golden Hour"
-      ],
-      p2don:"Support Ambulance Service",
-      p2wa:"Emergency WhatsApp",
-
-      p3t:"Gau Seva & Gaushala Initiative",
-      p3d:"In Indian culture, the cow is not just an animal — it represents compassion, motherhood and service. Sadly, many cows today suffer from hunger, illness, accidents and neglect. Our aim is to make Gau Seva not just an emotion, but a well-organized service mission.",
-      p3d2:"We support gaushalas by providing fodder, food, clean water, essential medicines and medical help, along with care for injured and sick cows. In the future, the organization also plans to take up phased gaushala construction projects so that abandoned cows can receive safe shelter and protection.",
-      p3mini:[
-        "Fodder / food / medicine support for gaushalas",
-        "Medical care for injured and sick cows",
-        "Future: gaushala construction and safe shelter"
-      ],
-      p3don:"Support Gau Seva",
-      p3join:"Join as Volunteer",
-
-      p4t:"Heritage Conservation",
-      p4d:"Our heritage — old wells, stepwells (vapi), temples, forts and historical monuments — is not just stone. It is our identity, history and living culture. When a monument is lost, it is not just a building that collapses — an entire chapter of history disappears.",
-      p4d2:"Our goal is to promote heritage conservation as a service initiative at the local level. This includes saving structures from decay, preserving their original form, and restoring damaged monuments in a phased and responsible manner.",
-      p4mini:[
-        "<b>Conservation:</b> Maintaining structural stability and preventing destruction",
-        "<b>Preservation:</b> Protecting a monument in its original form",
-        "<b>Restoration:</b> Repairing damaged structures and bringing them back to their earlier state"
-      ],
-      p4don:"Support Heritage Work",
-      p4join:"Get Involved",
-
-      foot:"Bharat Abhyudaya Sansthan"
+      foot:"Bharat Abhyudaya Sansthan",
+      addrLabel:"Address:"
     }
   };
 
@@ -600,112 +400,79 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
+    // Brand
     document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
-
-    // Desktop menu
-    document.getElementById("mAbout").textContent=d.m.a;
-    document.getElementById("mWork").textContent=d.m.w;
-    document.getElementById("mDocs").textContent=d.m.d;
-    document.getElementById("mDonate").textContent=d.m.dn;
-    document.getElementById("mContact").textContent=d.m.c;
-
-    // Mobile menu
-    document.getElementById("mmAbout").textContent=d.m.a;
-    document.getElementById("mmWork").textContent=d.m.w;
-    document.getElementById("mmDocs").textContent=d.m.d;
-    document.getElementById("mmDonate").textContent=d.m.dn;
-    document.getElementById("mmContact").textContent=d.m.c;
-
     document.getElementById("title").textContent=d.title;
-    document.getElementById("subtitle").textContent=d.subtitle;
+    document.getElementById("tagline").textContent=d.tagline;
 
-    document.getElementById("b1").textContent=d.b1;
-    document.getElementById("b2").textContent=d.b2;
-    document.getElementById("b3").textContent=d.b3;
-    document.getElementById("b4").textContent=d.b4;
+    // Menu (desktop)
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mContact").textContent=d.menu.c;
 
-    document.getElementById("aboutBtn").textContent=d.aboutBtn;
-    document.getElementById("donBtn").textContent=d.donBtn;
-    document.getElementById("waBtn").textContent=d.waBtn;
+    // Menu (mobile)
+    document.getElementById("mmHome").textContent="⌂ Home";
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmContact").textContent=d.menu.c;
 
+    // Buttons
+    document.getElementById("docsBtn").textContent=d.docsBtn;
+    document.getElementById("joinBtn").textContent=d.join;
+
+    // Titles
+    document.getElementById("quick").textContent=d.quick;
     document.getElementById("regTitle").textContent=d.regTitle;
-    document.getElementById("pdfBtn").textContent=d.pdfBtn;
-    document.getElementById("contactBtn").textContent=d.contactBtn;
+    document.getElementById("programTitle").textContent=d.programs;
+    document.getElementById("programSub").textContent=d.programSub;
 
-    document.getElementById("addrTitle").textContent=d.addrTitle;
+    // Program buttons
+    document.getElementById("read1").textContent=d.read;
+    document.getElementById("read2").textContent=d.read;
+    document.getElementById("read3").textContent=d.read;
+    document.getElementById("read4").textContent=d.read;
+
+    document.getElementById("don1").textContent=d.donate;
+    document.getElementById("don2").textContent=d.donate;
+    document.getElementById("don3").textContent=d.donate;
+    document.getElementById("don4").textContent=d.donate;
+
+    // Address + phone label
     document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
     document.getElementById("phLbl").textContent=d.ph;
 
-    document.getElementById("progTitle").textContent=d.progTitle;
-    document.getElementById("progSub").textContent=d.progSub;
-
-    // Program 1
-    document.getElementById("p1t").textContent=d.p1t;
-    document.getElementById("p1tag").textContent=d.p1tag;
-    document.getElementById("p1d").textContent=d.p1d;
-    document.getElementById("p1d2").textContent=d.p1d2;
-    document.getElementById("p1don").textContent=d.p1don;
-    document.getElementById("p1join").textContent=d.p1join;
-
-    // Program 2
-    document.getElementById("p2t").textContent=d.p2t;
-    document.getElementById("p2tag").textContent=d.p2tag;
-    document.getElementById("p2d").textContent=d.p2d;
-    document.getElementById("p2d2").textContent=d.p2d2;
-    document.getElementById("p2mini").innerHTML = d.p2mini.map(x=>`<li>${x}</li>`).join("");
-    document.getElementById("p2don").textContent=d.p2don;
-    document.getElementById("p2wa").textContent=d.p2wa;
-
-    // Program 3
-    document.getElementById("p3t").textContent=d.p3t;
-    document.getElementById("p3tag").textContent=d.p3tag;
-    document.getElementById("p3d").textContent=d.p3d;
-    document.getElementById("p3d2").textContent=d.p3d2;
-    document.getElementById("p3mini").innerHTML = d.p3mini.map(x=>`<li>${x}</li>`).join("");
-    document.getElementById("p3don").textContent=d.p3don;
-    document.getElementById("p3join").textContent=d.p3join;
-
-    // Program 4
-    document.getElementById("p4t").textContent=d.p4t;
-    document.getElementById("p4tag").textContent=d.p4tag;
-    document.getElementById("p4d").textContent=d.p4d;
-    document.getElementById("p4d2").textContent=d.p4d2;
-    document.getElementById("p4mini").innerHTML = d.p4mini.map(x=>`<li>${x}</li>`).join("");
-    document.getElementById("p4don").textContent=d.p4don;
-    document.getElementById("p4join").textContent=d.p4join;
-
+    // Footer
     document.getElementById("foot").textContent=d.foot;
+
+    // Posters show/hide
+    document.querySelectorAll(".lang-hi").forEach(el=>{
+      el.style.display = (lang==="hi") ? "block" : "none";
+    });
+    document.querySelectorAll(".lang-en").forEach(el=>{
+      el.style.display = (lang==="en") ? "block" : "none";
+    });
   }
 
-  // ---- language persistence ----
-  const btnHi = document.getElementById("btnHi");
-  const btnEn = document.getElementById("btnEn");
-
-  function applyActive(lang){
-    if(lang === "en"){
-      btnEn.classList.add("active");
-      btnHi.classList.remove("active");
-    }else{
-      btnHi.classList.add("active");
-      btnEn.classList.remove("active");
-    }
-  }
+  // Toggle buttons
+  const btnHi=document.getElementById("btnHi");
+  const btnEn=document.getElementById("btnEn");
 
   btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
+    btnHi.classList.add("active"); btnEn.classList.remove("active");
     setLang("hi");
   });
-
   btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
+    btnEn.classList.add("active"); btnHi.classList.remove("active");
     setLang("en");
   });
 
-  // ---- Mobile menu open/close ----
+  // Mobile menu open/close
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
 
@@ -714,7 +481,6 @@
     mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
   });
 
-  // Close mobile panel when clicking any link
   document.querySelectorAll(".mnav a").forEach(a=>{
     a.addEventListener("click",()=>{
       mobilePanel.classList.remove("open");
@@ -722,11 +488,9 @@
     });
   });
 
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
-
-  const savedLang = localStorage.getItem("bas_lang") || "hi";
-  applyActive(savedLang);
-  setLang(savedLang);
+  setLang("hi");
 </script>
 
 </body>
