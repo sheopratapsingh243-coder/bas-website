@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Initiatives | Bharat Abhyudaya Sansthan</title>
+  <title>Our Initiatives | Bharat Abhyudaya Sansthan</title>
 
   <style>
     :root{
       --brand:#0b5aa6;
       --accent:#f58b1f;
-      --green:#16a34a;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:22px;
-      --max:1100px;
+      --radius:20px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,57 +25,43 @@
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
         #fff;
+      overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:28px 0}
-    h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
-    h2{margin:0;font-size:20px;letter-spacing:-.35px}
-    p{margin:10px 0 0;line-height:1.75}
+    section{padding:26px 0}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    p{margin:10px 0 0;line-height:1.65}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.88);
-      backdrop-filter: blur(12px);
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      min-width:220px;
+    }
     .logo{
-      width:44px;height:44px;border-radius:999px;
+      width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
-    .brand b{display:block;font-size:14px;line-height:1.1}
+    .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
-
-    /* Desktop menu */
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a{padding:8px 10px;border-radius:12px}
-    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:700}
+    .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
-
-    .homeIcon{
-      font-size:18px;
-      font-weight:950;
-      padding:8px 12px;
-      border-radius:12px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
-      line-height:1;
-    }
-    .homeIcon:hover{
-      background:rgba(11,90,166,.08);
-      color:var(--brand);
-    }
 
     /* Toggle */
     .toggle{display:flex;gap:8px}
@@ -84,14 +69,13 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
-      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:800;
     }
 
-    /* Mobile menu button */
+    /* Mobile menu */
     .mobBtn{
       display:inline-flex;
       align-items:center;
@@ -106,7 +90,6 @@
     }
     @media(min-width:980px){.mobBtn{display:none}}
 
-    /* Mobile dropdown panel */
     .mobilePanel{
       display:none;
       padding:12px 0 14px;
@@ -124,75 +107,85 @@
       padding:12px 14px;
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.95);
       font-weight:900;
       color:var(--fg);
     }
-    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Content */
-    .hero{
-      border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
-        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.10), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
-      border-radius:28px;
+    /* Cards */
+    .card{
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);
       padding:18px;
       box-shadow:var(--shadow);
     }
 
-    .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;
-      box-shadow:0 12px 34px rgba(2,6,23,.06);
+    .hero{
+      padding:30px 0 8px;
     }
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
+    .initiativeGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:18px;
+    }
 
-    .badge{
+    .initiative{
+      scroll-margin-top:92px; /* 🔥 Important for perfect scroll under sticky header */
+    }
+
+    .topRow{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+
+    .tag{
       display:inline-flex;
-      padding:6px 10px;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
       border-radius:999px;
-      font-size:12px;
-      font-weight:950;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.08);
-      color:#0b5aa6;
+      background:rgba(11,90,166,.05);
+      font-weight:900;
+      color:var(--brand);
+      font-size:13px;
     }
-    .badge.orange{background:rgba(245,139,31,.08);color:#b45309}
-    .badge.green{background:rgba(34,197,94,.10);color:#166534}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
+      font-weight:800;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;
+      border-color:transparent;font-weight:900;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:900;
+    }
+
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:999;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#fff;padding:12px 14px;border-radius:999px;
+      box-shadow:0 18px 45px rgba(2,6,23,.22);
+      font-weight:900;
     }
 
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
       background:#fff;font-size:14px;
-    }
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
     }
   </style>
 </head>
@@ -202,17 +195,17 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="index.html">
+
+      <a class="brand" href="index.html" title="Home">
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
-          <span id="brandSub">Bharat Abhyudaya Sansthan</span>
+          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
         </div>
       </a>
 
       <nav class="menu">
-        <a href="index.html" id="mHome" class="homeIcon" aria-label="Home" title="Home">⌂</a>
+        <a href="index.html" id="mHome" title="Home">⌂</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
@@ -222,15 +215,14 @@
 
       <div style="display:flex;gap:10px;align-items:center">
         <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-
         <div class="toggle">
           <button class="pill active" id="btnHi" type="button">हिन्दी</button>
           <button class="pill" id="btnEn" type="button">English</button>
         </div>
       </div>
+
     </div>
 
-    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">⌂ Home</a>
@@ -247,124 +239,128 @@
 
 <main>
 
+  <section class="hero">
+    <div class="wrap">
+      <h1 id="pageTitle">हमारे प्रयास</h1>
+      <p class="muted" id="pageSub">
+        हमारे वर्तमान कार्यक्रम — जिनके माध्यम से हम शिक्षा, स्वास्थ्य, गौसेवा और विरासत संरक्षण के क्षेत्र में सेवा कार्य कर रहे हैं।
+      </p>
+    </div>
+  </section>
+
   <section>
     <div class="wrap">
-      <div class="hero">
-        <h1 id="title">हमारे प्रयास</h1>
-        <p class="muted" id="subtitle">
-          हमारे प्रयास समाज के वास्तविक मुद्दों पर केंद्रित हैं — शिक्षा, स्वास्थ्य, आपात सेवा, महिला सशक्तिकरण, पर्यावरण संरक्षण और सांस्कृतिक जागरूकता।
-        </p>
 
-        <div class="btnRow">
-          <a class="btn secondary" href="donate.html" id="goDonate">दान करें</a>
-          <a class="btn primary" href="contact.html" id="goJoin">हमसे जुड़ें</a>
-        </div>
-      </div>
+      <div class="initiativeGrid">
 
-      <div class="grid">
+        <!-- ====================== 1) SHIKSHA SARATHI ====================== -->
+        <div class="card initiative" id="shiksha-sarathi">
+          <div class="topRow">
+            <span class="tag" id="tag1">कार्यक्रम 01</span>
+            <div class="btnRow" style="margin:0">
+              <a class="btn secondary" href="donate.html" id="donate1">दान करें</a>
+              <a class="btn" href="contact.html" id="join1">जुड़ें</a>
+            </div>
+          </div>
 
-        <div class="card">
-          <span class="badge" id="b1">Education</span>
-          <h2 style="margin-top:10px" id="t1">शिक्षा सारथी कार्यक्रम</h2>
-          <p class="muted small" id="d1">
-            शिक्षा सारथी के माध्यम से हम आर्थिक रूप से कमजोर बच्चों को Stationery Kit, कॉपियाँ, पेन-पेंसिल, किताबें और आवश्यक अध्ययन सामग्री उपलब्ध कराते हैं।
-            हमारा उद्देश्य है कि संसाधनों की कमी के कारण किसी बच्चे की पढ़ाई न रुके और हर बच्चा आत्मविश्वास के साथ आगे बढ़े।
+          <h2 id="t1">शिक्षा सारथी कार्यक्रम</h2>
+          <p class="muted small" id="s1">
+            लक्ष्य: बच्चों की शिक्षा को सहयोग देना और उन्हें आत्मविश्वास के साथ आगे बढ़ने में मदद करना।
+          </p>
+
+          <p id="d1">
+            “शिक्षा सारथी” भारत अभ्युदय संस्थान का एक सेवा-आधारित कार्यक्रम है, जिसका उद्देश्य आर्थिक रूप से कमजोर, वंचित और जरूरतमंद बच्चों तक शिक्षा की मूलभूत सामग्री पहुँचाना है।
+            इस कार्यक्रम के अंतर्गत बच्चों को स्टेशनरी किट (कॉपी, पेन, पेंसिल, रबर, स्केल, बैग आदि), पढ़ाई की आवश्यक सामग्री, मार्गदर्शन तथा प्रेरणा-सहयोग दिया जाता है।
+            <br><br>
+            हमारा विश्वास है कि किसी बच्चे के हाथ में किताब देना केवल सहायता नहीं, बल्कि भविष्य को दिशा देना है।
+            जब एक बच्चा पढ़ता है, तो केवल उसका जीवन नहीं बदलता — एक पूरा परिवार, एक समाज और एक राष्ट्र आगे बढ़ता है।
           </p>
         </div>
 
-        <div class="card">
-          <span class="badge green" id="b2">Emergency</span>
-          <h2 style="margin-top:10px" id="t2">जीवन रक्षक एम्बुलेंस सेवा</h2>
-          <p class="muted small" id="d2">
-            दुर्घटना या आपातकाल में सबसे कीमती चीज़ होती है — समय।
-            हम प्राथमिक उपचार (First Aid) देते हुए घायल/रोगी को निकटतम अस्पताल तक पहुँचाने की सेवा प्रदान करते हैं।
-            समय पर सहायता कई जिंदगियाँ बचा सकती है।
+        <!-- ====================== 2) AMBULANCE SERVICE ====================== -->
+        <div class="card initiative" id="ambulance-seva">
+          <div class="topRow">
+            <span class="tag" id="tag2">कार्यक्रम 02</span>
+            <div class="btnRow" style="margin:0">
+              <a class="btn secondary" href="donate.html" id="donate2">दान करें</a>
+              <a class="btn" href="contact.html" id="join2">जुड़ें</a>
+            </div>
+          </div>
+
+          <h2 id="t2">एम्बुलेंस सेवा एवं त्वरित चिकित्सा सहायता</h2>
+          <p class="muted small" id="s2">
+            लक्ष्य: दुर्घटना, आपातकाल और आकस्मिक चिकित्सा स्थितियों में समय पर सहायता पहुँचाना।
+          </p>
+
+          <p id="d2">
+            सड़क दुर्घटनाओं और अचानक होने वाली आपात स्थितियों में सबसे महत्वपूर्ण भूमिका “समय” की होती है।
+            अक्सर कुछ मिनटों की देरी किसी व्यक्ति के जीवन और मृत्यु के बीच का अंतर बन जाती है।
+            <br><br>
+            भारत अभ्युदय संस्थान का यह कार्यक्रम दुर्घटनाओं में घायल व्यक्तियों को प्राथमिक उपचार (First Aid) देते हुए, सुरक्षित तरीके से एम्बुलेंस द्वारा अस्पताल पहुँचाने की सेवा प्रदान करने के लिए बनाया गया है।
+            <br><br>
+            हम समाज में यह संदेश फैलाना चाहते हैं कि — “दुर्घटना के बाद पहला एक घंटा सबसे कीमती होता है।”
+            इसी उद्देश्य के साथ यह सेवा कार्यक्रम भविष्य में और अधिक सशक्त रूप में विस्तार करेगा।
           </p>
         </div>
 
-        <div class="card">
-          <span class="badge orange" id="b3">Women</span>
-          <h2 style="margin-top:10px" id="t3">महिला सशक्तिकरण</h2>
-          <p class="muted small" id="d3">
-            महिलाओं को जागरूकता, प्रशिक्षण, कौशल विकास और आत्मनिर्भरता से जोड़ना।
-            सुरक्षा, सम्मान और अवसरों के लिए समाज में सकारात्मक वातावरण तैयार करना।
+        <!-- ====================== 3) GAUSEVA ====================== -->
+        <div class="card initiative" id="gauseva">
+          <div class="topRow">
+            <span class="tag" id="tag3">कार्यक्रम 03</span>
+            <div class="btnRow" style="margin:0">
+              <a class="btn secondary" href="donate.html" id="donate3">दान करें</a>
+              <a class="btn" href="contact.html" id="join3">जुड़ें</a>
+            </div>
+          </div>
+
+          <h2 id="t3">गौसेवा, संरक्षण एवं गौशाला सहयोग</h2>
+          <p class="muted small" id="s3">
+            लक्ष्य: बेसहारा, बीमार और घायल गौवंश की रक्षा, उपचार, भोजन एवं आश्रय की व्यवस्था।
+          </p>
+
+          <p id="d3">
+            गौसेवा केवल एक परंपरा नहीं — यह भारतीय संस्कृति की करुणा, कर्तव्य और धर्म का जीवंत स्वरूप है।
+            आज अनेक गायें भूख, बीमारी, चोट और उपेक्षा का शिकार होकर सड़कों पर भटकती हैं।
+            <br><br>
+            भारत अभ्युदय संस्थान इस कार्यक्रम के अंतर्गत गौशालाओं में गौवंश के लिए चारा, भूसा, भोजन सामग्री, दवा-उपचार, चिकित्सकीय सहायता और आवश्यक संसाधन उपलब्ध कराने का प्रयास करता है।
+            साथ ही, बेसहारा गायों की देखभाल एवं सुरक्षा के लिए समाज को जागरूक करना भी हमारा उद्देश्य है।
+            <br><br>
+            भविष्य में संस्था द्वारा कुछ गौशालाओं के निर्माण एवं स्थायी सेवा-व्यवस्था की दिशा में कार्य करने का भी लक्ष्य रखा गया है।
+            हमारा मानना है कि — “जिस समाज में गौवंश सुरक्षित है, वहाँ करुणा और संस्कार जीवित रहते हैं।”
           </p>
         </div>
 
-        <div class="card">
-          <span class="badge" id="b4">Support</span>
-          <h2 style="margin-top:10px" id="t4">गरीब एवं जरूरतमंद सहायता</h2>
-          <p class="muted small" id="d4">
-            जरूरतमंद परिवारों को भोजन, कपड़े, शिक्षा सामग्री, आपदा राहत और आवश्यक सहायता उपलब्ध कराना।
-            संकट की स्थिति में त्वरित सहयोग सुनिश्चित करना।
+        <!-- ====================== 4) HERITAGE ====================== -->
+        <div class="card initiative" id="heritage-conservation">
+          <div class="topRow">
+            <span class="tag" id="tag4">कार्यक्रम 04</span>
+            <div class="btnRow" style="margin:0">
+              <a class="btn secondary" href="donate.html" id="donate4">दान करें</a>
+              <a class="btn" href="contact.html" id="join4">जुड़ें</a>
+            </div>
+          </div>
+
+          <h2 id="t4">विरासत संरक्षण (Heritage Conservation)</h2>
+          <p class="muted small" id="s4">
+            लक्ष्य: पुराने कुओं, बावड़ियों (वापी), मंदिरों, किलों और स्मारकों की सुरक्षा, मरम्मत और पुनर्जीवन।
+          </p>
+
+          <p id="d4">
+            हमारी विरासत केवल पत्थरों की संरचना नहीं — यह हमारी पहचान, इतिहास और संस्कृति की जीवित स्मृति है।
+            जब कोई पुराना कुआँ, बावड़ी, मंदिर, किला या स्मारक नष्ट होता है, तो केवल एक इमारत नहीं टूटती — हमारे पूर्वजों की विरासत और समाज की जड़ें कमजोर होती हैं।
+            <br><br>
+            भारत अभ्युदय संस्थान इस सेवा कार्य को तीन चरणों में देखता है:
+            <br><br>
+            <b>A. संरक्षण (Conservation):</b> ऐतिहासिक संरचनाओं की स्थिरता बनाए रखना और उन्हें नष्ट होने से बचाना।  
+            <br>
+            <b>B. परिरक्षण (Preservation):</b> स्मारक को उसके मूल स्वरूप में सुरक्षित रखने की प्रक्रिया।  
+            <br>
+            <b>C. जीर्णोद्धार (Restoration):</b> क्षतिग्रस्त भवनों/स्मारकों की मरम्मत कर उन्हें पुनः पूर्व स्थिति में लाना।  
+            <br><br>
+            हमारा उद्देश्य है कि आने वाली पीढ़ियाँ अपने इतिहास को पुस्तकों में नहीं — अपनी आँखों के सामने जीवित देख सकें।
           </p>
         </div>
 
-        <div class="card">
-          <span class="badge" id="b5">Skills</span>
-          <h2 style="margin-top:10px" id="t5">रोजगार एवं कौशल विकास</h2>
-          <p class="muted small" id="d5">
-            युवाओं को skill training, career guidance, employability support और entrepreneurship के लिए प्रेरित करना,
-            ताकि वे आत्मनिर्भर बन सकें।
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="badge green" id="b6">Environment</span>
-          <h2 style="margin-top:10px" id="t6">पर्यावरण, स्वच्छता एवं जल संरक्षण</h2>
-          <p class="muted small" id="d6">
-            स्वच्छता अभियान, पौधारोपण, plastic-free awareness, जल संरक्षण और जनभागीदारी के माध्यम से हरित भविष्य की दिशा में कार्य करना।
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="badge orange" id="b7">Culture</span>
-          <h2 style="margin-top:10px" id="t7">संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण</h2>
-          <p class="muted small" id="d7">
-            भारतीय संस्कृति, सामाजिक संस्कार, सनातन मूल्यों और heritage conservation को बढ़ावा देना।
-            हमारी परंपराओं और ऐतिहासिक धरोहरों के प्रति जागरूकता फैलाना।
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="badge" id="b8">Care</span>
-          <h2 style="margin-top:10px" id="t8">वृद्धजन सेवा एवं सामाजिक कल्याण</h2>
-          <p class="muted small" id="d8">
-            वरिष्ठ नागरिकों के लिए सेवा, सहयोग और कल्याण गतिविधियाँ।
-            आवश्यकता पड़ने पर वृद्धाश्रम / Old Age Home जैसे सेवा-केन्द्रों की पहल भी की जा सकती है।
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="badge green" id="b9">Gaushala</span>
-          <h2 style="margin-top:10px" id="t9">गौसेवा, पशु सुरक्षा एवं संरक्षण</h2>
-          <p class="muted small" id="d9">
-            गौसेवा, गौ-सुरक्षा एवं गौ-संरक्षण के साथ-साथ अन्य बेसहारा पशुओं (जैसे आवारा कुत्ते) और वन्य जीवों की देखभाल, उपचार एवं संरक्षण।
-            आवश्यकता के अनुसार उनके लिए shelter homes / care centers की व्यवस्था भी की जा सकती है।
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="badge" id="b10">Awareness</span>
-          <h2 style="margin-top:10px" id="t10">सामाजिक जागरूकता एवं जनकल्याण</h2>
-          <p class="muted small" id="d10">
-            समाज में शिक्षा, स्वास्थ्य, स्वच्छता, नशा-मुक्ति, नागरिक कर्तव्य और जनहित से जुड़े विषयों पर जागरूकता अभियान चलाना।
-          </p>
-        </div>
-
-      </div>
-
-      <div class="card" style="margin-top:14px">
-        <h2 id="howT">आप कैसे जुड़ सकते हैं?</h2>
-        <p class="muted" id="howD">
-          आप donation करके, volunteering करके, resources देकर, या हमारे कार्यक्रमों को अपने क्षेत्र में लागू करने में सहयोग करके हमारे साथ जुड़ सकते हैं।
-          संस्था का उद्देश्य सेवा को जन-आंदोलन बनाना है।
-        </p>
-
-        <div class="btnRow">
-          <a class="btn primary" href="donate.html" id="donBtn">Donate</a>
-          <a class="btn secondary" href="contact.html" id="conBtn">Contact</a>
-        </div>
       </div>
 
     </div>
@@ -384,38 +380,50 @@
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
-      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
-      sub:"Bharat Abhyudaya Sansthan",
-      m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+      menu:{home:"⌂", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      pageTitle:"हमारे प्रयास",
+      pageSub:"हमारे वर्तमान कार्यक्रम — जिनके माध्यम से हम शिक्षा, स्वास्थ्य, गौसेवा और विरासत संरक्षण के क्षेत्र में सेवा कार्य कर रहे हैं।",
+      donate:"दान करें",
+      join:"जुड़ें",
+      foot:"भारत अभ्युदय संस्थान",
+      tags:["कार्यक्रम 01","कार्यक्रम 02","कार्यक्रम 03","कार्यक्रम 04"],
 
-      title:"हमारे प्रयास",
-      subtitle:"हमारे प्रयास समाज के वास्तविक मुद्दों पर केंद्रित हैं — शिक्षा, स्वास्थ्य, आपात सेवा, महिला सशक्तिकरण, पर्यावरण संरक्षण और सांस्कृतिक जागरूकता।",
+      t1:"शिक्षा सारथी कार्यक्रम",
+      s1:"लक्ष्य: बच्चों की शिक्षा को सहयोग देना और उन्हें आत्मविश्वास के साथ आगे बढ़ने में मदद करना।",
 
-      goDonate:"दान करें",
-      goJoin:"हमसे जुड़ें",
+      t2:"एम्बुलेंस सेवा एवं त्वरित चिकित्सा सहायता",
+      s2:"लक्ष्य: दुर्घटना, आपातकाल और आकस्मिक चिकित्सा स्थितियों में समय पर सहायता पहुँचाना।",
 
-      howT:"आप कैसे जुड़ सकते हैं?",
-      howD:"आप donation करके, volunteering करके, resources देकर, या हमारे कार्यक्रमों को अपने क्षेत्र में लागू करने में सहयोग करके हमारे साथ जुड़ सकते हैं। संस्था का उद्देश्य सेवा को जन-आंदोलन बनाना है।",
+      t3:"गौसेवा, संरक्षण एवं गौशाला सहयोग",
+      s3:"लक्ष्य: बेसहारा, बीमार और घायल गौवंश की रक्षा, उपचार, भोजन एवं आश्रय की व्यवस्था।",
 
-      foot:"भारत अभ्युदय संस्थान"
+      t4:"विरासत संरक्षण (Heritage Conservation)",
+      s4:"लक्ष्य: पुराने कुओं, बावड़ियों (वापी), मंदिरों, किलों और स्मारकों की सुरक्षा, मरम्मत और पुनर्जीवन।"
     },
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
-      brandTag:"Upliftment to Self-Reliant India",
-      sub:"Registered Social Organization",
-      m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      sub:"Upliftment to Self-Reliant India",
+      menu:{home:"⌂", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      pageTitle:"Our Initiatives",
+      pageSub:"Our active programs through which we serve in education, emergency health support, cow protection, and heritage conservation.",
+      donate:"Donate",
+      join:"Join",
+      foot:"Bharat Abhyudaya Sansthan",
+      tags:["Program 01","Program 02","Program 03","Program 04"],
 
-      title:"Our Initiatives",
-      subtitle:"Our initiatives focus on real social needs — education, health, emergency support, women empowerment, environment, and cultural awareness.",
+      t1:"Shiksha Sarathi Program",
+      s1:"Goal: Supporting education for children and helping them move forward with confidence.",
 
-      goDonate:"Donate",
-      goJoin:"Join",
+      t2:"Ambulance Service & Emergency First Aid Support",
+      s2:"Goal: Providing timely support in accidents, emergencies and sudden medical situations.",
 
-      howT:"How can you support?",
-      howD:"You can support us by donating, volunteering, contributing resources, or helping implement our programs in your area. Our mission is to make service a people’s movement.",
+      t3:"Gau Seva, Protection & Gaushala Support",
+      s3:"Goal: Care, treatment, food and shelter support for abandoned, sick and injured cows.",
 
-      foot:"Bharat Abhyudaya Sansthan"
+      t4:"Heritage Conservation",
+      s4:"Goal: Protecting and restoring old wells, stepwells, temples, forts and historical monuments."
     }
   };
 
@@ -424,130 +432,69 @@
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
     document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
-    // Desktop menu
-    document.getElementById("mHome").textContent=d.m.home;
-    document.getElementById("mAbout").textContent=d.m.a;
-    document.getElementById("mWork").textContent=d.m.w;
-    document.getElementById("mDocs").textContent=d.m.d;
-    document.getElementById("mDonate").textContent=d.m.dn;
-    document.getElementById("mContact").textContent=d.m.c;
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mContact").textContent=d.menu.c;
 
-    // Mobile menu
     document.getElementById("mmHome").textContent="⌂ Home";
-    document.getElementById("mmAbout").textContent=d.m.a;
-    document.getElementById("mmWork").textContent=d.m.w;
-    document.getElementById("mmDocs").textContent=d.m.d;
-    document.getElementById("mmDonate").textContent=d.m.dn;
-    document.getElementById("mmContact").textContent=d.m.c;
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmContact").textContent=d.menu.c;
 
-    document.getElementById("title").textContent=d.title;
-    document.getElementById("subtitle").textContent=d.subtitle;
+    document.getElementById("pageTitle").textContent=d.pageTitle;
+    document.getElementById("pageSub").textContent=d.pageSub;
 
-    document.getElementById("goDonate").textContent=d.goDonate;
-    document.getElementById("goJoin").textContent=d.goJoin;
+    document.getElementById("donate1").textContent=d.donate;
+    document.getElementById("donate2").textContent=d.donate;
+    document.getElementById("donate3").textContent=d.donate;
+    document.getElementById("donate4").textContent=d.donate;
 
-    document.getElementById("howT").textContent=d.howT;
-    document.getElementById("howD").textContent=d.howD;
+    document.getElementById("join1").textContent=d.join;
+    document.getElementById("join2").textContent=d.join;
+    document.getElementById("join3").textContent=d.join;
+    document.getElementById("join4").textContent=d.join;
 
-    document.getElementById("donBtn").textContent=(lang==="hi")?"Donate":"Donate";
-    document.getElementById("conBtn").textContent=(lang==="hi")?"Contact":"Contact";
+    document.getElementById("tag1").textContent=d.tags[0];
+    document.getElementById("tag2").textContent=d.tags[1];
+    document.getElementById("tag3").textContent=d.tags[2];
+    document.getElementById("tag4").textContent=d.tags[3];
+
+    document.getElementById("t1").textContent=d.t1;
+    document.getElementById("s1").textContent=d.s1;
+
+    document.getElementById("t2").textContent=d.t2;
+    document.getElementById("s2").textContent=d.s2;
+
+    document.getElementById("t3").textContent=d.t3;
+    document.getElementById("s3").textContent=d.s3;
+
+    document.getElementById("t4").textContent=d.t4;
+    document.getElementById("s4").textContent=d.s4;
 
     document.getElementById("foot").textContent=d.foot;
-
-    // Cards: bilingual titles/descriptions
-    if(lang==="en"){
-      document.getElementById("t1").textContent="Shiksha Sarathi Program";
-      document.getElementById("d1").textContent="Through Shiksha Sarathi, we support underprivileged children with stationery kits, notebooks, pens, books, and essential learning materials so that education never stops due to lack of resources.";
-
-      document.getElementById("t2").textContent="Jeevan Rakshak Ambulance Service";
-      document.getElementById("d2").textContent="We provide basic first aid and help transport injured or critical patients to the nearest hospital during accidents and emergency situations. Timely help saves lives.";
-
-      document.getElementById("t3").textContent="Women Empowerment";
-      document.getElementById("d3").textContent="Empowering women through awareness, training, skill development and self-reliance. Building a safe and respectful environment with equal opportunities.";
-
-      document.getElementById("t4").textContent="Support for the Poor & Needy";
-      document.getElementById("d4").textContent="Providing essential support such as food, clothing, education materials, emergency relief and help to families facing hardship.";
-
-      document.getElementById("t5").textContent="Employment & Skill Development";
-      document.getElementById("d5").textContent="Helping youth become self-reliant through skill training, career guidance, employability support and entrepreneurship motivation.";
-
-      document.getElementById("t6").textContent="Environment, Cleanliness & Water Conservation";
-      document.getElementById("d6").textContent="Cleanliness drives, plantation campaigns, plastic-free awareness, water conservation and public participation for a greener future.";
-
-      document.getElementById("t7").textContent="Culture, Sanatan Protection & Heritage Conservation";
-      document.getElementById("d7").textContent="Promoting Indian culture, social values, Sanatan principles and heritage conservation. Creating awareness about traditions and historical assets.";
-
-      document.getElementById("t8").textContent="Elderly Care & Social Welfare";
-      document.getElementById("d8").textContent="Service and welfare initiatives for senior citizens. Where needed, initiatives like old age support centers / old age homes may also be developed.";
-
-      document.getElementById("t9").textContent="Gaushala, Animal Care & Protection";
-      document.getElementById("d9").textContent="Cow protection and Gaushala initiatives along with care, treatment and protection for stray animals (such as dogs) and wildlife. Shelter homes / care centers may also be established when required.";
-
-      document.getElementById("t10").textContent="Social Awareness & Public Welfare";
-      document.getElementById("d10").textContent="Running awareness drives on education, health, cleanliness, de-addiction, civic duties and public welfare topics.";
-    }else{
-      document.getElementById("t1").textContent="शिक्षा सारथी कार्यक्रम";
-      document.getElementById("d1").textContent="शिक्षा सारथी के माध्यम से हम आर्थिक रूप से कमजोर बच्चों को Stationery Kit, कॉपियाँ, पेन-पेंसिल, किताबें और आवश्यक अध्ययन सामग्री उपलब्ध कराते हैं। हमारा उद्देश्य है कि संसाधनों की कमी के कारण किसी बच्चे की पढ़ाई न रुके और हर बच्चा आत्मविश्वास के साथ आगे बढ़े।";
-
-      document.getElementById("t2").textContent="जीवन रक्षक एम्बुलेंस सेवा";
-      document.getElementById("d2").textContent="दुर्घटना या आपातकाल में सबसे कीमती चीज़ होती है — समय। हम प्राथमिक उपचार (First Aid) देते हुए घायल/रोगी को निकटतम अस्पताल तक पहुँचाने की सेवा प्रदान करते हैं। समय पर सहायता कई जिंदगियाँ बचा सकती है।";
-
-      document.getElementById("t3").textContent="महिला सशक्तिकरण";
-      document.getElementById("d3").textContent="महिलाओं को जागरूकता, प्रशिक्षण, कौशल विकास और आत्मनिर्भरता से जोड़ना। सुरक्षा, सम्मान और अवसरों के लिए समाज में सकारात्मक वातावरण तैयार करना।";
-
-      document.getElementById("t4").textContent="गरीब एवं जरूरतमंद सहायता";
-      document.getElementById("d4").textContent="जरूरतमंद परिवारों को भोजन, कपड़े, शिक्षा सामग्री, आपदा राहत और आवश्यक सहायता उपलब्ध कराना। संकट की स्थिति में त्वरित सहयोग सुनिश्चित करना।";
-
-      document.getElementById("t5").textContent="रोजगार एवं कौशल विकास";
-      document.getElementById("d5").textContent="युवाओं को skill training, career guidance, employability support और entrepreneurship के लिए प्रेरित करना, ताकि वे आत्मनिर्भर बन सकें।";
-
-      document.getElementById("t6").textContent="पर्यावरण, स्वच्छता एवं जल संरक्षण";
-      document.getElementById("d6").textContent="स्वच्छता अभियान, पौधारोपण, plastic-free awareness, जल संरक्षण और जनभागीदारी के माध्यम से हरित भविष्य की दिशा में कार्य करना।";
-
-      document.getElementById("t7").textContent="संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण";
-      document.getElementById("d7").textContent="भारतीय संस्कृति, सामाजिक संस्कार, सनातन मूल्यों और heritage conservation को बढ़ावा देना। हमारी परंपराओं और ऐतिहासिक धरोहरों के प्रति जागरूकता फैलाना।";
-
-      document.getElementById("t8").textContent="वृद्धजन सेवा एवं सामाजिक कल्याण";
-      document.getElementById("d8").textContent="वरिष्ठ नागरिकों के लिए सेवा, सहयोग और कल्याण गतिविधियाँ। आवश्यकता पड़ने पर वृद्धाश्रम / Old Age Home जैसे सेवा-केन्द्रों की पहल भी की जा सकती है।";
-
-      document.getElementById("t9").textContent="गौसेवा, पशु सुरक्षा एवं संरक्षण";
-      document.getElementById("d9").textContent="गौसेवा, गौ-सुरक्षा एवं गौ-संरक्षण के साथ-साथ अन्य बेसहारा पशुओं (जैसे आवारा कुत्ते) और वन्य जीवों की देखभाल, उपचार एवं संरक्षण। आवश्यकता के अनुसार उनके लिए shelter homes / care centers की व्यवस्था भी की जा सकती है।";
-
-      document.getElementById("t10").textContent="सामाजिक जागरूकता एवं जनकल्याण";
-      document.getElementById("d10").textContent="समाज में शिक्षा, स्वास्थ्य, स्वच्छता, नशा-मुक्ति, नागरिक कर्तव्य और जनहित से जुड़े विषयों पर जागरूकता अभियान चलाना।";
-    }
   }
 
-  // ---- language persistence ----
-  const btnHi = document.getElementById("btnHi");
-  const btnEn = document.getElementById("btnEn");
-
-  function applyActive(lang){
-    if(lang === "en"){
-      btnEn.classList.add("active");
-      btnHi.classList.remove("active");
-    }else{
-      btnHi.classList.add("active");
-      btnEn.classList.remove("active");
-    }
-  }
+  // Toggle buttons
+  const btnHi=document.getElementById("btnHi");
+  const btnEn=document.getElementById("btnEn");
 
   btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
+    btnHi.classList.add("active"); btnEn.classList.remove("active");
     setLang("hi");
   });
-
   btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
+    btnEn.classList.add("active"); btnHi.classList.remove("active");
     setLang("en");
   });
 
-  // ---- Mobile menu open/close ----
+  // Mobile menu open/close
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
 
@@ -556,7 +503,6 @@
     mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
   });
 
-  // Close mobile panel when clicking any link
   document.querySelectorAll(".mnav a").forEach(a=>{
     a.addEventListener("click",()=>{
       mobilePanel.classList.remove("open");
@@ -564,11 +510,9 @@
     });
   });
 
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
-
-  const savedLang = localStorage.getItem("bas_lang") || "hi";
-  applyActive(savedLang);
-  setLang(savedLang);
+  setLang("hi");
 </script>
 
 </body>
