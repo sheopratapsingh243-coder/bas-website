@@ -169,6 +169,28 @@
       color:var(--muted);
     }
 
+    .tag{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:950;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(248,250,252,.9);
+      color:var(--muted);
+      margin-top:10px;
+      gap:8px;
+      align-items:center;
+    }
+
+    .mini{
+      margin-top:10px;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:14px;
+    }
+
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
@@ -245,7 +267,7 @@
           <div class="badge" id="b1">Education</div>
           <div class="badge" id="b2">Health</div>
           <div class="badge" id="b3">Emergency Support</div>
-          <div class="badge" id="b4">Self-Reliance</div>
+          <div class="badge" id="b4">Heritage</div>
         </div>
 
         <div class="btnRow">
@@ -292,8 +314,11 @@
 
           <div class="grid">
 
+            <!-- 1 -->
             <div class="card">
               <h2 id="p1t">शिक्षा सारथी (Shiksha Sarathi)</h2>
+              <div class="tag" id="p1tag">📚 Education • Future Building</div>
+
               <p class="muted small" id="p1d">
                 शिक्षा सारथी कार्यक्रम के माध्यम से हम आर्थिक रूप से कमजोर बच्चों को स्टेशनरी किट, आवश्यक अध्ययन सामग्री,
                 तथा सीखने के लिए प्रेरणा प्रदान करते हैं।
@@ -311,8 +336,11 @@
               </div>
             </div>
 
+            <!-- 2 -->
             <div class="card">
               <h2 id="p2t">एम्बुलेंस सेवा (Ambulance Seva)</h2>
+              <div class="tag" id="p2tag">🚑 Emergency • First Aid • Life Saving</div>
+
               <p class="muted small" id="p2d">
                 सड़क दुर्घटना या अचानक गंभीर बीमारी की स्थिति में “पहला 1 घंटा” सबसे महत्वपूर्ण होता है।
                 इस समय में सही first aid और तेज़ी से अस्पताल पहुँचाना कई बार जीवन और मृत्यु का अंतर बन जाता है।
@@ -324,9 +352,74 @@
                 हमारा प्रयास है कि एम्बुलेंस सेवा के माध्यम से घायल व्यक्ति को first aid देते हुए त्वरित अस्पताल पहुँचाया जाए।
               </p>
 
+              <ul class="mini" id="p2mini">
+                <li>प्राथमिक उपचार (First Aid) के साथ सुरक्षित transport</li>
+                <li>आपातकाल में तुरंत सहायता पहुँचाने का प्रयास</li>
+                <li>लोगों को जागरूक करना: “Golden Hour” का महत्व</li>
+              </ul>
+
               <div class="btnRow">
                 <a class="btn primary" href="donate.html" id="p2don">Ambulance Service Support</a>
                 <a class="btn green" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="p2wa">Emergency WhatsApp</a>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card">
+              <h2 id="p3t">गौसेवा एवं गौशाला पहल (Gau Seva & Gaushala Initiative)</h2>
+              <div class="tag" id="p3tag">🐄 Compassion • Dharma • Protection</div>
+
+              <p class="muted small" id="p3d">
+                भारत की संस्कृति में गाय केवल पशु नहीं, बल्कि करुणा, मातृत्व और सेवा का प्रतीक है।
+                दुर्भाग्यवश आज बहुत-सी गौमाताएँ भूख, बीमारी, दुर्घटना, और उपेक्षा का शिकार हो रही हैं।
+                हमारा उद्देश्य है कि गौसेवा को केवल भावना नहीं, बल्कि एक व्यवस्थित सेवा-कार्य बनाया जाए।
+              </p>
+
+              <p class="muted small" id="p3d2">
+                संस्था गौशालाओं में गायों के लिए चारा, भोजन, स्वच्छ जल की व्यवस्था, आवश्यक दवाइयाँ एवं चिकित्सा सहायता,
+                तथा घायल/बीमार गायों की देखभाल में सहयोग करती है।
+                भविष्य में संस्था द्वारा कुछ गौशालाओं के निर्माण कार्य को भी चरणबद्ध रूप से आगे बढ़ाने का लक्ष्य है,
+                ताकि बेसहारा गायों को सुरक्षित आश्रय मिल सके।
+              </p>
+
+              <ul class="mini" id="p3mini">
+                <li>चारा/भोजन/दवा सहयोग (Gaushala Support)</li>
+                <li>घायल/बीमार गायों की चिकित्सा एवं देखभाल</li>
+                <li>भविष्य: गौशाला निर्माण एवं सुरक्षित shelter</li>
+              </ul>
+
+              <div class="btnRow">
+                <a class="btn primary" href="donate.html" id="p3don">गौसेवा हेतु सहयोग करें</a>
+                <a class="btn secondary" href="contact.html" id="p3join">सेवा में जुड़ें</a>
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card">
+              <h2 id="p4t">विरासत संरक्षण (Heritage Conservation)</h2>
+              <div class="tag" id="p4tag">🏛️ History • Identity • Preservation</div>
+
+              <p class="muted small" id="p4d">
+                हमारी विरासत — पुराने कुएँ, बावड़ियाँ (वापी), मंदिर, किले और ऐतिहासिक स्मारक —
+                केवल पत्थर नहीं हैं; ये हमारी पहचान, इतिहास और संस्कृति की जीवित धरोहर हैं।
+                जब कोई स्मारक नष्ट होता है, तो केवल एक इमारत नहीं गिरती — एक पीढ़ी का इतिहास भी टूट जाता है।
+              </p>
+
+              <p class="muted small" id="p4d2">
+                संस्था का प्रयास है कि स्थानीय स्तर पर विरासत संरक्षण को सेवा कार्य के रूप में आगे बढ़ाया जाए।
+                इसके अंतर्गत संरचनाओं को बचाने, मूल स्वरूप में सुरक्षित रखने, और क्षतिग्रस्त स्मारकों के जीर्णोद्धार
+                जैसे कार्य चरणबद्ध रूप से किए जा सकते हैं।
+              </p>
+
+              <ul class="mini" id="p4mini">
+                <li><b>संरक्षण (Conservation):</b> संरचना को नष्ट होने से बचाने हेतु स्थिरता बनाए रखना</li>
+                <li><b>परिरक्षण (Preservation):</b> स्मारक को उसके मूल स्वरूप में सुरक्षित रखना</li>
+                <li><b>जीर्णोद्धार (Restoration):</b> क्षतिग्रस्त संरचना की मरम्मत कर पुनः पूर्व स्थिति में लाना</li>
+              </ul>
+
+              <div class="btnRow">
+                <a class="btn primary" href="donate.html" id="p4don">Virasat Sanrakshan Support</a>
+                <a class="btn secondary" href="contact.html" id="p4join">हमसे जुड़ें</a>
               </div>
             </div>
 
@@ -364,7 +457,7 @@
       b1:"Education",
       b2:"Health",
       b3:"Emergency Support",
-      b4:"Self-Reliance",
+      b4:"Heritage",
 
       aboutBtn:"हमारे बारे में",
       donBtn:"दान करें",
@@ -380,6 +473,11 @@
       progTitle:"वर्तमान कार्यक्रम (Current Programs)",
       progSub:"यह वे कार्यक्रम हैं जिन पर संस्था अभी सक्रिय रूप से कार्य कर रही है।",
 
+      p1tag:"📚 Education • Future Building",
+      p2tag:"🚑 Emergency • First Aid • Life Saving",
+      p3tag:"🐄 Compassion • Dharma • Protection",
+      p4tag:"🏛️ History • Identity • Preservation",
+
       p1t:"शिक्षा सारथी (Shiksha Sarathi)",
       p1d:"शिक्षा सारथी कार्यक्रम के माध्यम से हम आर्थिक रूप से कमजोर बच्चों को स्टेशनरी किट, आवश्यक अध्ययन सामग्री, तथा सीखने के लिए प्रेरणा प्रदान करते हैं। हमारा लक्ष्य केवल सामग्री देना नहीं, बल्कि बच्चों के भीतर “सीखने की निरंतर आदत” विकसित करना है।",
       p1d2:"कई परिवारों में शिक्षा का खर्च सबसे पहले कटता है। ऐसे में एक छोटी-सी सहायता भी बच्चे को स्कूल से जुड़ा रखने में बड़ा योगदान देती है। यही कारण है कि शिक्षा सारथी कार्यक्रम सीधे “भविष्य निर्माण” का कार्य करता है।",
@@ -389,8 +487,35 @@
       p2t:"एम्बुलेंस सेवा (Ambulance Seva)",
       p2d:"सड़क दुर्घटना या अचानक गंभीर बीमारी की स्थिति में “पहला 1 घंटा” सबसे महत्वपूर्ण होता है। इस समय में सही first aid और तेज़ी से अस्पताल पहुँचाना कई बार जीवन और मृत्यु का अंतर बन जाता है।",
       p2d2:"भारत में हर वर्ष बड़ी संख्या में लोग सड़क दुर्घटनाओं में जान गंवाते हैं। बहुत-से मामलों में देरी, प्राथमिक उपचार न मिलना, और अस्पताल तक समय पर न पहुँच पाना मुख्य कारण होता है। हमारा प्रयास है कि एम्बुलेंस सेवा के माध्यम से घायल व्यक्ति को first aid देते हुए त्वरित अस्पताल पहुँचाया जाए।",
+      p2mini:[
+        "प्राथमिक उपचार (First Aid) के साथ सुरक्षित transport",
+        "आपातकाल में तुरंत सहायता पहुँचाने का प्रयास",
+        "लोगों को जागरूक करना: “Golden Hour” का महत्व"
+      ],
       p2don:"Ambulance Service Support",
       p2wa:"Emergency WhatsApp",
+
+      p3t:"गौसेवा एवं गौशाला पहल (Gau Seva & Gaushala Initiative)",
+      p3d:"भारत की संस्कृति में गाय केवल पशु नहीं, बल्कि करुणा, मातृत्व और सेवा का प्रतीक है। दुर्भाग्यवश आज बहुत-सी गौमाताएँ भूख, बीमारी, दुर्घटना, और उपेक्षा का शिकार हो रही हैं। हमारा उद्देश्य है कि गौसेवा को केवल भावना नहीं, बल्कि एक व्यवस्थित सेवा-कार्य बनाया जाए।",
+      p3d2:"संस्था गौशालाओं में गायों के लिए चारा, भोजन, स्वच्छ जल की व्यवस्था, आवश्यक दवाइयाँ एवं चिकित्सा सहायता, तथा घायल/बीमार गायों की देखभाल में सहयोग करती है। भविष्य में संस्था द्वारा कुछ गौशालाओं के निर्माण कार्य को भी चरणबद्ध रूप से आगे बढ़ाने का लक्ष्य है, ताकि बेसहारा गायों को सुरक्षित आश्रय मिल सके।",
+      p3mini:[
+        "चारा/भोजन/दवा सहयोग (Gaushala Support)",
+        "घायल/बीमार गायों की चिकित्सा एवं देखभाल",
+        "भविष्य: गौशाला निर्माण एवं सुरक्षित shelter"
+      ],
+      p3don:"गौसेवा हेतु सहयोग करें",
+      p3join:"सेवा में जुड़ें",
+
+      p4t:"विरासत संरक्षण (Heritage Conservation)",
+      p4d:"हमारी विरासत — पुराने कुएँ, बावड़ियाँ (वापी), मंदिर, किले और ऐतिहासिक स्मारक — केवल पत्थर नहीं हैं; ये हमारी पहचान, इतिहास और संस्कृति की जीवित धरोहर हैं। जब कोई स्मारक नष्ट होता है, तो केवल एक इमारत नहीं गिरती — एक पीढ़ी का इतिहास भी टूट जाता है।",
+      p4d2:"संस्था का प्रयास है कि स्थानीय स्तर पर विरासत संरक्षण को सेवा कार्य के रूप में आगे बढ़ाया जाए। इसके अंतर्गत संरचनाओं को बचाने, मूल स्वरूप में सुरक्षित रखने, और क्षतिग्रस्त स्मारकों के जीर्णोद्धार जैसे कार्य चरणबद्ध रूप से किए जा सकते हैं।",
+      p4mini:[
+        "<b>संरक्षण (Conservation):</b> संरचना को नष्ट होने से बचाने हेतु स्थिरता बनाए रखना",
+        "<b>परिरक्षण (Preservation):</b> स्मारक को उसके मूल स्वरूप में सुरक्षित रखना",
+        "<b>जीर्णोद्धार (Restoration):</b> क्षतिग्रस्त संरचना की मरम्मत कर पुनः पूर्व स्थिति में लाना"
+      ],
+      p4don:"Virasat Sanrakshan Support",
+      p4join:"हमसे जुड़ें",
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -407,7 +532,7 @@
       b1:"Education",
       b2:"Health",
       b3:"Emergency Support",
-      b4:"Self-Reliance",
+      b4:"Heritage",
 
       aboutBtn:"About Us",
       donBtn:"Donate",
@@ -423,6 +548,11 @@
       progTitle:"Current Programs",
       progSub:"These are the key programs the organization is currently running actively.",
 
+      p1tag:"📚 Education • Future Building",
+      p2tag:"🚑 Emergency • First Aid • Life Saving",
+      p3tag:"🐄 Compassion • Dharma • Protection",
+      p4tag:"🏛️ History • Identity • Preservation",
+
       p1t:"Shiksha Sarathi Program",
       p1d:"Through the Shiksha Sarathi program, we support economically weaker children with stationery kits, essential study materials, and motivation to keep learning. Our goal is not just to distribute supplies, but to build a strong learning habit and confidence.",
       p1d2:"In many families, education expenses are the first to be cut. Even small support can keep a child connected to school. That is why Shiksha Sarathi is a direct investment in the future.",
@@ -432,8 +562,35 @@
       p2t:"Ambulance Service",
       p2d:"In road accidents or sudden medical emergencies, the first hour is critical. Timely first aid and quick transport to the hospital can often be the difference between life and death.",
       p2d2:"Every year, a very large number of people lose their lives in road accidents in India. In many cases, delay, lack of first aid and late hospital reach are key reasons. Our goal is to provide first aid support and transport the injured to the hospital quickly through ambulance service.",
+      p2mini:[
+        "Safe transport with first aid support",
+        "Rapid help during emergencies",
+        "Public awareness about the importance of the Golden Hour"
+      ],
       p2don:"Support Ambulance Service",
       p2wa:"Emergency WhatsApp",
+
+      p3t:"Gau Seva & Gaushala Initiative",
+      p3d:"In Indian culture, the cow is not just an animal — it represents compassion, motherhood and service. Sadly, many cows today suffer from hunger, illness, accidents and neglect. Our aim is to make Gau Seva not just an emotion, but a well-organized service mission.",
+      p3d2:"We support gaushalas by providing fodder, food, clean water, essential medicines and medical help, along with care for injured and sick cows. In the future, the organization also plans to take up phased gaushala construction projects so that abandoned cows can receive safe shelter and protection.",
+      p3mini:[
+        "Fodder / food / medicine support for gaushalas",
+        "Medical care for injured and sick cows",
+        "Future: gaushala construction and safe shelter"
+      ],
+      p3don:"Support Gau Seva",
+      p3join:"Join as Volunteer",
+
+      p4t:"Heritage Conservation",
+      p4d:"Our heritage — old wells, stepwells (vapi), temples, forts and historical monuments — is not just stone. It is our identity, history and living culture. When a monument is lost, it is not just a building that collapses — an entire chapter of history disappears.",
+      p4d2:"Our goal is to promote heritage conservation as a service initiative at the local level. This includes saving structures from decay, preserving their original form, and restoring damaged monuments in a phased and responsible manner.",
+      p4mini:[
+        "<b>Conservation:</b> Maintaining structural stability and preventing destruction",
+        "<b>Preservation:</b> Protecting a monument in its original form",
+        "<b>Restoration:</b> Repairing damaged structures and bringing them back to their earlier state"
+      ],
+      p4don:"Support Heritage Work",
+      p4join:"Get Involved",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -484,17 +641,40 @@
     document.getElementById("progTitle").textContent=d.progTitle;
     document.getElementById("progSub").textContent=d.progSub;
 
+    // Program 1
     document.getElementById("p1t").textContent=d.p1t;
+    document.getElementById("p1tag").textContent=d.p1tag;
     document.getElementById("p1d").textContent=d.p1d;
     document.getElementById("p1d2").textContent=d.p1d2;
     document.getElementById("p1don").textContent=d.p1don;
     document.getElementById("p1join").textContent=d.p1join;
 
+    // Program 2
     document.getElementById("p2t").textContent=d.p2t;
+    document.getElementById("p2tag").textContent=d.p2tag;
     document.getElementById("p2d").textContent=d.p2d;
     document.getElementById("p2d2").textContent=d.p2d2;
+    document.getElementById("p2mini").innerHTML = d.p2mini.map(x=>`<li>${x}</li>`).join("");
     document.getElementById("p2don").textContent=d.p2don;
     document.getElementById("p2wa").textContent=d.p2wa;
+
+    // Program 3
+    document.getElementById("p3t").textContent=d.p3t;
+    document.getElementById("p3tag").textContent=d.p3tag;
+    document.getElementById("p3d").textContent=d.p3d;
+    document.getElementById("p3d2").textContent=d.p3d2;
+    document.getElementById("p3mini").innerHTML = d.p3mini.map(x=>`<li>${x}</li>`).join("");
+    document.getElementById("p3don").textContent=d.p3don;
+    document.getElementById("p3join").textContent=d.p3join;
+
+    // Program 4
+    document.getElementById("p4t").textContent=d.p4t;
+    document.getElementById("p4tag").textContent=d.p4tag;
+    document.getElementById("p4d").textContent=d.p4d;
+    document.getElementById("p4d2").textContent=d.p4d2;
+    document.getElementById("p4mini").innerHTML = d.p4mini.map(x=>`<li>${x}</li>`).join("");
+    document.getElementById("p4don").textContent=d.p4don;
+    document.getElementById("p4join").textContent=d.p4join;
 
     document.getElementById("foot").textContent=d.foot;
   }
