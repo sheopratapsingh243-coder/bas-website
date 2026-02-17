@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>About Us | Bharat Abhyudaya Sansthan</title>
+  <title>About | Bharat Abhyudaya Sansthan</title>
 
   <style>
     :root{
       --brand:#0b5aa6;
       --accent:#f58b1f;
+      --green:#16a34a;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
@@ -32,7 +33,7 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:28px 0}
     h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
-    h2{margin:0;font-size:22px;letter-spacing:-.4px}
+    h2{margin:0;font-size:20px;letter-spacing:-.35px}
     p{margin:10px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
@@ -135,6 +136,7 @@
       background:
         radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
         radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
+        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.10), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
       border-radius:28px;
       padding:18px;
@@ -143,13 +145,14 @@
 
     .card{
       background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:0 12px 34px rgba(2,6,23,.06);
+      border-radius:var(--radius);padding:18px;
+      box-shadow:0 12px 34px rgba(2,6,23,.06);
     }
 
     .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:980px){.grid{grid-template-columns:1.15fr .85fr;gap:18px}}
+    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
@@ -164,6 +167,14 @@
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
       color:#fff;border-color:transparent;
+    }
+
+    .list{
+      margin:10px 0 0;
+      padding:0 0 0 18px;
+      color:var(--muted);
+      line-height:1.85;
+      font-size:14px;
     }
 
     footer{
@@ -236,33 +247,33 @@
       <div class="hero">
         <h1 id="title">हमारे बारे में</h1>
         <p class="muted" id="subtitle">
-          Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो सेवा, जागरूकता और जनकल्याण के माध्यम से समाज में सकारात्मक परिवर्तन हेतु कार्य करती है।
+          Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो सेवा, जागरूकता और जनकल्याण को समाज तक पहुँचाने के लिए कार्य करती है।
         </p>
 
         <div class="btnRow">
-          <a class="btn secondary" href="initiatives.html" id="goInit">हमारे प्रयास</a>
-          <a class="btn primary" href="donate.html" id="goDonate">दान करें</a>
+          <a class="btn secondary" href="initiatives.html" id="seeBtn">हमारे प्रयास</a>
+          <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
         </div>
       </div>
 
       <div class="grid">
 
         <div class="card">
-          <h2 id="h2a">हमारी पहचान</h2>
-          <p id="p1">
-            भारत अभ्युदय संस्थान का उद्देश्य समाज के कमजोर वर्गों तक शिक्षा, स्वास्थ्य, जागरूकता, महिला सशक्तिकरण, कौशल विकास, पर्यावरण संरक्षण तथा सांस्कृतिक एवं सनातन मूल्यों के संरक्षण से जुड़ी सेवाएँ पहुँचाना है।
-            हम मानते हैं कि वास्तविक अभ्युदय वही है, जो प्रत्येक व्यक्ति को आत्मनिर्भर बनने की दिशा में प्रेरित करे।
+          <h2 id="h2a">संस्था का परिचय</h2>
+          <p class="muted small" id="p1">
+            भारत अभ्युदय संस्थान का उद्देश्य समाज के उन वर्गों तक सहायता पहुँचाना है, जिन्हें शिक्षा, स्वास्थ्य, रोजगार, सुरक्षा और सामाजिक सहयोग की सबसे अधिक आवश्यकता होती है।
+            संस्था का कार्य सेवा, संवेदना और राष्ट्र निर्माण के मूल विचार पर आधारित है।
           </p>
 
-          <p id="p2">
-            संस्था जन-भागीदारी, पारदर्शिता और सेवा-भावना के साथ कार्य करती है। हम समाज में जरूरतमंदों के लिए एक मजबूत सहयोग तंत्र तैयार करना चाहते हैं,
-            जिससे किसी भी संकट, असहायता या आवश्यकता के समय त्वरित सहायता उपलब्ध हो सके।
+          <p class="muted small" id="p2">
+            हम मानते हैं कि समाज का वास्तविक विकास तभी संभव है जब व्यक्ति शिक्षा, स्वास्थ्य और आत्मनिर्भरता के माध्यम से मजबूत बने।
+            इसी दृष्टि से संस्था “अभ्युदय से आत्मनिर्भर भारत तक” के संकल्प के साथ निरंतर प्रयासरत है।
           </p>
         </div>
 
         <div class="card">
           <h2 id="h2b">पंजीकरण विवरण</h2>
-          <p class="small muted" style="margin-top:10px" id="reg">
+          <p class="small muted" id="reg" style="margin-top:10px">
             Registration No.: <b>FAT/02340/2024-2025</b><br>
             Date: <b>05/07/2024</b><br>
             Valid: <b>04/07/2029</b><br>
@@ -270,19 +281,52 @@
           </p>
 
           <div class="btnRow">
-            <a class="btn secondary" href="documents.html" id="docBtn">दस्तावेज़</a>
-            <a class="btn" href="contact.html" id="conBtn">संपर्क</a>
+            <a class="btn secondary" href="documents.html" id="docBtn">Registration PDF</a>
           </div>
         </div>
 
-      </div>
+        <div class="card">
+          <h2 id="h2c">Mission</h2>
+          <p class="muted small" id="mission">
+            समाज में शिक्षा, स्वास्थ्य, आत्मनिर्भरता, महिला सशक्तिकरण, पर्यावरण संरक्षण, संस्कृति एवं सेवा-आधारित कार्यक्रमों के माध्यम से
+            जनकल्याण को सशक्त बनाना — और सेवा को जन-आंदोलन का रूप देना।
+          </p>
+        </div>
 
-      <div class="card" style="margin-top:14px">
-        <h2 id="h2c">हमारी सोच</h2>
-        <p id="p3">
-          हम “अभ्युदय से आत्मनिर्भर भारत तक” के संकल्प के साथ कार्य करते हैं।
-          हमारा विश्वास है कि शिक्षा, स्वास्थ्य, आपात सेवा और सामाजिक जागरूकता के क्षेत्र में छोटे-छोटे प्रयास भी बड़े परिवर्तन का आधार बन सकते हैं।
-        </p>
+        <div class="card">
+          <h2 id="h2d">Vision</h2>
+          <p class="muted small" id="vision">
+            एक ऐसा समाज जहाँ हर बच्चा शिक्षा प्राप्त कर सके, हर जरूरतमंद को सहायता मिल सके, आपातकाल में त्वरित सेवा उपलब्ध हो,
+            और भारत आत्मनिर्भरता की दिशा में निरंतर आगे बढ़े।
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 id="h2e">मुख्य कार्यक्षेत्र</h2>
+          <ul class="list" id="areas">
+            <li>शिक्षा एवं साक्षरता (Stationery Kit, mentoring, digital learning)</li>
+            <li>स्वास्थ्य जागरूकता एवं सहायता</li>
+            <li>आपात सेवा / एम्बुलेंस सहायता</li>
+            <li>महिला सशक्तिकरण एवं कौशल विकास</li>
+            <li>गरीब एवं जरूरतमंद सहायता</li>
+            <li>पर्यावरण, स्वच्छता एवं जल संरक्षण</li>
+            <li>संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण</li>
+            <li>वृद्धजन सेवा, सामाजिक कल्याण एवं वृद्धाश्रम पहल</li>
+            <li>गौसेवा, गौशाला, पशु एवं वन्यजीव संरक्षण</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 id="h2f">Management Committee</h2>
+          <ul class="list" id="committee">
+            <li><b>अध्यक्ष:</b> Sheo Pratap Singh</li>
+            <li><b>उपाध्यक्ष:</b> sukhdev singh</li>
+            <li><b>सचिव:</b> paras mani</li>
+            <li><b>कोषाध्यक्ष:</b> kailash pratap singh</li>
+            <li><b>सदस्य:</b> Gyan Singh</li>
+          </ul>
+        </div>
+
       </div>
 
     </div>
@@ -307,21 +351,45 @@
       m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
       title:"हमारे बारे में",
-      subtitle:"Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो सेवा, जागरूकता और जनकल्याण के माध्यम से समाज में सकारात्मक परिवर्तन हेतु कार्य करती है।",
+      subtitle:"Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो सेवा, जागरूकता और जनकल्याण को समाज तक पहुँचाने के लिए कार्य करती है।",
 
-      goInit:"हमारे प्रयास",
-      goDonate:"दान करें",
+      seeBtn:"हमारे प्रयास",
+      joinBtn:"हमसे जुड़ें",
 
-      h2a:"हमारी पहचान",
-      p1:"भारत अभ्युदय संस्थान का उद्देश्य समाज के कमजोर वर्गों तक शिक्षा, स्वास्थ्य, जागरूकता, महिला सशक्तिकरण, कौशल विकास, पर्यावरण संरक्षण तथा सांस्कृतिक एवं सनातन मूल्यों के संरक्षण से जुड़ी सेवाएँ पहुँचाना है। हम मानते हैं कि वास्तविक अभ्युदय वही है, जो प्रत्येक व्यक्ति को आत्मनिर्भर बनने की दिशा में प्रेरित करे।",
-      p2:"संस्था जन-भागीदारी, पारदर्शिता और सेवा-भावना के साथ कार्य करती है। हम समाज में जरूरतमंदों के लिए एक मजबूत सहयोग तंत्र तैयार करना चाहते हैं, जिससे किसी भी संकट, असहायता या आवश्यकता के समय त्वरित सहायता उपलब्ध हो सके।",
+      h2a:"संस्था का परिचय",
+      p1:"भारत अभ्युदय संस्थान का उद्देश्य समाज के उन वर्गों तक सहायता पहुँचाना है, जिन्हें शिक्षा, स्वास्थ्य, रोजगार, सुरक्षा और सामाजिक सहयोग की सबसे अधिक आवश्यकता होती है। संस्था का कार्य सेवा, संवेदना और राष्ट्र निर्माण के मूल विचार पर आधारित है।",
+      p2:"हम मानते हैं कि समाज का वास्तविक विकास तभी संभव है जब व्यक्ति शिक्षा, स्वास्थ्य और आत्मनिर्भरता के माध्यम से मजबूत बने। इसी दृष्टि से संस्था “अभ्युदय से आत्मनिर्भर भारत तक” के संकल्प के साथ निरंतर प्रयासरत है।",
 
       h2b:"पंजीकरण विवरण",
-      docBtn:"दस्तावेज़",
-      conBtn:"संपर्क",
+      docBtn:"Registration PDF",
 
-      h2c:"हमारी सोच",
-      p3:"हम “अभ्युदय से आत्मनिर्भर भारत तक” के संकल्प के साथ कार्य करते हैं। हमारा विश्वास है कि शिक्षा, स्वास्थ्य, आपात सेवा और सामाजिक जागरूकता के क्षेत्र में छोटे-छोटे प्रयास भी बड़े परिवर्तन का आधार बन सकते हैं।",
+      h2c:"Mission",
+      mission:"समाज में शिक्षा, स्वास्थ्य, आत्मनिर्भरता, महिला सशक्तिकरण, पर्यावरण संरक्षण, संस्कृति एवं सेवा-आधारित कार्यक्रमों के माध्यम से जनकल्याण को सशक्त बनाना — और सेवा को जन-आंदोलन का रूप देना।",
+
+      h2d:"Vision",
+      vision:"एक ऐसा समाज जहाँ हर बच्चा शिक्षा प्राप्त कर सके, हर जरूरतमंद को सहायता मिल सके, आपातकाल में त्वरित सेवा उपलब्ध हो, और भारत आत्मनिर्भरता की दिशा में निरंतर आगे बढ़े।",
+
+      h2e:"मुख्य कार्यक्षेत्र",
+      areas:[
+        "शिक्षा एवं साक्षरता (Stationery Kit, mentoring, digital learning)",
+        "स्वास्थ्य जागरूकता एवं सहायता",
+        "आपात सेवा / एम्बुलेंस सहायता",
+        "महिला सशक्तिकरण एवं कौशल विकास",
+        "गरीब एवं जरूरतमंद सहायता",
+        "पर्यावरण, स्वच्छता एवं जल संरक्षण",
+        "संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण",
+        "वृद्धजन सेवा, सामाजिक कल्याण एवं वृद्धाश्रम पहल",
+        "गौसेवा, गौशाला, पशु एवं वन्यजीव संरक्षण"
+      ],
+
+      h2f:"Management Committee",
+      committee:[
+        "<b>अध्यक्ष:</b> Sheo Pratap Singh",
+        "<b>उपाध्यक्ष:</b> sukhdev singh",
+        "<b>सचिव:</b> paras mani",
+        "<b>कोषाध्यक्ष:</b> kailash pratap singh",
+        "<b>सदस्य:</b> Gyan Singh"
+      ],
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -333,21 +401,45 @@
       m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
       title:"About Us",
-      subtitle:"Bharat Abhyudaya Sansthan is a registered social organization working to create positive change through service, awareness and public welfare.",
+      subtitle:"Bharat Abhyudaya Sansthan is a registered social organization working to deliver service, awareness and public welfare initiatives to society.",
 
-      goInit:"Our Initiatives",
-      goDonate:"Donate",
+      seeBtn:"Our Initiatives",
+      joinBtn:"Get Involved",
 
-      h2a:"Who We Are",
-      p1:"Bharat Abhyudaya Sansthan is committed to serving society through education, health, awareness, women empowerment, skill development, environmental protection, and preservation of cultural and Sanatan values. We believe true upliftment is the one that inspires every individual towards self-reliance.",
-      p2:"We work with public participation, transparency, and a strong spirit of service. Our mission is to build a reliable support system for people in need, so that timely help is available during crisis, hardship, or emergencies.",
+      h2a:"Organization Overview",
+      p1:"Bharat Abhyudaya Sansthan works to support sections of society that need education, health, employment, safety and social assistance the most. Our work is rooted in service, compassion and nation-building values.",
+      p2:"We believe real development is possible only when individuals become strong through education, health and self-reliance. With this vision, we work continuously towards “Upliftment to Self-Reliant India.”",
 
       h2b:"Registration Details",
-      docBtn:"Documents",
-      conBtn:"Contact",
+      docBtn:"Registration PDF",
 
-      h2c:"Our Vision",
-      p3:"We work with the commitment of “Upliftment to Self-Reliant India”. We believe even small efforts in education, health, emergency support, and social awareness can become the foundation of a big change.",
+      h2c:"Mission",
+      mission:"To strengthen public welfare through education, health, self-reliance, women empowerment, environment protection, culture and service-based initiatives — and to turn service into a people’s movement.",
+
+      h2d:"Vision",
+      vision:"A society where every child can learn, every needy person receives support, emergency services reach on time, and India moves forward continuously towards self-reliance.",
+
+      h2e:"Core Areas of Work",
+      areas:[
+        "Education & literacy (stationery kits, mentoring, digital learning)",
+        "Health awareness and support",
+        "Emergency support / ambulance assistance",
+        "Women empowerment and skill development",
+        "Support for the poor and needy",
+        "Environment, cleanliness and water conservation",
+        "Culture, Sanatan protection and heritage conservation",
+        "Elderly care, social welfare and old age home initiatives",
+        "Gaushala, animal care and wildlife protection"
+      ],
+
+      h2f:"Management Committee",
+      committee:[
+        "<b>President:</b> Sheo Pratap Singh",
+        "<b>Vice President:</b> sukhdev singh",
+        "<b>Secretary:</b> paras mani",
+        "<b>Treasurer:</b> kailash pratap singh",
+        "<b>Member:</b> Gyan Singh"
+      ],
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -380,8 +472,8 @@
     document.getElementById("title").textContent=d.title;
     document.getElementById("subtitle").textContent=d.subtitle;
 
-    document.getElementById("goInit").textContent=d.goInit;
-    document.getElementById("goDonate").textContent=d.goDonate;
+    document.getElementById("seeBtn").textContent=d.seeBtn;
+    document.getElementById("joinBtn").textContent=d.joinBtn;
 
     document.getElementById("h2a").textContent=d.h2a;
     document.getElementById("p1").textContent=d.p1;
@@ -389,10 +481,18 @@
 
     document.getElementById("h2b").textContent=d.h2b;
     document.getElementById("docBtn").textContent=d.docBtn;
-    document.getElementById("conBtn").textContent=d.conBtn;
 
     document.getElementById("h2c").textContent=d.h2c;
-    document.getElementById("p3").textContent=d.p3;
+    document.getElementById("mission").textContent=d.mission;
+
+    document.getElementById("h2d").textContent=d.h2d;
+    document.getElementById("vision").textContent=d.vision;
+
+    document.getElementById("h2e").textContent=d.h2e;
+    document.getElementById("areas").innerHTML = d.areas.map(x=>`<li>${x}</li>`).join("");
+
+    document.getElementById("h2f").textContent=d.h2f;
+    document.getElementById("committee").innerHTML = d.committee.map(x=>`<li>${x}</li>`).join("");
 
     document.getElementById("foot").textContent=d.foot;
   }
