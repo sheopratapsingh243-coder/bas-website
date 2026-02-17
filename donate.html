@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Donate • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Donate to support education, health, women empowerment, gaushala, environment and welfare initiatives." />
+  <title>Donate | Bharat Abhyudaya Sansthan</title>
 
   <style>
     :root{
@@ -14,9 +13,9 @@
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
-      --shadow:0 18px 45px rgba(2,6,23,.12);
-      --radius:24px;
-      --max:1180px;
+      --shadow:0 16px 40px rgba(2,6,23,.10);
+      --radius:22px;
+      --max:1100px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -25,35 +24,33 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--fg);
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.22), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.18), transparent 55%),
-        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
+        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
         #fff;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:34px 0}
-    h1{margin:0;font-size:40px;letter-spacing:-1px;line-height:1.08}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    p{margin:12px 0 0;line-height:1.75}
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:6px 0;line-height:1.65}
+    section{padding:28px 0}
+    h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
+    h2{margin:0;font-size:20px;letter-spacing:-.35px}
+    p{margin:10px 0 0;line-height:1.75}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.86);
+      background:rgba(255,255,255,.88);
       backdrop-filter: blur(12px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:12px;
+      padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:260px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
     .logo{
-      width:46px;height:46px;border-radius:999px;
+      width:44px;height:44px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
@@ -61,6 +58,7 @@
     .brand span{display:block;font-size:12px;color:var(--muted)}
     .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
 
+    /* Desktop menu */
     .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
     .menu a{padding:8px 10px;border-radius:12px}
     .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
@@ -80,6 +78,7 @@
       color:var(--brand);
     }
 
+    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
@@ -92,43 +91,66 @@
       color:#fff;border-color:transparent;
     }
 
-    .heroBox{
-      border-radius:30px;
+    /* Mobile menu button */
+    .mobBtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:42px;height:42px;
+      border-radius:14px;
       border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.24), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.20), transparent 60%),
-        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.12), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.97));
-      box-shadow:var(--shadow);
-      padding:22px;
+      background:#fff;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:950;
     }
+    @media(min-width:980px){.mobBtn{display:none}}
 
-    .kicker{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:7px 12px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.7);
-      font-weight:950;font-size:13px;
+    /* Mobile dropdown panel */
+    .mobilePanel{
+      display:none;
+      padding:12px 0 14px;
+      border-top:1px solid rgba(226,232,240,.95);
     }
+    .mobilePanel.open{display:block}
+    @media(min-width:980px){.mobilePanel{display:none !important}}
 
-    .grid{
+    .mnav{
       display:grid;
       grid-template-columns:1fr;
-      gap:16px;
-      margin-top:16px;
+      gap:10px;
     }
-    @media(min-width:980px){
-      .grid{grid-template-columns:1.05fr .95fr;gap:18px}
+    .mnav a{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.9);
+      font-weight:900;
+      color:var(--fg);
+    }
+    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
+
+    /* Content */
+    .hero{
+      border:1px solid rgba(226,232,240,.95);
+      background:
+        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
+        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
+      border-radius:28px;
+      padding:18px;
+      box-shadow:var(--shadow);
     }
 
     .card{
-      background:rgba(255,255,255,.97);
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:0 10px 30px rgba(2,6,23,.06);
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);padding:18px;
+      box-shadow:0 12px 34px rgba(2,6,23,.06);
     }
+
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
 
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
@@ -146,54 +168,30 @@
       background:linear-gradient(135deg,var(--brand),#083a6c);
       color:#fff;border-color:transparent;
     }
-
-    .placeholder{
-      border:2px dashed rgba(148,163,184,.65);
-      border-radius:22px;
-      padding:16px;
-      background:rgba(255,255,255,.6);
+    .btn.green{
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#fff;border-color:transparent;
     }
-    .placeholder b{display:block}
-    .placeholder .box{
-      margin-top:12px;
-      height:160px;
+
+    .infoBox{
+      border:1px dashed rgba(148,163,184,.9);
+      background:rgba(248,250,252,.9);
       border-radius:18px;
-      background:linear-gradient(135deg, rgba(11,90,166,.08), rgba(245,139,31,.08));
-      border:1px solid rgba(226,232,240,.95);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--muted);
-      font-weight:950;
-    }
-
-    .list{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-    @media(min-width:980px){
-      .list{grid-template-columns:1fr 1fr}
-    }
-
-    .mini{
-      border-radius:20px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
       padding:14px;
+      margin-top:12px;
     }
 
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
+    }
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
-    }
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:14px;color:var(--muted);
-      background:rgba(255,255,255,.9);
-      font-size:14px;
     }
   </style>
 </head>
@@ -221,90 +219,95 @@
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
-      <div class="toggle">
-        <button class="pill active" id="btnHi" type="button">हिन्दी</button>
-        <button class="pill" id="btnEn" type="button">English</button>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
+
+        <div class="toggle">
+          <button class="pill active" id="btnHi" type="button">हिन्दी</button>
+          <button class="pill" id="btnEn" type="button">English</button>
+        </div>
       </div>
     </div>
+
+    <!-- Mobile dropdown -->
+    <div class="mobilePanel" id="mobilePanel">
+      <div class="mnav">
+        <a href="index.html" id="mmHome">⌂ Home</a>
+        <a href="about.html" id="mmAbout">परिचय</a>
+        <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
+        <a href="documents.html" id="mmDocs">दस्तावेज़</a>
+        <a href="donate.html" id="mmDonate">दान</a>
+        <a href="contact.html" id="mmContact">संपर्क</a>
+      </div>
+    </div>
+
   </div>
 </header>
 
 <main>
 
-  <section style="padding-top:28px">
+  <section>
     <div class="wrap">
-      <div class="heroBox">
-        <span class="kicker" id="kicker">Support Our Work</span>
-        <h1 style="margin-top:10px" id="title">दान / सहयोग</h1>
+      <div class="hero">
+        <h1 id="title">दान / सहयोग</h1>
         <p class="muted" id="subtitle">
-          आपका सहयोग हमारे प्रयासों को गति देता है। छोटे से छोटे योगदान से भी बड़ा बदलाव संभव है।
+          आपका छोटा सा योगदान भी किसी जरूरतमंद की बड़ी मदद बन सकता है।
         </p>
 
-        <div class="grid">
+        <div class="btnRow">
+          <a class="btn green" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waHelp">
+            WhatsApp पर Donate करें
+          </a>
+          <a class="btn secondary" href="contact.html" id="joinBtn">
+            Volunteer / Join
+          </a>
+        </div>
+      </div>
 
-          <div class="card">
-            <h2 id="howT">कैसे सहयोग करें</h2>
-            <p class="muted" id="howD">
-              फिलहाल UPI ID, QR Code और Bank Details वेबसाइट पर जल्द ही अपडेट की जाएँगी।
-              तब तक आप WhatsApp पर message करके donation details प्राप्त कर सकते हैं।
+      <div class="grid">
+
+        <div class="card">
+          <h2 id="h2a">Online Donate (Coming Soon)</h2>
+          <p class="muted small" id="p1">
+            UPI ID, QR Code और Bank Account Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।
+            फिलहाल आप WhatsApp पर संपर्क करके donation / support की प्रक्रिया जान सकते हैं।
+          </p>
+
+          <div class="infoBox">
+            <p class="small muted" id="p2">
+              <b>Note:</b> संस्था द्वारा donation की रसीद/प्रमाण (जहाँ लागू हो) आगे उपलब्ध कराया जाएगा।
             </p>
-
-            <div class="placeholder">
-              <b id="upT">UPI / QR / Bank Details</b>
-              <p class="small muted" id="upD">Coming Soon (Website Update Pending)</p>
-              <div class="box" id="qrBox">QR Placeholder</div>
-            </div>
-
-            <div class="btnRow">
-              <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">
-                WhatsApp for Donation
-              </a>
-              <a class="btn secondary" href="contact.html" id="conBtn">Contact</a>
-            </div>
           </div>
+        </div>
 
-          <div class="card">
-            <h2 id="whyT">आपका दान कहाँ उपयोग होगा</h2>
-            <p class="muted small" id="whyD">
-              हमारा उद्देश्य है कि हर दान का अधिकतम हिस्सा सीधे सेवा कार्यों में लगे और उसका प्रभाव समाज तक पहुँचे।
-            </p>
+        <div class="card">
+          <h2 id="h2b">Where Your Support Goes</h2>
+          <p class="muted small" id="p3">
+            आपका सहयोग हमारे मुख्य प्रयासों को मजबूत करता है:
+          </p>
+          <p class="muted small" id="p4">
+            • शिक्षा सारथी (Stationery Kit, learning support)<br>
+            • जीवन रक्षक एम्बुलेंस सेवा (Emergency help)<br>
+            • जरूरतमंद सहायता (food, clothes, relief)<br>
+            • महिला सशक्तिकरण एवं कौशल विकास<br>
+            • गौसेवा, पर्यावरण एवं जनकल्याण
+          </p>
 
-            <div class="list">
-              <div class="mini">
-                <b id="i1t">शिक्षा सहायता</b>
-                <p class="small muted" id="i1d">स्टेशनरी, किताबें, learning resources, और जरूरतमंद बच्चों की मदद।</p>
-              </div>
-              <div class="mini">
-                <b id="i2t">स्वास्थ्य</b>
-                <p class="small muted" id="i2d">कैंप सहयोग, जागरूकता, और जरूरतमंदों को सहायता।</p>
-              </div>
-              <div class="mini">
-                <b id="i3t">गौ सेवा / पशु संरक्षण</b>
-                <p class="small muted" id="i3d">गौशाला, rescue, shelter support और देखभाल।</p>
-              </div>
-              <div class="mini">
-                <b id="i4t">वृद्धजन सेवा</b>
-                <p class="small muted" id="i4d">वृद्धजन सहायता और भविष्य में वृद्धाश्रम जैसी पहल।</p>
-              </div>
-            </div>
-
-            <div style="margin-top:14px">
-              <b id="trustT">पारदर्शिता</b>
-              <p class="small muted" id="trustD">
-                संस्था का प्रयास रहेगा कि हर कार्यक्रम में transparency बनी रहे और
-                donors को सही जानकारी उपलब्ध कराई जाए।
-              </p>
-            </div>
-
-            <div class="btnRow">
-              <a class="btn secondary" href="documents.html" id="docBtn">Registration PDF</a>
-              <a class="btn primary" href="initiatives.html" id="initBtn">Our Initiatives</a>
-            </div>
+          <div class="btnRow">
+            <a class="btn primary" href="initiatives.html" id="seeWork">हमारे प्रयास देखें</a>
           </div>
-
         </div>
 
       </div>
+
+      <div class="card" style="margin-top:14px">
+        <h2 id="trustT">Transparency & Trust</h2>
+        <p class="muted" id="trustD">
+          हम विश्वास करते हैं कि donation केवल पैसा नहीं — एक जिम्मेदारी है।
+          इसलिए संस्था का उद्देश्य है कि सहयोग का उपयोग स्पष्ट, आवश्यक और सेवा-आधारित कार्यों में किया जाए।
+        </p>
+      </div>
+
     </div>
   </section>
 
@@ -326,31 +329,24 @@
       sub:"Bharat Abhyudaya Sansthan",
       m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
 
-      kicker:"Support Our Work",
       title:"दान / सहयोग",
-      subtitle:"आपका सहयोग हमारे प्रयासों को गति देता है। छोटे से छोटे योगदान से भी बड़ा बदलाव संभव है।",
+      subtitle:"आपका छोटा सा योगदान भी किसी जरूरतमंद की बड़ी मदद बन सकता है।",
 
-      howT:"कैसे सहयोग करें",
-      howD:"फिलहाल UPI ID, QR Code और Bank Details वेबसाइट पर जल्द ही अपडेट की जाएँगी। तब तक आप WhatsApp पर message करके donation details प्राप्त कर सकते हैं।",
-      upT:"UPI / QR / Bank Details",
-      upD:"Coming Soon (Website Update Pending)",
-      qrBox:"QR Placeholder",
-      waBtn:"WhatsApp for Donation",
-      conBtn:"संपर्क",
+      waHelp:"WhatsApp पर Donate करें",
+      joinBtn:"Volunteer / Join",
 
-      whyT:"आपका दान कहाँ उपयोग होगा",
-      whyD:"हमारा उद्देश्य है कि हर दान का अधिकतम हिस्सा सीधे सेवा कार्यों में लगे और उसका प्रभाव समाज तक पहुँचे।",
+      h2a:"Online Donate (Coming Soon)",
+      p1:"UPI ID, QR Code और Bank Account Details जल्द ही वेबसाइट पर अपडेट की जाएँगी। फिलहाल आप WhatsApp पर संपर्क करके donation / support की प्रक्रिया जान सकते हैं।",
+      p2:"Note: संस्था द्वारा donation की रसीद/प्रमाण (जहाँ लागू हो) आगे उपलब्ध कराया जाएगा।",
 
-      i1t:"शिक्षा सहायता", i1d:"स्टेशनरी, किताबें, learning resources, और जरूरतमंद बच्चों की मदद।",
-      i2t:"स्वास्थ्य", i2d:"कैंप सहयोग, जागरूकता, और जरूरतमंदों को सहायता।",
-      i3t:"गौ सेवा / पशु संरक्षण", i3d:"गौशाला, rescue, shelter support और देखभाल।",
-      i4t:"वृद्धजन सेवा", i4d:"वृद्धजन सहायता और भविष्य में वृद्धाश्रम जैसी पहल।",
+      h2b:"Where Your Support Goes",
+      p3:"आपका सहयोग हमारे मुख्य प्रयासों को मजबूत करता है:",
+      p4:"• शिक्षा सारथी (Stationery Kit, learning support)\n• जीवन रक्षक एम्बुलेंस सेवा (Emergency help)\n• जरूरतमंद सहायता (food, clothes, relief)\n• महिला सशक्तिकरण एवं कौशल विकास\n• गौसेवा, पर्यावरण एवं जनकल्याण",
 
-      trustT:"पारदर्शिता",
-      trustD:"संस्था का प्रयास रहेगा कि हर कार्यक्रम में transparency बनी रहे और donors को सही जानकारी उपलब्ध कराई जाए।",
+      seeWork:"हमारे प्रयास देखें",
 
-      docBtn:"Registration PDF",
-      initBtn:"हमारे प्रयास",
+      trustT:"Transparency & Trust",
+      trustD:"हम विश्वास करते हैं कि donation केवल पैसा नहीं — एक जिम्मेदारी है। इसलिए संस्था का उद्देश्य है कि सहयोग का उपयोग स्पष्ट, आवश्यक और सेवा-आधारित कार्यों में किया जाए।",
 
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -361,31 +357,24 @@
       sub:"Registered Social Organization",
       m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
 
-      kicker:"Support Our Work",
       title:"Donate / Support",
-      subtitle:"Your support accelerates our initiatives. Even a small contribution can create a big impact.",
+      subtitle:"Even a small contribution can create a big impact for someone in need.",
 
-      howT:"How to Support",
-      howD:"UPI ID, QR Code and Bank Details will be updated on the website soon. Until then, you can message us on WhatsApp to receive donation details.",
-      upT:"UPI / QR / Bank Details",
-      upD:"Coming Soon (Website Update Pending)",
-      qrBox:"QR Placeholder",
-      waBtn:"WhatsApp for Donation",
-      conBtn:"Contact",
+      waHelp:"Donate via WhatsApp",
+      joinBtn:"Volunteer / Join",
 
-      whyT:"Where Your Donation Helps",
-      whyD:"Our aim is to ensure maximum utilization of every donation directly in service initiatives and deliver real impact to society.",
+      h2a:"Online Donate (Coming Soon)",
+      p1:"UPI ID, QR Code and Bank Account Details will be updated on the website soon. For now, you can contact us on WhatsApp to learn the donation/support process.",
+      p2:"Note: Donation receipt/acknowledgement (where applicable) will be provided in the future.",
 
-      i1t:"Education Support", i1d:"Stationery, books, learning resources and help for children in need.",
-      i2t:"Health", i2d:"Camp support, awareness and help for people in need.",
-      i3t:"Gaushala / Animal Care", i3d:"Gaushala, rescue, shelter support and animal welfare.",
-      i4t:"Elderly Care", i4d:"Support for senior citizens and future initiatives like an Old Age Home.",
+      h2b:"Where Your Support Goes",
+      p3:"Your support strengthens our core initiatives:",
+      p4:"• Shiksha Sarathi (stationery kits, learning support)\n• Jeevan Rakshak Ambulance Service (emergency help)\n• Support for the poor & needy (food, clothing, relief)\n• Women empowerment & skill development\n• Gaushala, environment & public welfare",
 
-      trustT:"Transparency",
-      trustD:"We aim to maintain transparency in every initiative and provide correct information to donors.",
+      seeWork:"View Our Initiatives",
 
-      docBtn:"Registration PDF",
-      initBtn:"Our Initiatives",
+      trustT:"Transparency & Trust",
+      trustD:"We believe donation is not just money — it is responsibility. Our mission is to use every contribution for clear, essential and service-based work.",
 
       foot:"Bharat Abhyudaya Sansthan"
     }
@@ -399,6 +388,7 @@
     document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
+    // Desktop menu
     document.getElementById("mHome").textContent=d.m.home;
     document.getElementById("mAbout").textContent=d.m.a;
     document.getElementById("mWork").textContent=d.m.w;
@@ -406,35 +396,34 @@
     document.getElementById("mDonate").textContent=d.m.dn;
     document.getElementById("mContact").textContent=d.m.c;
 
-    document.getElementById("kicker").textContent=d.kicker;
+    // Mobile menu
+    document.getElementById("mmHome").textContent="⌂ Home";
+    document.getElementById("mmAbout").textContent=d.m.a;
+    document.getElementById("mmWork").textContent=d.m.w;
+    document.getElementById("mmDocs").textContent=d.m.d;
+    document.getElementById("mmDonate").textContent=d.m.dn;
+    document.getElementById("mmContact").textContent=d.m.c;
+
     document.getElementById("title").textContent=d.title;
     document.getElementById("subtitle").textContent=d.subtitle;
 
-    document.getElementById("howT").textContent=d.howT;
-    document.getElementById("howD").textContent=d.howD;
-    document.getElementById("upT").textContent=d.upT;
-    document.getElementById("upD").textContent=d.upD;
-    document.getElementById("qrBox").textContent=d.qrBox;
-    document.getElementById("waBtn").textContent=d.waBtn;
-    document.getElementById("conBtn").textContent=d.conBtn;
+    document.getElementById("waHelp").textContent=d.waHelp;
+    document.getElementById("joinBtn").textContent=d.joinBtn;
 
-    document.getElementById("whyT").textContent=d.whyT;
-    document.getElementById("whyD").textContent=d.whyD;
+    document.getElementById("h2a").textContent=d.h2a;
+    document.getElementById("p1").textContent=d.p1;
+    document.getElementById("p2").innerHTML="<b>Note:</b> "+d.p2.replace(/^Note:\s*/i,"");
 
-    document.getElementById("i1t").textContent=d.i1t;
-    document.getElementById("i1d").textContent=d.i1d;
-    document.getElementById("i2t").textContent=d.i2t;
-    document.getElementById("i2d").textContent=d.i2d;
-    document.getElementById("i3t").textContent=d.i3t;
-    document.getElementById("i3d").textContent=d.i3d;
-    document.getElementById("i4t").textContent=d.i4t;
-    document.getElementById("i4d").textContent=d.i4d;
+    document.getElementById("h2b").textContent=d.h2b;
+    document.getElementById("p3").textContent=d.p3;
+
+    // multi-line list
+    document.getElementById("p4").innerHTML=d.p4.replaceAll("\n","<br>");
+
+    document.getElementById("seeWork").textContent=d.seeWork;
 
     document.getElementById("trustT").textContent=d.trustT;
     document.getElementById("trustD").textContent=d.trustD;
-
-    document.getElementById("docBtn").textContent=d.docBtn;
-    document.getElementById("initBtn").textContent=d.initBtn;
 
     document.getElementById("foot").textContent=d.foot;
   }
@@ -463,6 +452,23 @@
     localStorage.setItem("bas_lang","en");
     applyActive("en");
     setLang("en");
+  });
+
+  // ---- Mobile menu open/close ----
+  const mobBtn = document.getElementById("mobBtn");
+  const mobilePanel = document.getElementById("mobilePanel");
+
+  mobBtn.addEventListener("click",()=>{
+    mobilePanel.classList.toggle("open");
+    mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
+  });
+
+  // Close mobile panel when clicking any link
+  document.querySelectorAll(".mnav a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      mobilePanel.classList.remove("open");
+      mobBtn.textContent="☰";
+    });
   });
 
   document.getElementById("year").textContent=new Date().getFullYear();
