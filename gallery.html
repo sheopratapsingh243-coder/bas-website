@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Gallery | Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Gallery of Bharat Abhyudaya Sansthan." />
+  <meta name="description" content="Gallery of Bharat Abhyudaya Sansthan activities." />
 
   <style>
     :root{
@@ -33,10 +33,12 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:22px 0}
     h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
+    h2{margin:0;font-size:20px;letter-spacing:-.4px}
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
       background:rgba(255,255,255,.92);
@@ -62,6 +64,7 @@
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
+    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
@@ -73,6 +76,7 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
+    /* Mobile menu button */
     .mobBtn{
       display:inline-flex;
       align-items:center;
@@ -108,7 +112,9 @@
       font-weight:950;
       color:var(--fg);
     }
+    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
+    /* Page */
     .heroCard{
       background:#fff;
       border:1px solid rgba(226,232,240,.95);
@@ -117,36 +123,71 @@
       padding:18px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:16px;
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
     }
-    @media(min-width:900px){
-      .grid{grid-template-columns:repeat(4,1fr);gap:14px}
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;
+      font-weight:950;
+      cursor:pointer;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .chip.active{
+      background:linear-gradient(135deg,var(--brand),#083a6c);
+      color:#fff;
+      border-color:transparent;
     }
 
-    .ph{
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width:680px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media(min-width:980px){
+      .grid{grid-template-columns:1fr 1fr 1fr}
+    }
+
+    .photo{
       background:#fff;
       border:1px solid rgba(226,232,240,.95);
-      border-radius:18px;
+      border-radius:22px;
       box-shadow:var(--shadow);
       overflow:hidden;
       cursor:pointer;
     }
-    .ph img{
+    .photo img{
       width:100%;
-      height:180px;
+      height:210px;
       object-fit:cover;
       display:block;
+      background:linear-gradient(135deg, rgba(11,90,166,.15), rgba(245,139,31,.12));
     }
-    @media(min-width:900px){
-      .ph img{height:200px}
+    .cap{
+      padding:12px 12px 14px;
+      font-weight:950;
+      font-size:14px;
+    }
+    .cap span{
+      display:block;
+      margin-top:4px;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:900;
     }
 
-    /* Lightbox */
-    .lb{
+    /* Popup */
+    .overlay{
       position:fixed;
       inset:0;
       background:rgba(2,6,23,.75);
@@ -156,27 +197,28 @@
       padding:18px;
       z-index:9999;
     }
-    .lb.open{display:flex}
-    .lbBox{
-      max-width:980px;
-      width:100%;
+    .overlay.open{display:flex}
+    .modal{
+      width:min(980px, 100%);
       background:#fff;
-      border-radius:22px;
+      border-radius:24px;
       overflow:hidden;
       border:1px solid rgba(226,232,240,.95);
-      box-shadow:0 24px 70px rgba(0,0,0,.35);
+      box-shadow:0 24px 80px rgba(2,6,23,.35);
     }
-    .lbBox img{
+    .modal img{
       width:100%;
-      height:auto;
+      max-height:78vh;
+      object-fit:contain;
       display:block;
+      background:#0b1220;
     }
-    .lbTop{
+    .modalBar{
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
+      gap:10px;
       padding:12px 14px;
-      border-bottom:1px solid rgba(226,232,240,.95);
       font-weight:950;
     }
     .closeBtn{
@@ -253,20 +295,22 @@
 </header>
 
 <main>
+
   <section>
     <div class="wrap">
       <div class="heroCard">
         <h1 id="pageTitle">गैलरी</h1>
-        <p class="muted" id="pageSub">हमारे कार्यक्रमों, सामाजिक कार्यों, बैठकों एवं गतिविधियों की झलक।</p>
-
-        <p class="small muted" style="margin-top:12px" id="note">
-          नोट: अभी demo photos लगी हैं। आप अपनी photos assets/gallery/ में upload करेंगे तो वही show होंगी।
+        <p class="muted" id="pageSub">
+          संस्था के कार्यक्रमों, आयोजनों एवं सामाजिक कार्यों की कुछ झलकियाँ।
         </p>
+
+        <div class="filters" id="filters"></div>
       </div>
 
-      <div class="grid" id="galleryGrid"></div>
+      <div class="grid" id="grid"></div>
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -277,30 +321,28 @@
 
 <a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
-<!-- Lightbox -->
-<div class="lb" id="lb">
-  <div class="lbBox">
-    <div class="lbTop">
-      <span id="lbTitle">Gallery</span>
-      <button class="closeBtn" id="lbClose">Close</button>
+<!-- Popup -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <img id="modalImg" src="" alt="Gallery Image">
+    <div class="modalBar">
+      <div id="modalCap">Photo</div>
+      <button class="closeBtn" id="closeBtn">Close</button>
     </div>
-    <img id="lbImg" alt="Gallery Photo">
   </div>
 </div>
 
 <script>
-  // Demo gallery images (replace later with your own)
-  // Aap assets/gallery/ me images upload karke yahan list badha sakte hain.
-  const photos = [
-    "assets/logo.jpg",
-    "assets/shiksha-sarathi-hi.png",
-    "assets/ambulance-hi.png",
-    "assets/gauseva-hi.png",
-    "assets/heritage-hi.png",
-    "assets/shiksha-sarathi-en.png",
-    "assets/ambulance-en.png",
-    "assets/gauseva-en.png",
-    "assets/heritage-en.png"
+  // Gallery items
+  // NOTE: Aap yahan apni photos add kar sakte ho.
+  // Place images inside: assets/gallery/
+  const items = [
+    {src:"assets/gallery/pic1.jpg", hi:"शिक्षा कार्यक्रम", en:"Education Program", cat:"programs"},
+    {src:"assets/gallery/pic2.jpg", hi:"स्वास्थ्य सेवा", en:"Health Camp", cat:"programs"},
+    {src:"assets/gallery/pic3.jpg", hi:"बैठक", en:"Meeting", cat:"meetings"},
+    {src:"assets/gallery/pic4.jpg", hi:"सामाजिक सहायता", en:"Community Help", cat:"social"},
+    {src:"assets/gallery/pic5.jpg", hi:"कार्यक्रम", en:"Event", cat:"events"},
+    {src:"assets/gallery/pic6.jpg", hi:"दस्तावेज़", en:"Documents", cat:"documents"},
   ];
 
   const t = {
@@ -309,8 +351,15 @@
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
       menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
       pageTitle:"गैलरी",
-      pageSub:"हमारे कार्यक्रमों, सामाजिक कार्यों, बैठकों एवं गतिविधियों की झलक।",
-      note:"नोट: अभी demo photos लगी हैं। आप अपनी photos assets/gallery/ में upload करेंगे तो वही show होंगी।",
+      pageSub:"संस्था के कार्यक्रमों, आयोजनों एवं सामाजिक कार्यों की कुछ झलकियाँ।",
+      filters:[
+        {id:"all", label:"सभी"},
+        {id:"programs", label:"कार्यक्रम"},
+        {id:"events", label:"आयोजन"},
+        {id:"meetings", label:"बैठक"},
+        {id:"social", label:"सामाजिक कार्य"},
+        {id:"documents", label:"दस्तावेज़"}
+      ],
       close:"बंद करें",
       foot:"भारत अभ्युदय संस्थान"
     },
@@ -319,14 +368,28 @@
       sub:"Upliftment to Self-Reliant India",
       menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
       pageTitle:"Gallery",
-      pageSub:"A glimpse of our programs, social work, meetings and activities.",
-      note:"Note: Demo photos are currently shown. Upload your photos in assets/gallery/ and update the list in code.",
+      pageSub:"A glimpse of our programs, events and community work.",
+      filters:[
+        {id:"all", label:"All"},
+        {id:"programs", label:"Programs"},
+        {id:"events", label:"Events"},
+        {id:"meetings", label:"Meetings"},
+        {id:"social", label:"Social Work"},
+        {id:"documents", label:"Documents"}
+      ],
       close:"Close",
       foot:"Bharat Abhyudaya Sansthan"
     }
   };
 
-  function setLang(lang){
+  let lang = localStorage.getItem("bas_lang") || "hi";
+  let currentFilter = "all";
+
+  const grid = document.getElementById("grid");
+  const filters = document.getElementById("filters");
+
+  function setLang(newLang){
+    lang = newLang;
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
@@ -351,15 +414,16 @@
 
     document.getElementById("pageTitle").textContent=d.pageTitle;
     document.getElementById("pageSub").textContent=d.pageSub;
-    document.getElementById("note").textContent=d.note;
-    document.getElementById("lbClose").textContent=d.close;
+    document.getElementById("closeBtn").textContent=d.close;
     document.getElementById("foot").textContent=d.foot;
+
+    renderFilters();
+    renderGrid();
   }
 
-  const btnHi=document.getElementById("btnHi");
-  const btnEn=document.getElementById("btnEn");
-
   function applyActive(lang){
+    const btnHi=document.getElementById("btnHi");
+    const btnEn=document.getElementById("btnEn");
     if(lang==="en"){
       btnEn.classList.add("active");
       btnHi.classList.remove("active");
@@ -368,6 +432,101 @@
       btnEn.classList.remove("active");
     }
   }
+
+  function renderFilters(){
+    const d=t[lang];
+    filters.innerHTML = "";
+    d.filters.forEach(f=>{
+      const b=document.createElement("button");
+      b.className="chip" + (currentFilter===f.id ? " active" : "");
+      b.type="button";
+      b.textContent=f.label;
+      b.addEventListener("click", ()=>{
+        currentFilter=f.id;
+        renderFilters();
+        renderGrid();
+      });
+      filters.appendChild(b);
+    });
+  }
+
+  function renderGrid(){
+    grid.innerHTML="";
+
+    const filtered = items.filter(it=>{
+      if(currentFilter==="all") return true;
+      return it.cat===currentFilter;
+    });
+
+    // If no real images uploaded, still show cards
+    filtered.forEach(it=>{
+      const card=document.createElement("div");
+      card.className="photo";
+
+      const img=document.createElement("img");
+      img.src=it.src;
+      img.alt=(lang==="hi")?it.hi:it.en;
+
+      // fallback if image missing
+      img.onerror=()=>{
+        img.removeAttribute("src");
+        img.style.height="210px";
+        img.style.display="block";
+      };
+
+      const cap=document.createElement("div");
+      cap.className="cap";
+      cap.textContent=(lang==="hi")?it.hi:it.en;
+
+      const sub=document.createElement("span");
+      sub.textContent=(it.cat || "").toUpperCase();
+      cap.appendChild(sub);
+
+      card.appendChild(img);
+      card.appendChild(cap);
+
+      card.addEventListener("click", ()=>{
+        openModal(it);
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  // Modal
+  const overlay=document.getElementById("overlay");
+  const modalImg=document.getElementById("modalImg");
+  const modalCap=document.getElementById("modalCap");
+  const closeBtn=document.getElementById("closeBtn");
+
+  function openModal(it){
+    modalImg.src=it.src;
+    modalCap.textContent=(lang==="hi")?it.hi:it.en;
+    overlay.classList.add("open");
+  }
+  function closeModal(){
+    overlay.classList.remove("open");
+    modalImg.src="";
+  }
+
+  overlay.addEventListener("click",(e)=>{
+    if(e.target===overlay) closeModal();
+  });
+  closeBtn.addEventListener("click", closeModal);
+  window.addEventListener("keydown",(e)=>{
+    if(e.key==="Escape") closeModal();
+  });
+
+  // Mobile menu toggle
+  const mobBtn = document.getElementById("mobBtn");
+  const mobilePanel = document.getElementById("mobilePanel");
+  mobBtn.addEventListener("click", ()=>{
+    mobilePanel.classList.toggle("open");
+  });
+
+  // Toggle buttons
+  const btnHi=document.getElementById("btnHi");
+  const btnEn=document.getElementById("btnEn");
 
   btnHi.addEventListener("click",()=>{
     localStorage.setItem("bas_lang","hi");
@@ -381,46 +540,10 @@
     setLang("en");
   });
 
-  const mobBtn = document.getElementById("mobBtn");
-  const mobilePanel = document.getElementById("mobilePanel");
-  mobBtn.addEventListener("click", ()=>{
-    mobilePanel.classList.toggle("open");
-  });
-
-  // Gallery render
-  const grid = document.getElementById("galleryGrid");
-  photos.forEach((src, idx)=>{
-    const box = document.createElement("div");
-    box.className="ph";
-    box.innerHTML = `<img src="${src}" alt="Photo ${idx+1}">`;
-    box.addEventListener("click", ()=>{
-      openLB(src);
-    });
-    grid.appendChild(box);
-  });
-
-  // Lightbox
-  const lb = document.getElementById("lb");
-  const lbImg = document.getElementById("lbImg");
-  const lbClose = document.getElementById("lbClose");
-
-  function openLB(src){
-    lbImg.src = src;
-    lb.classList.add("open");
-  }
-  function closeLB(){
-    lb.classList.remove("open");
-  }
-  lbClose.addEventListener("click", closeLB);
-  lb.addEventListener("click", (e)=>{
-    if(e.target === lb) closeLB();
-  });
-
   // Init
   document.getElementById("year").textContent=new Date().getFullYear();
-  const savedLang = localStorage.getItem("bas_lang") || "hi";
-  applyActive(savedLang);
-  setLang(savedLang);
+  applyActive(lang);
+  setLang(lang);
 </script>
 
 </body>
