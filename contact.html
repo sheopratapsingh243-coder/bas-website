@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Contact • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Contact Bharat Abhyudaya Sansthan" />
+  <title>Contact | Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Contact Bharat Abhyudaya Sansthan." />
 
   <style>
     :root{
@@ -31,10 +31,10 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:28px 0}
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:22px;letter-spacing:-.4px}
-    p{margin:10px 0 0;line-height:1.6}
+    section{padding:22px 0}
+    h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
+    h2{margin:0;font-size:20px;letter-spacing:-.4px}
+    p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
@@ -60,7 +60,7 @@
     }
     .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:800}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
@@ -73,7 +73,7 @@
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:900;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
     /* Mobile menu button */
@@ -109,42 +109,57 @@
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
       background:rgba(255,255,255,.95);
-      font-weight:900;
+      font-weight:950;
       color:var(--fg);
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Layout */
+    /* Page */
+    .heroCard{
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns:1fr;
       gap:16px;
-      align-items:start;
-      margin-top:18px;
+      margin-top:16px;
     }
     @media(min-width:980px){
-      .grid{grid-template-columns:1fr 1fr;gap:22px}
+      .grid{grid-template-columns:1fr 1fr;gap:18px}
     }
 
     .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:16px;
     }
 
-    .btnRow{
+    .line{
       display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      border-bottom:1px dashed rgba(226,232,240,.95);
+      font-size:14px;
       flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
     }
+    .line b{font-weight:950}
+    .line span{color:var(--muted);font-weight:900}
+
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:900;
-      justify-content:center;
-      min-width:160px;
+      font-weight:950;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -155,31 +170,25 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    input, textarea{
+    iframe{
       width:100%;
-      padding:12px 14px;
-      border-radius:16px;
+      height:360px;
       border:1px solid rgba(226,232,240,.95);
-      font-size:14px;
-      outline:none;
-      margin-top:10px;
-      font-family:inherit;
-    }
-    textarea{min-height:120px;resize:vertical}
-
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
+      border-radius:22px;
+      margin-top:12px;
     }
 
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
       background:#fff;font-size:14px;
+    }
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:999;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#fff;padding:12px 14px;border-radius:999px;
+      box-shadow:0 18px 45px rgba(2,6,23,.22);
+      font-weight:950;
     }
   </style>
 </head>
@@ -191,7 +200,7 @@
     <div class="nav">
 
       <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
+        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
           <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
@@ -204,6 +213,7 @@
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
         <a href="donate.html" id="mDonate">दान करें</a>
+        <a href="gallery.html" id="mGallery">गैलरी</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
@@ -217,7 +227,6 @@
 
     </div>
 
-    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
@@ -225,6 +234,7 @@
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
         <a href="donate.html" id="mmDonate">दान करें</a>
+        <a href="gallery.html" id="mmGallery">गैलरी</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -236,73 +246,50 @@
 
   <section>
     <div class="wrap">
-      <h1 id="pageTitle">संपर्क (Contact)</h1>
-      <p class="muted" id="pageSub">
-        किसी भी सहायता, दान रसीद, संस्था से जुड़ने, या कार्यक्रम संबंधी जानकारी के लिए हमसे संपर्क करें।
-      </p>
+      <div class="heroCard">
+        <h1 id="pageTitle">संपर्क करें</h1>
+        <p class="muted" id="pageSub">
+          यदि आप संस्था से जुड़ना चाहते हैं या किसी भी प्रकार की सहायता/जानकारी चाहते हैं, तो नीचे दिए गए माध्यमों से संपर्क करें।
+        </p>
+      </div>
 
       <div class="grid">
 
-        <!-- Contact info -->
+        <!-- Contact Details -->
         <div class="card">
           <h2 id="infoTitle">संपर्क विवरण</h2>
 
-          <p class="small muted" style="margin-top:10px" id="addr">
-            481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
-          </p>
-
-          <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
-          <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+          <div class="line"><b id="a1">पता</b><span id="addr">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</span></div>
+          <div class="line"><b id="a2">फोन</b><span>8604669454, 7355181465</span></div>
+          <div class="line"><b id="a3">Email</b><span>sheopratapsingh243@gmail.com</span></div>
+          <div class="line" style="border-bottom:none"><b id="a4">WhatsApp</b><span>+91 8604669454</span></div>
 
           <div class="btnRow">
-            <a class="btn secondary" href="tel:8604669454" id="callBtn">Call Now</a>
-            <a class="btn secondary" href="mailto:sheopratapsingh243@gmail.com" id="mailBtn">Email</a>
-            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waBtn">WhatsApp</a>
+            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="btnWA">WhatsApp</a>
+            <a class="btn secondary" href="donate.html" id="btnDonate">दान करें</a>
           </div>
 
-          <div class="card" style="margin-top:14px;box-shadow:none">
-            <b id="mapTitle">Google Map</b>
-            <p class="small muted" id="mapSub" style="margin-top:10px">
-              आप नीचे दिए गए लिंक से लोकेशन खोल सकते हैं।
-            </p>
-            <div class="btnRow">
-              <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=481%20Shadipur%20Khurd%20Fatehpur%20212601" target="_blank" rel="noreferrer" id="mapBtn">
-                Open in Google Maps
-              </a>
-            </div>
-          </div>
+          <p class="muted small" style="margin-top:12px" id="note">
+            नोट: आप चाहें तो WhatsApp पर सीधे message करके संस्था से जुड़ सकते हैं।
+          </p>
         </div>
 
-        <!-- Form -->
+        <!-- Map -->
         <div class="card">
-          <h2 id="formTitle">संदेश भेजें</h2>
-          <p class="small muted" id="formSub">
-            यह फॉर्म फिल करने के बाद आप WhatsApp या Email से संदेश भेज सकते हैं।
+          <h2 id="mapTitle">स्थान (Map)</h2>
+          <p class="muted small" id="mapSub">
+            नीचे दिए गए मानचित्र के माध्यम से आप स्थान देख सकते हैं।
           </p>
 
-          <form id="contactForm">
-            <label class="small muted" id="nameLbl">नाम</label>
-            <input id="name" type="text" placeholder="अपना नाम लिखें" required>
-
-            <label class="small muted" id="phoneLbl" style="display:block;margin-top:10px">मोबाइल नंबर</label>
-            <input id="phone" type="tel" placeholder="अपना मोबाइल नंबर लिखें" required>
-
-            <label class="small muted" id="msgLbl" style="display:block;margin-top:10px">संदेश</label>
-            <textarea id="message" placeholder="आप क्या कहना चाहते हैं?" required></textarea>
-
-            <div class="btnRow">
-              <button class="btn secondary" type="button" id="sendMail">Send Email</button>
-              <button class="btn primary" type="button" id="sendWa">Send WhatsApp</button>
-            </div>
-          </form>
-
-          <p class="small muted" id="privacy" style="margin-top:14px">
-            *यह फॉर्म आपकी जानकारी को वेबसाइट पर सेव नहीं करता। यह केवल WhatsApp/Email में संदेश तैयार करता है।
-          </p>
+          <iframe
+            title="Bharat Abhyudaya Sansthan Location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=481%20Shadipur%20Khurd%20Jayram%20Nagar%20Vidhayak%20Road%20Fatehpur%20212601&output=embed">
+          </iframe>
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -324,74 +311,33 @@
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",c:"संपर्क"},
-
-      pageTitle:"संपर्क (Contact)",
-      pageSub:"किसी भी सहायता, दान रसीद, संस्था से जुड़ने, या कार्यक्रम संबंधी जानकारी के लिए हमसे संपर्क करें।",
-
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
+      pageTitle:"संपर्क करें",
+      pageSub:"यदि आप संस्था से जुड़ना चाहते हैं या किसी भी प्रकार की सहायता/जानकारी चाहते हैं, तो नीचे दिए गए माध्यमों से संपर्क करें।",
       infoTitle:"संपर्क विवरण",
-      ph:"फोन:",
-
-      call:"कॉल करें",
-      email:"ईमेल",
-      whatsapp:"WhatsApp",
-
-      mapTitle:"Google Map",
-      mapSub:"आप नीचे दिए गए लिंक से लोकेशन खोल सकते हैं।",
-      mapBtn:"Google Maps खोलें",
-
-      formTitle:"संदेश भेजें",
-      formSub:"यह फॉर्म फिल करने के बाद आप WhatsApp या Email से संदेश भेज सकते हैं।",
-
-      name:"नाम",
-      namePh:"अपना नाम लिखें",
-      phone:"मोबाइल नंबर",
-      phonePh:"अपना मोबाइल नंबर लिखें",
-      msg:"संदेश",
-      msgPh:"आप क्या कहना चाहते हैं?",
-
-      sendMail:"ईमेल भेजें",
-      sendWa:"WhatsApp भेजें",
-
-      privacy:"*यह फॉर्म आपकी जानकारी को वेबसाइट पर सेव नहीं करता। यह केवल WhatsApp/Email में संदेश तैयार करता है।",
-
+      mapTitle:"स्थान (Map)",
+      mapSub:"नीचे दिए गए मानचित्र के माध्यम से आप स्थान देख सकते हैं।",
+      a1:"पता",
+      a2:"फोन",
+      a4:"WhatsApp",
+      btnDonate:"दान करें",
+      note:"नोट: आप चाहें तो WhatsApp पर सीधे message करके संस्था से जुड़ सकते हैं।",
       foot:"भारत अभ्युदय संस्थान"
     },
-
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",c:"Contact"},
-
-      pageTitle:"Contact",
-      pageSub:"For help, donation receipt, joining the organization, or program information — feel free to contact us.",
-
+      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
+      pageTitle:"Contact Us",
+      pageSub:"If you want to connect with the organization or need any help/information, please contact us using the options below.",
       infoTitle:"Contact Details",
-      ph:"Phone:",
-
-      call:"Call Now",
-      email:"Email",
-      whatsapp:"WhatsApp",
-
-      mapTitle:"Google Map",
-      mapSub:"You can open the location using the link below.",
-      mapBtn:"Open in Google Maps",
-
-      formTitle:"Send a Message",
-      formSub:"After filling this form, you can send the message via WhatsApp or Email.",
-
-      name:"Name",
-      namePh:"Enter your name",
-      phone:"Mobile Number",
-      phonePh:"Enter your mobile number",
-      msg:"Message",
-      msgPh:"Write your message",
-
-      sendMail:"Send Email",
-      sendWa:"Send WhatsApp",
-
-      privacy:"*This form does not store your data on the website. It only prepares a message for WhatsApp/Email.",
-
+      mapTitle:"Location (Map)",
+      mapSub:"You can view the location using the map below.",
+      a1:"Address",
+      a2:"Phone",
+      a4:"WhatsApp",
+      btnDonate:"Donate Now",
+      note:"Note: You can directly message us on WhatsApp to connect with the organization.",
       foot:"Bharat Abhyudaya Sansthan"
     }
   };
@@ -400,68 +346,44 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
-    // Brand
     document.getElementById("brandText").textContent=d.brand;
     document.getElementById("brandSub").textContent=d.sub;
 
-    // Menu desktop
     document.getElementById("mHome").textContent=d.menu.home;
     document.getElementById("mAbout").textContent=d.menu.a;
     document.getElementById("mWork").textContent=d.menu.w;
     document.getElementById("mDocs").textContent=d.menu.d;
     document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mGallery").textContent=d.menu.g;
     document.getElementById("mContact").textContent=d.menu.c;
 
-    // Menu mobile
     document.getElementById("mmHome").textContent=d.menu.home;
     document.getElementById("mmAbout").textContent=d.menu.a;
     document.getElementById("mmWork").textContent=d.menu.w;
     document.getElementById("mmDocs").textContent=d.menu.d;
     document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmGallery").textContent=d.menu.g;
     document.getElementById("mmContact").textContent=d.menu.c;
 
-    // Page
     document.getElementById("pageTitle").textContent=d.pageTitle;
     document.getElementById("pageSub").textContent=d.pageSub;
 
-    // Info
     document.getElementById("infoTitle").textContent=d.infoTitle;
-    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
-    document.getElementById("phLbl").textContent=d.ph;
-
-    // Buttons
-    document.getElementById("callBtn").textContent=d.call;
-    document.getElementById("mailBtn").textContent=d.email;
-    document.getElementById("waBtn").textContent=d.whatsapp;
-
-    // Map
     document.getElementById("mapTitle").textContent=d.mapTitle;
     document.getElementById("mapSub").textContent=d.mapSub;
-    document.getElementById("mapBtn").textContent=d.mapBtn;
 
-    // Form
-    document.getElementById("formTitle").textContent=d.formTitle;
-    document.getElementById("formSub").textContent=d.formSub;
+    document.getElementById("a1").textContent=d.a1;
+    document.getElementById("a2").textContent=d.a2;
+    document.getElementById("a4").textContent=d.a4;
 
-    document.getElementById("nameLbl").textContent=d.name;
-    document.getElementById("name").placeholder=d.namePh;
+    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
 
-    document.getElementById("phoneLbl").textContent=d.phone;
-    document.getElementById("phone").placeholder=d.phonePh;
+    document.getElementById("btnDonate").textContent=d.btnDonate;
+    document.getElementById("note").textContent=d.note;
 
-    document.getElementById("msgLbl").textContent=d.msg;
-    document.getElementById("message").placeholder=d.msgPh;
-
-    document.getElementById("sendMail").textContent=d.sendMail;
-    document.getElementById("sendWa").textContent=d.sendWa;
-
-    document.getElementById("privacy").textContent=d.privacy;
-
-    // Footer
     document.getElementById("foot").textContent=d.foot;
   }
 
-  // Toggle buttons
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
 
@@ -487,54 +409,12 @@
     setLang("en");
   });
 
-  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
-  // Form actions
-  const sendMail = document.getElementById("sendMail");
-  const sendWa = document.getElementById("sendWa");
-
-  function getFormData(){
-    return {
-      name: document.getElementById("name").value.trim(),
-      phone: document.getElementById("phone").value.trim(),
-      message: document.getElementById("message").value.trim()
-    };
-  }
-
-  sendMail.addEventListener("click", ()=>{
-    const {name, phone, message} = getFormData();
-    if(!name || !phone || !message) return alert("Please fill all fields.");
-
-    const subject = encodeURIComponent("Message from Website - Bharat Abhyudaya Sansthan");
-    const body = encodeURIComponent(
-      "Name: " + name + "\n" +
-      "Phone: " + phone + "\n\n" +
-      "Message:\n" + message
-    );
-
-    window.location.href = "mailto:sheopratapsingh243@gmail.com?subject=" + subject + "&body=" + body;
-  });
-
-  sendWa.addEventListener("click", ()=>{
-    const {name, phone, message} = getFormData();
-    if(!name || !phone || !message) return alert("Please fill all fields.");
-
-    const text = encodeURIComponent(
-      "Hello Bharat Abhyudaya Sansthan,\n\n" +
-      "Name: " + name + "\n" +
-      "Phone: " + phone + "\n\n" +
-      "Message:\n" + message
-    );
-
-    window.open("https://wa.me/918604669454?text=" + text, "_blank");
-  });
-
-  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
