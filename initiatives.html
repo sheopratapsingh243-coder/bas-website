@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Initiatives | Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Our initiatives and programs for upliftment to self-reliant India." />
+  <meta name="description" content="Initiatives of Bharat Abhyudaya Sansthan." />
 
   <style>
     :root{
@@ -33,7 +33,7 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:22px 0}
     h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
-    h2{margin:0;font-size:22px;letter-spacing:-.4px}
+    h2{margin:0;font-size:20px;letter-spacing:-.4px}
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
@@ -115,9 +115,6 @@
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
     /* Page */
-    .hero{
-      padding:22px 0 10px;
-    }
     .heroCard{
       background:#fff;
       border:1px solid rgba(226,232,240,.95);
@@ -126,28 +123,30 @@
       padding:18px;
     }
 
-    .chips{
-      display:flex;flex-wrap:wrap;gap:10px;margin-top:14px
+    .list{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
-    .chip{
+    .tag{
       border:1px solid rgba(226,232,240,.95);
       background:#fff;
-      padding:10px 12px;
       border-radius:999px;
+      padding:10px 12px;
       font-weight:950;
       font-size:13px;
       color:var(--muted);
     }
-    .chip:hover{color:var(--brand);border-color:rgba(11,90,166,.35)}
 
-    .list{
+    .grid{
       display:grid;
       grid-template-columns:1fr;
       gap:16px;
-      margin-top:18px;
+      margin-top:16px;
     }
     @media(min-width:980px){
-      .list{grid-template-columns:1fr 1fr}
+      .grid{grid-template-columns:1fr 1fr;gap:18px}
     }
 
     .card{
@@ -155,31 +154,19 @@
       border:1px solid rgba(226,232,240,.95);
       border-radius:24px;
       box-shadow:var(--shadow);
-      padding:14px;
-      overflow:hidden;
+      padding:16px;
     }
 
     .poster{
       width:100%;
       height:auto;
-      border-radius:18px;
-      border:1px solid rgba(226,232,240,.95);
       display:block;
-      margin-bottom:12px;
-    }
-    .poster.lang-en{display:none;} /* default Hindi */
-
-    .posterFallback{
       border-radius:18px;
       border:1px solid rgba(226,232,240,.95);
-      background:linear-gradient(135deg, rgba(11,90,166,.08), rgba(245,139,31,.08));
-      padding:18px;
-      margin-bottom:12px;
+      margin-top:12px;
     }
-    .posterFallback b{display:block;font-size:16px}
-    .posterFallback span{display:block;margin-top:6px;color:var(--muted);font-size:13px}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
@@ -262,188 +249,176 @@
 
 <main>
 
-  <section class="hero">
+  <section>
     <div class="wrap">
       <div class="heroCard">
         <h1 id="pageTitle">हमारे प्रयास (Initiatives)</h1>
         <p class="muted" id="pageSub">
-          भारत अभ्युदय संस्थान द्वारा शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, विरासत संरक्षण एवं सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य किया जा रहा है।
+          भारत अभ्युदय संस्थान समाज के विभिन्न क्षेत्रों में सेवा एवं विकास के लिए कार्य कर रहा है।
         </p>
 
-        <div class="chips">
-          <a class="chip" href="#shiksha-sarathi" id="chip1">शिक्षा</a>
-          <a class="chip" href="#women-empowerment" id="chip2">महिला सशक्तिकरण</a>
-          <a class="chip" href="#health" id="chip3">स्वास्थ्य</a>
-          <a class="chip" href="#ambulance-seva" id="chip4">एम्बुलेंस सेवा</a>
-          <a class="chip" href="#gauseva" id="chip5">गौसेवा</a>
-          <a class="chip" href="#heritage-conservation" id="chip6">विरासत संरक्षण</a>
-          <a class="chip" href="#oldage-care" id="chip7">वृद्धजन सेवा</a>
-          <a class="chip" href="#skill-development" id="chip8">कौशल विकास</a>
-          <a class="chip" href="#community-help" id="chip9">सामाजिक सहायता</a>
+        <div class="list" id="tags">
+          <span class="tag">शिक्षा</span>
+          <span class="tag">स्वास्थ्य</span>
+          <span class="tag">महिला सशक्तिकरण</span>
+          <span class="tag">गौसेवा</span>
+          <span class="tag">वृद्धजन सेवा</span>
+          <span class="tag">कौशल विकास</span>
+          <span class="tag">आपदा सहायता</span>
+          <span class="tag">धरोहर संरक्षण</span>
+        </div>
+
+        <div class="btnRow">
+          <a class="btn secondary" href="donate.html" id="donateTop">दान करें</a>
+          <a class="btn primary" href="contact.html" id="joinTop">हमसे जुड़ें</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="list">
+      <div class="grid">
 
         <!-- Shiksha Sarathi -->
-        <article class="card" id="shiksha-sarathi">
-          <img class="poster lang-hi" src="assets/shiksha-sarathi-hi.png" alt="Shiksha Sarathi Poster Hindi" onerror="this.remove()">
-          <img class="poster lang-en" src="assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi Poster English" onerror="this.remove()">
-          <div class="posterFallback">
-            <b id="fbEduTitle">शिक्षा सारथी</b>
-            <span id="fbEduSub">Child Education & Development</span>
-          </div>
-
-          <h2 id="eduTitle">शिक्षा सारथी (Child Education & Development)</h2>
-          <p class="muted small" id="eduText">
-            हमारा लक्ष्य जरूरतमंद बच्चों को गुणवत्तापूर्ण शिक्षा, अध्ययन सामग्री, मार्गदर्शन एवं विकास के अवसर प्रदान करना है।
+        <div class="card" id="shiksha-sarathi">
+          <h2 id="t1">शिक्षा सारथी (Child Education & Development)</h2>
+          <p class="muted small" id="s1">
+            आर्थिक रूप से कमजोर बच्चों के लिए शिक्षा, स्टेशनरी, मार्गदर्शन, प्रतियोगी परीक्षाओं हेतु सहयोग एवं विकास कार्यक्रम।
           </p>
-          <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="eduDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="eduContact">संपर्क करें</a>
-          </div>
-        </article>
 
-        <!-- Women Empowerment -->
-        <article class="card" id="women-empowerment">
-          <div class="posterFallback">
-            <b id="womenTitleBox">महिला सशक्तिकरण</b>
-            <span id="womenSubBox">Women Empowerment</span>
-          </div>
-          <h2 id="womenTitle">महिला सशक्तिकरण (Women Empowerment)</h2>
-          <p class="muted small" id="womenText">
-            महिलाओं को आत्मनिर्भर बनाने हेतु प्रशिक्षण, जागरूकता, स्वरोजगार एवं सामाजिक सहयोग कार्यक्रम चलाए जाते हैं।
-          </p>
-          <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="womenDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="womenContact">संपर्क करें</a>
-          </div>
-        </article>
+          <img class="poster lang-hi" src="assets/shiksha-sarathi-hi.png" alt="Shiksha Sarathi Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi English Poster" onerror="this.style.display='none'">
 
-        <!-- Health -->
-        <article class="card" id="health">
-          <div class="posterFallback">
-            <b id="healthTitleBox">स्वास्थ्य सहायता</b>
-            <span id="healthSubBox">Health Camps & Support</span>
-          </div>
-          <h2 id="healthTitle">स्वास्थ्य सहायता (Health Camps & Support)</h2>
-          <p class="muted small" id="healthText">
-            स्वास्थ्य शिविर, दवा वितरण, रक्तदान, प्राथमिक उपचार एवं जरूरतमंदों को चिकित्सा सहायता उपलब्ध कराना हमारा उद्देश्य है।
-          </p>
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="healthDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="healthContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d1">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c1">संपर्क</a>
           </div>
-        </article>
+        </div>
 
         <!-- Ambulance -->
-        <article class="card" id="ambulance-seva">
-          <img class="poster lang-hi" src="assets/ambulance-hi.png" alt="Ambulance Poster Hindi" onerror="this.remove()">
-          <img class="poster lang-en" src="assets/ambulance-en.png" alt="Ambulance Poster English" onerror="this.remove()">
-          <div class="posterFallback">
-            <b id="fbAmbTitle">एम्बुलेंस सेवा</b>
-            <span id="fbAmbSub">Ambulance Service</span>
-          </div>
-
-          <h2 id="ambTitle">एम्बुलेंस सेवा (Ambulance Service)</h2>
-          <p class="muted small" id="ambText">
-            आपातकाल में मरीजों को त्वरित सहायता और अस्पताल तक सुरक्षित पहुंचाने हेतु एम्बुलेंस सेवा का संचालन किया जा रहा है।
+        <div class="card" id="ambulance-seva">
+          <h2 id="t2">एंबुलेंस सेवा (Ambulance Service)</h2>
+          <p class="muted small" id="s2">
+            आपातकालीन स्थिति में जरूरतमंदों तक त्वरित चिकित्सा सहायता पहुँचाने हेतु एंबुलेंस सेवा।
           </p>
+
+          <img class="poster lang-hi" src="assets/ambulance-hi.png" alt="Ambulance Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/ambulance-en.png" alt="Ambulance English Poster" onerror="this.style.display='none'">
+
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="ambDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="ambContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d2">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c2">संपर्क</a>
           </div>
-        </article>
+        </div>
 
-        <!-- GauSeva -->
-        <article class="card" id="gauseva">
-          <img class="poster lang-hi" src="assets/gauseva-hi.png" alt="Gauseva Poster Hindi" onerror="this.remove()">
-          <img class="poster lang-en" src="assets/gauseva-en.png" alt="Gauseva Poster English" onerror="this.remove()">
-          <div class="posterFallback">
-            <b id="fbGauTitle">गौसेवा</b>
-            <span id="fbGauSub">Gaushala & GauSeva</span>
-          </div>
-
-          <h2 id="gauTitle">गौशाला एवं गौसेवा (Gaushala & GauSeva)</h2>
-          <p class="muted small" id="gauText">
-            गौवंश की सेवा, चारा व्यवस्था, चिकित्सा सहायता एवं गौशाला संचालन हेतु हम निरंतर प्रयासरत हैं।
+        <!-- Health -->
+        <div class="card" id="health">
+          <h2 id="t3">स्वास्थ्य सेवा (Health & Medical Support)</h2>
+          <p class="muted small" id="s3">
+            स्वास्थ्य शिविर, रक्तदान, दवा वितरण, जरूरतमंदों के इलाज में सहायता, एवं स्वास्थ्य जागरूकता कार्यक्रम।
           </p>
+
+          <img class="poster lang-hi" src="assets/health-hi.png" alt="Health Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/health-en.png" alt="Health English Poster" onerror="this.style.display='none'">
+
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="gauDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="gauContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d3">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c3">संपर्क</a>
           </div>
-        </article>
+        </div>
 
-        <!-- Heritage -->
-        <article class="card" id="heritage-conservation">
-          <img class="poster lang-hi" src="assets/heritage-hi.png" alt="Heritage Poster Hindi" onerror="this.remove()">
-          <img class="poster lang-en" src="assets/heritage-en.png" alt="Heritage Poster English" onerror="this.remove()">
-          <div class="posterFallback">
-            <b id="fbHerTitle">विरासत संरक्षण</b>
-            <span id="fbHerSub">Heritage Conservation</span>
-          </div>
-
-          <h2 id="herTitle">विरासत संरक्षण (Heritage Conservation)</h2>
-          <p class="muted small" id="herText">
-            ऐतिहासिक स्थलों, सांस्कृतिक धरोहर एवं परंपराओं के संरक्षण हेतु जागरूकता और सहयोग कार्यक्रम किए जाते हैं।
+        <!-- Women Empowerment -->
+        <div class="card" id="women-empowerment">
+          <h2 id="t4">महिला सशक्तिकरण (Women Empowerment)</h2>
+          <p class="muted small" id="s4">
+            महिलाओं को आत्मनिर्भर बनाने हेतु प्रशिक्षण, रोजगार, जागरूकता एवं सहायता कार्यक्रम।
           </p>
+
+          <img class="poster lang-hi" src="assets/women-empowerment-hi.png" alt="Women Empowerment Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/women-empowerment-en.png" alt="Women Empowerment English Poster" onerror="this.style.display='none'">
+
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="herDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="herContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d4">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c4">संपर्क</a>
           </div>
-        </article>
+        </div>
 
         <!-- Old Age -->
-        <article class="card" id="oldage-care">
-          <div class="posterFallback">
-            <b id="oldTitleBox">वृद्धजन सेवा</b>
-            <span id="oldSubBox">Old Age Care & Old Age Homes</span>
-          </div>
-          <h2 id="oldTitle">वृद्धजन सेवा (Old Age Care & Old Age Homes)</h2>
-          <p class="muted small" id="oldText">
-            वृद्धजनों की देखभाल, भोजन, स्वास्थ्य सहायता, सम्मानजनक जीवन एवं आवश्यक सुविधाओं हेतु हम सहयोग प्रदान करते हैं।
+        <div class="card" id="oldage-care">
+          <h2 id="t5">वृद्धजन सेवा एवं वृद्धाश्रम (Old Age Care & Old Age Homes)</h2>
+          <p class="muted small" id="s5">
+            बेसहारा वृद्धों के लिए भोजन, दवा, देखभाल, आश्रय एवं सम्मानजनक जीवन हेतु सहायता।
           </p>
+
+          <img class="poster lang-hi" src="assets/oldage-hi.png" alt="Old Age Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/oldage-en.png" alt="Old Age English Poster" onerror="this.style.display='none'">
+
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="oldDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="oldContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d5">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c5">संपर्क</a>
           </div>
-        </article>
+        </div>
 
         <!-- Skill Development -->
-        <article class="card" id="skill-development">
-          <div class="posterFallback">
-            <b id="skillTitleBox">कौशल विकास</b>
-            <span id="skillSubBox">Skill Development</span>
-          </div>
-          <h2 id="skillTitle">कौशल विकास (Skill Development)</h2>
-          <p class="muted small" id="skillText">
-            युवाओं को प्रशिक्षण, रोजगार उन्मुख कौशल, डिजिटल साक्षरता एवं स्वरोजगार के अवसर उपलब्ध कराने का लक्ष्य है।
+        <div class="card" id="skill-development">
+          <h2 id="t6">कौशल विकास (Skill Development)</h2>
+          <p class="muted small" id="s6">
+            युवाओं को रोजगारपरक प्रशिक्षण, कंप्यूटर शिक्षा, तकनीकी कौशल एवं स्वरोजगार हेतु मार्गदर्शन।
           </p>
+
+          <img class="poster lang-hi" src="assets/skill-hi.png" alt="Skill Development Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/skill-en.png" alt="Skill Development English Poster" onerror="this.style.display='none'">
+
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="skillDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="skillContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d6">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c6">संपर्क</a>
           </div>
-        </article>
+        </div>
 
         <!-- Community Help -->
-        <article class="card" id="community-help">
-          <div class="posterFallback">
-            <b id="comTitleBox">आपदा एवं सामाजिक सहायता</b>
-            <span id="comSubBox">Community Help</span>
-          </div>
-          <h2 id="comTitle">आपदा एवं सामाजिक सहायता (Community Help)</h2>
-          <p class="muted small" id="comText">
-            प्राकृतिक आपदा, दुर्घटना, गरीब परिवारों की मदद, भोजन वितरण, वस्त्र वितरण एवं सामाजिक सहायता कार्यक्रम संचालित किए जाते हैं।
+        <div class="card" id="community-help">
+          <h2 id="t7">आपदा एवं सामाजिक सहायता (Community Help)</h2>
+          <p class="muted small" id="s7">
+            आपदा, दुर्घटना, गरीब परिवारों को राशन/कपड़े/आर्थिक सहायता, एवं समाजसेवा कार्यक्रम।
           </p>
+
+          <img class="poster lang-hi" src="assets/community-help-hi.png" alt="Community Help Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/community-help-en.png" alt="Community Help English Poster" onerror="this.style.display='none'">
+
           <div class="btnRow">
-            <a class="btn primary" href="donate.html" id="comDonate">दान करें</a>
-            <a class="btn secondary" href="contact.html" id="comContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d7">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c7">संपर्क</a>
           </div>
-        </article>
+        </div>
+
+        <!-- GauSeva -->
+        <div class="card" id="gauseva">
+          <h2 id="t8">गौशाला एवं गौसेवा (Gaushala & GauSeva)</h2>
+          <p class="muted small" id="s8">
+            गौशाला संचालन, घायल/असहाय गौवंश की सेवा, चारा-पानी एवं चिकित्सा सहायता।
+          </p>
+
+          <img class="poster lang-hi" src="assets/gauseva-hi.png" alt="Gauseva Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/gauseva-en.png" alt="Gauseva English Poster" onerror="this.style.display='none'">
+
+          <div class="btnRow">
+            <a class="btn primary" href="donate.html" id="d8">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c8">संपर्क</a>
+          </div>
+        </div>
+
+        <!-- Heritage -->
+        <div class="card" id="heritage-conservation">
+          <h2 id="t9">धरोहर संरक्षण (Heritage Conservation)</h2>
+          <p class="muted small" id="s9">
+            ऐतिहासिक धरोहरों का संरक्षण, जागरूकता, स्वच्छता अभियान एवं सांस्कृतिक कार्यक्रम।
+          </p>
+
+          <img class="poster lang-hi" src="assets/heritage-hi.png" alt="Heritage Hindi Poster" onerror="this.style.display='none'">
+          <img class="poster lang-en" src="assets/heritage-en.png" alt="Heritage English Poster" onerror="this.style.display='none'">
+
+          <div class="btnRow">
+            <a class="btn primary" href="donate.html" id="d9">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="c9">संपर्क</a>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -466,20 +441,68 @@
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
       menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
       pageTitle:"हमारे प्रयास (Initiatives)",
-      pageSub:"भारत अभ्युदय संस्थान द्वारा शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, विरासत संरक्षण एवं सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य किया जा रहा है।",
+      pageSub:"भारत अभ्युदय संस्थान समाज के विभिन्न क्षेत्रों में सेवा एवं विकास के लिए कार्य कर रहा है।",
+      donateTop:"दान करें",
+      joinTop:"हमसे जुड़ें",
       donate:"दान करें",
-      contact:"संपर्क करें",
-      foot:"भारत अभ्युदय संस्थान"
+      contact:"संपर्क",
+      foot:"भारत अभ्युदय संस्थान",
+      titles:[
+        "शिक्षा सारथी (Child Education & Development)",
+        "एंबुलेंस सेवा (Ambulance Service)",
+        "स्वास्थ्य सेवा (Health & Medical Support)",
+        "महिला सशक्तिकरण (Women Empowerment)",
+        "वृद्धजन सेवा एवं वृद्धाश्रम (Old Age Care & Old Age Homes)",
+        "कौशल विकास (Skill Development)",
+        "आपदा एवं सामाजिक सहायता (Community Help)",
+        "गौशाला एवं गौसेवा (Gaushala & GauSeva)",
+        "धरोहर संरक्षण (Heritage Conservation)"
+      ],
+      subs:[
+        "आर्थिक रूप से कमजोर बच्चों के लिए शिक्षा, स्टेशनरी, मार्गदर्शन, प्रतियोगी परीक्षाओं हेतु सहयोग एवं विकास कार्यक्रम।",
+        "आपातकालीन स्थिति में जरूरतमंदों तक त्वरित चिकित्सा सहायता पहुँचाने हेतु एंबुलेंस सेवा।",
+        "स्वास्थ्य शिविर, रक्तदान, दवा वितरण, जरूरतमंदों के इलाज में सहायता, एवं स्वास्थ्य जागरूकता कार्यक्रम।",
+        "महिलाओं को आत्मनिर्भर बनाने हेतु प्रशिक्षण, रोजगार, जागरूकता एवं सहायता कार्यक्रम।",
+        "बेसहारा वृद्धों के लिए भोजन, दवा, देखभाल, आश्रय एवं सम्मानजनक जीवन हेतु सहायता।",
+        "युवाओं को रोजगारपरक प्रशिक्षण, कंप्यूटर शिक्षा, तकनीकी कौशल एवं स्वरोजगार हेतु मार्गदर्शन।",
+        "आपदा, दुर्घटना, गरीब परिवारों को राशन/कपड़े/आर्थिक सहायता, एवं समाजसेवा कार्यक्रम।",
+        "गौशाला संचालन, घायल/असहाय गौवंश की सेवा, चारा-पानी एवं चिकित्सा सहायता।",
+        "ऐतिहासिक धरोहरों का संरक्षण, जागरूकता, स्वच्छता अभियान एवं सांस्कृतिक कार्यक्रम।"
+      ]
     },
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
       menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
       pageTitle:"Our Initiatives",
-      pageSub:"Bharat Abhyudaya Sansthan works continuously in areas like education, health, women empowerment, GauSeva, heritage conservation and community support.",
+      pageSub:"Bharat Abhyudaya Sansthan works in multiple areas of social service and development.",
+      donateTop:"Donate Now",
+      joinTop:"Get Involved",
       donate:"Donate Now",
-      contact:"Contact Us",
-      foot:"Bharat Abhyudaya Sansthan"
+      contact:"Contact",
+      foot:"Bharat Abhyudaya Sansthan",
+      titles:[
+        "Shiksha Sarathi (Child Education & Development)",
+        "Ambulance Service",
+        "Health & Medical Support",
+        "Women Empowerment",
+        "Old Age Care & Old Age Homes",
+        "Skill Development",
+        "Community Help",
+        "Gaushala & GauSeva",
+        "Heritage Conservation"
+      ],
+      subs:[
+        "Education support, stationery, guidance and development programs for children from economically weaker backgrounds.",
+        "Ambulance service to provide quick medical support to people in emergency situations.",
+        "Health camps, blood donation drives, medicine distribution and support for treatment of needy people.",
+        "Training, awareness, employment support and programs to help women become self-reliant.",
+        "Food, medicines, care, shelter and dignified support for elderly people in need.",
+        "Job-oriented training, computer education, technical skills and guidance for self-employment.",
+        "Support during disasters, accidents, ration/clothes/financial help for poor families and community service programs.",
+        "Gaushala operations, care for injured/helpless cattle, fodder, water and medical help.",
+        "Conservation of heritage sites, awareness, cleanliness drives and cultural programs."
+      ]
     }
   };
 
@@ -509,17 +532,36 @@
     document.getElementById("pageTitle").textContent=d.pageTitle;
     document.getElementById("pageSub").textContent=d.pageSub;
 
+    document.getElementById("donateTop").textContent=d.donateTop;
+    document.getElementById("joinTop").textContent=d.joinTop;
+
+    // Titles + subs
+    document.getElementById("t1").textContent=d.titles[0];
+    document.getElementById("t2").textContent=d.titles[1];
+    document.getElementById("t3").textContent=d.titles[2];
+    document.getElementById("t4").textContent=d.titles[3];
+    document.getElementById("t5").textContent=d.titles[4];
+    document.getElementById("t6").textContent=d.titles[5];
+    document.getElementById("t7").textContent=d.titles[6];
+    document.getElementById("t8").textContent=d.titles[7];
+    document.getElementById("t9").textContent=d.titles[8];
+
+    document.getElementById("s1").textContent=d.subs[0];
+    document.getElementById("s2").textContent=d.subs[1];
+    document.getElementById("s3").textContent=d.subs[2];
+    document.getElementById("s4").textContent=d.subs[3];
+    document.getElementById("s5").textContent=d.subs[4];
+    document.getElementById("s6").textContent=d.subs[5];
+    document.getElementById("s7").textContent=d.subs[6];
+    document.getElementById("s8").textContent=d.subs[7];
+    document.getElementById("s9").textContent=d.subs[8];
+
     // Buttons
-    [
-      "eduDonate","womenDonate","healthDonate","ambDonate","gauDonate","herDonate","oldDonate","skillDonate","comDonate"
-    ].forEach(id=>{
+    ["d1","d2","d3","d4","d5","d6","d7","d8","d9"].forEach(id=>{
       const el=document.getElementById(id);
       if(el) el.textContent=d.donate;
     });
-
-    [
-      "eduContact","womenContact","healthContact","ambContact","gauContact","herContact","oldContact","skillContact","comContact"
-    ].forEach(id=>{
+    ["c1","c2","c3","c4","c5","c6","c7","c8","c9"].forEach(id=>{
       const el=document.getElementById(id);
       if(el) el.textContent=d.contact;
     });
@@ -527,10 +569,10 @@
     document.getElementById("foot").textContent=d.foot;
 
     // Posters show/hide
-    document.querySelectorAll(".poster.lang-hi").forEach(el=>{
+    document.querySelectorAll(".lang-hi").forEach(el=>{
       el.style.display = (lang==="hi") ? "block" : "none";
     });
-    document.querySelectorAll(".poster.lang-en").forEach(el=>{
+    document.querySelectorAll(".lang-en").forEach(el=>{
       el.style.display = (lang==="en") ? "block" : "none";
     });
   }
