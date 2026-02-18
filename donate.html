@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Donate | Bharat Abhyudaya Sansthan</title>
+  <title>Donate • Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Donate to Bharat Abhyudaya Sansthan" />
 
   <style>
     :root{
       --brand:#0b5aa6;
       --accent:#f58b1f;
-      --green:#16a34a;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:22px;
-      --max:1100px;
+      --radius:20px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,57 +26,43 @@
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
         #fff;
+      overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:28px 0}
-    h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
-    h2{margin:0;font-size:20px;letter-spacing:-.35px}
-    p{margin:10px 0 0;line-height:1.75}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:22px;letter-spacing:-.4px}
+    p{margin:10px 0 0;line-height:1.6}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.88);
-      backdrop-filter: blur(12px);
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      min-width:220px;
+    }
     .logo{
-      width:44px;height:44px;border-radius:999px;
+      width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
-    .brand b{display:block;font-size:14px;line-height:1.1}
+    .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
-
-    /* Desktop menu */
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a{padding:8px 10px;border-radius:12px}
-    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:800}
+    .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
-
-    .homeIcon{
-      font-size:18px;
-      font-weight:950;
-      padding:8px 12px;
-      border-radius:12px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
-      line-height:1;
-    }
-    .homeIcon:hover{
-      background:rgba(11,90,166,.08);
-      color:var(--brand);
-    }
 
     /* Toggle */
     .toggle{display:flex;gap:8px}
@@ -84,11 +70,10 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
-      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:900;
     }
 
     /* Mobile menu button */
@@ -106,7 +91,6 @@
     }
     @media(min-width:980px){.mobBtn{display:none}}
 
-    /* Mobile dropdown panel */
     .mobilePanel{
       display:none;
       padding:12px 0 14px;
@@ -124,74 +108,80 @@
       padding:12px 14px;
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.95);
       font-weight:900;
       color:var(--fg);
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Content */
-    .hero{
-      border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
-        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.10), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
-      border-radius:28px;
-      padding:18px;
-      box-shadow:var(--shadow);
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      align-items:start;
+      margin-top:18px;
+    }
+    @media(min-width:980px){
+      .grid{grid-template-columns:1fr 1fr;gap:22px}
     }
 
     .card{
       background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;
-      box-shadow:0 12px 34px rgba(2,6,23,.06);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
     }
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
-
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btnRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
+      font-weight:900;
+      justify-content:center;
+      min-width:160px;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;
+      border-color:transparent;font-weight:950;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
-    }
-    .btn.green{
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .infoBox{
-      border:1px dashed rgba(148,163,184,.9);
-      background:rgba(248,250,252,.9);
+    .qr{
+      width:100%;
+      max-width:340px;
       border-radius:18px;
-      padding:14px;
-      margin-top:12px;
+      border:1px solid rgba(226,232,240,.95);
+      display:block;
     }
 
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight:900;
+      letter-spacing:.2px;
     }
+
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
+    }
+
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
     }
   </style>
 </head>
@@ -201,42 +191,42 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="index.html">
+
+      <a class="brand" href="index.html" title="Home">
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
-          <span id="brandSub">Bharat Abhyudaya Sansthan</span>
+          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
         </div>
       </a>
 
       <nav class="menu">
-        <a href="index.html" id="mHome" class="homeIcon" aria-label="Home" title="Home">⌂</a>
+        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान</a>
+        <a href="donate.html" id="mDonate">दान करें</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
       <div style="display:flex;gap:10px;align-items:center">
         <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-
         <div class="toggle">
           <button class="pill active" id="btnHi" type="button">हिन्दी</button>
           <button class="pill" id="btnEn" type="button">English</button>
         </div>
       </div>
+
     </div>
 
     <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
-        <a href="index.html" id="mmHome">⌂ Home</a>
+        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
         <a href="about.html" id="mmAbout">परिचय</a>
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान</a>
+        <a href="donate.html" id="mmDonate">दान करें</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -248,64 +238,63 @@
 
   <section>
     <div class="wrap">
-      <div class="hero">
-        <h1 id="title">दान / सहयोग</h1>
-        <p class="muted" id="subtitle">
-          आपका छोटा सा योगदान भी किसी जरूरतमंद की बड़ी मदद बन सकता है।
-        </p>
-
-        <div class="btnRow">
-          <a class="btn green" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="waHelp">
-            WhatsApp पर Donate करें
-          </a>
-          <a class="btn secondary" href="contact.html" id="joinBtn">
-            Volunteer / Join
-          </a>
-        </div>
-      </div>
+      <h1 id="pageTitle">दान करें (Donate Now)</h1>
+      <p class="muted" id="pageSub">
+        आपका सहयोग हमारे सेवा कार्यों को आगे बढ़ाने में मदद करता है। आप UPI / QR / Bank Transfer के माध्यम से दान कर सकते हैं।
+      </p>
 
       <div class="grid">
 
+        <!-- UPI / QR -->
         <div class="card">
-          <h2 id="h2a">Online Donate (Coming Soon)</h2>
-          <p class="muted small" id="p1">
-            UPI ID, QR Code और Bank Account Details जल्द ही वेबसाइट पर अपडेट की जाएँगी।
-            फिलहाल आप WhatsApp पर संपर्क करके donation / support की प्रक्रिया जान सकते हैं।
+          <h2 id="upiTitle">UPI / QR द्वारा दान</h2>
+          <p class="small muted" id="upiSub">
+            QR को स्कैन करें या UPI ID कॉपी करके किसी भी UPI ऐप (PhonePe, GPay, Paytm) से भुगतान करें।
           </p>
 
-          <div class="infoBox">
-            <p class="small muted" id="p2">
-              <b>Note:</b> संस्था द्वारा donation की रसीद/प्रमाण (जहाँ लागू हो) आगे उपलब्ध कराया जाएगा।
+          <!-- Replace this QR image -->
+          <img class="qr" src="./assets/upi-qr.png" alt="UPI QR Code" style="margin-top:14px">
+
+          <div class="card" style="margin-top:14px;box-shadow:none">
+            <b id="upiLbl">UPI ID</b>
+            <p class="mono" id="upiId" style="margin-top:10px">yourupi@bank</p>
+
+            <div class="btnRow">
+              <button class="btn secondary" id="copyUpi" type="button">UPI ID कॉपी करें</button>
+              <a class="btn primary" id="payUpi" href="#" target="_blank">Donate Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bank -->
+        <div class="card">
+          <h2 id="bankTitle">Bank Transfer द्वारा दान</h2>
+          <p class="small muted" id="bankSub">
+            आप NEFT / RTGS / IMPS द्वारा बैंक खाते में दान कर सकते हैं।
+          </p>
+
+          <div class="card" style="margin-top:14px;box-shadow:none">
+            <p class="small muted"><b id="accNameLbl">Account Name:</b> <span id="accName">Bharat Abhyudaya Sansthan</span></p>
+            <p class="small muted"><b id="accNoLbl">Account No.:</b> <span id="accNo">XXXXXXXXXXXX</span></p>
+            <p class="small muted"><b id="ifscLbl">IFSC:</b> <span id="ifsc">XXXXXXXX</span></p>
+            <p class="small muted"><b id="bankLbl">Bank:</b> <span id="bankName">Your Bank Name</span></p>
+            <p class="small muted"><b id="branchLbl">Branch:</b> <span id="branch">Your Branch</span></p>
+
+            <div class="btnRow">
+              <a class="btn secondary" href="contact.html" id="helpBtn">सहायता हेतु संपर्क करें</a>
+              <a class="btn primary" href="contact.html" id="receiptBtn">रसीद हेतु संपर्क करें</a>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px;box-shadow:none">
+            <b id="noteTitle">नोट</b>
+            <p class="small muted" id="noteText" style="margin-top:10px">
+              दान करने के बाद आप स्क्रीनशॉट/UTR भेजकर रसीद प्राप्त कर सकते हैं।
             </p>
           </div>
+
         </div>
 
-        <div class="card">
-          <h2 id="h2b">Where Your Support Goes</h2>
-          <p class="muted small" id="p3">
-            आपका सहयोग हमारे मुख्य प्रयासों को मजबूत करता है:
-          </p>
-          <p class="muted small" id="p4">
-            • शिक्षा सारथी (Stationery Kit, learning support)<br>
-            • जीवन रक्षक एम्बुलेंस सेवा (Emergency help)<br>
-            • जरूरतमंद सहायता (food, clothes, relief)<br>
-            • महिला सशक्तिकरण एवं कौशल विकास<br>
-            • गौसेवा, पर्यावरण एवं जनकल्याण
-          </p>
-
-          <div class="btnRow">
-            <a class="btn primary" href="initiatives.html" id="seeWork">हमारे प्रयास देखें</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="card" style="margin-top:14px">
-        <h2 id="trustT">Transparency & Trust</h2>
-        <p class="muted" id="trustD">
-          हम विश्वास करते हैं कि donation केवल पैसा नहीं — एक जिम्मेदारी है।
-          इसलिए संस्था का उद्देश्य है कि सहयोग का उपयोग स्पष्ट, आवश्यक और सेवा-आधारित कार्यों में किया जाए।
-        </p>
       </div>
 
     </div>
@@ -322,61 +311,73 @@
 <a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
 <script>
+  const UPI_ID = "yourupi@bank"; // <-- Replace with real UPI ID
+
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
-      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
-      sub:"Bharat Abhyudaya Sansthan",
-      m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",c:"संपर्क"},
 
-      title:"दान / सहयोग",
-      subtitle:"आपका छोटा सा योगदान भी किसी जरूरतमंद की बड़ी मदद बन सकता है।",
+      pageTitle:"दान करें (Donate Now)",
+      pageSub:"आपका सहयोग हमारे सेवा कार्यों को आगे बढ़ाने में मदद करता है। आप UPI / QR / Bank Transfer के माध्यम से दान कर सकते हैं।",
 
-      waHelp:"WhatsApp पर Donate करें",
-      joinBtn:"Volunteer / Join",
+      upiTitle:"UPI / QR द्वारा दान",
+      upiSub:"QR को स्कैन करें या UPI ID कॉपी करके किसी भी UPI ऐप (PhonePe, GPay, Paytm) से भुगतान करें।",
+      upiLbl:"UPI ID",
+      copy:"UPI ID कॉपी करें",
+      donate:"दान करें",
 
-      h2a:"Online Donate (Coming Soon)",
-      p1:"UPI ID, QR Code और Bank Account Details जल्द ही वेबसाइट पर अपडेट की जाएँगी। फिलहाल आप WhatsApp पर संपर्क करके donation / support की प्रक्रिया जान सकते हैं।",
-      p2:"Note: संस्था द्वारा donation की रसीद/प्रमाण (जहाँ लागू हो) आगे उपलब्ध कराया जाएगा।",
+      bankTitle:"Bank Transfer द्वारा दान",
+      bankSub:"आप NEFT / RTGS / IMPS द्वारा बैंक खाते में दान कर सकते हैं।",
 
-      h2b:"Where Your Support Goes",
-      p3:"आपका सहयोग हमारे मुख्य प्रयासों को मजबूत करता है:",
-      p4:"• शिक्षा सारथी (Stationery Kit, learning support)\n• जीवन रक्षक एम्बुलेंस सेवा (Emergency help)\n• जरूरतमंद सहायता (food, clothes, relief)\n• महिला सशक्तिकरण एवं कौशल विकास\n• गौसेवा, पर्यावरण एवं जनकल्याण",
+      accNameLbl:"Account Name:",
+      accNoLbl:"Account No.:",
+      ifscLbl:"IFSC:",
+      bankLbl:"Bank:",
+      branchLbl:"Branch:",
 
-      seeWork:"हमारे प्रयास देखें",
+      help:"सहायता हेतु संपर्क करें",
+      receipt:"रसीद हेतु संपर्क करें",
 
-      trustT:"Transparency & Trust",
-      trustD:"हम विश्वास करते हैं कि donation केवल पैसा नहीं — एक जिम्मेदारी है। इसलिए संस्था का उद्देश्य है कि सहयोग का उपयोग स्पष्ट, आवश्यक और सेवा-आधारित कार्यों में किया जाए।",
+      noteTitle:"नोट",
+      noteText:"दान करने के बाद आप स्क्रीनशॉट/UTR भेजकर रसीद प्राप्त कर सकते हैं।",
 
-      foot:"भारत अभ्युदय संस्थान"
+      foot:"भारत अभ्युदय संस्थान",
+      copied:"कॉपी हो गया ✅"
     },
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
-      brandTag:"Upliftment to Self-Reliant India",
-      sub:"Registered Social Organization",
-      m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      sub:"Upliftment to Self-Reliant India",
+      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",c:"Contact"},
 
-      title:"Donate / Support",
-      subtitle:"Even a small contribution can create a big impact for someone in need.",
+      pageTitle:"Donate Now",
+      pageSub:"Your support helps us continue our service activities. You can donate via UPI / QR or Bank Transfer.",
 
-      waHelp:"Donate via WhatsApp",
-      joinBtn:"Volunteer / Join",
+      upiTitle:"Donate via UPI / QR",
+      upiSub:"Scan the QR code or copy the UPI ID and pay using any UPI app (PhonePe, GPay, Paytm).",
+      upiLbl:"UPI ID",
+      copy:"Copy UPI ID",
+      donate:"Donate Now",
 
-      h2a:"Online Donate (Coming Soon)",
-      p1:"UPI ID, QR Code and Bank Account Details will be updated on the website soon. For now, you can contact us on WhatsApp to learn the donation/support process.",
-      p2:"Note: Donation receipt/acknowledgement (where applicable) will be provided in the future.",
+      bankTitle:"Donate via Bank Transfer",
+      bankSub:"You can donate via NEFT / RTGS / IMPS to our bank account.",
 
-      h2b:"Where Your Support Goes",
-      p3:"Your support strengthens our core initiatives:",
-      p4:"• Shiksha Sarathi (stationery kits, learning support)\n• Jeevan Rakshak Ambulance Service (emergency help)\n• Support for the poor & needy (food, clothing, relief)\n• Women empowerment & skill development\n• Gaushala, environment & public welfare",
+      accNameLbl:"Account Name:",
+      accNoLbl:"Account No.:",
+      ifscLbl:"IFSC:",
+      bankLbl:"Bank:",
+      branchLbl:"Branch:",
 
-      seeWork:"View Our Initiatives",
+      help:"Contact for Help",
+      receipt:"Contact for Receipt",
 
-      trustT:"Transparency & Trust",
-      trustD:"We believe donation is not just money — it is responsibility. Our mission is to use every contribution for clear, essential and service-based work.",
+      noteTitle:"Note",
+      noteText:"After donating, you can send a screenshot/UTR to receive a donation receipt.",
 
-      foot:"Bharat Abhyudaya Sansthan"
+      foot:"Bharat Abhyudaya Sansthan",
+      copied:"Copied ✅"
     }
   };
 
@@ -384,56 +385,65 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
+    // Brand
     document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
-    // Desktop menu
-    document.getElementById("mHome").textContent=d.m.home;
-    document.getElementById("mAbout").textContent=d.m.a;
-    document.getElementById("mWork").textContent=d.m.w;
-    document.getElementById("mDocs").textContent=d.m.d;
-    document.getElementById("mDonate").textContent=d.m.dn;
-    document.getElementById("mContact").textContent=d.m.c;
+    // Menu desktop
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mContact").textContent=d.menu.c;
 
-    // Mobile menu
-    document.getElementById("mmHome").textContent="⌂ Home";
-    document.getElementById("mmAbout").textContent=d.m.a;
-    document.getElementById("mmWork").textContent=d.m.w;
-    document.getElementById("mmDocs").textContent=d.m.d;
-    document.getElementById("mmDonate").textContent=d.m.dn;
-    document.getElementById("mmContact").textContent=d.m.c;
+    // Menu mobile
+    document.getElementById("mmHome").textContent=d.menu.home;
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmContact").textContent=d.menu.c;
 
-    document.getElementById("title").textContent=d.title;
-    document.getElementById("subtitle").textContent=d.subtitle;
+    // Page
+    document.getElementById("pageTitle").textContent=d.pageTitle;
+    document.getElementById("pageSub").textContent=d.pageSub;
 
-    document.getElementById("waHelp").textContent=d.waHelp;
-    document.getElementById("joinBtn").textContent=d.joinBtn;
+    // UPI
+    document.getElementById("upiTitle").textContent=d.upiTitle;
+    document.getElementById("upiSub").textContent=d.upiSub;
+    document.getElementById("upiLbl").textContent=d.upiLbl;
 
-    document.getElementById("h2a").textContent=d.h2a;
-    document.getElementById("p1").textContent=d.p1;
-    document.getElementById("p2").innerHTML="<b>Note:</b> "+d.p2.replace(/^Note:\s*/i,"");
+    document.getElementById("copyUpi").textContent=d.copy;
+    document.getElementById("payUpi").textContent=d.donate;
 
-    document.getElementById("h2b").textContent=d.h2b;
-    document.getElementById("p3").textContent=d.p3;
+    // Bank
+    document.getElementById("bankTitle").textContent=d.bankTitle;
+    document.getElementById("bankSub").textContent=d.bankSub;
 
-    // multi-line list
-    document.getElementById("p4").innerHTML=d.p4.replaceAll("\n","<br>");
+    document.getElementById("accNameLbl").textContent=d.accNameLbl;
+    document.getElementById("accNoLbl").textContent=d.accNoLbl;
+    document.getElementById("ifscLbl").textContent=d.ifscLbl;
+    document.getElementById("bankLbl").textContent=d.bankLbl;
+    document.getElementById("branchLbl").textContent=d.branchLbl;
 
-    document.getElementById("seeWork").textContent=d.seeWork;
+    document.getElementById("helpBtn").textContent=d.help;
+    document.getElementById("receiptBtn").textContent=d.receipt;
 
-    document.getElementById("trustT").textContent=d.trustT;
-    document.getElementById("trustD").textContent=d.trustD;
+    // Note
+    document.getElementById("noteTitle").textContent=d.noteTitle;
+    document.getElementById("noteText").textContent=d.noteText;
 
+    // Footer
     document.getElementById("foot").textContent=d.foot;
   }
 
-  // ---- language persistence ----
-  const btnHi = document.getElementById("btnHi");
-  const btnEn = document.getElementById("btnEn");
+  // Toggle buttons
+  const btnHi=document.getElementById("btnHi");
+  const btnEn=document.getElementById("btnEn");
 
   function applyActive(lang){
-    if(lang === "en"){
+    if(lang==="en"){
       btnEn.classList.add("active");
       btnHi.classList.remove("active");
     }else{
@@ -454,25 +464,34 @@
     setLang("en");
   });
 
-  // ---- Mobile menu open/close ----
+  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
-
-  mobBtn.addEventListener("click",()=>{
+  mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
-    mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
   });
 
-  // Close mobile panel when clicking any link
-  document.querySelectorAll(".mnav a").forEach(a=>{
-    a.addEventListener("click",()=>{
-      mobilePanel.classList.remove("open");
-      mobBtn.textContent="☰";
-    });
+  // UPI init
+  document.getElementById("upiId").textContent = UPI_ID;
+  document.getElementById("payUpi").href = "upi://pay?pa=" + encodeURIComponent(UPI_ID) + "&pn=" + encodeURIComponent("Bharat Abhyudaya Sansthan") + "&cu=INR";
+
+  // Copy UPI
+  const copyBtn = document.getElementById("copyUpi");
+  copyBtn.addEventListener("click", async ()=>{
+    try{
+      await navigator.clipboard.writeText(UPI_ID);
+      const savedLang = localStorage.getItem("bas_lang") || "hi";
+      copyBtn.textContent = t[savedLang].copied;
+      setTimeout(()=>{
+        copyBtn.textContent = t[savedLang].copy;
+      }, 1200);
+    }catch(e){
+      alert("Copy failed. Please copy manually: " + UPI_ID);
+    }
   });
 
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
-
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
   setLang(savedLang);
