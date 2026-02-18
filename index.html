@@ -463,35 +463,37 @@
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
 
-  btnHi.addEventListener("click",()=>{
-    btnHi.classList.add("active"); btnEn.classList.remove("active");
-    setLang("hi");
-  });
-  btnEn.addEventListener("click",()=>{
-    btnEn.classList.add("active"); btnHi.classList.remove("active");
-    setLang("en");
-  });
+function applyActive(lang){
+  if(lang==="en"){
+    btnEn.classList.add("active");
+    btnHi.classList.remove("active");
+  }else{
+    btnHi.classList.add("active");
+    btnEn.classList.remove("active");
+  }
+}
 
-  // Mobile menu open/close
-  const mobBtn = document.getElementById("mobBtn");
-  const mobilePanel = document.getElementById("mobilePanel");
+btnHi.addEventListener("click",()=>{
+  localStorage.setItem("bas_lang","hi");
+  applyActive("hi");
+  setLang("hi");
+});
 
-  mobBtn.addEventListener("click",()=>{
-    mobilePanel.classList.toggle("open");
-    mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
-  });
+btnEn.addEventListener("click",()=>{
+  localStorage.setItem("bas_lang","en");
+  applyActive("en");
+  setLang("en");
+});
 
-  document.querySelectorAll(".mnav a").forEach(a=>{
-    a.addEventListener("click",()=>{
-      mobilePanel.classList.remove("open");
-      mobBtn.textContent="☰";
-    });
-  });
+// Init
+document.getElementById("year").textContent=new Date().getFullYear();
+const savedLang = localStorage.getItem("bas_lang") || "hi";
+applyActive(savedLang);
+setLang(savedLang);
 
-  // Init
-  document.getElementById("year").textContent=new Date().getFullYear();
   setLang("hi");
 </script>
 
 </body>
 </html>
+
