@@ -125,6 +125,7 @@
       box-shadow:var(--shadow);
       padding:18px;
     }
+
     .chips{
       display:flex;flex-wrap:wrap;gap:10px;margin-top:14px
     }
@@ -157,6 +158,7 @@
       padding:14px;
       overflow:hidden;
     }
+
     .poster{
       width:100%;
       height:auto;
@@ -165,7 +167,8 @@
       display:block;
       margin-bottom:12px;
     }
-    .poster.lang-en{display:none;} /* default */
+    .poster.lang-en{display:none;} /* default Hindi */
+
     .posterFallback{
       border-radius:18px;
       border:1px solid rgba(226,232,240,.95);
@@ -290,10 +293,11 @@
         <article class="card" id="shiksha-sarathi">
           <img class="poster lang-hi" src="assets/shiksha-sarathi-hi.png" alt="Shiksha Sarathi Poster Hindi" onerror="this.remove()">
           <img class="poster lang-en" src="assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi Poster English" onerror="this.remove()">
-          <div class="posterFallback" id="fallback-edu" style="display:none">
+          <div class="posterFallback">
             <b id="fbEduTitle">शिक्षा सारथी</b>
             <span id="fbEduSub">Child Education & Development</span>
           </div>
+
           <h2 id="eduTitle">शिक्षा सारथी (Child Education & Development)</h2>
           <p class="muted small" id="eduText">
             हमारा लक्ष्य जरूरतमंद बच्चों को गुणवत्तापूर्ण शिक्षा, अध्ययन सामग्री, मार्गदर्शन एवं विकास के अवसर प्रदान करना है।
@@ -340,10 +344,11 @@
         <article class="card" id="ambulance-seva">
           <img class="poster lang-hi" src="assets/ambulance-hi.png" alt="Ambulance Poster Hindi" onerror="this.remove()">
           <img class="poster lang-en" src="assets/ambulance-en.png" alt="Ambulance Poster English" onerror="this.remove()">
-          <div class="posterFallback" id="fallback-amb" style="display:none">
+          <div class="posterFallback">
             <b id="fbAmbTitle">एम्बुलेंस सेवा</b>
             <span id="fbAmbSub">Ambulance Service</span>
           </div>
+
           <h2 id="ambTitle">एम्बुलेंस सेवा (Ambulance Service)</h2>
           <p class="muted small" id="ambText">
             आपातकाल में मरीजों को त्वरित सहायता और अस्पताल तक सुरक्षित पहुंचाने हेतु एम्बुलेंस सेवा का संचालन किया जा रहा है।
@@ -358,10 +363,11 @@
         <article class="card" id="gauseva">
           <img class="poster lang-hi" src="assets/gauseva-hi.png" alt="Gauseva Poster Hindi" onerror="this.remove()">
           <img class="poster lang-en" src="assets/gauseva-en.png" alt="Gauseva Poster English" onerror="this.remove()">
-          <div class="posterFallback" id="fallback-gau" style="display:none">
+          <div class="posterFallback">
             <b id="fbGauTitle">गौसेवा</b>
             <span id="fbGauSub">Gaushala & GauSeva</span>
           </div>
+
           <h2 id="gauTitle">गौशाला एवं गौसेवा (Gaushala & GauSeva)</h2>
           <p class="muted small" id="gauText">
             गौवंश की सेवा, चारा व्यवस्था, चिकित्सा सहायता एवं गौशाला संचालन हेतु हम निरंतर प्रयासरत हैं।
@@ -376,10 +382,11 @@
         <article class="card" id="heritage-conservation">
           <img class="poster lang-hi" src="assets/heritage-hi.png" alt="Heritage Poster Hindi" onerror="this.remove()">
           <img class="poster lang-en" src="assets/heritage-en.png" alt="Heritage Poster English" onerror="this.remove()">
-          <div class="posterFallback" id="fallback-her" style="display:none">
+          <div class="posterFallback">
             <b id="fbHerTitle">विरासत संरक्षण</b>
             <span id="fbHerSub">Heritage Conservation</span>
           </div>
+
           <h2 id="herTitle">विरासत संरक्षण (Heritage Conservation)</h2>
           <p class="muted small" id="herText">
             ऐतिहासिक स्थलों, सांस्कृतिक धरोहर एवं परंपराओं के संरक्षण हेतु जागरूकता और सहयोग कार्यक्रम किए जाते हैं।
@@ -461,7 +468,8 @@
       pageTitle:"हमारे प्रयास (Initiatives)",
       pageSub:"भारत अभ्युदय संस्थान द्वारा शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, विरासत संरक्षण एवं सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य किया जा रहा है।",
       donate:"दान करें",
-      contact:"संपर्क करें"
+      contact:"संपर्क करें",
+      foot:"भारत अभ्युदय संस्थान"
     },
     en:{
       brand:"Bharat Abhyudaya Sansthan",
@@ -470,7 +478,8 @@
       pageTitle:"Our Initiatives",
       pageSub:"Bharat Abhyudaya Sansthan works continuously in areas like education, health, women empowerment, GauSeva, heritage conservation and community support.",
       donate:"Donate Now",
-      contact:"Contact Us"
+      contact:"Contact Us",
+      foot:"Bharat Abhyudaya Sansthan"
     }
   };
 
@@ -515,8 +524,7 @@
       if(el) el.textContent=d.contact;
     });
 
-    // Footer
-    document.getElementById("foot").textContent = (lang==="hi") ? "भारत अभ्युदय संस्थान" : "Bharat Abhyudaya Sansthan";
+    document.getElementById("foot").textContent=d.foot;
 
     // Posters show/hide
     document.querySelectorAll(".poster.lang-hi").forEach(el=>{
@@ -558,7 +566,6 @@
     mobilePanel.classList.toggle("open");
   });
 
-  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
