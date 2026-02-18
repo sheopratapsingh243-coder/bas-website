@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>About | Bharat Abhyudaya Sansthan</title>
+  <title>About • Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="About Bharat Abhyudaya Sansthan" />
 
   <style>
     :root{
       --brand:#0b5aa6;
       --accent:#f58b1f;
-      --green:#16a34a;
       --fg:#0b1220;
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:22px;
-      --max:1100px;
+      --radius:20px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,57 +26,43 @@
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
         radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
         #fff;
+      overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:28px 0}
-    h1{margin:0;font-size:34px;letter-spacing:-.9px;line-height:1.15}
-    h2{margin:0;font-size:20px;letter-spacing:-.35px}
-    p{margin:10px 0 0;line-height:1.75}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:22px;letter-spacing:-.4px}
+    p{margin:10px 0 0;line-height:1.6}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.88);
-      backdrop-filter: blur(12px);
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(226,232,240,.95);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      min-width:220px;
+    }
     .logo{
-      width:44px;height:44px;border-radius:999px;
+      width:46px;height:46px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       object-fit:cover;background:#fff;
     }
-    .brand b{display:block;font-size:14px;line-height:1.1}
+    .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .brand i{display:block;font-style:normal;font-size:12px;color:#0b5aa6;font-weight:900;margin-top:2px}
-
-    /* Desktop menu */
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted)}
-    .menu a{padding:8px 10px;border-radius:12px}
-    .menu a:hover{color:var(--brand);background:rgba(11,90,166,.06)}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:800}
+    .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
-
-    .homeIcon{
-      font-size:18px;
-      font-weight:950;
-      padding:8px 12px;
-      border-radius:12px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
-      line-height:1;
-    }
-    .homeIcon:hover{
-      background:rgba(11,90,166,.08);
-      color:var(--brand);
-    }
 
     /* Toggle */
     .toggle{display:flex;gap:8px}
@@ -84,11 +70,10 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
-      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:900;
     }
 
     /* Mobile menu button */
@@ -106,7 +91,6 @@
     }
     @media(min-width:980px){.mobBtn{display:none}}
 
-    /* Mobile dropdown panel */
     .mobilePanel{
       display:none;
       padding:12px 0 14px;
@@ -124,70 +108,68 @@
       padding:12px 14px;
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.95);
       font-weight:900;
       color:var(--fg);
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Content */
-    .hero{
-      border:1px solid rgba(226,232,240,.95);
-      background:
-        radial-gradient(900px 420px at 12% 0%, rgba(245,139,31,.20), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(11,90,166,.18), transparent 60%),
-        radial-gradient(900px 420px at 60% 110%, rgba(34,197,94,.10), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
-      border-radius:28px;
-      padding:18px;
-      box-shadow:var(--shadow);
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media(min-width:980px){
+      .grid{grid-template-columns:1.2fr .8fr;gap:22px}
     }
 
     .card{
       background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;
-      box-shadow:0 12px 34px rgba(2,6,23,.06);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
     }
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
-
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btnRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
+      font-weight:900;
+      justify-content:center;
+      min-width:160px;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;
+      border-color:transparent;font-weight:950;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .list{
-      margin:10px 0 0;
-      padding:0 0 0 18px;
-      color:var(--muted);
-      line-height:1.85;
-      font-size:14px;
-    }
+    ul{margin:10px 0 0;padding-left:18px}
+    li{margin:8px 0;line-height:1.55}
 
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
+    }
+
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
     }
   </style>
 </head>
@@ -197,42 +179,42 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="index.html">
+
+      <a class="brand" href="index.html" title="Home">
         <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <i id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</i>
-          <span id="brandSub">Bharat Abhyudaya Sansthan</span>
+          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
         </div>
       </a>
 
       <nav class="menu">
-        <a href="index.html" id="mHome" class="homeIcon" aria-label="Home" title="Home">⌂</a>
+        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान</a>
+        <a href="donate.html" id="mDonate">दान करें</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
       <div style="display:flex;gap:10px;align-items:center">
         <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-
         <div class="toggle">
           <button class="pill active" id="btnHi" type="button">हिन्दी</button>
           <button class="pill" id="btnEn" type="button">English</button>
         </div>
       </div>
+
     </div>
 
     <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
-        <a href="index.html" id="mmHome">⌂ Home</a>
+        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
         <a href="about.html" id="mmAbout">परिचय</a>
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान</a>
+        <a href="donate.html" id="mmDonate">दान करें</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -244,91 +226,64 @@
 
   <section>
     <div class="wrap">
-      <div class="hero">
-        <h1 id="title">हमारे बारे में</h1>
-        <p class="muted" id="subtitle">
-          Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो सेवा, जागरूकता और जनकल्याण को समाज तक पहुँचाने के लिए कार्य करती है।
-        </p>
-
-        <div class="btnRow">
-          <a class="btn secondary" href="initiatives.html" id="seeBtn">हमारे प्रयास</a>
-          <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
-        </div>
-      </div>
-
       <div class="grid">
 
-        <div class="card">
-          <h2 id="h2a">संस्था का परिचय</h2>
-          <p class="muted small" id="p1">
-            भारत अभ्युदय संस्थान का उद्देश्य समाज के उन वर्गों तक सहायता पहुँचाना है, जिन्हें शिक्षा, स्वास्थ्य, रोजगार, सुरक्षा और सामाजिक सहयोग की सबसे अधिक आवश्यकता होती है।
-            संस्था का कार्य सेवा, संवेदना और राष्ट्र निर्माण के मूल विचार पर आधारित है।
+        <div>
+          <h1 id="pageTitle">परिचय (About Us)</h1>
+          <p class="muted" id="pageSub">
+            भारत अभ्युदय संस्थान एक पंजीकृत सामाजिक संस्था है, जिसका उद्देश्य समाज के वंचित वर्गों के उत्थान हेतु शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, एवं सांस्कृतिक विरासत संरक्षण के क्षेत्र में कार्य करना है।
           </p>
 
-          <p class="muted small" id="p2">
-            हम मानते हैं कि समाज का वास्तविक विकास तभी संभव है जब व्यक्ति शिक्षा, स्वास्थ्य और आत्मनिर्भरता के माध्यम से मजबूत बने।
-            इसी दृष्टि से संस्था “अभ्युदय से आत्मनिर्भर भारत तक” के संकल्प के साथ निरंतर प्रयासरत है।
-          </p>
+          <div class="card" style="margin-top:16px">
+            <h2 id="visionTitle">हमारा दृष्टिकोण (Vision)</h2>
+            <p class="muted small" id="visionText">
+              “अभ्युदय से आत्मनिर्भर भारत तक” — हमारा लक्ष्य एक ऐसा समाज बनाना है जहाँ प्रत्येक व्यक्ति शिक्षा, स्वास्थ्य, सम्मान और अवसर प्राप्त कर सके।
+            </p>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h2 id="missionTitle">हमारा मिशन (Mission)</h2>
+            <ul class="muted small" id="missionList">
+              <li>शिक्षा और कौशल विकास के माध्यम से आत्मनिर्भरता बढ़ाना।</li>
+              <li>स्वास्थ्य सेवाओं और आपात सहायता को मजबूत करना।</li>
+              <li>महिला सशक्तिकरण और स्वरोजगार को बढ़ावा देना।</li>
+              <li>गौवंश एवं पशु कल्याण के लिए कार्य करना।</li>
+              <li>धरोहरों, मंदिरों एवं सांस्कृतिक स्थलों का संरक्षण।</li>
+              <li>वृद्धजनों एवं जरूरतमंदों के लिए सेवा कार्य।</li>
+            </ul>
+          </div>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="initiatives.html" id="seeWork">हमारे प्रयास देखें</a>
+            <a class="btn primary" href="donate.html" id="donateNow">दान करें</a>
+          </div>
         </div>
 
         <div class="card">
-          <h2 id="h2b">पंजीकरण विवरण</h2>
-          <p class="small muted" id="reg" style="margin-top:10px">
+          <h2 id="regTitle">पंजीकरण विवरण</h2>
+          <p class="small muted" style="margin-top:10px" id="regText">
             Registration No.: <b>FAT/02340/2024-2025</b><br>
             Date: <b>05/07/2024</b><br>
             Valid: <b>04/07/2029</b><br>
             PAN: <b>AANAB2855N</b>
           </p>
 
+          <hr style="border:none;border-top:1px solid rgba(226,232,240,.95);margin:16px 0">
+
+          <h2 id="contactTitle">संपर्क</h2>
+          <p class="small muted" id="addr">
+            481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
+          </p>
+          <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
+          <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+
           <div class="btnRow">
-            <a class="btn secondary" href="documents.html" id="docBtn">Registration PDF</a>
+            <a class="btn secondary" href="contact.html" id="contactBtn">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="donBtn">दान करें</a>
           </div>
         </div>
 
-        <div class="card">
-          <h2 id="h2c">Mission</h2>
-          <p class="muted small" id="mission">
-            समाज में शिक्षा, स्वास्थ्य, आत्मनिर्भरता, महिला सशक्तिकरण, पर्यावरण संरक्षण, संस्कृति एवं सेवा-आधारित कार्यक्रमों के माध्यम से
-            जनकल्याण को सशक्त बनाना — और सेवा को जन-आंदोलन का रूप देना।
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 id="h2d">Vision</h2>
-          <p class="muted small" id="vision">
-            एक ऐसा समाज जहाँ हर बच्चा शिक्षा प्राप्त कर सके, हर जरूरतमंद को सहायता मिल सके, आपातकाल में त्वरित सेवा उपलब्ध हो,
-            और भारत आत्मनिर्भरता की दिशा में निरंतर आगे बढ़े।
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 id="h2e">मुख्य कार्यक्षेत्र</h2>
-          <ul class="list" id="areas">
-            <li>शिक्षा एवं साक्षरता (Stationery Kit, mentoring, digital learning)</li>
-            <li>स्वास्थ्य जागरूकता एवं सहायता</li>
-            <li>आपात सेवा / एम्बुलेंस सहायता</li>
-            <li>महिला सशक्तिकरण एवं कौशल विकास</li>
-            <li>गरीब एवं जरूरतमंद सहायता</li>
-            <li>पर्यावरण, स्वच्छता एवं जल संरक्षण</li>
-            <li>संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण</li>
-            <li>वृद्धजन सेवा, सामाजिक कल्याण एवं वृद्धाश्रम पहल</li>
-            <li>गौसेवा, गौशाला, पशु एवं वन्यजीव संरक्षण</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2 id="h2f">Management Committee</h2>
-          <ul class="list" id="committee">
-            <li><b>अध्यक्ष:</b> Sheo Pratap Singh</li>
-            <li><b>उपाध्यक्ष:</b> sukhdev singh</li>
-            <li><b>सचिव:</b> paras mani</li>
-            <li><b>कोषाध्यक्ष:</b> kailash pratap singh</li>
-            <li><b>सदस्य:</b> Gyan Singh</li>
-          </ul>
-        </div>
-
       </div>
-
     </div>
   </section>
 
@@ -343,104 +298,69 @@
 <a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
 <script>
+  const ADDRESS_HI = "481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)";
+  const ADDRESS_EN = "481, Shadipur Khurd, Jayram Nagar, Vidhayak Road, Tehsil Sadar, Fatehpur, 212601 (U.P.)";
+
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
-      brandTag:"अभ्युदय से आत्मनिर्भर भारत तक",
-      sub:"Bharat Abhyudaya Sansthan",
-      m:{home:"⌂",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",c:"संपर्क"},
 
-      title:"हमारे बारे में",
-      subtitle:"Bharat Abhyudaya Sansthan एक पंजीकृत सामाजिक संस्था है, जो सेवा, जागरूकता और जनकल्याण को समाज तक पहुँचाने के लिए कार्य करती है।",
+      pageTitle:"परिचय (About Us)",
+      pageSub:"भारत अभ्युदय संस्थान एक पंजीकृत सामाजिक संस्था है, जिसका उद्देश्य समाज के वंचित वर्गों के उत्थान हेतु शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, एवं सांस्कृतिक विरासत संरक्षण के क्षेत्र में कार्य करना है।",
 
-      seeBtn:"हमारे प्रयास",
-      joinBtn:"हमसे जुड़ें",
+      visionTitle:"हमारा दृष्टिकोण (Vision)",
+      visionText:"“अभ्युदय से आत्मनिर्भर भारत तक” — हमारा लक्ष्य एक ऐसा समाज बनाना है जहाँ प्रत्येक व्यक्ति शिक्षा, स्वास्थ्य, सम्मान और अवसर प्राप्त कर सके।",
 
-      h2a:"संस्था का परिचय",
-      p1:"भारत अभ्युदय संस्थान का उद्देश्य समाज के उन वर्गों तक सहायता पहुँचाना है, जिन्हें शिक्षा, स्वास्थ्य, रोजगार, सुरक्षा और सामाजिक सहयोग की सबसे अधिक आवश्यकता होती है। संस्था का कार्य सेवा, संवेदना और राष्ट्र निर्माण के मूल विचार पर आधारित है।",
-      p2:"हम मानते हैं कि समाज का वास्तविक विकास तभी संभव है जब व्यक्ति शिक्षा, स्वास्थ्य और आत्मनिर्भरता के माध्यम से मजबूत बने। इसी दृष्टि से संस्था “अभ्युदय से आत्मनिर्भर भारत तक” के संकल्प के साथ निरंतर प्रयासरत है।",
-
-      h2b:"पंजीकरण विवरण",
-      docBtn:"Registration PDF",
-
-      h2c:"Mission",
-      mission:"समाज में शिक्षा, स्वास्थ्य, आत्मनिर्भरता, महिला सशक्तिकरण, पर्यावरण संरक्षण, संस्कृति एवं सेवा-आधारित कार्यक्रमों के माध्यम से जनकल्याण को सशक्त बनाना — और सेवा को जन-आंदोलन का रूप देना।",
-
-      h2d:"Vision",
-      vision:"एक ऐसा समाज जहाँ हर बच्चा शिक्षा प्राप्त कर सके, हर जरूरतमंद को सहायता मिल सके, आपातकाल में त्वरित सेवा उपलब्ध हो, और भारत आत्मनिर्भरता की दिशा में निरंतर आगे बढ़े।",
-
-      h2e:"मुख्य कार्यक्षेत्र",
-      areas:[
-        "शिक्षा एवं साक्षरता (Stationery Kit, mentoring, digital learning)",
-        "स्वास्थ्य जागरूकता एवं सहायता",
-        "आपात सेवा / एम्बुलेंस सहायता",
-        "महिला सशक्तिकरण एवं कौशल विकास",
-        "गरीब एवं जरूरतमंद सहायता",
-        "पर्यावरण, स्वच्छता एवं जल संरक्षण",
-        "संस्कृति, सनातन संरक्षण एवं विरासत संरक्षण",
-        "वृद्धजन सेवा, सामाजिक कल्याण एवं वृद्धाश्रम पहल",
-        "गौसेवा, गौशाला, पशु एवं वन्यजीव संरक्षण"
+      missionTitle:"हमारा मिशन (Mission)",
+      missionList:[
+        "शिक्षा और कौशल विकास के माध्यम से आत्मनिर्भरता बढ़ाना।",
+        "स्वास्थ्य सेवाओं और आपात सहायता को मजबूत करना।",
+        "महिला सशक्तिकरण और स्वरोजगार को बढ़ावा देना।",
+        "गौवंश एवं पशु कल्याण के लिए कार्य करना।",
+        "धरोहरों, मंदिरों एवं सांस्कृतिक स्थलों का संरक्षण।",
+        "वृद्धजनों एवं जरूरतमंदों के लिए सेवा कार्य।"
       ],
 
-      h2f:"Management Committee",
-      committee:[
-        "<b>अध्यक्ष:</b> Sheo Pratap Singh",
-        "<b>उपाध्यक्ष:</b> sukhdev singh",
-        "<b>सचिव:</b> paras mani",
-        "<b>कोषाध्यक्ष:</b> kailash pratap singh",
-        "<b>सदस्य:</b> Gyan Singh"
-      ],
+      seeWork:"हमारे प्रयास देखें",
+      donateNow:"दान करें",
 
+      regTitle:"पंजीकरण विवरण",
+      contactTitle:"संपर्क",
+      ph:"फोन:",
+      contactBtn:"संपर्क करें",
       foot:"भारत अभ्युदय संस्थान"
     },
 
     en:{
       brand:"Bharat Abhyudaya Sansthan",
-      brandTag:"Upliftment to Self-Reliant India",
-      sub:"Registered Social Organization",
-      m:{home:"⌂",a:"About",w:"Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      sub:"Upliftment to Self-Reliant India",
+      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",c:"Contact"},
 
-      title:"About Us",
-      subtitle:"Bharat Abhyudaya Sansthan is a registered social organization working to deliver service, awareness and public welfare initiatives to society.",
+      pageTitle:"About Us",
+      pageSub:"Bharat Abhyudaya Sansthan is a registered social organization working for the upliftment of underprivileged communities through education, health support, women empowerment, cow welfare and heritage conservation.",
 
-      seeBtn:"Our Initiatives",
-      joinBtn:"Get Involved",
+      visionTitle:"Our Vision",
+      visionText:"“Upliftment to Self-Reliant India” — We aim to build a society where every individual gets access to education, health, dignity and opportunities.",
 
-      h2a:"Organization Overview",
-      p1:"Bharat Abhyudaya Sansthan works to support sections of society that need education, health, employment, safety and social assistance the most. Our work is rooted in service, compassion and nation-building values.",
-      p2:"We believe real development is possible only when individuals become strong through education, health and self-reliance. With this vision, we work continuously towards “Upliftment to Self-Reliant India.”",
-
-      h2b:"Registration Details",
-      docBtn:"Registration PDF",
-
-      h2c:"Mission",
-      mission:"To strengthen public welfare through education, health, self-reliance, women empowerment, environment protection, culture and service-based initiatives — and to turn service into a people’s movement.",
-
-      h2d:"Vision",
-      vision:"A society where every child can learn, every needy person receives support, emergency services reach on time, and India moves forward continuously towards self-reliance.",
-
-      h2e:"Core Areas of Work",
-      areas:[
-        "Education & literacy (stationery kits, mentoring, digital learning)",
-        "Health awareness and support",
-        "Emergency support / ambulance assistance",
-        "Women empowerment and skill development",
-        "Support for the poor and needy",
-        "Environment, cleanliness and water conservation",
-        "Culture, Sanatan protection and heritage conservation",
-        "Elderly care, social welfare and old age home initiatives",
-        "Gaushala, animal care and wildlife protection"
+      missionTitle:"Our Mission",
+      missionList:[
+        "Promote self-reliance through education and skill development.",
+        "Strengthen health support and emergency assistance.",
+        "Encourage women empowerment and self-employment.",
+        "Work for cow welfare and animal protection.",
+        "Preserve heritage sites, temples and cultural places.",
+        "Support elderly people and the needy."
       ],
 
-      h2f:"Management Committee",
-      committee:[
-        "<b>President:</b> Sheo Pratap Singh",
-        "<b>Vice President:</b> sukhdev singh",
-        "<b>Secretary:</b> paras mani",
-        "<b>Treasurer:</b> kailash pratap singh",
-        "<b>Member:</b> Gyan Singh"
-      ],
+      seeWork:"See Our Initiatives",
+      donateNow:"Donate Now",
 
+      regTitle:"Registration Details",
+      contactTitle:"Contact",
+      ph:"Phone:",
+      contactBtn:"Contact Us",
       foot:"Bharat Abhyudaya Sansthan"
     }
   };
@@ -449,60 +369,66 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
+    // Brand
     document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandTag").textContent=d.brandTag;
     document.getElementById("brandSub").textContent=d.sub;
 
-    // Desktop menu
-    document.getElementById("mHome").textContent=d.m.home;
-    document.getElementById("mAbout").textContent=d.m.a;
-    document.getElementById("mWork").textContent=d.m.w;
-    document.getElementById("mDocs").textContent=d.m.d;
-    document.getElementById("mDonate").textContent=d.m.dn;
-    document.getElementById("mContact").textContent=d.m.c;
+    // Menu desktop
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mContact").textContent=d.menu.c;
 
-    // Mobile menu
-    document.getElementById("mmHome").textContent="⌂ Home";
-    document.getElementById("mmAbout").textContent=d.m.a;
-    document.getElementById("mmWork").textContent=d.m.w;
-    document.getElementById("mmDocs").textContent=d.m.d;
-    document.getElementById("mmDonate").textContent=d.m.dn;
-    document.getElementById("mmContact").textContent=d.m.c;
+    // Menu mobile
+    document.getElementById("mmHome").textContent=d.menu.home;
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmContact").textContent=d.menu.c;
 
-    document.getElementById("title").textContent=d.title;
-    document.getElementById("subtitle").textContent=d.subtitle;
+    // Page
+    document.getElementById("pageTitle").textContent=d.pageTitle;
+    document.getElementById("pageSub").textContent=d.pageSub;
 
-    document.getElementById("seeBtn").textContent=d.seeBtn;
-    document.getElementById("joinBtn").textContent=d.joinBtn;
+    // Vision
+    document.getElementById("visionTitle").textContent=d.visionTitle;
+    document.getElementById("visionText").textContent=d.visionText;
 
-    document.getElementById("h2a").textContent=d.h2a;
-    document.getElementById("p1").textContent=d.p1;
-    document.getElementById("p2").textContent=d.p2;
+    // Mission
+    document.getElementById("missionTitle").textContent=d.missionTitle;
+    const ul = document.getElementById("missionList");
+    ul.innerHTML = "";
+    d.missionList.forEach(item=>{
+      const li=document.createElement("li");
+      li.textContent=item;
+      ul.appendChild(li);
+    });
 
-    document.getElementById("h2b").textContent=d.h2b;
-    document.getElementById("docBtn").textContent=d.docBtn;
+    // Buttons
+    document.getElementById("seeWork").textContent=d.seeWork;
+    document.getElementById("donateNow").textContent=d.donateNow;
 
-    document.getElementById("h2c").textContent=d.h2c;
-    document.getElementById("mission").textContent=d.mission;
+    // Side card
+    document.getElementById("regTitle").textContent=d.regTitle;
+    document.getElementById("contactTitle").textContent=d.contactTitle;
+    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
+    document.getElementById("phLbl").textContent=d.ph;
+    document.getElementById("contactBtn").textContent=d.contactBtn;
+    document.getElementById("donBtn").textContent=d.donateNow;
 
-    document.getElementById("h2d").textContent=d.h2d;
-    document.getElementById("vision").textContent=d.vision;
-
-    document.getElementById("h2e").textContent=d.h2e;
-    document.getElementById("areas").innerHTML = d.areas.map(x=>`<li>${x}</li>`).join("");
-
-    document.getElementById("h2f").textContent=d.h2f;
-    document.getElementById("committee").innerHTML = d.committee.map(x=>`<li>${x}</li>`).join("");
-
+    // Footer
     document.getElementById("foot").textContent=d.foot;
   }
 
-  // ---- language persistence ----
-  const btnHi = document.getElementById("btnHi");
-  const btnEn = document.getElementById("btnEn");
+  // Toggle buttons
+  const btnHi=document.getElementById("btnHi");
+  const btnEn=document.getElementById("btnEn");
 
   function applyActive(lang){
-    if(lang === "en"){
+    if(lang==="en"){
       btnEn.classList.add("active");
       btnHi.classList.remove("active");
     }else{
@@ -523,25 +449,15 @@
     setLang("en");
   });
 
-  // ---- Mobile menu open/close ----
+  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
-
-  mobBtn.addEventListener("click",()=>{
+  mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
-    mobBtn.textContent = mobilePanel.classList.contains("open") ? "✕" : "☰";
   });
 
-  // Close mobile panel when clicking any link
-  document.querySelectorAll(".mnav a").forEach(a=>{
-    a.addEventListener("click",()=>{
-      mobilePanel.classList.remove("open");
-      mobBtn.textContent="☰";
-    });
-  });
-
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
-
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
   setLang(savedLang);
