@@ -168,6 +168,9 @@
       border:1px solid rgba(226,232,240,.95);
     }
 
+    /* ⭐ GUARANTEED DEFAULT: Hindi visible, English hidden */
+    .lang-en{display:none;}
+
     .programBtns{
       display:flex;
       gap:10px;
@@ -291,7 +294,6 @@
 
       <div class="programGrid">
 
-        <!-- 1) Shiksha Sarathi -->
         <div class="programCard">
           <a href="initiatives.html#shiksha-sarathi">
             <img class="poster lang-hi" src="assets/shiksha-sarathi-hi.png" alt="Shiksha Sarathi Poster Hindi">
@@ -303,7 +305,6 @@
           </div>
         </div>
 
-        <!-- 2) Ambulance -->
         <div class="programCard">
           <a href="initiatives.html#ambulance-seva">
             <img class="poster lang-hi" src="assets/ambulance-hi.png" alt="Ambulance Poster Hindi">
@@ -315,7 +316,6 @@
           </div>
         </div>
 
-        <!-- 3) GauSeva -->
         <div class="programCard">
           <a href="initiatives.html#gauseva">
             <img class="poster lang-hi" src="assets/gauseva-hi.png" alt="Gauseva Poster Hindi">
@@ -327,7 +327,6 @@
           </div>
         </div>
 
-        <!-- 4) Heritage -->
         <div class="programCard">
           <a href="initiatives.html#heritage-conservation">
             <img class="poster lang-hi" src="assets/heritage-hi.png" alt="Heritage Poster Hindi">
@@ -398,13 +397,11 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
-    // Brand
     document.getElementById("brandText").textContent=d.brand;
     document.getElementById("brandSub").textContent=d.sub;
     document.getElementById("title").textContent=d.title;
     document.getElementById("tagline").textContent=d.tagline;
 
-    // Menu (desktop)
     document.getElementById("mHome").textContent=d.menu.home;
     document.getElementById("mAbout").textContent=d.menu.a;
     document.getElementById("mWork").textContent=d.menu.w;
@@ -412,7 +409,6 @@
     document.getElementById("mDonate").textContent=d.menu.dn;
     document.getElementById("mContact").textContent=d.menu.c;
 
-    // Menu (mobile)
     document.getElementById("mmHome").textContent=d.menu.home;
     document.getElementById("mmAbout").textContent=d.menu.a;
     document.getElementById("mmWork").textContent=d.menu.w;
@@ -420,17 +416,14 @@
     document.getElementById("mmDonate").textContent=d.menu.dn;
     document.getElementById("mmContact").textContent=d.menu.c;
 
-    // Buttons
     document.getElementById("docsBtn").textContent=d.docsBtn;
     document.getElementById("joinBtn").textContent=d.join;
 
-    // Titles
     document.getElementById("quick").textContent=d.quick;
     document.getElementById("regTitle").textContent=d.regTitle;
     document.getElementById("programTitle").textContent=d.programs;
     document.getElementById("programSub").textContent=d.programSub;
 
-    // Program buttons
     document.getElementById("read1").textContent=d.read;
     document.getElementById("read2").textContent=d.read;
     document.getElementById("read3").textContent=d.read;
@@ -441,14 +434,11 @@
     document.getElementById("don3").textContent=d.donate;
     document.getElementById("don4").textContent=d.donate;
 
-    // Address + phone label
     document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
     document.getElementById("phLbl").textContent=d.ph;
 
-    // Footer
     document.getElementById("foot").textContent=d.foot;
 
-    // Posters show/hide
     document.querySelectorAll(".lang-hi").forEach(el=>{
       el.style.display = (lang==="hi") ? "block" : "none";
     });
@@ -457,7 +447,6 @@
     });
   }
 
-  // Toggle buttons
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
 
@@ -483,23 +472,17 @@
     setLang("en");
   });
 
-  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
-  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
   setLang(savedLang);
-  document.querySelectorAll(".lang-hi").forEach(el=> el.style.display = (savedLang==="hi") ? "block" : "none");
-document.querySelectorAll(".lang-en").forEach(el=> el.style.display = (savedLang==="en") ? "block" : "none");
-
 </script>
 
 </body>
 </html>
-
