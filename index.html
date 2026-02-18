@@ -495,7 +495,11 @@
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
   setLang(savedLang);
+  document.querySelectorAll(".lang-hi").forEach(el=> el.style.display = (savedLang==="hi") ? "block" : "none");
+document.querySelectorAll(".lang-en").forEach(el=> el.style.display = (savedLang==="en") ? "block" : "none");
+
 </script>
 
 </body>
 </html>
+
