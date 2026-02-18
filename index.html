@@ -38,7 +38,6 @@
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
-    /* Header */
     header{
       position:sticky;top:0;z-index:50;
       background:rgba(255,255,255,.92);
@@ -64,7 +63,6 @@
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
-    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
@@ -76,7 +74,6 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    /* Mobile menu button */
     .mobBtn{
       display:inline-flex;
       align-items:center;
@@ -114,7 +111,6 @@
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Layout */
     .card{
       background:#fff;border:1px solid rgba(226,232,240,.95);
       border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
@@ -139,7 +135,6 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    /* Programs */
     #programs{padding:34px 0}
     .programGrid{
       display:grid;
@@ -150,7 +145,6 @@
     @media(min-width:900px){
       .programGrid{grid-template-columns:1fr 1fr}
     }
-
     .programCard{
       background:#fff;
       border:1px solid rgba(226,232,240,.95);
@@ -159,7 +153,6 @@
       overflow:hidden;
       padding:12px;
     }
-
     .poster{
       width:100%;
       height:auto;
@@ -167,10 +160,7 @@
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
     }
-
-    /* ⭐ GUARANTEED DEFAULT: Hindi visible, English hidden */
-    .lang-en{display:none;}
-
+    .lang-en{display:none;} /* default Hindi */
     .programBtns{
       display:flex;
       gap:10px;
@@ -181,7 +171,6 @@
       justify-content:center;
     }
 
-    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
@@ -218,6 +207,7 @@
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
         <a href="donate.html" id="mDonate">दान करें</a>
+        <a href="gallery.html" id="mGallery">गैलरी</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
@@ -231,7 +221,6 @@
 
     </div>
 
-    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
@@ -239,6 +228,7 @@
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
         <a href="donate.html" id="mmDonate">दान करें</a>
+        <a href="gallery.html" id="mmGallery">गैलरी</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -248,7 +238,6 @@
 
 <main id="top">
 
-  <!-- HERO -->
   <section>
     <div class="wrap">
       <div class="grid">
@@ -286,7 +275,6 @@
     </div>
   </section>
 
-  <!-- CURRENT PROGRAMS -->
   <section id="programs">
     <div class="wrap">
       <h2 id="programTitle">वर्तमान संचालित कार्यक्रम</h2>
@@ -363,7 +351,7 @@
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
       quick:"त्वरित जानकारी",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",c:"संपर्क"},
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
       docsBtn:"दस्तावेज़ देखें",
       join:"हमसे जुड़ें",
       regTitle:"पंजीकरण विवरण",
@@ -380,7 +368,7 @@
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
       quick:"Quick Info",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",c:"Contact"},
+      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
       docsBtn:"View Documents",
       join:"Get Involved",
       regTitle:"Registration Details",
@@ -407,6 +395,7 @@
     document.getElementById("mWork").textContent=d.menu.w;
     document.getElementById("mDocs").textContent=d.menu.d;
     document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mGallery").textContent=d.menu.g;
     document.getElementById("mContact").textContent=d.menu.c;
 
     document.getElementById("mmHome").textContent=d.menu.home;
@@ -414,6 +403,7 @@
     document.getElementById("mmWork").textContent=d.menu.w;
     document.getElementById("mmDocs").textContent=d.menu.d;
     document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmGallery").textContent=d.menu.g;
     document.getElementById("mmContact").textContent=d.menu.c;
 
     document.getElementById("docsBtn").textContent=d.docsBtn;
