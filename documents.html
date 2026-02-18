@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Documents • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Documents of Bharat Abhyudaya Sansthan" />
+  <title>Documents | Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Documents and registration details of Bharat Abhyudaya Sansthan." />
 
   <style>
     :root{
@@ -31,10 +31,10 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:28px 0}
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:22px;letter-spacing:-.4px}
-    p{margin:10px 0 0;line-height:1.6}
+    section{padding:22px 0}
+    h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
+    h2{margin:0;font-size:20px;letter-spacing:-.4px}
+    p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
 
@@ -60,7 +60,7 @@
     }
     .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:800}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
@@ -73,7 +73,7 @@
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:900;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
     /* Mobile menu button */
@@ -109,67 +109,59 @@
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
       background:rgba(255,255,255,.95);
-      font-weight:900;
+      font-weight:950;
       color:var(--fg);
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Cards */
-    .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+    /* Page */
+    .heroCard{
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:18px;
     }
 
-    .docGrid{
+    .grid{
       display:grid;
       grid-template-columns:1fr;
-      gap:14px;
-      margin-top:18px;
+      gap:16px;
+      margin-top:16px;
     }
     @media(min-width:980px){
-      .docGrid{grid-template-columns:1fr 1fr}
+      .grid{grid-template-columns:1fr 1fr;gap:18px}
     }
 
     .docCard{
       background:#fff;
       border:1px solid rgba(226,232,240,.95);
-      border-radius:22px;
-      box-shadow:0 16px 40px rgba(2,6,23,.10);
-      overflow:hidden;
+      border-radius:24px;
+      box-shadow:var(--shadow);
       padding:16px;
     }
 
-    .docTop{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:12px;
-    }
-    .tag{
-      font-size:12px;
-      font-weight:900;
-      padding:6px 10px;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.06);
-      color:var(--brand);
-      white-space:nowrap;
+      font-weight:950;
+      font-size:13px;
+      color:var(--muted);
+      margin-top:12px;
+      background:#fff;
     }
 
-    .btnRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:12px;
-    }
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:900;
-      justify-content:center;
-      min-width:150px;
+      font-weight:950;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -180,19 +172,24 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
+    .hint{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.45;
     }
 
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
       background:#fff;font-size:14px;
+    }
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:999;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#fff;padding:12px 14px;border-radius:999px;
+      box-shadow:0 18px 45px rgba(2,6,23,.22);
+      font-weight:950;
     }
   </style>
 </head>
@@ -204,7 +201,7 @@
     <div class="nav">
 
       <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
+        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
           <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
@@ -217,6 +214,7 @@
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
         <a href="donate.html" id="mDonate">दान करें</a>
+        <a href="gallery.html" id="mGallery">गैलरी</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
@@ -230,7 +228,6 @@
 
     </div>
 
-    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
@@ -238,6 +235,7 @@
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
         <a href="donate.html" id="mmDonate">दान करें</a>
+        <a href="gallery.html" id="mmGallery">गैलरी</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -249,82 +247,84 @@
 
   <section>
     <div class="wrap">
-      <h1 id="pageTitle">दस्तावेज़ (Documents)</h1>
-      <p class="muted" id="pageSub">
-        यहाँ संस्था से संबंधित महत्वपूर्ण दस्तावेज़ उपलब्ध हैं। आप PDF को खोल या डाउनलोड कर सकते हैं।
-      </p>
+      <div class="heroCard">
+        <h1 id="pageTitle">दस्तावेज़ (Documents)</h1>
+        <p class="muted" id="pageSub">
+          इस पृष्ठ पर संस्था से संबंधित आवश्यक दस्तावेज़ उपलब्ध कराए गए हैं। आप इन्हें डाउनलोड या देखें।
+        </p>
 
-      <div class="docGrid">
-
-        <!-- Example 1 -->
-        <div class="docCard">
-          <div class="docTop">
-            <div>
-              <h2 id="doc1Title">पंजीकरण प्रमाणपत्र</h2>
-              <p class="small muted" id="doc1Sub">Registration Certificate (PDF)</p>
-            </div>
-            <span class="tag" id="tag1">Official</span>
-          </div>
-          <div class="btnRow">
-            <a class="btn secondary" href="./assets/registration-certificate.pdf" target="_blank" id="open1">PDF खोलें</a>
-            <a class="btn primary" href="./assets/registration-certificate.pdf" download id="down1">डाउनलोड</a>
-          </div>
+        <div class="badge" id="regBadge">
+          🏛️ Registration: FAT/02340/2024-2025 • PAN: AANAB2855N
         </div>
 
-        <!-- Example 2 -->
-        <div class="docCard">
-          <div class="docTop">
-            <div>
-              <h2 id="doc2Title">PAN कार्ड</h2>
-              <p class="small muted" id="doc2Sub">PAN Card (PDF)</p>
-            </div>
-            <span class="tag" id="tag2">Official</span>
-          </div>
-          <div class="btnRow">
-            <a class="btn secondary" href="./assets/pan.pdf" target="_blank" id="open2">PDF खोलें</a>
-            <a class="btn primary" href="./assets/pan.pdf" download id="down2">डाउनलोड</a>
-          </div>
-        </div>
-
-        <!-- Example 3 -->
-        <div class="docCard">
-          <div class="docTop">
-            <div>
-              <h2 id="doc3Title">वार्षिक रिपोर्ट</h2>
-              <p class="small muted" id="doc3Sub">Annual Report (PDF)</p>
-            </div>
-            <span class="tag" id="tag3">Report</span>
-          </div>
-          <div class="btnRow">
-            <a class="btn secondary" href="./assets/annual-report.pdf" target="_blank" id="open3">PDF खोलें</a>
-            <a class="btn primary" href="./assets/annual-report.pdf" download id="down3">डाउनलोड</a>
-          </div>
-        </div>
-
-        <!-- Example 4 -->
-        <div class="docCard">
-          <div class="docTop">
-            <div>
-              <h2 id="doc4Title">अन्य दस्तावेज़</h2>
-              <p class="small muted" id="doc4Sub">Other Documents (PDF)</p>
-            </div>
-            <span class="tag" id="tag4">Info</span>
-          </div>
-          <div class="btnRow">
-            <a class="btn secondary" href="./assets/other-documents.pdf" target="_blank" id="open4">PDF खोलें</a>
-            <a class="btn primary" href="./assets/other-documents.pdf" download id="down4">डाउनलोड</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="card" style="margin-top:18px">
-        <b id="noteTitle">नोट</b>
-        <p class="small muted" id="noteText" style="margin-top:10px">
-          यदि किसी दस्तावेज़ की कॉपी या सत्यापन हेतु आप संपर्क करना चाहें, तो कृपया “Contact” पेज पर जाएँ।
+        <p class="hint" id="hint">
+          नोट: यदि किसी दस्तावेज़ पर क्लिक करने पर फाइल न खुले, तो इसका मतलब है कि वह फाइल अभी assets folder में upload नहीं हुई है।
         </p>
       </div>
 
+      <div class="grid">
+
+        <!-- Registration -->
+        <div class="docCard">
+          <h2 id="d1">पंजीकरण प्रमाण पत्र</h2>
+          <p class="muted small" id="d1s">Registration Certificate</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="assets/registration-certificate.pdf" target="_blank" rel="noreferrer" id="d1v">देखें</a>
+            <a class="btn primary" href="assets/registration-certificate.pdf" download id="d1d">डाउनलोड</a>
+          </div>
+        </div>
+
+        <!-- PAN -->
+        <div class="docCard">
+          <h2 id="d2">PAN कार्ड</h2>
+          <p class="muted small" id="d2s">PAN Card</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="assets/pan-card.jpg" target="_blank" rel="noreferrer" id="d2v">देखें</a>
+            <a class="btn primary" href="assets/pan-card.jpg" download id="d2d">डाउनलोड</a>
+          </div>
+        </div>
+
+        <!-- Bylaws -->
+        <div class="docCard">
+          <h2 id="d3">संस्था नियमावली / बायलॉज</h2>
+          <p class="muted small" id="d3s">Bylaws / Rules</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="assets/bylaws.pdf" target="_blank" rel="noreferrer" id="d3v">देखें</a>
+            <a class="btn primary" href="assets/bylaws.pdf" download id="d3d">डाउनलोड</a>
+          </div>
+        </div>
+
+        <!-- Audit -->
+        <div class="docCard">
+          <h2 id="d4">ऑडिट रिपोर्ट</h2>
+          <p class="muted small" id="d4s">Audit Report</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="assets/audit-report.pdf" target="_blank" rel="noreferrer" id="d4v">देखें</a>
+            <a class="btn primary" href="assets/audit-report.pdf" download id="d4d">डाउनलोड</a>
+          </div>
+        </div>
+
+        <!-- Annual -->
+        <div class="docCard">
+          <h2 id="d5">वार्षिक रिपोर्ट</h2>
+          <p class="muted small" id="d5s">Annual Report</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="assets/annual-report.pdf" target="_blank" rel="noreferrer" id="d5v">देखें</a>
+            <a class="btn primary" href="assets/annual-report.pdf" download id="d5d">डाउनलोड</a>
+          </div>
+        </div>
+
+        <!-- Other -->
+        <div class="docCard">
+          <h2 id="d6">अन्य दस्तावेज़</h2>
+          <p class="muted small" id="d6s">Other Documents</p>
+          <div class="btnRow">
+            <a class="btn secondary" href="contact.html" id="d6v">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="d6d">दान करें</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -343,66 +343,29 @@
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",c:"संपर्क"},
-
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
       pageTitle:"दस्तावेज़ (Documents)",
-      pageSub:"यहाँ संस्था से संबंधित महत्वपूर्ण दस्तावेज़ उपलब्ध हैं। आप PDF को खोल या डाउनलोड कर सकते हैं।",
-
-      doc1Title:"पंजीकरण प्रमाणपत्र",
-      doc1Sub:"Registration Certificate (PDF)",
-
-      doc2Title:"PAN कार्ड",
-      doc2Sub:"PAN Card (PDF)",
-
-      doc3Title:"वार्षिक रिपोर्ट",
-      doc3Sub:"Annual Report (PDF)",
-
-      doc4Title:"अन्य दस्तावेज़",
-      doc4Sub:"Other Documents (PDF)",
-
-      tagOfficial:"Official",
-      tagReport:"Report",
-      tagInfo:"Info",
-
-      open:"PDF खोलें",
-      down:"डाउनलोड",
-
-      noteTitle:"नोट",
-      noteText:"यदि किसी दस्तावेज़ की कॉपी या सत्यापन हेतु आप संपर्क करना चाहें, तो कृपया “Contact” पेज पर जाएँ।",
-
+      pageSub:"इस पृष्ठ पर संस्था से संबंधित आवश्यक दस्तावेज़ उपलब्ध कराए गए हैं। आप इन्हें डाउनलोड या देखें।",
+      hint:"नोट: यदि किसी दस्तावेज़ पर क्लिक करने पर फाइल न खुले, तो इसका मतलब है कि वह फाइल अभी assets folder में upload नहीं हुई है।",
+      view:"देखें",
+      download:"डाउनलोड",
+      other:"अन्य दस्तावेज़",
+      contact:"संपर्क करें",
+      donate:"दान करें",
       foot:"भारत अभ्युदय संस्थान"
     },
-
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",c:"Contact"},
-
+      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
       pageTitle:"Documents",
-      pageSub:"Important documents related to the organization are available here. You can open or download the PDFs.",
-
-      doc1Title:"Registration Certificate",
-      doc1Sub:"Registration Certificate (PDF)",
-
-      doc2Title:"PAN Card",
-      doc2Sub:"PAN Card (PDF)",
-
-      doc3Title:"Annual Report",
-      doc3Sub:"Annual Report (PDF)",
-
-      doc4Title:"Other Documents",
-      doc4Sub:"Other Documents (PDF)",
-
-      tagOfficial:"Official",
-      tagReport:"Report",
-      tagInfo:"Info",
-
-      open:"Open PDF",
-      down:"Download PDF",
-
-      noteTitle:"Note",
-      noteText:"If you need any document copy or verification, please visit the Contact page.",
-
+      pageSub:"This page provides important documents related to the organization. You can view or download them.",
+      hint:"Note: If a document does not open, it means the file has not been uploaded in the assets folder yet.",
+      view:"View",
+      download:"Download",
+      other:"Other Documents",
+      contact:"Contact",
+      donate:"Donate Now",
       foot:"Bharat Abhyudaya Sansthan"
     }
   };
@@ -411,69 +374,46 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
-    // Brand
     document.getElementById("brandText").textContent=d.brand;
     document.getElementById("brandSub").textContent=d.sub;
 
-    // Menu desktop
     document.getElementById("mHome").textContent=d.menu.home;
     document.getElementById("mAbout").textContent=d.menu.a;
     document.getElementById("mWork").textContent=d.menu.w;
     document.getElementById("mDocs").textContent=d.menu.d;
     document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mGallery").textContent=d.menu.g;
     document.getElementById("mContact").textContent=d.menu.c;
 
-    // Menu mobile
     document.getElementById("mmHome").textContent=d.menu.home;
     document.getElementById("mmAbout").textContent=d.menu.a;
     document.getElementById("mmWork").textContent=d.menu.w;
     document.getElementById("mmDocs").textContent=d.menu.d;
     document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmGallery").textContent=d.menu.g;
     document.getElementById("mmContact").textContent=d.menu.c;
 
-    // Page
     document.getElementById("pageTitle").textContent=d.pageTitle;
     document.getElementById("pageSub").textContent=d.pageSub;
-
-    // Docs
-    document.getElementById("doc1Title").textContent=d.doc1Title;
-    document.getElementById("doc1Sub").textContent=d.doc1Sub;
-
-    document.getElementById("doc2Title").textContent=d.doc2Title;
-    document.getElementById("doc2Sub").textContent=d.doc2Sub;
-
-    document.getElementById("doc3Title").textContent=d.doc3Title;
-    document.getElementById("doc3Sub").textContent=d.doc3Sub;
-
-    document.getElementById("doc4Title").textContent=d.doc4Title;
-    document.getElementById("doc4Sub").textContent=d.doc4Sub;
-
-    // Tags
-    document.getElementById("tag1").textContent=d.tagOfficial;
-    document.getElementById("tag2").textContent=d.tagOfficial;
-    document.getElementById("tag3").textContent=d.tagReport;
-    document.getElementById("tag4").textContent=d.tagInfo;
+    document.getElementById("hint").textContent=d.hint;
 
     // Buttons
-    document.getElementById("open1").textContent=d.open;
-    document.getElementById("open2").textContent=d.open;
-    document.getElementById("open3").textContent=d.open;
-    document.getElementById("open4").textContent=d.open;
+    ["d1v","d2v","d3v","d4v","d5v"].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el) el.textContent=d.view;
+    });
+    ["d1d","d2d","d3d","d4d","d5d"].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el) el.textContent=d.download;
+    });
 
-    document.getElementById("down1").textContent=d.down;
-    document.getElementById("down2").textContent=d.down;
-    document.getElementById("down3").textContent=d.down;
-    document.getElementById("down4").textContent=d.down;
+    document.getElementById("d6").textContent=d.other;
+    document.getElementById("d6v").textContent=d.contact;
+    document.getElementById("d6d").textContent=d.donate;
 
-    // Note
-    document.getElementById("noteTitle").textContent=d.noteTitle;
-    document.getElementById("noteText").textContent=d.noteText;
-
-    // Footer
     document.getElementById("foot").textContent=d.foot;
   }
 
-  // Toggle buttons
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
 
@@ -499,14 +439,12 @@
     setLang("en");
   });
 
-  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
-  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
