@@ -60,7 +60,7 @@
     }
     .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:700}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:800}
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
@@ -73,7 +73,7 @@
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:800;
+      color:#fff;border-color:transparent;font-weight:900;
     }
 
     /* Mobile menu button */
@@ -128,15 +128,16 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
-      font-weight:800;
+      font-weight:900;
+      justify-content:center;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:900;
+      border-color:transparent;font-weight:950;
     }
     .btn.secondary{
       background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:900;
+      color:#fff;border-color:transparent;font-weight:950;
     }
 
     /* Programs */
@@ -175,7 +176,6 @@
     }
     .programBtns a{
       flex:1;
-      justify-content:center;
     }
 
     /* Floating WhatsApp */
@@ -184,7 +184,7 @@
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:900;
+      font-weight:950;
     }
 
     footer{
@@ -210,11 +210,11 @@
       </a>
 
       <nav class="menu">
-        <a href="index.html" id="mHome" title="Home">⌂</a>
+        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान</a>
+        <a href="donate.html" id="mDonate">दान करें</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
@@ -231,11 +231,11 @@
     <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
-        <a href="index.html" id="mmHome">⌂ Home</a>
+        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
         <a href="about.html" id="mmAbout">परिचय</a>
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान</a>
+        <a href="donate.html" id="mmDonate">दान करें</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -255,12 +255,12 @@
           <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
 
           <div class="btnRow">
-            <a class="btn secondary" href="documents.html" id="docsBtn">Documents</a>
+            <a class="btn secondary" href="documents.html" id="docsBtn">दस्तावेज़ देखें</a>
             <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
           </div>
 
           <div class="card" style="margin-top:16px">
-            <b id="quick">Quick Info</b>
+            <b id="quick">त्वरित जानकारी</b>
             <p class="small muted" id="addr">
               481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
             </p>
@@ -286,8 +286,8 @@
   <!-- CURRENT PROGRAMS -->
   <section id="programs">
     <div class="wrap">
-      <h2 id="programTitle">Current Running Programs</h2>
-      <p class="muted" id="programSub">Click a program to read more or donate.</p>
+      <h2 id="programTitle">वर्तमान संचालित कार्यक्रम</h2>
+      <p class="muted" id="programSub">किसी भी कार्यक्रम पर क्लिक करके विवरण पढ़ें या दान करें।</p>
 
       <div class="programGrid">
 
@@ -298,8 +298,8 @@
             <img class="poster lang-en" src="./assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi Poster English">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#shiksha-sarathi" id="read1">Read More</a>
-            <a class="btn primary" href="donate.html" id="don1">Donate</a>
+            <a class="btn secondary" href="initiatives.html#shiksha-sarathi" id="read1">पूरा पढ़ें</a>
+            <a class="btn primary" href="donate.html" id="don1">दान करें</a>
           </div>
         </div>
 
@@ -310,8 +310,8 @@
             <img class="poster lang-en" src="./assets/ambulance-en.png" alt="Ambulance Poster English">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#ambulance-seva" id="read2">Read More</a>
-            <a class="btn primary" href="donate.html" id="don2">Donate</a>
+            <a class="btn secondary" href="initiatives.html#ambulance-seva" id="read2">पूरा पढ़ें</a>
+            <a class="btn primary" href="donate.html" id="don2">दान करें</a>
           </div>
         </div>
 
@@ -322,8 +322,8 @@
             <img class="poster lang-en" src="./assets/gauseva-en.png" alt="Gauseva Poster English">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#gauseva" id="read3">Read More</a>
-            <a class="btn primary" href="donate.html" id="don3">Donate</a>
+            <a class="btn secondary" href="initiatives.html#gauseva" id="read3">पूरा पढ़ें</a>
+            <a class="btn primary" href="donate.html" id="don3">दान करें</a>
           </div>
         </div>
 
@@ -334,8 +334,8 @@
             <img class="poster lang-en" src="./assets/heritage-en.png" alt="Heritage Poster English">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#heritage-conservation" id="read4">Read More</a>
-            <a class="btn primary" href="donate.html" id="don4">Donate</a>
+            <a class="btn secondary" href="initiatives.html#heritage-conservation" id="read4">पूरा पढ़ें</a>
+            <a class="btn primary" href="donate.html" id="don4">दान करें</a>
           </div>
         </div>
 
@@ -364,7 +364,7 @@
       title:"भारत अभ्युदय संस्थान",
       tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
       quick:"त्वरित जानकारी",
-      menu:{home:"⌂", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान",c:"संपर्क"},
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",c:"संपर्क"},
       docsBtn:"दस्तावेज़ देखें",
       join:"हमसे जुड़ें",
       regTitle:"पंजीकरण विवरण",
@@ -373,8 +373,7 @@
       read:"पूरा पढ़ें",
       donate:"दान करें",
       ph:"फोन:",
-      foot:"भारत अभ्युदय संस्थान",
-      addrLabel:"पता:"
+      foot:"भारत अभ्युदय संस्थान"
     },
     en:{
       brand:"Bharat Abhyudaya Sansthan",
@@ -382,17 +381,16 @@
       title:"Bharat Abhyudaya Sansthan",
       tagline:"Upliftment to Self-Reliant India",
       quick:"Quick Info",
-      menu:{home:"⌂", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate",c:"Contact"},
+      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",c:"Contact"},
       docsBtn:"View Documents",
       join:"Get Involved",
       regTitle:"Registration Details",
       programs:"Current Running Programs",
       programSub:"Click any program to read more or donate.",
       read:"Read More",
-      donate:"Donate",
+      donate:"Donate Now",
       ph:"Phone:",
-      foot:"Bharat Abhyudaya Sansthan",
-      addrLabel:"Address:"
+      foot:"Bharat Abhyudaya Sansthan"
     }
   };
 
@@ -415,7 +413,7 @@
     document.getElementById("mContact").textContent=d.menu.c;
 
     // Menu (mobile)
-    document.getElementById("mmHome").textContent="⌂ Home";
+    document.getElementById("mmHome").textContent=d.menu.home;
     document.getElementById("mmAbout").textContent=d.menu.a;
     document.getElementById("mmWork").textContent=d.menu.w;
     document.getElementById("mmDocs").textContent=d.menu.d;
@@ -463,37 +461,41 @@
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
 
-function applyActive(lang){
-  if(lang==="en"){
-    btnEn.classList.add("active");
-    btnHi.classList.remove("active");
-  }else{
-    btnHi.classList.add("active");
-    btnEn.classList.remove("active");
+  function applyActive(lang){
+    if(lang==="en"){
+      btnEn.classList.add("active");
+      btnHi.classList.remove("active");
+    }else{
+      btnHi.classList.add("active");
+      btnEn.classList.remove("active");
+    }
   }
-}
 
-btnHi.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","hi");
-  applyActive("hi");
-  setLang("hi");
-});
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    applyActive("hi");
+    setLang("hi");
+  });
 
-btnEn.addEventListener("click",()=>{
-  localStorage.setItem("bas_lang","en");
-  applyActive("en");
-  setLang("en");
-});
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    applyActive("en");
+    setLang("en");
+  });
 
-// Init
-document.getElementById("year").textContent=new Date().getFullYear();
-const savedLang = localStorage.getItem("bas_lang") || "hi";
-applyActive(savedLang);
-setLang(savedLang);
+  // Mobile menu toggle
+  const mobBtn = document.getElementById("mobBtn");
+  const mobilePanel = document.getElementById("mobilePanel");
+  mobBtn.addEventListener("click", ()=>{
+    mobilePanel.classList.toggle("open");
+  });
 
+  // Init
+  document.getElementById("year").textContent=new Date().getFullYear();
+  const savedLang = localStorage.getItem("bas_lang") || "hi";
+  applyActive(savedLang);
+  setLang(savedLang);
 </script>
 
 </body>
 </html>
-
-
