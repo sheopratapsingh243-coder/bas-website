@@ -1,481 +1,139 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Gallery | Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Gallery of Bharat Abhyudaya Sansthan." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery • Bharat Abhyudaya Sansthan</title>
 
-  <style>
-    :root{
-      --brand:#0b5aa6;
-      --accent:#f58b1f;
-      --fg:#0b1220;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:20px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--fg);
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        #fff;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:22px 0}
-    h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
-    h2{margin:0;font-size:20px;letter-spacing:-.4px}
-    p{margin:10px 0 0}
-    .muted{color:var(--muted)}
-    .small{font-size:14px}
+<style>
+:root{
+  --brand:#0b5aa6;
+  --accent:#f58b1f;
+  --border:#e2e8f0;
+  --shadow:0 16px 40px rgba(2,6,23,.10);
+}
 
-    /* Header */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(226,232,240,.95);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:10px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      min-width:220px;
-    }
-    .logo{
-      width:46px;height:46px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      object-fit:cover;background:#fff;
-    }
-    .brand b{display:block;font-size:14px;line-height:1.15}
-    .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
-    .menu a:hover{color:var(--brand)}
-    @media(min-width:980px){.menu{display:flex}}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:#f8fafc;
+}
 
-    /* Toggle */
-    .toggle{display:flex;gap:8px}
-    .pill{
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;padding:8px 12px;border-radius:999px;
-      font-size:13px;cursor:pointer;
-    }
-    .pill.active{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 16px;
+}
 
-    /* Mobile menu button */
-    .mobBtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:42px;height:42px;
-      border-radius:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:950;
-    }
-    @media(min-width:980px){.mobBtn{display:none}}
+h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
 
-    .mobilePanel{
-      display:none;
-      padding:12px 0 14px;
-      border-top:1px solid rgba(226,232,240,.95);
-    }
-    .mobilePanel.open{display:block}
-    @media(min-width:980px){.mobilePanel{display:none !important}}
+.muted{
+  color:#64748b;
+  line-height:1.6;
+}
 
-    .mnav{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-    }
-    .mnav a{
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.95);
-      font-weight:950;
-      color:var(--fg);
-    }
-    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
+.gallery-grid{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 
-    /* Page */
-    .heroCard{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  background:#fff;
+  cursor:pointer;
+  transition:.4s;
+}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
+.gallery-item img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:.4s;
+}
 
-    /* Gallery Grid */
-    .gallery{
-      margin-top:16px;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-    }
-    @media(min-width:720px){
-      .gallery{grid-template-columns:1fr 1fr}
-    }
-    @media(min-width:1050px){
-      .gallery{grid-template-columns:1fr 1fr 1fr}
-    }
+.gallery-item:hover img{
+  transform:scale(1.07);
+}
 
-    .gItem{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      cursor:pointer;
-    }
-    .gImg{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      display:block;
-    }
-    .gCap{
-      padding:12px 14px;
-      font-weight:950;
-      font-size:14px;
-    }
-    .gSub{
-      padding:0 14px 14px;
-      font-size:13px;
-      color:var(--muted);
-      margin-top:-6px;
-    }
+.gallery-item::after{
+  content:"View Image";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:12px;
+  text-align:center;
+  background:rgba(11,90,166,.85);
+  color:#fff;
+  font-weight:700;
+  opacity:0;
+  transition:.3s;
+}
 
-    /* Modal */
-    .modal{
-      position:fixed;
-      inset:0;
-      background:rgba(2,6,23,.65);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      padding:18px;
-    }
-    .modal.open{display:flex}
+.gallery-item:hover::after{
+  opacity:1;
+}
 
-    .modalBox{
-      width:min(100%, 980px);
-      background:#fff;
-      border-radius:26px;
-      overflow:hidden;
-      border:1px solid rgba(226,232,240,.95);
-      box-shadow:0 30px 70px rgba(2,6,23,.35);
-    }
-    .modalImg{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-    .modalBar{
-      padding:12px 14px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-    .closeBtn{
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      border-radius:14px;
-      padding:10px 12px;
-      cursor:pointer;
-      font-weight:950;
-    }
-
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
-    }
-  </style>
+@media(max-width:600px){
+  .gallery-item img{
+    height:200px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="nav">
+<div class="wrap">
+  <h1>Gallery</h1>
+  <p class="muted">
+    Glimpses of our activities, community service initiatives, educational support programs and social impact work.
+  </p>
 
-      <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
-        <div>
-          <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
-        </div>
-      </a>
+  <div class="gallery-grid">
 
-      <nav class="menu">
-        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mAbout">परिचय</a>
-        <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान करें</a>
-        <a href="gallery.html" id="mGallery">गैलरी</a>
-        <a href="contact.html" id="mContact">संपर्क</a>
-      </nav>
+    <a class="gallery-item" href="./assets/gallery/1.jpg" target="_blank">
+      <img src="./assets/gallery/1.jpg">
+    </a>
 
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-        <div class="toggle">
-          <button class="pill active" id="btnHi" type="button">हिन्दी</button>
-          <button class="pill" id="btnEn" type="button">English</button>
-        </div>
-      </div>
+    <a class="gallery-item" href="./assets/gallery/2.jpg" target="_blank">
+      <img src="./assets/gallery/2.jpg">
+    </a>
 
-    </div>
+    <a class="gallery-item" href="./assets/gallery/3.jpg" target="_blank">
+      <img src="./assets/gallery/3.jpg">
+    </a>
 
-    <div class="mobilePanel" id="mobilePanel">
-      <div class="mnav">
-        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mmAbout">परिचय</a>
-        <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान करें</a>
-        <a href="gallery.html" id="mmGallery">गैलरी</a>
-        <a href="contact.html" id="mmContact">संपर्क</a>
-      </div>
-    </div>
+    <a class="gallery-item" href="./assets/gallery/4.jpg" target="_blank">
+      <img src="./assets/gallery/4.jpg">
+    </a>
 
-  </div>
-</header>
+    <a class="gallery-item" href="./assets/gallery/5.jpg" target="_blank">
+      <img src="./assets/gallery/5.jpg">
+    </a>
 
-<main>
+    <a class="gallery-item" href="./assets/gallery/6.jpg" target="_blank">
+      <img src="./assets/gallery/6.jpg">
+    </a>
 
-  <section>
-    <div class="wrap">
+    <a class="gallery-item" href="./assets/gallery/7.jpg" target="_blank">
+      <img src="./assets/gallery/7.jpg">
+    </a>
 
-      <div class="heroCard">
-        <h1 id="pageTitle">गैलरी (Gallery)</h1>
-        <p class="muted" id="pageSub">
-          संस्था द्वारा किए गए कार्यक्रमों, सेवाओं और गतिविधियों की कुछ झलकियाँ।
-        </p>
+    <a class="gallery-item" href="./assets/gallery/8.jpg" target="_blank">
+      <img src="./assets/gallery/8.jpg">
+    </a>
 
-        <div class="btnRow">
-          <a class="btn secondary" href="initiatives.html" id="goWork">हमारे प्रयास</a>
-          <a class="btn primary" href="donate.html" id="goDonate">दान करें</a>
-        </div>
-      </div>
-
-      <div class="gallery" id="gallery"></div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
-  </div>
-</footer>
-
-<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
-
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modalBox">
-    <img class="modalImg" id="modalImg" src="" alt="Gallery Image">
-    <div class="modalBar">
-      <div>
-        <div style="font-weight:950" id="modalTitle">Image</div>
-        <div class="muted small" id="modalSub">Preview</div>
-      </div>
-      <button class="closeBtn" id="closeBtn">✕ Close</button>
-    </div>
   </div>
 </div>
-
-<script>
-  // 🔥 Edit this list when you add more images
-  const galleryData = [
-    {src:"assets/gallery/1.jpg", hi:"सेवा कार्यक्रम", en:"Service Program"},
-    {src:"assets/gallery/2.jpg", hi:"शिक्षा अभियान", en:"Education Drive"},
-    {src:"assets/gallery/3.jpg", hi:"स्वास्थ्य शिविर", en:"Health Camp"},
-    {src:"assets/gallery/4.jpg", hi:"समाज सेवा", en:"Community Help"},
-    {src:"assets/gallery/5.jpg", hi:"गौसेवा", en:"GauSeva"},
-    {src:"assets/gallery/6.jpg", hi:"धरोहर संरक्षण", en:"Heritage Conservation"}
-  ];
-
-  const t = {
-    hi:{
-      brand:"भारत अभ्युदय संस्थान",
-      sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-      pageTitle:"गैलरी (Gallery)",
-      pageSub:"संस्था द्वारा किए गए कार्यक्रमों, सेवाओं और गतिविधियों की कुछ झलकियाँ।",
-      goWork:"हमारे प्रयास",
-      goDonate:"दान करें",
-      close:"✕ बंद करें",
-      foot:"भारत अभ्युदय संस्थान"
-    },
-    en:{
-      brand:"Bharat Abhyudaya Sansthan",
-      sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-      pageTitle:"Gallery",
-      pageSub:"A glimpse of our programs, services, and activities.",
-      goWork:"Our Initiatives",
-      goDonate:"Donate Now",
-      close:"✕ Close",
-      foot:"Bharat Abhyudaya Sansthan"
-    }
-  };
-
-  function renderGallery(lang){
-    const root = document.getElementById("gallery");
-    root.innerHTML = "";
-
-    galleryData.forEach((item, idx)=>{
-      const div = document.createElement("div");
-      div.className = "gItem";
-      div.innerHTML = `
-        <img class="gImg" src="${item.src}" alt="Gallery ${idx+1}" onerror="this.style.display='none'">
-        <div class="gCap">${lang==="hi" ? item.hi : item.en}</div>
-        <div class="gSub">${lang==="hi" ? "फोटो देखें" : "Tap to view"}</div>
-      `;
-      div.addEventListener("click", ()=>{
-        openModal(item.src, (lang==="hi" ? item.hi : item.en), (lang==="hi" ? "गैलरी फोटो" : "Gallery Photo"));
-      });
-      root.appendChild(div);
-    });
-  }
-
-  function openModal(src, title, sub){
-    const modal = document.getElementById("modal");
-    document.getElementById("modalImg").src = src;
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalSub").textContent = sub;
-    modal.classList.add("open");
-  }
-
-  function closeModal(){
-    document.getElementById("modal").classList.remove("open");
-  }
-
-  document.getElementById("closeBtn").addEventListener("click", closeModal);
-  document.getElementById("modal").addEventListener("click", (e)=>{
-    if(e.target.id==="modal") closeModal();
-  });
-
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
-
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
-
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mGallery").textContent=d.menu.g;
-    document.getElementById("mContact").textContent=d.menu.c;
-
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.a;
-    document.getElementById("mmWork").textContent=d.menu.w;
-    document.getElementById("mmDocs").textContent=d.menu.d;
-    document.getElementById("mmDonate").textContent=d.menu.dn;
-    document.getElementById("mmGallery").textContent=d.menu.g;
-    document.getElementById("mmContact").textContent=d.menu.c;
-
-    document.getElementById("pageTitle").textContent=d.pageTitle;
-    document.getElementById("pageSub").textContent=d.pageSub;
-
-    document.getElementById("goWork").textContent=d.goWork;
-    document.getElementById("goDonate").textContent=d.goDonate;
-
-    document.getElementById("closeBtn").textContent=d.close;
-
-    document.getElementById("foot").textContent=d.foot;
-
-    renderGallery(lang);
-  }
-
-  const btnHi=document.getElementById("btnHi");
-  const btnEn=document.getElementById("btnEn");
-
-  function applyActive(lang){
-    if(lang==="en"){
-      btnEn.classList.add("active");
-      btnHi.classList.remove("active");
-    }else{
-      btnHi.classList.add("active");
-      btnEn.classList.remove("active");
-    }
-  }
-
-  btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
-    setLang("hi");
-  });
-
-  btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
-    setLang("en");
-  });
-
-  const mobBtn = document.getElementById("mobBtn");
-  const mobilePanel = document.getElementById("mobilePanel");
-  mobBtn.addEventListener("click", ()=>{
-    mobilePanel.classList.toggle("open");
-  });
-
-  document.getElementById("year").textContent=new Date().getFullYear();
-  const savedLang = localStorage.getItem("bas_lang") || "hi";
-  applyActive(savedLang);
-  setLang(savedLang);
-</script>
 
 </body>
 </html>
