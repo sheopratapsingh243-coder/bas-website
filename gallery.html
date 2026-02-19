@@ -9,82 +9,106 @@
 :root{
   --brand:#0b5aa6;
   --accent:#f58b1f;
-  --border:#e2e8f0;
-  --shadow:0 16px 40px rgba(2,6,23,.10);
 }
 
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  font-family:system-ui,Segoe UI,Arial;
   background:#f8fafc;
+  text-align:center;
 }
 
 .wrap{
-  max-width:1100px;
+  max-width:1000px;
   margin:auto;
-  padding:30px 16px;
+  padding:40px 20px;
 }
 
 h1{
-  font-size:32px;
   margin-bottom:10px;
+  font-size:32px;
 }
 
 .muted{
   color:#64748b;
-  line-height:1.6;
+  margin-bottom:30px;
 }
 
-.gallery-grid{
-  margin-top:30px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-
-.gallery-item{
+.slideshow{
   position:relative;
+  max-width:900px;
+  margin:auto;
   overflow:hidden;
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  background:#fff;
-  cursor:pointer;
-  transition:.4s;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
 }
 
-.gallery-item img{
+.slide{
+  display:none;
+}
+
+.slide img{
   width:100%;
-  height:260px;
+  height:500px;
   object-fit:cover;
-  transition:.4s;
 }
 
-.gallery-item:hover img{
-  transform:scale(1.07);
+.active{
+  display:block;
+  animation:fade 1s ease-in-out;
 }
 
-.gallery-item::after{
-  content:"View Image";
+@keyframes fade{
+  from{opacity:.4}
+  to{opacity:1}
+}
+
+/* Arrows */
+.prev, .next{
+  cursor:pointer;
   position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:12px;
-  text-align:center;
-  background:rgba(11,90,166,.85);
+  top:50%;
+  transform:translateY(-50%);
+  padding:12px 18px;
   color:#fff;
-  font-weight:700;
-  opacity:0;
+  font-weight:bold;
+  font-size:22px;
+  background:rgba(0,0,0,.5);
+  border-radius:50%;
+  user-select:none;
+}
+
+.prev{left:15px}
+.next{right:15px}
+
+.prev:hover, .next:hover{
+  background:var(--brand);
+}
+
+/* Dots */
+.dots{
+  text-align:center;
+  margin-top:20px;
+}
+
+.dot{
+  cursor:pointer;
+  height:14px;
+  width:14px;
+  margin:0 6px;
+  background:#cbd5e1;
+  border-radius:50%;
+  display:inline-block;
   transition:.3s;
 }
 
-.gallery-item:hover::after{
-  opacity:1;
+.dot.activeDot{
+  background:var(--brand);
 }
 
-@media(max-width:600px){
-  .gallery-item img{
-    height:200px;
+@media(max-width:768px){
+  .slide img{
+    height:300px;
   }
 }
 </style>
@@ -94,46 +118,94 @@ h1{
 
 <div class="wrap">
   <h1>Gallery</h1>
-  <p class="muted">
-    Glimpses of our activities, community service initiatives, educational support programs and social impact work.
-  </p>
+  <p class="muted">Snapshots of our service activities and community impact.</p>
 
-  <div class="gallery-grid">
+  <div class="slideshow">
 
-    <a class="gallery-item" href="./assets/gallery/1.jpg" target="_blank">
-      <img src="./assets/gallery/1.jpg">
-    </a>
+    <div class="slide active">
+      <img src="assets/gallery/1.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/2.jpg" target="_blank">
-      <img src="./assets/gallery/2.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/2.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/3.jpg" target="_blank">
-      <img src="./assets/gallery/3.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/3.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/4.jpg" target="_blank">
-      <img src="./assets/gallery/4.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/4.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/5.jpg" target="_blank">
-      <img src="./assets/gallery/5.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/5.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/6.jpg" target="_blank">
-      <img src="./assets/gallery/6.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/6.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/7.jpg" target="_blank">
-      <img src="./assets/gallery/7.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/7.jpg">
+    </div>
 
-    <a class="gallery-item" href="./assets/gallery/8.jpg" target="_blank">
-      <img src="./assets/gallery/8.jpg">
-    </a>
+    <div class="slide">
+      <img src="assets/gallery/8.jpg">
+    </div>
+
+    <span class="prev" onclick="changeSlide(-1)">❮</span>
+    <span class="next" onclick="changeSlide(1)">❯</span>
 
   </div>
+
+  <div class="dots">
+    <span class="dot activeDot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+  </div>
+
 </div>
+
+<script>
+let slideIndex = 1;
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot");
+
+function showSlide(n){
+  if(n > slides.length){ slideIndex = 1 }
+  if(n < 1){ slideIndex = slides.length }
+
+  for(let i=0;i<slides.length;i++){
+    slides[i].classList.remove("active");
+    dots[i].classList.remove("activeDot");
+  }
+
+  slides[slideIndex-1].classList.add("active");
+  dots[slideIndex-1].classList.add("activeDot");
+}
+
+function changeSlide(n){
+  slideIndex += n;
+  showSlide(slideIndex);
+}
+
+function currentSlide(n){
+  slideIndex = n;
+  showSlide(slideIndex);
+}
+
+/* Auto Slide */
+setInterval(()=>{
+  slideIndex++;
+  showSlide(slideIndex);
+}, 4000);
+</script>
 
 </body>
 </html>
