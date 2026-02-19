@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>About | Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="About Bharat Abhyudaya Sansthan - Upliftment to Self-Reliant India" />
+  <title>About • Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="About Bharat Abhyudaya Sansthan - mission, vision, values and registration details." />
 
   <style>
     :root{
@@ -31,12 +31,16 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:22px 0}
-    h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
-    h2{margin:0;font-size:22px;letter-spacing:-.4px}
+    section{padding:28px 0}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    h3{margin:0;font-size:18px;letter-spacing:-.2px}
     p{margin:10px 0 0}
+    ul{margin:10px 0 0;padding-left:18px}
+    li{margin:8px 0;color:var(--muted);line-height:1.65}
     .muted{color:var(--muted)}
     .small{font-size:14px}
+    .hr{height:1px;background:rgba(226,232,240,.95);margin:16px 0}
 
     /* Header */
     header{
@@ -70,6 +74,7 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
+      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
@@ -114,54 +119,25 @@
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Content */
-    .heroCard{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      margin-top:16px;
-    }
-    @media(min-width:980px){
-      .grid{grid-template-columns:1fr 1fr;gap:20px}
-    }
+    /* Layout */
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr;gap:22px}}
+    .grid3{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:980px){.grid3{grid-template-columns:1fr 1fr 1fr}}
 
     .card{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:18px;
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
     }
 
-    .tag{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      font-weight:950;
-      color:var(--muted);
-      font-size:13px;
-      margin-top:14px;
-      flex-wrap:wrap;
-    }
-
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
       font-weight:950;
+      justify-content:center;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -172,11 +148,41 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
+    .badge{
+      display:inline-flex;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(11,90,166,.06);
+      border:1px solid rgba(11,90,166,.15);
+      font-weight:950;
+      color:var(--brand);
+      font-size:12px;
+    }
+
+    .callout{
+      background:rgba(245,139,31,.10);
+      border:1px solid rgba(245,139,31,.22);
+      border-radius:18px;
+      padding:14px;
+      color:#0b1220;
+      line-height:1.65;
+      font-weight:800;
+    }
+
+    .listBox{
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:18px;
+      padding:14px;
+      background:rgba(255,255,255,.92);
+    }
+
     footer{
       border-top:1px solid rgba(226,232,240,.95);
       padding:18px 0;margin-top:10px;color:var(--muted);
       background:#fff;font-size:14px;
     }
+
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
@@ -194,7 +200,7 @@
     <div class="nav">
 
       <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
+        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
           <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
@@ -221,6 +227,7 @@
 
     </div>
 
+    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
@@ -236,56 +243,197 @@
   </div>
 </header>
 
-<main>
+<main id="top">
 
+  <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="heroCard">
-        <h1 id="pageTitle">संस्था का परिचय</h1>
-        <p class="muted" id="pageSub">
-          भारत अभ्युदय संस्थान एक सामाजिक संस्था है, जिसका उद्देश्य शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा एवं सामाजिक कल्याण के माध्यम से आत्मनिर्भर भारत की दिशा में कार्य करना है।
-        </p>
+      <div class="grid">
 
-        <div class="tag" id="taglineBox">
-          🏛️ Registration: FAT/02340/2024-2025 • PAN: AANAB2855N
+        <div>
+          <span class="badge" id="badgeTop">Trust • Service • Transparency</span>
+          <h1 id="title">हमारे बारे में</h1>
+          <p class="muted" id="tagline">
+            भारत अभ्युदय संस्थान एक सेवा-उन्मुख सामाजिक संस्था है, जो समाज के वंचित और जरूरतमंद वर्ग के लिए
+            शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, वृद्धजन सेवा, गौसेवा, आपदा सहायता और सांस्कृतिक धरोहर संरक्षण
+            जैसे क्षेत्रों में कार्य करने हेतु प्रतिबद्ध है।
+          </p>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="initiatives.html" id="btnWork">हमारे प्रयास देखें</a>
+            <a class="btn primary" href="donate.html" id="btnDonate">दान करें</a>
+          </div>
+
+          <p class="callout" style="margin-top:14px" id="callout">
+            हमारा उद्देश्य केवल सहायता देना नहीं है, बल्कि लोगों को सम्मान, अवसर और आत्मनिर्भरता की दिशा में आगे बढ़ाना है।
+          </p>
         </div>
 
-        <div class="btnRow">
-          <a class="btn secondary" href="initiatives.html" id="btnWork">हमारे प्रयास</a>
-          <a class="btn primary" href="donate.html" id="btnDonate">दान करें</a>
+        <!-- Legal / Registration -->
+        <div class="card">
+          <h3 id="legalTitle">कानूनी / पंजीकरण विवरण</h3>
+          <p class="small muted" style="margin-top:10px" id="legalBox">
+            Registration No.: <b>FAT/02340/2024-2025</b><br>
+            Date: <b>05/07/2024</b><br>
+            Valid: <b>04/07/2029</b><br>
+            PAN: <b>AANAB2855N</b>
+          </p>
+
+          <div class="hr"></div>
+
+          <h3 id="contactQuickTitle">त्वरित संपर्क</h3>
+          <p class="small muted" style="margin-top:10px" id="addr">
+            481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
+          </p>
+          <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
+          <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+
+          <div class="btnRow" style="margin-top:14px">
+            <a class="btn secondary" href="contact.html" id="btnContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="btnDonate2">दान करें</a>
+          </div>
         </div>
+
       </div>
+    </div>
+  </section>
 
+  <!-- MISSION / VISION / VALUES -->
+  <section>
+    <div class="wrap">
+      <h2 id="mvTitle">हमारा मिशन, विज़न और मूल्य</h2>
+      <p class="muted" id="mvSub">
+        हमारी कार्य-पद्धति सेवा, पारदर्शिता और समाजहित के मूल सिद्धांतों पर आधारित है।
+      </p>
+
+      <div class="grid3">
+
+        <div class="card">
+          <h3 id="missionTitle">मिशन</h3>
+          <p class="muted" style="line-height:1.7" id="missionText">
+            जरूरतमंद लोगों को शिक्षा, स्वास्थ्य, सम्मानजनक जीवन और आत्मनिर्भरता की दिशा में वास्तविक सहयोग देना —
+            ताकि सहायता केवल एक बार की राहत न होकर स्थायी परिवर्तन बने।
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 id="visionTitle">विज़न</h3>
+          <p class="muted" style="line-height:1.7" id="visionText">
+            एक ऐसा भारत जहाँ प्रत्येक व्यक्ति को समान अवसर, बुनियादी सुविधाएँ और सम्मान मिले — और समाज
+            स्वयं सेवा व सहयोग की संस्कृति से मजबूत बने।
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 id="valuesTitle">हमारे मूल्य</h3>
+          <ul id="valuesList">
+            <li>सेवा-भाव और मानवता</li>
+            <li>पारदर्शिता और जिम्मेदारी</li>
+            <li>स्थानीय जरूरतों पर आधारित कार्य</li>
+            <li>समावेशिता (Inclusiveness)</li>
+            <li>आत्मनिर्भरता और सशक्तिकरण</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <div class="wrap">
       <div class="grid">
 
         <div class="card">
-          <h2 id="visionTitle">हमारा विज़न</h2>
-          <p class="muted small" id="visionText">
-            समाज के प्रत्येक वर्ग तक सहायता, अवसर और सम्मान पहुंचाना — ताकि हर व्यक्ति आत्मनिर्भर बन सके और राष्ट्र निर्माण में भागीदार बने।
+          <h2 id="whatTitle">हम क्या करते हैं</h2>
+          <p class="muted" id="whatText" style="line-height:1.75">
+            भारत अभ्युदय संस्थान का कार्यक्षेत्र बहुआयामी है। हम समाज के ऐसे वर्गों तक पहुँचने का प्रयास करते हैं
+            जो संसाधनों, जानकारी या अवसर की कमी के कारण पीछे रह जाते हैं।
+            हमारा फोकस “सहायता + मार्गदर्शन + स्थायी समाधान” पर रहता है।
           </p>
+
+          <div class="hr"></div>
+
+          <div class="listBox">
+            <h3 id="areasTitle">मुख्य कार्य-क्षेत्र</h3>
+            <ul id="areasList">
+              <li><b>बाल शिक्षा एवं विकास</b> — स्कूल सामग्री, मार्गदर्शन, और शिक्षा से जोड़ने का प्रयास</li>
+              <li><b>स्वास्थ्य सहायता</b> — प्राथमिक सहायता, दवा सहयोग, स्वास्थ्य जागरूकता</li>
+              <li><b>महिला सशक्तिकरण</b> — कौशल मार्गदर्शन, जागरूकता, आत्मनिर्भरता</li>
+              <li><b>वृद्धजन सेवा</b> — देखभाल, सहायता, सम्मानजनक सहयोग</li>
+              <li><b>आपदा/सामाजिक सहायता</b> — संकट के समय त्वरित राहत</li>
+              <li><b>गौसेवा</b> — गौशाला सहयोग, चारा/दवा सहायता</li>
+              <li><b>धरोहर संरक्षण</b> — संस्कृति और विरासत के प्रति जागरूकता</li>
+            </ul>
+          </div>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="initiatives.html" id="btnWork2">हमारे प्रयास</a>
+            <a class="btn primary" href="donate.html" id="btnDonate3">दान करें</a>
+          </div>
         </div>
 
         <div class="card">
-          <h2 id="missionTitle">हमारा मिशन</h2>
-          <p class="muted small" id="missionText">
-            शिक्षा, स्वास्थ्य, कौशल विकास, महिला सशक्तिकरण, वृद्धजन सेवा, गौसेवा और आपदा सहायता के माध्यम से जनकल्याण हेतु निरंतर प्रयास करना।
+          <h2 id="whyTitle">हमारा तरीका (How We Work)</h2>
+          <p class="muted" id="whyText" style="line-height:1.75">
+            हम मानते हैं कि वास्तविक सामाजिक परिवर्तन के लिए केवल संसाधन नहीं, बल्कि सही योजना और ईमानदार
+            कार्य-पद्धति आवश्यक है। इसलिए हम स्थानीय जरूरतों की पहचान, सहयोग का सही उपयोग, और पारदर्शिता पर विशेष ध्यान देते हैं।
           </p>
+
+          <div class="hr"></div>
+
+          <div class="listBox">
+            <h3 id="stepsTitle">हमारी प्रक्रिया</h3>
+            <ul id="stepsList">
+              <li><b>पहचान:</b> स्थानीय स्तर पर जरूरतमंद व्यक्ति/परिवार/समुदाय की पहचान</li>
+              <li><b>सत्यापन:</b> वास्तविक जरूरतों का आकलन (जहाँ संभव हो)</li>
+              <li><b>सहयोग:</b> सामग्री/सेवा/मार्गदर्शन के माध्यम से सहायता</li>
+              <li><b>फॉलो-अप:</b> प्रभाव को समझना और आवश्यक सुधार करना</li>
+              <li><b>पारदर्शिता:</b> योगदान के उपयोग में स्पष्टता और जिम्मेदारी</li>
+            </ul>
+          </div>
+
+          <p class="callout" style="margin-top:14px" id="donorLine">
+            दान केवल राशि नहीं है — यह किसी जरूरतमंद के लिए “उम्मीद” और “अवसर” है।
+          </p>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="contact.html" id="btnVolunteer">स्वयंसेवक बनें</a>
+            <a class="btn primary" href="donate.html" id="btnDonate4">दान करें</a>
+          </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SECTION -->
+  <section>
+    <div class="wrap">
+      <h2 id="trustTitle">हम पर भरोसा क्यों करें?</h2>
+      <p class="muted" id="trustSub">
+        हम donor-trust को सबसे महत्वपूर्ण मानते हैं। हमारा लक्ष्य है कि हर सहयोग सही उद्देश्य के लिए उपयोग हो।
+      </p>
+
+      <div class="grid3">
         <div class="card">
-          <h2 id="valuesTitle">हमारे मूल मूल्य</h2>
-          <p class="muted small" id="valuesText">
-            सेवा • ईमानदारी • पारदर्शिता • समानता • सहयोग • संवेदनशीलता
+          <h3 id="tr1t">पंजीकृत संस्था</h3>
+          <p class="muted" style="line-height:1.7" id="tr1d">
+            संस्था का पंजीकरण और PAN विवरण स्पष्ट रूप से उपलब्ध है। यह विश्वसनीयता और जवाबदेही का आधार है।
           </p>
         </div>
-
         <div class="card">
-          <h2 id="whoTitle">हम क्या करते हैं?</h2>
-          <p class="muted small" id="whoText">
-            संस्था द्वारा शिक्षा कार्यक्रम, स्वास्थ्य सहायता, महिला सशक्तिकरण, गौशाला एवं गौसेवा, विरासत संरक्षण, सामाजिक सहायता एवं वृद्धजन देखभाल जैसे क्षेत्रों में कार्य किया जाता है।
+          <h3 id="tr2t">स्थानीय स्तर पर वास्तविक कार्य</h3>
+          <p class="muted" style="line-height:1.7" id="tr2d">
+            हमारा कार्यक्षेत्र जमीनी स्तर पर केंद्रित है। हम स्थानीय जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।
           </p>
         </div>
-
+        <div class="card">
+          <h3 id="tr3t">पारदर्शिता-केंद्रित सोच</h3>
+          <p class="muted" style="line-height:1.7" id="tr3d">
+            हम चाहते हैं कि दानदाता को यह भरोसा रहे कि उनका योगदान सही उद्देश्य और सही व्यक्ति तक पहुँच रहा है।
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -301,88 +449,168 @@
 <a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
 <script>
+  const ADDRESS_HI = "481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)";
+  const ADDRESS_EN = "481, Shadipur Khurd, Jayram Nagar, Vidhayak Road, Tehsil Sadar, Fatehpur, 212601 (U.P.)";
+
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-      pageTitle:"संस्था का परिचय",
-      pageSub:"भारत अभ्युदय संस्थान एक सामाजिक संस्था है, जिसका उद्देश्य शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा एवं सामाजिक कल्याण के माध्यम से आत्मनिर्भर भारत की दिशा में कार्य करना है।",
-      work:"हमारे प्रयास",
-      donate:"दान करें",
-      visionTitle:"हमारा विज़न",
-      visionText:"समाज के प्रत्येक वर्ग तक सहायता, अवसर और सम्मान पहुंचाना — ताकि हर व्यक्ति आत्मनिर्भर बन सके और राष्ट्र निर्माण में भागीदार बने।",
-      missionTitle:"हमारा मिशन",
-      missionText:"शिक्षा, स्वास्थ्य, कौशल विकास, महिला सशक्तिकरण, वृद्धजन सेवा, गौसेवा और आपदा सहायता के माध्यम से जनकल्याण हेतु निरंतर प्रयास करना।",
-      valuesTitle:"हमारे मूल मूल्य",
-      valuesText:"सेवा • ईमानदारी • पारदर्शिता • समानता • सहयोग • संवेदनशीलता",
-      whoTitle:"हम क्या करते हैं?",
-      whoText:"संस्था द्वारा शिक्षा कार्यक्रम, स्वास्थ्य सहायता, महिला सशक्तिकरण, गौशाला एवं गौसेवा, विरासत संरक्षण, सामाजिक सहायता एवं वृद्धजन देखभाल जैसे क्षेत्रों में कार्य किया जाता है।",
-      foot:"भारत अभ्युदय संस्थान"
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय", w:"हमारे प्रयास", d:"दस्तावेज़", dn:"दान करें", g:"गैलरी", c:"संपर्क"},
+
+      badge:"Trust • Service • Transparency",
+      title:"हमारे बारे में",
+      tagline:"भारत अभ्युदय संस्थान एक सेवा-उन्मुख सामाजिक संस्था है, जो समाज के वंचित और जरूरतमंद वर्ग के लिए शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, वृद्धजन सेवा, गौसेवा, आपदा सहायता और सांस्कृतिक धरोहर संरक्षण जैसे क्षेत्रों में कार्य करने हेतु प्रतिबद्ध है।",
+
+      btnWork:"हमारे प्रयास देखें",
+      btnDonate:"दान करें",
+      callout:"हमारा उद्देश्य केवल सहायता देना नहीं है, बल्कि लोगों को सम्मान, अवसर और आत्मनिर्भरता की दिशा में आगे बढ़ाना है।",
+
+      legalTitle:"कानूनी / पंजीकरण विवरण",
+      contactQuickTitle:"त्वरित संपर्क",
+      ph:"फोन:",
+
+      btnContact:"संपर्क करें",
+      btnDonate2:"दान करें",
+
+      mvTitle:"हमारा मिशन, विज़न और मूल्य",
+      mvSub:"हमारी कार्य-पद्धति सेवा, पारदर्शिता और समाजहित के मूल सिद्धांतों पर आधारित है।",
+
+      missionTitle:"मिशन",
+      missionText:"जरूरतमंद लोगों को शिक्षा, स्वास्थ्य, सम्मानजनक जीवन और आत्मनिर्भरता की दिशा में वास्तविक सहयोग देना — ताकि सहायता केवल एक बार की राहत न होकर स्थायी परिवर्तन बने।",
+
+      visionTitle:"विज़न",
+      visionText:"एक ऐसा भारत जहाँ प्रत्येक व्यक्ति को समान अवसर, बुनियादी सुविधाएँ और सम्मान मिले — और समाज स्वयं सेवा व सहयोग की संस्कृति से मजबूत बने।",
+
+      valuesTitle:"हमारे मूल्य",
+      values:[
+        "सेवा-भाव और मानवता",
+        "पारदर्शिता और जिम्मेदारी",
+        "स्थानीय जरूरतों पर आधारित कार्य",
+        "समावेशिता (Inclusiveness)",
+        "आत्मनिर्भरता और सशक्तिकरण"
+      ],
+
+      whatTitle:"हम क्या करते हैं",
+      whatText:"भारत अभ्युदय संस्थान का कार्यक्षेत्र बहुआयामी है। हम समाज के ऐसे वर्गों तक पहुँचने का प्रयास करते हैं जो संसाधनों, जानकारी या अवसर की कमी के कारण पीछे रह जाते हैं। हमारा फोकस “सहायता + मार्गदर्शन + स्थायी समाधान” पर रहता है।",
+
+      areasTitle:"मुख्य कार्य-क्षेत्र",
+      areas:[
+        "<b>बाल शिक्षा एवं विकास</b> — स्कूल सामग्री, मार्गदर्शन, और शिक्षा से जोड़ने का प्रयास",
+        "<b>स्वास्थ्य सहायता</b> — प्राथमिक सहायता, दवा सहयोग, स्वास्थ्य जागरूकता",
+        "<b>महिला सशक्तिकरण</b> — कौशल मार्गदर्शन, जागरूकता, आत्मनिर्भरता",
+        "<b>वृद्धजन सेवा</b> — देखभाल, सहायता, सम्मानजनक सहयोग",
+        "<b>आपदा/सामाजिक सहायता</b> — संकट के समय त्वरित राहत",
+        "<b>गौसेवा</b> — गौशाला सहयोग, चारा/दवा सहायता",
+        "<b>धरोहर संरक्षण</b> — संस्कृति और विरासत के प्रति जागरूकता"
+      ],
+      btnWork2:"हमारे प्रयास",
+      btnDonate3:"दान करें",
+
+      whyTitle:"हमारा तरीका (How We Work)",
+      whyText:"हम मानते हैं कि वास्तविक सामाजिक परिवर्तन के लिए केवल संसाधन नहीं, बल्कि सही योजना और ईमानदार कार्य-पद्धति आवश्यक है। इसलिए हम स्थानीय जरूरतों की पहचान, सहयोग का सही उपयोग, और पारदर्शिता पर विशेष ध्यान देते हैं।",
+
+      stepsTitle:"हमारी प्रक्रिया",
+      steps:[
+        "<b>पहचान:</b> स्थानीय स्तर पर जरूरतमंद व्यक्ति/परिवार/समुदाय की पहचान",
+        "<b>सत्यापन:</b> वास्तविक जरूरतों का आकलन (जहाँ संभव हो)",
+        "<b>सहयोग:</b> सामग्री/सेवा/मार्गदर्शन के माध्यम से सहायता",
+        "<b>फॉलो-अप:</b> प्रभाव को समझना और आवश्यक सुधार करना",
+        "<b>पारदर्शिता:</b> योगदान के उपयोग में स्पष्टता और जिम्मेदारी"
+      ],
+      donorLine:"दान केवल राशि नहीं है — यह किसी जरूरतमंद के लिए “उम्मीद” और “अवसर” है।",
+      btnVolunteer:"स्वयंसेवक बनें",
+      btnDonate4:"दान करें",
+
+      trustTitle:"हम पर भरोसा क्यों करें?",
+      trustSub:"हम donor-trust को सबसे महत्वपूर्ण मानते हैं। हमारा लक्ष्य है कि हर सहयोग सही उद्देश्य के लिए उपयोग हो।",
+      tr1t:"पंजीकृत संस्था",
+      tr1d:"संस्था का पंजीकरण और PAN विवरण स्पष्ट रूप से उपलब्ध है। यह विश्वसनीयता और जवाबदेही का आधार है।",
+      tr2t:"स्थानीय स्तर पर वास्तविक कार्य",
+      tr2d:"हमारा कार्यक्षेत्र जमीनी स्तर पर केंद्रित है। हम स्थानीय जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।",
+      tr3t:"पारदर्शिता-केंद्रित सोच",
+      tr3d:"हम चाहते हैं कि दानदाता को यह भरोसा रहे कि उनका योगदान सही उद्देश्य और सही व्यक्ति तक पहुँच रहा है।"
     },
+
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-      pageTitle:"About the Organization",
-      pageSub:"Bharat Abhyudaya Sansthan is a social organization working towards a self-reliant India through education, health, women empowerment, GauSeva and community welfare.",
-      work:"Our Initiatives",
-      donate:"Donate Now",
-      visionTitle:"Our Vision",
-      visionText:"To provide support, opportunity and dignity to every section of society so that each person becomes self-reliant and contributes to nation-building.",
-      missionTitle:"Our Mission",
-      missionText:"To continuously work for public welfare through education, health, skill development, women empowerment, old age care, GauSeva and disaster support.",
-      valuesTitle:"Our Core Values",
-      valuesText:"Service • Integrity • Transparency • Equality • Collaboration • Compassion",
-      whoTitle:"What do we do?",
-      whoText:"We work in areas such as education, health support, women empowerment, Gaushala & GauSeva, heritage conservation, community help and old age care.",
-      foot:"Bharat Abhyudaya Sansthan"
+      menu:{home:"Home", a:"About", w:"Our Initiatives", d:"Documents", dn:"Donate Now", g:"Gallery", c:"Contact"},
+
+      badge:"Trust • Service • Transparency",
+      title:"About Us",
+      tagline:"Bharat Abhyudaya Sansthan is a service-oriented social organization committed to supporting underserved communities through education, health support, women empowerment, old age care, GauSeva, disaster/community help, and heritage conservation.",
+
+      btnWork:"View Our Initiatives",
+      btnDonate:"Donate Now",
+      callout:"Our purpose is not just to provide help — but to create dignity, opportunities, and self-reliance.",
+
+      legalTitle:"Legal / Registration Details",
+      contactQuickTitle:"Quick Contact",
+      ph:"Phone:",
+
+      btnContact:"Contact",
+      btnDonate2:"Donate Now",
+
+      mvTitle:"Our Mission, Vision & Values",
+      mvSub:"Our work is built on service, transparency, and long-term community impact.",
+
+      missionTitle:"Mission",
+      missionText:"To provide meaningful support in education, health, dignity, and self-reliance — so that help becomes long-term change, not just temporary relief.",
+
+      visionTitle:"Vision",
+      visionText:"A stronger India where every individual has equal opportunities, basic needs, and dignity — and where society grows through a culture of service and collaboration.",
+
+      valuesTitle:"Our Values",
+      values:[
+        "Service mindset and humanity",
+        "Transparency and responsibility",
+        "Work based on local needs",
+        "Inclusiveness",
+        "Self-reliance and empowerment"
+      ],
+
+      whatTitle:"What We Do",
+      whatText:"Bharat Abhyudaya Sansthan works across multiple social sectors. We aim to reach people who fall behind due to lack of resources, awareness, or opportunity. Our approach is based on “Support + Guidance + Sustainable Solutions”.",
+
+      areasTitle:"Key Focus Areas",
+      areas:[
+        "<b>Child Education & Development</b> — school support, supplies, and guidance",
+        "<b>Health Support</b> — basic medical help, medicine support, awareness",
+        "<b>Women Empowerment</b> — skills guidance, awareness, self-reliance",
+        "<b>Old Age Care</b> — dignity, care, and essential support",
+        "<b>Disaster & Community Help</b> — quick relief in difficult situations",
+        "<b>GauSeva</b> — support for gaushalas, fodder/medicine help",
+        "<b>Heritage Conservation</b> — awareness for culture and heritage"
+      ],
+      btnWork2:"Our Initiatives",
+      btnDonate3:"Donate Now",
+
+      whyTitle:"How We Work",
+      whyText:"We believe real social change needs more than resources — it needs planning, honest implementation, and accountability. That’s why we focus on identifying real needs, using support responsibly, and maintaining transparency.",
+
+      stepsTitle:"Our Process",
+      steps:[
+        "<b>Identify:</b> understand local needs and beneficiaries",
+        "<b>Verify:</b> assess real needs (wherever possible)",
+        "<b>Support:</b> help through materials/services/guidance",
+        "<b>Follow-up:</b> understand impact and improve",
+        "<b>Transparency:</b> maintain clarity and responsibility"
+      ],
+      donorLine:"A donation is not just money — it is hope and opportunity for someone in need.",
+      btnVolunteer:"Become a Volunteer",
+      btnDonate4:"Donate Now",
+
+      trustTitle:"Why Trust Us?",
+      trustSub:"We consider donor trust as our top priority. Our goal is to ensure every contribution is used for the right purpose.",
+      tr1t:"Registered Organization",
+      tr1d:"Registration and PAN details are clearly available. This creates accountability and credibility.",
+      tr2t:"Ground-level Work",
+      tr2d:"Our work focuses on real local needs. We aim to deliver meaningful support directly where it is required.",
+      tr3t:"Transparency-driven Thinking",
+      tr3d:"We want donors to feel confident that their contribution is reaching the right purpose and the right people."
     }
   };
-
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
-
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
-
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mGallery").textContent=d.menu.g;
-    document.getElementById("mContact").textContent=d.menu.c;
-
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.a;
-    document.getElementById("mmWork").textContent=d.menu.w;
-    document.getElementById("mmDocs").textContent=d.menu.d;
-    document.getElementById("mmDonate").textContent=d.menu.dn;
-    document.getElementById("mmGallery").textContent=d.menu.g;
-    document.getElementById("mmContact").textContent=d.menu.c;
-
-    document.getElementById("pageTitle").textContent=d.pageTitle;
-    document.getElementById("pageSub").textContent=d.pageSub;
-
-    document.getElementById("btnWork").textContent=d.work;
-    document.getElementById("btnDonate").textContent=d.donate;
-
-    document.getElementById("visionTitle").textContent=d.visionTitle;
-    document.getElementById("visionText").textContent=d.visionText;
-
-    document.getElementById("missionTitle").textContent=d.missionTitle;
-    document.getElementById("missionText").textContent=d.missionText;
-
-    document.getElementById("valuesTitle").textContent=d.valuesTitle;
-    document.getElementById("valuesText").textContent=d.valuesText;
-
-    document.getElementById("whoTitle").textContent=d.whoTitle;
-    document.getElementById("whoText").textContent=d.whoText;
-
-    document.getElementById("foot").textContent=d.foot;
-  }
 
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
@@ -397,24 +625,137 @@
     }
   }
 
-  btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
-    setLang("hi");
-  });
-
-  btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
-    setLang("en");
-  });
-
+  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
+  function setLang(lang){
+    const d=t[lang];
+    document.documentElement.lang=(lang==="hi")?"hi":"en";
+
+    // Brand
+    document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandSub").textContent=d.sub;
+
+    // Menu desktop
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mGallery").textContent=d.menu.g;
+    document.getElementById("mContact").textContent=d.menu.c;
+
+    // Menu mobile
+    document.getElementById("mmHome").textContent=d.menu.home;
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmGallery").textContent=d.menu.g;
+    document.getElementById("mmContact").textContent=d.menu.c;
+
+    // Hero
+    document.getElementById("badgeTop").textContent=d.badge;
+    document.getElementById("title").textContent=d.title;
+    document.getElementById("tagline").textContent=d.tagline;
+
+    document.getElementById("btnWork").textContent=d.btnWork;
+    document.getElementById("btnDonate").textContent=d.btnDonate;
+    document.getElementById("callout").textContent=d.callout;
+
+    // Legal section headings (legal info stays same)
+    document.getElementById("legalTitle").textContent=d.legalTitle;
+    document.getElementById("contactQuickTitle").textContent=d.contactQuickTitle;
+    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
+    document.getElementById("phLbl").textContent=d.ph;
+
+    document.getElementById("btnContact").textContent=d.btnContact;
+    document.getElementById("btnDonate2").textContent=d.btnDonate2;
+
+    // MVV
+    document.getElementById("mvTitle").textContent=d.mvTitle;
+    document.getElementById("mvSub").textContent=d.mvSub;
+
+    document.getElementById("missionTitle").textContent=d.missionTitle;
+    document.getElementById("missionText").textContent=d.missionText;
+
+    document.getElementById("visionTitle").textContent=d.visionTitle;
+    document.getElementById("visionText").textContent=d.visionText;
+
+    document.getElementById("valuesTitle").textContent=d.valuesTitle;
+    const valuesList=document.getElementById("valuesList");
+    valuesList.innerHTML="";
+    d.values.forEach(v=>{
+      const li=document.createElement("li");
+      li.textContent=v;
+      valuesList.appendChild(li);
+    });
+
+    // What we do
+    document.getElementById("whatTitle").textContent=d.whatTitle;
+    document.getElementById("whatText").textContent=d.whatText;
+
+    document.getElementById("areasTitle").textContent=d.areasTitle;
+    const areasList=document.getElementById("areasList");
+    areasList.innerHTML="";
+    d.areas.forEach(v=>{
+      const li=document.createElement("li");
+      li.innerHTML=v;
+      areasList.appendChild(li);
+    });
+
+    document.getElementById("btnWork2").textContent=d.btnWork2;
+    document.getElementById("btnDonate3").textContent=d.btnDonate3;
+
+    // How we work
+    document.getElementById("whyTitle").textContent=d.whyTitle;
+    document.getElementById("whyText").textContent=d.whyText;
+
+    document.getElementById("stepsTitle").textContent=d.stepsTitle;
+    const stepsList=document.getElementById("stepsList");
+    stepsList.innerHTML="";
+    d.steps.forEach(v=>{
+      const li=document.createElement("li");
+      li.innerHTML=v;
+      stepsList.appendChild(li);
+    });
+
+    document.getElementById("donorLine").textContent=d.donorLine;
+    document.getElementById("btnVolunteer").textContent=d.btnVolunteer;
+    document.getElementById("btnDonate4").textContent=d.btnDonate4;
+
+    // Trust section
+    document.getElementById("trustTitle").textContent=d.trustTitle;
+    document.getElementById("trustSub").textContent=d.trustSub;
+    document.getElementById("tr1t").textContent=d.tr1t;
+    document.getElementById("tr1d").textContent=d.tr1d;
+    document.getElementById("tr2t").textContent=d.tr2t;
+    document.getElementById("tr2d").textContent=d.tr2d;
+    document.getElementById("tr3t").textContent=d.tr3t;
+    document.getElementById("tr3d").textContent=d.tr3d;
+
+    // Footer
+    document.getElementById("foot").textContent=d.brand;
+
+    applyActive(lang);
+    mobilePanel.classList.remove("open");
+  }
+
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    setLang("hi");
+  });
+
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    setLang("en");
+  });
+
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
