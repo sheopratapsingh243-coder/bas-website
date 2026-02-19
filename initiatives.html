@@ -33,7 +33,6 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:26px 0}
     h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
@@ -195,15 +194,33 @@
       overflow:hidden;
     }
 
+    /* Layout B */
+    .slideGrid{
+      display:grid;
+      grid-template-columns:1fr;
+    }
+    @media(min-width:980px){
+      .slideGrid{
+        grid-template-columns:1fr 1fr;
+        min-height:520px;
+      }
+    }
+
     .poster{
       width:100%;
-      height:auto;
+      height:100%;
+      object-fit:cover;
       display:block;
-      border-bottom:1px solid rgba(226,232,240,.95);
+      background:#fff;
     }
 
     .slideBody{
-      padding:14px 14px 16px;
+      padding:16px 16px 18px;
+    }
+    @media(min-width:980px){
+      .slideBody{
+        padding:18px 18px 20px;
+      }
     }
 
     .kicker{
@@ -219,15 +236,16 @@
 
     .sTitle{
       margin:10px 0 0;
-      font-size:20px;
+      font-size:22px;
       letter-spacing:-.4px;
       font-weight:1000;
+      line-height:1.15;
     }
 
     .sText{
       margin-top:10px;
       color:var(--muted);
-      line-height:1.55;
+      line-height:1.65;
       font-size:14px;
     }
 
@@ -239,7 +257,7 @@
       background:rgba(11,90,166,.04);
       color:#0b3a6a;
       font-weight:950;
-      line-height:1.45;
+      line-height:1.5;
       font-size:14px;
     }
 
@@ -389,135 +407,153 @@
 
             <!-- 1 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k1">Education</span>
-                <div class="sTitle" id="t1">शिक्षा सारथी (बाल शिक्षा एवं विकास)</div>
-                <div class="sText" id="d1"></div>
-                <div class="impact" id="i1"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don1">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con1">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k1">Education</span>
+                  <div class="sTitle" id="t1">शिक्षा सारथी (बाल शिक्षा एवं विकास)</div>
+                  <div class="sText" id="d1"></div>
+                  <div class="impact" id="i1"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don1">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con1">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 2 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/women.png" alt="Women Empowerment Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k2">Women</span>
-                <div class="sTitle" id="t2">महिला सशक्तिकरण</div>
-                <div class="sText" id="d2"></div>
-                <div class="impact" id="i2"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don2">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con2">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/women.png" alt="Women Empowerment Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k2">Women</span>
+                  <div class="sTitle" id="t2">महिला सशक्तिकरण</div>
+                  <div class="sText" id="d2"></div>
+                  <div class="impact" id="i2"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don2">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con2">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 3 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/health.png" alt="Health Services Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k3">Health</span>
-                <div class="sTitle" id="t3">स्वास्थ्य सहायता</div>
-                <div class="sText" id="d3"></div>
-                <div class="impact" id="i3"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don3">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con3">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/health.png" alt="Health Services Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k3">Health</span>
+                  <div class="sTitle" id="t3">स्वास्थ्य सहायता</div>
+                  <div class="sText" id="d3"></div>
+                  <div class="impact" id="i3"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don3">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con3">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 4 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/ambulance.png" alt="Ambulance Seva Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k4">Emergency</span>
-                <div class="sTitle" id="t4">एंबुलेंस सेवा</div>
-                <div class="sText" id="d4"></div>
-                <div class="impact" id="i4"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don4">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con4">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/ambulance.png" alt="Ambulance Seva Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k4">Emergency</span>
+                  <div class="sTitle" id="t4">एंबुलेंस सेवा</div>
+                  <div class="sText" id="d4"></div>
+                  <div class="impact" id="i4"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don4">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con4">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 5 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/oldage.png" alt="Old Age Care Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k5">Care</span>
-                <div class="sTitle" id="t5">वृद्धजन सेवा एवं सहायता</div>
-                <div class="sText" id="d5"></div>
-                <div class="impact" id="i5"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don5">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con5">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/oldage.png" alt="Old Age Care Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k5">Care</span>
+                  <div class="sTitle" id="t5">वृद्धजन सेवा एवं सहायता</div>
+                  <div class="sText" id="d5"></div>
+                  <div class="impact" id="i5"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don5">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con5">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 6 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/skill.png" alt="Skill Development Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k6">Skills</span>
-                <div class="sTitle" id="t6">कौशल विकास</div>
-                <div class="sText" id="d6"></div>
-                <div class="impact" id="i6"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don6">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con6">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/skill.png" alt="Skill Development Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k6">Skills</span>
+                  <div class="sTitle" id="t6">कौशल विकास</div>
+                  <div class="sText" id="d6"></div>
+                  <div class="impact" id="i6"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don6">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con6">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 7 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/help.png" alt="Community Help Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k7">Support</span>
-                <div class="sTitle" id="t7">आपदा एवं सामाजिक सहायता</div>
-                <div class="sText" id="d7"></div>
-                <div class="impact" id="i7"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don7">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con7">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/help.png" alt="Community Help Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k7">Support</span>
+                  <div class="sTitle" id="t7">आपदा एवं सामाजिक सहायता</div>
+                  <div class="sText" id="d7"></div>
+                  <div class="impact" id="i7"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don7">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con7">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 8 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/gauseva.png" alt="GauSeva Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k8">GauSeva</span>
-                <div class="sTitle" id="t8">गौसेवा एवं गौशाला सहयोग</div>
-                <div class="sText" id="d8"></div>
-                <div class="impact" id="i8"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don8">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con8">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/gauseva.png" alt="GauSeva Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k8">GauSeva</span>
+                  <div class="sTitle" id="t8">गौसेवा एवं गौशाला सहयोग</div>
+                  <div class="sText" id="d8"></div>
+                  <div class="impact" id="i8"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don8">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con8">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
 
             <!-- 9 -->
             <article class="slide">
-              <img class="poster" src="./assets/initiatives/heritage.png" alt="Heritage Conservation Poster">
-              <div class="slideBody">
-                <span class="kicker" id="k9">Heritage</span>
-                <div class="sTitle" id="t9">धरोहर संरक्षण</div>
-                <div class="sText" id="d9"></div>
-                <div class="impact" id="i9"></div>
-                <div class="slideBtns">
-                  <a class="btn secondary" href="donate.html" id="don9">Donate Now</a>
-                  <a class="btn primary" href="contact.html" id="con9">Contact</a>
+              <div class="slideGrid">
+                <img class="poster" src="./assets/initiatives/heritage.png" alt="Heritage Conservation Poster">
+                <div class="slideBody">
+                  <span class="kicker" id="k9">Heritage</span>
+                  <div class="sTitle" id="t9">धरोहर संरक्षण</div>
+                  <div class="sText" id="d9"></div>
+                  <div class="impact" id="i9"></div>
+                  <div class="slideBtns">
+                    <a class="btn secondary" href="donate.html" id="don9">Donate Now</a>
+                    <a class="btn primary" href="contact.html" id="con9">Contact</a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -694,11 +730,9 @@
     const d=t[lang];
     document.documentElement.lang=(lang==="hi")?"hi":"en";
 
-    // Header brand
     document.getElementById("brandText").textContent=d.brand;
     document.getElementById("brandSub").textContent=d.sub;
 
-    // Menus
     document.getElementById("mHome").textContent=d.menu.home;
     document.getElementById("mAbout").textContent=d.menu.about;
     document.getElementById("mWork").textContent=d.menu.work;
@@ -715,14 +749,13 @@
     document.getElementById("mmGallery").textContent=d.menu.gallery;
     document.getElementById("mmContact").textContent=d.menu.contact;
 
-    // Page
     document.getElementById("pageTitle").textContent=d.pageTitle;
     document.getElementById("pageSub").textContent=d.pageSub;
     document.getElementById("sliderHeading").textContent=d.sliderHeading;
 
-    // Buttons
     document.getElementById("donateTop").textContent=d.menu.donate;
     document.getElementById("joinTop").textContent=d.joinTop;
+
     for(let i=1;i<=9;i++){
       const item=d.items[i-1];
       document.getElementById("k"+i).textContent=item.k;
@@ -734,14 +767,10 @@
       document.getElementById("con"+i).textContent=d.contact;
     }
 
-    // Footer
     document.getElementById("foot").textContent=d.foot;
-
-    // Update counter text
     updateCounter();
   }
 
-  // Toggle buttons
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
 
@@ -755,7 +784,6 @@
     }
   }
 
-  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
 
@@ -816,7 +844,6 @@
     });
   }
 
-  // Build dots
   for(let i=0;i<total;i++){
     const b=document.createElement("button");
     b.className="dot"+(i===0?" active":"");
@@ -829,7 +856,6 @@
   prevBtn.addEventListener("click",()=>goTo(index-1));
   nextBtn.addEventListener("click",()=>goTo(index+1));
 
-  // Keyboard support
   document.addEventListener("keydown",(e)=>{
     if(e.key==="ArrowLeft") goTo(index-1);
     if(e.key==="ArrowRight") goTo(index+1);
@@ -839,10 +865,7 @@
   let startX = 0;
   let isDown = false;
 
-  function onStart(x){
-    isDown=true;
-    startX=x;
-  }
+  function onStart(x){isDown=true; startX=x;}
   function onEnd(x){
     if(!isDown) return;
     isDown=false;
