@@ -9,43 +9,90 @@
 :root{
   --brand:#0b5aa6;
   --accent:#f58b1f;
+  --border:#e2e8f0;
+  --shadow:0 16px 40px rgba(2,6,23,.12);
 }
 
 body{
   margin:0;
   font-family:system-ui,Segoe UI,Arial;
   background:#f8fafc;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:900;
+}
+
+.menu{
+  display:flex;
+  gap:18px;
+  font-weight:700;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#334155;
+}
+
+.menu a:hover{
+  color:var(--brand);
+}
+
+.toggle button{
+  padding:6px 10px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  cursor:pointer;
+  font-weight:700;
+  background:#fff;
+}
+
+.toggle .active{
+  background:var(--brand);
+  color:#fff;
+}
+
+/* ===== CONTENT ===== */
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 16px;
   text-align:center;
 }
 
-.wrap{
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-}
+h1{margin-bottom:10px}
 
-h1{
-  margin-bottom:10px;
-  font-size:32px;
-}
+.muted{color:#64748b}
 
-.muted{
-  color:#64748b;
-  margin-bottom:30px;
-}
-
+/* ===== SLIDER ===== */
 .slideshow{
   position:relative;
   max-width:900px;
-  margin:auto;
+  margin:30px auto;
   overflow:hidden;
   border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,.15);
+  box-shadow:var(--shadow);
 }
 
-.slide{
-  display:none;
-}
+.slide{display:none}
 
 .slide img{
   width:100%;
@@ -53,17 +100,8 @@ h1{
   object-fit:cover;
 }
 
-.active{
-  display:block;
-  animation:fade 1s ease-in-out;
-}
+.active{display:block}
 
-@keyframes fade{
-  from{opacity:.4}
-  to{opacity:1}
-}
-
-/* Arrows */
 .prev, .next{
   cursor:pointer;
   position:absolute;
@@ -71,92 +109,144 @@ h1{
   transform:translateY(-50%);
   padding:12px 18px;
   color:#fff;
-  font-weight:bold;
   font-size:22px;
   background:rgba(0,0,0,.5);
   border-radius:50%;
-  user-select:none;
 }
 
 .prev{left:15px}
 .next{right:15px}
 
-.prev:hover, .next:hover{
-  background:var(--brand);
-}
-
-/* Dots */
 .dots{
-  text-align:center;
-  margin-top:20px;
+  margin-top:15px;
 }
 
 .dot{
-  cursor:pointer;
-  height:14px;
-  width:14px;
-  margin:0 6px;
+  height:12px;
+  width:12px;
   background:#cbd5e1;
   border-radius:50%;
   display:inline-block;
+  margin:0 4px;
+  cursor:pointer;
+}
+
+.activeDot{background:var(--brand)}
+
+/* ===== GRID ===== */
+.grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:16px;
+  cursor:pointer;
+  box-shadow:var(--shadow);
   transition:.3s;
 }
 
-.dot.activeDot{
-  background:var(--brand);
+.grid img:hover{
+  transform:scale(1.05);
 }
 
-@media(max-width:768px){
-  .slide img{
-    height:300px;
-  }
+/* ===== LIGHTBOX ===== */
+#lightbox{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.9);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+#lightbox img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:10px;
+}
+
+#lightbox span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid var(--border);
+  margin-top:50px;
+  background:#fff;
+  font-size:14px;
+  color:#64748b;
+}
+
+/* WhatsApp */
+.wa{
+  position:fixed;
+  bottom:16px;
+  right:16px;
+  background:#22c55e;
+  color:#fff;
+  padding:12px 16px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
+<header>
+  <div class="nav">
+    <div class="logo">Bharat Abhyudaya Sansthan</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="initiatives.html">Initiatives</a>
+      <a href="documents.html">Documents</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="toggle">
+      <button onclick="setLang('hi')" id="hiBtn" class="active">हिन्दी</button>
+      <button onclick="setLang('en')" id="enBtn">English</button>
+    </div>
+  </div>
+</header>
+
 <div class="wrap">
-  <h1>Gallery</h1>
-  <p class="muted">Snapshots of our service activities and community impact.</p>
+  <h1 id="title">Gallery</h1>
+  <p class="muted" id="desc">Snapshots of our service activities and community impact.</p>
 
+  <!-- SLIDER -->
   <div class="slideshow">
-
-    <div class="slide active">
-      <img src="assets/gallery/1.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/2.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/3.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/4.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/5.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/6.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/7.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="assets/gallery/8.jpg">
-    </div>
+    <div class="slide active"><img src="assets/gallery/1.jpg"></div>
+    <div class="slide"><img src="assets/gallery/2.jpg"></div>
+    <div class="slide"><img src="assets/gallery/3.jpg"></div>
+    <div class="slide"><img src="assets/gallery/4.jpg"></div>
+    <div class="slide"><img src="assets/gallery/5.jpg"></div>
+    <div class="slide"><img src="assets/gallery/6.jpg"></div>
+    <div class="slide"><img src="assets/gallery/7.jpg"></div>
+    <div class="slide"><img src="assets/gallery/8.jpg"></div>
 
     <span class="prev" onclick="changeSlide(-1)">❮</span>
     <span class="next" onclick="changeSlide(1)">❯</span>
-
   </div>
 
   <div class="dots">
@@ -170,16 +260,40 @@ h1{
     <span class="dot" onclick="currentSlide(8)"></span>
   </div>
 
+  <!-- GRID -->
+  <div class="grid">
+    <img src="assets/gallery/1.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/2.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/3.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/4.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/5.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/6.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/7.jpg" onclick="openLightbox(this.src)">
+    <img src="assets/gallery/8.jpg" onclick="openLightbox(this.src)">
+  </div>
+
 </div>
 
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span onclick="closeLightbox()">✕</span>
+  <img id="lightboxImg">
+</div>
+
+<footer>
+  © 2026 Bharat Abhyudaya Sansthan
+</footer>
+
+<a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+
 <script>
-let slideIndex = 1;
-let slides = document.getElementsByClassName("slide");
-let dots = document.getElementsByClassName("dot");
+let slideIndex=1;
+let slides=document.getElementsByClassName("slide");
+let dots=document.getElementsByClassName("dot");
 
 function showSlide(n){
-  if(n > slides.length){ slideIndex = 1 }
-  if(n < 1){ slideIndex = slides.length }
+  if(n>slides.length)slideIndex=1;
+  if(n<1)slideIndex=slides.length;
 
   for(let i=0;i<slides.length;i++){
     slides[i].classList.remove("active");
@@ -191,20 +305,40 @@ function showSlide(n){
 }
 
 function changeSlide(n){
-  slideIndex += n;
+  slideIndex+=n;
   showSlide(slideIndex);
 }
 
 function currentSlide(n){
-  slideIndex = n;
+  slideIndex=n;
   showSlide(slideIndex);
 }
 
-/* Auto Slide */
-setInterval(()=>{
-  slideIndex++;
-  showSlide(slideIndex);
-}, 4000);
+setInterval(()=>{slideIndex++;showSlide(slideIndex)},4000);
+
+/* Lightbox */
+function openLightbox(src){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightboxImg").src=src;
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+
+/* Language */
+function setLang(lang){
+  if(lang==="hi"){
+    document.getElementById("title").innerText="गैलरी";
+    document.getElementById("desc").innerText="हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।";
+    document.getElementById("hiBtn").classList.add("active");
+    document.getElementById("enBtn").classList.remove("active");
+  }else{
+    document.getElementById("title").innerText="Gallery";
+    document.getElementById("desc").innerText="Snapshots of our service activities and community impact.";
+    document.getElementById("enBtn").classList.add("active");
+    document.getElementById("hiBtn").classList.remove("active");
+  }
+}
 </script>
 
 </body>
