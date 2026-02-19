@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Documents | Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Documents and registration details of Bharat Abhyudaya Sansthan." />
+  <title>Documents • Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Official documents of Bharat Abhyudaya Sansthan - registration, PAN, NGO Darpan, bylaws, 12A and 80G." />
 
   <style>
     :root{
@@ -31,9 +31,10 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:22px 0}
-    h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
-    h2{margin:0;font-size:20px;letter-spacing:-.4px}
+    section{padding:28px 0}
+    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    h3{margin:0;font-size:18px;letter-spacing:-.2px}
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
@@ -70,6 +71,7 @@
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
+      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
@@ -114,45 +116,33 @@
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Page */
-    .heroCard{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
+    /* Cards */
+    .card{
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);
       padding:18px;
+      box-shadow:var(--shadow);
     }
 
-    .grid{
+    .hero{
       display:grid;
       grid-template-columns:1fr;
       gap:16px;
-      margin-top:16px;
+      align-items:stretch;
     }
     @media(min-width:980px){
-      .grid{grid-template-columns:1fr 1fr;gap:18px}
-    }
-
-    .docCard{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:16px;
+      .hero{grid-template-columns:1.05fr .95fr;gap:22px}
     }
 
     .badge{
       display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
+      padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
+      background:rgba(11,90,166,.06);
+      border:1px solid rgba(11,90,166,.15);
       font-weight:950;
-      font-size:13px;
-      color:var(--muted);
-      margin-top:12px;
-      background:#fff;
+      color:var(--brand);
+      font-size:12px;
     }
 
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
@@ -162,6 +152,8 @@
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
       font-weight:950;
+      justify-content:center;
+      flex:1;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -172,11 +164,62 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    .hint{
-      margin-top:12px;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.45;
+    .docsGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    @media(min-width:900px){
+      .docsGrid{grid-template-columns:1fr 1fr}
+    }
+
+    .docCard{
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 16px 40px rgba(2,6,23,.10);
+      overflow:hidden;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .docTop{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .docIcon{
+      width:48px;height:48px;
+      border-radius:18px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(11,90,166,.06);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      flex:0 0 auto;
+    }
+
+    .docCard h3{margin:0}
+    .docCard p{margin:0;color:var(--muted);line-height:1.65}
+
+    .docBtns{
+      display:flex;
+      gap:10px;
+      margin-top:6px;
+    }
+    .docBtns a{flex:1}
+
+    .note{
+      background:rgba(245,139,31,.10);
+      border:1px solid rgba(245,139,31,.22);
+      border-radius:18px;
+      padding:14px;
+      line-height:1.7;
+      font-weight:850;
     }
 
     footer{
@@ -184,6 +227,8 @@
       padding:18px 0;margin-top:10px;color:var(--muted);
       background:#fff;font-size:14px;
     }
+
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
@@ -201,7 +246,7 @@
     <div class="nav">
 
       <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
+        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
           <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
@@ -228,6 +273,7 @@
 
     </div>
 
+    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
@@ -243,82 +289,61 @@
   </div>
 </header>
 
-<main>
+<main id="top">
 
+  <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="heroCard">
-        <h1 id="pageTitle">दस्तावेज़ (Documents)</h1>
-        <p class="muted" id="pageSub">
-          इस पृष्ठ पर संस्था से संबंधित आवश्यक दस्तावेज़ उपलब्ध कराए गए हैं। आप इन्हें डाउनलोड या देखें।
-        </p>
+      <div class="hero">
 
-        <div class="badge" id="regBadge">
-          🏛️ Registration: FAT/02340/2024-2025 • PAN: AANAB2855N
+        <div>
+          <span class="badge" id="badgeTop">Verified Documents</span>
+          <h1 id="title">दस्तावेज़</h1>
+          <p class="muted" id="tagline" style="line-height:1.75">
+            भारत अभ्युदय संस्थान पारदर्शिता और विश्वसनीयता को सर्वोच्च प्राथमिकता देता है।
+            इस पृष्ठ पर संस्था के प्रमुख पंजीकरण, पहचान और कानूनी दस्तावेज़ उपलब्ध हैं।
+          </p>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="contact.html" id="btnContact">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="btnDonate">दान करें</a>
+          </div>
+
+          <p class="note" style="margin-top:14px" id="note">
+            यदि किसी दस्तावेज़ के बारे में अतिरिक्त जानकारी चाहिए, तो आप हमसे संपर्क कर सकते हैं।
+          </p>
         </div>
 
-        <p class="hint" id="hint">
-          नोट: यदि किसी दस्तावेज़ पर क्लिक करने पर फाइल न खुले, तो इसका मतलब है कि वह फाइल अभी assets folder में upload नहीं हुई है।
-        </p>
-      </div>
+        <!-- Legal info (not removed) -->
+        <div class="card">
+          <h3 id="legalTitle">कानूनी / पंजीकरण विवरण</h3>
+          <p class="small muted" style="margin-top:10px" id="legalBox">
+            Registration No.: <b>FAT/02340/2024-2025</b><br>
+            Date: <b>05/07/2024</b><br>
+            Valid: <b>04/07/2029</b><br>
+            PAN: <b>AANAB2855N</b>
+          </p>
 
-      <div class="grid">
+          <div style="height:1px;background:rgba(226,232,240,.95);margin:14px 0"></div>
 
-        <div class="docCard">
-          <h2 id="h1">पंजीकरण प्रमाण पत्र</h2>
-          <p class="muted small" id="s1">Registration Certificate</p>
-          <div class="btnRow">
-            <a class="btn secondary" href="assets/registration-certificate.pdf" target="_blank" rel="noreferrer" id="v1">देखें</a>
-            <a class="btn primary" href="assets/registration-certificate.pdf" download id="dl1">डाउनलोड</a>
-          </div>
-        </div>
-
-        <div class="docCard">
-          <h2 id="h2">PAN कार्ड</h2>
-          <p class="muted small" id="s2">PAN Card</p>
-          <div class="btnRow">
-            <a class="btn secondary" href="assets/pan-card.jpg" target="_blank" rel="noreferrer" id="v2">देखें</a>
-            <a class="btn primary" href="assets/pan-card.jpg" download id="dl2">डाउनलोड</a>
-          </div>
-        </div>
-
-        <div class="docCard">
-          <h2 id="h3">संस्था नियमावली / बायलॉज</h2>
-          <p class="muted small" id="s3">Bylaws / Rules</p>
-          <div class="btnRow">
-            <a class="btn secondary" href="assets/bylaws.pdf" target="_blank" rel="noreferrer" id="v3">देखें</a>
-            <a class="btn primary" href="assets/bylaws.pdf" download id="dl3">डाउनलोड</a>
-          </div>
-        </div>
-
-        <div class="docCard">
-          <h2 id="h4">ऑडिट रिपोर्ट</h2>
-          <p class="muted small" id="s4">Audit Report</p>
-          <div class="btnRow">
-            <a class="btn secondary" href="assets/audit-report.pdf" target="_blank" rel="noreferrer" id="v4">देखें</a>
-            <a class="btn primary" href="assets/audit-report.pdf" download id="dl4">डाउनलोड</a>
-          </div>
-        </div>
-
-        <div class="docCard">
-          <h2 id="h5">वार्षिक रिपोर्ट</h2>
-          <p class="muted small" id="s5">Annual Report</p>
-          <div class="btnRow">
-            <a class="btn secondary" href="assets/annual-report.pdf" target="_blank" rel="noreferrer" id="v5">देखें</a>
-            <a class="btn primary" href="assets/annual-report.pdf" download id="dl5">डाउनलोड</a>
-          </div>
-        </div>
-
-        <div class="docCard">
-          <h2 id="h6">अन्य दस्तावेज़</h2>
-          <p class="muted small" id="s6">Other Documents</p>
-          <div class="btnRow">
-            <a class="btn secondary" href="contact.html" id="v6">संपर्क करें</a>
-            <a class="btn primary" href="donate.html" id="dl6">दान करें</a>
-          </div>
+          <p class="small muted" id="legalLine2" style="line-height:1.7">
+            This page is created to strengthen transparency and donor trust. You may view or download the documents below.
+          </p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section>
+    <div class="wrap">
+      <h2 id="docsTitle">Available Documents</h2>
+      <p class="muted" id="docsSub">
+        View or download the documents. These help verify the NGO identity and legal status.
+      </p>
+
+      <div class="docsGrid" id="docsGrid"></div>
     </div>
   </section>
 
@@ -333,90 +358,138 @@
 <a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
 <script>
+  const docs = [
+    {
+      key:"reg",
+      icon:"📄",
+      file:"./assets/docs/registration-certificate.pdf"
+    },
+    {
+      key:"pan",
+      icon:"🪪",
+      file:"./assets/docs/pan-card.pdf"
+    },
+    {
+      key:"darpan",
+      icon:"🏛️",
+      file:"./assets/docs/ngo-darpan-certificate.pdf"
+    },
+    {
+      key:"bylaws",
+      icon:"📘",
+      file:"./assets/docs/bylaws.pdf"
+    },
+    {
+      key:"12a",
+      icon:"✅",
+      file:"./assets/docs/12a-certificate.pdf"
+    },
+    {
+      key:"80g",
+      icon:"⭐",
+      file:"./assets/docs/80g-certificate.pdf"
+    }
+  ];
+
   const t = {
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-      pageTitle:"दस्तावेज़ (Documents)",
-      pageSub:"इस पृष्ठ पर संस्था से संबंधित आवश्यक दस्तावेज़ उपलब्ध कराए गए हैं। आप इन्हें डाउनलोड या देखें।",
-      hint:"नोट: यदि किसी दस्तावेज़ पर क्लिक करने पर फाइल न खुले, तो इसका मतलब है कि वह फाइल अभी assets folder में upload नहीं हुई है।",
-      heads:["पंजीकरण प्रमाण पत्र","PAN कार्ड","संस्था नियमावली / बायलॉज","ऑडिट रिपोर्ट","वार्षिक रिपोर्ट","अन्य दस्तावेज़"],
-      subs:["Registration Certificate","PAN Card","Bylaws / Rules","Audit Report","Annual Report","Other Documents"],
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय", w:"हमारे प्रयास", d:"दस्तावेज़", dn:"दान करें", g:"गैलरी", c:"संपर्क"},
+
+      badge:"सत्यापित दस्तावेज़",
+      title:"दस्तावेज़",
+      tagline:"भारत अभ्युदय संस्थान पारदर्शिता और विश्वसनीयता को सर्वोच्च प्राथमिकता देता है। इस पृष्ठ पर संस्था के प्रमुख पंजीकरण, पहचान और कानूनी दस्तावेज़ उपलब्ध हैं।",
+      btnContact:"संपर्क करें",
+      btnDonate:"दान करें",
+      note:"यदि किसी दस्तावेज़ के बारे में अतिरिक्त जानकारी चाहिए, तो आप हमसे संपर्क कर सकते हैं।",
+
+      legalTitle:"कानूनी / पंजीकरण विवरण",
+      legalLine2:"यह पृष्ठ पारदर्शिता और दानदाता-विश्वास को मजबूत करने हेतु बनाया गया है। नीचे उपलब्ध दस्तावेज़ आप देख या डाउनलोड कर सकते हैं।",
+
+      docsTitle:"उपलब्ध दस्तावेज़",
+      docsSub:"ये दस्तावेज़ संस्था की पहचान, पंजीकरण और कानूनी स्थिति की पुष्टि में सहायक हैं।",
+
       view:"देखें",
       download:"डाउनलोड",
-      contact:"संपर्क करें",
-      donate:"दान करें",
-      foot:"भारत अभ्युदय संस्थान"
+
+      items:{
+        reg:{
+          title:"पंजीकरण प्रमाणपत्र",
+          desc:"संस्था का पंजीकरण प्रमाणपत्र — संस्था की वैधता और पहचान के लिए मुख्य दस्तावेज़।"
+        },
+        pan:{
+          title:"PAN (संस्था)",
+          desc:"संस्था का PAN — वित्तीय पहचान और पारदर्शिता हेतु आवश्यक दस्तावेज़।"
+        },
+        darpan:{
+          title:"NGO Darpan प्रमाणपत्र",
+          desc:"NGO Darpan (NITI Aayog) से संबंधित दस्तावेज़ — NGO प्रोफ़ाइल सत्यापन में सहायक।"
+        },
+        bylaws:{
+          title:"संस्था के Bylaws",
+          desc:"संस्था के नियम/उद्देश्य/कार्य-पद्धति — संस्था के संचालन का आधार।"
+        },
+        "12a":{
+          title:"12A प्रमाणपत्र",
+          desc:"12A दस्तावेज़ — संस्था की आयकर से संबंधित स्थिति/मान्यता से जुड़ा प्रमाण।"
+        },
+        "80g":{
+          title:"80G प्रमाणपत्र",
+          desc:"80G दस्तावेज़ — दानदाताओं को कर लाभ (जहाँ लागू हो) से संबंधित प्रमाण।"
+        }
+      }
     },
+
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-      pageTitle:"Documents",
-      pageSub:"This page provides important documents related to the organization. You can view or download them.",
-      hint:"Note: If a document does not open, it means the file has not been uploaded in the assets folder yet.",
-      heads:["Registration Certificate","PAN Card","Bylaws / Rules","Audit Report","Annual Report","Other Documents"],
-      subs:["Registration Certificate","PAN Card","Bylaws / Rules","Audit Report","Annual Report","Other Documents"],
+      menu:{home:"Home", a:"About", w:"Our Initiatives", d:"Documents", dn:"Donate Now", g:"Gallery", c:"Contact"},
+
+      badge:"Verified Documents",
+      title:"Documents",
+      tagline:"Bharat Abhyudaya Sansthan prioritizes transparency and credibility. This page provides key legal, registration, and identity documents of the organization.",
+      btnContact:"Contact",
+      btnDonate:"Donate Now",
+      note:"If you need any additional clarification regarding a document, feel free to contact us.",
+
+      legalTitle:"Legal / Registration Details",
+      legalLine2:"This page is created to strengthen transparency and donor trust. You may view or download the documents below.",
+
+      docsTitle:"Available Documents",
+      docsSub:"These documents help verify the NGO identity, registration, and legal status.",
+
       view:"View",
       download:"Download",
-      contact:"Contact",
-      donate:"Donate Now",
-      foot:"Bharat Abhyudaya Sansthan"
+
+      items:{
+        reg:{
+          title:"Registration Certificate",
+          desc:"Official registration certificate of the NGO — key proof of identity and legal validity."
+        },
+        pan:{
+          title:"PAN (Organization)",
+          desc:"PAN card of the organization — required for financial identity and transparency."
+        },
+        darpan:{
+          title:"NGO Darpan Certificate",
+          desc:"NGO Darpan (NITI Aayog) related document — supports profile verification."
+        },
+        bylaws:{
+          title:"NGO Bylaws",
+          desc:"Rules, objectives, and working structure of the organization — foundation of operations."
+        },
+        "12a":{
+          title:"12A Certificate",
+          desc:"12A document — related to income tax recognition of the organization."
+        },
+        "80g":{
+          title:"80G Certificate",
+          desc:"80G document — related to donor tax benefits (where applicable)."
+        }
+      }
     }
   };
-
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
-
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
-
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mGallery").textContent=d.menu.g;
-    document.getElementById("mContact").textContent=d.menu.c;
-
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.a;
-    document.getElementById("mmWork").textContent=d.menu.w;
-    document.getElementById("mmDocs").textContent=d.menu.d;
-    document.getElementById("mmDonate").textContent=d.menu.dn;
-    document.getElementById("mmGallery").textContent=d.menu.g;
-    document.getElementById("mmContact").textContent=d.menu.c;
-
-    document.getElementById("pageTitle").textContent=d.pageTitle;
-    document.getElementById("pageSub").textContent=d.pageSub;
-    document.getElementById("hint").textContent=d.hint;
-
-    // Cards
-    document.getElementById("h1").textContent=d.heads[0];
-    document.getElementById("h2").textContent=d.heads[1];
-    document.getElementById("h3").textContent=d.heads[2];
-    document.getElementById("h4").textContent=d.heads[3];
-    document.getElementById("h5").textContent=d.heads[4];
-    document.getElementById("h6").textContent=d.heads[5];
-
-    document.getElementById("s1").textContent=d.subs[0];
-    document.getElementById("s2").textContent=d.subs[1];
-    document.getElementById("s3").textContent=d.subs[2];
-    document.getElementById("s4").textContent=d.subs[3];
-    document.getElementById("s5").textContent=d.subs[4];
-    document.getElementById("s6").textContent=d.subs[5];
-
-    // Buttons
-    ["v1","v2","v3","v4","v5"].forEach(id=>document.getElementById(id).textContent=d.view);
-    ["dl1","dl2","dl3","dl4","dl5"].forEach(id=>document.getElementById(id).textContent=d.download);
-
-    document.getElementById("v6").textContent=d.contact;
-    document.getElementById("dl6").textContent=d.donate;
-
-    document.getElementById("foot").textContent=d.foot;
-  }
 
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
@@ -431,24 +504,109 @@
     }
   }
 
-  btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
-    setLang("hi");
-  });
-
-  btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
-    setLang("en");
-  });
-
+  // Mobile menu toggle
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
+  function buildDocs(lang){
+    const d=t[lang];
+    const grid=document.getElementById("docsGrid");
+    grid.innerHTML="";
+
+    docs.forEach(item=>{
+      const meta = d.items[item.key];
+
+      const card=document.createElement("div");
+      card.className="docCard";
+
+      card.innerHTML=`
+        <div class="docTop">
+          <div class="docIcon">${item.icon}</div>
+          <div>
+            <h3>${meta.title}</h3>
+            <p class="muted">${meta.desc}</p>
+          </div>
+        </div>
+
+        <div class="docBtns">
+          <a class="btn secondary" target="_blank" rel="noreferrer" href="${item.file}">
+            ${d.view}
+          </a>
+          <a class="btn primary" download href="${item.file}">
+            ${d.download}
+          </a>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  }
+
+  function setLang(lang){
+    const d=t[lang];
+    document.documentElement.lang=(lang==="hi")?"hi":"en";
+
+    // Brand
+    document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandSub").textContent=d.sub;
+
+    // Menu desktop
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mGallery").textContent=d.menu.g;
+    document.getElementById("mContact").textContent=d.menu.c;
+
+    // Menu mobile
+    document.getElementById("mmHome").textContent=d.menu.home;
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmGallery").textContent=d.menu.g;
+    document.getElementById("mmContact").textContent=d.menu.c;
+
+    // Hero
+    document.getElementById("badgeTop").textContent=d.badge;
+    document.getElementById("title").textContent=d.title;
+    document.getElementById("tagline").textContent=d.tagline;
+    document.getElementById("btnContact").textContent=d.btnContact;
+    document.getElementById("btnDonate").textContent=d.btnDonate;
+    document.getElementById("note").textContent=d.note;
+
+    // Legal
+    document.getElementById("legalTitle").textContent=d.legalTitle;
+    document.getElementById("legalLine2").textContent=d.legalLine2;
+
+    // Docs section
+    document.getElementById("docsTitle").textContent=d.docsTitle;
+    document.getElementById("docsSub").textContent=d.docsSub;
+
+    // Footer
+    document.getElementById("foot").textContent=d.brand;
+
+    buildDocs(lang);
+
+    applyActive(lang);
+    mobilePanel.classList.remove("open");
+  }
+
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    setLang("hi");
+  });
+
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    setLang("en");
+  });
+
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
