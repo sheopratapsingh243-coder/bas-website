@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Upliftment to Self-Reliant India" />
+  <meta name="description" content="Bharat Abhyudaya Sansthan – Upliftment to Self-Reliant India. Education, Health, Women Empowerment, Old Age Care, GauSeva and Community Help." />
 
   <style>
     :root{
@@ -32,12 +32,15 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
     section{padding:28px 0}
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h1{margin:10px 0 0;font-size:36px;letter-spacing:-.8px;line-height:1.15}
     h2{margin:0;font-size:24px;letter-spacing:-.4px}
+    h3{margin:0;font-size:18px;letter-spacing:-.2px}
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
+    .hr{height:1px;background:rgba(226,232,240,.95);margin:16px 0}
 
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
       background:rgba(255,255,255,.92);
@@ -63,17 +66,20 @@
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
+    /* Toggle */
     .toggle{display:flex;gap:8px}
     .pill{
       border:1px solid rgba(226,232,240,.95);
       background:#fff;padding:8px 12px;border-radius:999px;
       font-size:13px;cursor:pointer;
+      font-weight:900;
     }
     .pill.active{
       background:linear-gradient(135deg,var(--brand),#083a6c);
       color:#fff;border-color:transparent;font-weight:950;
     }
 
+    /* Mobile menu button */
     .mobBtn{
       display:inline-flex;
       align-items:center;
@@ -111,12 +117,23 @@
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
+    /* Cards */
     .card{
       background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+      border-radius:var(--radius);padding:18px;
+      box-shadow:var(--shadow);
     }
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:980px){.grid{grid-template-columns:1.15fr .85fr;gap:22px}}
+
+    .badge{
+      display:inline-flex;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(11,90,166,.06);
+      border:1px solid rgba(11,90,166,.15);
+      font-weight:950;
+      color:var(--brand);
+      font-size:12px;
+    }
 
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .btn{
@@ -125,6 +142,7 @@
       background:#fff;cursor:pointer;
       display:inline-flex;align-items:center;gap:10px;
       font-weight:950;
+      justify-content:center;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -135,6 +153,37 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media(min-width:980px){
+      .hero{grid-template-columns:1.1fr .9fr;gap:22px}
+    }
+
+    /* Feature grid */
+    .featGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width:980px){
+      .featGrid{grid-template-columns:1fr 1fr 1fr}
+    }
+    .feat{
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:22px;
+      padding:16px;
+      background:rgba(255,255,255,.95);
+    }
+    .feat b{display:block;font-size:15px}
+    .feat p{margin-top:8px;line-height:1.75}
+
+    /* Programs */
     #programs{padding:34px 0}
     .programGrid{
       display:grid;
@@ -142,7 +191,7 @@
       gap:18px;
       margin-top:18px;
     }
-    @media(min-width:900px){
+    @media(min-width:980px){
       .programGrid{grid-template-columns:1fr 1fr}
     }
     .programCard{
@@ -159,30 +208,58 @@
       display:block;
       border-radius:16px;
       border:1px solid rgba(226,232,240,.95);
+      background:#fff;
     }
-    .lang-en{display:none;} /* default Hindi */
     .programBtns{
       display:flex;
       gap:10px;
       margin-top:12px;
     }
-    .programBtns a{
-      flex:1;
-      justify-content:center;
+    .programBtns a{flex:1}
+
+    /* Impact */
+    .impactGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width:980px){
+      .impactGrid{grid-template-columns:1fr 1fr 1fr}
+    }
+    .impact{
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:22px;
+      padding:16px;
+      background:#fff;
+    }
+    .impact strong{
+      font-size:22px;
+      display:block;
+      letter-spacing:-.4px;
+    }
+    .impact span{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      line-height:1.6;
+      font-weight:800;
     }
 
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
+    }
+
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
-    }
-
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
     }
   </style>
 </head>
@@ -194,7 +271,7 @@
     <div class="nav">
 
       <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
+        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
         <div>
           <b id="brandText">भारत अभ्युदय संस्थान</b>
           <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
@@ -221,6 +298,7 @@
 
     </div>
 
+    <!-- Mobile dropdown -->
     <div class="mobilePanel" id="mobilePanel">
       <div class="mnav">
         <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
@@ -238,94 +316,167 @@
 
 <main id="top">
 
+  <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="grid">
+      <div class="hero">
 
         <div>
+          <span class="badge" id="heroBadge">Service • Trust • Impact</span>
           <h1 id="title">भारत अभ्युदय संस्थान</h1>
-          <p class="muted" id="tagline">अभ्युदय से आत्मनिर्भर भारत तक</p>
+          <p class="muted" id="tagline" style="line-height:1.8">
+            हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, वृद्धजन सेवा, गौसेवा, कौशल विकास
+            और आपदा/सामाजिक सहायता के माध्यम से एक आत्मनिर्भर और सशक्त भारत के निर्माण हेतु कार्यरत हैं।
+          </p>
 
           <div class="btnRow">
-            <a class="btn secondary" href="documents.html" id="docsBtn">दस्तावेज़ देखें</a>
-            <a class="btn primary" href="contact.html" id="joinBtn">हमसे जुड़ें</a>
+            <a class="btn secondary" href="initiatives.html" id="btnWork">हमारे प्रयास</a>
+            <a class="btn primary" href="donate.html" id="btnDonate">दान करें</a>
+            <a class="btn" href="contact.html" id="btnContact">संपर्क करें</a>
           </div>
 
-          <div class="card" style="margin-top:16px">
-            <b id="quick">त्वरित जानकारी</b>
-            <p class="small muted" id="addr">
-              481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
-            </p>
-            <p class="small muted"><b id="phLbl">फोन:</b> 8604669454, 7355181465</p>
-            <p class="small muted"><b>Email:</b> sheopratapsingh243@gmail.com</p>
+          <div class="featGrid">
+            <div class="feat">
+              <b id="f1t">विश्वसनीय और पारदर्शी</b>
+              <p class="small muted" id="f1d">
+                संस्था का पंजीकरण व दस्तावेज़ वेबसाइट पर उपलब्ध हैं, ताकि donor को पूरा विश्वास मिले।
+              </p>
+            </div>
+            <div class="feat">
+              <b id="f2t">स्थानीय जरूरत पर आधारित सेवा</b>
+              <p class="small muted" id="f2d">
+                हम वास्तविक समस्याओं पर काम करते हैं—जहाँ मदद की सबसे ज्यादा जरूरत है।
+              </p>
+            </div>
+            <div class="feat">
+              <b id="f3t">सेवा के साथ सम्मान</b>
+              <p class="small muted" id="f3d">
+                हमारा उद्देश्य सिर्फ सहायता नहीं, बल्कि सम्मान और आत्मनिर्भरता देना है।
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="card">
-          <b id="regTitle">पंजीकरण विवरण</b>
+          <h3 id="quickTitle">त्वरित जानकारी</h3>
+
+          <p class="small muted" style="margin-top:10px" id="addr">
+            481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)
+          </p>
+
+          <p class="small muted" style="margin-top:10px">
+            <b id="phLbl">फोन:</b> 8604669454, 7355181465
+          </p>
+          <p class="small muted">
+            <b>Email:</b> sheopratapsingh243@gmail.com
+          </p>
+
+          <div class="hr"></div>
+
+          <h3 id="regTitle">पंजीकरण विवरण</h3>
           <p class="small muted" style="margin-top:10px" id="regBox">
             Registration No.: <b>FAT/02340/2024-2025</b><br>
             Date: <b>05/07/2024</b><br>
             Valid: <b>04/07/2029</b><br>
             PAN: <b>AANAB2855N</b>
           </p>
+
+          <div class="btnRow" style="margin-top:14px">
+            <a class="btn secondary" href="documents.html" id="btnDocs">दस्तावेज़ देखें</a>
+            <a class="btn primary" href="donate.html" id="btnDonate2">Donate Now</a>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- CURRENT PROGRAMS -->
   <section id="programs">
     <div class="wrap">
       <h2 id="programTitle">वर्तमान संचालित कार्यक्रम</h2>
-      <p class="muted" id="programSub">किसी भी कार्यक्रम पर क्लिक करके विवरण पढ़ें या दान करें।</p>
+      <p class="muted" id="programSub" style="line-height:1.75">
+        ये हमारे प्रमुख कार्यक्रम हैं जिन पर वर्तमान में कार्य किया जा रहा है। आप सीधे दान कर सकते हैं
+        या संपर्क करके जुड़ सकते हैं।
+      </p>
 
       <div class="programGrid">
 
+        <!-- 1) Shiksha Sarathi -->
         <div class="programCard">
-          <a href="initiatives.html#shiksha-sarathi">
-            <img class="poster lang-hi" src="assets/shiksha-sarathi-hi.png" alt="Shiksha Sarathi Poster Hindi">
-            <img class="poster lang-en" src="assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi Poster English">
+          <a href="initiatives.html">
+            <img class="poster" src="./assets/shiksha-sarathi-en.png" alt="Shiksha Sarathi Poster">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#shiksha-sarathi" id="read1">पूरा पढ़ें</a>
-            <a class="btn primary" href="donate.html" id="don1">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="p1c">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="p1d">Donate Now</a>
           </div>
         </div>
 
+        <!-- 2) Ambulance -->
         <div class="programCard">
-          <a href="initiatives.html#ambulance-seva">
-            <img class="poster lang-hi" src="assets/ambulance-hi.png" alt="Ambulance Poster Hindi">
-            <img class="poster lang-en" src="assets/ambulance-en.png" alt="Ambulance Poster English">
+          <a href="initiatives.html">
+            <img class="poster" src="./assets/ambulance-en.png" alt="Ambulance Seva Poster">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#ambulance-seva" id="read2">पूरा पढ़ें</a>
-            <a class="btn primary" href="donate.html" id="don2">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="p2c">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="p2d">Donate Now</a>
           </div>
         </div>
 
+        <!-- 3) GauSeva -->
         <div class="programCard">
-          <a href="initiatives.html#gauseva">
-            <img class="poster lang-hi" src="assets/gauseva-hi.png" alt="Gauseva Poster Hindi">
-            <img class="poster lang-en" src="assets/gauseva-en.png" alt="Gauseva Poster English">
+          <a href="initiatives.html">
+            <img class="poster" src="./assets/gauseva-en.png" alt="GauSeva Poster">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#gauseva" id="read3">पूरा पढ़ें</a>
-            <a class="btn primary" href="donate.html" id="don3">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="p3c">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="p3d">Donate Now</a>
           </div>
         </div>
 
+        <!-- 4) Heritage -->
         <div class="programCard">
-          <a href="initiatives.html#heritage-conservation">
-            <img class="poster lang-hi" src="assets/heritage-hi.png" alt="Heritage Poster Hindi">
-            <img class="poster lang-en" src="assets/heritage-en.png" alt="Heritage Poster English">
+          <a href="initiatives.html">
+            <img class="poster" src="./assets/heritage-en.png" alt="Heritage Conservation Poster">
           </a>
           <div class="programBtns">
-            <a class="btn secondary" href="initiatives.html#heritage-conservation" id="read4">पूरा पढ़ें</a>
-            <a class="btn primary" href="donate.html" id="don4">दान करें</a>
+            <a class="btn secondary" href="contact.html" id="p4c">संपर्क करें</a>
+            <a class="btn primary" href="donate.html" id="p4d">Donate Now</a>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section>
+    <div class="wrap">
+      <h2 id="impactTitle">हमारा उद्देश्य और प्रभाव</h2>
+      <p class="muted" id="impactSub" style="line-height:1.75">
+        हम मानते हैं कि सही दिशा में छोटी मदद भी बड़े बदलाव की शुरुआत बन सकती है।
+        आपका योगदान सीधे जरूरतमंद लोगों तक पहुँचता है।
+      </p>
+
+      <div class="impactGrid">
+        <div class="impact">
+          <strong id="i1n">01</strong>
+          <span id="i1t">बच्चों की शिक्षा और मार्गदर्शन</span>
+        </div>
+        <div class="impact">
+          <strong id="i2n">02</strong>
+          <span id="i2t">स्वास्थ्य सहायता और सेवा</span>
+        </div>
+        <div class="impact">
+          <strong id="i3n">03</strong>
+          <span id="i3t">महिला सशक्तिकरण व आत्मनिर्भरता</span>
+        </div>
+      </div>
+
+      <div class="btnRow" style="margin-top:18px">
+        <a class="btn secondary" href="initiatives.html" id="btnExplore">हमारे सभी कार्यक्रम</a>
+        <a class="btn primary" href="donate.html" id="btnDonate3">Donate Now</a>
       </div>
     </div>
   </section>
@@ -348,94 +499,89 @@
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय", w:"हमारे प्रयास", d:"दस्तावेज़", dn:"दान करें", g:"गैलरी", c:"संपर्क"},
+
+      heroBadge:"Service • Trust • Impact",
       title:"भारत अभ्युदय संस्थान",
-      tagline:"अभ्युदय से आत्मनिर्भर भारत तक",
-      quick:"त्वरित जानकारी",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-      docsBtn:"दस्तावेज़ देखें",
-      join:"हमसे जुड़ें",
-      regTitle:"पंजीकरण विवरण",
-      programs:"वर्तमान संचालित कार्यक्रम",
-      programSub:"किसी भी कार्यक्रम पर क्लिक करके विवरण पढ़ें या दान करें।",
-      read:"पूरा पढ़ें",
-      donate:"दान करें",
+      tagline:"हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, वृद्धजन सेवा, गौसेवा, कौशल विकास और आपदा/सामाजिक सहायता के माध्यम से एक आत्मनिर्भर और सशक्त भारत के निर्माण हेतु कार्यरत हैं।",
+
+      btnWork:"हमारे प्रयास",
+      btnDonate:"दान करें",
+      btnContact:"संपर्क करें",
+
+      f1t:"विश्वसनीय और पारदर्शी",
+      f1d:"संस्था का पंजीकरण व दस्तावेज़ वेबसाइट पर उपलब्ध हैं, ताकि donor को पूरा विश्वास मिले।",
+      f2t:"स्थानीय जरूरत पर आधारित सेवा",
+      f2d:"हम वास्तविक समस्याओं पर काम करते हैं—जहाँ मदद की सबसे ज्यादा जरूरत है।",
+      f3t:"सेवा के साथ सम्मान",
+      f3d:"हमारा उद्देश्य सिर्फ सहायता नहीं, बल्कि सम्मान और आत्मनिर्भरता देना है।",
+
+      quickTitle:"त्वरित जानकारी",
       ph:"फोन:",
-      foot:"भारत अभ्युदय संस्थान"
+      regTitle:"पंजीकरण विवरण",
+      btnDocs:"दस्तावेज़ देखें",
+      btnDonate2:"Donate Now",
+
+      programTitle:"वर्तमान संचालित कार्यक्रम",
+      programSub:"ये हमारे प्रमुख कार्यक्रम हैं जिन पर वर्तमान में कार्य किया जा रहा है। आप सीधे दान कर सकते हैं या संपर्क करके जुड़ सकते हैं।",
+
+      contactBtn:"संपर्क करें",
+      donateBtn:"Donate Now",
+
+      impactTitle:"हमारा उद्देश्य और प्रभाव",
+      impactSub:"हम मानते हैं कि सही दिशा में छोटी मदद भी बड़े बदलाव की शुरुआत बन सकती है। आपका योगदान सीधे जरूरतमंद लोगों तक पहुँचता है।",
+
+      i1:"बच्चों की शिक्षा और मार्गदर्शन",
+      i2:"स्वास्थ्य सहायता और सेवा",
+      i3:"महिला सशक्तिकरण व आत्मनिर्भरता",
+
+      explore:"हमारे सभी कार्यक्रम",
+      donate3:"Donate Now"
     },
+
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
+      menu:{home:"Home", a:"About", w:"Our Initiatives", d:"Documents", dn:"Donate Now", g:"Gallery", c:"Contact"},
+
+      heroBadge:"Service • Trust • Impact",
       title:"Bharat Abhyudaya Sansthan",
-      tagline:"Upliftment to Self-Reliant India",
-      quick:"Quick Info",
-      menu:{home:"Home", a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-      docsBtn:"View Documents",
-      join:"Get Involved",
-      regTitle:"Registration Details",
-      programs:"Current Running Programs",
-      programSub:"Click any program to read more or donate.",
-      read:"Read More",
-      donate:"Donate Now",
+      tagline:"We work for a self-reliant and empowered India through education, health support, women empowerment, senior citizen care, GauSeva, skill development, and community help during emergencies.",
+
+      btnWork:"Our Initiatives",
+      btnDonate:"Donate Now",
+      btnContact:"Contact",
+
+      f1t:"Transparent & Trustworthy",
+      f1d:"Registration and documents are shared on the website so donors can donate with confidence.",
+      f2t:"Need-based community service",
+      f2d:"We focus on real local needs where help is required the most.",
+      f3t:"Support with dignity",
+      f3d:"Our goal is not just help, but dignity and self-reliance.",
+
+      quickTitle:"Quick Info",
       ph:"Phone:",
-      foot:"Bharat Abhyudaya Sansthan"
+      regTitle:"Registration Details",
+      btnDocs:"View Documents",
+      btnDonate2:"Donate Now",
+
+      programTitle:"Current Running Programs",
+      programSub:"These are our key initiatives currently in action. You can donate directly or contact us to get involved.",
+
+      contactBtn:"Contact",
+      donateBtn:"Donate Now",
+
+      impactTitle:"Our Purpose & Impact",
+      impactSub:"We believe even a small contribution, used correctly, can create a meaningful change. Your donation supports real people and real needs.",
+
+      i1:"Child Education & Guidance",
+      i2:"Health Support & Help",
+      i3:"Women Empowerment & Self-Reliance",
+
+      explore:"Explore All Initiatives",
+      donate3:"Donate Now"
     }
   };
-
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
-
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
-    document.getElementById("title").textContent=d.title;
-    document.getElementById("tagline").textContent=d.tagline;
-
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mGallery").textContent=d.menu.g;
-    document.getElementById("mContact").textContent=d.menu.c;
-
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.a;
-    document.getElementById("mmWork").textContent=d.menu.w;
-    document.getElementById("mmDocs").textContent=d.menu.d;
-    document.getElementById("mmDonate").textContent=d.menu.dn;
-    document.getElementById("mmGallery").textContent=d.menu.g;
-    document.getElementById("mmContact").textContent=d.menu.c;
-
-    document.getElementById("docsBtn").textContent=d.docsBtn;
-    document.getElementById("joinBtn").textContent=d.join;
-
-    document.getElementById("quick").textContent=d.quick;
-    document.getElementById("regTitle").textContent=d.regTitle;
-    document.getElementById("programTitle").textContent=d.programs;
-    document.getElementById("programSub").textContent=d.programSub;
-
-    document.getElementById("read1").textContent=d.read;
-    document.getElementById("read2").textContent=d.read;
-    document.getElementById("read3").textContent=d.read;
-    document.getElementById("read4").textContent=d.read;
-
-    document.getElementById("don1").textContent=d.donate;
-    document.getElementById("don2").textContent=d.donate;
-    document.getElementById("don3").textContent=d.donate;
-    document.getElementById("don4").textContent=d.donate;
-
-    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
-    document.getElementById("phLbl").textContent=d.ph;
-
-    document.getElementById("foot").textContent=d.foot;
-
-    document.querySelectorAll(".lang-hi").forEach(el=>{
-      el.style.display = (lang==="hi") ? "block" : "none";
-    });
-    document.querySelectorAll(".lang-en").forEach(el=>{
-      el.style.display = (lang==="en") ? "block" : "none";
-    });
-  }
 
   const btnHi=document.getElementById("btnHi");
   const btnEn=document.getElementById("btnEn");
@@ -450,24 +596,106 @@
     }
   }
 
-  btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
-    setLang("hi");
-  });
-
-  btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
-    setLang("en");
-  });
-
   const mobBtn = document.getElementById("mobBtn");
   const mobilePanel = document.getElementById("mobilePanel");
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
+  function setLang(lang){
+    const d=t[lang];
+    document.documentElement.lang=(lang==="hi")?"hi":"en";
+
+    // Brand
+    document.getElementById("brandText").textContent=d.brand;
+    document.getElementById("brandSub").textContent=d.sub;
+
+    // Menu desktop
+    document.getElementById("mHome").textContent=d.menu.home;
+    document.getElementById("mAbout").textContent=d.menu.a;
+    document.getElementById("mWork").textContent=d.menu.w;
+    document.getElementById("mDocs").textContent=d.menu.d;
+    document.getElementById("mDonate").textContent=d.menu.dn;
+    document.getElementById("mGallery").textContent=d.menu.g;
+    document.getElementById("mContact").textContent=d.menu.c;
+
+    // Menu mobile
+    document.getElementById("mmHome").textContent=d.menu.home;
+    document.getElementById("mmAbout").textContent=d.menu.a;
+    document.getElementById("mmWork").textContent=d.menu.w;
+    document.getElementById("mmDocs").textContent=d.menu.d;
+    document.getElementById("mmDonate").textContent=d.menu.dn;
+    document.getElementById("mmGallery").textContent=d.menu.g;
+    document.getElementById("mmContact").textContent=d.menu.c;
+
+    // Hero
+    document.getElementById("heroBadge").textContent=d.heroBadge;
+    document.getElementById("title").textContent=d.title;
+    document.getElementById("tagline").textContent=d.tagline;
+
+    document.getElementById("btnWork").textContent=d.btnWork;
+    document.getElementById("btnDonate").textContent=d.btnDonate;
+    document.getElementById("btnContact").textContent=d.btnContact;
+
+    // Features
+    document.getElementById("f1t").textContent=d.f1t;
+    document.getElementById("f1d").textContent=d.f1d;
+    document.getElementById("f2t").textContent=d.f2t;
+    document.getElementById("f2d").textContent=d.f2d;
+    document.getElementById("f3t").textContent=d.f3t;
+    document.getElementById("f3d").textContent=d.f3d;
+
+    // Quick
+    document.getElementById("quickTitle").textContent=d.quickTitle;
+    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
+    document.getElementById("phLbl").textContent=d.ph;
+
+    document.getElementById("regTitle").textContent=d.regTitle;
+    document.getElementById("btnDocs").textContent=d.btnDocs;
+    document.getElementById("btnDonate2").textContent=d.btnDonate2;
+
+    // Programs
+    document.getElementById("programTitle").textContent=d.programTitle;
+    document.getElementById("programSub").textContent=d.programSub;
+
+    document.getElementById("p1c").textContent=d.contactBtn;
+    document.getElementById("p2c").textContent=d.contactBtn;
+    document.getElementById("p3c").textContent=d.contactBtn;
+    document.getElementById("p4c").textContent=d.contactBtn;
+
+    document.getElementById("p1d").textContent=d.donateBtn;
+    document.getElementById("p2d").textContent=d.donateBtn;
+    document.getElementById("p3d").textContent=d.donateBtn;
+    document.getElementById("p4d").textContent=d.donateBtn;
+
+    // Impact
+    document.getElementById("impactTitle").textContent=d.impactTitle;
+    document.getElementById("impactSub").textContent=d.impactSub;
+    document.getElementById("i1t").textContent=d.i1;
+    document.getElementById("i2t").textContent=d.i2;
+    document.getElementById("i3t").textContent=d.i3;
+
+    document.getElementById("btnExplore").textContent=d.explore;
+    document.getElementById("btnDonate3").textContent=d.donate3;
+
+    // Footer
+    document.getElementById("foot").textContent=d.brand;
+
+    applyActive(lang);
+    mobilePanel.classList.remove("open");
+  }
+
+  btnHi.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","hi");
+    setLang("hi");
+  });
+
+  btnEn.addEventListener("click",()=>{
+    localStorage.setItem("bas_lang","en");
+    setLang("en");
+  });
+
+  // Init
   document.getElementById("year").textContent=new Date().getFullYear();
   const savedLang = localStorage.getItem("bas_lang") || "hi";
   applyActive(savedLang);
