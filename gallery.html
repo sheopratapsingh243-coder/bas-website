@@ -9,16 +9,26 @@
 :root{
   --brand:#0b5aa6;
   --accent:#f58b1f;
+  --fg:#0b1220;
+  --muted:#475569;
   --border:#e2e8f0;
-  --shadow:0 16px 40px rgba(2,6,23,.12);
+  --shadow:0 16px 40px rgba(2,6,23,.10);
+  --radius:20px;
+  --max:1120px;
 }
 
 *{box-sizing:border-box}
-
 body{
   margin:0;
-  font-family:system-ui,Segoe UI,Arial;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
   background:#f8fafc;
+  color:var(--fg);
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 16px;
 }
 
 /* ===== HEADER ===== */
@@ -31,13 +41,10 @@ header{
 }
 
 .nav{
-  max-width:1100px;
-  margin:auto;
-  padding:14px 16px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:20px;
+  justify-content:space-between;
+  padding:14px 0;
 }
 
 .brand{
@@ -47,18 +54,23 @@ header{
 }
 
 .brand img{
-  height:42px;
+  height:44px;
   border-radius:50%;
 }
 
-.brand-name{
-  font-weight:900;
-  font-size:16px;
+.brand b{
+  font-size:15px;
+}
+
+.brand span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
 }
 
 .menu{
   display:flex;
-  gap:18px;
+  gap:20px;
   font-weight:700;
 }
 
@@ -67,23 +79,20 @@ header{
   color:#334155;
 }
 
-.menu a:hover{
-  color:var(--brand);
-}
+.menu a:hover{color:var(--brand)}
 
 .toggle{
   display:flex;
   gap:8px;
-  align-items:center;
 }
 
 .toggle button{
   padding:6px 12px;
   border-radius:20px;
   border:1px solid var(--border);
+  background:#fff;
   cursor:pointer;
   font-weight:700;
-  background:#fff;
 }
 
 .toggle .active{
@@ -91,140 +100,108 @@ header{
   color:#fff;
 }
 
-/* ===== CONTENT ===== */
-.wrap{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 16px;
-  text-align:center;
-}
+/* ===== HERO STYLE SECTION ===== */
+section{padding:40px 0}
 
-h1{margin-bottom:10px}
-
-.muted{color:#64748b}
-
-/* ===== SLIDER ===== */
-.slideshow{
-  position:relative;
-  max-width:900px;
-  margin:30px auto;
-  overflow:hidden;
-  border-radius:20px;
-  box-shadow:var(--shadow);
-}
-
-.slide{display:none}
-
-.slide img{
-  width:100%;
-  height:500px;
-  object-fit:cover;
-}
-
-.active{display:block}
-
-.prev, .next{
-  cursor:pointer;
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  padding:12px 18px;
-  color:#fff;
-  font-size:22px;
-  background:rgba(0,0,0,.5);
-  border-radius:50%;
-}
-
-.prev{left:15px}
-.next{right:15px}
-
-.dots{
-  margin-top:15px;
-}
-
-.dot{
-  height:12px;
-  width:12px;
-  background:#cbd5e1;
-  border-radius:50%;
-  display:inline-block;
-  margin:0 4px;
-  cursor:pointer;
-}
-
-.activeDot{background:var(--brand)}
-
-/* ===== GRID ===== */
-.grid{
-  margin-top:40px;
+.hero{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:1.1fr .9fr;
+  gap:30px;
+  align-items:center;
 }
 
-.grid img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:20px;
+  background:#e6f0fa;
+  color:var(--brand);
+  font-weight:700;
+  font-size:13px;
+}
+
+h1{
+  font-size:36px;
+  margin:12px 0;
+}
+
+.muted{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.btnRow{
+  display:flex;
+  gap:12px;
+  margin-top:20px;
+}
+
+.btn{
+  padding:12px 18px;
   border-radius:16px;
-  cursor:pointer;
+  font-weight:800;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.btn.primary{
+  background:var(--accent);
+  color:#fff;
+}
+
+.btn.secondary{
+  background:var(--brand);
+  color:#fff;
+}
+
+.card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:24px;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.gallery img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:18px;
   box-shadow:var(--shadow);
   transition:.3s;
+  cursor:pointer;
 }
 
-.grid img:hover{
+.gallery img:hover{
   transform:scale(1.05);
 }
 
-/* ===== LIGHTBOX ===== */
-#lightbox{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.9);
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
-
-#lightbox img{
-  max-width:90%;
-  max-height:85%;
-  border-radius:10px;
-}
-
-#lightbox span{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:30px;
-  color:#fff;
-  cursor:pointer;
-}
-
-/* ===== FOOTER ===== */
+/* Footer */
 footer{
+  margin-top:60px;
+  padding:20px 0;
   text-align:center;
-  padding:20px;
   border-top:1px solid var(--border);
-  margin-top:50px;
-  background:#fff;
   font-size:14px;
-  color:#64748b;
+  color:var(--muted);
 }
 
 /* WhatsApp */
 .wa{
   position:fixed;
-  bottom:16px;
   right:16px;
+  bottom:16px;
   background:#22c55e;
   color:#fff;
   padding:12px 16px;
-  border-radius:50px;
+  border-radius:40px;
   font-weight:700;
   text-decoration:none;
 }
@@ -234,135 +211,86 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
+  <div class="wrap nav">
     <div class="brand">
-      <img src="assets/logo.jpg" alt="Logo">
-      <div class="brand-name">Bharat Abhyudaya Sansthan</div>
+      <img src="assets/logo.jpg">
+      <div>
+        <b>Bharat Abhyudaya Sansthan</b>
+        <span>Upliftment to Self-Reliant India</span>
+      </div>
     </div>
 
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="initiatives.html">Initiatives</a>
+      <a href="initiatives.html">Our Initiatives</a>
       <a href="documents.html">Documents</a>
-      <a href="donate.html">Donate</a>
+      <a href="donate.html">Donate Now</a>
+      <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </div>
 
     <div class="toggle">
-      <button onclick="setLang('hi')" id="hiBtn" class="active">हिन्दी</button>
-      <button onclick="setLang('en')" id="enBtn">English</button>
+      <button class="active">हिन्दी</button>
+      <button>English</button>
     </div>
   </div>
 </header>
 
-<div class="wrap">
-  <h1 id="title">गैलरी</h1>
-  <p class="muted" id="desc">हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।</p>
+<section>
+  <div class="wrap hero">
 
-  <!-- SLIDER -->
-  <div class="slideshow">
-    <div class="slide active"><img src="assets/gallery/1.jpg"></div>
-    <div class="slide"><img src="assets/gallery/2.jpg"></div>
-    <div class="slide"><img src="assets/gallery/3.jpg"></div>
-    <div class="slide"><img src="assets/gallery/4.jpg"></div>
-    <div class="slide"><img src="assets/gallery/5.jpg"></div>
-    <div class="slide"><img src="assets/gallery/6.jpg"></div>
-    <div class="slide"><img src="assets/gallery/7.jpg"></div>
-    <div class="slide"><img src="assets/gallery/8.jpg"></div>
+    <div>
+      <div class="badge">Service • Trust • Impact</div>
+      <h1>गैलरी</h1>
+      <p class="muted">
+        हमारी सेवा गतिविधियों, शिक्षा कार्यक्रमों, स्वास्थ्य सहायता,
+        महिला सशक्तिकरण और सामाजिक प्रभाव की झलकियाँ।
+      </p>
 
-    <span class="prev" onclick="changeSlide(-1)">❮</span>
-    <span class="next" onclick="changeSlide(1)">❯</span>
+      <div class="btnRow">
+        <a class="btn secondary" href="initiatives.html">Our Initiatives</a>
+        <a class="btn primary" href="donate.html">Donate Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Gallery Highlights</h3>
+      <p class="muted" style="margin-top:12px;">
+        यहाँ प्रदर्शित चित्र हमारे जमीनी कार्यों का प्रमाण हैं।
+        आपका सहयोग हमें और अधिक लोगों तक पहुँचने में सक्षम बनाता है।
+      </p>
+      <div class="btnRow" style="margin-top:20px;">
+        <a class="btn secondary" href="contact.html">Contact</a>
+        <a class="btn primary" href="donate.html">Support Now</a>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <div class="dots">
-    <span class="dot activeDot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-    <span class="dot" onclick="currentSlide(6)"></span>
-    <span class="dot" onclick="currentSlide(7)"></span>
-    <span class="dot" onclick="currentSlide(8)"></span>
+<section>
+  <div class="wrap">
+
+    <div class="gallery">
+      <img src="assets/gallery/1.jpg">
+      <img src="assets/gallery/2.jpg">
+      <img src="assets/gallery/3.jpg">
+      <img src="assets/gallery/4.jpg">
+      <img src="assets/gallery/5.jpg">
+      <img src="assets/gallery/6.jpg">
+      <img src="assets/gallery/7.jpg">
+      <img src="assets/gallery/8.jpg">
+    </div>
+
   </div>
-
-  <!-- GRID -->
-  <div class="grid">
-    <img src="assets/gallery/1.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/2.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/3.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/4.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/5.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/6.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/7.jpg" onclick="openLightbox(this.src)">
-    <img src="assets/gallery/8.jpg" onclick="openLightbox(this.src)">
-  </div>
-
-</div>
-
-<div id="lightbox">
-  <span onclick="closeLightbox()">✕</span>
-  <img id="lightboxImg">
-</div>
+</section>
 
 <footer>
   © 2026 Bharat Abhyudaya Sansthan
 </footer>
 
 <a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
-
-<script>
-let slideIndex=1;
-let slides=document.getElementsByClassName("slide");
-let dots=document.getElementsByClassName("dot");
-
-function showSlide(n){
-  if(n>slides.length)slideIndex=1;
-  if(n<1)slideIndex=slides.length;
-
-  for(let i=0;i<slides.length;i++){
-    slides[i].classList.remove("active");
-    dots[i].classList.remove("activeDot");
-  }
-
-  slides[slideIndex-1].classList.add("active");
-  dots[slideIndex-1].classList.add("activeDot");
-}
-
-function changeSlide(n){
-  slideIndex+=n;
-  showSlide(slideIndex);
-}
-
-function currentSlide(n){
-  slideIndex=n;
-  showSlide(slideIndex);
-}
-
-setInterval(()=>{slideIndex++;showSlide(slideIndex)},4000);
-
-function openLightbox(src){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightboxImg").src=src;
-}
-function closeLightbox(){
-  document.getElementById("lightbox").style.display="none";
-}
-
-function setLang(lang){
-  if(lang==="hi"){
-    document.getElementById("title").innerText="गैलरी";
-    document.getElementById("desc").innerText="हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।";
-    document.getElementById("hiBtn").classList.add("active");
-    document.getElementById("enBtn").classList.remove("active");
-  }else{
-    document.getElementById("title").innerText="Gallery";
-    document.getElementById("desc").innerText="Snapshots of our service activities and community impact.";
-    document.getElementById("enBtn").classList.add("active");
-    document.getElementById("hiBtn").classList.remove("active");
-  }
-}
-</script>
 
 </body>
 </html>
