@@ -318,25 +318,6 @@
       border-color:transparent;
     }
 
-    /* Sections list below slider (for anchors) */
-    .listGrid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:18px;
-    }
-    @media(min-width:900px){
-      .listGrid{grid-template-columns:1fr 1fr}
-    }
-    .mini{
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.92);
-    }
-    .mini b{display:block}
-    .mini p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
-
     /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
@@ -417,9 +398,7 @@
             हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, वृद्धजन सेवा और सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य कर रहे हैं।
           </p>
 
-          <div class="chipRow" id="chipRow">
-            <!-- JS will fill 9 chips -->
-          </div>
+          <div class="chipRow" id="chipRow"></div>
 
           <div class="btnRow">
             <a class="btn secondary" href="donate.html" id="donateTop">दान करें</a>
@@ -433,14 +412,18 @@
 
         <div class="card">
           <b id="focusTitle">हमारा फोकस</b>
-          <div class="listGrid" style="margin-top:14px">
-            <div class="mini">
+          <div style="display:grid;gap:14px;margin-top:14px">
+            <div style="border:1px solid rgba(226,232,240,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.92)">
               <b id="f1t">सही जगह, सही समय</b>
-              <p id="f1d">हम स्थानीय स्तर पर वास्तविक जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।</p>
+              <p id="f1d" style="margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.6">
+                हम स्थानीय स्तर पर वास्तविक जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।
+              </p>
             </div>
-            <div class="mini">
+            <div style="border:1px solid rgba(226,232,240,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.92)">
               <b id="f2t">पारदर्शिता</b>
-              <p id="f2d">हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।</p>
+              <p id="f2d" style="margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.6">
+                हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।
+              </p>
             </div>
           </div>
         </div>
@@ -472,8 +455,8 @@
                   <p class="impact" id="k1c"></p>
                   <p class="trust" id="k1d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#shiksha-sarathi" id="k1rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k1dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k1rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k1dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -495,8 +478,8 @@
                   <p class="impact" id="k2c"></p>
                   <p class="trust" id="k2d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#women-empowerment" id="k2rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k2dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k2rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k2dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -518,8 +501,8 @@
                   <p class="impact" id="k3c"></p>
                   <p class="trust" id="k3d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#health-services" id="k3rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k3dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k3rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k3dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -541,8 +524,8 @@
                   <p class="impact" id="k4c"></p>
                   <p class="trust" id="k4d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#ambulance-seva" id="k4rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k4dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k4rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k4dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -564,8 +547,8 @@
                   <p class="impact" id="k5c"></p>
                   <p class="trust" id="k5d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#old-age-care" id="k5rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k5dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k5rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k5dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -587,8 +570,8 @@
                   <p class="impact" id="k6c"></p>
                   <p class="trust" id="k6d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#skill-development" id="k6rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k6dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k6rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k6dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -610,8 +593,8 @@
                   <p class="impact" id="k7c"></p>
                   <p class="trust" id="k7d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#community-help" id="k7rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k7dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k7rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k7dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -633,8 +616,8 @@
                   <p class="impact" id="k8c"></p>
                   <p class="trust" id="k8d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#gauseva" id="k8rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k8dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k8rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k8dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -656,8 +639,8 @@
                   <p class="impact" id="k9c"></p>
                   <p class="trust" id="k9d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="#heritage-conservation" id="k9rm">Read More</a>
-                    <a class="btn primary" href="donate.html" id="k9dn">Donate Now</a>
+                    <a class="btn secondary" href="contact.html" id="k9rm">संपर्क करें</a>
+                    <a class="btn primary" href="donate.html" id="k9dn">दान करें</a>
                   </div>
                 </div>
               </div>
@@ -702,7 +685,7 @@
       f2t:"पारदर्शिता",
       f2d:"हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।",
 
-      read:"पूरा पढ़ें",
+      contactBtn:"संपर्क करें",
       donate:"दान करें",
 
       chips:[
@@ -717,7 +700,6 @@
         {id:"#heritage-conservation", label:"धरोहर संरक्षण"}
       ],
 
-      // 9 initiatives content
       items:[
         {
           tag:"Education",
@@ -750,7 +732,7 @@
         {
           tag:"Care",
           title:"वृद्धजन सेवा एवं आश्रय",
-          desc:"वृद्धजन सेवा के अंतर्गत हमारा प्रयास है कि बुजुर्गों को सम्मान, देखभाल और आवश्यक सहायता मिले। कई बुजुजुर्ग अकेलेपन और संसाधनों की कमी से जूझते हैं। हम उनके लिए भोजन, दवा, तथा जरूरत के अनुसार सहायता उपलब्ध कराने की दिशा में काम करते हैं।",
+          desc:"वृद्धजन सेवा के अंतर्गत हमारा प्रयास है कि बुजुर्गों को सम्मान, देखभाल और आवश्यक सहायता मिले। कई बुजुर्ग अकेलेपन और संसाधनों की कमी से जूझते हैं। हम उनके लिए भोजन, दवा, तथा जरूरत के अनुसार सहायता उपलब्ध कराने की दिशा में काम करते हैं।",
           impact:"बुजुर्गों की सेवा हमारे संस्कार और जिम्मेदारी है।",
           trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
@@ -803,7 +785,7 @@
       f2t:"Transparency",
       f2d:"We are committed to using every contribution responsibly and clearly.",
 
-      read:"Read More",
+      contactBtn:"Contact",
       donate:"Donate Now",
 
       chips:[
@@ -1050,7 +1032,8 @@
       document.getElementById(`k${i}c`).textContent = item.impact;
       document.getElementById(`k${i}d`).textContent = item.trust;
 
-      document.getElementById(`k${i}rm`).textContent = d.read;
+      // Contact + Donate buttons
+      document.getElementById(`k${i}rm`).textContent = d.contactBtn;
       document.getElementById(`k${i}dn`).textContent = d.donate;
     }
 
