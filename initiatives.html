@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Our Initiatives • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Our initiatives and social programs of Bharat Abhyudaya Sansthan." />
+  <meta name="description" content="Our initiatives and programs of Bharat Abhyudaya Sansthan." />
 
   <style>
     :root{
@@ -14,7 +14,7 @@
       --muted:#475569;
       --border:#e2e8f0;
       --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:22px;
+      --radius:20px;
       --max:1120px;
     }
     *{box-sizing:border-box}
@@ -31,11 +31,22 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:26px 0}
+    section{padding:28px 0}
     h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
+    h2{margin:0;font-size:24px;letter-spacing:-.4px}
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
+    .chipRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .chip{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.92);
+      font-weight:900;font-size:13px;
+      cursor:pointer;
+    }
+    .chip:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
     /* Header */
     header{
@@ -59,7 +70,7 @@
     }
     .brand b{display:block;font-size:14px;line-height:1.15}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:950}
+    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
     .menu a:hover{color:var(--brand)}
     @media(min-width:980px){.menu{display:flex}}
 
@@ -114,7 +125,14 @@
     }
     .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
 
-    /* Buttons */
+    /* Cards */
+    .card{
+      background:#fff;border:1px solid rgba(226,232,240,.95);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+    }
+    .heroGrid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:980px){.heroGrid{grid-template-columns:1.15fr .85fr;gap:22px}}
+
     .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .btn{
       border-radius:16px;padding:12px 16px;font-size:14px;
@@ -133,43 +151,10 @@
       color:#fff;border-color:transparent;font-weight:950;
     }
 
-    /* Hero */
-    .heroCard{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:26px;padding:18px;
-      box-shadow:var(--shadow);
-    }
-
     /* Slider */
     .sliderShell{
+      position:relative;
       margin-top:18px;
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:26px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .sliderTop{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 14px 0;
-    }
-
-    .slideTitle{
-      font-weight:1000;
-      letter-spacing:-.3px;
-      font-size:18px;
-      margin:0;
-    }
-
-    .slideCounter{
-      font-weight:950;
-      color:var(--muted);
-      font-size:13px;
-      white-space:nowrap;
     }
 
     .trackWrap{
@@ -180,21 +165,23 @@
 
     .track{
       display:flex;
-      gap:14px;
+      width:100%;
       transform:translateX(0);
       transition:transform .35s ease;
       will-change:transform;
     }
 
     .slide{
-      min-width:100%;
+      flex:0 0 100%;
+      width:100%;
       background:#fff;
       border:1px solid rgba(226,232,240,.95);
       border-radius:22px;
       overflow:hidden;
+      box-shadow:var(--shadow);
     }
 
-    /* Layout B */
+    /* Layout B: desktop split */
     .slideGrid{
       display:grid;
       grid-template-columns:1fr;
@@ -202,108 +189,126 @@
     @media(min-width:980px){
       .slideGrid{
         grid-template-columns:1fr 1fr;
-        min-height:520px;
+        align-items:stretch;
+      }
+    }
+
+    .posterWrap{
+      background:#fff;
+      border-bottom:1px solid rgba(226,232,240,.95);
+    }
+    @media(min-width:980px){
+      .posterWrap{
+        border-bottom:none;
+        border-right:1px solid rgba(226,232,240,.95);
       }
     }
 
     .poster{
       width:100%;
-      height:100%;
-      object-fit:cover;
+      height:auto;
       display:block;
       background:#fff;
     }
 
     .slideBody{
-      padding:16px 16px 18px;
-    }
-    @media(min-width:980px){
-      .slideBody{
-        padding:18px 18px 20px;
-      }
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
 
     .kicker{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .tag{
       display:inline-flex;
-      padding:6px 10px;
+      padding:8px 10px;
       border-radius:999px;
-      background:rgba(245,139,31,.12);
-      color:#7a3f00;
-      font-weight:1000;
+      background:rgba(11,90,166,.06);
+      border:1px solid rgba(11,90,166,.15);
+      font-weight:950;
+      color:var(--brand);
       font-size:12px;
-      border:1px solid rgba(245,139,31,.25);
+    }
+    .slideTitle{
+      font-size:20px;
+      font-weight:950;
+      margin:0;
+      letter-spacing:-.3px;
     }
 
-    .sTitle{
-      margin:10px 0 0;
-      font-size:22px;
-      letter-spacing:-.4px;
-      font-weight:1000;
-      line-height:1.15;
-    }
-
-    .sText{
-      margin-top:10px;
+    .desc{
       color:var(--muted);
       line-height:1.65;
+      margin:0;
       font-size:14px;
     }
-
     .impact{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:18px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.04);
-      color:#0b3a6a;
-      font-weight:950;
-      line-height:1.5;
+      margin:0;
+      font-weight:900;
+      color:#0b1220;
+      background:rgba(245,139,31,.12);
+      border:1px solid rgba(245,139,31,.25);
+      padding:12px 12px;
+      border-radius:16px;
+      line-height:1.55;
       font-size:14px;
+    }
+    .trust{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
     }
 
     .slideBtns{
       display:flex;
       gap:10px;
-      margin-top:14px;
+      margin-top:6px;
       flex-wrap:wrap;
     }
-    .slideBtns a{flex:1; min-width:170px}
+    .slideBtns a{flex:1; min-width:180px}
 
-    .controls{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:0 14px 14px;
-    }
-
-    .arrows{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .arrowBtn{
-      width:46px;height:46px;
-      border-radius:16px;
+    /* Side arrows */
+    .navArrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;height:48px;
+      border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
-      background:#fff;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      box-shadow:0 16px 40px rgba(2,6,23,.12);
       cursor:pointer;
       font-size:18px;
-      font-weight:1000;
+      font-weight:950;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:10;
     }
-    .arrowBtn:hover{background:rgba(11,90,166,.06);color:var(--brand)}
+    .navArrow:hover{background:#fff}
+    .navArrow.left{left:-6px}
+    .navArrow.right{right:-6px}
+    @media(max-width:520px){
+      .navArrow{width:44px;height:44px}
+      .navArrow.left{left:0}
+      .navArrow.right{right:0}
+    }
 
+    /* Dots */
     .dots{
       display:flex;
+      justify-content:center;
       gap:8px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+      margin-top:10px;
     }
     .dot{
-      width:10px;height:10px;
-      border-radius:999px;
+      width:10px;height:10px;border-radius:999px;
       border:1px solid rgba(226,232,240,.95);
       background:#fff;
       cursor:pointer;
@@ -313,18 +318,38 @@
       border-color:transparent;
     }
 
-    /* Footer + WhatsApp */
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
+    /* Sections list below slider (for anchors) */
+    .listGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:18px;
     }
+    @media(min-width:900px){
+      .listGrid{grid-template-columns:1fr 1fr}
+    }
+    .mini{
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:18px;
+      padding:14px;
+      background:rgba(255,255,255,.92);
+    }
+    .mini b{display:block}
+    .mini p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    /* Floating WhatsApp */
     .wa{
       position:fixed;right:16px;bottom:16px;z-index:999;
       background:linear-gradient(135deg,#22c55e,#16a34a);
       color:#fff;padding:12px 14px;border-radius:999px;
       box-shadow:0 18px 45px rgba(2,6,23,.22);
       font-weight:950;
+    }
+
+    footer{
+      border-top:1px solid rgba(226,232,240,.95);
+      padding:18px 0;margin-top:10px;color:var(--muted);
+      background:#fff;font-size:14px;
     }
   </style>
 </head>
@@ -348,8 +373,8 @@
         <a href="about.html" id="mAbout">परिचय</a>
         <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
         <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">Donate Now</a>
-        <a href="gallery.html" id="mGallery">Gallery</a>
+        <a href="donate.html" id="mDonate">दान करें</a>
+        <a href="gallery.html" id="mGallery">गैलरी</a>
         <a href="contact.html" id="mContact">संपर्क</a>
       </nav>
 
@@ -370,8 +395,8 @@
         <a href="about.html" id="mmAbout">परिचय</a>
         <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
         <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">Donate Now</a>
-        <a href="gallery.html" id="mmGallery">Gallery</a>
+        <a href="donate.html" id="mmDonate">दान करें</a>
+        <a href="gallery.html" id="mmGallery">गैलरी</a>
         <a href="contact.html" id="mmContact">संपर्क</a>
       </div>
     </div>
@@ -381,178 +406,258 @@
 
 <main id="top">
 
+  <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="heroCard">
-        <h1 id="pageTitle">हमारे प्रयास (Initiatives)</h1>
-        <p class="muted" id="pageSub">
-          समाज के हर वर्ग तक सहायता पहुँचाने के उद्देश्य से हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, सेवा, कौशल और धरोहर संरक्षण जैसे क्षेत्रों में कार्य करते हैं।
-        </p>
+      <div class="heroGrid">
 
-        <div class="btnRow">
-          <a class="btn secondary" href="donate.html" id="donateTop">Donate Now</a>
-          <a class="btn primary" href="contact.html" id="joinTop">हमसे जुड़ें</a>
+        <div>
+          <h1 id="title">हमारे प्रयास</h1>
+          <p class="muted" id="tagline">
+            हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, वृद्धजन सेवा और सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य कर रहे हैं।
+          </p>
+
+          <div class="chipRow" id="chipRow">
+            <!-- JS will fill 9 chips -->
+          </div>
+
+          <div class="btnRow">
+            <a class="btn secondary" href="donate.html" id="donateTop">दान करें</a>
+            <a class="btn primary" href="contact.html" id="contactTop">हमसे जुड़ें</a>
+          </div>
+
+          <p class="small muted" style="margin-top:10px" id="noteTop">
+            हमारा प्रयास है कि हर सहयोग पारदर्शिता के साथ जरूरतमंदों तक पहुँचे।
+          </p>
         </div>
+
+        <div class="card">
+          <b id="focusTitle">हमारा फोकस</b>
+          <div class="listGrid" style="margin-top:14px">
+            <div class="mini">
+              <b id="f1t">सही जगह, सही समय</b>
+              <p id="f1d">हम स्थानीय स्तर पर वास्तविक जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।</p>
+            </div>
+            <div class="mini">
+              <b id="f2t">पारदर्शिता</b>
+              <p id="f2d">हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- SLIDER -->
       <div class="sliderShell" aria-label="Initiatives Slider">
-        <div class="sliderTop">
-          <p class="slideTitle" id="sliderHeading">Our Initiatives</p>
-          <span class="slideCounter" id="counter">1 / 9</span>
-        </div>
 
-        <div class="trackWrap" id="trackWrap">
+        <button class="navArrow left" id="prevBtn" type="button" aria-label="Previous">‹</button>
+        <button class="navArrow right" id="nextBtn" type="button" aria-label="Next">›</button>
+
+        <div class="trackWrap">
           <div class="track" id="track">
 
             <!-- 1 -->
-            <article class="slide">
+            <article class="slide" id="shiksha-sarathi">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k1">Education</span>
-                  <div class="sTitle" id="t1">शिक्षा सारथी (बाल शिक्षा एवं विकास)</div>
-                  <div class="sText" id="d1"></div>
-                  <div class="impact" id="i1"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k1tag">Education</span>
+                    <span class="small muted" id="k1code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k1a">शिक्षा सारथी (बाल शिक्षा एवं विकास)</h3>
+                  <p class="desc" id="k1b"></p>
+                  <p class="impact" id="k1c"></p>
+                  <p class="trust" id="k1d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don1">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con1">Contact</a>
+                    <a class="btn secondary" href="#shiksha-sarathi" id="k1rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k1dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 2 -->
-            <article class="slide">
+            <article class="slide" id="women-empowerment">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/women.png" alt="Women Empowerment Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/women.png" alt="Women Empowerment Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k2">Women</span>
-                  <div class="sTitle" id="t2">महिला सशक्तिकरण</div>
-                  <div class="sText" id="d2"></div>
-                  <div class="impact" id="i2"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k2tag">Women</span>
+                    <span class="small muted" id="k2code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k2a">महिला सशक्तिकरण</h3>
+                  <p class="desc" id="k2b"></p>
+                  <p class="impact" id="k2c"></p>
+                  <p class="trust" id="k2d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don2">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con2">Contact</a>
+                    <a class="btn secondary" href="#women-empowerment" id="k2rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k2dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 3 -->
-            <article class="slide">
+            <article class="slide" id="health-services">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/health.png" alt="Health Services Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/health.png" alt="Health Services Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k3">Health</span>
-                  <div class="sTitle" id="t3">स्वास्थ्य सहायता</div>
-                  <div class="sText" id="d3"></div>
-                  <div class="impact" id="i3"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k3tag">Health</span>
+                    <span class="small muted" id="k3code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k3a">स्वास्थ्य सहायता</h3>
+                  <p class="desc" id="k3b"></p>
+                  <p class="impact" id="k3c"></p>
+                  <p class="trust" id="k3d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don3">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con3">Contact</a>
+                    <a class="btn secondary" href="#health-services" id="k3rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k3dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 4 -->
-            <article class="slide">
+            <article class="slide" id="ambulance-seva">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/ambulance.png" alt="Ambulance Seva Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/ambulance.png" alt="Ambulance Seva Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k4">Emergency</span>
-                  <div class="sTitle" id="t4">एंबुलेंस सेवा</div>
-                  <div class="sText" id="d4"></div>
-                  <div class="impact" id="i4"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k4tag">Emergency</span>
+                    <span class="small muted" id="k4code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k4a">एंबुलेंस सेवा</h3>
+                  <p class="desc" id="k4b"></p>
+                  <p class="impact" id="k4c"></p>
+                  <p class="trust" id="k4d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don4">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con4">Contact</a>
+                    <a class="btn secondary" href="#ambulance-seva" id="k4rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k4dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 5 -->
-            <article class="slide">
+            <article class="slide" id="old-age-care">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/oldage.png" alt="Old Age Care Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/oldage.png" alt="Old Age Care Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k5">Care</span>
-                  <div class="sTitle" id="t5">वृद्धजन सेवा एवं सहायता</div>
-                  <div class="sText" id="d5"></div>
-                  <div class="impact" id="i5"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k5tag">Care</span>
+                    <span class="small muted" id="k5code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k5a">वृद्धजन सेवा एवं आश्रय</h3>
+                  <p class="desc" id="k5b"></p>
+                  <p class="impact" id="k5c"></p>
+                  <p class="trust" id="k5d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don5">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con5">Contact</a>
+                    <a class="btn secondary" href="#old-age-care" id="k5rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k5dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 6 -->
-            <article class="slide">
+            <article class="slide" id="skill-development">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/skill.png" alt="Skill Development Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/skill.png" alt="Skill Development Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k6">Skills</span>
-                  <div class="sTitle" id="t6">कौशल विकास</div>
-                  <div class="sText" id="d6"></div>
-                  <div class="impact" id="i6"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k6tag">Skills</span>
+                    <span class="small muted" id="k6code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k6a">कौशल विकास</h3>
+                  <p class="desc" id="k6b"></p>
+                  <p class="impact" id="k6c"></p>
+                  <p class="trust" id="k6d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don6">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con6">Contact</a>
+                    <a class="btn secondary" href="#skill-development" id="k6rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k6dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 7 -->
-            <article class="slide">
+            <article class="slide" id="community-help">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/help.png" alt="Community Help Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/help.png" alt="Community Help Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k7">Support</span>
-                  <div class="sTitle" id="t7">आपदा एवं सामाजिक सहायता</div>
-                  <div class="sText" id="d7"></div>
-                  <div class="impact" id="i7"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k7tag">Support</span>
+                    <span class="small muted" id="k7code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k7a">आपदा एवं सामाजिक सहायता</h3>
+                  <p class="desc" id="k7b"></p>
+                  <p class="impact" id="k7c"></p>
+                  <p class="trust" id="k7d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don7">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con7">Contact</a>
+                    <a class="btn secondary" href="#community-help" id="k7rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k7dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 8 -->
-            <article class="slide">
+            <article class="slide" id="gauseva">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/gauseva.png" alt="GauSeva Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/gauseva.png" alt="GauSeva Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k8">GauSeva</span>
-                  <div class="sTitle" id="t8">गौसेवा एवं गौशाला सहयोग</div>
-                  <div class="sText" id="d8"></div>
-                  <div class="impact" id="i8"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k8tag">GauSeva</span>
+                    <span class="small muted" id="k8code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k8a">गौसेवा एवं गौशाला सहयोग</h3>
+                  <p class="desc" id="k8b"></p>
+                  <p class="impact" id="k8c"></p>
+                  <p class="trust" id="k8d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don8">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con8">Contact</a>
+                    <a class="btn secondary" href="#gauseva" id="k8rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k8dn">Donate Now</a>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- 9 -->
-            <article class="slide">
+            <article class="slide" id="heritage-conservation">
               <div class="slideGrid">
-                <img class="poster" src="./assets/initiatives/heritage.png" alt="Heritage Conservation Poster">
+                <div class="posterWrap">
+                  <img class="poster" src="./assets/initiatives/heritage.png" alt="Heritage Conservation Poster">
+                </div>
                 <div class="slideBody">
-                  <span class="kicker" id="k9">Heritage</span>
-                  <div class="sTitle" id="t9">धरोहर संरक्षण</div>
-                  <div class="sText" id="d9"></div>
-                  <div class="impact" id="i9"></div>
+                  <div class="kicker">
+                    <span class="tag" id="k9tag">Heritage</span>
+                    <span class="small muted" id="k9code">Program • BAS</span>
+                  </div>
+                  <h3 class="slideTitle" id="k9a">धरोहर संरक्षण</h3>
+                  <p class="desc" id="k9b"></p>
+                  <p class="impact" id="k9c"></p>
+                  <p class="trust" id="k9d"></p>
                   <div class="slideBtns">
-                    <a class="btn secondary" href="donate.html" id="don9">Donate Now</a>
-                    <a class="btn primary" href="contact.html" id="con9">Contact</a>
+                    <a class="btn secondary" href="#heritage-conservation" id="k9rm">Read More</a>
+                    <a class="btn primary" href="donate.html" id="k9dn">Donate Now</a>
                   </div>
                 </div>
               </div>
@@ -561,13 +666,7 @@
           </div>
         </div>
 
-        <div class="controls">
-          <div class="arrows">
-            <button class="arrowBtn" id="prev" type="button" aria-label="Previous">‹</button>
-            <button class="arrowBtn" id="next" type="button" aria-label="Next">›</button>
-          </div>
-          <div class="dots" id="dots"></div>
-        </div>
+        <div class="dots" id="dots"></div>
       </div>
 
     </div>
@@ -588,69 +687,100 @@
     hi:{
       brand:"भारत अभ्युदय संस्थान",
       sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", about:"परिचय", work:"हमारे प्रयास", docs:"दस्तावेज़", donate:"Donate Now", gallery:"Gallery", contact:"संपर्क"},
-      pageTitle:"हमारे प्रयास (Initiatives)",
-      pageSub:"समाज के हर वर्ग तक सहायता पहुँचाने के उद्देश्य से हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, सेवा, कौशल और धरोहर संरक्षण जैसे क्षेत्रों में कार्य करते हैं।",
-      sliderHeading:"हमारे कार्यक्रम (Slider)",
-      donateTop:"Donate Now",
-      joinTop:"हमसे जुड़ें",
-      contact:"संपर्क करें",
-      foot:"भारत अभ्युदय संस्थान",
 
+      menu:{home:"मुख्य पृष्ठ", a:"परिचय", w:"हमारे प्रयास", d:"दस्तावेज़", dn:"दान करें", g:"गैलरी", c:"संपर्क"},
+
+      title:"हमारे प्रयास",
+      tagline:"हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, वृद्धजन सेवा और सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य कर रहे हैं।",
+      donateTop:"दान करें",
+      contactTop:"हमसे जुड़ें",
+      noteTop:"हमारा प्रयास है कि हर सहयोग पारदर्शिता के साथ जरूरतमंदों तक पहुँचे।",
+
+      focusTitle:"हमारा फोकस",
+      f1t:"सही जगह, सही समय",
+      f1d:"हम स्थानीय स्तर पर वास्तविक जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।",
+      f2t:"पारदर्शिता",
+      f2d:"हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।",
+
+      read:"पूरा पढ़ें",
+      donate:"दान करें",
+
+      chips:[
+        {id:"#shiksha-sarathi", label:"शिक्षा सारथी"},
+        {id:"#women-empowerment", label:"महिला सशक्तिकरण"},
+        {id:"#health-services", label:"स्वास्थ्य सहायता"},
+        {id:"#ambulance-seva", label:"एंबुलेंस सेवा"},
+        {id:"#old-age-care", label:"वृद्धजन सेवा"},
+        {id:"#skill-development", label:"कौशल विकास"},
+        {id:"#community-help", label:"सामाजिक सहायता"},
+        {id:"#gauseva", label:"गौसेवा"},
+        {id:"#heritage-conservation", label:"धरोहर संरक्षण"}
+      ],
+
+      // 9 initiatives content
       items:[
         {
-          k:"Education",
+          tag:"Education",
           title:"शिक्षा सारथी (बाल शिक्षा एवं विकास)",
           desc:"शिक्षा सारथी कार्यक्रम के अंतर्गत हम आर्थिक रूप से कमजोर बच्चों को शिक्षा से जोड़ने, स्कूल सामग्री उपलब्ध कराने तथा नियमित मार्गदर्शन देने का कार्य करते हैं। हमारा उद्देश्य है कि कोई भी बच्चा केवल संसाधनों की कमी के कारण पढ़ाई से वंचित न रहे।",
-          impact:"आपका छोटा सा सहयोग किसी बच्चे के भविष्य को बदल सकता है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"आपका छोटा सा सहयोग किसी बच्चे के भविष्य को बदल सकता है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Women",
+          tag:"Women",
           title:"महिला सशक्तिकरण",
           desc:"महिला सशक्तिकरण के अंतर्गत हम महिलाओं को आत्मनिर्भर बनाने हेतु जागरूकता, कौशल मार्गदर्शन, और स्वरोजगार/रोजगार से जुड़े अवसरों की जानकारी प्रदान करते हैं। हमारा मानना है कि जब महिला सशक्त होती है, तो पूरा परिवार मजबूत होता है।",
-          impact:"एक महिला को सक्षम बनाना पूरे समाज को मजबूत बनाना है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"एक महिला को सक्षम बनाना पूरे समाज को मजबूत बनाना है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Health",
+          tag:"Health",
           title:"स्वास्थ्य सहायता",
           desc:"स्वास्थ्य सेवाओं के अंतर्गत हम जरूरतमंद लोगों को प्राथमिक चिकित्सा, दवा सहायता, स्वास्थ्य जागरूकता और मेडिकल कैंप जैसी सेवाओं से जोड़ने का प्रयास करते हैं। हमारा उद्देश्य है कि इलाज की कमी से किसी की जिंदगी प्रभावित न हो।",
-          impact:"समय पर इलाज और सहायता जीवन बचा सकती है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"समय पर इलाज और सहायता जीवन बचा सकती है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Emergency",
+          tag:"Emergency",
           title:"एंबुलेंस सेवा",
           desc:"आपातकाल में समय पर सहायता सबसे महत्वपूर्ण होती है। एंबुलेंस सेवा के माध्यम से हम जरूरतमंद मरीजों को अस्पताल तक सुरक्षित पहुँचाने में सहयोग करने का प्रयास करते हैं। हमारा लक्ष्य है कि किसी भी परिवार को केवल वाहन की कमी के कारण इलाज में देरी न हो।",
-          impact:"आपकी मदद किसी के लिए जीवन रक्षक बन सकती है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"आपकी मदद किसी के लिए जीवन रक्षक बन सकती है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Care",
-          title:"वृद्धजन सेवा एवं सहायता",
-          desc:"वृद्धजन सेवा के अंतर्गत हमारा प्रयास है कि बुजुर्गों को सम्मान, देखभाल और आवश्यक सहायता मिले। कई बुजुर्ग अकेलेपन और संसाधनों की कमी से जूझते हैं। हम उनके लिए भोजन, दवा, तथा जरूरत के अनुसार सहायता उपलब्ध कराने की दिशा में काम करते हैं।",
-          impact:"बुजुर्गों की सेवा हमारे संस्कार और जिम्मेदारी है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          tag:"Care",
+          title:"वृद्धजन सेवा एवं आश्रय",
+          desc:"वृद्धजन सेवा के अंतर्गत हमारा प्रयास है कि बुजुर्गों को सम्मान, देखभाल और आवश्यक सहायता मिले। कई बुजुजुर्ग अकेलेपन और संसाधनों की कमी से जूझते हैं। हम उनके लिए भोजन, दवा, तथा जरूरत के अनुसार सहायता उपलब्ध कराने की दिशा में काम करते हैं।",
+          impact:"बुजुर्गों की सेवा हमारे संस्कार और जिम्मेदारी है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Skills",
+          tag:"Skills",
           title:"कौशल विकास",
           desc:"कौशल विकास कार्यक्रम के अंतर्गत हम युवाओं को रोजगार योग्य कौशल सीखने के लिए प्रेरित करते हैं। हमारा लक्ष्य है कि लोग केवल सहायता पर निर्भर न रहें, बल्कि अपने पैरों पर खड़े हों और सम्मानजनक जीवन जी सकें।",
-          impact:"कौशल ही आत्मनिर्भरता की सबसे मजबूत नींव है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"कौशल ही आत्मनिर्भरता की सबसे मजबूत नींव है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Support",
+          tag:"Support",
           title:"आपदा एवं सामाजिक सहायता",
           desc:"आपदा एवं सामाजिक सहायता के अंतर्गत हम जरूरतमंद परिवारों को संकट के समय राहत पहुँचाने का प्रयास करते हैं। इसमें भोजन सामग्री, आवश्यक वस्तुएँ, तथा त्वरित सहयोग शामिल हो सकता है। हमारा उद्देश्य है कि कठिन समय में कोई अकेला न रहे।",
-          impact:"संकट में साथ देना ही सच्ची मानवता है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"संकट में साथ देना ही सच्ची मानवता है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"GauSeva",
+          tag:"GauSeva",
           title:"गौसेवा एवं गौशाला सहयोग",
           desc:"गौसेवा के अंतर्गत हमारा उद्देश्य बेसहारा, घायल या बीमार गौवंश की सेवा करना तथा गौशालाओं को आवश्यक सहयोग देना है। गौसेवा हमारे सांस्कृतिक मूल्यों और करुणा का प्रतीक है।",
-          impact:"आपका सहयोग चारा, दवा और देखभाल में मदद करेगा। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"आपका सहयोग चारा, दवा और देखभाल में मदद करेगा।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         },
         {
-          k:"Heritage",
+          tag:"Heritage",
           title:"धरोहर संरक्षण",
           desc:"धरोहर संरक्षण कार्यक्रम के अंतर्गत हम ऐतिहासिक स्थलों, संस्कृति और विरासत के प्रति जागरूकता बढ़ाने का प्रयास करते हैं। हमारी सांस्कृतिक धरोहर हमारी पहचान है, जिसे बचाना आने वाली पीढ़ियों के लिए आवश्यक है।",
-          impact:"धरोहर का संरक्षण भविष्य की पीढ़ियों के लिए निवेश है। हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
+          impact:"धरोहर का संरक्षण भविष्य की पीढ़ियों के लिए निवेश है।",
+          trust:"हम हर सहयोग को पारदर्शिता के साथ समाजहित में उपयोग करने के लिए प्रतिबद्ध हैं।"
         }
       ]
     },
@@ -658,124 +788,121 @@
     en:{
       brand:"Bharat Abhyudaya Sansthan",
       sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", about:"About", work:"Our Initiatives", docs:"Documents", donate:"Donate Now", gallery:"Gallery", contact:"Contact"},
-      pageTitle:"Our Initiatives",
-      pageSub:"To serve every section of society, we work in areas such as education, health, women empowerment, emergency support, skill development, community help, GauSeva, and heritage conservation.",
-      sliderHeading:"Our Initiatives (Slider)",
+
+      menu:{home:"Home", a:"About", w:"Our Initiatives", d:"Documents", dn:"Donate Now", g:"Gallery", c:"Contact"},
+
+      title:"Our Initiatives",
+      tagline:"We actively work in areas like education, health, women empowerment, GauSeva, old age care, and community support.",
       donateTop:"Donate Now",
-      joinTop:"Get Involved",
-      contact:"Contact",
-      foot:"Bharat Abhyudaya Sansthan",
+      contactTop:"Get Involved",
+      noteTop:"We strive to ensure every contribution reaches the right people with transparency.",
+
+      focusTitle:"Our Focus",
+      f1t:"Right Help, Right Time",
+      f1d:"We try to understand real needs at the local level and provide meaningful support.",
+      f2t:"Transparency",
+      f2d:"We are committed to using every contribution responsibly and clearly.",
+
+      read:"Read More",
+      donate:"Donate Now",
+
+      chips:[
+        {id:"#shiksha-sarathi", label:"Shiksha Sarathi"},
+        {id:"#women-empowerment", label:"Women Empowerment"},
+        {id:"#health-services", label:"Health Services"},
+        {id:"#ambulance-seva", label:"Ambulance Seva"},
+        {id:"#old-age-care", label:"Old Age Care"},
+        {id:"#skill-development", label:"Skill Development"},
+        {id:"#community-help", label:"Community Help"},
+        {id:"#gauseva", label:"GauSeva"},
+        {id:"#heritage-conservation", label:"Heritage Conservation"}
+      ],
 
       items:[
         {
-          k:"Education",
+          tag:"Education",
           title:"Shiksha Sarathi (Child Education & Development)",
           desc:"Under the Shiksha Sarathi initiative, we support children from economically weaker backgrounds by connecting them with education, providing essential school supplies, and offering regular guidance. Our goal is simple: no child should lose education due to lack of resources.",
-          impact:"Your small support can transform a child’s future. We are committed to using every contribution transparently for public welfare."
+          impact:"Your small support can transform a child’s future.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Women",
+          tag:"Women",
           title:"Women Empowerment",
           desc:"Through Women Empowerment, we work to help women become self-reliant by spreading awareness, guiding them towards skill development, and connecting them with employment or self-employment opportunities. When a woman grows stronger, the whole family benefits.",
-          impact:"Empowering one woman strengthens an entire community. We are committed to using every contribution transparently for public welfare."
+          impact:"Empowering one woman strengthens an entire community.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Health",
+          tag:"Health",
           title:"Health Services",
           desc:"Under Health Services, we try to support people in need through basic medical help, medicine support, health awareness, and community medical camps. Our aim is to ensure that lack of resources does not stop anyone from receiving care.",
-          impact:"Timely support and care can save lives. We are committed to using every contribution transparently for public welfare."
+          impact:"Timely support and care can save lives.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Emergency",
+          tag:"Emergency",
           title:"Ambulance Seva",
           desc:"In emergencies, timely help is crucial. Through Ambulance Seva, we try to support needy patients by helping them reach hospitals safely and on time. Our goal is to ensure no family faces treatment delays simply due to lack of transport.",
-          impact:"Your support can become life-saving for someone. We are committed to using every contribution transparently for public welfare."
+          impact:"Your support can become life-saving for someone.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Care",
+          tag:"Care",
           title:"Old Age Care & Support",
           desc:"Under Old Age Care, we work to ensure senior citizens receive dignity, care, and essential support. Many elderly people struggle with loneliness and lack of resources. We aim to assist them with food, medicines, and care-based support wherever needed.",
-          impact:"Caring for the elderly is our shared responsibility. We are committed to using every contribution transparently for public welfare."
+          impact:"Caring for the elderly is our shared responsibility.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Skills",
+          tag:"Skills",
           title:"Skill Development",
           desc:"Through Skill Development, we encourage youth to learn employable skills. Our goal is to help people become independent—so they do not remain dependent on support, and can live with dignity through their own efforts.",
-          impact:"Skills are the strongest foundation of self-reliance. We are committed to using every contribution transparently for public welfare."
+          impact:"Skills are the strongest foundation of self-reliance.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Support",
+          tag:"Support",
           title:"Community Help (Disaster & Social Support)",
           desc:"Under Community Help, we try to provide quick relief and support to families during disasters or difficult situations. This may include food supplies, essential items, and immediate assistance. Our goal is that no one feels alone in times of crisis.",
-          impact:"Standing together in crisis is true humanity. We are committed to using every contribution transparently for public welfare."
+          impact:"Standing together in crisis is true humanity.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"GauSeva",
+          tag:"GauSeva",
           title:"GauSeva & Gaushala Support",
           desc:"Through GauSeva, we aim to support abandoned, injured, or ill cattle and provide essential help to gaushalas. GauSeva reflects compassion and cultural responsibility.",
-          impact:"Your support helps with fodder, medicines, and care. We are committed to using every contribution transparently for public welfare."
+          impact:"Your support helps with fodder, medicines, and care.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         },
         {
-          k:"Heritage",
+          tag:"Heritage",
           title:"Heritage Conservation",
           desc:"Under Heritage Conservation, we work to raise awareness and support efforts to protect historical places, culture, and heritage. Our cultural heritage is our identity, and preserving it is essential for future generations.",
-          impact:"Protecting heritage is an investment for future generations. We are committed to using every contribution transparently for public welfare."
+          impact:"Protecting heritage is an investment for future generations.",
+          trust:"We are committed to using every contribution transparently for public welfare."
         }
       ]
     }
   };
 
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
+  const btnHi = document.getElementById("btnHi");
+  const btnEn = document.getElementById("btnEn");
 
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
+  const mobBtn = document.getElementById("mobBtn");
+  const mobilePanel = document.getElementById("mobilePanel");
 
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.about;
-    document.getElementById("mWork").textContent=d.menu.work;
-    document.getElementById("mDocs").textContent=d.menu.docs;
-    document.getElementById("mDonate").textContent=d.menu.donate;
-    document.getElementById("mGallery").textContent=d.menu.gallery;
-    document.getElementById("mContact").textContent=d.menu.contact;
+  const track = document.getElementById("track");
+  const dots = document.getElementById("dots");
 
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.about;
-    document.getElementById("mmWork").textContent=d.menu.work;
-    document.getElementById("mmDocs").textContent=d.menu.docs;
-    document.getElementById("mmDonate").textContent=d.menu.donate;
-    document.getElementById("mmGallery").textContent=d.menu.gallery;
-    document.getElementById("mmContact").textContent=d.menu.contact;
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-    document.getElementById("pageTitle").textContent=d.pageTitle;
-    document.getElementById("pageSub").textContent=d.pageSub;
-    document.getElementById("sliderHeading").textContent=d.sliderHeading;
+  let idx = 0;
+  let lang = localStorage.getItem("bas_lang") || "hi";
 
-    document.getElementById("donateTop").textContent=d.menu.donate;
-    document.getElementById("joinTop").textContent=d.joinTop;
-
-    for(let i=1;i<=9;i++){
-      const item=d.items[i-1];
-      document.getElementById("k"+i).textContent=item.k;
-      document.getElementById("t"+i).textContent=item.title;
-      document.getElementById("d"+i).textContent=item.desc;
-      document.getElementById("i"+i).textContent=item.impact;
-
-      document.getElementById("don"+i).textContent=d.menu.donate;
-      document.getElementById("con"+i).textContent=d.contact;
-    }
-
-    document.getElementById("foot").textContent=d.foot;
-    updateCounter();
-  }
-
-  const btnHi=document.getElementById("btnHi");
-  const btnEn=document.getElementById("btnEn");
-
-  function applyActive(lang){
-    if(lang==="en"){
+  function applyActive(l){
+    if(l==="en"){
       btnEn.classList.add("active");
       btnHi.classList.remove("active");
     }else{
@@ -784,105 +911,172 @@
     }
   }
 
-  const mobBtn = document.getElementById("mobBtn");
-  const mobilePanel = document.getElementById("mobilePanel");
+  function closeMobileMenu(){
+    mobilePanel.classList.remove("open");
+  }
 
   mobBtn.addEventListener("click", ()=>{
     mobilePanel.classList.toggle("open");
   });
 
-  function closeMobileMenu(){
-    mobilePanel.classList.remove("open");
-  }
-
-  btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    applyActive("hi");
-    setLang("hi");
-    closeMobileMenu();
-  });
-
-  btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    applyActive("en");
-    setLang("en");
-    closeMobileMenu();
-  });
-
-  // Slider logic
-  const track = document.getElementById("track");
-  const trackWrap = document.getElementById("trackWrap");
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
-  const dotsWrap = document.getElementById("dots");
-  const counter = document.getElementById("counter");
-
-  const total = 9;
-  let index = 0;
-
-  function clamp(i){
-    if(i<0) return total-1;
-    if(i>=total) return 0;
-    return i;
-  }
-
-  function goTo(i){
-    index = clamp(i);
-    track.style.transform = `translateX(-${index * 100}%)`;
-    updateDots();
-    updateCounter();
-  }
-
-  function updateCounter(){
-    counter.textContent = `${index+1} / ${total}`;
-  }
-
-  function updateDots(){
-    const dots = dotsWrap.querySelectorAll(".dot");
-    dots.forEach((d,di)=>{
-      d.classList.toggle("active", di===index);
+  function buildChips(d){
+    const row = document.getElementById("chipRow");
+    row.innerHTML = "";
+    d.chips.forEach((c, i)=>{
+      const b = document.createElement("button");
+      b.type="button";
+      b.className="chip";
+      b.textContent = c.label;
+      b.addEventListener("click", ()=>{
+        goTo(i);
+        document.querySelector(c.id).scrollIntoView({behavior:"smooth", block:"start"});
+        closeMobileMenu();
+      });
+      row.appendChild(b);
     });
   }
 
-  for(let i=0;i<total;i++){
-    const b=document.createElement("button");
-    b.className="dot"+(i===0?" active":"");
-    b.type="button";
-    b.setAttribute("aria-label","Go to slide "+(i+1));
-    b.addEventListener("click",()=>goTo(i));
-    dotsWrap.appendChild(b);
+  function buildDots(total){
+    dots.innerHTML = "";
+    for(let i=0;i<total;i++){
+      const d = document.createElement("button");
+      d.type="button";
+      d.className = "dot" + (i===idx ? " active" : "");
+      d.setAttribute("aria-label", "Slide " + (i+1));
+      d.addEventListener("click", ()=>goTo(i));
+      dots.appendChild(d);
+    }
   }
 
-  prevBtn.addEventListener("click",()=>goTo(index-1));
-  nextBtn.addEventListener("click",()=>goTo(index+1));
+  function updateDots(){
+    [...dots.children].forEach((d,i)=>{
+      d.classList.toggle("active", i===idx);
+    });
+  }
 
-  document.addEventListener("keydown",(e)=>{
-    if(e.key==="ArrowLeft") goTo(index-1);
-    if(e.key==="ArrowRight") goTo(index+1);
-  });
+  function goTo(i){
+    const total = track.children.length;
+    idx = (i + total) % total;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    updateDots();
+  }
 
-  // Swipe support
+  prevBtn.addEventListener("click", ()=>goTo(idx-1));
+  nextBtn.addEventListener("click", ()=>goTo(idx+1));
+
+  // Swipe
   let startX = 0;
+  let dx = 0;
   let isDown = false;
 
-  function onStart(x){isDown=true; startX=x;}
-  function onEnd(x){
+  const wrap = document.querySelector(".trackWrap");
+
+  wrap.addEventListener("pointerdown", (e)=>{
+    isDown = true;
+    startX = e.clientX;
+    dx = 0;
+  });
+
+  wrap.addEventListener("pointermove", (e)=>{
     if(!isDown) return;
-    isDown=false;
-    const dx = x - startX;
-    if(Math.abs(dx) < 40) return;
-    if(dx < 0) goTo(index+1);
-    else goTo(index-1);
+    dx = e.clientX - startX;
+  });
+
+  wrap.addEventListener("pointerup", ()=>{
+    if(!isDown) return;
+    isDown = false;
+    if(Math.abs(dx) > 45){
+      if(dx < 0) goTo(idx+1);
+      else goTo(idx-1);
+    }
+  });
+
+  wrap.addEventListener("pointercancel", ()=>{isDown=false});
+
+  // Keyboard arrows
+  document.addEventListener("keydown", (e)=>{
+    if(e.key==="ArrowLeft") goTo(idx-1);
+    if(e.key==="ArrowRight") goTo(idx+1);
+  });
+
+  function setLang(l){
+    lang = l;
+    localStorage.setItem("bas_lang", l);
+    document.documentElement.lang = (l==="hi") ? "hi" : "en";
+
+    const d = t[l];
+
+    // Brand
+    document.getElementById("brandText").textContent = d.brand;
+    document.getElementById("brandSub").textContent = d.sub;
+
+    // Menu desktop
+    document.getElementById("mHome").textContent = d.menu.home;
+    document.getElementById("mAbout").textContent = d.menu.a;
+    document.getElementById("mWork").textContent = d.menu.w;
+    document.getElementById("mDocs").textContent = d.menu.d;
+    document.getElementById("mDonate").textContent = d.menu.dn;
+    document.getElementById("mGallery").textContent = d.menu.g;
+    document.getElementById("mContact").textContent = d.menu.c;
+
+    // Menu mobile
+    document.getElementById("mmHome").textContent = d.menu.home;
+    document.getElementById("mmAbout").textContent = d.menu.a;
+    document.getElementById("mmWork").textContent = d.menu.w;
+    document.getElementById("mmDocs").textContent = d.menu.d;
+    document.getElementById("mmDonate").textContent = d.menu.dn;
+    document.getElementById("mmGallery").textContent = d.menu.g;
+    document.getElementById("mmContact").textContent = d.menu.c;
+
+    // Hero
+    document.getElementById("title").textContent = d.title;
+    document.getElementById("tagline").textContent = d.tagline;
+    document.getElementById("donateTop").textContent = d.donateTop;
+    document.getElementById("contactTop").textContent = d.contactTop;
+    document.getElementById("noteTop").textContent = d.noteTop;
+
+    document.getElementById("focusTitle").textContent = d.focusTitle;
+    document.getElementById("f1t").textContent = d.f1t;
+    document.getElementById("f1d").textContent = d.f1d;
+    document.getElementById("f2t").textContent = d.f2t;
+    document.getElementById("f2d").textContent = d.f2d;
+
+    // Slider content (9)
+    for(let i=1;i<=9;i++){
+      const item = d.items[i-1];
+      document.getElementById(`k${i}tag`).textContent = item.tag;
+      document.getElementById(`k${i}a`).textContent = item.title;
+      document.getElementById(`k${i}b`).textContent = item.desc;
+      document.getElementById(`k${i}c`).textContent = item.impact;
+      document.getElementById(`k${i}d`).textContent = item.trust;
+
+      document.getElementById(`k${i}rm`).textContent = d.read;
+      document.getElementById(`k${i}dn`).textContent = d.donate;
+    }
+
+    // Chips
+    buildChips(d);
+
+    // Footer
+    document.getElementById("foot").textContent = d.brand;
+
+    applyActive(l);
+    closeMobileMenu();
   }
 
-  trackWrap.addEventListener("touchstart",(e)=>onStart(e.touches[0].clientX),{passive:true});
-  trackWrap.addEventListener("touchend",(e)=>onEnd(e.changedTouches[0].clientX),{passive:true});
+  btnHi.addEventListener("click", ()=>setLang("hi"));
+  btnEn.addEventListener("click", ()=>setLang("en"));
 
   // Init
-  document.getElementById("year").textContent=new Date().getFullYear();
-  const savedLang = localStorage.getItem("bas_lang") || "hi";
-  applyActive(savedLang);
-  setLang(savedLang);
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Dots build
+  buildDots(track.children.length);
+
+  // Set language from storage
+  setLang(lang);
+
+  // Ensure first slide
   goTo(0);
 </script>
 
