@@ -21,21 +21,17 @@ body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
 color:var(--fg);
-background:
-radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-#fff;
+background:#fff;
 overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
+a{text-decoration:none;color:inherit}
 
-/* ===== HEADER ===== */
+/* ===== HEADER SAME AS INDEX ===== */
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(255,255,255,.92);
-backdrop-filter: blur(10px);
-border-bottom:1px solid rgba(226,232,240,.95);
+background:#fff;
+border-bottom:1px solid var(--border);
 }
 .nav{
 display:flex;align-items:center;justify-content:space-between;
@@ -47,15 +43,12 @@ min-width:220px;
 }
 .logo{
 width:46px;height:46px;border-radius:999px;
-border:1px solid rgba(226,232,240,.95);
-object-fit:cover;background:#fff;
+border:1px solid var(--border);
+object-fit:cover;
 }
-.brand b{
-display:block;font-size:14px;line-height:1.15;
-}
-.brand span{
-display:block;font-size:12px;color:var(--muted);
-}
+.brand b{display:block;font-size:14px;line-height:1.15}
+.brand span{display:block;font-size:12px;color:var(--muted)}
+
 .menu{
 display:none;gap:18px;font-size:14px;
 color:var(--muted);font-weight:900;
@@ -65,36 +58,32 @@ color:var(--muted);font-weight:900;
 
 .toggle{display:flex;gap:8px}
 .pill{
-border:1px solid rgba(226,232,240,.95);
+border:1px solid var(--border);
 background:#fff;padding:8px 12px;
 border-radius:999px;font-size:13px;
 cursor:pointer;font-weight:900;
 }
 .pill.active{
-background:linear-gradient(135deg,var(--brand),#083a6c);
+background:var(--brand);
 color:#fff;border-color:transparent;
 }
 
 .mobBtn{
 display:inline-flex;align-items:center;justify-content:center;
 width:42px;height:42px;border-radius:14px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;cursor:pointer;font-size:18px;font-weight:950;
+border:1px solid var(--border);
+background:#fff;cursor:pointer;font-weight:950;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
-.mobilePanel{
-display:none;padding:12px 0 14px;
-border-top:1px solid rgba(226,232,240,.95);
-}
+.mobilePanel{display:none;padding:12px 0}
 .mobilePanel.open{display:block}
 @media(min-width:980px){.mobilePanel{display:none!important}}
 
 .mnav{display:grid;gap:10px}
 .mnav a{
 padding:12px 14px;border-radius:16px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;font-weight:950;
+border:1px solid var(--border);
 }
 
 /* ===== SECTION ===== */
@@ -108,7 +97,7 @@ font-weight:950;color:var(--brand);font-size:12px;
 h1{margin:14px 0;font-size:34px}
 .muted{color:var(--muted);line-height:1.7}
 
-/* ===== SLIDER ===== */
+/* ===== SLIDER (NO CROP) ===== */
 .slider{
 position:relative;
 max-width:850px;
@@ -119,30 +108,13 @@ margin:40px auto 0;
 
 .slide img{
 width:100%;
-height:420px;            /* Reduced height */
-object-fit:cover;
+height:auto;          /* no fixed height */
+max-height:500px;     /* slightly reduced */
 border-radius:20px;
 box-shadow:var(--shadow);
 }
 
-@media(max-width:768px){
-.slide img{
-height:260px;            /* Smaller on mobile */
-}
-}
-
-.arrow{
-position:absolute;top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.5);
-color:#fff;border:none;
-font-size:24px;width:45px;height:45px;
-border-radius:50%;cursor:pointer;
-}
-.prev{left:-25px}
-.next{right:-25px}
-
-/* ===== GRID BELOW SLIDESHOW ===== */
+/* ===== GRID ===== */
 .galleryGrid{
 margin-top:60px;
 display:grid;
@@ -150,25 +122,16 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 .galleryGrid img{
-width:100%;height:200px;
-object-fit:cover;border-radius:16px;
+width:100%;
+height:auto;
+border-radius:16px;
 box-shadow:var(--shadow);
-transition:.3s;cursor:pointer;
-}
-.galleryGrid img:hover{
-transform:scale(1.05);
 }
 
 footer{
-border-top:1px solid rgba(226,232,240,.95);
+border-top:1px solid var(--border);
 padding:18px 0;margin-top:40px;
-color:var(--muted);background:#fff;font-size:14px;
-}
-.wa{
-position:fixed;right:16px;bottom:16px;
-z-index:999;background:linear-gradient(135deg,#22c55e,#16a34a);
-color:#fff;padding:12px 14px;border-radius:999px;
-font-weight:950;
+color:var(--muted);font-size:14px;
 }
 </style>
 </head>
@@ -228,9 +191,6 @@ font-weight:950;
 <p class="muted" id="descText">हमारी सेवा गतिविधियों की झलकियाँ।</p>
 
 <div class="slider">
-<button class="arrow prev" onclick="changeSlide(-1)">❮</button>
-<button class="arrow next" onclick="changeSlide(1)">❯</button>
-
 <div class="slide active"><img src="assets/gallery/1.jpg"></div>
 <div class="slide"><img src="assets/gallery/2.jpg"></div>
 <div class="slide"><img src="assets/gallery/3.jpg"></div>
@@ -259,46 +219,39 @@ font-weight:950;
 </div>
 </footer>
 
-<a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
-
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("mobBtn")
-.addEventListener("click",()=>document.getElementById("mobilePanel").classList.toggle("open"));
 
-/* Language */
+/* Language toggle FIXED */
 const btnHi=document.getElementById("btnHi");
 const btnEn=document.getElementById("btnEn");
+
 function setLang(lang){
+document.documentElement.lang=lang;
 if(lang==="en"){
 document.getElementById("titleText").textContent="Gallery";
 document.getElementById("descText").textContent="Glimpses of our service activities.";
+document.getElementById("brandText").textContent="Bharat Abhyudaya Sansthan";
+document.getElementById("brandSub").textContent="Upliftment to Self-Reliant India";
 document.getElementById("footText").textContent="Bharat Abhyudaya Sansthan";
-btnEn.classList.add("active");btnHi.classList.remove("active");
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
 }else{
 document.getElementById("titleText").textContent="गैलरी";
 document.getElementById("descText").textContent="हमारी सेवा गतिविधियों की झलकियाँ।";
+document.getElementById("brandText").textContent="भारत अभ्युदय संस्थान";
+document.getElementById("brandSub").textContent="अभ्युदय से आत्मनिर्भर भारत तक";
 document.getElementById("footText").textContent="भारत अभ्युदय संस्थान";
-btnHi.classList.add("active");btnEn.classList.remove("active");
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
 }
 localStorage.setItem("bas_lang",lang);
 }
+
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
-setLang(localStorage.getItem("bas_lang")||"hi");
 
-/* Slider */
-let index=0;
-const slides=document.querySelectorAll(".slide");
-function showSlide(i){
-slides.forEach(s=>s.classList.remove("active"));
-slides[i].classList.add("active");
-}
-function changeSlide(n){
-index=(index+n+slides.length)%slides.length;
-showSlide(index);
-}
-setInterval(()=>changeSlide(1),5000);
+setLang(localStorage.getItem("bas_lang")||"hi");
 </script>
 
 </body>
