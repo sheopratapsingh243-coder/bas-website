@@ -17,22 +17,28 @@
 --max:1120px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
 color:var(--fg);
-background:#f8fafc;
+background:
+radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
+radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
+#fff;
+overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* HEADER */
+/* ===== HEADER (EXACT SAME AS OTHER PAGES) ===== */
 header{
 position:sticky;
 top:0;
-z-index:1000;
-background:#fff;
-border-bottom:1px solid var(--border);
+z-index:50;
+background:rgba(255,255,255,.92);
+backdrop-filter: blur(10px);
+border-bottom:1px solid rgba(226,232,240,.95);
 }
 .nav{
 display:flex;
@@ -45,123 +51,106 @@ gap:10px;
 display:flex;
 align-items:center;
 gap:10px;
+min-width:220px;
 }
-.brand img{
+.logo{
 width:46px;
 height:46px;
-border-radius:50%;
+border-radius:999px;
+border:1px solid rgba(226,232,240,.95);
 object-fit:cover;
+background:#fff;
 }
-.brand b{
-display:block;
-font-size:14px;
-}
-.brand span{
-display:block;
-font-size:12px;
-color:var(--muted);
-}
+.brand b{display:block;font-size:14px}
+.brand span{display:block;font-size:12px;color:var(--muted)}
 
-/* Desktop Menu */
 .menu{
-display:flex;
+display:none;
 gap:18px;
 font-size:14px;
-font-weight:900;
 color:var(--muted);
+font-weight:900;
 }
 .menu a:hover{color:var(--brand)}
+@media(min-width:980px){.menu{display:flex}}
 
-/* Toggle */
 .toggle{display:flex;gap:8px}
-.toggle button{
+.pill{
+border:1px solid rgba(226,232,240,.95);
+background:#fff;
 padding:8px 12px;
 border-radius:999px;
-border:1px solid var(--border);
-background:#fff;
-cursor:pointer;
 font-size:13px;
+cursor:pointer;
+font-weight:900;
 }
-.toggle .active{
+.pill.active{
 background:linear-gradient(135deg,var(--brand),#083a6c);
 color:#fff;
-border:none;
+border-color:transparent;
 }
 
-/* Mobile */
-.mobBtn{display:none;font-size:22px;cursor:pointer}
-.mobileMenu{
+.mobBtn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:42px;
+height:42px;
+border-radius:14px;
+border:1px solid rgba(226,232,240,.95);
+background:#fff;
+cursor:pointer;
+font-size:18px;
+font-weight:950;
+}
+@media(min-width:980px){.mobBtn{display:none}}
+
+.mobilePanel{
 display:none;
-flex-direction:column;
-gap:12px;
-padding:12px 0;
-border-top:1px solid var(--border);
+padding:12px 0 14px;
+border-top:1px solid rgba(226,232,240,.95);
 }
-.mobileMenu a{
-font-weight:900;
-color:var(--muted);
+.mobilePanel.open{display:block}
+@media(min-width:980px){.mobilePanel{display:none !important}}
+
+.mnav{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
+}
+.mnav a{
+padding:12px 14px;
+border-radius:16px;
+border:1px solid rgba(226,232,240,.95);
+background:rgba(255,255,255,.95);
+font-weight:950;
 }
 
-@media(max-width:980px){
-.menu{display:none}
-.mobBtn{display:block}
-}
-
-/* HERO */
+/* ===== GALLERY SECTION ===== */
 section{padding:40px 0}
 .hero{text-align:center}
 .badge{
-display:inline-block;
-padding:6px 12px;
+display:inline-flex;
+padding:8px 12px;
 border-radius:999px;
-background:#e6f0fa;
+background:rgba(11,90,166,.06);
+border:1px solid rgba(11,90,166,.15);
+font-weight:950;
 color:var(--brand);
-font-weight:700;
-font-size:13px;
+font-size:12px;
 }
 h1{margin:14px 0;font-size:34px}
-.muted{color:var(--muted);line-height:1.6}
+.muted{color:var(--muted);line-height:1.7}
 
-/* SLIDER */
-.slideshow{
-position:relative;
-margin:40px auto;
-max-width:900px;
-overflow:hidden;
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-}
-.slide{display:none}
-.slide img{
-width:100%;
-height:450px;
-object-fit:cover;
-}
-.activeSlide{display:block}
-.prev,.next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.5);
-color:#fff;
-font-size:22px;
-padding:10px 14px;
-border-radius:50%;
-cursor:pointer;
-}
-.prev{left:15px}
-.next{right:15px}
-
-/* GRID */
 .gallery{
-margin-top:50px;
+margin-top:40px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 .gallery img{
 width:100%;
-height:220px;
+height:240px;
 object-fit:cover;
 border-radius:18px;
 box-shadow:var(--shadow);
@@ -170,37 +159,12 @@ transition:.3s;
 }
 .gallery img:hover{transform:scale(1.05)}
 
-/* LIGHTBOX */
-#lightbox{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-z-index:2000;
-}
-#lightbox img{
-max-width:90%;
-max-height:85%;
-border-radius:10px;
-}
-#lightbox span{
-position:absolute;
-top:20px;
-right:30px;
-font-size:28px;
-color:#fff;
-cursor:pointer;
-}
-
 footer{
-margin-top:60px;
-padding:20px 0;
-text-align:center;
-border-top:1px solid var(--border);
+border-top:1px solid rgba(226,232,240,.95);
+padding:18px 0;
+margin-top:30px;
 color:var(--muted);
+background:#fff;
 font-size:14px;
 }
 
@@ -208,11 +172,12 @@ font-size:14px;
 position:fixed;
 right:16px;
 bottom:16px;
-background:#22c55e;
+z-index:999;
+background:linear-gradient(135deg,#22c55e,#16a34a);
 color:#fff;
-padding:12px 16px;
-border-radius:40px;
-font-weight:700;
+padding:12px 14px;
+border-radius:999px;
+font-weight:950;
 }
 </style>
 </head>
@@ -220,159 +185,85 @@ font-weight:700;
 <body>
 
 <header>
-<div class="wrap nav">
+<div class="wrap">
+<div class="nav">
 
-<div class="brand">
-<img src="assets/logo.jpg">
+<a class="brand" href="index.html">
+<img class="logo" src="./assets/logo.jpg">
 <div>
-<b id="brandName">भारत अभ्युदय संस्थान</b>
-<span id="brandTag">अभ्युदय से आत्मनिर्भर भारत तक</span>
+<b>भारत अभ्युदय संस्थान</b>
+<span>अभ्युदय से आत्मनिर्भर भारत तक</span>
 </div>
-</div>
+</a>
 
-<div class="menu">
-<a id="mHome" href="index.html">मुख्य पृष्ठ</a>
-<a id="mAbout" href="about.html">परिचय</a>
-<a id="mInit" href="initiatives.html">हमारे प्रयास</a>
-<a id="mDocs" href="documents.html">दस्तावेज़</a>
-<a id="mDonate" href="donate.html">दान करें</a>
-<a id="mGallery" href="gallery.html">गैलरी</a>
-<a id="mContact" href="contact.html">संपर्क</a>
-</div>
+<nav class="menu">
+<a href="index.html">मुख्य पृष्ठ</a>
+<a href="about.html">परिचय</a>
+<a href="initiatives.html">हमारे प्रयास</a>
+<a href="documents.html">दस्तावेज़</a>
+<a href="donate.html">दान करें</a>
+<a href="gallery.html" style="color:#0b5aa6;font-weight:950;">गैलरी</a>
+<a href="contact.html">संपर्क</a>
+</nav>
 
+<div style="display:flex;gap:10px;align-items:center">
+<button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
-<button id="btnHi" class="active">हिन्दी</button>
-<button id="btnEn">English</button>
+<button class="pill active">हिन्दी</button>
+<button class="pill">English</button>
+</div>
 </div>
 
-<div class="mobBtn" onclick="toggleMobile()">☰</div>
 </div>
 
-<div class="wrap mobileMenu" id="mobileMenu">
-<a id="mmHome" href="index.html">मुख्य पृष्ठ</a>
-<a id="mmAbout" href="about.html">परिचय</a>
-<a id="mmInit" href="initiatives.html">हमारे प्रयास</a>
-<a id="mmDocs" href="documents.html">दस्तावेज़</a>
-<a id="mmDonate" href="donate.html">दान करें</a>
-<a id="mmGallery" href="gallery.html">गैलरी</a>
-<a id="mmContact" href="contact.html">संपर्क</a>
+<div class="mobilePanel" id="mobilePanel">
+<div class="mnav">
+<a href="index.html">मुख्य पृष्ठ</a>
+<a href="about.html">परिचय</a>
+<a href="initiatives.html">हमारे प्रयास</a>
+<a href="documents.html">दस्तावेज़</a>
+<a href="donate.html">दान करें</a>
+<a href="gallery.html">गैलरी</a>
+<a href="contact.html">संपर्क</a>
+</div>
+</div>
+
 </div>
 </header>
 
 <section>
 <div class="wrap hero">
 <div class="badge">Service • Trust • Impact</div>
-<h1 id="title">गैलरी</h1>
-<p class="muted" id="desc">हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।</p>
-</div>
+<h1>गैलरी</h1>
+<p class="muted">हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।</p>
 
-<div class="slideshow">
-<div class="slide activeSlide"><img src="assets/gallery/1.jpg"></div>
-<div class="slide"><img src="assets/gallery/2.jpg"></div>
-<div class="slide"><img src="assets/gallery/3.jpg"></div>
-<div class="slide"><img src="assets/gallery/4.jpg"></div>
-<div class="slide"><img src="assets/gallery/5.jpg"></div>
-<div class="slide"><img src="assets/gallery/6.jpg"></div>
-<div class="slide"><img src="assets/gallery/7.jpg"></div>
-<div class="slide"><img src="assets/gallery/8.jpg"></div>
-<span class="prev" onclick="changeSlide(-1)">❮</span>
-<span class="next" onclick="changeSlide(1)">❯</span>
-</div>
-
-<div class="wrap">
 <div class="gallery">
-<img src="assets/gallery/1.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/2.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/3.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/4.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/5.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/6.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/7.jpg" onclick="openLightbox(this.src)">
-<img src="assets/gallery/8.jpg" onclick="openLightbox(this.src)">
+<img src="assets/gallery/1.jpg">
+<img src="assets/gallery/2.jpg">
+<img src="assets/gallery/3.jpg">
+<img src="assets/gallery/4.jpg">
+<img src="assets/gallery/5.jpg">
+<img src="assets/gallery/6.jpg">
+<img src="assets/gallery/7.jpg">
+<img src="assets/gallery/8.jpg">
 </div>
+
 </div>
 </section>
 
-<div id="lightbox">
-<span onclick="closeLightbox()">✕</span>
-<img id="lightboxImg">
+<footer>
+<div class="wrap">
+© <span id="year"></span> भारत अभ्युदय संस्थान • 8604669454 • 7355181465
 </div>
-
-<footer>© 2026 Bharat Abhyudaya Sansthan</footer>
+</footer>
 
 <a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
 
 <script>
-function toggleMobile(){
-const menu=document.getElementById("mobileMenu");
-menu.style.display=menu.style.display==="flex"?"none":"flex";
-}
-
-/* LANGUAGE SAVE SYSTEM */
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-function applyLanguage(lang){
-localStorage.setItem("bas_lang",lang);
-document.documentElement.lang=lang;
-
-const hi=["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"];
-const en=["Home","About","Initiatives","Documents","Donate","Gallery","Contact"];
-const ids=["mHome","mAbout","mInit","mDocs","mDonate","mGallery","mContact"];
-const mids=["mmHome","mmAbout","mmInit","mmDocs","mmDonate","mmGallery","mmContact"];
-
-ids.forEach((id,i)=>document.getElementById(id).innerText=(lang==="en"?en[i]:hi[i]));
-mids.forEach((id,i)=>document.getElementById(id).innerText=(lang==="en"?en[i]:hi[i]));
-
-document.getElementById("brandName").innerText=
-lang==="en"?"Bharat Abhyudaya Sansthan":"भारत अभ्युदय संस्थान";
-
-document.getElementById("brandTag").innerText=
-lang==="en"?"Upliftment to Self-Reliant India":"अभ्युदय से आत्मनिर्भर भारत तक";
-
-document.getElementById("title").innerText=
-lang==="en"?"Gallery":"गैलरी";
-
-document.getElementById("desc").innerText=
-lang==="en"?"Snapshots of our service activities and community impact."
-:"हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।";
-
-btnEn.classList.toggle("active",lang==="en");
-btnHi.classList.toggle("active",lang==="hi");
-}
-
-btnHi.onclick=()=>applyLanguage("hi");
-btnEn.onclick=()=>applyLanguage("en");
-
-document.addEventListener("DOMContentLoaded",()=>{
-const saved=localStorage.getItem("bas_lang")||"hi";
-applyLanguage(saved);
-});
-
-/* SLIDER */
-let slideIndex=0;
-const slides=document.querySelectorAll(".slide");
-function showSlide(){
-slides.forEach(s=>s.classList.remove("activeSlide"));
-slideIndex++;
-if(slideIndex>slides.length)slideIndex=1;
-slides[slideIndex-1].classList.add("activeSlide");
-}
-setInterval(showSlide,4000);
-function changeSlide(n){
-slideIndex+=n-1;
-if(slideIndex<0)slideIndex=slides.length-1;
-showSlide();
-}
-
-/* LIGHTBOX */
-function openLightbox(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightboxImg").src=src;
-}
-function closeLightbox(){
-document.getElementById("lightbox").style.display="none";
-}
+document.getElementById("year").textContent=new Date().getFullYear();
+const mobBtn=document.getElementById("mobBtn");
+const mobilePanel=document.getElementById("mobilePanel");
+mobBtn.addEventListener("click",()=>mobilePanel.classList.toggle("open"));
 </script>
 
 </body>
