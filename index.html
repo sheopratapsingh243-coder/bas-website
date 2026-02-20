@@ -12,35 +12,31 @@
 --fg:#0b1220;
 --muted:#475569;
 --border:#e2e8f0;
---shadow:0 16px 40px rgba(2,6,23,.10);
---radius:20px;
---max:1120px;
+--shadow:0 10px 30px rgba(2,6,23,.08);
+--radius:18px;
+--max:1150px;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
 color:var(--fg);
-background:
-radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-#fff;
-overflow-x:hidden;
+background:#f8fafc;
 }
+
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
-section{padding:40px 0}
-h1{margin:10px 0 0;font-size:34px}
-h2{text-align:center;margin-bottom:20px}
-.muted{color:var(--muted);line-height:1.8}
-.small{font-size:14px}
 
-/* HEADER */
+h1{font-size:32px;margin:10px 0}
+h2{text-align:center;margin-bottom:25px}
+.muted{color:var(--muted);line-height:1.8}
+
+/* ===== HEADER ===== */
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(10px);
+background:#fff;
 border-bottom:1px solid var(--border);
 }
 .nav{
@@ -49,51 +45,72 @@ padding:12px 0;
 }
 .brand{display:flex;align-items:center;gap:10px}
 .logo{
-width:46px;height:46px;border-radius:999px;
+width:46px;height:46px;border-radius:50%;
 border:1px solid var(--border);
 object-fit:cover;
 }
-.brand b{display:block;font-size:14px}
-.brand span{display:block;font-size:12px;color:var(--muted)}
-.menu{display:none;gap:18px;font-weight:900;color:var(--muted)}
+.brand b{font-size:14px}
+.brand span{font-size:12px;color:var(--muted)}
+
+.menu{display:none;gap:18px;font-weight:700;color:var(--muted)}
 .menu a:hover{color:var(--brand)}
 @media(min-width:980px){.menu{display:flex}}
 
-.toggle{display:flex;gap:8px}
+.toggle{display:flex;gap:6px}
 .pill{
 border:1px solid var(--border);
-background:#fff;padding:8px 12px;
-border-radius:999px;cursor:pointer;font-weight:900;
+background:#fff;
+padding:6px 10px;
+border-radius:999px;
+cursor:pointer;
+font-weight:700;
+font-size:13px;
 }
 .pill.active{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-color:#fff;border-color:transparent;
+background:var(--brand);
+color:#fff;
+border-color:var(--brand);
 }
+
 .mobBtn{
-display:inline-flex;width:42px;height:42px;
-border-radius:14px;border:1px solid var(--border);
-background:#fff;cursor:pointer;font-size:18px;
+display:inline-flex;
+width:40px;height:40px;
+border-radius:12px;
+border:1px solid var(--border);
+background:#fff;
+cursor:pointer;
+font-size:18px;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
-.mobilePanel{display:none;padding:12px 0;border-top:1px solid var(--border);}
+.mobilePanel{
+display:none;
+padding:10px 0;
+border-top:1px solid var(--border);
+background:#fff;
+}
 .mobilePanel.open{display:block}
-@media(min-width:980px){.mobilePanel{display:none!important}}
-.mnav{display:grid;gap:10px}
+.mnav{display:grid;gap:8px}
 .mnav a{
-padding:12px;border:1px solid var(--border);
-border-radius:14px;font-weight:900;
+padding:10px;
+border:1px solid var(--border);
+border-radius:10px;
+font-weight:600;
 }
 
 /* VISITOR */
 .visitor{
 text-align:right;
 padding:8px 20px;
-font-weight:900;
+font-weight:700;
 color:var(--brand);
+background:#fff;
 }
 
 /* HERO */
+.hero{
+padding:40px 0;
+}
 .grid{
 display:grid;
 grid-template-columns:1fr;
@@ -103,87 +120,104 @@ gap:30px;
 .grid{grid-template-columns:1.1fr .9fr;}
 }
 .badge{
-display:inline-flex;padding:8px 10px;border-radius:999px;
-background:rgba(11,90,166,.06);
-border:1px solid rgba(11,90,166,.15);
-font-weight:950;color:var(--brand);font-size:12px;
+display:inline-block;
+padding:6px 12px;
+border-radius:999px;
+background:rgba(11,90,166,.08);
+color:var(--brand);
+font-size:12px;
+font-weight:700;
 }
 .card{
-background:#fff;border:1px solid var(--border);
-border-radius:24px;padding:20px;
+background:#fff;
+border-radius:var(--radius);
+padding:20px;
 box-shadow:var(--shadow);
 }
 
-/* SLIDER */
-.slider{position:relative;width:100%;}
+/* ===== SLIDER ===== */
+.slider{
+position:relative;
+width:100%;
+}
 .slide{display:none}
 .slide.active{display:block}
 .slide img{
 width:100%;
-height:500px;
+height:450px;
 object-fit:cover;
+border-radius:12px;
 }
 @media(max-width:768px){
-.slide img{height:250px}
+.slide img{height:220px}
 }
+
 .arrow{
-position:absolute;top:50%;
+position:absolute;
+top:50%;
 transform:translateY(-50%);
 background:rgba(0,0,0,.5);
-color:#fff;border:none;
-font-size:22px;width:45px;height:45px;
-border-radius:50%;cursor:pointer;
+color:#fff;
+border:none;
+width:40px;height:40px;
+border-radius:50%;
+cursor:pointer;
 }
-.prev{left:20px}
-.next{right:20px}
+.prev{left:15px}
+.next{right:15px}
 
 .slideBtns{
 display:flex;
 justify-content:center;
-gap:20%;
+gap:20px;
 margin-top:15px;
+flex-wrap:wrap;
 }
 .slideBtns button{
-width:40%;
-padding:14px 0;
+padding:10px 20px;
 border:none;
-font-weight:900;
+border-radius:8px;
+font-weight:700;
 cursor:pointer;
-border-radius:14px;
+font-size:14px;
 }
 .primary{
-background:linear-gradient(135deg,var(--accent),#ff7a00);
+background:var(--accent);
 color:#fff;
 }
 .secondary{
-background:linear-gradient(135deg,var(--brand),#083a6c);
+background:var(--brand);
 color:#fff;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .programGrid{
-margin-top:60px;
+margin-top:50px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:24px;
+gap:20px;
 }
 .programCard{
 background:#fff;
+border-radius:var(--radius);
 box-shadow:var(--shadow);
-border-radius:18px;
 overflow:hidden;
 cursor:pointer;
 transition:.3s;
 }
-.programCard:hover{transform:translateY(-6px)}
+.programCard:hover{transform:translateY(-5px)}
 .programCard img{
-width:100%;height:220px;object-fit:cover;
+width:100%;
+height:200px;
+object-fit:cover;
 }
 
 footer{
 border-top:1px solid var(--border);
-padding:18px 0;margin-top:40px;
-text-align:center;color:var(--muted);
+padding:18px 0;
+text-align:center;
+margin-top:40px;
+background:#fff;
 }
 </style>
 </head>
@@ -193,28 +227,41 @@ text-align:center;color:var(--muted);
 <header>
 <div class="wrap">
 <div class="nav">
-<a class="brand" href="index.html">
+<a class="brand" href="#">
 <img class="logo" src="./assets/logo.jpg">
 <div>
 <b id="brandText">भारत अभ्युदय संस्थान</b>
 <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
 </div>
 </a>
+
 <nav class="menu">
-<a href="index.html">मुख्य पृष्ठ</a>
-<a href="about.html">परिचय</a>
-<a href="initiatives.html">हमारे प्रयास</a>
-<a href="documents.html">दस्तावेज़</a>
-<a href="donate.html">दान करें</a>
-<a href="gallery.html">गैलरी</a>
-<a href="contact.html">संपर्क</a>
+<a>मुख्य पृष्ठ</a>
+<a>परिचय</a>
+<a>हमारे प्रयास</a>
+<a>दस्तावेज़</a>
+<a>दान करें</a>
+<a>गैलरी</a>
+<a>संपर्क</a>
 </nav>
-<div style="display:flex;gap:10px;align-items:center">
+
+<div style="display:flex;gap:8px;align-items:center">
 <button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
 <button class="pill active" id="btnHi">हिन्दी</button>
 <button class="pill" id="btnEn">English</button>
 </div>
+</div>
+</div>
+<div class="mobilePanel" id="mobilePanel">
+<div class="mnav">
+<a>मुख्य पृष्ठ</a>
+<a>परिचय</a>
+<a>हमारे प्रयास</a>
+<a>दस्तावेज़</a>
+<a>दान करें</a>
+<a>गैलरी</a>
+<a>संपर्क</a>
 </div>
 </div>
 </div>
@@ -224,9 +271,7 @@ text-align:center;color:var(--muted);
 👥 Visitors: <span id="visitorCount"></span>
 </div>
 
-<main>
-
-<section>
+<section class="hero">
 <div class="wrap">
 <div class="grid">
 <div>
@@ -238,9 +283,9 @@ text-align:center;color:var(--muted);
 </div>
 <div class="card">
 <h3>कानूनी / पंजीकरण विवरण</h3>
-<p class="small muted">
-Registration No.: <b>FAT/02340/2024-2025</b><br>
-PAN: <b>AANAB2855N</b>
+<p class="muted">
+Registration No.: FAT/02340/2024-2025<br>
+PAN: AANAB2855N
 </p>
 </div>
 </div>
@@ -250,6 +295,7 @@ PAN: <b>AANAB2855N</b>
 <section>
 <h2>Current Running Programs</h2>
 
+<div class="wrap">
 <div class="slider">
 <button class="arrow prev" onclick="changeSlide(-1)">❮</button>
 <button class="arrow next" onclick="changeSlide(1)">❯</button>
@@ -258,14 +304,14 @@ PAN: <b>AANAB2855N</b>
 <div class="slide"><img src="./assets/ambulance-en.png"></div>
 <div class="slide"><img src="./assets/gauseva-en.png"></div>
 <div class="slide"><img src="./assets/heritage-en.png"></div>
+
 </div>
 
 <div class="slideBtns">
-<button class="primary" onclick="window.location='donate.html'">Donate Now</button>
-<button class="secondary" onclick="window.location='initiatives.html'">Read More</button>
+<button class="primary">Donate Now</button>
+<button class="secondary">Read More</button>
 </div>
 
-<div class="wrap">
 <div class="programGrid">
 <div class="programCard" onclick="goToSlide(0)">
 <img src="./assets/shiksha-sarathi-en.png">
@@ -280,20 +326,21 @@ PAN: <b>AANAB2855N</b>
 <img src="./assets/heritage-en.png">
 </div>
 </div>
-</div>
 
+</div>
 </section>
 
-</main>
-
 <footer>
-© <span id="year"></span> भारत अभ्युदय संस्थान
+© <span id="year"></span> Bharat Abhyudaya Sansthan
 </footer>
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("mobBtn").onclick=()=>{
+document.getElementById("mobilePanel").classList.toggle("open");
+};
 
-/* Visitor Counter */
+/* Visitor */
 let count=localStorage.getItem("visitorCount");
 if(!count){count=100000;}
 count++;
@@ -317,6 +364,19 @@ showSlide(i);
 window.scrollTo({top:600,behavior:"smooth"});
 }
 setInterval(()=>changeSlide(1),4000);
+
+/* Toggle */
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+btnHi.onclick=()=>{
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
+};
+btnEn.onclick=()=>{
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
+};
 </script>
 
 </body>
