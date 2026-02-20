@@ -17,167 +17,111 @@
 --max:1120px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+background:#fff;
 color:var(--fg);
-background:
-radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-#fff;
 overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
+a{text-decoration:none;color:inherit}
 
-/* ===== HEADER (EXACT SAME AS OTHER PAGES) ===== */
+/* ===== HEADER SAME ===== */
 header{
-position:sticky;
-top:0;
-z-index:50;
-background:rgba(255,255,255,.92);
-backdrop-filter: blur(10px);
-border-bottom:1px solid rgba(226,232,240,.95);
+position:sticky;top:0;z-index:50;
+background:#fff;
+border-bottom:1px solid var(--border);
 }
 .nav{
-display:flex;
-align-items:center;
-justify-content:space-between;
+display:flex;align-items:center;justify-content:space-between;
 padding:12px 0;
-gap:10px;
 }
-.brand{
-display:flex;
-align-items:center;
-gap:10px;
-min-width:220px;
-}
-.logo{
-width:46px;
-height:46px;
-border-radius:999px;
-border:1px solid rgba(226,232,240,.95);
-object-fit:cover;
-background:#fff;
-}
-.brand b{display:block;font-size:14px}
-.brand span{display:block;font-size:12px;color:var(--muted)}
-
-.menu{
-display:none;
-gap:18px;
-font-size:14px;
-color:var(--muted);
-font-weight:900;
-}
-.menu a:hover{color:var(--brand)}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:46px;height:46px;border-radius:50%}
+.menu{display:none;gap:18px;font-weight:900;color:var(--muted)}
 @media(min-width:980px){.menu{display:flex}}
 
 .toggle{display:flex;gap:8px}
 .pill{
-border:1px solid rgba(226,232,240,.95);
-background:#fff;
-padding:8px 12px;
-border-radius:999px;
-font-size:13px;
-cursor:pointer;
-font-weight:900;
+padding:8px 12px;border-radius:999px;
+border:1px solid var(--border);
+background:#fff;cursor:pointer;font-weight:900;
 }
 .pill.active{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-color:#fff;
-border-color:transparent;
+background:var(--brand);color:#fff;border:none;
 }
 
 .mobBtn{
 display:inline-flex;
-align-items:center;
-justify-content:center;
-width:42px;
-height:42px;
-border-radius:14px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;
-cursor:pointer;
-font-size:18px;
-font-weight:950;
+width:42px;height:42px;
+align-items:center;justify-content:center;
+border-radius:14px;border:1px solid var(--border);
+background:#fff;font-weight:950;cursor:pointer;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
-.mobilePanel{
-display:none;
-padding:12px 0 14px;
-border-top:1px solid rgba(226,232,240,.95);
-}
+.mobilePanel{display:none;padding:12px 0}
 .mobilePanel.open{display:block}
-@media(min-width:980px){.mobilePanel{display:none !important}}
+@media(min-width:980px){.mobilePanel{display:none!important}}
 
-.mnav{
-display:grid;
-grid-template-columns:1fr;
-gap:10px;
-}
+.mnav{display:grid;gap:10px}
 .mnav a{
-padding:12px 14px;
-border-radius:16px;
-border:1px solid rgba(226,232,240,.95);
-background:rgba(255,255,255,.95);
-font-weight:950;
+padding:12px;border-radius:14px;
+border:1px solid var(--border);
 }
 
-/* ===== GALLERY SECTION ===== */
-section{padding:40px 0}
-.hero{text-align:center}
+/* ===== SLIDER ===== */
+section{padding:50px 0;text-align:center}
 .badge{
-display:inline-flex;
-padding:8px 12px;
+display:inline-block;
+padding:8px 14px;
+background:rgba(11,90,166,.08);
 border-radius:999px;
-background:rgba(11,90,166,.06);
-border:1px solid rgba(11,90,166,.15);
-font-weight:950;
+font-weight:900;
 color:var(--brand);
 font-size:12px;
 }
-h1{margin:14px 0;font-size:34px}
+h1{margin:15px 0;font-size:32px}
 .muted{color:var(--muted);line-height:1.7}
 
-.gallery{
-margin-top:40px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.slider{
+position:relative;
+max-width:800px;
+margin:40px auto 0;
 }
-.gallery img{
+.slide{
+display:none;
+}
+.slide img{
 width:100%;
-height:240px;
-object-fit:cover;
-border-radius:18px;
+border-radius:20px;
 box-shadow:var(--shadow);
-cursor:pointer;
-transition:.3s;
 }
-.gallery img:hover{transform:scale(1.05)}
+.slide.active{
+display:block;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,.5);
+color:#fff;
+border:none;
+font-size:24px;
+width:45px;height:45px;
+border-radius:50%;
+cursor:pointer;
+}
+.prev{left:-20px}
+.next{right:-20px}
 
 footer{
-border-top:1px solid rgba(226,232,240,.95);
-padding:18px 0;
-margin-top:30px;
+border-top:1px solid var(--border);
+padding:20px 0;margin-top:40px;
 color:var(--muted);
-background:#fff;
 font-size:14px;
-}
-
-.wa{
-position:fixed;
-right:16px;
-bottom:16px;
-z-index:999;
-background:linear-gradient(135deg,#22c55e,#16a34a);
-color:#fff;
-padding:12px 14px;
-border-radius:999px;
-font-weight:950;
 }
 </style>
 </head>
@@ -191,8 +135,7 @@ font-weight:950;
 <a class="brand" href="index.html">
 <img class="logo" src="./assets/logo.jpg">
 <div>
-<b>भारत अभ्युदय संस्थान</b>
-<span>अभ्युदय से आत्मनिर्भर भारत तक</span>
+<b id="brandText">भारत अभ्युदय संस्थान</b>
 </div>
 </a>
 
@@ -202,15 +145,15 @@ font-weight:950;
 <a href="initiatives.html">हमारे प्रयास</a>
 <a href="documents.html">दस्तावेज़</a>
 <a href="donate.html">दान करें</a>
-<a href="gallery.html" style="color:#0b5aa6;font-weight:950;">गैलरी</a>
+<a href="gallery.html" style="color:#0b5aa6;font-weight:900;">गैलरी</a>
 <a href="contact.html">संपर्क</a>
 </nav>
 
 <div style="display:flex;gap:10px;align-items:center">
 <button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
-<button class="pill active">हिन्दी</button>
-<button class="pill">English</button>
+<button class="pill active" id="btnHi">हिन्दी</button>
+<button class="pill" id="btnEn">English</button>
 </div>
 </div>
 
@@ -232,20 +175,19 @@ font-weight:950;
 </header>
 
 <section>
-<div class="wrap hero">
-<div class="badge">Service • Trust • Impact</div>
-<h1>गैलरी</h1>
-<p class="muted">हमारी सेवा गतिविधियों और सामाजिक प्रभाव की झलकियाँ।</p>
+<div class="wrap">
+<div class="badge" id="badgeText">Service • Trust • Impact</div>
+<h1 id="titleText">गैलरी</h1>
+<p class="muted" id="descText">हमारी सेवा गतिविधियों की झलकियाँ।</p>
 
-<div class="gallery">
-<img src="assets/gallery/1.jpg">
-<img src="assets/gallery/2.jpg">
-<img src="assets/gallery/3.jpg">
-<img src="assets/gallery/4.jpg">
-<img src="assets/gallery/5.jpg">
-<img src="assets/gallery/6.jpg">
-<img src="assets/gallery/7.jpg">
-<img src="assets/gallery/8.jpg">
+<div class="slider">
+<button class="arrow prev" onclick="changeSlide(-1)">❮</button>
+<button class="arrow next" onclick="changeSlide(1)">❯</button>
+
+<div class="slide active"><img src="assets/gallery/1.jpg"></div>
+<div class="slide"><img src="assets/gallery/2.jpg"></div>
+<div class="slide"><img src="assets/gallery/3.jpg"></div>
+<div class="slide"><img src="assets/gallery/4.jpg"></div>
 </div>
 
 </div>
@@ -253,17 +195,51 @@ font-weight:950;
 
 <footer>
 <div class="wrap">
-© <span id="year"></span> भारत अभ्युदय संस्थान • 8604669454 • 7355181465
+© <span id="year"></span> <span id="footText">भारत अभ्युदय संस्थान</span>
 </div>
 </footer>
 
-<a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
-
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-const mobBtn=document.getElementById("mobBtn");
-const mobilePanel=document.getElementById("mobilePanel");
-mobBtn.addEventListener("click",()=>mobilePanel.classList.toggle("open"));
+
+/* Mobile menu */
+document.getElementById("mobBtn")
+.addEventListener("click",()=>document.getElementById("mobilePanel").classList.toggle("open"));
+
+/* Language */
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+function setLang(lang){
+if(lang==="en"){
+document.getElementById("titleText").textContent="Gallery";
+document.getElementById("descText").textContent="Glimpses of our service activities.";
+document.getElementById("footText").textContent="Bharat Abhyudaya Sansthan";
+btnEn.classList.add("active");btnHi.classList.remove("active");
+}else{
+document.getElementById("titleText").textContent="गैलरी";
+document.getElementById("descText").textContent="हमारी सेवा गतिविधियों की झलकियाँ।";
+document.getElementById("footText").textContent="भारत अभ्युदय संस्थान";
+btnHi.classList.add("active");btnEn.classList.remove("active");
+}
+localStorage.setItem("bas_lang",lang);
+}
+btnHi.onclick=()=>setLang("hi");
+btnEn.onclick=()=>setLang("en");
+setLang(localStorage.getItem("bas_lang")||"hi");
+
+/* Slider */
+let index=0;
+const slides=document.querySelectorAll(".slide");
+function showSlide(i){
+slides.forEach(s=>s.classList.remove("active"));
+slides[i].classList.add("active");
+}
+function changeSlide(n){
+index=(index+n+slides.length)%slides.length;
+showSlide(index);
+}
+setInterval(()=>changeSlide(1),5000);
 </script>
 
 </body>
