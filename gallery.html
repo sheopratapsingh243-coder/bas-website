@@ -72,24 +72,17 @@ background:linear-gradient(135deg,var(--brand),#083a6c);
 color:#fff;border-color:transparent;
 }
 
-/* MOBILE MENU FIX */
+/* MOBILE MENU */
 .mobBtn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:42px;height:42px;
-border-radius:14px;
+display:inline-flex;align-items:center;justify-content:center;
+width:42px;height:42px;border-radius:14px;
 border:1px solid rgba(226,232,240,.95);
-background:#fff;
-cursor:pointer;
-font-size:18px;
-font-weight:950;
+background:#fff;cursor:pointer;font-size:18px;font-weight:950;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
 .mobilePanel{
-display:none;
-padding:12px 0 14px;
+display:none;padding:12px 0 14px;
 border-top:1px solid rgba(226,232,240,.95);
 }
 .mobilePanel.open{display:block}
@@ -246,19 +239,66 @@ color:var(--muted);background:#fff;font-size:14px;
 
 <footer>
 <div class="wrap">
-© <span id="year"></span> भारत अभ्युदय संस्थान
+© <span id="year"></span> <span id="footText">भारत अभ्युदय संस्थान</span>
 </div>
 </footer>
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* MOBILE MENU FIX */
-const mobBtn=document.getElementById("mobBtn");
-const mobilePanel=document.getElementById("mobilePanel");
-mobBtn.addEventListener("click",()=>{
-mobilePanel.classList.toggle("open");
+/* MOBILE MENU */
+document.getElementById("mobBtn").addEventListener("click",()=>{
+document.getElementById("mobilePanel").classList.toggle("open");
 });
+
+/* LANGUAGE TOGGLE FIX */
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+function setLang(lang){
+document.documentElement.lang=lang;
+
+if(lang==="en"){
+brandText.textContent="Bharat Abhyudaya Sansthan";
+brandSub.textContent="Upliftment to Self-Reliant India";
+titleText.textContent="Gallery";
+descText.textContent="Glimpses of our service activities.";
+footText.textContent="Bharat Abhyudaya Sansthan";
+
+m1.textContent="Home";
+m2.textContent="About";
+m3.textContent="Our Initiatives";
+m4.textContent="Documents";
+m5.textContent="Donate";
+m6.textContent="Gallery";
+m7.textContent="Contact";
+
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
+}else{
+brandText.textContent="भारत अभ्युदय संस्थान";
+brandSub.textContent="अभ्युदय से आत्मनिर्भर भारत तक";
+titleText.textContent="गैलरी";
+descText.textContent="हमारी सेवा गतिविधियों की झलकियाँ।";
+footText.textContent="भारत अभ्युदय संस्थान";
+
+m1.textContent="मुख्य पृष्ठ";
+m2.textContent="परिचय";
+m3.textContent="हमारे प्रयास";
+m4.textContent="दस्तावेज़";
+m5.textContent="दान करें";
+m6.textContent="गैलरी";
+m7.textContent="संपर्क";
+
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
+}
+localStorage.setItem("bas_lang",lang);
+}
+
+btnHi.onclick=()=>setLang("hi");
+btnEn.onclick=()=>setLang("en");
+setLang(localStorage.getItem("bas_lang")||"hi");
 
 /* SLIDER */
 let index=0;
