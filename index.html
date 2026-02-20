@@ -30,7 +30,7 @@ a{text-decoration:none;color:inherit}
 header{
 position:sticky;top:0;z-index:50;
 background:rgba(255,255,255,.95);
-backdrop-filter: blur(10px);
+backdrop-filter:blur(10px);
 border-bottom:1px solid var(--border);
 }
 .nav{
@@ -40,7 +40,8 @@ padding:14px 0;
 .brand{display:flex;align-items:center;gap:10px}
 .logo{
 width:46px;height:46px;border-radius:999px;
-border:1px solid var(--border);object-fit:cover;background:#fff;
+border:1px solid var(--border);
+object-fit:cover;background:#fff;
 }
 .brand b{display:block;font-size:14px}
 .brand span{display:block;font-size:12px;color:var(--muted)}
@@ -97,7 +98,7 @@ border-radius:6px;
 .slider{
 position:relative;
 width:100%;
-height:75vh;
+height:70vh;
 overflow:hidden;
 border-radius:var(--radius);
 background:#fff;
@@ -136,17 +137,15 @@ border-radius:8px;
 .arrow.left{left:20px}
 .arrow.right{right:20px}
 
-/* BUTTONS BELOW IMAGE (no overlap) */
+/* BUTTONS BELOW SLIDER (VISIBLE NOW) */
 
-.slideButtons{
-position:absolute;
-bottom:-60px;   /* moved down */
-width:100%;
+.buttonWrapper{
+margin-top:15px;
 display:flex;
 gap:10px;
 }
 
-.slideButtons button{
+.buttonWrapper button{
 flex:1;
 padding:12px;
 border:none;
@@ -169,7 +168,7 @@ background:linear-gradient(135deg,var(--brand),#083a6c);
 .photoGrid{
 display:grid;
 gap:16px;
-padding:100px 0 30px; /* extra space due to moved buttons */
+padding:30px 0;
 }
 @media(min-width:768px){
 .photoGrid{grid-template-columns:repeat(3,1fr)}
@@ -246,6 +245,11 @@ margin-top:20px;
 
 <div class="slider" id="slider"></div>
 
+<div class="buttonWrapper">
+<button class="btnDonate" id="donateBtn">Donate Now</button>
+<button class="btnRead" id="readBtn">Read More</button>
+</div>
+
 </div>
 </section>
 
@@ -275,12 +279,7 @@ const grid=document.getElementById("grid");
 slideData.forEach((s,i)=>{
 const slide=document.createElement("div");
 slide.className="slide"+(i===0?" active":"");
-slide.innerHTML=`
-<img src="./assets/${s.img}">
-<div class="slideButtons">
-<button class="btnDonate" id="donate${i}" onclick="location.href='donate.html'">Donate Now</button>
-<button class="btnRead" id="read${i}" onclick="location.href='initiatives.html#${s.id}'">Read More</button>
-</div>`;
+slide.innerHTML=`<img src="./assets/${s.img}">`;
 slider.appendChild(slide);
 
 const gimg=document.createElement("img");
@@ -291,7 +290,14 @@ grid.appendChild(gimg);
 
 let slides=document.querySelectorAll(".slide");
 let current=0;
-function showSlide(i){slides.forEach(s=>s.classList.remove("active"));slides[i].classList.add("active");current=i;}
+
+function showSlide(i){
+slides.forEach(s=>s.classList.remove("active"));
+slides[i].classList.add("active");
+current=i;
+updateButtons();
+}
+
 function nextSlide(){current=(current+1)%slides.length;showSlide(current);}
 function prevSlide(){current=(current-1+slides.length)%slides.length;showSlide(current);}
 setInterval(nextSlide,4000);
@@ -301,13 +307,21 @@ left.className="arrow left";left.innerHTML="❮";left.onclick=prevSlide;slider.a
 const right=document.createElement("div");
 right.className="arrow right";right.innerHTML="❯";right.onclick=nextSlide;slider.appendChild(right);
 
-/* FULL PAGE TRANSLATION */
+const donateBtn=document.getElementById("donateBtn");
+const readBtn=document.getElementById("readBtn");
+
+function updateButtons(){
+donateBtn.onclick=()=>location.href='donate.html';
+readBtn.onclick=()=>location.href='initiatives.html#'+slideData[current].id;
+}
+updateButtons();
+
+/* TRANSLATION */
 
 const t={
 hi:{
 brand:"भारत अभ्युदय संस्थान",
 sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-menu:["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"],
 heroTitle:"सशक्त समाज • आत्मनिर्भर भारत",
 heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।",
 slider:"वर्तमान पहल",
@@ -317,7 +331,6 @@ read:"विस्तार से देखें"
 en:{
 brand:"Bharat Abhyudaya Sansthan",
 sub:"Upliftment to Self-Reliant India",
-menu:["Home","About","Our Initiatives","Documents","Donate Now","Gallery","Contact"],
 heroTitle:"Empowered Society • Self-Reliant India",
 heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact.",
 slider:"CURRENT INITIATIVES",
@@ -331,24 +344,16 @@ const btnEn=document.getElementById("btnEn");
 
 function setLang(lang){
 const d=t[lang];
-
 document.getElementById("brandText").textContent=d.brand;
 document.getElementById("brandSub").textContent=d.sub;
 document.getElementById("heroTitle").textContent=d.heroTitle;
 document.getElementById("heroText").textContent=d.heroText;
 document.getElementById("sliderMain").textContent=d.slider;
 document.getElementById("footBrand").textContent=d.brand;
-
-document.querySelectorAll(".menu a").forEach((el,i)=>el.textContent=d.menu[i]);
-
-slides.forEach((s,i)=>{
-document.getElementById("donate"+i).textContent=d.donate;
-document.getElementById("read"+i).textContent=d.read;
-});
-
+donateBtn.textContent=d.donate;
+readBtn.textContent=d.read;
 btnHi.classList.toggle("active",lang==="hi");
 btnEn.classList.toggle("active",lang==="en");
-
 localStorage.setItem("bas_lang",lang);
 }
 
