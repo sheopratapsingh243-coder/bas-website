@@ -22,26 +22,25 @@ margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
 color:var(--fg);
 background:#fff;
-overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* ===== HEADER SAME ===== */
+/* HEADER */
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(255,255,255,.95);
+background:#fff;
 border-bottom:1px solid var(--border);
 }
 .nav{
 display:flex;align-items:center;justify-content:space-between;
-padding:12px 0;gap:10px;
+padding:12px 0;
 }
-.brand{display:flex;align-items:center;gap:10px;min-width:220px;}
+.brand{display:flex;align-items:center;gap:10px;}
 .logo{
-width:46px;height:46px;border-radius:999px;
+width:46px;height:46px;border-radius:50%;
 border:1px solid var(--border);
-object-fit:cover;background:#fff;
+object-fit:cover;
 }
 .menu{display:none;gap:18px;font-weight:900;color:var(--muted)}
 .menu a:hover{color:var(--brand)}
@@ -51,7 +50,7 @@ object-fit:cover;background:#fff;
 .pill{
 border:1px solid var(--border);
 background:#fff;padding:8px 12px;border-radius:999px;
-font-size:13px;cursor:pointer;font-weight:900;
+cursor:pointer;font-weight:900;
 }
 .pill.active{
 background:linear-gradient(135deg,var(--brand),#083a6c);
@@ -59,103 +58,122 @@ color:#fff;border-color:transparent;
 }
 
 .mobBtn{
-display:inline-flex;align-items:center;justify-content:center;
-width:42px;height:42px;border-radius:14px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:42px;height:42px;
+border-radius:12px;
 border:1px solid var(--border);
-background:#fff;cursor:pointer;font-size:18px;font-weight:950;
+background:#fff;
+cursor:pointer;
+font-size:18px;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
-.mobilePanel{display:none;padding:12px 0 14px;border-top:1px solid var(--border);}
+.mobilePanel{display:none;padding:10px 0;border-top:1px solid var(--border);}
 .mobilePanel.open{display:block}
 @media(min-width:980px){.mobilePanel{display:none!important}}
-
-.mnav{display:grid;gap:10px}
+.mnav{display:grid;gap:8px}
 .mnav a{
-padding:12px 14px;border-radius:16px;
-border:1px solid var(--border);
-background:#fff;font-weight:950;
+padding:10px;border:1px solid var(--border);
+border-radius:10px;font-weight:900;
 }
 
 /* Visitor */
 .visitorBar{
+text-align:right;
 max-width:var(--max);
 margin:6px auto;
 padding:0 16px;
-text-align:right;
 font-weight:900;
 color:var(--brand);
 }
 
-/* Hero */
-.hero{text-align:center;padding:30px 0}
+/* HERO */
+.hero{text-align:center;padding:40px 0}
 .badge{
-display:inline-flex;padding:8px 12px;border-radius:999px;
-background:rgba(11,90,166,.06);
-border:1px solid rgba(11,90,166,.15);
-font-weight:950;color:var(--brand);font-size:12px;
+display:inline-block;
+padding:6px 12px;
+background:rgba(11,90,166,.08);
+border-radius:999px;
+color:var(--brand);
+font-weight:900;
+font-size:13px;
 }
-h1{font-size:36px;margin:14px 0}
-.muted{color:var(--muted);line-height:1.7}
+h1{margin:16px 0;font-size:36px}
+.tagline{color:var(--muted);max-width:800px;margin:auto;line-height:1.7}
 
-/* Full Slider */
-.slider{
-position:relative;
-width:100%;
-margin-top:30px;
-}
-.slide{display:none}
+/* SLIDER */
+.slider{position:relative;margin-top:30px}
+.slide{display:none;text-align:center}
 .slide.active{display:block}
 .slide img{
 width:100%;
-height:500px;
+height:450px;
 object-fit:cover;
 }
 @media(max-width:768px){
-.slide img{height:280px}
+.slide img{height:250px}
 }
-
-.slideBtns{
+.arrow{
 position:absolute;
-bottom:30px;
-left:50%;
-transform:translateX(-50%);
-display:flex;gap:16px;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,.5);
+color:#fff;
+border:none;
+font-size:24px;
+width:40px;height:40px;
+border-radius:50%;
+cursor:pointer;
+}
+.prev{left:15px}
+.next{right:15px}
+
+/* Slide Buttons */
+.slideBtns{
+margin-top:16px;
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
 }
 .btn{
-padding:12px 20px;
+padding:10px 18px;
 border-radius:30px;
 font-weight:900;
 cursor:pointer;
 border:none;
 }
-.btn.primary{
-background:linear-gradient(135deg,var(--accent),#ff7a00);
-color:#fff;
-}
-.btn.secondary{
-background:#fff;
-color:var(--brand);
-}
+.primary{background:var(--accent);color:#fff}
+.secondary{background:var(--brand);color:#fff}
 
-/* Impact */
-.impactGrid{
+/* GRID */
+.programGrid{
 margin:60px auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 max-width:var(--max);
 }
-.impact{
+.programCard{
 background:#fff;
-padding:24px;
-border-radius:20px;
 box-shadow:var(--shadow);
-text-align:center;
-font-weight:900;
+border-radius:16px;
+overflow:hidden;
+cursor:pointer;
+transition:.3s;
 }
+.programCard:hover{transform:translateY(-5px)}
+.programCard img{
+width:100%;height:220px;object-fit:cover;
+}
+.programCard h3{
+padding:16px;margin:0;text-align:center;
+}
+
 footer{
-padding:18px 0;
+padding:20px 0;
 border-top:1px solid var(--border);
 text-align:center;
 color:var(--muted);
@@ -178,13 +196,13 @@ color:var(--muted);
 </a>
 
 <nav class="menu">
-<a id="m1" href="index.html">मुख्य पृष्ठ</a>
-<a id="m2" href="about.html">परिचय</a>
-<a id="m3" href="initiatives.html">हमारे प्रयास</a>
-<a id="m4" href="documents.html">दस्तावेज़</a>
-<a id="m5" href="donate.html">दान करें</a>
-<a id="m6" href="gallery.html">गैलरी</a>
-<a id="m7" href="contact.html">संपर्क</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="initiatives.html">Our Initiatives</a>
+<a href="documents.html">Documents</a>
+<a href="donate.html">Donate Now</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
 </nav>
 
 <div style="display:flex;gap:10px;align-items:center">
@@ -199,13 +217,13 @@ color:var(--muted);
 
 <div class="mobilePanel" id="mobilePanel">
 <div class="mnav">
-<a href="index.html">मुख्य पृष्ठ</a>
-<a href="about.html">परिचय</a>
-<a href="initiatives.html">हमारे प्रयास</a>
-<a href="documents.html">दस्तावेज़</a>
-<a href="donate.html">दान करें</a>
-<a href="gallery.html">गैलरी</a>
-<a href="contact.html">संपर्क</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="initiatives.html">Our Initiatives</a>
+<a href="documents.html">Documents</a>
+<a href="donate.html">Donate Now</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
 </div>
 </div>
 </div>
@@ -216,14 +234,16 @@ color:var(--muted);
 </div>
 
 <section class="hero wrap">
-<span class="badge">Service • Trust • Impact</span>
+<div class="badge">Service • Trust • Impact</div>
 <h1 id="titleText">भारत अभ्युदय संस्थान</h1>
-<p class="muted" id="taglineText">
+<p class="tagline" id="taglineText">
 हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता के माध्यम से आत्मनिर्भर भारत के निर्माण हेतु कार्यरत हैं।
 </p>
-</section>
 
-<div class="slider" id="slider">
+<div class="slider">
+
+<button class="arrow prev" onclick="changeSlide(-1)">❮</button>
+<button class="arrow next" onclick="changeSlide(1)">❯</button>
 
 <div class="slide active">
 <img src="./assets/shiksha-sarathi-en.png">
@@ -258,13 +278,26 @@ color:var(--muted);
 </div>
 
 </div>
+</section>
 
 <section>
-<h2 style="text-align:center;margin-top:60px;">Our Purpose & Impact</h2>
-<div class="impactGrid">
-<div class="impact">बच्चों की शिक्षा और मार्गदर्शन</div>
-<div class="impact">स्वास्थ्य सहायता और सेवा</div>
-<div class="impact">महिला सशक्तिकरण व आत्मनिर्भरता</div>
+<div class="programGrid">
+<div class="programCard" onclick="goToSlide(0)">
+<img src="./assets/shiksha-sarathi-en.png">
+<h3>Shiksha Sarathi</h3>
+</div>
+<div class="programCard" onclick="goToSlide(1)">
+<img src="./assets/ambulance-en.png">
+<h3>Ambulance Seva</h3>
+</div>
+<div class="programCard" onclick="goToSlide(2)">
+<img src="./assets/gauseva-en.png">
+<h3>GauSeva</h3>
+</div>
+<div class="programCard" onclick="goToSlide(3)">
+<img src="./assets/heritage-en.png">
+<h3>Heritage Conservation</h3>
+</div>
 </div>
 </section>
 
@@ -275,9 +308,10 @@ color:var(--muted);
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* Visitor */
+/* Visitor Counter */
 let v=parseInt(localStorage.getItem("bas_visitors"))||100000;
-v++;localStorage.setItem("bas_visitors",v);
+v++;
+localStorage.setItem("bas_visitors",v);
 document.getElementById("visitorCount").textContent=v.toLocaleString();
 
 /* Mobile */
@@ -286,20 +320,23 @@ document.getElementById("mobilePanel").classList.toggle("open");
 };
 
 /* Slider */
-let current=0;
+let index=0;
 const slides=document.querySelectorAll(".slide");
 function showSlide(i){
 slides.forEach(s=>s.classList.remove("active"));
 slides[i].classList.add("active");
-current=i;
+index=i;
 }
-function autoSlide(){
-current=(current+1)%slides.length;
-showSlide(current);
+function changeSlide(n){
+index=(index+n+slides.length)%slides.length;
+showSlide(index);
 }
-setInterval(autoSlide,4000);
+function goToSlide(i){
+showSlide(i);
+window.scrollTo({top:0,behavior:"smooth"});
+}
+setInterval(()=>changeSlide(1),4000);
 
-/* Buttons */
 function goDonate(){
 window.location.href="donate.html#donationMethods";
 }
@@ -312,6 +349,28 @@ const links=[
 ];
 window.location.href=links[i];
 }
+
+/* Toggle Working */
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+function setLang(lang){
+if(lang==="en"){
+document.getElementById("titleText").textContent="Bharat Abhyudaya Sansthan";
+document.getElementById("taglineText").textContent="We work for a self-reliant and empowered India through education, health support, women empowerment, GauSeva and community help.";
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
+}else{
+document.getElementById("titleText").textContent="भारत अभ्युदय संस्थान";
+document.getElementById("taglineText").textContent="हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता के माध्यम से आत्मनिर्भर भारत के निर्माण हेतु कार्यरत हैं।";
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
+}
+localStorage.setItem("bas_lang",lang);
+}
+btnHi.onclick=()=>setLang("hi");
+btnEn.onclick=()=>setLang("en");
+setLang(localStorage.getItem("bas_lang")||"hi");
 </script>
 
 </body>
