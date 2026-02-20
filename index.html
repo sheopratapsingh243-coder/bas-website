@@ -17,35 +17,32 @@
 --max:1200px;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#fff;color:var(--fg)}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--fg);background:#fff}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* ================= HEADER SAME AS ABOUT ================= */
+/* ===== HEADER (Same as about.html) ===== */
 
 header{
-position:sticky;top:0;z-index:100;
-background:#fff;
+position:sticky;top:0;z-index:50;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
 border-bottom:1px solid var(--border);
 }
-.nav{
-display:flex;align-items:center;justify-content:space-between;
-padding:12px 0;
-}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px}
-.logo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+.logo{width:46px;height:46px;border-radius:999px;object-fit:cover;border:1px solid var(--border)}
 .brand b{font-size:14px}
 .brand span{font-size:12px;color:var(--muted)}
 
-.menu{display:none;gap:18px;font-size:14px;font-weight:900;color:var(--muted)}
+.menu{display:none;gap:18px;font-weight:900;color:var(--muted)}
 .menu a:hover{color:var(--brand)}
 @media(min-width:980px){.menu{display:flex}}
 
 .mobBtn{
 display:inline-flex;align-items:center;justify-content:center;
 width:42px;height:42px;border-radius:14px;
-border:1px solid var(--border);background:#fff;
-font-size:18px;font-weight:900;cursor:pointer;
+border:1px solid var(--border);background:#fff;font-size:18px;cursor:pointer;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
@@ -54,23 +51,19 @@ font-size:18px;font-weight:900;cursor:pointer;
 .mnav{display:grid;gap:10px;padding:12px}
 .mnav a{
 padding:12px;border-radius:16px;border:1px solid var(--border);
-font-weight:900;
+font-weight:900;background:#fff;
 }
 
 .toggle{display:flex;gap:8px}
 .pill{
 padding:8px 12px;border-radius:999px;
-border:1px solid var(--border);
-cursor:pointer;font-weight:900;background:#fff;
+border:1px solid var(--border);cursor:pointer;font-weight:900;background:#fff;
 }
-.pill.active{background:var(--brand);color:#fff}
+.pill.active{background:linear-gradient(135deg,var(--brand),#083a6c);color:#fff}
 
-/* ================= HERO INTRO ================= */
+/* ===== HERO INTRO ===== */
 
-.heroIntro{
-padding:40px 0;
-background:linear-gradient(135deg,rgba(11,90,166,.08),rgba(245,139,31,.08));
-}
+.heroIntro{padding:40px 0;background:linear-gradient(135deg,rgba(11,90,166,.08),rgba(245,139,31,.08))}
 .heroGrid{display:grid;gap:20px}
 @media(min-width:980px){.heroGrid{grid-template-columns:1.2fr .8fr}}
 
@@ -79,88 +72,47 @@ background:linear-gradient(135deg,rgba(11,90,166,.08),rgba(245,139,31,.08));
 
 .card{
 background:#fff;border:1px solid var(--border);
-border-radius:var(--radius);padding:20px;
-box-shadow:var(--shadow);
+border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
 }
 
-/* ================= SLIDER ================= */
+/* ===== SLIDER ===== */
 
-.sliderSection{
-padding:40px 0 20px;
-}
-.sliderTitle{
-text-align:center;
-font-size:22px;
-font-weight:900;
-margin-bottom:20px;
-}
+.sliderSection{padding:40px 0 10px}
+.sliderTitle{text-align:center;font-size:22px;font-weight:900;margin-bottom:20px}
 
-.slider{
-position:relative;
-width:100%;
-height:75vh;
-overflow:hidden;
-border-radius:20px;
-}
-
-.slide{
-position:absolute;
-width:100%;height:100%;
-opacity:0;transition:opacity .6s ease;
-}
+.slider{position:relative;width:100%;height:75vh;overflow:hidden;border-radius:20px}
+.slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity .6s ease}
 .slide.active{opacity:1}
-
-.slide img{
-width:100%;height:100%;
-object-fit:cover;
-}
+.slide img{width:100%;height:100%;object-fit:cover}
 
 .arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:28px;
-background:rgba(0,0,0,.4);
-color:#fff;
-padding:10px 14px;
-cursor:pointer;
-border-radius:10px;
+position:absolute;top:50%;transform:translateY(-50%);
+font-size:28px;background:rgba(0,0,0,.4);
+color:#fff;padding:10px 14px;cursor:pointer;border-radius:10px;
 }
 .arrow.left{left:20px}
 .arrow.right{right:20px}
 
 .slideButtons{
-position:absolute;
-bottom:0;
-width:100%;
-display:flex;
+position:absolute;bottom:0;width:100%;display:flex;
 }
-.slideButtons a{
-flex:1;
-text-align:center;
-padding:16px;
-font-weight:900;
-color:#fff;
+.slideButtons button{
+flex:1;padding:16px;font-weight:900;color:#fff;border:none;cursor:pointer;
 }
 .btnDonate{background:linear-gradient(135deg,var(--accent),#ff7a00)}
 .btnRead{background:linear-gradient(135deg,var(--brand),#083a6c)}
 
-/* ================= GRID BELOW SLIDER ================= */
+/* ===== GRID BELOW ===== */
 
 .photoGrid{
-display:grid;
-gap:16px;
-padding:30px 0;
+display:grid;gap:16px;padding:30px 0;
 }
 @media(min-width:768px){.photoGrid{grid-template-columns:repeat(3,1fr)}}
 
 .photoGrid img{
-width:100%;
-border-radius:16px;
-object-fit:cover;
+width:100%;border-radius:16px;height:250px;object-fit:cover;
 }
 
-/* Footer */
 footer{
 border-top:1px solid var(--border);
 padding:20px;text-align:center;color:var(--muted);
@@ -184,13 +136,13 @@ padding:20px;text-align:center;color:var(--muted);
 </a>
 
 <nav class="menu">
-<a href="#">मुख्य पृष्ठ</a>
-<a href="about.html">परिचय</a>
-<a href="initiatives.html">हमारे प्रयास</a>
-<a href="documents.html">दस्तावेज़</a>
-<a href="donate.html">दान करें</a>
-<a href="gallery.html">गैलरी</a>
-<a href="contact.html">संपर्क</a>
+<a id="mHome" href="#">मुख्य पृष्ठ</a>
+<a id="mAbout" href="about.html">परिचय</a>
+<a id="mWork" href="initiatives.html">हमारे प्रयास</a>
+<a id="mDocs" href="documents.html">दस्तावेज़</a>
+<a id="mDonate" href="donate.html">दान करें</a>
+<a id="mGallery" href="gallery.html">गैलरी</a>
+<a id="mContact" href="contact.html">संपर्क</a>
 </nav>
 
 <div style="display:flex;gap:10px;align-items:center">
@@ -218,16 +170,12 @@ padding:20px;text-align:center;color:var(--muted);
 </div>
 </header>
 
-<!-- HERO INTRO -->
 <section class="heroIntro">
 <div class="wrap heroGrid">
-
 <div>
-<h1>सशक्त समाज • आत्मनिर्भर भारत</h1>
-<p>
-आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण,
-वृद्धजन सेवा और गौसेवा के माध्यम से एक आत्मनिर्भर भारत के निर्माण का योगदान है।
-हम पारदर्शिता, सेवा और वास्तविक जमीनी कार्य के प्रति प्रतिबद्ध हैं।
+<h1 id="heroTitle">सशक्त समाज • आत्मनिर्भर भारत</h1>
+<p id="heroText">
+आपका सहयोग केवल दान नहीं — यह आत्मनिर्भर भारत निर्माण की दिशा में महत्वपूर्ण कदम है।
 </p>
 </div>
 
@@ -240,67 +188,30 @@ Valid: 04/07/2029<br>
 PAN: AANAB2855N
 </p>
 </div>
-
 </div>
 </section>
 
-<!-- SLIDER -->
 <section class="sliderSection">
 <div class="wrap">
-
-<div class="sliderTitle">
+<div class="sliderTitle" id="sliderHeading">
 Current Initiatives – Donate to Build Self Reliant India
 </div>
 
 <div class="slider">
 
-<div class="slide active">
-<img src="./assets/shiksha.jpg">
-<div class="slideButtons">
-<a href="donate.html" class="btnDonate">Donate Now</a>
-<a href="initiatives.html#shiksha" class="btnRead">Read More</a>
-</div>
-</div>
+<!-- Slides -->
+<script>
+const slideData=[
+{img:"shiksha.jpg",id:"shiksha"},
+{img:"heritage.jpg",id:"heritage"},
+{img:"gaushala.jpg",id:"gauseva"},
+{img:"oldage.jpg",id:"oldage"},
+{img:"ambulance.jpg",id:"ambulance"},
+{img:"women.jpg",id:"women"}
+];
+</script>
 
-<div class="slide">
-<img src="./assets/heritage.jpg">
-<div class="slideButtons">
-<a href="donate.html" class="btnDonate">Donate Now</a>
-<a href="initiatives.html#heritage" class="btnRead">Read More</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="./assets/gaushala.jpg">
-<div class="slideButtons">
-<a href="donate.html" class="btnDonate">Donate Now</a>
-<a href="initiatives.html#gauseva" class="btnRead">Read More</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="./assets/oldage.jpg">
-<div class="slideButtons">
-<a href="donate.html" class="btnDonate">Donate Now</a>
-<a href="initiatives.html#oldage" class="btnRead">Read More</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="./assets/ambulance.jpg">
-<div class="slideButtons">
-<a href="donate.html" class="btnDonate">Donate Now</a>
-<a href="initiatives.html#ambulance" class="btnRead">Read More</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="./assets/women.jpg">
-<div class="slideButtons">
-<a href="donate.html" class="btnDonate">Donate Now</a>
-<a href="initiatives.html#women" class="btnRead">Read More</a>
-</div>
-</div>
+<div id="slidesContainer"></div>
 
 <div class="arrow left" onclick="prevSlide()">❮</div>
 <div class="arrow right" onclick="nextSlide()">❯</div>
@@ -309,23 +220,37 @@ Current Initiatives – Donate to Build Self Reliant India
 </div>
 </section>
 
-<!-- GRID BELOW -->
 <section>
-<div class="wrap photoGrid">
-<img src="./assets/shiksha.jpg">
-<img src="./assets/heritage.jpg">
-<img src="./assets/gaushala.jpg">
-<img src="./assets/oldage.jpg">
-<img src="./assets/ambulance.jpg">
-<img src="./assets/women.jpg">
-</div>
+<div class="wrap photoGrid" id="gridContainer"></div>
 </section>
 
 <footer>
-© 2026 Bharat Abhyudaya Sansthan
+© <span id="year"></span> Bharat Abhyudaya Sansthan
 </footer>
 
 <script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* Build Slides + Grid Dynamically */
+const slidesContainer=document.getElementById("slidesContainer");
+const gridContainer=document.getElementById("gridContainer");
+
+slideData.forEach((s,i)=>{
+const slide=document.createElement("div");
+slide.className="slide"+(i===0?" active":"");
+slide.innerHTML=`
+<img src="./assets/${s.img}">
+<div class="slideButtons">
+<button class="btnDonate" onclick="window.location.href='donate.html'">Donate Now</button>
+<button class="btnRead" onclick="window.location.href='initiatives.html#${s.id}'">Read More</button>
+</div>`;
+slidesContainer.appendChild(slide);
+
+const gridImg=document.createElement("img");
+gridImg.src=`./assets/${s.img}`;
+gridContainer.appendChild(gridImg);
+});
+
 let slides=document.querySelectorAll(".slide");
 let current=0;
 
@@ -333,21 +258,41 @@ function showSlide(index){
 slides.forEach(s=>s.classList.remove("active"));
 slides[index].classList.add("active");
 }
-
-function nextSlide(){
-current=(current+1)%slides.length;
-showSlide(current);
-}
-function prevSlide(){
-current=(current-1+slides.length)%slides.length;
-showSlide(current);
-}
-
+function nextSlide(){current=(current+1)%slides.length;showSlide(current);}
+function prevSlide(){current=(current-1+slides.length)%slides.length;showSlide(current);}
 setInterval(nextSlide,4000);
 
+/* Mobile */
 document.getElementById("mobBtn").addEventListener("click",()=>{
 document.getElementById("mobilePanel").classList.toggle("open");
 });
+
+/* Toggle Language */
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+function setLang(lang){
+if(lang==="en"){
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
+document.getElementById("heroTitle").textContent="Empowered Society • Self Reliant India";
+document.getElementById("heroText").textContent="Your support is not just donation — it builds a self-reliant India.";
+document.getElementById("sliderHeading").textContent="Current Initiatives – Donate to Build Self Reliant India";
+}else{
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
+document.getElementById("heroTitle").textContent="सशक्त समाज • आत्मनिर्भर भारत";
+document.getElementById("heroText").textContent="आपका सहयोग केवल दान नहीं — यह आत्मनिर्भर भारत निर्माण की दिशा में महत्वपूर्ण कदम है।";
+document.getElementById("sliderHeading").textContent="वर्तमान पहल – आत्मनिर्भर भारत निर्माण हेतु सहयोग करें";
+}
+localStorage.setItem("bas_lang",lang);
+}
+
+btnHi.onclick=()=>setLang("hi");
+btnEn.onclick=()=>setLang("en");
+
+setLang(localStorage.getItem("bas_lang")||"hi");
+
 </script>
 
 </body>
