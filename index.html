@@ -16,48 +16,92 @@
 --max:1120px;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--fg);background:#fff}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+color:var(--fg);
+background:#f8fafc;
+}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
 /* HEADER */
+
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(255,255,255,.92);
+background:rgba(255,255,255,.95);
 backdrop-filter: blur(10px);
 border-bottom:1px solid var(--border);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:10px}
-.brand{display:flex;align-items:center;gap:10px;min-width:220px}
-.logo{width:46px;height:46px;border-radius:999px;border:1px solid var(--border);object-fit:cover;background:#fff}
-.brand b{display:block;font-size:14px;line-height:1.15}
+.nav{
+display:flex;align-items:center;justify-content:space-between;
+padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{
+width:46px;height:46px;border-radius:999px;
+border:1px solid var(--border);object-fit:cover;background:#fff;
+}
+.brand b{display:block;font-size:14px}
 .brand span{display:block;font-size:12px;color:var(--muted)}
 
-.menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
+.menu{
+display:none;gap:18px;font-size:14px;
+color:var(--muted);font-weight:900;
+}
 .menu a:hover{color:var(--brand)}
 @media(min-width:980px){.menu{display:flex}}
 
 .toggle{display:flex;gap:8px}
-.pill{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-weight:900}
-.pill.active{background:linear-gradient(135deg,var(--brand),#083a6c);color:#fff;border-color:transparent;font-weight:950}
+.pill{
+border:1px solid var(--border);
+background:#fff;padding:8px 12px;border-radius:999px;
+font-size:13px;cursor:pointer;font-weight:900;
+}
+.pill.active{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+color:#fff;border-color:transparent;
+}
 
 /* HERO */
-.hero{padding:30px 0 10px}
+
+.hero{
+padding:50px 0 30px;
+background:linear-gradient(135deg,rgba(11,90,166,.08),rgba(245,139,31,.08));
+}
 .hero h1{margin:0;font-size:34px}
-.hero p{margin-top:12px;color:var(--muted);line-height:1.8;font-weight:700}
+.hero p{
+margin-top:14px;
+color:var(--muted);
+line-height:1.8;
+font-weight:600;
+max-width:850px;
+}
 
 /* SLIDER */
-.sliderSection{padding:10px 0 10px}
-.sliderTitle{text-align:center;font-size:22px;font-weight:900;margin-bottom:12px}
-.sliderTitle span{background:var(--brand);color:#fff;padding:6px 12px;border-radius:6px}
+
+.sliderSection{padding:20px 0}
+.sliderTitle{
+text-align:center;
+font-size:22px;
+font-weight:900;
+margin-bottom:18px;
+}
+.sliderTitle span{
+background:var(--brand);
+color:#fff;
+padding:6px 14px;
+border-radius:6px;
+}
 
 .slider{
 position:relative;
 width:100%;
-height:80vh;
+height:75vh;
 overflow:hidden;
-border-radius:20px;
-background:#f4f7fb;
+border-radius:var(--radius);
+background:#fff;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
 .slide{
@@ -73,7 +117,7 @@ justify-content:center;
 .slide.active{opacity:1}
 
 .slide img{
-width:110%;   /* increased width */
+width:100%;
 height:100%;
 object-fit:contain;
 }
@@ -82,41 +126,50 @@ object-fit:contain;
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-font-size:30px;
+font-size:26px;
 background:rgba(0,0,0,.4);
 color:#fff;
-padding:10px 16px;
+padding:8px 14px;
 cursor:pointer;
-border-radius:10px;
-z-index:10;
+border-radius:8px;
 }
 .arrow.left{left:20px}
 .arrow.right{right:20px}
 
+/* BUTTONS BELOW IMAGE (no overlap) */
+
 .slideButtons{
 position:absolute;
-bottom:0;
+bottom:-60px;   /* moved down */
 width:100%;
 display:flex;
-gap:6px;
+gap:10px;
 }
+
 .slideButtons button{
 flex:1;
-padding:12px;   /* reduced size */
+padding:12px;
 border:none;
 cursor:pointer;
 font-weight:900;
 font-size:14px;
 color:#fff;
-transition:.3s;
+border-radius:8px;
 }
-.btnDonate{background:linear-gradient(135deg,var(--accent),#ff7a00)}
-.btnRead{background:linear-gradient(135deg,var(--brand),#083a6c)}
+
+.btnDonate{
+background:linear-gradient(135deg,var(--accent),#ff7a00);
+}
+.btnRead{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+}
+
+/* GRID */
 
 .photoGrid{
 display:grid;
 gap:16px;
-padding:25px 0;
+padding:100px 0 30px; /* extra space due to moved buttons */
 }
 @media(min-width:768px){
 .photoGrid{grid-template-columns:repeat(3,1fr)}
@@ -125,7 +178,7 @@ padding:25px 0;
 width:100%;
 height:200px;
 object-fit:cover;
-border-radius:14px;
+border-radius:12px;
 cursor:pointer;
 transition:.3s;
 }
@@ -133,9 +186,11 @@ transition:.3s;
 
 footer{
 border-top:1px solid var(--border);
-padding:18px 0;margin-top:20px;
+padding:20px 0;
+text-align:center;
 color:var(--muted);
-background:#fff;font-size:14px;
+background:#fff;
+margin-top:20px;
 }
 </style>
 </head>
@@ -155,13 +210,13 @@ background:#fff;font-size:14px;
 </a>
 
 <nav class="menu">
-<a href="index.html" id="mHome">मुख्य पृष्ठ</a>
-<a href="about.html" id="mAbout">परिचय</a>
-<a href="initiatives.html" id="mWork">हमारे प्रयास</a>
-<a href="documents.html" id="mDocs">दस्तावेज़</a>
-<a href="donate.html" id="mDonate">दान करें</a>
-<a href="gallery.html" id="mGallery">गैलरी</a>
-<a href="contact.html" id="mContact">संपर्क</a>
+<a id="mHome" href="index.html">मुख्य पृष्ठ</a>
+<a id="mAbout" href="about.html">परिचय</a>
+<a id="mWork" href="initiatives.html">हमारे प्रयास</a>
+<a id="mDocs" href="documents.html">दस्तावेज़</a>
+<a id="mDonate" href="donate.html">दान करें</a>
+<a id="mGallery" href="gallery.html">गैलरी</a>
+<a id="mContact" href="contact.html">संपर्क</a>
 </nav>
 
 <div class="toggle">
@@ -184,10 +239,13 @@ background:#fff;font-size:14px;
 
 <section class="sliderSection">
 <div class="wrap">
+
 <div class="sliderTitle">
 <span id="sliderMain">CURRENT INITIATIVES</span>
 </div>
+
 <div class="slider" id="slider"></div>
+
 </div>
 </section>
 
@@ -196,9 +254,7 @@ background:#fff;font-size:14px;
 </section>
 
 <footer>
-<div class="wrap">
 © <span id="year"></span> <span id="footBrand">भारत अभ्युदय संस्थान</span>
-</div>
 </footer>
 
 <script>
@@ -222,8 +278,8 @@ slide.className="slide"+(i===0?" active":"");
 slide.innerHTML=`
 <img src="./assets/${s.img}">
 <div class="slideButtons">
-<button class="btnDonate" onclick="location.href='donate.html'" id="donateBtn${i}">Donate Now</button>
-<button class="btnRead" onclick="location.href='initiatives.html#${s.id}'" id="readBtn${i}">Read More</button>
+<button class="btnDonate" id="donate${i}" onclick="location.href='donate.html'">Donate Now</button>
+<button class="btnRead" id="read${i}" onclick="location.href='initiatives.html#${s.id}'">Read More</button>
 </div>`;
 slider.appendChild(slide);
 
@@ -245,19 +301,26 @@ left.className="arrow left";left.innerHTML="❮";left.onclick=prevSlide;slider.a
 const right=document.createElement("div");
 right.className="arrow right";right.innerHTML="❯";right.onclick=nextSlide;slider.appendChild(right);
 
-/* FULL TRANSLATION */
+/* FULL PAGE TRANSLATION */
+
 const t={
 hi:{
+brand:"भारत अभ्युदय संस्थान",
+sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+menu:["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"],
 heroTitle:"सशक्त समाज • आत्मनिर्भर भारत",
 heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।",
-sliderMain:"वर्तमान पहल",
+slider:"वर्तमान पहल",
 donate:"दान करें",
 read:"विस्तार से देखें"
 },
 en:{
+brand:"Bharat Abhyudaya Sansthan",
+sub:"Upliftment to Self-Reliant India",
+menu:["Home","About","Our Initiatives","Documents","Donate Now","Gallery","Contact"],
 heroTitle:"Empowered Society • Self-Reliant India",
 heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact.",
-sliderMain:"CURRENT INITIATIVES",
+slider:"CURRENT INITIATIVES",
 donate:"Donate Now",
 read:"Read More"
 }
@@ -268,20 +331,30 @@ const btnEn=document.getElementById("btnEn");
 
 function setLang(lang){
 const d=t[lang];
+
+document.getElementById("brandText").textContent=d.brand;
+document.getElementById("brandSub").textContent=d.sub;
 document.getElementById("heroTitle").textContent=d.heroTitle;
 document.getElementById("heroText").textContent=d.heroText;
-document.getElementById("sliderMain").textContent=d.sliderMain;
+document.getElementById("sliderMain").textContent=d.slider;
+document.getElementById("footBrand").textContent=d.brand;
+
+document.querySelectorAll(".menu a").forEach((el,i)=>el.textContent=d.menu[i]);
+
 slides.forEach((s,i)=>{
-document.getElementById("donateBtn"+i).textContent=d.donate;
-document.getElementById("readBtn"+i).textContent=d.read;
+document.getElementById("donate"+i).textContent=d.donate;
+document.getElementById("read"+i).textContent=d.read;
 });
+
 btnHi.classList.toggle("active",lang==="hi");
 btnEn.classList.toggle("active",lang==="en");
+
 localStorage.setItem("bas_lang",lang);
 }
 
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
+
 setLang(localStorage.getItem("bas_lang")||"hi");
 </script>
 
