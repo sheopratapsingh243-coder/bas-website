@@ -1,3 +1,6 @@
+<!-- ======================= -->
+<!--   PROFESSIONAL INDEX   -->
+<!-- ======================= -->
 <!doctype html>
 <html lang="hi">
 <head>
@@ -14,31 +17,43 @@
 --border:#e2e8f0;
 --shadow:0 16px 40px rgba(2,6,23,.10);
 --radius:20px;
---max:1200px;
+--max:1120px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
 color:var(--fg);
-background:#fff;
+background:
+radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
+radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
+#fff;
+overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
+section{padding:28px 0}
+h1{margin:10px 0 0;font-size:34px}
+h2{margin:0;font-size:24px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.hr{height:1px;background:var(--border);margin:16px 0}
 
-/* HEADER */
+/* ===== HEADER SAME AS ABOUT ===== */
 header{
 position:sticky;top:0;z-index:50;
-background:#fff;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
 border-bottom:1px solid var(--border);
 }
 .nav{
 display:flex;align-items:center;justify-content:space-between;
 padding:12px 0;
 }
-.brand{display:flex;align-items:center;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px}
 .logo{
-width:46px;height:46px;border-radius:50%;
+width:46px;height:46px;border-radius:999px;
 border:1px solid var(--border);
 object-fit:cover;
 }
@@ -49,8 +64,8 @@ object-fit:cover;
 .toggle{display:flex;gap:8px}
 .pill{
 border:1px solid var(--border);
-background:#fff;padding:8px 12px;border-radius:999px;
-cursor:pointer;font-weight:900;
+background:#fff;padding:8px 12px;
+border-radius:999px;cursor:pointer;font-weight:900;
 }
 .pill.active{
 background:linear-gradient(135deg,var(--brand),#083a6c);
@@ -59,102 +74,96 @@ color:#fff;border-color:transparent;
 
 .mobBtn{
 display:inline-flex;
-align-items:center;
-justify-content:center;
 width:42px;height:42px;
-border-radius:12px;
+border-radius:14px;
 border:1px solid var(--border);
-background:#fff;
-cursor:pointer;
-font-size:18px;
+background:#fff;cursor:pointer;font-size:18px;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
-.mobilePanel{display:none;padding:10px 0;border-top:1px solid var(--border);}
+.mobilePanel{display:none;padding:12px 0;border-top:1px solid var(--border);}
 .mobilePanel.open{display:block}
 @media(min-width:980px){.mobilePanel{display:none!important}}
-.mnav{display:grid;gap:8px}
+.mnav{display:grid;gap:10px}
 .mnav a{
-padding:10px;border:1px solid var(--border);
-border-radius:10px;font-weight:900;
+padding:12px;border:1px solid var(--border);
+border-radius:14px;font-weight:900;
 }
 
-/* Visitor */
-.visitorBar{
-text-align:right;
-max-width:var(--max);
-margin:6px auto;
-padding:0 16px;
-font-weight:900;
-color:var(--brand);
-}
+/* ===== HERO SAME STYLE ===== */
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr;gap:22px}}
 
-/* HERO */
-.hero{text-align:center;padding:40px 0}
 .badge{
-display:inline-block;
-padding:6px 12px;
-background:rgba(11,90,166,.08);
-border-radius:999px;
-color:var(--brand);
-font-weight:900;
-font-size:13px;
+display:inline-flex;padding:8px 10px;border-radius:999px;
+background:rgba(11,90,166,.06);
+border:1px solid rgba(11,90,166,.15);
+font-weight:950;color:var(--brand);font-size:12px;
 }
-h1{margin:16px 0;font-size:36px}
-.tagline{color:var(--muted);max-width:800px;margin:auto;line-height:1.7}
 
-/* SLIDER */
-.slider{position:relative;margin-top:30px}
-.slide{display:none;text-align:center}
+.card{
+background:#fff;border:1px solid var(--border);
+border-radius:var(--radius);padding:18px;
+box-shadow:var(--shadow);
+}
+
+/* ===== FULL WIDTH SLIDER ===== */
+.fullSlider{
+width:100%;
+position:relative;
+margin-top:30px;
+}
+.slide{display:none}
 .slide.active{display:block}
 .slide img{
 width:100%;
-height:450px;
+height:500px;
 object-fit:cover;
 }
 @media(max-width:768px){
-.slide img{height:250px}
+.slide img{height:260px}
 }
+
 .arrow{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
 background:rgba(0,0,0,.5);
-color:#fff;
-border:none;
+color:#fff;border:none;
 font-size:24px;
-width:40px;height:40px;
-border-radius:50%;
-cursor:pointer;
+width:45px;height:45px;
+border-radius:50%;cursor:pointer;
 }
-.prev{left:15px}
-.next{right:15px}
+.prev{left:20px}
+.next{right:20px}
 
-/* Slide Buttons */
+/* Slide Buttons 50% width */
 .slideBtns{
-margin-top:16px;
 display:flex;
-justify-content:center;
-gap:16px;
-flex-wrap:wrap;
+width:100%;
 }
-.btn{
-padding:10px 18px;
-border-radius:30px;
+.slideBtns button{
+flex:1;
+padding:14px 0;
 font-weight:900;
-cursor:pointer;
 border:none;
+cursor:pointer;
 }
-.primary{background:var(--accent);color:#fff}
-.secondary{background:var(--brand);color:#fff}
+.slideBtns .primary{
+background:linear-gradient(135deg,var(--accent),#ff7a00);
+color:#fff;
+}
+.slideBtns .secondary{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+color:#fff;
+}
 
-/* GRID */
+/* ===== GRID ===== */
 .programGrid{
-margin:60px auto;
+margin-top:50px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-max-width:var(--max);
 }
 .programCard{
 background:#fff;
@@ -173,16 +182,16 @@ padding:16px;margin:0;text-align:center;
 }
 
 footer{
-padding:20px 0;
 border-top:1px solid var(--border);
-text-align:center;
-color:var(--muted);
+padding:18px 0;margin-top:30px;
+text-align:center;color:var(--muted);
 }
 </style>
 </head>
 
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
 <div class="wrap">
 <div class="nav">
@@ -196,13 +205,13 @@ color:var(--muted);
 </a>
 
 <nav class="menu">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="initiatives.html">Our Initiatives</a>
-<a href="documents.html">Documents</a>
-<a href="donate.html">Donate Now</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+<a href="index.html">मुख्य पृष्ठ</a>
+<a href="about.html">परिचय</a>
+<a href="initiatives.html">हमारे प्रयास</a>
+<a href="documents.html">दस्तावेज़</a>
+<a href="donate.html">दान करें</a>
+<a href="gallery.html">गैलरी</a>
+<a href="contact.html">संपर्क</a>
 </nav>
 
 <div style="display:flex;gap:10px;align-items:center">
@@ -217,30 +226,52 @@ color:var(--muted);
 
 <div class="mobilePanel" id="mobilePanel">
 <div class="mnav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="initiatives.html">Our Initiatives</a>
-<a href="documents.html">Documents</a>
-<a href="donate.html">Donate Now</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+<a href="index.html">मुख्य पृष्ठ</a>
+<a href="about.html">परिचय</a>
+<a href="initiatives.html">हमारे प्रयास</a>
+<a href="documents.html">दस्तावेज़</a>
+<a href="donate.html">दान करें</a>
+<a href="gallery.html">गैलरी</a>
+<a href="contact.html">संपर्क</a>
 </div>
 </div>
 </div>
 </header>
 
-<div class="visitorBar">
-👥 Visitors: <span id="visitorCount"></span>
-</div>
+<main>
 
-<section class="hero wrap">
-<div class="badge">Service • Trust • Impact</div>
-<h1 id="titleText">भारत अभ्युदय संस्थान</h1>
-<p class="tagline" id="taglineText">
+<!-- ===== HERO + LEGAL ===== -->
+<section>
+<div class="wrap">
+<div class="grid">
+
+<div>
+<span class="badge">Service • Trust • Transparency</span>
+<h1>भारत अभ्युदय संस्थान</h1>
+<p class="muted">
 हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता के माध्यम से आत्मनिर्भर भारत के निर्माण हेतु कार्यरत हैं।
 </p>
+</div>
 
-<div class="slider">
+<div class="card">
+<h3>कानूनी / पंजीकरण विवरण</h3>
+<p class="small muted" style="margin-top:10px">
+Registration No.: <b>FAT/02340/2024-2025</b><br>
+Date: <b>05/07/2024</b><br>
+Valid: <b>04/07/2029</b><br>
+PAN: <b>AANAB2855N</b>
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===== CURRENT RUNNING PROGRAMS ===== -->
+<section>
+<h2 style="text-align:center;">Current Running Programs</h2>
+
+<div class="fullSlider">
 
 <button class="arrow prev" onclick="changeSlide(-1)">❮</button>
 <button class="arrow next" onclick="changeSlide(1)">❯</button>
@@ -248,39 +279,39 @@ color:var(--muted);
 <div class="slide active">
 <img src="./assets/shiksha-sarathi-en.png">
 <div class="slideBtns">
-<button class="btn primary" onclick="goDonate()">Donate Now</button>
-<button class="btn secondary" onclick="goReadMore(0)">Read More</button>
+<button class="primary" onclick="goDonate()">Donate Now</button>
+<button class="secondary" onclick="goReadMore(0)">Read More</button>
 </div>
 </div>
 
 <div class="slide">
 <img src="./assets/ambulance-en.png">
 <div class="slideBtns">
-<button class="btn primary" onclick="goDonate()">Donate Now</button>
-<button class="btn secondary" onclick="goReadMore(1)">Read More</button>
+<button class="primary" onclick="goDonate()">Donate Now</button>
+<button class="secondary" onclick="goReadMore(1)">Read More</button>
 </div>
 </div>
 
 <div class="slide">
 <img src="./assets/gauseva-en.png">
 <div class="slideBtns">
-<button class="btn primary" onclick="goDonate()">Donate Now</button>
-<button class="btn secondary" onclick="goReadMore(2)">Read More</button>
+<button class="primary" onclick="goDonate()">Donate Now</button>
+<button class="secondary" onclick="goReadMore(2)">Read More</button>
 </div>
 </div>
 
 <div class="slide">
 <img src="./assets/heritage-en.png">
 <div class="slideBtns">
-<button class="btn primary" onclick="goDonate()">Donate Now</button>
-<button class="btn secondary" onclick="goReadMore(3)">Read More</button>
+<button class="primary" onclick="goDonate()">Donate Now</button>
+<button class="secondary" onclick="goReadMore(3)">Read More</button>
 </div>
 </div>
 
 </div>
-</section>
 
-<section>
+<!-- GRID -->
+<div class="wrap">
 <div class="programGrid">
 <div class="programCard" onclick="goToSlide(0)">
 <img src="./assets/shiksha-sarathi-en.png">
@@ -299,7 +330,11 @@ color:var(--muted);
 <h3>Heritage Conservation</h3>
 </div>
 </div>
+</div>
+
 </section>
+
+</main>
 
 <footer>
 © <span id="year"></span> भारत अभ्युदय संस्थान
@@ -307,12 +342,6 @@ color:var(--muted);
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-
-/* Visitor Counter */
-let v=parseInt(localStorage.getItem("bas_visitors"))||100000;
-v++;
-localStorage.setItem("bas_visitors",v);
-document.getElementById("visitorCount").textContent=v.toLocaleString();
 
 /* Mobile */
 document.getElementById("mobBtn").onclick=()=>{
@@ -333,7 +362,7 @@ showSlide(index);
 }
 function goToSlide(i){
 showSlide(i);
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({top:300,behavior:"smooth"});
 }
 setInterval(()=>changeSlide(1),4000);
 
@@ -349,28 +378,6 @@ const links=[
 ];
 window.location.href=links[i];
 }
-
-/* Toggle Working */
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-function setLang(lang){
-if(lang==="en"){
-document.getElementById("titleText").textContent="Bharat Abhyudaya Sansthan";
-document.getElementById("taglineText").textContent="We work for a self-reliant and empowered India through education, health support, women empowerment, GauSeva and community help.";
-btnEn.classList.add("active");
-btnHi.classList.remove("active");
-}else{
-document.getElementById("titleText").textContent="भारत अभ्युदय संस्थान";
-document.getElementById("taglineText").textContent="हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता के माध्यम से आत्मनिर्भर भारत के निर्माण हेतु कार्यरत हैं।";
-btnHi.classList.add("active");
-btnEn.classList.remove("active");
-}
-localStorage.setItem("bas_lang",lang);
-}
-btnHi.onclick=()=>setLang("hi");
-btnEn.onclick=()=>setLang("en");
-setLang(localStorage.getItem("bas_lang")||"hi");
 </script>
 
 </body>
