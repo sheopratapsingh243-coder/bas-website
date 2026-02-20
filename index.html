@@ -31,13 +31,12 @@ overflow-x:hidden;
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 section{padding:40px 0}
-h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-h3{margin:0;font-size:18px}
-p{margin:10px 0 0}
+h1{margin:10px 0 0;font-size:34px}
+h2{text-align:center;margin-bottom:20px}
 .muted{color:var(--muted);line-height:1.8}
 .small{font-size:14px}
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
 position:sticky;top:0;z-index:50;
 background:rgba(255,255,255,.92);
@@ -56,7 +55,6 @@ object-fit:cover;
 }
 .brand b{display:block;font-size:14px}
 .brand span{display:block;font-size:12px;color:var(--muted)}
-
 .menu{display:none;gap:18px;font-weight:900;color:var(--muted)}
 .menu a:hover{color:var(--brand)}
 @media(min-width:980px){.menu{display:flex}}
@@ -71,12 +69,9 @@ border-radius:999px;cursor:pointer;font-weight:900;
 background:linear-gradient(135deg,var(--brand),#083a6c);
 color:#fff;border-color:transparent;
 }
-
 .mobBtn{
-display:inline-flex;
-width:42px;height:42px;
-border-radius:14px;
-border:1px solid var(--border);
+display:inline-flex;width:42px;height:42px;
+border-radius:14px;border:1px solid var(--border);
 background:#fff;cursor:pointer;font-size:18px;
 }
 @media(min-width:980px){.mobBtn{display:none}}
@@ -90,6 +85,14 @@ padding:12px;border:1px solid var(--border);
 border-radius:14px;font-weight:900;
 }
 
+/* VISITOR */
+.visitor{
+text-align:right;
+padding:8px 20px;
+font-weight:900;
+color:var(--brand);
+}
+
 /* HERO */
 .grid{
 display:grid;
@@ -97,23 +100,84 @@ grid-template-columns:1fr;
 gap:30px;
 }
 @media(min-width:980px){
-.grid{
-grid-template-columns:1.1fr .9fr;
-align-items:center;
+.grid{grid-template-columns:1.1fr .9fr;}
 }
-}
-
 .badge{
 display:inline-flex;padding:8px 10px;border-radius:999px;
 background:rgba(11,90,166,.06);
 border:1px solid rgba(11,90,166,.15);
 font-weight:950;color:var(--brand);font-size:12px;
 }
-
 .card{
 background:#fff;border:1px solid var(--border);
 border-radius:24px;padding:20px;
 box-shadow:var(--shadow);
+}
+
+/* SLIDER */
+.slider{position:relative;width:100%;}
+.slide{display:none}
+.slide.active{display:block}
+.slide img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
+@media(max-width:768px){
+.slide img{height:250px}
+}
+.arrow{
+position:absolute;top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,.5);
+color:#fff;border:none;
+font-size:22px;width:45px;height:45px;
+border-radius:50%;cursor:pointer;
+}
+.prev{left:20px}
+.next{right:20px}
+
+.slideBtns{
+display:flex;
+justify-content:center;
+gap:20%;
+margin-top:15px;
+}
+.slideBtns button{
+width:40%;
+padding:14px 0;
+border:none;
+font-weight:900;
+cursor:pointer;
+border-radius:14px;
+}
+.primary{
+background:linear-gradient(135deg,var(--accent),#ff7a00);
+color:#fff;
+}
+.secondary{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+color:#fff;
+}
+
+/* GRID */
+.programGrid{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:24px;
+}
+.programCard{
+background:#fff;
+box-shadow:var(--shadow);
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+transition:.3s;
+}
+.programCard:hover{transform:translateY(-6px)}
+.programCard img{
+width:100%;height:220px;object-fit:cover;
 }
 
 footer{
@@ -129,37 +193,14 @@ text-align:center;color:var(--muted);
 <header>
 <div class="wrap">
 <div class="nav">
-
 <a class="brand" href="index.html">
-<img class="logo" src="./assets/logo.jpg" alt="logo">
+<img class="logo" src="./assets/logo.jpg">
 <div>
 <b id="brandText">भारत अभ्युदय संस्थान</b>
 <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
 </div>
 </a>
-
 <nav class="menu">
-<a id="m1" href="index.html">मुख्य पृष्ठ</a>
-<a id="m2" href="about.html">परिचय</a>
-<a id="m3" href="initiatives.html">हमारे प्रयास</a>
-<a id="m4" href="documents.html">दस्तावेज़</a>
-<a id="m5" href="donate.html">दान करें</a>
-<a id="m6" href="gallery.html">गैलरी</a>
-<a id="m7" href="contact.html">संपर्क</a>
-</nav>
-
-<div style="display:flex;gap:10px;align-items:center">
-<button class="mobBtn" id="mobBtn">☰</button>
-<div class="toggle">
-<button class="pill active" id="btnHi">हिन्दी</button>
-<button class="pill" id="btnEn">English</button>
-</div>
-</div>
-
-</div>
-
-<div class="mobilePanel" id="mobilePanel">
-<div class="mnav">
 <a href="index.html">मुख्य पृष्ठ</a>
 <a href="about.html">परिचय</a>
 <a href="initiatives.html">हमारे प्रयास</a>
@@ -167,103 +208,115 @@ text-align:center;color:var(--muted);
 <a href="donate.html">दान करें</a>
 <a href="gallery.html">गैलरी</a>
 <a href="contact.html">संपर्क</a>
+</nav>
+<div style="display:flex;gap:10px;align-items:center">
+<button class="mobBtn" id="mobBtn">☰</button>
+<div class="toggle">
+<button class="pill active" id="btnHi">हिन्दी</button>
+<button class="pill" id="btnEn">English</button>
+</div>
 </div>
 </div>
 </div>
 </header>
+
+<div class="visitor">
+👥 Visitors: <span id="visitorCount"></span>
+</div>
 
 <main>
 
 <section>
 <div class="wrap">
 <div class="grid">
-
 <div>
 <span class="badge">Trust • Service • Transparency</span>
 <h1 id="title">भारत अभ्युदय संस्थान</h1>
 <p class="muted" id="tagline">
-भारत अभ्युदय संस्थान एक सेवा-उन्मुख सामाजिक संस्था है, जो समाज के वंचित और जरूरतमंद वर्ग के लिए शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता जैसे क्षेत्रों में कार्य करने हेतु प्रतिबद्ध है।
+भारत अभ्युदय संस्थान एक सेवा-उन्मुख सामाजिक संस्था है...
 </p>
 </div>
-
 <div class="card">
 <h3>कानूनी / पंजीकरण विवरण</h3>
 <p class="small muted">
 Registration No.: <b>FAT/02340/2024-2025</b><br>
-Date: <b>05/07/2024</b><br>
-Valid: <b>04/07/2029</b><br>
 PAN: <b>AANAB2855N</b>
 </p>
 </div>
+</div>
+</div>
+</section>
 
+<section>
+<h2>Current Running Programs</h2>
+
+<div class="slider">
+<button class="arrow prev" onclick="changeSlide(-1)">❮</button>
+<button class="arrow next" onclick="changeSlide(1)">❯</button>
+
+<div class="slide active"><img src="./assets/shiksha-sarathi-en.png"></div>
+<div class="slide"><img src="./assets/ambulance-en.png"></div>
+<div class="slide"><img src="./assets/gauseva-en.png"></div>
+<div class="slide"><img src="./assets/heritage-en.png"></div>
+</div>
+
+<div class="slideBtns">
+<button class="primary" onclick="window.location='donate.html'">Donate Now</button>
+<button class="secondary" onclick="window.location='initiatives.html'">Read More</button>
+</div>
+
+<div class="wrap">
+<div class="programGrid">
+<div class="programCard" onclick="goToSlide(0)">
+<img src="./assets/shiksha-sarathi-en.png">
+</div>
+<div class="programCard" onclick="goToSlide(1)">
+<img src="./assets/ambulance-en.png">
+</div>
+<div class="programCard" onclick="goToSlide(2)">
+<img src="./assets/gauseva-en.png">
+</div>
+<div class="programCard" onclick="goToSlide(3)">
+<img src="./assets/heritage-en.png">
 </div>
 </div>
+</div>
+
 </section>
 
 </main>
 
 <footer>
-© <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span>
+© <span id="year"></span> भारत अभ्युदय संस्थान
 </footer>
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("mobBtn").onclick=()=>{
-document.getElementById("mobilePanel").classList.toggle("open");
-};
 
-const t={
-hi:{
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-menu:["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"],
-title:"भारत अभ्युदय संस्थान",
-tagline:"भारत अभ्युदय संस्थान एक सेवा-उन्मुख सामाजिक संस्था है, जो समाज के वंचित और जरूरतमंद वर्ग के लिए शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता जैसे क्षेत्रों में कार्य करने हेतु प्रतिबद्ध है。",
-foot:"भारत अभ्युदय संस्थान"
-},
-en:{
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India",
-menu:["Home","About","Our Initiatives","Documents","Donate","Gallery","Contact"],
-title:"Bharat Abhyudaya Sansthan",
-tagline:"Bharat Abhyudaya Sansthan is a service-oriented social organization committed to supporting underserved communities through education, health support, women empowerment, GauSeva and community assistance.",
-foot:"Bharat Abhyudaya Sansthan"
+/* Visitor Counter */
+let count=localStorage.getItem("visitorCount");
+if(!count){count=100000;}
+count++;
+localStorage.setItem("visitorCount",count);
+document.getElementById("visitorCount").textContent=count;
+
+/* Slider */
+let index=0;
+const slides=document.querySelectorAll(".slide");
+function showSlide(i){
+slides.forEach(s=>s.classList.remove("active"));
+slides[i].classList.add("active");
+index=i;
 }
-};
-
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-function setLang(lang){
-const d=t[lang];
-document.documentElement.lang=lang;
-
-document.getElementById("brandText").textContent=d.brand;
-document.getElementById("brandSub").textContent=d.sub;
-
-const menuLinks=document.querySelectorAll(".menu a");
-menuLinks.forEach((el,i)=>el.textContent=d.menu[i]);
-
-document.getElementById("title").textContent=d.title;
-document.getElementById("tagline").textContent=d.tagline;
-document.getElementById("foot").textContent=d.foot;
-
-if(lang==="en"){
-btnEn.classList.add("active");
-btnHi.classList.remove("active");
-}else{
-btnHi.classList.add("active");
-btnEn.classList.remove("active");
+function changeSlide(n){
+index=(index+n+slides.length)%slides.length;
+showSlide(index);
 }
-
-localStorage.setItem("bas_lang",lang);
+function goToSlide(i){
+showSlide(i);
+window.scrollTo({top:600,behavior:"smooth"});
 }
-
-btnHi.onclick=()=>setLang("hi");
-btnEn.onclick=()=>setLang("en");
-
-const saved=localStorage.getItem("bas_lang")||"hi";
-setLang(saved);
+setInterval(()=>changeSlide(1),4000);
 </script>
 
 </body>
