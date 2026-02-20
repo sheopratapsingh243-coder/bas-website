@@ -1,6 +1,3 @@
-<!-- ======================= -->
-<!--   PROFESSIONAL INDEX   -->
-<!-- ======================= -->
 <!doctype html>
 <html lang="hi">
 <head>
@@ -20,7 +17,6 @@
 --max:1120px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -34,13 +30,12 @@ overflow-x:hidden;
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 section{padding:28px 0}
-h1{margin:10px 0 0;font-size:34px}
-h2{margin:0;font-size:24px}
-.muted{color:var(--muted)}
+h1{margin:10px 0 0;font-size:36px}
+h2{margin:0;font-size:26px}
+.muted{color:var(--muted);line-height:1.8}
 .small{font-size:14px}
-.hr{height:1px;background:var(--border);margin:16px 0}
 
-/* ===== HEADER SAME AS ABOUT ===== */
+/* HEADER (ABOUT SAME) */
 header{
 position:sticky;top:0;z-index:50;
 background:rgba(255,255,255,.92);
@@ -90,9 +85,19 @@ padding:12px;border:1px solid var(--border);
 border-radius:14px;font-weight:900;
 }
 
-/* ===== HERO SAME STYLE ===== */
-.grid{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr;gap:22px}}
+/* HERO GRID */
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:28px;
+}
+@media(min-width:980px){
+.grid{
+grid-template-columns:1.2fr .8fr;
+gap:40px;
+align-items:center;
+}
+}
 
 .badge{
 display:inline-flex;padding:8px 10px;border-radius:999px;
@@ -103,21 +108,21 @@ font-weight:950;color:var(--brand);font-size:12px;
 
 .card{
 background:#fff;border:1px solid var(--border);
-border-radius:var(--radius);padding:18px;
+border-radius:24px;padding:20px;
 box-shadow:var(--shadow);
 }
 
-/* ===== FULL WIDTH SLIDER ===== */
+/* SLIDER */
 .fullSlider{
 width:100%;
 position:relative;
-margin-top:30px;
+margin-top:40px;
 }
 .slide{display:none}
 .slide.active{display:block}
 .slide img{
 width:100%;
-height:500px;
+height:520px;
 object-fit:cover;
 }
 @media(max-width:768px){
@@ -130,24 +135,25 @@ top:50%;
 transform:translateY(-50%);
 background:rgba(0,0,0,.5);
 color:#fff;border:none;
-font-size:24px;
+font-size:22px;
 width:45px;height:45px;
 border-radius:50%;cursor:pointer;
+z-index:5;
 }
 .prev{left:20px}
 .next{right:20px}
 
-/* Slide Buttons 50% width */
 .slideBtns{
 display:flex;
 width:100%;
 }
 .slideBtns button{
 flex:1;
-padding:14px 0;
+padding:16px 0;
 font-weight:900;
 border:none;
 cursor:pointer;
+font-size:15px;
 }
 .slideBtns .primary{
 background:linear-gradient(135deg,var(--accent),#ff7a00);
@@ -158,32 +164,32 @@ background:linear-gradient(135deg,var(--brand),#083a6c);
 color:#fff;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .programGrid{
-margin-top:50px;
+margin-top:60px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:24px;
 }
 .programCard{
 background:#fff;
 box-shadow:var(--shadow);
-border-radius:16px;
+border-radius:18px;
 overflow:hidden;
 cursor:pointer;
 transition:.3s;
 }
-.programCard:hover{transform:translateY(-5px)}
+.programCard:hover{transform:translateY(-6px)}
 .programCard img{
 width:100%;height:220px;object-fit:cover;
 }
 .programCard h3{
-padding:16px;margin:0;text-align:center;
+padding:18px;margin:0;text-align:center;
 }
 
 footer{
 border-top:1px solid var(--border);
-padding:18px 0;margin-top:30px;
+padding:18px 0;margin-top:40px;
 text-align:center;color:var(--muted);
 }
 </style>
@@ -191,7 +197,6 @@ text-align:center;color:var(--muted);
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
 <div class="wrap">
 <div class="nav">
@@ -199,8 +204,8 @@ text-align:center;color:var(--muted);
 <a class="brand" href="index.html">
 <img class="logo" src="./assets/logo.jpg">
 <div>
-<b id="brandText">भारत अभ्युदय संस्थान</b>
-<span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
+<b>भारत अभ्युदय संस्थान</b>
+<span>अभ्युदय से आत्मनिर्भर भारत तक</span>
 </div>
 </a>
 
@@ -217,8 +222,8 @@ text-align:center;color:var(--muted);
 <div style="display:flex;gap:10px;align-items:center">
 <button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
-<button class="pill active" id="btnHi">हिन्दी</button>
-<button class="pill" id="btnEn">English</button>
+<button class="pill active">हिन्दी</button>
+<button class="pill">English</button>
 </div>
 </div>
 
@@ -240,7 +245,6 @@ text-align:center;color:var(--muted);
 
 <main>
 
-<!-- ===== HERO + LEGAL ===== -->
 <section>
 <div class="wrap">
 <div class="grid">
@@ -249,13 +253,13 @@ text-align:center;color:var(--muted);
 <span class="badge">Service • Trust • Transparency</span>
 <h1>भारत अभ्युदय संस्थान</h1>
 <p class="muted">
-हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता के माध्यम से आत्मनिर्भर भारत के निर्माण हेतु कार्यरत हैं।
+अभ्युदय से आत्मनिर्भर भारत तक — हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा और सामाजिक सहायता के माध्यम से एक सशक्त और आत्मनिर्भर भारत के निर्माण हेतु कार्यरत हैं।
 </p>
 </div>
 
 <div class="card">
 <h3>कानूनी / पंजीकरण विवरण</h3>
-<p class="small muted" style="margin-top:10px">
+<p class="small muted">
 Registration No.: <b>FAT/02340/2024-2025</b><br>
 Date: <b>05/07/2024</b><br>
 Valid: <b>04/07/2029</b><br>
@@ -267,50 +271,47 @@ PAN: <b>AANAB2855N</b>
 </div>
 </section>
 
-<!-- ===== CURRENT RUNNING PROGRAMS ===== -->
 <section>
 <h2 style="text-align:center;">Current Running Programs</h2>
 
 <div class="fullSlider">
-
 <button class="arrow prev" onclick="changeSlide(-1)">❮</button>
 <button class="arrow next" onclick="changeSlide(1)">❯</button>
 
 <div class="slide active">
 <img src="./assets/shiksha-sarathi-en.png">
 <div class="slideBtns">
-<button class="primary" onclick="goDonate()">Donate Now</button>
-<button class="secondary" onclick="goReadMore(0)">Read More</button>
+<button class="primary" onclick="window.location='donate.html'">Donate Now</button>
+<button class="secondary" onclick="window.location='initiatives.html#shiksha'">Read More</button>
 </div>
 </div>
 
 <div class="slide">
 <img src="./assets/ambulance-en.png">
 <div class="slideBtns">
-<button class="primary" onclick="goDonate()">Donate Now</button>
-<button class="secondary" onclick="goReadMore(1)">Read More</button>
+<button class="primary" onclick="window.location='donate.html'">Donate Now</button>
+<button class="secondary" onclick="window.location='initiatives.html#ambulance'">Read More</button>
 </div>
 </div>
 
 <div class="slide">
 <img src="./assets/gauseva-en.png">
 <div class="slideBtns">
-<button class="primary" onclick="goDonate()">Donate Now</button>
-<button class="secondary" onclick="goReadMore(2)">Read More</button>
+<button class="primary" onclick="window.location='donate.html'">Donate Now</button>
+<button class="secondary" onclick="window.location='initiatives.html#gauseva'">Read More</button>
 </div>
 </div>
 
 <div class="slide">
 <img src="./assets/heritage-en.png">
 <div class="slideBtns">
-<button class="primary" onclick="goDonate()">Donate Now</button>
-<button class="secondary" onclick="goReadMore(3)">Read More</button>
+<button class="primary" onclick="window.location='donate.html'">Donate Now</button>
+<button class="secondary" onclick="window.location='initiatives.html#heritage'">Read More</button>
 </div>
 </div>
 
 </div>
 
-<!-- GRID -->
 <div class="wrap">
 <div class="programGrid">
 <div class="programCard" onclick="goToSlide(0)">
@@ -342,13 +343,9 @@ PAN: <b>AANAB2855N</b>
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-
-/* Mobile */
 document.getElementById("mobBtn").onclick=()=>{
 document.getElementById("mobilePanel").classList.toggle("open");
 };
-
-/* Slider */
 let index=0;
 const slides=document.querySelectorAll(".slide");
 function showSlide(i){
@@ -362,22 +359,9 @@ showSlide(index);
 }
 function goToSlide(i){
 showSlide(i);
-window.scrollTo({top:300,behavior:"smooth"});
+window.scrollTo({top:400,behavior:"smooth"});
 }
 setInterval(()=>changeSlide(1),4000);
-
-function goDonate(){
-window.location.href="donate.html#donationMethods";
-}
-function goReadMore(i){
-const links=[
-"initiatives.html#shiksha",
-"initiatives.html#ambulance",
-"initiatives.html#gauseva",
-"initiatives.html#heritage"
-];
-window.location.href=links[i];
-}
 </script>
 
 </body>
