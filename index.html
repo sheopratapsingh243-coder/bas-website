@@ -12,21 +12,15 @@
 --fg:#0b1220;
 --muted:#475569;
 --border:#e2e8f0;
---shadow:0 16px 40px rgba(2,6,23,.10);
 --radius:20px;
 --max:1120px;
 }
 *{box-sizing:border-box}
-body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-color:var(--fg);
-background:#fff;
-}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--fg);background:#fff}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* ===== HEADER (ABOUT STYLE EXACT) ===== */
+/* HEADER (UNCHANGED DESIGN) */
 
 header{
 position:sticky;top:0;z-index:50;
@@ -84,9 +78,7 @@ border-top:1px solid var(--border);
 .mobilePanel.open{display:block}
 @media(min-width:980px){.mobilePanel{display:none !important}}
 
-.mnav{
-display:grid;grid-template-columns:1fr;gap:10px;
-}
+.mnav{display:grid;gap:10px}
 .mnav a{
 padding:12px 14px;
 border-radius:16px;
@@ -95,27 +87,26 @@ background:#fff;
 font-weight:950;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 
-.hero{
-padding:40px 0;
-}
+.hero{padding:30px 0 10px}
 .hero h1{margin:0;font-size:34px}
-.hero p{
-margin-top:12px;color:var(--muted);
-line-height:1.8;font-weight:700;
+.hero p{margin-top:12px;color:var(--muted);line-height:1.8;font-weight:700}
+
+/* SLIDER */
+
+.sliderSection{padding:10px 0 10px}
+.sliderTitle{
+text-align:center;
+font-size:22px;
+font-weight:900;
+margin-bottom:12px;
 }
-
-/* ===== SLIDER ===== */
-
-.sliderSection{padding:50px 0 20px}
-.sliderTitle{text-align:center;font-size:22px;font-weight:900;margin-bottom:20px}
 .sliderTitle span{
 background:var(--brand);
 color:#fff;
 padding:6px 12px;
 border-radius:6px;
-margin-right:8px;
 }
 
 .slider{
@@ -137,13 +128,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 }
-
-.slide.active{opacity:1;}
+.slide.active{opacity:1}
 
 .slide img{
 width:100%;
 height:100%;
-object-fit:contain; /* no cut */
+object-fit:contain;
 }
 
 .arrow{
@@ -158,14 +148,15 @@ cursor:pointer;
 border-radius:10px;
 z-index:10;
 }
-.arrow.left{left:20px;}
-.arrow.right{right:20px;}
+.arrow.left{left:20px}
+.arrow.right{right:20px}
 
 .slideButtons{
 position:absolute;
 bottom:0;
 width:100%;
 display:flex;
+gap:6px; /* light gap added */
 }
 .slideButtons button{
 flex:1;
@@ -177,26 +168,19 @@ font-size:15px;
 color:#fff;
 transition:.3s;
 }
-.btnDonate{
-background:linear-gradient(135deg,var(--accent),#ff7a00);
-}
-.btnRead{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-}
-.slideButtons button:hover{
-opacity:.9;
-transform:translateY(-2px);
-}
+.btnDonate{background:linear-gradient(135deg,var(--accent),#ff7a00)}
+.btnRead{background:linear-gradient(135deg,var(--brand),#083a6c)}
+.slideButtons button:hover{opacity:.9}
 
-/* ===== GRID ===== */
+/* GRID */
 
 .photoGrid{
 display:grid;
 gap:16px;
-padding:30px 0;
+padding:25px 0;
 }
 @media(min-width:768px){
-.photoGrid{grid-template-columns:repeat(3,1fr);}
+.photoGrid{grid-template-columns:repeat(3,1fr)}
 }
 .photoGrid img{
 width:100%;
@@ -206,12 +190,11 @@ border-radius:14px;
 cursor:pointer;
 transition:.3s;
 }
-.photoGrid img:hover{transform:scale(1.03);}
+.photoGrid img:hover{transform:scale(1.03)}
 
-/* ===== FOOTER ===== */
 footer{
 border-top:1px solid var(--border);
-padding:18px 0;margin-top:30px;
+padding:18px 0;margin-top:20px;
 color:var(--muted);
 background:#fff;font-size:14px;
 }
@@ -251,19 +234,6 @@ background:#fff;font-size:14px;
 </div>
 
 </div>
-
-<div class="mobilePanel" id="mobilePanel">
-<div class="mnav">
-<a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
-<a href="about.html" id="mmAbout">परिचय</a>
-<a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
-<a href="documents.html" id="mmDocs">दस्तावेज़</a>
-<a href="donate.html" id="mmDonate">दान करें</a>
-<a href="gallery.html" id="mmGallery">गैलरी</a>
-<a href="contact.html" id="mmContact">संपर्क</a>
-</div>
-</div>
-
 </div>
 </header>
 
@@ -271,20 +241,20 @@ background:#fff;font-size:14px;
 <div class="wrap">
 <h1 id="heroTitle">सशक्त समाज • आत्मनिर्भर भारत</h1>
 <p id="heroText">
-आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और
-वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।
+आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।
 </p>
 </div>
 </section>
 
 <section class="sliderSection">
 <div class="wrap">
+
 <div class="sliderTitle">
-<span id="sliderMain">CURRENT INITIATIVES</span> –
-<span id="sliderSub">Donate to Build Self Reliant India</span>
+<span id="sliderMain">CURRENT INITIATIVES</span>
 </div>
 
 <div class="slider" id="slider"></div>
+
 </div>
 </section>
 
@@ -301,7 +271,7 @@ background:#fff;font-size:14px;
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* ===== SLIDER DATA ===== */
+/* SLIDER DATA */
 
 const slideData=[
 {img:"shiksha.jpg",id:"shiksha"},
@@ -316,14 +286,13 @@ const slider=document.getElementById("slider");
 const grid=document.getElementById("grid");
 
 slideData.forEach((s,i)=>{
-
 const slide=document.createElement("div");
 slide.className="slide"+(i===0?" active":"");
 slide.innerHTML=`
 <img src="./assets/${s.img}">
 <div class="slideButtons">
-<button class="btnDonate" onclick="location.href='donate.html'">${localStorage.getItem("bas_lang")==="en"?"Donate Now":"दान करें"}</button>
-<button class="btnRead" onclick="location.href='initiatives.html#${s.id}'">${localStorage.getItem("bas_lang")==="en"?"Read More":"विस्तार से देखें"}</button>
+<button class="btnDonate" onclick="location.href='donate.html'">Donate Now</button>
+<button class="btnRead" onclick="location.href='initiatives.html#${s.id}'">Read More</button>
 </div>`;
 slider.appendChild(slide);
 
@@ -331,7 +300,6 @@ const gimg=document.createElement("img");
 gimg.src=`./assets/${s.img}`;
 gimg.onclick=()=>showSlide(i);
 grid.appendChild(gimg);
-
 });
 
 let slides=document.querySelectorAll(".slide");
@@ -358,26 +326,18 @@ right.innerHTML="❯";
 right.onclick=nextSlide;
 slider.appendChild(right);
 
-/* ===== TRANSLATION ===== */
+/* FULL HEADER TRANSLATION FIX */
 
 const t={
 hi:{
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक",
 menu:{home:"मुख्य पृष्ठ",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-heroTitle:"सशक्त समाज • आत्मनिर्भर भारत",
-heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है。",
-sliderMain:"वर्तमान पहल",
-sliderSub:"आत्मनिर्भर भारत निर्माण हेतु सहयोग करें"
+brand:"भारत अभ्युदय संस्थान",
+sub:"अभ्युदय से आत्मनिर्भर भारत तक"
 },
 en:{
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India",
 menu:{home:"Home",a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-heroTitle:"Empowered Society • Self-Reliant India",
-heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact.",
-sliderMain:"CURRENT INITIATIVES",
-sliderSub:"Donate to Build Self Reliant India"
+brand:"Bharat Abhyudaya Sansthan",
+sub:"Upliftment to Self-Reliant India"
 }
 };
 
@@ -387,32 +347,28 @@ const btnEn=document.getElementById("btnEn");
 function setLang(lang){
 const d=t[lang];
 
+document.getElementById("mHome").textContent=d.menu.home;
+document.getElementById("mAbout").textContent=d.menu.a;
+document.getElementById("mWork").textContent=d.menu.w;
+document.getElementById("mDocs").textContent=d.menu.d;
+document.getElementById("mDonate").textContent=d.menu.dn;
+document.getElementById("mGallery").textContent=d.menu.g;
+document.getElementById("mContact").textContent=d.menu.c;
+
 document.getElementById("brandText").textContent=d.brand;
 document.getElementById("brandSub").textContent=d.sub;
-document.getElementById("heroTitle").textContent=d.heroTitle;
-document.getElementById("heroText").textContent=d.heroText;
-document.getElementById("sliderMain").textContent=d.sliderMain;
-document.getElementById("sliderSub").textContent=d.sliderSub;
 document.getElementById("footBrand").textContent=d.brand;
 
-if(lang==="en"){
-btnEn.classList.add("active");
-btnHi.classList.remove("active");
-}else{
-btnHi.classList.add("active");
-btnEn.classList.remove("active");
-}
+btnHi.classList.toggle("active",lang==="hi");
+btnEn.classList.toggle("active",lang==="en");
 
 localStorage.setItem("bas_lang",lang);
 }
 
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
-setLang(localStorage.getItem("bas_lang")||"hi");
 
-document.getElementById("mobBtn").onclick=()=>{
-document.getElementById("mobilePanel").classList.toggle("open");
-};
+setLang(localStorage.getItem("bas_lang")||"hi");
 </script>
 
 </body>
