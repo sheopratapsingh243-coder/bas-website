@@ -26,7 +26,7 @@ background:#fff;
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* ===== HEADER (EXACT ABOUT STYLE) ===== */
+/* ===== HEADER (ABOUT STYLE EXACT) ===== */
 
 header{
 position:sticky;top:0;z-index:50;
@@ -106,6 +106,108 @@ margin-top:12px;color:var(--muted);
 line-height:1.8;font-weight:700;
 }
 
+/* ===== SLIDER ===== */
+
+.sliderSection{padding:50px 0 20px}
+.sliderTitle{text-align:center;font-size:22px;font-weight:900;margin-bottom:20px}
+.sliderTitle span{
+background:var(--brand);
+color:#fff;
+padding:6px 12px;
+border-radius:6px;
+margin-right:8px;
+}
+
+.slider{
+position:relative;
+width:100%;
+height:80vh;
+overflow:hidden;
+border-radius:20px;
+background:#f4f7fb;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity .6s ease;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.slide.active{opacity:1;}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:contain; /* no cut */
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:30px;
+background:rgba(0,0,0,.4);
+color:#fff;
+padding:10px 16px;
+cursor:pointer;
+border-radius:10px;
+z-index:10;
+}
+.arrow.left{left:20px;}
+.arrow.right{right:20px;}
+
+.slideButtons{
+position:absolute;
+bottom:0;
+width:100%;
+display:flex;
+}
+.slideButtons button{
+flex:1;
+padding:16px;
+border:none;
+cursor:pointer;
+font-weight:900;
+font-size:15px;
+color:#fff;
+transition:.3s;
+}
+.btnDonate{
+background:linear-gradient(135deg,var(--accent),#ff7a00);
+}
+.btnRead{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+}
+.slideButtons button:hover{
+opacity:.9;
+transform:translateY(-2px);
+}
+
+/* ===== GRID ===== */
+
+.photoGrid{
+display:grid;
+gap:16px;
+padding:30px 0;
+}
+@media(min-width:768px){
+.photoGrid{grid-template-columns:repeat(3,1fr);}
+}
+.photoGrid img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:14px;
+cursor:pointer;
+transition:.3s;
+}
+.photoGrid img:hover{transform:scale(1.03);}
+
 /* ===== FOOTER ===== */
 footer{
 border-top:1px solid var(--border);
@@ -175,6 +277,21 @@ background:#fff;font-size:14px;
 </div>
 </section>
 
+<section class="sliderSection">
+<div class="wrap">
+<div class="sliderTitle">
+<span id="sliderMain">CURRENT INITIATIVES</span> –
+<span id="sliderSub">Donate to Build Self Reliant India</span>
+</div>
+
+<div class="slider" id="slider"></div>
+</div>
+</section>
+
+<section>
+<div class="wrap photoGrid" id="grid"></div>
+</section>
+
 <footer>
 <div class="wrap">
 © <span id="year"></span> <span id="footBrand">भारत अभ्युदय संस्थान</span>
@@ -184,7 +301,64 @@ background:#fff;font-size:14px;
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* ===== TRANSLATION SYSTEM (FULL LIKE ABOUT) ===== */
+/* ===== SLIDER DATA ===== */
+
+const slideData=[
+{img:"shiksha.jpg",id:"shiksha"},
+{img:"ambulance.jpg",id:"ambulance"},
+{img:"gauseva.jpg",id:"gauseva"},
+{img:"oldage.jpg",id:"oldage"},
+{img:"women.jpg",id:"women"},
+{img:"heritage.jpg",id:"heritage"}
+];
+
+const slider=document.getElementById("slider");
+const grid=document.getElementById("grid");
+
+slideData.forEach((s,i)=>{
+
+const slide=document.createElement("div");
+slide.className="slide"+(i===0?" active":"");
+slide.innerHTML=`
+<img src="./assets/${s.img}">
+<div class="slideButtons">
+<button class="btnDonate" onclick="location.href='donate.html'">${localStorage.getItem("bas_lang")==="en"?"Donate Now":"दान करें"}</button>
+<button class="btnRead" onclick="location.href='initiatives.html#${s.id}'">${localStorage.getItem("bas_lang")==="en"?"Read More":"विस्तार से देखें"}</button>
+</div>`;
+slider.appendChild(slide);
+
+const gimg=document.createElement("img");
+gimg.src=`./assets/${s.img}`;
+gimg.onclick=()=>showSlide(i);
+grid.appendChild(gimg);
+
+});
+
+let slides=document.querySelectorAll(".slide");
+let current=0;
+
+function showSlide(i){
+slides.forEach(s=>s.classList.remove("active"));
+slides[i].classList.add("active");
+current=i;
+}
+function nextSlide(){current=(current+1)%slides.length;showSlide(current);}
+function prevSlide(){current=(current-1+slides.length)%slides.length;showSlide(current);}
+setInterval(nextSlide,4000);
+
+const left=document.createElement("div");
+left.className="arrow left";
+left.innerHTML="❮";
+left.onclick=prevSlide;
+slider.appendChild(left);
+
+const right=document.createElement("div");
+right.className="arrow right";
+right.innerHTML="❯";
+right.onclick=nextSlide;
+slider.appendChild(right);
+
+/* ===== TRANSLATION ===== */
 
 const t={
 hi:{
@@ -192,14 +366,18 @@ brand:"भारत अभ्युदय संस्थान",
 sub:"अभ्युदय से आत्मनिर्भर भारत तक",
 menu:{home:"मुख्य पृष्ठ",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
 heroTitle:"सशक्त समाज • आत्मनिर्भर भारत",
-heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।"
+heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है。",
+sliderMain:"वर्तमान पहल",
+sliderSub:"आत्मनिर्भर भारत निर्माण हेतु सहयोग करें"
 },
 en:{
 brand:"Bharat Abhyudaya Sansthan",
 sub:"Upliftment to Self-Reliant India",
 menu:{home:"Home",a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
 heroTitle:"Empowered Society • Self-Reliant India",
-heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact."
+heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact.",
+sliderMain:"CURRENT INITIATIVES",
+sliderSub:"Donate to Build Self Reliant India"
 }
 };
 
@@ -211,26 +389,10 @@ const d=t[lang];
 
 document.getElementById("brandText").textContent=d.brand;
 document.getElementById("brandSub").textContent=d.sub;
-
-document.getElementById("mHome").textContent=d.menu.home;
-document.getElementById("mAbout").textContent=d.menu.a;
-document.getElementById("mWork").textContent=d.menu.w;
-document.getElementById("mDocs").textContent=d.menu.d;
-document.getElementById("mDonate").textContent=d.menu.dn;
-document.getElementById("mGallery").textContent=d.menu.g;
-document.getElementById("mContact").textContent=d.menu.c;
-
-document.getElementById("mmHome").textContent=d.menu.home;
-document.getElementById("mmAbout").textContent=d.menu.a;
-document.getElementById("mmWork").textContent=d.menu.w;
-document.getElementById("mmDocs").textContent=d.menu.d;
-document.getElementById("mmDonate").textContent=d.menu.dn;
-document.getElementById("mmGallery").textContent=d.menu.g;
-document.getElementById("mmContact").textContent=d.menu.c;
-
 document.getElementById("heroTitle").textContent=d.heroTitle;
 document.getElementById("heroText").textContent=d.heroText;
-
+document.getElementById("sliderMain").textContent=d.sliderMain;
+document.getElementById("sliderSub").textContent=d.sliderSub;
 document.getElementById("footBrand").textContent=d.brand;
 
 if(lang==="en"){
@@ -246,10 +408,8 @@ localStorage.setItem("bas_lang",lang);
 
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
-
 setLang(localStorage.getItem("bas_lang")||"hi");
 
-/* Mobile */
 document.getElementById("mobBtn").onclick=()=>{
 document.getElementById("mobilePanel").classList.toggle("open");
 };
