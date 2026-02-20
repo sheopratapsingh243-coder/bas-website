@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="hi">
 <head>
@@ -31,7 +30,7 @@ overflow-x:hidden;
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* ===== HEADER SAME AS INDEX ===== */
+/* ===== HEADER ===== */
 header{
 position:sticky;top:0;z-index:50;
 background:rgba(255,255,255,.92);
@@ -51,12 +50,9 @@ width:46px;height:46px;border-radius:999px;
 border:1px solid rgba(226,232,240,.95);
 object-fit:cover;background:#fff;
 }
-.brand b{
-display:block;font-size:14px;line-height:1.15;
-}
-.brand span{
-display:block;font-size:12px;color:var(--muted);
-}
+.brand b{display:block;font-size:14px;line-height:1.15;}
+.brand span{display:block;font-size:12px;color:var(--muted);}
+
 .menu{
 display:none;gap:18px;font-size:14px;
 color:var(--muted);font-weight:900;
@@ -84,10 +80,7 @@ background:#fff;cursor:pointer;font-size:18px;font-weight:950;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
-.mobilePanel{
-display:none;padding:12px 0 14px;
-border-top:1px solid rgba(226,232,240,.95);
-}
+.mobilePanel{display:none;padding:12px 0 14px;border-top:1px solid rgba(226,232,240,.95);}
 .mobilePanel.open{display:block}
 @media(min-width:980px){.mobilePanel{display:none!important}}
 
@@ -109,7 +102,7 @@ font-weight:950;color:var(--brand);font-size:12px;
 h1{margin:14px 0;font-size:34px}
 .muted{color:var(--muted);line-height:1.7}
 
-/* ===== SLIDER ===== */
+/* ===== SLIDER FIXED ===== */
 .slider{
 position:relative;
 max-width:850px;
@@ -117,10 +110,21 @@ margin:40px auto 0;
 }
 .slide{display:none}
 .slide.active{display:block}
+
 .slide img{
-width:100%;border-radius:20px;
+width:100%;
+height:auto;
+max-height:500px;   /* 👈 height limit */
+border-radius:20px;
 box-shadow:var(--shadow);
 }
+
+@media(max-width:768px){
+.slide img{
+max-height:320px;   /* 👈 smaller on mobile */
+}
+}
+
 .arrow{
 position:absolute;top:50%;
 transform:translateY(-50%);
@@ -132,7 +136,7 @@ border-radius:50%;cursor:pointer;
 .prev{left:-25px}
 .next{right:-25px}
 
-/* ===== GRID BELOW SLIDESHOW ===== */
+/* ===== GRID ===== */
 .galleryGrid{
 margin-top:60px;
 display:grid;
@@ -145,20 +149,12 @@ object-fit:cover;border-radius:16px;
 box-shadow:var(--shadow);
 transition:.3s;cursor:pointer;
 }
-.galleryGrid img:hover{
-transform:scale(1.05);
-}
+.galleryGrid img:hover{transform:scale(1.05);}
 
 footer{
 border-top:1px solid rgba(226,232,240,.95);
 padding:18px 0;margin-top:40px;
 color:var(--muted);background:#fff;font-size:14px;
-}
-.wa{
-position:fixed;right:16px;bottom:16px;
-z-index:999;background:linear-gradient(135deg,#22c55e,#16a34a);
-color:#fff;padding:12px 14px;border-radius:999px;
-font-weight:950;
 }
 </style>
 </head>
@@ -178,13 +174,13 @@ font-weight:950;
 </a>
 
 <nav class="menu">
-<a href="index.html">मुख्य पृष्ठ</a>
-<a href="about.html">परिचय</a>
-<a href="initiatives.html">हमारे प्रयास</a>
-<a href="documents.html">दस्तावेज़</a>
-<a href="donate.html">दान करें</a>
-<a href="gallery.html" style="color:#0b5aa6;font-weight:900;">गैलरी</a>
-<a href="contact.html">संपर्क</a>
+<a id="m1" href="index.html">मुख्य पृष्ठ</a>
+<a id="m2" href="about.html">परिचय</a>
+<a id="m3" href="initiatives.html">हमारे प्रयास</a>
+<a id="m4" href="documents.html">दस्तावेज़</a>
+<a id="m5" href="donate.html">दान करें</a>
+<a id="m6" href="gallery.html" style="color:#0b5aa6;font-weight:900;">गैलरी</a>
+<a id="m7" href="contact.html">संपर्क</a>
 </nav>
 
 <div style="display:flex;gap:10px;align-items:center">
@@ -195,18 +191,6 @@ font-weight:950;
 </div>
 </div>
 
-</div>
-
-<div class="mobilePanel" id="mobilePanel">
-<div class="mnav">
-<a href="index.html">मुख्य पृष्ठ</a>
-<a href="about.html">परिचय</a>
-<a href="initiatives.html">हमारे प्रयास</a>
-<a href="documents.html">दस्तावेज़</a>
-<a href="donate.html">दान करें</a>
-<a href="gallery.html">गैलरी</a>
-<a href="contact.html">संपर्क</a>
-</div>
 </div>
 </div>
 </header>
@@ -249,35 +233,61 @@ font-weight:950;
 </div>
 </footer>
 
-<a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
-
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("mobBtn")
-.addEventListener("click",()=>document.getElementById("mobilePanel").classList.toggle("open"));
 
-/* Language */
+/* LANGUAGE FULL FIX */
 const btnHi=document.getElementById("btnHi");
 const btnEn=document.getElementById("btnEn");
+
 function setLang(lang){
+document.documentElement.lang=lang;
+
 if(lang==="en"){
-document.getElementById("titleText").textContent="Gallery";
-document.getElementById("descText").textContent="Glimpses of our service activities.";
-document.getElementById("footText").textContent="Bharat Abhyudaya Sansthan";
-btnEn.classList.add("active");btnHi.classList.remove("active");
+brandText.textContent="Bharat Abhyudaya Sansthan";
+brandSub.textContent="Upliftment to Self-Reliant India";
+titleText.textContent="Gallery";
+descText.textContent="Glimpses of our service activities.";
+footText.textContent="Bharat Abhyudaya Sansthan";
+
+m1.textContent="Home";
+m2.textContent="About";
+m3.textContent="Our Initiatives";
+m4.textContent="Documents";
+m5.textContent="Donate";
+m6.textContent="Gallery";
+m7.textContent="Contact";
+
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
+
 }else{
-document.getElementById("titleText").textContent="गैलरी";
-document.getElementById("descText").textContent="हमारी सेवा गतिविधियों की झलकियाँ।";
-document.getElementById("footText").textContent="भारत अभ्युदय संस्थान";
-btnHi.classList.add("active");btnEn.classList.remove("active");
+brandText.textContent="भारत अभ्युदय संस्थान";
+brandSub.textContent="अभ्युदय से आत्मनिर्भर भारत तक";
+titleText.textContent="गैलरी";
+descText.textContent="हमारी सेवा गतिविधियों की झलकियाँ।";
+footText.textContent="भारत अभ्युदय संस्थान";
+
+m1.textContent="मुख्य पृष्ठ";
+m2.textContent="परिचय";
+m3.textContent="हमारे प्रयास";
+m4.textContent="दस्तावेज़";
+m5.textContent="दान करें";
+m6.textContent="गैलरी";
+m7.textContent="संपर्क";
+
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
 }
+
 localStorage.setItem("bas_lang",lang);
 }
+
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
 setLang(localStorage.getItem("bas_lang")||"hi");
 
-/* Slider */
+/* SLIDER */
 let index=0;
 const slides=document.querySelectorAll(".slide");
 function showSlide(i){
@@ -293,4 +303,3 @@ setInterval(()=>changeSlide(1),5000);
 
 </body>
 </html>
-
