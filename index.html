@@ -20,94 +20,36 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:va
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* HEADER (UNCHANGED DESIGN) */
-
+/* HEADER */
 header{
 position:sticky;top:0;z-index:50;
 background:rgba(255,255,255,.92);
 backdrop-filter: blur(10px);
 border-bottom:1px solid var(--border);
 }
-.nav{
-display:flex;align-items:center;justify-content:space-between;
-padding:12px 0;gap:10px;
-}
-.brand{
-display:flex;align-items:center;gap:10px;
-min-width:220px;
-}
-.logo{
-width:46px;height:46px;border-radius:999px;
-border:1px solid var(--border);
-object-fit:cover;background:#fff;
-}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:220px}
+.logo{width:46px;height:46px;border-radius:999px;border:1px solid var(--border);object-fit:cover;background:#fff}
 .brand b{display:block;font-size:14px;line-height:1.15}
 .brand span{display:block;font-size:12px;color:var(--muted)}
 
-.menu{
-display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900;
-}
+.menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
 .menu a:hover{color:var(--brand)}
 @media(min-width:980px){.menu{display:flex}}
 
 .toggle{display:flex;gap:8px}
-.pill{
-border:1px solid var(--border);
-background:#fff;padding:8px 12px;border-radius:999px;
-font-size:13px;cursor:pointer;font-weight:900;
-}
-.pill.active{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-color:#fff;border-color:transparent;font-weight:950;
-}
-
-.mobBtn{
-display:inline-flex;align-items:center;justify-content:center;
-width:42px;height:42px;border-radius:14px;
-border:1px solid var(--border);
-background:#fff;
-cursor:pointer;
-font-size:18px;font-weight:950;
-}
-@media(min-width:980px){.mobBtn{display:none}}
-
-.mobilePanel{
-display:none;padding:12px 0 14px;
-border-top:1px solid var(--border);
-}
-.mobilePanel.open{display:block}
-@media(min-width:980px){.mobilePanel{display:none !important}}
-
-.mnav{display:grid;gap:10px}
-.mnav a{
-padding:12px 14px;
-border-radius:16px;
-border:1px solid var(--border);
-background:#fff;
-font-weight:950;
-}
+.pill{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-weight:900}
+.pill.active{background:linear-gradient(135deg,var(--brand),#083a6c);color:#fff;border-color:transparent;font-weight:950}
 
 /* HERO */
-
 .hero{padding:30px 0 10px}
 .hero h1{margin:0;font-size:34px}
 .hero p{margin-top:12px;color:var(--muted);line-height:1.8;font-weight:700}
 
 /* SLIDER */
-
 .sliderSection{padding:10px 0 10px}
-.sliderTitle{
-text-align:center;
-font-size:22px;
-font-weight:900;
-margin-bottom:12px;
-}
-.sliderTitle span{
-background:var(--brand);
-color:#fff;
-padding:6px 12px;
-border-radius:6px;
-}
+.sliderTitle{text-align:center;font-size:22px;font-weight:900;margin-bottom:12px}
+.sliderTitle span{background:var(--brand);color:#fff;padding:6px 12px;border-radius:6px}
 
 .slider{
 position:relative;
@@ -131,7 +73,7 @@ justify-content:center;
 .slide.active{opacity:1}
 
 .slide img{
-width:100%;
+width:110%;   /* increased width */
 height:100%;
 object-fit:contain;
 }
@@ -156,23 +98,20 @@ position:absolute;
 bottom:0;
 width:100%;
 display:flex;
-gap:6px; /* light gap added */
+gap:6px;
 }
 .slideButtons button{
 flex:1;
-padding:16px;
+padding:12px;   /* reduced size */
 border:none;
 cursor:pointer;
 font-weight:900;
-font-size:15px;
+font-size:14px;
 color:#fff;
 transition:.3s;
 }
 .btnDonate{background:linear-gradient(135deg,var(--accent),#ff7a00)}
 .btnRead{background:linear-gradient(135deg,var(--brand),#083a6c)}
-.slideButtons button:hover{opacity:.9}
-
-/* GRID */
 
 .photoGrid{
 display:grid;
@@ -225,12 +164,9 @@ background:#fff;font-size:14px;
 <a href="contact.html" id="mContact">संपर्क</a>
 </nav>
 
-<div style="display:flex;gap:10px;align-items:center">
-<button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
 <button class="pill active" id="btnHi">हिन्दी</button>
 <button class="pill" id="btnEn">English</button>
-</div>
 </div>
 
 </div>
@@ -248,13 +184,10 @@ background:#fff;font-size:14px;
 
 <section class="sliderSection">
 <div class="wrap">
-
 <div class="sliderTitle">
 <span id="sliderMain">CURRENT INITIATIVES</span>
 </div>
-
 <div class="slider" id="slider"></div>
-
 </div>
 </section>
 
@@ -270,8 +203,6 @@ background:#fff;font-size:14px;
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-
-/* SLIDER DATA */
 
 const slideData=[
 {img:"shiksha.jpg",id:"shiksha"},
@@ -291,8 +222,8 @@ slide.className="slide"+(i===0?" active":"");
 slide.innerHTML=`
 <img src="./assets/${s.img}">
 <div class="slideButtons">
-<button class="btnDonate" onclick="location.href='donate.html'">Donate Now</button>
-<button class="btnRead" onclick="location.href='initiatives.html#${s.id}'">Read More</button>
+<button class="btnDonate" onclick="location.href='donate.html'" id="donateBtn${i}">Donate Now</button>
+<button class="btnRead" onclick="location.href='initiatives.html#${s.id}'" id="readBtn${i}">Read More</button>
 </div>`;
 slider.appendChild(slide);
 
@@ -304,40 +235,31 @@ grid.appendChild(gimg);
 
 let slides=document.querySelectorAll(".slide");
 let current=0;
-
-function showSlide(i){
-slides.forEach(s=>s.classList.remove("active"));
-slides[i].classList.add("active");
-current=i;
-}
+function showSlide(i){slides.forEach(s=>s.classList.remove("active"));slides[i].classList.add("active");current=i;}
 function nextSlide(){current=(current+1)%slides.length;showSlide(current);}
 function prevSlide(){current=(current-1+slides.length)%slides.length;showSlide(current);}
 setInterval(nextSlide,4000);
 
 const left=document.createElement("div");
-left.className="arrow left";
-left.innerHTML="❮";
-left.onclick=prevSlide;
-slider.appendChild(left);
-
+left.className="arrow left";left.innerHTML="❮";left.onclick=prevSlide;slider.appendChild(left);
 const right=document.createElement("div");
-right.className="arrow right";
-right.innerHTML="❯";
-right.onclick=nextSlide;
-slider.appendChild(right);
+right.className="arrow right";right.innerHTML="❯";right.onclick=nextSlide;slider.appendChild(right);
 
-/* FULL HEADER TRANSLATION FIX */
-
+/* FULL TRANSLATION */
 const t={
 hi:{
-menu:{home:"मुख्य पृष्ठ",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक"
+heroTitle:"सशक्त समाज • आत्मनिर्भर भारत",
+heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।",
+sliderMain:"वर्तमान पहल",
+donate:"दान करें",
+read:"विस्तार से देखें"
 },
 en:{
-menu:{home:"Home",a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India"
+heroTitle:"Empowered Society • Self-Reliant India",
+heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact.",
+sliderMain:"CURRENT INITIATIVES",
+donate:"Donate Now",
+read:"Read More"
 }
 };
 
@@ -346,28 +268,20 @@ const btnEn=document.getElementById("btnEn");
 
 function setLang(lang){
 const d=t[lang];
-
-document.getElementById("mHome").textContent=d.menu.home;
-document.getElementById("mAbout").textContent=d.menu.a;
-document.getElementById("mWork").textContent=d.menu.w;
-document.getElementById("mDocs").textContent=d.menu.d;
-document.getElementById("mDonate").textContent=d.menu.dn;
-document.getElementById("mGallery").textContent=d.menu.g;
-document.getElementById("mContact").textContent=d.menu.c;
-
-document.getElementById("brandText").textContent=d.brand;
-document.getElementById("brandSub").textContent=d.sub;
-document.getElementById("footBrand").textContent=d.brand;
-
+document.getElementById("heroTitle").textContent=d.heroTitle;
+document.getElementById("heroText").textContent=d.heroText;
+document.getElementById("sliderMain").textContent=d.sliderMain;
+slides.forEach((s,i)=>{
+document.getElementById("donateBtn"+i).textContent=d.donate;
+document.getElementById("readBtn"+i).textContent=d.read;
+});
 btnHi.classList.toggle("active",lang==="hi");
 btnEn.classList.toggle("active",lang==="en");
-
 localStorage.setItem("bas_lang",lang);
 }
 
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
-
 setLang(localStorage.getItem("bas_lang")||"hi");
 </script>
 
