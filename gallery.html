@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="hi">
 <head>
@@ -73,25 +72,6 @@ background:linear-gradient(135deg,var(--brand),#083a6c);
 color:#fff;border-color:transparent;
 }
 
-.mobBtn{
-display:inline-flex;align-items:center;justify-content:center;
-width:42px;height:42px;border-radius:14px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;cursor:pointer;font-size:18px;font-weight:950;
-}
-@media(min-width:980px){.mobBtn{display:none}}
-
-.mobilePanel{display:none;padding:12px 0 14px;border-top:1px solid rgba(226,232,240,.95);}
-.mobilePanel.open{display:block}
-@media(min-width:980px){.mobilePanel{display:none!important}}
-
-.mnav{display:grid;gap:10px}
-.mnav a{
-padding:12px 14px;border-radius:16px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;font-weight:950;
-}
-
 /* ===== SECTION ===== */
 section{padding:50px 0;text-align:center}
 .badge{
@@ -103,7 +83,7 @@ font-weight:950;color:var(--brand);font-size:12px;
 h1{margin:14px 0;font-size:34px}
 .muted{color:var(--muted);line-height:1.7}
 
-/* ===== SLIDER FIXED ===== */
+/* ===== SLIDER ===== */
 .slider{
 position:relative;
 max-width:850px;
@@ -114,16 +94,9 @@ margin:40px auto 0;
 
 .slide img{
 width:100%;
-height:auto;
-max-height:500px;   /* 👈 height limit */
+height:auto;   /* original look */
 border-radius:20px;
 box-shadow:var(--shadow);
-}
-
-@media(max-width:768px){
-.slide img{
-max-height:320px;   /* 👈 smaller on mobile */
-}
 }
 
 .arrow{
@@ -184,12 +157,9 @@ color:var(--muted);background:#fff;font-size:14px;
 <a id="m7" href="contact.html">संपर्क</a>
 </nav>
 
-<div style="display:flex;gap:10px;align-items:center">
-<button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
 <button class="pill active" id="btnHi">हिन्दी</button>
 <button class="pill" id="btnEn">English</button>
-</div>
 </div>
 
 </div>
@@ -210,6 +180,10 @@ color:var(--muted);background:#fff;font-size:14px;
 <div class="slide"><img src="assets/gallery/2.jpg"></div>
 <div class="slide"><img src="assets/gallery/3.jpg"></div>
 <div class="slide"><img src="assets/gallery/4.jpg"></div>
+<div class="slide"><img src="assets/gallery/5.jpg"></div>
+<div class="slide"><img src="assets/gallery/6.jpg"></div>
+<div class="slide"><img src="assets/gallery/7.jpg"></div>
+<div class="slide"><img src="assets/gallery/8.jpg"></div>
 </div>
 
 <h2 style="margin-top:60px">सभी तस्वीरें</h2>
@@ -237,7 +211,7 @@ color:var(--muted);background:#fff;font-size:14px;
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* LANGUAGE FULL FIX */
+/* Language Toggle */
 const btnHi=document.getElementById("btnHi");
 const btnEn=document.getElementById("btnEn");
 
@@ -261,7 +235,6 @@ m7.textContent="Contact";
 
 btnEn.classList.add("active");
 btnHi.classList.remove("active");
-
 }else{
 brandText.textContent="भारत अभ्युदय संस्थान";
 brandSub.textContent="अभ्युदय से आत्मनिर्भर भारत तक";
@@ -280,7 +253,6 @@ m7.textContent="संपर्क";
 btnHi.classList.add("active");
 btnEn.classList.remove("active");
 }
-
 localStorage.setItem("bas_lang",lang);
 }
 
@@ -288,17 +260,20 @@ btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
 setLang(localStorage.getItem("bas_lang")||"hi");
 
-/* SLIDER */
+/* Slider */
 let index=0;
 const slides=document.querySelectorAll(".slide");
+
 function showSlide(i){
 slides.forEach(s=>s.classList.remove("active"));
 slides[i].classList.add("active");
 }
+
 function changeSlide(n){
 index=(index+n+slides.length)%slides.length;
 showSlide(index);
 }
+
 setInterval(()=>changeSlide(1),5000);
 </script>
 
