@@ -219,7 +219,61 @@ font-weight:950;
 box-shadow:0 18px 45px rgba(0,0,0,.25);
 text-decoration:none;
 }
+/* ===== UNICEF SCROLL ANIMATION ===== */
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all .9s ease;
+}
 
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Impact Counter */
+.impact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;
+margin:40px 0;
+text-align:center;
+}
+
+.impactBox{
+background:#fff;
+border-radius:18px;
+padding:22px;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+font-weight:900;
+}
+
+.impactBox h2{
+color:#0b5aa6;
+font-size:34px;
+margin:0;
+}
+
+/* Donate Floating */
+.donateFloat{
+position:fixed;
+left:20px;
+bottom:20px;
+background:#f58b1f;
+color:#fff;
+padding:14px 18px;
+border-radius:999px;
+font-weight:900;
+z-index:999;
+animation:pulse 2s infinite;
+text-decoration:none;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(245,139,31,.6)}
+70%{box-shadow:0 0 0 18px rgba(245,139,31,0)}
+100%{box-shadow:0 0 0 0}
+}
 </style>
 </head>
 
@@ -288,7 +342,33 @@ PAN: AANAB2855N
 
 </div>
 </section>
+<div class="wrap reveal">
 
+<div class="impact">
+
+<div class="impactBox">
+<h2 data-count="2500">0</h2>
+Children Supported
+</div>
+
+<div class="impactBox">
+<h2 data-count="1800">0</h2>
+Medical Help
+</div>
+
+<div class="impactBox">
+<h2 data-count="950">0</h2>
+GauSeva Support
+</div>
+
+<div class="impactBox">
+<h2 data-count="1200">0</h2>
+Elderly Assisted
+</div>
+
+</div>
+
+</div>
 <h2 class="sectionTitle">CURRENT RUNNING PROGRAMMES</h2>
 
 <div class="wrap">
@@ -363,6 +443,55 @@ localStorage.setItem("bas_lang","en");
 };
 
 </script>
+<a href="donate.html" class="donateFloat">
+❤️ Donate Now
+</a>
+  <script>
 
+/* Scroll Reveal */
+function reveal(){
+document.querySelectorAll(".reveal")
+.forEach(el=>{
+let top=el.getBoundingClientRect().top;
+if(top < window.innerHeight-80){
+el.classList.add("active");
+}
+});
+}
+window.addEventListener("scroll",reveal);
+reveal();
+
+/* Counter Animation */
+const counters=document.querySelectorAll("[data-count]");
+
+const runCounter=()=>{
+counters.forEach(counter=>{
+let target=+counter.dataset.count;
+let count=0;
+let step=target/120;
+
+let update=()=>{
+count+=step;
+if(count<target){
+counter.innerText=Math.floor(count);
+requestAnimationFrame(update);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+};
+
+let triggered=false;
+window.addEventListener("scroll",()=>{
+if(!triggered){
+runCounter();
+triggered=true;
+}
+});
+
+</script>
 </body>
 </html>
+
