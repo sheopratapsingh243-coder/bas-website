@@ -37,83 +37,7 @@
     p{margin:10px 0 0}
     .muted{color:var(--muted)}
     .small{font-size:14px}
-
-    /* Header */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(226,232,240,.95);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:10px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      min-width:220px;
-    }
-    .logo{
-      width:46px;height:46px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      object-fit:cover;background:#fff;
-    }
-    .brand b{display:block;font-size:14px;line-height:1.15}
-    .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
-    .menu a:hover{color:var(--brand)}
-    @media(min-width:980px){.menu{display:flex}}
-
-    /* Toggle */
-    .toggle{display:flex;gap:8px}
-    .pill{
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;padding:8px 12px;border-radius:999px;
-      font-size:13px;cursor:pointer;
-    }
-    .pill.active{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
-
-    /* Mobile menu button */
-    .mobBtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:42px;height:42px;
-      border-radius:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:950;
-    }
-    @media(min-width:980px){.mobBtn{display:none}}
-
-    .mobilePanel{
-      display:none;
-      padding:12px 0 14px;
-      border-top:1px solid rgba(226,232,240,.95);
-    }
-    .mobilePanel.open{display:block}
-    @media(min-width:980px){.mobilePanel{display:none !important}}
-
-    .mnav{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-    }
-    .mnav a{
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.95);
-      font-weight:950;
-      color:var(--fg);
-    }
-    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
-
+    
     /* Page */
     .heroCard{
       background:#fff;
@@ -195,53 +119,22 @@
 
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="nav">
+<div id="header"></div>
 
-      <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="assets/logo.jpg" alt="BAS Logo">
-        <div>
-          <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
-        </div>
-      </a>
+<script>
+fetch("components/header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
 
-      <nav class="menu">
-        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mAbout">परिचय</a>
-        <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान करें</a>
-        <a href="gallery.html" id="mGallery">गैलरी</a>
-        <a href="contact.html" id="mContact">संपर्क</a>
-      </nav>
-
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-        <div class="toggle">
-          <button class="pill active" id="btnHi" type="button">हिन्दी</button>
-          <button class="pill" id="btnEn" type="button">English</button>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mobilePanel" id="mobilePanel">
-      <div class="mnav">
-        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mmAbout">परिचय</a>
-        <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान करें</a>
-        <a href="gallery.html" id="mmGallery">गैलरी</a>
-        <a href="contact.html" id="mmContact">संपर्क</a>
-      </div>
-    </div>
-
-  </div>
-</header>
-
+setTimeout(()=>{
+if(typeof initLang==="function"){
+initLang();
+}
+},200);
+});
+</script>
+  
 <main>
 
   <section>
@@ -420,6 +313,8 @@
   applyActive(savedLang);
   setLang(savedLang);
 </script>
-
+  
+<script src="lang.js"></script>
+  
 </body>
 </html>
