@@ -29,208 +29,60 @@ overflow-x:hidden;
 
 /* ================= HEADER (UNCHANGED) ================= */
 
-   /* Header */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(226,232,240,.95);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;gap:10px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      min-width:220px;
-    }
-    .logo{
-      width:46px;height:46px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      object-fit:cover;background:#fff;
-    }
-    .brand b{display:block;font-size:14px;line-height:1.15}
-    .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:none;gap:18px;font-size:14px;color:var(--muted);font-weight:900}
-    .menu a:hover{color:var(--brand)}
-    @media(min-width:980px){.menu{display:flex}}
+header{
+position:sticky;
+top:0;
+background:#fff;
+z-index:999;
+border-bottom:1px solid var(--border);
+}
 
-    /* Toggle */
-    .toggle{display:flex;gap:8px}
-    .pill{
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;padding:8px 12px;border-radius:999px;
-      font-size:13px;cursor:pointer;
-      font-weight:900;
-    }
-    .pill.active{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 0;
+}
 
-    /* Mobile menu button */
-    .mobBtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:42px;height:42px;
-      border-radius:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:950;
-    }
-    @media(min-width:980px){.mobBtn{display:none}}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:46px;height:46px;border-radius:50%}
 
-    .mobilePanel{
-      display:none;
-      padding:12px 0 14px;
-      border-top:1px solid rgba(226,232,240,.95);
-    }
-    .mobilePanel.open{display:block}
-    @media(min-width:980px){.mobilePanel{display:none !important}}
+.menu{display:none;gap:18px;font-weight:800}
+.menu a{text-decoration:none;color:#333}
 
-    .mnav{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-    }
-    .mnav a{
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.95);
-      font-weight:950;
-      color:var(--fg);
-    }
-    .mnav a:hover{background:rgba(11,90,166,.06);color:var(--brand)}
+@media(min-width:980px){
+.menu{display:flex}
+}
 
-    /* Layout */
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr;gap:22px}}
-    .grid3{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    @media(min-width:980px){.grid3{grid-template-columns:1fr 1fr 1fr}}
+.toggle{display:flex;gap:8px}
 
-    .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
-    }
+.pill{
+padding:8px 12px;
+border-radius:999px;
+border:1px solid var(--border);
+cursor:pointer;
+font-weight:900;
+background:#fff;
+}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
-      justify-content:center;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
+.pill.active{
+background:var(--brand);
+color:#fff;
+}
 
-    .badge{
-      display:inline-flex;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(11,90,166,.06);
-      border:1px solid rgba(11,90,166,.15);
-      font-weight:950;
-      color:var(--brand);
-      font-size:12px;
-    }
+.mobBtn{
+display:inline-flex;
+width:42px;height:42px;
+justify-content:center;
+align-items:center;
+border:1px solid var(--border);
+background:#fff;
+border-radius:12px;
+}
 
-    .callout{
-      background:rgba(245,139,31,.10);
-      border:1px solid rgba(245,139,31,.22);
-      border-radius:18px;
-      padding:14px;
-      color:#0b1220;
-      line-height:1.65;
-      font-weight:800;
-    }
-
-    .listBox{
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.92);
-    }
-
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
-
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="wrap">
-    <div class="nav">
-
-      <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
-        <div>
-          <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
-        </div>
-      </a>
-
-      <nav class="menu">
-        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mAbout">परिचय</a>
-        <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान करें</a>
-        <a href="gallery.html" id="mGallery">गैलरी</a>
-        <a href="contact.html" id="mContact">संपर्क</a>
-      </nav>
-
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-        <div class="toggle">
-          <button class="pill active" id="btnHi" type="button">हिन्दी</button>
-          <button class="pill" id="btnEn" type="button">English</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Mobile dropdown -->
-    <div class="mobilePanel" id="mobilePanel">
-      <div class="mnav">
-        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mmAbout">परिचय</a>
-        <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान करें</a>
-        <a href="gallery.html" id="mmGallery">गैलरी</a>
-        <a href="contact.html" id="mmContact">संपर्क</a>
-      </div>
-    </div>
-
-  </div>
-</header>
-
-<main id="top">
+@media(min-width:980px){
+.mobBtn{display:none}
+}
 
 /* ================= HERO ================= */
 
@@ -536,4 +388,3 @@ document.getElementById("visit").innerText=v;
 
 </body>
 </html>
-
