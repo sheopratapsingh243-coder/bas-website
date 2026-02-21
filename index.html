@@ -29,7 +29,9 @@ a{text-decoration:none;color:inherit}
 /* ================= HEADER ================= */
 
 header{
-position:sticky;top:0;z-index:50;
+position:sticky;
+top:0;
+z-index:50;
 background:rgba(255,255,255,.92);
 backdrop-filter:blur(10px);
 border-bottom:1px solid var(--border);
@@ -44,8 +46,8 @@ padding:12px 0;
 
 .brand{
 display:flex;
-align-items:center;
 gap:10px;
+align-items:center;
 }
 
 .logo{
@@ -54,18 +56,25 @@ border-radius:999px;
 border:1px solid var(--border);
 }
 
-.brand b{font-size:14px;display:block}
+.brand b{
+font-size:15px;
+display:block;
+}
 .brand span{
 font-size:12px;
 color:var(--muted);
 display:block;
 }
 
+/* MENU FIXED CLICKABLE */
 .menu{
 display:none;
 gap:18px;
 font-weight:900;
 color:var(--muted);
+}
+.menu a{
+cursor:pointer;
 }
 .menu a:hover{color:var(--brand)}
 @media(min-width:980px){.menu{display:flex}}
@@ -93,7 +102,6 @@ border-radius:14px;
 border:1px solid var(--border);
 background:#fff;
 cursor:pointer;
-font-size:18px;
 }
 @media(min-width:980px){.mobBtn{display:none}}
 
@@ -119,15 +127,13 @@ background:#fff;
 /* VISITOR COUNTER */
 
 .visitorBar{
-background:#fff;
-border-bottom:1px solid var(--border);
-padding:6px 0;
 text-align:right;
-font-weight:700;
+padding:6px 16px;
+font-weight:900;
 color:var(--brand);
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
 padding:60px 0;
@@ -145,19 +151,18 @@ gap:30px;
 .heroGrid{grid-template-columns:1.2fr .8fr;}
 }
 
-/* BIG NGO NAME */
-.heroOrg{
-font-size:32px;
-font-weight:900;
+.hero h2{
+font-size:30px; /* BIGGER NGO NAME */
+margin:0;
 color:var(--brand);
 }
 
-.heroTitle{
+.hero h1{
+margin:8px 0 0;
 font-size:34px;
-margin-top:10px;
 }
 
-.heroText{
+.hero p{
 margin-top:14px;
 line-height:1.8;
 color:var(--muted);
@@ -168,25 +173,30 @@ font-weight:600;
 
 .legalCard{
 background:#fff;
-padding:20px;
 border-radius:var(--radius);
-box-shadow:0 10px 30px rgba(0,0,0,.06);
+padding:20px;
 border:1px solid var(--border);
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+font-size:14px;
 }
 
-.legalCard h3{
-margin-top:0;
-color:var(--brand);
-}
+/* ===== SLIDER & GRID (UNCHANGED) ===== */
 
-/* ================= SLIDER ================= */
+.sliderSection{padding:20px 0}
+.sliderTitle{text-align:center;font-size:22px;font-weight:900;margin-bottom:15px}
+.sliderTitle span{
+background:var(--brand);
+color:#fff;
+padding:6px 14px;
+border-radius:6px;
+}
 
 .slider{
+position:relative;
 height:70vh;
 background:#fff;
 border-radius:var(--radius);
 overflow:hidden;
-position:relative;
 }
 
 .slide{
@@ -223,25 +233,21 @@ border-radius:8px;
 .buttonWrapper{
 display:flex;
 gap:12px;
-margin-top:15px;
+margin-top:14px;
 }
+
 .buttonWrapper button{
 flex:1;
 padding:14px;
+font-weight:900;
 border:none;
 border-radius:10px;
-font-weight:900;
 color:#fff;
 cursor:pointer;
 }
-.btnDonate{
-background:linear-gradient(135deg,var(--accent),#ff7a00);
-}
-.btnRead{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-}
 
-/* GRID */
+.btnDonate{background:linear-gradient(135deg,var(--accent),#ff7a00)}
+.btnRead{background:linear-gradient(135deg,var(--brand),#083a6c)}
 
 .photoGrid{
 display:grid;
@@ -251,6 +257,7 @@ padding:40px 0;
 @media(min-width:768px){
 .photoGrid{grid-template-columns:repeat(3,1fr)}
 }
+
 .photoGrid img{
 width:100%;
 height:200px;
@@ -275,7 +282,7 @@ color:var(--muted);
 <div class="wrap">
 <div class="nav">
 
-<a class="brand" href="index.html">
+<a class="brand">
 <img src="./assets/logo.jpg" class="logo">
 <div>
 <b id="brandText">भारत अभ्युदय संस्थान</b>
@@ -284,18 +291,17 @@ color:var(--muted);
 </a>
 
 <nav class="menu">
-<a id="mHome" href="index.html"></a>
-<a id="mAbout" href="about.html"></a>
-<a id="mWork" href="initiatives.html"></a>
-<a id="mDocs" href="documents.html"></a>
-<a id="mDonate" href="donate.html"></a>
-<a id="mGallery" href="gallery.html"></a>
-<a id="mContact" href="contact.html"></a>
+<a href="index.html" id="mHome"></a>
+<a href="about.html" id="mAbout"></a>
+<a href="initiatives.html" id="mWork"></a>
+<a href="documents.html" id="mDocs"></a>
+<a href="donate.html" id="mDonate"></a>
+<a href="gallery.html" id="mGallery"></a>
+<a href="contact.html" id="mContact"></a>
 </nav>
 
 <div style="display:flex;gap:10px;align-items:center">
 <button class="mobBtn" id="mobBtn">☰</button>
-
 <div class="toggle">
 <button class="pill active" id="btnHi">हिन्दी</button>
 <button class="pill" id="btnEn">English</button>
@@ -306,13 +312,13 @@ color:var(--muted);
 
 <div class="mobilePanel" id="mobilePanel">
 <div class="mnav">
-<a id="mmHome"></a>
-<a id="mmAbout"></a>
-<a id="mmWork"></a>
-<a id="mmDocs"></a>
-<a id="mmDonate"></a>
-<a id="mmGallery"></a>
-<a id="mmContact"></a>
+<a href="index.html" id="mmHome"></a>
+<a href="about.html" id="mmAbout"></a>
+<a href="initiatives.html" id="mmWork"></a>
+<a href="documents.html" id="mmDocs"></a>
+<a href="donate.html" id="mmDonate"></a>
+<a href="gallery.html" id="mmGallery"></a>
+<a href="contact.html" id="mmContact"></a>
 </div>
 </div>
 
@@ -327,23 +333,38 @@ Visitors : <span id="visitorCount"></span>
 <div class="wrap heroGrid">
 
 <div>
-<div class="heroOrg" id="heroOrg"></div>
-<div class="heroTitle" id="heroTitle"></div>
-<p class="heroText">
-सामाजिक उत्थान, शिक्षा, स्वास्थ्य एवं आत्मनिर्भर भारत निर्माण हेतु समर्पित।
-</p>
+<h2 id="heroOrg"></h2>
+<h1 id="heroTitle"></h1>
+<p id="heroText"></p>
 </div>
 
 <div class="legalCard">
-<h3>Legal Information</h3>
-<p id="legalInfo">
-Registration No: FAT/02340/2024-25<br>
-PAN: AANAB2855N<br>
-Valid Till: 04/07/2029
-</p>
+<b>Registration No:</b> FAT/02340/2024-25<br><br>
+<b>PAN:</b> AANAB2855N<br><br>
+<b>Valid Till:</b> 04/07/2029
 </div>
 
 </div>
+</section>
+
+<!-- SLIDER + GRID SAME -->
+
+<section class="sliderSection">
+<div class="wrap">
+<div class="sliderTitle">
+<span id="sliderMain"></span>
+</div>
+<div class="slider" id="slider"></div>
+
+<div class="buttonWrapper">
+<button class="btnDonate" id="donateBtn"></button>
+<button class="btnRead" id="readBtn"></button>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap photoGrid" id="grid"></div>
 </section>
 
 <footer>
@@ -352,25 +373,34 @@ Valid Till: 04/07/2029
 
 <script>
 
-/* visitor counter */
-let v=localStorage.getItem("visits")||1000;
-v++;localStorage.setItem("visits",v);
+/* Visitor Counter */
+let v=localStorage.getItem("visitor")||1000;
+v++;
+localStorage.setItem("visitor",v);
 visitorCount.textContent=v;
 
-/* mobile menu */
+/* Mobile Menu */
 mobBtn.onclick=()=>mobilePanel.classList.toggle("open");
 
-/* TRANSLATION FULL FIX */
+/* Translation */
 const t={
 hi:{
 menu:["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"],
 org:"भारत अभ्युदय संस्थान",
-title:"सशक्त समाज • आत्मनिर्भर भारत"
+title:"सशक्त समाज • आत्मनिर्भर भारत",
+text:"आपका सहयोग केवल दान नहीं — यह समाज में स्थायी परिवर्तन की शक्ति है।",
+slider:"वर्तमान पहल",
+donate:"दान करें",
+read:"विस्तार से देखें"
 },
 en:{
 menu:["Home","About","Initiatives","Documents","Donate Now","Gallery","Contact"],
 org:"Bharat Abhyudaya Sansthan",
-title:"Empowered Society • Self-Reliant India"
+title:"Empowered Society • Self-Reliant India",
+text:"Your contribution creates lasting social impact and builds a self-reliant society.",
+slider:"CURRENT INITIATIVES",
+donate:"Donate Now",
+read:"Read More"
 }
 };
 
@@ -385,6 +415,10 @@ document.querySelectorAll(".mnav a")
 
 heroOrg.textContent=d.org;
 heroTitle.textContent=d.title;
+heroText.textContent=d.text;
+sliderMain.textContent=d.slider;
+donateBtn.textContent=d.donate;
+readBtn.textContent=d.read;
 footBrand.textContent=d.org;
 
 btnHi.classList.toggle("active",l==="hi");
