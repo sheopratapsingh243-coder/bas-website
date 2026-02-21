@@ -1,6 +1,11 @@
 function initLang(){
 
-const t={
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+if(!btnHi || !btnEn) return;
+
+  const t={
 hi:{
 home:"मुख्य पृष्ठ",
 about:"परिचय",
