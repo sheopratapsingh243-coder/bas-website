@@ -1,3 +1,73 @@
+<style>
+
+.mainHeader{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(226,232,240,.95);
+}
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 0;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+}
+
+.brandText b{
+display:block;
+font-size:14px;
+}
+
+.brandText span{
+font-size:12px;
+color:#475569;
+}
+
+.menu{
+display:flex;
+gap:18px;
+font-weight:900;
+}
+
+.menu a{
+text-decoration:none;
+color:#475569;
+}
+
+.menu a:hover{
+color:#0b5aa6;
+}
+
+.toggle{
+display:flex;
+gap:8px;
+}
+
+.pill{
+border:1px solid #e2e8f0;
+background:#fff;
+padding:8px 12px;
+border-radius:999px;
+font-weight:900;
+cursor:pointer;
+}
+
+.pill.active{
+background:linear-gradient(135deg,#0b5aa6,#083a6c);
+color:#fff;
+}
+
+</style>
 <header class="mainHeader">
 
 <div class="wrap nav">
