@@ -568,5 +568,14 @@ initLang();
 <main id="top">
 </main>
 <script src="lang.js"></script>
+  
+  <script>
+document.addEventListener("DOMContentLoaded",function(){
+if(typeof initLang==="function"){
+initLang();
+}
+});
+</script>
+  
 </body>
 </html>
