@@ -125,7 +125,13 @@ fetch("components/header.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("header").innerHTML=data;
+
+setTimeout(()=>{
+if(typeof initLang==="function"){
 initLang();
+}
+},200);
+
 });
 </script>
 
