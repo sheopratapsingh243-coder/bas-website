@@ -562,11 +562,7 @@ initLang();
 </footer>
 
 <a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
-
-<script>
-  
-<main id="top">
-</main>
+<!-- GLOBAL LANGUAGE SYSTEM -->
 <script src="lang.js"></script>
   
   <script>
@@ -574,9 +570,73 @@ document.addEventListener("DOMContentLoaded",function(){
 if(typeof initLang==="function"){
 initLang();
 }
-});
-    
-</script>
   
+});
+</script>
+<script>
+
+/* =========================
+   INITIATIVES SLIDER
+========================= */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const track = document.getElementById("track");
+if(!track) return;
+
+const slides = track.children;
+const dotsBox = document.getElementById("dots");
+
+let index = 0;
+
+/* CREATE DOTS */
+dotsBox.innerHTML="";
+for(let i=0;i<slides.length;i++){
+  const d=document.createElement("button");
+  d.className="dot"+(i===0?" active":"");
+  d.onclick=()=>goTo(i);
+  dotsBox.appendChild(d);
+}
+
+function updateDots(){
+[...dotsBox.children].forEach((d,i)=>{
+d.classList.toggle("active",i===index);
+});
+}
+
+function goTo(i){
+index=(i+slides.length)%slides.length;
+track.style.transform=`translateX(-${index*100}%)`;
+updateDots();
+}
+
+/* ARROWS */
+document.getElementById("prevBtn")
+?.addEventListener("click",()=>goTo(index-1));
+
+document.getElementById("nextBtn")
+?.addEventListener("click",()=>goTo(index+1));
+
+/* AUTO SLIDE */
+setInterval(()=>{
+goTo(index+1);
+},6000);
+
+/* SWIPE SUPPORT */
+let startX=0;
+track.addEventListener("pointerdown",(e)=>{
+startX=e.clientX;
+});
+
+track.addEventListener("pointerup",(e)=>{
+let dx=e.clientX-startX;
+if(Math.abs(dx)>50){
+dx<0?goTo(index+1):goTo(index-1);
+}
+});
+
+});
+
+</script>  
 </body>
 </html>
