@@ -4,7 +4,151 @@ const btnHi=document.getElementById("btnHi");
 const btnEn=document.getElementById("btnEn");
 
 if(!btnHi || !btnEn) return;
+const translations = {
 
+hi:{
+contactBtn:"संपर्क करें",
+donateBtn:"दान करें",
+
+initiatives:[
+{
+tag:"Education",
+title:"शिक्षा सारथी (बाल शिक्षा एवं विकास)",
+desc:"आर्थिक रूप से कमजोर बच्चों को शिक्षा से जोड़ने का प्रयास।",
+impact:"आपका सहयोग बच्चों का भविष्य बदल सकता है।",
+trust:"हम पारदर्शिता के साथ कार्य करते हैं।"
+},
+{
+tag:"Women",
+title:"महिला सशक्तिकरण",
+desc:"महिलाओं को आत्मनिर्भर बनाने हेतु मार्गदर्शन।",
+impact:"एक महिला सशक्त तो समाज सशक्त।",
+trust:"हर सहयोग जिम्मेदारी से उपयोग किया जाता है।"
+},
+{
+tag:"Health",
+title:"स्वास्थ्य सहायता",
+desc:"जरूरतमंदों को चिकित्सा सहायता।",
+impact:"समय पर सहायता जीवन बचाती है।",
+trust:"सभी सहयोग पारदर्शी।"
+},
+{
+tag:"Emergency",
+title:"एंबुलेंस सेवा",
+desc:"आपातकालीन चिकित्सा परिवहन सहयोग।",
+impact:"समय पर मदद जीवनरक्षक।",
+trust:"सेवा ही उद्देश्य।"
+},
+{
+tag:"Care",
+title:"वृद्धजन सेवा",
+desc:"बुजुर्गों की देखभाल एवं सहायता।",
+impact:"सम्मानपूर्ण जीवन हमारा लक्ष्य।",
+trust:"विश्वास के साथ सेवा।"
+},
+{
+tag:"Skills",
+title:"कौशल विकास",
+desc:"युवाओं को रोजगार कौशल।",
+impact:"आत्मनिर्भर भारत की दिशा।",
+trust:"जिम्मेदार सहयोग।"
+},
+{
+tag:"Support",
+title:"सामाजिक सहायता",
+desc:"संकटग्रस्त परिवारों को सहायता।",
+impact:"मानवता सर्वोपरि।",
+trust:"पारदर्शी कार्य।"
+},
+{
+tag:"GauSeva",
+title:"गौसेवा",
+desc:"घायल एवं बेसहारा गौवंश सेवा।",
+impact:"करुणा और संस्कृति संरक्षण।",
+trust:"समर्पित सेवा।"
+},
+{
+tag:"Heritage",
+title:"धरोहर संरक्षण",
+desc:"सांस्कृतिक विरासत संरक्षण।",
+impact:"भविष्य की पीढ़ियों हेतु संरक्षण।",
+trust:"सामाजिक जिम्मेदारी।"
+}
+]
+},
+
+en:{
+contactBtn:"Contact",
+donateBtn:"Donate Now",
+
+initiatives:[
+{
+tag:"Education",
+title:"Shiksha Sarathi",
+desc:"Connecting underprivileged children with education.",
+impact:"Your support changes futures.",
+trust:"Transparent service."
+},
+{
+tag:"Women",
+title:"Women Empowerment",
+desc:"Helping women become self-reliant.",
+impact:"Empowered women build society.",
+trust:"Responsible utilization."
+},
+{
+tag:"Health",
+title:"Health Support",
+desc:"Medical help for needy people.",
+impact:"Timely care saves lives.",
+trust:"Transparent work."
+},
+{
+tag:"Emergency",
+title:"Ambulance Service",
+desc:"Emergency medical transport.",
+impact:"Life saving assistance.",
+trust:"Service first."
+},
+{
+tag:"Care",
+title:"Old Age Care",
+desc:"Support for senior citizens.",
+impact:"Dignified living.",
+trust:"Trusted service."
+},
+{
+tag:"Skills",
+title:"Skill Development",
+desc:"Employment skill training.",
+impact:"Self-reliance growth.",
+trust:"Responsible support."
+},
+{
+tag:"Support",
+title:"Community Support",
+desc:"Relief during crisis.",
+impact:"Humanity matters.",
+trust:"Transparent help."
+},
+{
+tag:"GauSeva",
+title:"GauSeva",
+desc:"Care for abandoned cattle.",
+impact:"Compassion driven service.",
+trust:"Dedicated effort."
+},
+{
+tag:"Heritage",
+title:"Heritage Conservation",
+desc:"Protecting cultural heritage.",
+impact:"Future preservation.",
+trust:"Social responsibility."
+}
+]
+}
+
+};
   const t={
 hi:{
 home:"मुख्य पृष्ठ",
@@ -58,6 +202,8 @@ document.getElementById("btnEn")
 .onclick=()=>setLang("en");
 
 setLang(localStorage.getItem("lang")||"hi");
+initInitiativesPage(localStorage.getItem("lang")||"hi");
+initInitiativesPage(lang);
 }
 
 /* ===== INITIATIVES PAGE CONNECT ===== */
