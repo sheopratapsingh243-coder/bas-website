@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Bharat Abhyudaya Sansthan</title>
 
 <style>
@@ -10,7 +11,6 @@
 --brand:#0b5aa6;
 --accent:#f58b1f;
 --border:#e2e8f0;
---muted:#64748b;
 --radius:20px;
 --max:1120px;
 }
@@ -20,10 +20,9 @@ body{
 margin:0;
 font-family:system-ui,Segoe UI,Roboto;
 background:#f8fafc;
-color:#0f172a;
 }
+
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
-a{text-decoration:none;color:inherit}
 
 /* ================= HEADER SAME ================= */
 
@@ -31,32 +30,22 @@ header{
 position:sticky;
 top:0;
 z-index:50;
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(10px);
+background:#fff;
 border-bottom:1px solid var(--border);
 }
 
 .nav{
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 padding:12px 0;
 }
 
-.brand{
-display:flex;
-gap:10px;
-align-items:center;
-}
-
-.logo{
-width:46px;height:46px;
-border-radius:999px;
-border:1px solid var(--border);
-}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:46px;height:46px;border-radius:999px}
 
 .brand b{font-size:14px}
-.brand span{font-size:12px;color:var(--muted)}
+.brand span{font-size:12px;color:#64748b}
 
 .menu{
 display:none;
@@ -64,8 +53,12 @@ gap:18px;
 font-weight:900;
 color:#475569;
 }
+.menu a{text-decoration:none;color:inherit}
 .menu a:hover{color:var(--brand)}
-@media(min-width:980px){.menu{display:flex}}
+
+@media(min-width:980px){
+.menu{display:flex}
+}
 
 .toggle{display:flex;gap:8px}
 .pill{
@@ -73,58 +66,19 @@ border:1px solid var(--border);
 padding:8px 12px;
 border-radius:999px;
 cursor:pointer;
-font-weight:900;
 background:#fff;
+font-weight:900;
 }
 .pill.active{
-background:linear-gradient(135deg,var(--brand),#083a6c);
+background:var(--brand);
 color:#fff;
 }
 
-.mobBtn{
-display:inline-flex;
-width:42px;height:42px;
-align-items:center;
-justify-content:center;
-border-radius:14px;
-border:1px solid var(--border);
-background:#fff;
-cursor:pointer;
-}
-@media(min-width:980px){.mobBtn{display:none}}
-
-.mobilePanel{
-display:none;
-border-top:1px solid var(--border);
-padding:12px 0;
-}
-.mobilePanel.open{display:block}
-
-.mnav{display:grid;gap:10px}
-.mnav a{
-padding:12px;
-border:1px solid var(--border);
-border-radius:14px;
-font-weight:900;
-background:#fff;
-}
-
-/* VISITOR */
-.visitor{
-text-align:right;
-padding:6px 16px;
-font-weight:900;
-color:var(--brand);
-}
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
 padding:60px 0;
-background:
-linear-gradient(135deg,
-rgba(11,90,166,.08),
-rgba(245,139,31,.08));
+background:linear-gradient(135deg,#eef4fb,#fff);
 }
 
 .heroGrid{
@@ -132,45 +86,39 @@ display:grid;
 gap:30px;
 }
 @media(min-width:900px){
-.heroGrid{grid-template-columns:1.2fr .8fr;}
+.heroGrid{grid-template-columns:1.2fr .8fr}
 }
 
 .hero h2{
 font-size:34px;
-margin:0;
 color:var(--brand);
+margin:0;
 }
 
 .hero h1{
-margin:8px 0;
 font-size:32px;
+margin:10px 0;
 }
-
-.hero p{
-color:var(--muted);
-line-height:1.8;
-}
-
-/* LEGAL CARD */
 
 .legalCard{
 background:#fff;
 padding:22px;
 border-radius:var(--radius);
-border:1px solid var(--border);
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
-/* SLIDER */
+/* ================= SLIDER ================= */
 
-.sliderSection{padding:30px 0}
+.sliderSection{
+padding:30px 0;
+}
 
 .slider{
 position:relative;
-height:70vh;
-background:#fff;
-border-radius:var(--radius);
+height:75vh;
+border-radius:20px;
 overflow:hidden;
+background:#fff;
 }
 
 .slide{
@@ -180,9 +128,10 @@ height:100%;
 opacity:0;
 transition:.6s;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 }
+
 .slide.active{opacity:1}
 
 .slide img{
@@ -191,66 +140,59 @@ height:100%;
 object-fit:contain;
 }
 
+/* arrows */
+
 .arrow{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:rgba(0,0,0,.4);
+background:rgba(0,0,0,.5);
 color:#fff;
-padding:10px 14px;
+padding:12px;
 cursor:pointer;
 border-radius:8px;
+z-index:5;
 }
 .arrow.left{left:20px}
 .arrow.right{right:20px}
 
-.buttonWrapper{
+/* CTA BUTTONS */
+
+.ctaWrap{
 display:flex;
-gap:12px;
-margin-top:14px;
+justify-content:center;
+gap:14px;
+margin-top:15px;
 }
 
-.buttonWrapper button{
-flex:1;
-padding:14px;
-font-weight:900;
+.ctaWrap button{
+padding:14px 26px;
 border:none;
 border-radius:10px;
-color:#fff;
+font-weight:900;
 cursor:pointer;
+color:#fff;
+transition:.3s;
 }
 
 .btnDonate{
-background:linear-gradient(135deg,var(--accent),#ff7a00);
+background:linear-gradient(135deg,#ff8a00,#ff6a00);
 }
+.btnDonate:hover{
+transform:translateY(-2px);
+}
+
 .btnRead{
-background:linear-gradient(135deg,var(--brand),#083a6c);
+background:linear-gradient(135deg,#0b5aa6,#083a6c);
 }
-
-/* GRID */
-
-.photoGrid{
-display:grid;
-gap:16px;
-padding:40px 0;
-}
-@media(min-width:768px){
-.photoGrid{grid-template-columns:repeat(3,1fr)}
-}
-.photoGrid img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:12px;
-cursor:pointer;
+.btnRead:hover{
+transform:translateY(-2px);
 }
 
 footer{
-border-top:1px solid var(--border);
-padding:20px;
 text-align:center;
-background:#fff;
-color:var(--muted);
+padding:20px;
+border-top:1px solid var(--border);
 }
 </style>
 </head>
@@ -270,43 +212,23 @@ color:var(--muted);
 </div>
 
 <nav class="menu">
-<a href="index.html" id="mHome"></a>
-<a href="about.html" id="mAbout"></a>
-<a href="initiatives.html" id="mWork"></a>
-<a href="documents.html" id="mDocs"></a>
-<a href="donate.html" id="mDonate"></a>
-<a href="gallery.html" id="mGallery"></a>
-<a href="contact.html" id="mContact"></a>
+<a id="mHome"></a>
+<a id="mAbout"></a>
+<a id="mWork"></a>
+<a id="mDocs"></a>
+<a id="mDonate"></a>
+<a id="mGallery"></a>
+<a id="mContact"></a>
 </nav>
 
-<div style="display:flex;gap:10px;align-items:center">
-<button class="mobBtn" id="mobBtn">☰</button>
 <div class="toggle">
 <button class="pill active" id="btnHi">हिन्दी</button>
 <button class="pill" id="btnEn">English</button>
 </div>
-</div>
 
 </div>
-
-<div class="mobilePanel" id="mobilePanel">
-<div class="mnav">
-<a href="index.html"></a>
-<a href="about.html"></a>
-<a href="initiatives.html"></a>
-<a href="documents.html"></a>
-<a href="donate.html"></a>
-<a href="gallery.html"></a>
-<a href="contact.html"></a>
-</div>
-</div>
-
 </div>
 </header>
-
-<div class="visitor">
-Visitors : <span id="visitorCount"></span>
-</div>
 
 <section class="hero">
 <div class="wrap heroGrid">
@@ -314,10 +236,7 @@ Visitors : <span id="visitorCount"></span>
 <div>
 <h2>Bharat Abhyudaya Sansthan</h2>
 <h1>Empowered Society • Self-Reliant India</h1>
-<p>
-Transforming lives through education, healthcare,
-women empowerment and social welfare initiatives.
-</p>
+<p>Transforming lives through education, healthcare and empowerment.</p>
 </div>
 
 <div class="legalCard">
@@ -334,16 +253,12 @@ women empowerment and social welfare initiatives.
 
 <div class="slider" id="slider"></div>
 
-<div class="buttonWrapper">
-<button id="donateBtn" class="btnDonate"></button>
-<button id="readBtn" class="btnRead"></button>
+<div class="ctaWrap">
+<button class="btnDonate" id="donateBtn">Donate Now</button>
+<button class="btnRead" id="readBtn">Read More</button>
 </div>
 
 </div>
-</section>
-
-<section>
-<div class="wrap photoGrid" id="grid"></div>
 </section>
 
 <footer>
@@ -352,17 +267,9 @@ women empowerment and social welfare initiatives.
 
 <script>
 
-/* VISITOR START 140000 */
-let v=localStorage.getItem("visitor")||140000;
-v++;
-localStorage.setItem("visitor",v);
-visitorCount.textContent=v;
+/* ===== SLIDER ===== */
 
-/* MOBILE MENU */
-mobBtn.onclick=()=>mobilePanel.classList.toggle("open");
-
-/* SLIDER */
-const data=[
+const images=[
 "shiksha.jpg",
 "ambulance.jpg",
 "gauseva.jpg",
@@ -372,73 +279,58 @@ const data=[
 ];
 
 const slider=document.getElementById("slider");
-const grid=document.getElementById("grid");
 
-data.forEach((img,i)=>{
+images.forEach((img,i)=>{
 const s=document.createElement("div");
 s.className="slide"+(i===0?" active":"");
 s.innerHTML=`<img src="./assets/${img}">`;
 slider.appendChild(s);
-
-const g=document.createElement("img");
-g.src=`./assets/${img}`;
-g.onclick=()=>show(i);
-grid.appendChild(g);
 });
 
 let slides=document.querySelectorAll(".slide");
 let cur=0;
 
 function show(i){
-slides.forEach(x=>x.classList.remove("active"));
+slides.forEach(s=>s.classList.remove("active"));
 slides[i].classList.add("active");
 cur=i;
-updateButtons();
 }
 
-setInterval(()=>show((cur+1)%slides.length),5000);
+function next(){show((cur+1)%slides.length)}
+function prev(){show((cur-1+slides.length)%slides.length)}
 
-/* ARROWS */
+setInterval(next,5000);
+
 slider.innerHTML+=`
-<div class="arrow left" onclick="show((cur-1+slides.length)%slides.length)">❮</div>
-<div class="arrow right" onclick="show((cur+1)%slides.length)">❯</div>`;
+<div class="arrow left" onclick="prev()">❮</div>
+<div class="arrow right" onclick="next()">❯</div>`;
 
-/* DYNAMIC BUTTONS */
-const donateBtn=document.getElementById("donateBtn");
-const readBtn=document.getElementById("readBtn");
 
-function updateButtons(){
+/* ===== BUTTONS ===== */
+
 donateBtn.onclick=()=>location.href="donate.html";
 readBtn.onclick=()=>location.href="initiatives.html";
-}
-updateButtons();
 
-/* TOGGLE */
+
+/* ===== HEADER TRANSLATION FIX ===== */
+
 const t={
-hi:{menu:["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"],donate:"दान करें",read:"विस्तार से देखें"},
-en:{menu:["Home","About","Our Initiatives","Documents","Donate Now","Gallery","Contact"],donate:"Donate Now",read:"Read More"}
+hi:["मुख्य पृष्ठ","परिचय","हमारे प्रयास","दस्तावेज़","दान करें","गैलरी","संपर्क"],
+en:["Home","About","Our Initiatives","Documents","Donate Now","Gallery","Contact"]
 };
 
 function setLang(l){
 document.querySelectorAll(".menu a")
-.forEach((e,i)=>e.textContent=t[l].menu[i]);
-
-document.querySelectorAll(".mnav a")
-.forEach((e,i)=>e.textContent=t[l].menu[i]);
-
-donateBtn.textContent=t[l].donate;
-readBtn.textContent=t[l].read;
+.forEach((e,i)=>e.textContent=t[l][i]);
 
 btnHi.classList.toggle("active",l==="hi");
 btnEn.classList.toggle("active",l==="en");
-
-localStorage.setItem("bas_lang",l);
 }
 
 btnHi.onclick=()=>setLang("hi");
 btnEn.onclick=()=>setLang("en");
 
-setLang(localStorage.getItem("bas_lang")||"hi");
+setLang("hi");
 
 </script>
 
