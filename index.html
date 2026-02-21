@@ -509,28 +509,10 @@ program:"CURRENT RUNNING PROGRAMMES"
 }
 };
 
-function setLang(lang){
+</script>
+  <script>
 
-let d=t[lang];
-
-document.getElementById("brandText").textContent=d.brand;
-document.getElementById("brandSub").textContent=d.sub;
-
-document.getElementById("mHome").textContent=d.home;
-document.getElementById("mAbout").textContent=d.about;
-document.getElementById("mWork").textContent=d.work;
-document.getElementById("mDocs").textContent=d.docs;
-document.getElementById("mDonate").textContent=d.donate;
-document.getElementById("mGallery").textContent=d.gallery;
-document.getElementById("mContact").textContent=d.contact;
-
-document.querySelector(".sectionTitle").textContent=d.program;
-
-localStorage.setItem("bas_lang",lang);
-
-
-
-<script>
+/* ===== LANGUAGE SYSTEM FINAL ===== */
 
 const btnHi=document.getElementById("btnHi");
 const btnEn=document.getElementById("btnEn");
@@ -568,7 +550,7 @@ program:"CURRENT RUNNING PROGRAMMES"
 
 function setLang(lang){
 
-let d=t[lang];
+const d=t[lang];
 
 document.getElementById("brandText").textContent=d.brand;
 document.getElementById("brandSub").textContent=d.sub;
@@ -591,14 +573,15 @@ btnHi.classList.toggle("active",lang==="hi");
 btnEn.classList.toggle("active",lang==="en");
 }
 
-btnHi.onclick=()=>setLang("hi");
-btnEn.onclick=()=>setLang("en");
+btnHi.addEventListener("click",()=>setLang("hi"));
+btnEn.addEventListener("click",()=>setLang("en"));
 
 setLang(localStorage.getItem("bas_lang")||"hi");
 
 </script>
 </body>
 </html>
+
 
 
 
