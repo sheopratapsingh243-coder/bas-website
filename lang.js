@@ -184,7 +184,7 @@ el.textContent=t[lang][el.dataset.i18n];
 document.getElementById("brandText").textContent=t[lang].brand;
 document.getElementById("brandSub").textContent=t[lang].sub;
 
-localStorage.setItem("lang",lang);
+localStorage.setItem("bas_lang",lang);
 btnHi.classList.remove("active");
 btnEn.classList.remove("active");
 
@@ -201,10 +201,11 @@ document.getElementById("btnHi")
 document.getElementById("btnEn")
 .onclick=()=>setLang("en");
 
-setLang(localStorage.getItem("lang")||"hi");
-initInitiativesPage(localStorage.getItem("lang")||"hi");
-initInitiativesPage(lang);
-}
+const savedLang =
+localStorage.getItem("bas_lang") || "hi";
+
+setLang(savedLang);
+initInitiativesPage(savedLang);
 
 /* ===== INITIATIVES PAGE CONNECT ===== */
 
