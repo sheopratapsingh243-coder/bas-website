@@ -266,6 +266,22 @@ background:#fff;
 </head>
 
 <body>
+  
+<div id="header"></div>
+
+<script>
+fetch("components/header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
+
+setTimeout(()=>{
+if(typeof initLang==="function"){
+initLang();
+}
+},200);
+});
+</script>
 
 <main id="top">
 
@@ -943,12 +959,7 @@ background:#fff;
 
   // Ensure first slide
   goTo(0);
-</script>
-
-<body>
-
-<div id="header"></div>
-
+  
 <script>
 fetch("components/header.html")
 .then(res=>res.text())
