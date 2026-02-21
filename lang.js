@@ -40,7 +40,35 @@ sub:"Upliftment to Self-Reliant India"
 
 };
 
+const heroText = {
 
+hi:{
+title:"हमारे प्रयास",
+tagline:"हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, वृद्धजन सेवा और सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य कर रहे हैं।",
+donate:"दान करें",
+join:"हमसे जुड़ें",
+note:"हमारा प्रयास है कि हर सहयोग पारदर्शिता के साथ जरूरतमंदों तक पहुँचे।",
+focus:"हमारा फोकस",
+f1t:"सही जगह, सही समय",
+f1d:"हम स्थानीय स्तर पर वास्तविक जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।",
+f2t:"पारदर्शिता",
+f2d:"हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।"
+},
+
+en:{
+title:"Our Initiatives",
+tagline:"We work in education, health, women empowerment, gau seva, elderly care and community support.",
+donate:"Donate Now",
+join:"Get Involved",
+note:"We ensure every contribution reaches the needy transparently.",
+focus:"Our Focus",
+f1t:"Right Help, Right Time",
+f1d:"We understand real needs at local level.",
+f2t:"Transparency",
+f2d:"Every contribution is used responsibly."
+}
+
+};
 /* ========= INITIATIVES DATA ========= */
 
 const initiativesData = {
@@ -104,7 +132,7 @@ localStorage.setItem("bas_lang",lang);
 
 /* initiatives page update */
 initInitiativesPage(lang);
-
+updateInitiativesHero(lang);
 /* toggle active */
 btnHi.classList.remove("active");
 btnEn.classList.remove("active");
@@ -116,7 +144,25 @@ btnEn.classList.remove("active");
 
 
 /* ========= INITIATIVES SLIDER ========= */
+function updateInitiativesHero(lang){
 
+if(!document.getElementById("title")) return;
+
+const h = heroText[lang];
+
+document.getElementById("title").textContent = h.title;
+document.getElementById("tagline").textContent = h.tagline;
+document.getElementById("donateTop").textContent = h.donate;
+document.getElementById("contactTop").textContent = h.join;
+document.getElementById("noteTop").textContent = h.note;
+
+document.getElementById("focusTitle").textContent = h.focus;
+document.getElementById("f1t").textContent = h.f1t;
+document.getElementById("f1d").textContent = h.f1d;
+document.getElementById("f2t").textContent = h.f2t;
+document.getElementById("f2d").textContent = h.f2d;
+
+}
 function initInitiativesPage(lang){
 
 if(!document.getElementById("track")) return;
