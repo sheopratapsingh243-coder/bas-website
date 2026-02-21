@@ -278,40 +278,10 @@ text-decoration:none;
 </head>
 
 <body>
+<div id="header"></div>
 
-<!-- ===== HEADER (ABOUT SAME) ===== -->
-
-<header>
-<div class="wrap">
-<div class="nav">
-
-<a class="brand" href="index.html">
-<img class="logo" src="./assets/logo.jpg">
-<div>
-<b id="brandText">भारत अभ्युदय संस्थान</b>
-<span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
-</div>
-</a>
-
-<nav class="menu">
-<a id="mHome" href="index.html">मुख्य पृष्ठ</a>
-<a id="mAbout" href="about.html">परिचय</a>
-<a id="mWork" href="initiatives.html">हमारे प्रयास</a>
-<a id="mDocs" href="documents.html">दस्तावेज़</a>
-<a id="mDonate" href="donate.html">दान करें</a>
-<a id="mGallery" href="gallery.html">गैलरी</a>
-<a id="mContact" href="contact.html">संपर्क</a>
-</nav>
-
-<div style="display:flex;gap:10px">
-<button class="pill active" id="btnHi">हिन्दी</button>
-<button class="pill" id="btnEn">English</button>
-</div>
-
-</div>
-</div>
-</header>
-
+<script src="header.js"></script>
+<script src="lang.js"></script>
 <div class="counter">
 Visitors : <span id="visit">169000</span>
 </div>
@@ -555,3 +525,4 @@ setLang(localStorage.getItem("bas_lang")||"hi");
 
 </body>
 </html>
+
