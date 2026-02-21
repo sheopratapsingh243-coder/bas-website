@@ -30,72 +30,7 @@ overflow-x:hidden;
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* HEADER */
-header{
-position:sticky;top:0;z-index:50;
-background:rgba(255,255,255,.92);
-backdrop-filter: blur(10px);
-border-bottom:1px solid rgba(226,232,240,.95);
-}
-.nav{
-display:flex;align-items:center;justify-content:space-between;
-padding:12px 0;gap:10px;
-}
-.brand{
-display:flex;align-items:center;gap:10px;
-min-width:220px;
-}
-.logo{
-width:46px;height:46px;border-radius:999px;
-border:1px solid rgba(226,232,240,.95);
-object-fit:cover;background:#fff;
-}
-.brand b{display:block;font-size:14px;line-height:1.15;}
-.brand span{display:block;font-size:12px;color:var(--muted);}
-
-.menu{
-display:none;gap:18px;font-size:14px;
-color:var(--muted);font-weight:900;
-}
-.menu a:hover{color:var(--brand)}
-@media(min-width:980px){.menu{display:flex}}
-
-.toggle{display:flex;gap:8px}
-.pill{
-border:1px solid rgba(226,232,240,.95);
-background:#fff;padding:8px 12px;
-border-radius:999px;font-size:13px;
-cursor:pointer;font-weight:900;
-}
-.pill.active{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-color:#fff;border-color:transparent;
-}
-
-/* MOBILE MENU */
-.mobBtn{
-display:inline-flex;align-items:center;justify-content:center;
-width:42px;height:42px;border-radius:14px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;cursor:pointer;font-size:18px;font-weight:950;
-}
-@media(min-width:980px){.mobBtn{display:none}}
-
-.mobilePanel{
-display:none;padding:12px 0 14px;
-border-top:1px solid rgba(226,232,240,.95);
-}
-.mobilePanel.open{display:block}
-@media(min-width:980px){.mobilePanel{display:none!important}}
-
-.mnav{display:grid;gap:10px}
-.mnav a{
-padding:12px 14px;border-radius:16px;
-border:1px solid rgba(226,232,240,.95);
-background:#fff;font-weight:950;
-}
-
-/* SECTION */
+  /* SECTION */
 section{padding:50px 0;text-align:center}
 .badge{
 display:inline-flex;padding:8px 12px;border-radius:999px;
@@ -154,52 +89,21 @@ color:var(--muted);background:#fff;font-size:14px;
 
 <body>
 
-<header>
-<div class="wrap">
-<div class="nav">
+<div id="header"></div>
 
-<a class="brand" href="index.html">
-<img class="logo" src="./assets/logo.jpg">
-<div>
-<b id="brandText">भारत अभ्युदय संस्थान</b>
-<span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
-</div>
-</a>
+<script>
+fetch("components/header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
 
-<nav class="menu">
-<a id="m1" href="index.html">मुख्य पृष्ठ</a>
-<a id="m2" href="about.html">परिचय</a>
-<a id="m3" href="initiatives.html">हमारे प्रयास</a>
-<a id="m4" href="documents.html">दस्तावेज़</a>
-<a id="m5" href="donate.html">दान करें</a>
-<a id="m6" href="gallery.html" style="color:#0b5aa6;font-weight:900;">गैलरी</a>
-<a id="m7" href="contact.html">संपर्क</a>
-</nav>
-
-<div style="display:flex;gap:10px;align-items:center">
-<button class="mobBtn" id="mobBtn">☰</button>
-<div class="toggle">
-<button class="pill active" id="btnHi">हिन्दी</button>
-<button class="pill" id="btnEn">English</button>
-</div>
-</div>
-
-</div>
-
-<div class="mobilePanel" id="mobilePanel">
-<div class="mnav">
-<a href="index.html">मुख्य पृष्ठ</a>
-<a href="about.html">परिचय</a>
-<a href="initiatives.html">हमारे प्रयास</a>
-<a href="documents.html">दस्तावेज़</a>
-<a href="donate.html">दान करें</a>
-<a href="gallery.html">गैलरी</a>
-<a href="contact.html">संपर्क</a>
-</div>
-</div>
-
-</div>
-</header>
+setTimeout(()=>{
+if(typeof initLang==="function"){
+initLang();
+}
+},200);
+});
+</script>
 
 <section>
 <div class="wrap">
@@ -246,11 +150,6 @@ color:var(--muted);background:#fff;font-size:14px;
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* MOBILE MENU */
-document.getElementById("mobBtn").addEventListener("click",()=>{
-document.getElementById("mobilePanel").classList.toggle("open");
-});
-
 /* LANGUAGE TOGGLE FIX */
 const btnHi=document.getElementById("btnHi");
 const btnEn=document.getElementById("btnEn");
@@ -264,14 +163,6 @@ brandSub.textContent="Upliftment to Self-Reliant India";
 titleText.textContent="Gallery";
 descText.textContent="Glimpses of our service activities.";
 footText.textContent="Bharat Abhyudaya Sansthan";
-
-m1.textContent="Home";
-m2.textContent="About";
-m3.textContent="Our Initiatives";
-m4.textContent="Documents";
-m5.textContent="Donate";
-m6.textContent="Gallery";
-m7.textContent="Contact";
 
 btnEn.classList.add("active");
 btnHi.classList.remove("active");
@@ -312,7 +203,10 @@ index=(index+n+slides.length)%slides.length;
 showSlide(index);
 }
 setInterval(()=>changeSlide(1),5000);
+  
 </script>
-
+  
+<script src="lang.js"></script>
+  
 </body>
 </html>
