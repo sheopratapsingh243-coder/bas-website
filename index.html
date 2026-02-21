@@ -427,20 +427,6 @@ let v=169000;
 setInterval(()=>document.getElementById("visit").innerText=++v,4000);
 
 /* language toggle */
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-btnHi.onclick=()=>{
-btnHi.classList.add("active");
-btnEn.classList.remove("active");
-localStorage.setItem("bas_lang","hi");
-};
-
-btnEn.onclick=()=>{
-btnEn.classList.add("active");
-btnHi.classList.remove("active");
-localStorage.setItem("bas_lang","en");
-};
 
 </script>
 <a href="donate.html" class="donateFloat">
@@ -492,6 +478,71 @@ triggered=true;
 });
 
 </script>
+  <script>
+
+const t={
+hi:{
+brand:"भारत अभ्युदय संस्थान",
+sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+home:"मुख्य पृष्ठ",
+about:"परिचय",
+work:"हमारे प्रयास",
+docs:"दस्तावेज़",
+donate:"दान करें",
+gallery:"गैलरी",
+contact:"संपर्क",
+program:"CURRENT RUNNING PROGRAMMES"
+},
+en:{
+brand:"Bharat Abhyudaya Sansthan",
+sub:"Upliftment to Self-Reliant India",
+home:"Home",
+about:"About",
+work:"Our Initiatives",
+docs:"Documents",
+donate:"Donate Now",
+gallery:"Gallery",
+contact:"Contact",
+program:"CURRENT RUNNING PROGRAMMES"
+}
+};
+
+function setLang(lang){
+
+let d=t[lang];
+
+document.getElementById("brandText").textContent=d.brand;
+document.getElementById("brandSub").textContent=d.sub;
+
+document.getElementById("mHome").textContent=d.home;
+document.getElementById("mAbout").textContent=d.about;
+document.getElementById("mWork").textContent=d.work;
+document.getElementById("mDocs").textContent=d.docs;
+document.getElementById("mDonate").textContent=d.donate;
+document.getElementById("mGallery").textContent=d.gallery;
+document.getElementById("mContact").textContent=d.contact;
+
+document.querySelector(".sectionTitle").textContent=d.program;
+
+localStorage.setItem("bas_lang",lang);
+
+document.getElementById("btnHi")
+.classList.toggle("active",lang==="hi");
+
+document.getElementById("btnEn")
+.classList.toggle("active",lang==="en");
+}
+
+document.getElementById("btnHi")
+.addEventListener("click",()=>setLang("hi"));
+
+document.getElementById("btnEn")
+.addEventListener("click",()=>setLang("en"));
+
+setLang(localStorage.getItem("bas_lang")||"hi");
+
+</script>
 </body>
 </html>
+
 
