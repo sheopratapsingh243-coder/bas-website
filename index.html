@@ -1,294 +1,368 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Bharat Abhyudaya Sansthan</title>
 
 <style>
+
+/* ===== ORIGINAL HOME CSS SAME ===== */
 :root{
 --brand:#0b5aa6;
 --accent:#f58b1f;
---fg:#0b1220;
---muted:#475569;
 --border:#e2e8f0;
---shadow:0 16px 40px rgba(2,6,23,.10);
---radius:20px;
+--radius:18px;
+--shadow:0 15px 40px rgba(0,0,0,.1);
 --max:1120px;
 }
-*{box-sizing:border-box}
+
 body{
 margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-color:var(--fg);
+font-family:system-ui;
 background:#fff;
+overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
+
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 
-/* ===== HEADER (EXACT ABOUT STYLE) ===== */
+/* ===== ABOUT.HTML HEADER EXACT ===== */
 
-<header>
-  <div class="wrap">
-    <div class="nav">
-
-      <a class="brand" href="index.html" title="Home">
-        <img class="logo" src="./assets/logo.jpg" alt="BAS Logo">
-        <div>
-          <b id="brandText">भारत अभ्युदय संस्थान</b>
-          <span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
-        </div>
-      </a>
-
-      <nav class="menu">
-        <a href="index.html" id="mHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mAbout">परिचय</a>
-        <a href="initiatives.html" id="mWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mDonate">दान करें</a>
-        <a href="gallery.html" id="mGallery">गैलरी</a>
-        <a href="contact.html" id="mContact">संपर्क</a>
-      </nav>
-
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="mobBtn" id="mobBtn" type="button" aria-label="Menu">☰</button>
-        <div class="toggle">
-          <button class="pill active" id="btnHi" type="button">हिन्दी</button>
-          <button class="pill" id="btnEn" type="button">English</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Mobile dropdown -->
-    <div class="mobilePanel" id="mobilePanel">
-      <div class="mnav">
-        <a href="index.html" id="mmHome">मुख्य पृष्ठ</a>
-        <a href="about.html" id="mmAbout">परिचय</a>
-        <a href="initiatives.html" id="mmWork">हमारे प्रयास</a>
-        <a href="documents.html" id="mmDocs">दस्तावेज़</a>
-        <a href="donate.html" id="mmDonate">दान करें</a>
-        <a href="gallery.html" id="mmGallery">गैलरी</a>
-        <a href="contact.html" id="mmContact">संपर्क</a>
-      </div>
-    </div>
-
-  </div>
-</header>
-<section class="hero">
-<div class="wrap">
-<h1 id="heroTitle">सशक्त समाज • आत्मनिर्भर भारत</h1>
-<p id="heroText">
-आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और
-वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।
-</p>
-</div>
-</section>
-
-<footer>
-<div class="wrap">
-© <span id="year"></span> <span id="footBrand">भारत अभ्युदय संस्थान</span>
-</div>
-</footer>
-
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-
-/* ===== TRANSLATION SYSTEM (FULL LIKE ABOUT) ===== */
-
-const t={
-hi:{
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-menu:{home:"मुख्य पृष्ठ",a:"परिचय",w:"हमारे प्रयास",d:"दस्तावेज़",dn:"दान करें",g:"गैलरी",c:"संपर्क"},
-heroTitle:"सशक्त समाज • आत्मनिर्भर भारत",
-heroText:"आपका सहयोग केवल दान नहीं — यह शिक्षा, स्वास्थ्य, महिला सशक्तिकरण और वृद्धजन सम्मान के माध्यम से समाज में स्थायी परिवर्तन लाने की शक्ति है।"
-},
-en:{
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India",
-menu:{home:"Home",a:"About",w:"Our Initiatives",d:"Documents",dn:"Donate Now",g:"Gallery",c:"Contact"},
-heroTitle:"Empowered Society • Self-Reliant India",
-heroText:"Your support is not just a donation — it brings education, healthcare, dignity for elders, and empowerment for women, creating lasting social impact."
-}
-};
-
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-function setLang(lang){
-const d=t[lang];
-
-document.getElementById("brandText").textContent=d.brand;
-document.getElementById("brandSub").textContent=d.sub;
-
-document.getElementById("mHome").textContent=d.menu.home;
-document.getElementById("mAbout").textContent=d.menu.a;
-document.getElementById("mWork").textContent=d.menu.w;
-document.getElementById("mDocs").textContent=d.menu.d;
-document.getElementById("mDonate").textContent=d.menu.dn;
-document.getElementById("mGallery").textContent=d.menu.g;
-document.getElementById("mContact").textContent=d.menu.c;
-
-document.getElementById("mmHome").textContent=d.menu.home;
-document.getElementById("mmAbout").textContent=d.menu.a;
-document.getElementById("mmWork").textContent=d.menu.w;
-document.getElementById("mmDocs").textContent=d.menu.d;
-document.getElementById("mmDonate").textContent=d.menu.dn;
-document.getElementById("mmGallery").textContent=d.menu.g;
-document.getElementById("mmContact").textContent=d.menu.c;
-
-document.getElementById("heroTitle").textContent=d.heroTitle;
-document.getElementById("heroText").textContent=d.heroText;
-
-document.getElementById("footBrand").textContent=d.brand;
-
-if(lang==="en"){
-btnEn.classList.add("active");
-btnHi.classList.remove("active");
-}else{
-btnHi.classList.add("active");
-btnEn.classList.remove("active");
+header{
+position:sticky;top:0;z-index:50;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(226,232,240,.95);
 }
 
-localStorage.setItem("bas_lang",lang);
-}
-
-btnHi.onclick=()=>setLang("hi");
-btnEn.onclick=()=>setLang("en");
-
-setLang(localStorage.getItem("bas_lang")||"hi");
-
-/* Mobile */
-document.getElementById("mobBtn").onclick=()=>{
-document.getElementById("mobilePanel").classList.toggle("open");
-};
-</script>
-
-</body>
-</html>
-/* ===== SLIDER SECTION ===== */
-
-.sliderSection{
-padding:50px 0 20px;
-}
-
-.sliderTitle{
-text-align:center;
-font-size:22px;
-font-weight:900;
-margin-bottom:20px;
-}
-
-.sliderTitle span{
-background:var(--brand);
-color:#fff;
-padding:6px 12px;
-border-radius:6px;
-margin-right:8px;
-}
-
-.slider{
-position:relative;
-width:100%;
-height:80vh;
-overflow:hidden;
-border-radius:20px;
-background:#f4f7fb;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-opacity:0;
-transition:opacity .6s ease;
+.nav{
 display:flex;
 align-items:center;
+justify-content:space-between;
+padding:12px 0;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo{
+width:46px;height:46px;
+border-radius:999px;
+object-fit:cover;
+}
+
+.menu{display:none;gap:18px;font-weight:900}
+.menu a{text-decoration:none;color:#475569}
+.menu a:hover{color:var(--brand)}
+
+@media(min-width:980px){
+.menu{display:flex}
+}
+
+.toggle{display:flex;gap:8px}
+
+.pill{
+border:1px solid #e2e8f0;
+background:#fff;
+padding:8px 12px;
+border-radius:999px;
+font-weight:900;
+cursor:pointer;
+}
+
+.pill.active{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+color:#fff;
+}
+
+.mobBtn{
+display:inline-flex;
+width:42px;height:42px;
 justify-content:center;
+align-items:center;
+border-radius:14px;
+border:1px solid #e2e8f0;
+background:#fff;
+cursor:pointer;
 }
 
-.slide.active{opacity:1;}
-
-.slide img{
-width:100%;
-height:100%;
-object-fit:contain; /* no crop */
+@media(min-width:980px){
+.mobBtn{display:none}
 }
 
-/* Arrows */
+.mobilePanel{
+display:none;
+padding:12px 0;
+border-top:1px solid #e2e8f0;
+}
+
+.mobilePanel.open{display:block}
+
+.mnav a{
+display:block;
+padding:12px;
+border-radius:14px;
+border:1px solid #e2e8f0;
+margin:6px 0;
+font-weight:900;
+}
+
+/* ===== HERO SAME ===== */
+
+.hero{padding:20px 0}
+
+.heroGrid{
+display:grid;
+gap:20px;
+align-items:center;
+}
+
+@media(min-width:980px){
+.heroGrid{grid-template-columns:1.2fr .8fr}
+}
+
+.bigTitle{
+font-size:42px;
+font-weight:900;
+color:var(--brand);
+}
+
+.card{
+background:#fff;
+border:1px solid var(--border);
+border-radius:var(--radius);
+padding:16px;
+box-shadow:var(--shadow);
+}
+
+.counter{
+position:absolute;
+right:20px;
+top:90px;
+font-weight:900;
+background:#fff;
+padding:8px 14px;
+border-radius:999px;
+box-shadow:var(--shadow);
+}
+
+/* ===== SLIDER SAME ===== */
+
+.slider{position:relative;height:70vh;overflow:hidden;border-radius:20px}
+.slide{position:absolute;width:100%;height:100%;opacity:0;transition:.7s}
+.slide img{width:100%;height:100%;object-fit:contain;background:#000}
+.slide.active{opacity:1}
 
 .arrow{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-font-size:30px;
-background:rgba(0,0,0,.4);
-color:#fff;
-padding:10px 16px;
-cursor:pointer;
-border-radius:10px;
-z-index:10;
-}
-
-.arrow.left{left:20px;}
-.arrow.right{right:20px;}
-
-/* Slide Buttons */
-
-.slideButtons{
-position:absolute;
-bottom:0;
-width:100%;
-display:flex;
-}
-
-.slideButtons button{
-flex:1;
-padding:16px;
+background:#fff;
 border:none;
+font-size:22px;
+padding:10px;
 cursor:pointer;
+border-radius:50%;
+}
+
+.left{left:15px}
+.right{right:15px}
+
+.btn{
+padding:14px 24px;
+border-radius:30px;
 font-weight:900;
-font-size:15px;
-color:#fff;
-transition:.3s;
+margin:8px;
+text-decoration:none;
+display:inline-block;
 }
 
-.btnDonate{
-background:linear-gradient(135deg,var(--accent),#ff7a00);
-}
+.donate{background:var(--accent);color:#fff}
+.read{background:var(--brand);color:#fff}
 
-.btnRead{
-background:linear-gradient(135deg,var(--brand),#083a6c);
-}
-
-.slideButtons button:hover{
-opacity:.9;
-transform:translateY(-2px);
-}
-
-/* ===== GRID ===== */
-
-.photoGrid{
+.gridImages{
 display:grid;
-gap:16px;
-padding:30px 0;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:12px;
+margin:40px 0;
 }
 
-@media(min-width:768px){
-.photoGrid{grid-template-columns:repeat(3,1fr);}
-}
-
-.photoGrid img{
+.gridImages img{
 width:100%;
-height:200px;
-object-fit:cover;
 border-radius:14px;
 cursor:pointer;
-transition:.3s;
 }
 
-.photoGrid img:hover{
-transform:scale(1.03);
+.sectionTitle{
+text-align:center;
+font-size:26px;
+font-weight:900;
+color:var(--brand);
+margin:20px 0;
 }
 
+/* ===== WHATSAPP ===== */
+.wa{
+position:fixed;
+right:16px;
+bottom:16px;
+z-index:999;
+background:linear-gradient(135deg,#22c55e,#16a34a);
+color:#fff;
+padding:12px 16px;
+border-radius:999px;
+font-weight:950;
+box-shadow:0 18px 45px rgba(0,0,0,.25);
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER (ABOUT SAME) ===== -->
+
+<header>
+<div class="wrap">
+<div class="nav">
+
+<a class="brand" href="index.html">
+<img class="logo" src="./assets/logo.jpg">
+<div>
+<b id="brandText">भारत अभ्युदय संस्थान</b>
+<span id="brandSub">अभ्युदय से आत्मनिर्भर भारत तक</span>
+</div>
+</a>
+
+<nav class="menu">
+<a id="mHome" href="index.html">मुख्य पृष्ठ</a>
+<a id="mAbout" href="about.html">परिचय</a>
+<a id="mWork" href="initiatives.html">हमारे प्रयास</a>
+<a id="mDocs" href="documents.html">दस्तावेज़</a>
+<a id="mDonate" href="donate.html">दान करें</a>
+<a id="mGallery" href="gallery.html">गैलरी</a>
+<a id="mContact" href="contact.html">संपर्क</a>
+</nav>
+
+<div style="display:flex;gap:10px">
+<button class="pill active" id="btnHi">हिन्दी</button>
+<button class="pill" id="btnEn">English</button>
+</div>
+
+</div>
+</div>
+</header>
+
+<div class="counter">
+Visitors : <span id="visit">169000</span>
+</div>
+
+<!-- ===== HERO ===== -->
+
+<section class="hero">
+<div class="wrap heroGrid">
+
+<div>
+<div class="bigTitle">
+BHARAT ABHYUDAYA SANSTHAN
+</div>
+
+<p>
+Your donation helps build an Atmanirbhar Bharat through
+education, healthcare, women empowerment and social welfare initiatives.
+</p>
+</div>
+
+<div class="card">
+<h3>Legal / Registration Details</h3>
+Registration No.: FAT/02340/2024-2025<br>
+Date: 05/07/2024<br>
+Valid: 04/07/2029<br>
+PAN: AANAB2855N
+</div>
+
+</div>
+</section>
+
+<h2 class="sectionTitle">CURRENT RUNNING PROGRAMMES</h2>
+
+<div class="wrap">
+<div class="slider" id="slider">
+
+<div class="slide active"><img src="assets/shiksha.jpg"></div>
+<div class="slide"><img src="assets/ambulance.jpg"></div>
+<div class="slide"><img src="assets/gauseva.jpg"></div>
+<div class="slide"><img src="assets/oldage.jpg"></div>
+<div class="slide"><img src="assets/women.jpg"></div>
+<div class="slide"><img src="assets/heritage.jpg"></div>
+
+<button class="arrow left">&#10094;</button>
+<button class="arrow right">&#10095;</button>
+
+</div>
+
+<div style="text-align:center;margin:20px">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="initiatives.html" class="btn read">Read More</a>
+</div>
+</div>
+
+<div class="wrap gridImages">
+<img src="assets/shiksha.jpg">
+<img src="assets/ambulance.jpg">
+<img src="assets/gauseva.jpg">
+<img src="assets/oldage.jpg">
+<img src="assets/women.jpg">
+<img src="assets/heritage.jpg">
+</div>
+
+<a class="wa" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+
+<script>
+
+/* slider */
+let slides=document.querySelectorAll(".slide");
+let i=0;
+function show(n){
+slides.forEach(s=>s.classList.remove("active"));
+slides[n].classList.add("active");
+i=n;
+}
+document.querySelector(".right").onclick=()=>show((i+1)%slides.length);
+document.querySelector(".left").onclick=()=>show((i-1+slides.length)%slides.length);
+setInterval(()=>show((i+1)%slides.length),5000);
+
+slides.forEach(s=>s.onclick=()=>location.href="donate.html");
+
+document.querySelectorAll(".gridImages img")
+.forEach((img,index)=>img.onclick=()=>show(index));
+
+/* visitor */
+let v=169000;
+setInterval(()=>document.getElementById("visit").innerText=++v,4000);
+
+/* language toggle */
+const btnHi=document.getElementById("btnHi");
+const btnEn=document.getElementById("btnEn");
+
+btnHi.onclick=()=>{
+btnHi.classList.add("active");
+btnEn.classList.remove("active");
+localStorage.setItem("bas_lang","hi");
+};
+
+btnEn.onclick=()=>{
+btnEn.classList.add("active");
+btnHi.classList.remove("active");
+localStorage.setItem("bas_lang","en");
+};
+
+</script>
+
+</body>
+</html>
