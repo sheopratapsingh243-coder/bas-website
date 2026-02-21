@@ -24,7 +24,7 @@ work:"Our Initiatives",
 docs:"Documents",
 donate:"Donate Now",
 gallery:"Gallery",
-contact:"Gallery",
+contact:"Contact",
 brand:"Bharat Abhyudaya Sansthan",
 sub:"Upliftment to Self-Reliant India"
 }
