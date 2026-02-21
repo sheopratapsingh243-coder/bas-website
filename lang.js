@@ -41,6 +41,14 @@ document.getElementById("brandText").textContent=t[lang].brand;
 document.getElementById("brandSub").textContent=t[lang].sub;
 
 localStorage.setItem("lang",lang);
+btnHi.classList.remove("active");
+btnEn.classList.remove("active");
+
+if(lang==="hi"){
+btnHi.classList.add("active");
+}else{
+btnEn.classList.add("active");
+}
 }
 
 document.getElementById("btnHi")
