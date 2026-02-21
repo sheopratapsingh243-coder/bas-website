@@ -59,3 +59,37 @@ document.getElementById("btnEn")
 
 setLang(localStorage.getItem("lang")||"hi");
 }
+
+/* ===== INITIATIVES PAGE CONNECT ===== */
+
+function initInitiativesPage(lang){
+
+const data = translations[lang];
+
+if(!document.getElementById("track")) return;
+
+/* SLIDER TEXT UPDATE */
+
+for(let i=1;i<=9;i++){
+
+if(!data.initiatives) return;
+
+const item = data.initiatives[i-1];
+
+if(!item) continue;
+
+document.getElementById(`k${i}tag`).textContent = item.tag;
+document.getElementById(`k${i}a`).textContent   = item.title;
+document.getElementById(`k${i}b`).textContent   = item.desc;
+document.getElementById(`k${i}c`).textContent   = item.impact;
+document.getElementById(`k${i}d`).textContent   = item.trust;
+
+document.getElementById(`k${i}rm`).textContent =
+data.contactBtn;
+
+document.getElementById(`k${i}dn`).textContent =
+data.donateBtn;
+
+}
+
+}
