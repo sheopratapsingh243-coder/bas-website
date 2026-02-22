@@ -5,9 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 fetch("components/header.html")
 .then(res => res.text())
 .then(data => {
+
 document.getElementById("header").innerHTML = data;
+
 initLanguageToggle();
 setActiveMenu();
+applyLanguage();   // ⭐ ADD THIS LINE
+
 });
 
 // =============================
