@@ -1,277 +1,183 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Our Initiatives • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Our initiatives and programs of Bharat Abhyudaya Sansthan." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    
-  #globalHeader{
-position:sticky !important;
-top:0 !important;
-z-index:9999 !important;
-background:#fff;
+<title>Our Initiatives • Bharat Abhyudaya Sansthan</title>
+
+<style>
+
+/* ===== GLOBAL ===== */
+
+:root{
+--brand:#0b5aa6;
+--accent:#f58b1f;
+--muted:#475569;
+--shadow:0 30px 80px rgba(0,0,0,.12);
 }
-    :root{
-      --brand:#0b5aa6;
-      --accent:#f58b1f;
-      --fg:#0b1220;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:20px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--fg);
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        #fff;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:28px 0}
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    p{margin:10px 0 0}
-    .muted{color:var(--muted)}
-    .small{font-size:14px}
-    .chipRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .chip{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.92);
-      font-weight:900;font-size:13px;
-      cursor:pointer;
-    }
-    .chip:hover{background:rgba(11,90,166,.06);color:var(--brand)}
-    
-    /* Cards */
-    .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
-    }
-    .heroGrid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:980px){.heroGrid{grid-template-columns:1.15fr .85fr;gap:22px}}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
-      justify-content:center;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
+body{
+margin:0;
+font-family:system-ui,Segoe UI,Roboto;
+background:#f7faff;
+overflow-x:hidden;
+}
 
-    /* Slider */
-    .sliderShell{
-      position:relative;
-      margin-top:18px;
-    }
+.wrap{
+max-width:1120px;
+margin:auto;
+padding:0 18px;
+}
 
-    .trackWrap{
-      overflow:hidden;
-      padding:14px;
-      touch-action:pan-y;
-    }
+/* ===== HERO ===== */
 
-    .track{
-      display:flex;
-      width:100%;
-      transform:translateX(0);
-      transition:transform .35s ease;
-      will-change:transform;
-    }
+.hero{
+padding:60px 0 30px;
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+}
 
-    .slide{
-      flex:0 0 100%;
-      width:100%;
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
+.hero h1{
+font-size:42px;
+margin:0;
+color:#0b5aa6;
+}
 
-    /* Layout B: desktop split */
-    .slideGrid{
-      display:grid;
-      grid-template-columns:1fr;
-    }
-    @media(min-width:980px){
-      .slideGrid{
-        grid-template-columns:1fr 1fr;
-        align-items:stretch;
-      }
-    }
+.hero p{
+color:#475569;
+line-height:1.8;
+font-size:17px;
+}
 
-    .posterWrap{
-      background:#fff;
-      border-bottom:1px solid rgba(226,232,240,.95);
-    }
-    @media(min-width:980px){
-      .posterWrap{
-        border-bottom:none;
-        border-right:1px solid rgba(226,232,240,.95);
-      }
-    }
+.btnRow{
+display:flex;
+gap:12px;
+margin-top:18px;
+}
 
-    .poster{
-      width:100%;
-      height:auto;
-      display:block;
-      background:#fff;
-    }
+.btn{
+padding:14px 20px;
+border-radius:14px;
+font-weight:900;
+text-decoration:none;
+}
 
-    .slideBody{
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
+.primary{
+background:#f58b1f;
+color:#fff;
+}
 
-    .kicker{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .tag{
-      display:inline-flex;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(11,90,166,.06);
-      border:1px solid rgba(11,90,166,.15);
-      font-weight:950;
-      color:var(--brand);
-      font-size:12px;
-    }
-    .slideTitle{
-      font-size:20px;
-      font-weight:950;
-      margin:0;
-      letter-spacing:-.3px;
-    }
+.secondary{
+background:#0b5aa6;
+color:#fff;
+}
 
-    .desc{
-      color:var(--muted);
-      line-height:1.65;
-      margin:0;
-      font-size:14px;
-    }
-    .impact{
-      margin:0;
-      font-weight:900;
-      color:#0b1220;
-      background:rgba(245,139,31,.12);
-      border:1px solid rgba(245,139,31,.25);
-      padding:12px 12px;
-      border-radius:16px;
-      line-height:1.55;
-      font-size:14px;
-    }
-    .trust{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.55;
-    }
+/* ===== FULL NGO SLIDER ===== */
 
-    .slideBtns{
-      display:flex;
-      gap:10px;
-      margin-top:6px;
-      flex-wrap:wrap;
-    }
-    .slideBtns a{flex:1; min-width:180px}
+.fullSlider{
+width:100%;
+background:linear-gradient(135deg,#f8fbff,#ffffff);
+padding:50px 0;
+}
 
-    /* Side arrows */
-    .navArrow{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:48px;height:48px;
-      border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(255,255,255,.92);
-      backdrop-filter: blur(8px);
-      box-shadow:0 16px 40px rgba(2,6,23,.12);
-      cursor:pointer;
-      font-size:18px;
-      font-weight:950;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:10;
-    }
-    .navArrow:hover{background:#fff}
-    .navArrow.left{left:-6px}
-    .navArrow.right{right:-6px}
-    @media(max-width:520px){
-      .navArrow{width:44px;height:44px}
-      .navArrow.left{left:0}
-      .navArrow.right{right:0}
-    }
+.trackWrap{
+overflow:hidden;
+padding:0 6vw;
+}
 
-    /* Dots */
-    .dots{
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      margin-top:10px;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      cursor:pointer;
-    }
-    .dot.active{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      border-color:transparent;
-    }
+.track{
+display:flex;
+transition:.6s ease;
+}
 
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
-    }
+.slide{
+flex:0 0 100%;
+background:#fff;
+border-radius:28px;
+overflow:hidden;
+box-shadow:var(--shadow);
+display:grid;
+grid-template-columns:1fr 1fr;
+}
 
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
-  </style>
+.poster{
+width:100%;
+height:520px;
+object-fit:cover;
+}
+
+.slideBody{
+padding:40px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.tag{
+background:#e8f1fb;
+color:#0b5aa6;
+padding:8px 12px;
+border-radius:999px;
+font-weight:900;
+width:max-content;
+}
+
+.slideTitle{
+font-size:28px;
+font-weight:900;
+}
+
+.desc{
+color:#475569;
+line-height:1.8;
+}
+
+.impact{
+background:#fff4e8;
+padding:16px;
+border-radius:16px;
+font-weight:700;
+}
+
+.navArrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:60px;
+height:60px;
+border-radius:50%;
+border:none;
+background:#fff;
+box-shadow:var(--shadow);
+cursor:pointer;
+font-size:26px;
+}
+
+.left{left:20px}
+.right{right:20px}
+
+/* ===== FOOTER ===== */
+
+footer{
+text-align:center;
+padding:20px;
+background:#fff;
+margin-top:40px;
+}
+
+</style>
 </head>
 
 <body>
-  
+
+<!-- GLOBAL HEADER -->
 <div id="header"></div>
 
 <script>
 fetch("components/header.html")
-.then(res=>res.text())
+.then(r=>r.text())
 .then(data=>{
 document.getElementById("header").innerHTML=data;
 
@@ -283,360 +189,111 @@ initLang();
 });
 </script>
 
-<main id="top">
+<!-- HERO -->
+<section class="hero wrap">
 
-  <!-- HERO -->
-  <section>
-    <div class="wrap">
-      <div class="heroGrid">
+<div>
+<h1 id="title">हमारे प्रयास</h1>
 
-        <div>
-          <h1 id="title">हमारे प्रयास</h1>
-          <p class="muted" id="tagline">
-            हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, वृद्धजन सेवा और सामाजिक सहायता जैसे क्षेत्रों में निरंतर कार्य कर रहे हैं।
-          </p>
+<p id="tagline">
+हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं सामाजिक सेवा के माध्यम से
+समाज के कमजोर वर्गों को सशक्त बनाने हेतु कार्यरत हैं।
+</p>
 
-          <div class="chipRow" id="chipRow"></div>
+<div class="btnRow">
+<a href="donate.html" class="btn secondary">दान करें</a>
+<a href="contact.html" class="btn primary">हमसे जुड़ें</a>
+</div>
 
-          <div class="btnRow">
-            <a class="btn secondary" href="donate.html" id="donateTop">दान करें</a>
-            <a class="btn primary" href="contact.html" id="contactTop">हमसे जुड़ें</a>
-          </div>
+</div>
 
-          <p class="small muted" style="margin-top:10px" id="noteTop">
-            हमारा प्रयास है कि हर सहयोग पारदर्शिता के साथ जरूरतमंदों तक पहुँचे।
-          </p>
-        </div>
+</section>
 
-        <div class="card">
-          <b id="focusTitle">हमारा फोकस</b>
-          <div style="display:grid;gap:14px;margin-top:14px">
-            <div style="border:1px solid rgba(226,232,240,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.92)">
-              <b id="f1t">सही जगह, सही समय</b>
-              <p id="f1d" style="margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.6">
-                हम स्थानीय स्तर पर वास्तविक जरूरतों को समझकर सहायता पहुँचाने का प्रयास करते हैं।
-              </p>
-            </div>
-            <div style="border:1px solid rgba(226,232,240,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.92)">
-              <b id="f2t">पारदर्शिता</b>
-              <p id="f2d" style="margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.6">
-                हम हर योगदान को जिम्मेदारी और स्पष्टता के साथ उपयोग करने के लिए प्रतिबद्ध हैं।
-              </p>
-            </div>
-          </div>
-        </div>
+<!-- FULL WIDTH SLIDER -->
+<section class="fullSlider">
 
-      </div>
+<button class="navArrow left" onclick="move(-1)">‹</button>
+<button class="navArrow right" onclick="move(1)">›</button>
 
-      <!-- SLIDER -->
-      <div class="sliderShell" aria-label="Initiatives Slider">
+<div class="trackWrap">
+<div class="track" id="track">
 
-        <button class="navArrow left" id="prevBtn" type="button" aria-label="Previous">‹</button>
-        <button class="navArrow right" id="nextBtn" type="button" aria-label="Next">›</button>
+<!-- SLIDE -->
+<div class="slide">
+<img src="assets/initiatives/shiksha-sarathi.png" class="poster">
+<div class="slideBody">
+<div class="tag">Education Access</div>
+<div class="slideTitle">शिक्षा सारथी – प्रत्येक बच्चे तक शिक्षा</div>
+<div class="desc">
+ग्रामीण एवं आर्थिक रूप से कमजोर बच्चों को शिक्षा,
+मार्गदर्शन एवं संसाधन उपलब्ध कराना।
+</div>
+<div class="impact">
+आपका सहयोग बच्चों का भविष्य बदल सकता है।
+</div>
+</div>
+</div>
 
-        <div class="trackWrap">
-          <div class="track" id="track">
+<div class="slide">
+<img src="assets/initiatives/women.png" class="poster">
+<div class="slideBody">
+<div class="tag">Women Empowerment</div>
+<div class="slideTitle">महिला सशक्तिकरण</div>
+<div class="desc">
+महिलाओं को कौशल एवं स्वरोजगार के माध्यम से आत्मनिर्भर बनाना।
+</div>
+<div class="impact">
+सशक्त महिला मजबूत समाज का निर्माण करती है।
+</div>
+</div>
+</div>
 
-            <!-- 1 -->
-            <article class="slide" id="shiksha-sarathi">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k1tag">Education</span>
-                    <span class="small muted" id="k1code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k1a">शिक्षा सारथी (बाल शिक्षा एवं विकास)</h3>
-                  <p class="desc" id="k1b"></p>
-                  <p class="impact" id="k1c"></p>
-                  <p class="trust" id="k1d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k1rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k1dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
+<div class="slide">
+<img src="assets/initiatives/health.png" class="poster">
+<div class="slideBody">
+<div class="tag">Healthcare</div>
+<div class="slideTitle">स्वास्थ्य सहायता</div>
+<div class="desc">
+जरूरतमंद मरीजों को चिकित्सा सहायता।
+</div>
+<div class="impact">
+समय पर सहायता जीवन बचाती है।
+</div>
+</div>
+</div>
 
-            <!-- 2 -->
-            <article class="slide" id="women-empowerment">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/women.png" alt="Women Empowerment Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k2tag">Women</span>
-                    <span class="small muted" id="k2code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k2a">महिला सशक्तिकरण</h3>
-                  <p class="desc" id="k2b"></p>
-                  <p class="impact" id="k2c"></p>
-                  <p class="trust" id="k2d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k2rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k2dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
+</div>
+</div>
 
-            <!-- 3 -->
-            <article class="slide" id="health-services">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/health.png" alt="Health Services Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k3tag">Health</span>
-                    <span class="small muted" id="k3code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k3a">स्वास्थ्य सहायता</h3>
-                  <p class="desc" id="k3b"></p>
-                  <p class="impact" id="k3c"></p>
-                  <p class="trust" id="k3d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k3rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k3dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 4 -->
-            <article class="slide" id="ambulance-seva">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/ambulance.png" alt="Ambulance Seva Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k4tag">Emergency</span>
-                    <span class="small muted" id="k4code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k4a">एंबुलेंस सेवा</h3>
-                  <p class="desc" id="k4b"></p>
-                  <p class="impact" id="k4c"></p>
-                  <p class="trust" id="k4d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k4rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k4dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 5 -->
-            <article class="slide" id="old-age-care">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/oldage.png" alt="Old Age Care Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k5tag">Care</span>
-                    <span class="small muted" id="k5code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k5a">वृद्धजन सेवा एवं आश्रय</h3>
-                  <p class="desc" id="k5b"></p>
-                  <p class="impact" id="k5c"></p>
-                  <p class="trust" id="k5d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k5rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k5dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 6 -->
-            <article class="slide" id="skill-development">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/skill.png" alt="Skill Development Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k6tag">Skills</span>
-                    <span class="small muted" id="k6code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k6a">कौशल विकास</h3>
-                  <p class="desc" id="k6b"></p>
-                  <p class="impact" id="k6c"></p>
-                  <p class="trust" id="k6d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k6rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k6dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 7 -->
-            <article class="slide" id="community-help">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/help.png" alt="Community Help Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k7tag">Support</span>
-                    <span class="small muted" id="k7code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k7a">आपदा एवं सामाजिक सहायता</h3>
-                  <p class="desc" id="k7b"></p>
-                  <p class="impact" id="k7c"></p>
-                  <p class="trust" id="k7d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k7rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k7dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 8 -->
-            <article class="slide" id="gauseva">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/gauseva.png" alt="GauSeva Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k8tag">GauSeva</span>
-                    <span class="small muted" id="k8code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k8a">गौसेवा एवं गौशाला सहयोग</h3>
-                  <p class="desc" id="k8b"></p>
-                  <p class="impact" id="k8c"></p>
-                  <p class="trust" id="k8d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k8rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k8dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 9 -->
-            <article class="slide" id="heritage-conservation">
-              <div class="slideGrid">
-                <div class="posterWrap">
-                  <img class="poster" src="./assets/initiatives/heritage.png" alt="Heritage Conservation Poster">
-                </div>
-                <div class="slideBody">
-                  <div class="kicker">
-                    <span class="tag" id="k9tag">Heritage</span>
-                    <span class="small muted" id="k9code">Program • BAS</span>
-                  </div>
-                  <h3 class="slideTitle" id="k9a">धरोहर संरक्षण</h3>
-                  <p class="desc" id="k9b"></p>
-                  <p class="impact" id="k9c"></p>
-                  <p class="trust" id="k9d"></p>
-                  <div class="slideBtns">
-                    <a class="btn secondary" href="contact.html" id="k9rm">संपर्क करें</a>
-                    <a class="btn primary" href="donate.html" id="k9dn">दान करें</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <div class="dots" id="dots"></div>
-      </div>
-
-    </div>
-  </section>
-
-</main>
+</section>
 
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
-  </div>
+© <span id="year"></span>
+Bharat Abhyudaya Sansthan
 </footer>
 
-<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
-<!-- GLOBAL LANGUAGE SYSTEM -->
-<script src="lang.js"></script>
-  
-  <script>
-document.addEventListener("DOMContentLoaded",function(){
-if(typeof initLang==="function"){
-initLang();
-}
-  
-});
-</script>
 <script>
 
-/* =========================
-   INITIATIVES SLIDER
-========================= */
+document.getElementById("year").textContent=
+new Date().getFullYear();
 
-document.addEventListener("DOMContentLoaded",()=>{
+/* ===== SLIDER ===== */
 
-const track = document.getElementById("track");
-if(!track) return;
+let index=0;
+const track=document.getElementById("track");
 
-const slides = track.children;
-const dotsBox = document.getElementById("dots");
-
-let index = 0;
-
-/* CREATE DOTS */
-dotsBox.innerHTML="";
-for(let i=0;i<slides.length;i++){
-  const d=document.createElement("button");
-  d.className="dot"+(i===0?" active":"");
-  d.onclick=()=>goTo(i);
-  dotsBox.appendChild(d);
+function move(n){
+const total=track.children.length;
+index=(index+n+total)%total;
+track.style.transform=
+`translateX(-${index*100}%)`;
 }
 
-function updateDots(){
-[...dotsBox.children].forEach((d,i)=>{
-d.classList.toggle("active",i===index);
-});
-}
+setInterval(()=>move(1),5000);
 
-function goTo(i){
-index=(i+slides.length)%slides.length;
-track.style.transform=`translateX(-${index*100}%)`;
-updateDots();
-}
+</script>
 
-/* ARROWS */
-document.getElementById("prevBtn")
-?.addEventListener("click",()=>goTo(index-1));
+<script src="lang.js"></script>
 
-document.getElementById("nextBtn")
-?.addEventListener("click",()=>goTo(index+1));
-
-/* AUTO SLIDE */
-setInterval(()=>{
-goTo(index+1);
-},6000);
-
-/* SWIPE SUPPORT */
-let startX=0;
-track.addEventListener("pointerdown",(e)=>{
-startX=e.clientX;
-});
-
-track.addEventListener("pointerup",(e)=>{
-let dx=e.clientX-startX;
-if(Math.abs(dx)>50){
-dx<0?goTo(index+1):goTo(index-1);
-}
-});
-
-});
-
-</script>  
 </body>
 </html>
