@@ -1,115 +1,109 @@
 document.addEventListener("DOMContentLoaded", function () {
-// =============================
-// LOAD HEADER
-// =============================
+
+// ================= HEADER LOAD =================
 fetch("components/header.html")
 .then(res => res.text())
 .then(data => {
 
 document.getElementById("header").innerHTML = data;
 
-setTimeout(() => {
+setTimeout(()=>{
 initLanguageToggle();
+applyLanguage();
 setActiveMenu();
-applyLanguage();   // ⭐ translation trigger
 },100);
 
 });
-// =============================
-// LOAD FOOTER
-// =============================
+
+// ================= FOOTER LOAD =================
 fetch("components/footer.html")
 .then(res => res.text())
-.then(data => {
-document.getElementById("footer").innerHTML = data;
+.then(data=>{
+document.getElementById("footer").innerHTML=data;
 });
 
 
-// =============================
-// LANGUAGE TOGGLE
-// =============================
-function initLanguageToggle(){
-
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-if(!btnHi || !btnEn) return;
-
-btnHi.onclick=()=>{
-localStorage.setItem("language","hi");
-location.reload();
+// ================= LANGUAGE DATA =================
+const t={
+hi:{
+brand:"भारत अभ्युदय संस्थान",
+sub:"अभ्युदय से आत्मनिर्भर भारत तक",
+home:"मुख्य पृष्ठ",
+about:"परिचय",
+work:"हमारे प्रयास",
+docs:"दस्तावेज़",
+donate:"दान करें",
+gallery:"गैलरी",
+contact:"संपर्क"
+},
+en:{
+brand:"Bharat Abhyudaya Sansthan",
+sub:"Upliftment to Self-Reliant India",
+home:"Home",
+about:"About",
+work:"Initiatives",
+docs:"Documents",
+donate:"Donate",
+gallery:"Gallery",
+contact:"Contact"
+}
 };
 
-btnEn.onclick=()=>{
-localStorage.setItem("language","en");
-location.reload();
+
+// ================= APPLY LANGUAGE =================
+function applyLanguage(){
+
+const lang=localStorage.getItem("bas_lang") || "hi";
+const d=t[lang];
+
+document.getElementById("brandText").textContent=d.brand;
+document.getElementById("brandSub").textContent=d.sub;
+
+document.getElementById("mHome").textContent=d.home;
+document.getElementById("mAbout").textContent=d.about;
+document.getElementById("mWork").textContent=d.work;
+document.getElementById("mDocs").textContent=d.docs;
+document.getElementById("mDonate").textContent=d.donate;
+document.getElementById("mGallery").textContent=d.gallery;
+document.getElementById("mContact").textContent=d.contact;
+
+document.getElementById("btnHi")
+.classList.toggle("active",lang==="hi");
+
+document.getElementById("btnEn")
+.classList.toggle("active",lang==="en");
+
+}
+
+
+// ================= TOGGLE =================
+function initLanguageToggle(){
+
+document.getElementById("btnHi").onclick=()=>{
+localStorage.setItem("bas_lang","hi");
+applyLanguage();
+};
+
+document.getElementById("btnEn").onclick=()=>{
+localStorage.setItem("bas_lang","en");
+applyLanguage();
 };
 
 }
 
 
-// =============================
-// ACTIVE MENU
-// =============================
+// ================= ACTIVE MENU =================
 function setActiveMenu(){
 
-const links=document.querySelectorAll(".menu a");
-const current=window.location.pathname;
+const current=location.pathname.split("/").pop();
 
-links.forEach(link=>{
-if(link.getAttribute("href")===current){
+document.querySelectorAll(".menu a")
+.forEach(link=>{
+if(link.getAttribute("href").includes(current)){
 link.style.color="#0b5aa6";
 }
 });
 
 }
 
-// =============================
-// GLOBAL LANGUAGE SYSTEM
-// =============================
-
-const t={
-hi:{
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक"
-},
-en:{
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India"
-}
-};
-
-function applyLanguage(){
-
-const lang=localStorage.getItem("bas_lang")||"hi";
-const d=t[lang];
-
-const brand=document.getElementById("brandText");
-const sub=document.getElementById("brandSub");
-
-if(brand) brand.textContent=d.brand;
-if(sub) sub.textContent=d.sub;
-
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-if(btnHi && btnEn){
-btnHi.classList.toggle("active",lang==="hi");
-btnEn.classList.toggle("active",lang==="en");
-
-btnHi.onclick=()=>{
-localStorage.setItem("bas_lang","hi");
-location.reload();
-};
-
-btnEn.onclick=()=>{
-localStorage.setItem("bas_lang","en");
-location.reload();
-};
-}
-
-}
-
-// wait header load
-setTimeout(applyLanguage,300);
 });
