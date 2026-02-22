@@ -8,12 +8,13 @@ fetch("components/header.html")
 
 document.getElementById("header").innerHTML = data;
 
+setTimeout(() => {
 initLanguageToggle();
 setActiveMenu();
-applyLanguage();   // ⭐ ADD THIS LINE
+applyLanguage();   // ⭐ translation trigger
+},100);
 
 });
-
 // =============================
 // LOAD FOOTER
 // =============================
