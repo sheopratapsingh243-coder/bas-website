@@ -280,8 +280,6 @@ text-decoration:none;
 <body>
 <div id="header"></div>
 
-<script src="header.js"></script>
-<script src="lang.js"></script>
 <div class="counter">
 Visitors : <span id="visit">169000</span>
 </div>
@@ -455,74 +453,11 @@ triggered=true;
 
 <script>
 
-/* ===== FINAL LANGUAGE SYSTEM (FIXED) ===== */
-
-const btnHi=document.getElementById("btnHi");
-const btnEn=document.getElementById("btnEn");
-
-const t={
-hi:{
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-home:"मुख्य पृष्ठ",
-about:"परिचय",
-work:"हमारे प्रयास",
-docs:"दस्तावेज़",
-donate:"दान करें",
-gallery:"गैलरी",
-contact:"संपर्क",
-heroTitle:"भारत अभ्युदय संस्थान",
-heroText:"आपका सहयोग शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं सामाजिक सेवा कार्यक्रमों के माध्यम से आत्मनिर्भर भारत निर्माण में योगदान देता है।",
-program:"वर्तमान संचालित कार्यक्रम"
-},
-en:{
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India",
-home:"Home",
-about:"About",
-work:"Our Initiatives",
-docs:"Documents",
-donate:"Donate Now",
-gallery:"Gallery",
-contact:"Contact",
-heroTitle:"BHARAT ABHYUDAYA SANSTHAN",
-heroText:"Your donation helps build an Atmanirbhar Bharat through education, healthcare, women empowerment and social welfare initiatives.",
-program:"CURRENT RUNNING PROGRAMMES"
-}
-};
-
-function setLang(lang){
-
-const d=t[lang];
-
-document.getElementById("brandText").textContent=d.brand;
-document.getElementById("brandSub").textContent=d.sub;
-
-document.getElementById("mHome").textContent=d.home;
-document.getElementById("mAbout").textContent=d.about;
-document.getElementById("mWork").textContent=d.work;
-document.getElementById("mDocs").textContent=d.docs;
-document.getElementById("mDonate").textContent=d.donate;
-document.getElementById("mGallery").textContent=d.gallery;
-document.getElementById("mContact").textContent=d.contact;
-
-document.getElementById("heroTitle").textContent=d.heroTitle;
-document.getElementById("heroText").textContent=d.heroText;
-document.getElementById("programTitle").textContent=d.program;
-
-localStorage.setItem("bas_lang",lang);
-
-btnHi.classList.toggle("active",lang==="hi");
-btnEn.classList.toggle("active",lang==="en");
-}
-
-btnHi.addEventListener("click",()=>setLang("hi"));
-btnEn.addEventListener("click",()=>setLang("en"));
-
-setLang(localStorage.getItem("bas_lang")||"hi");
-
-</script>
-
+<div id="footer"></div>
+  
+<script src="/assets/js/main.js"></script>
+  
 </body>
 </html>
+
 
