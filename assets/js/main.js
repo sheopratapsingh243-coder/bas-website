@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 // =============================
 // LOAD HEADER
 // =============================
@@ -106,3 +107,4 @@ location.reload();
 
 // wait header load
 setTimeout(applyLanguage,300);
+});
