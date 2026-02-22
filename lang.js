@@ -143,25 +143,25 @@ btnEn.classList.remove("active");
 }
 
 
-/* ========= INITIATIVES SLIDER ========= */
+/* ========= INITIATIVES HERO UPDATE ========= */
 function updateInitiativesHero(lang){
 
-if(!document.getElementById("title")) return;
+/* ✅ run ONLY on initiatives page */
+if(!document.getElementById("track")) return;
 
 const h = heroText[lang];
 
-document.getElementById("title").textContent = h.title;
-document.getElementById("tagline").textContent = h.tagline;
-document.getElementById("donateTop").textContent = h.donate;
-document.getElementById("contactTop").textContent = h.join;
-document.getElementById("noteTop").textContent = h.note;
+const title = document.getElementById("title");
+const tagline = document.getElementById("tagline");
+const donateTop = document.getElementById("donateTop");
+const contactTop = document.getElementById("contactTop");
+const noteTop = document.getElementById("noteTop");
 
-document.getElementById("focusTitle").textContent = h.focus;
-document.getElementById("f1t").textContent = h.f1t;
-document.getElementById("f1d").textContent = h.f1d;
-document.getElementById("f2t").textContent = h.f2t;
-document.getElementById("f2d").textContent = h.f2d;
-
+if(title) title.textContent = h.title;
+if(tagline) tagline.textContent = h.tagline;
+if(donateTop) donateTop.textContent = h.donateBtn;
+if(contactTop) contactTop.textContent = h.contactBtn;
+if(noteTop) noteTop.textContent = h.note;
 }
 function initInitiativesPage(lang){
 
