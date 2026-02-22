@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Our Initiatives • Bharat Abhyudaya Sansthan</title>
 
@@ -10,81 +10,47 @@
 
 /* ===== GLOBAL ===== */
 
-:root{
---brand:#0b5aa6;
---accent:#f58b1f;
---muted:#475569;
---shadow:0 30px 80px rgba(0,0,0,.12);
-}
-
 body{
 margin:0;
 font-family:system-ui,Segoe UI,Roboto;
-background:#f7faff;
+background:#f6f9fc;
 overflow-x:hidden;
 }
 
 .wrap{
-max-width:1120px;
+max-width:1150px;
 margin:auto;
-padding:0 18px;
+padding:0 20px;
 }
 
 /* ===== HERO ===== */
 
 .hero{
 padding:60px 0 30px;
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
 }
 
 .hero h1{
 font-size:42px;
-margin:0;
 color:#0b5aa6;
+margin:0;
 }
 
 .hero p{
 color:#475569;
 line-height:1.8;
 font-size:17px;
+max-width:700px;
 }
 
-.btnRow{
-display:flex;
-gap:12px;
-margin-top:18px;
-}
+/* ===== SLIDER ===== */
 
-.btn{
-padding:14px 20px;
-border-radius:14px;
-font-weight:900;
-text-decoration:none;
-}
-
-.primary{
-background:#f58b1f;
-color:#fff;
-}
-
-.secondary{
-background:#0b5aa6;
-color:#fff;
-}
-
-/* ===== FULL NGO SLIDER ===== */
-
-.fullSlider{
-width:100%;
-background:linear-gradient(135deg,#f8fbff,#ffffff);
-padding:50px 0;
+.sliderSection{
+position:relative;
+padding:40px 0 70px;
 }
 
 .trackWrap{
 overflow:hidden;
-padding:0 6vw;
 }
 
 .track{
@@ -94,18 +60,19 @@ transition:.6s ease;
 
 .slide{
 flex:0 0 100%;
+display:grid;
+grid-template-columns:1fr 1fr;
 background:#fff;
 border-radius:28px;
 overflow:hidden;
-box-shadow:var(--shadow);
-display:grid;
-grid-template-columns:1fr 1fr;
+box-shadow:0 30px 80px rgba(0,0,0,.12);
 }
 
 .poster{
 width:100%;
 height:520px;
 object-fit:cover;
+display:block;
 }
 
 .slideBody{
@@ -118,9 +85,9 @@ gap:18px;
 .tag{
 background:#e8f1fb;
 color:#0b5aa6;
-padding:8px 12px;
+padding:8px 14px;
 border-radius:999px;
-font-weight:900;
+font-weight:800;
 width:max-content;
 }
 
@@ -136,35 +103,83 @@ line-height:1.8;
 
 .impact{
 background:#fff4e8;
-padding:16px;
+padding:15px;
 border-radius:16px;
 font-weight:700;
 }
 
-.navArrow{
+/* BUTTONS */
+
+.slideBtns{
+display:flex;
+gap:12px;
+margin-top:10px;
+}
+
+.btn{
+padding:14px 18px;
+border-radius:14px;
+font-weight:900;
+text-decoration:none;
+}
+
+.donate{
+background:#f58b1f;
+color:#fff;
+}
+
+.contact{
+background:#0b5aa6;
+color:#fff;
+}
+
+/* ===== ARROWS ===== */
+
+.arrow{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-width:60px;
-height:60px;
+width:55px;
+height:55px;
 border-radius:50%;
-border:none;
 background:#fff;
-box-shadow:var(--shadow);
-cursor:pointer;
+border:none;
+box-shadow:0 20px 50px rgba(0,0,0,.2);
 font-size:26px;
+cursor:pointer;
+z-index:10;
 }
 
-.left{left:20px}
-.right{right:20px}
+.prev{left:20px;}
+.next{right:20px;}
 
-/* ===== FOOTER ===== */
+/* ===== WHATSAPP ===== */
 
-footer{
-text-align:center;
-padding:20px;
-background:#fff;
-margin-top:40px;
+.wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:14px 16px;
+border-radius:50px;
+font-weight:900;
+text-decoration:none;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.slide{
+grid-template-columns:1fr;
+}
+
+.poster{
+height:260px;
+}
+
 }
 
 </style>
@@ -178,87 +193,123 @@ margin-top:40px;
 <script>
 fetch("components/header.html")
 .then(r=>r.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-
-setTimeout(()=>{
-if(typeof initLang==="function"){
-initLang();
-}
-},200);
+.then(d=>{
+document.getElementById("header").innerHTML=d;
+setTimeout(()=>initLang(),200);
 });
 </script>
 
 <!-- HERO -->
 <section class="hero wrap">
 
-<div>
-<h1 id="title">हमारे प्रयास</h1>
+<h1 id="title">
+हमारे प्रयास
+</h1>
 
 <p id="tagline">
-हम शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं सामाजिक सेवा के माध्यम से
-समाज के कमजोर वर्गों को सशक्त बनाने हेतु कार्यरत हैं।
+हमारा लक्ष्य केवल सेवा नहीं बल्कि स्थायी सामाजिक परिवर्तन है।
+आपका सहयोग शिक्षा, स्वास्थ्य और आत्मनिर्भरता के माध्यम से
+हजारों जीवन बदल सकता है।
 </p>
 
-<div class="btnRow">
-<a href="donate.html" class="btn secondary">दान करें</a>
-<a href="contact.html" class="btn primary">हमसे जुड़ें</a>
-</div>
-
-</div>
-
 </section>
 
-<!-- FULL WIDTH SLIDER -->
-<section class="fullSlider">
+<!-- SLIDER -->
+<section class="sliderSection">
 
-<button class="navArrow left" onclick="move(-1)">‹</button>
-<button class="navArrow right" onclick="move(1)">›</button>
+<button class="arrow prev" onclick="move(-1)">‹</button>
+<button class="arrow next" onclick="move(1)">›</button>
 
-<div class="trackWrap">
+<div class="wrap trackWrap">
 <div class="track" id="track">
 
-<!-- SLIDE -->
+<!-- EDUCATION -->
 <div class="slide">
+
 <img src="assets/initiatives/shiksha-sarathi.png" class="poster">
+
 <div class="slideBody">
-<div class="tag">Education Access</div>
-<div class="slideTitle">शिक्षा सारथी – प्रत्येक बच्चे तक शिक्षा</div>
+
+<div class="tag">Education Program</div>
+
+<div class="slideTitle">
+शिक्षा सारथी — हर बच्चे को अवसर
+</div>
+
 <div class="desc">
-ग्रामीण एवं आर्थिक रूप से कमजोर बच्चों को शिक्षा,
-मार्गदर्शन एवं संसाधन उपलब्ध कराना।
+भारत में लाखों बच्चे आर्थिक अभाव के कारण शिक्षा से वंचित रह जाते हैं।
+हम पुस्तकों, मार्गदर्शन और शिक्षण सहायता के माध्यम से
+ग्रामीण बच्चों को शिक्षा से जोड़ते हैं।
 </div>
+
 <div class="impact">
-आपका सहयोग बच्चों का भविष्य बदल सकता है।
+₹1500 का सहयोग एक बच्चे की वार्षिक अध्ययन सामग्री सुनिश्चित करता है।
 </div>
+
+<div class="slideBtns">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact Us</a>
+</div>
+
 </div>
 </div>
 
+<!-- WOMEN -->
 <div class="slide">
+
 <img src="assets/initiatives/women.png" class="poster">
+
 <div class="slideBody">
+
 <div class="tag">Women Empowerment</div>
-<div class="slideTitle">महिला सशक्तिकरण</div>
+
+<div class="slideTitle">
+महिला आत्मनिर्भरता अभियान
+</div>
+
 <div class="desc">
-महिलाओं को कौशल एवं स्वरोजगार के माध्यम से आत्मनिर्भर बनाना।
+कौशल प्रशिक्षण एवं आजीविका समर्थन के माध्यम से
+महिलाओं को आर्थिक रूप से स्वतंत्र बनाना।
 </div>
+
 <div class="impact">
-सशक्त महिला मजबूत समाज का निर्माण करती है।
+एक प्रशिक्षित महिला पूरे परिवार की आर्थिक स्थिति बदल सकती है।
 </div>
+
+<div class="slideBtns">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact Us</a>
+</div>
+
 </div>
 </div>
 
+<!-- HEALTH -->
 <div class="slide">
+
 <img src="assets/initiatives/health.png" class="poster">
+
 <div class="slideBody">
-<div class="tag">Healthcare</div>
-<div class="slideTitle">स्वास्थ्य सहायता</div>
+
+<div class="tag">Healthcare Support</div>
+
+<div class="slideTitle">
+स्वास्थ्य सहायता कार्यक्रम
+</div>
+
 <div class="desc">
-जरूरतमंद मरीजों को चिकित्सा सहायता।
+गरीब मरीजों को दवा, जांच और आपातकालीन सहायता उपलब्ध कराना।
 </div>
+
 <div class="impact">
-समय पर सहायता जीवन बचाती है।
+समय पर चिकित्सा सहायता जीवन बचाती है।
 </div>
+
+<div class="slideBtns">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact Us</a>
+</div>
+
 </div>
 </div>
 
@@ -267,17 +318,16 @@ initLang();
 
 </section>
 
-<footer>
-© <span id="year"></span>
-Bharat Abhyudaya Sansthan
-</footer>
+<!-- WHATSAPP -->
+<a class="wa"
+href="https://wa.me/918604669454"
+target="_blank">
+WhatsApp
+</a>
 
 <script>
 
-document.getElementById("year").textContent=
-new Date().getFullYear();
-
-/* ===== SLIDER ===== */
+/* SLIDER */
 
 let index=0;
 const track=document.getElementById("track");
@@ -289,7 +339,7 @@ track.style.transform=
 `translateX(-${index*100}%)`;
 }
 
-setInterval(()=>move(1),5000);
+setInterval(()=>move(1),6000);
 
 </script>
 
