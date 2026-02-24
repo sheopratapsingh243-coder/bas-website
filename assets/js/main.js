@@ -8,10 +8,26 @@ fetch("components/header.html")
 document.getElementById("header").innerHTML = data;
 
 setTimeout(()=>{
+
 applyLanguage();
 setActiveMenu();
-},100);
 
+// ===== LANGUAGE TOGGLE =====
+const toggle=document.getElementById("langToggle");
+
+if(toggle){
+toggle.addEventListener("click",()=>{
+
+let lang=localStorage.getItem("bas_lang") || "hi";
+lang=lang==="hi"?"en":"hi";
+
+localStorage.setItem("bas_lang",lang);
+location.reload();
+
+});
+}
+
+},100);
 });
 
 // ================= FOOTER LOAD =================
@@ -52,28 +68,34 @@ contact:"Contact"
 // ================= APPLY LANGUAGE =================
 function applyLanguage(){
 
-const lang=localStorage.getItem("bas_lang") || "hi";
-const d=t[lang];
+const lang = localStorage.getItem("bas_lang") || "hi";
+const d = t[lang];
 
-document.getElementById("brandText").textContent=d.brand;
-document.getElementById("brandSub").textContent=d.sub;
+const setText = (id, value) => {
+const el = document.getElementById(id);
+if(el) el.textContent = value;
+};
 
-document.getElementById("mHome").textContent=d.home;
-document.getElementById("mAbout").textContent=d.about;
-document.getElementById("mWork").textContent=d.work;
-document.getElementById("mDocs").textContent=d.docs;
-document.getElementById("mDonate").textContent=d.donate;
-document.getElementById("mGallery").textContent=d.gallery;
-document.getElementById("mContact").textContent=d.contact;
+// ----- Header Text -----
+setText("brandText", d.brand);
+setText("brandSub", d.sub);
 
-document.getElementById("btnHi")
-.classList.toggle("active",lang==="hi");
+// ----- Menu -----
+setText("mHome", d.home);
+setText("mAbout", d.about);
+setText("mWork", d.work);
+setText("mDocs", d.docs);
+setText("mDonate", d.donate);
+setText("mGallery", d.gallery);
+setText("mContact", d.contact);
 
-document.getElementById("btnEn")
-.classList.toggle("active",lang==="en");
-
+// ----- Single Toggle Label -----
+const label = document.getElementById("langLabel");
+if(label){
+label.textContent = lang === "hi" ? "हिन्दी" : "English";
 }
 
+}
 
 // ================= ACTIVE MENU =================
 function setActiveMenu(){
@@ -88,30 +110,5 @@ link.style.color="#0b5aa6";
 });
 
 }
-
-});
-/* ===== NEW SINGLE LANGUAGE TOGGLE ===== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-let currentLang = localStorage.getItem("lang") || "hi";
-
-const toggle = document.getElementById("langToggle");
-const label = document.getElementById("langLabel");
-
-if (!toggle || !label) return;
-
-function updateLangUI() {
-label.textContent =
-currentLang === "hi" ? "हिन्दी" : "English";
-}
-
-toggle.addEventListener("click", function () {
-currentLang = currentLang === "hi" ? "en" : "hi";
-localStorage.setItem("lang", currentLang);
-location.reload();
-});
-
-updateLangUI();
 
 });
