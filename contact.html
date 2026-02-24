@@ -235,48 +235,6 @@ initLang();
     }
   };
 
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
-
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
-
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mGallery").textContent=d.menu.g;
-    document.getElementById("mContact").textContent=d.menu.c;
-
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.a;
-    document.getElementById("mmWork").textContent=d.menu.w;
-    document.getElementById("mmDocs").textContent=d.menu.d;
-    document.getElementById("mmDonate").textContent=d.menu.dn;
-    document.getElementById("mmGallery").textContent=d.menu.g;
-    document.getElementById("mmContact").textContent=d.menu.c;
-
-    document.getElementById("pageTitle").textContent=d.pageTitle;
-    document.getElementById("pageSub").textContent=d.pageSub;
-
-    document.getElementById("infoTitle").textContent=d.infoTitle;
-    document.getElementById("mapTitle").textContent=d.mapTitle;
-    document.getElementById("mapSub").textContent=d.mapSub;
-
-    document.getElementById("a1").textContent=d.a1;
-    document.getElementById("a2").textContent=d.a2;
-    document.getElementById("a4").textContent=d.a4;
-
-    document.getElementById("addr").textContent=(lang==="hi")?ADDRESS_HI:ADDRESS_EN;
-
-    document.getElementById("btnDonate").textContent=d.btnDonate;
-    document.getElementById("note").textContent=d.note;
-
-    document.getElementById("foot").textContent=d.foot;
-  }
-  
 <script src="assets/js/main.js"></script>
   
 </body>
