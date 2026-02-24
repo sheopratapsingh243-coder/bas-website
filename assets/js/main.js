@@ -8,7 +8,6 @@ fetch("components/header.html")
 document.getElementById("header").innerHTML = data;
 
 setTimeout(()=>{
-initLanguageToggle();
 applyLanguage();
 setActiveMenu();
 },100);
