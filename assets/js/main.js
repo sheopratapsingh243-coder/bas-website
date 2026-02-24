@@ -13,26 +13,27 @@ applyLanguage();
 setActiveMenu();
 
 // ===== INSTANT LANGUAGE TOGGLE =====
-const toggle=document.getElementById("langToggle");
+const toggle = document.getElementById("langToggle");
 
 if(toggle){
-
 toggle.addEventListener("click",()=>{
 
-let lang=localStorage.getItem("bas_lang") || "hi";
-lang=lang==="hi"?"en":"hi";
+let lang = localStorage.getItem("bas_lang") || "hi";
+lang = lang === "hi" ? "en" : "hi";
 
 localStorage.setItem("bas_lang",lang);
 
-// ✅ NO RELOAD
+// ✅ instant change
 applyLanguage();
 
 });
-
 }
 
 },100);
-  
+
+}); // ✅ VERY IMPORTANT (HEADER FETCH CLOSED)
+
+
 // ================= FOOTER LOAD =================
 fetch("components/footer.html")
 .then(res => res.text())
@@ -74,31 +75,29 @@ function applyLanguage(){
 const lang = localStorage.getItem("bas_lang") || "hi";
 const d = t[lang];
 
-const setText = (id, value) => {
-const el = document.getElementById(id);
-if(el) el.textContent = value;
+const setText = (id,value)=>{
+const el=document.getElementById(id);
+if(el) el.textContent=value;
 };
 
-// ----- Header Text -----
-setText("brandText", d.brand);
-setText("brandSub", d.sub);
+setText("brandText",d.brand);
+setText("brandSub",d.sub);
 
-// ----- Menu -----
-setText("mHome", d.home);
-setText("mAbout", d.about);
-setText("mWork", d.work);
-setText("mDocs", d.docs);
-setText("mDonate", d.donate);
-setText("mGallery", d.gallery);
-setText("mContact", d.contact);
+setText("mHome",d.home);
+setText("mAbout",d.about);
+setText("mWork",d.work);
+setText("mDocs",d.docs);
+setText("mDonate",d.donate);
+setText("mGallery",d.gallery);
+setText("mContact",d.contact);
 
-// ----- Single Toggle Label -----
-const label = document.getElementById("langLabel");
+const label=document.getElementById("langLabel");
 if(label){
-label.textContent = lang === "hi" ? "हिन्दी" : "English";
+label.textContent = lang==="hi"?"हिन्दी":"English";
 }
 
 }
+
 
 // ================= ACTIVE MENU =================
 function setActiveMenu(){
