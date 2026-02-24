@@ -239,15 +239,7 @@ initLang();
 
 </main>
 
-<footer>
-  <div class="wrap">
-    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
-  </div>
-</footer>
-
-<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
-
-<script>
+  <script>
   const docs = [
     {
       key:"reg",
@@ -281,221 +273,18 @@ initLang();
     }
   ];
 
-  const t = {
-    hi:{
-      brand:"भारत अभ्युदय संस्थान",
-      sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-      menu:{home:"मुख्य पृष्ठ", a:"परिचय", w:"हमारे प्रयास", d:"दस्तावेज़", dn:"दान करें", g:"गैलरी", c:"संपर्क"},
 
-      badge:"सत्यापित दस्तावेज़",
-      title:"दस्तावेज़",
-      tagline:"भारत अभ्युदय संस्थान पारदर्शिता और विश्वसनीयता को सर्वोच्च प्राथमिकता देता है। इस पृष्ठ पर संस्था के प्रमुख पंजीकरण, पहचान और कानूनी दस्तावेज़ उपलब्ध हैं।",
-      btnContact:"संपर्क करें",
-      btnDonate:"दान करें",
-      note:"यदि किसी दस्तावेज़ के बारे में अतिरिक्त जानकारी चाहिए, तो आप हमसे संपर्क कर सकते हैं।",
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
+  </div>
+</footer>
 
-      legalTitle:"कानूनी / पंजीकरण विवरण",
-      legalLine2:"यह पृष्ठ पारदर्शिता और दानदाता-विश्वास को मजबूत करने हेतु बनाया गया है। नीचे उपलब्ध दस्तावेज़ आप देख या डाउनलोड कर सकते हैं।",
+<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
 
-      docsTitle:"उपलब्ध दस्तावेज़",
-      docsSub:"ये दस्तावेज़ संस्था की पहचान, पंजीकरण और कानूनी स्थिति की पुष्टि में सहायक हैं।",
 
-      view:"देखें",
-      download:"डाउनलोड",
-
-      items:{
-        reg:{
-          title:"पंजीकरण प्रमाणपत्र",
-          desc:"संस्था का पंजीकरण प्रमाणपत्र — संस्था की वैधता और पहचान के लिए मुख्य दस्तावेज़।"
-        },
-        pan:{
-          title:"PAN (संस्था)",
-          desc:"संस्था का PAN — वित्तीय पहचान और पारदर्शिता हेतु आवश्यक दस्तावेज़।"
-        },
-        darpan:{
-          title:"NGO Darpan प्रमाणपत्र",
-          desc:"NGO Darpan (NITI Aayog) से संबंधित दस्तावेज़ — NGO प्रोफ़ाइल सत्यापन में सहायक।"
-        },
-        bylaws:{
-          title:"संस्था के Bylaws",
-          desc:"संस्था के नियम/उद्देश्य/कार्य-पद्धति — संस्था के संचालन का आधार।"
-        },
-        "12a":{
-          title:"12A प्रमाणपत्र",
-          desc:"12A दस्तावेज़ — संस्था की आयकर से संबंधित स्थिति/मान्यता से जुड़ा प्रमाण।"
-        },
-        "80g":{
-          title:"80G प्रमाणपत्र",
-          desc:"80G दस्तावेज़ — दानदाताओं को कर लाभ (जहाँ लागू हो) से संबंधित प्रमाण।"
-        }
-      }
-    },
-
-    en:{
-      brand:"Bharat Abhyudaya Sansthan",
-      sub:"Upliftment to Self-Reliant India",
-      menu:{home:"Home", a:"About", w:"Our Initiatives", d:"Documents", dn:"Donate Now", g:"Gallery", c:"Contact"},
-
-      badge:"Verified Documents",
-      title:"Documents",
-      tagline:"Bharat Abhyudaya Sansthan prioritizes transparency and credibility. This page provides key legal, registration, and identity documents of the organization.",
-      btnContact:"Contact",
-      btnDonate:"Donate Now",
-      note:"If you need any additional clarification regarding a document, feel free to contact us.",
-
-      legalTitle:"Legal / Registration Details",
-      legalLine2:"This page is created to strengthen transparency and donor trust. You may view or download the documents below.",
-
-      docsTitle:"Available Documents",
-      docsSub:"These documents help verify the NGO identity, registration, and legal status.",
-
-      view:"View",
-      download:"Download",
-
-      items:{
-        reg:{
-          title:"Registration Certificate",
-          desc:"Official registration certificate of the NGO — key proof of identity and legal validity."
-        },
-        pan:{
-          title:"PAN (Organization)",
-          desc:"PAN card of the organization — required for financial identity and transparency."
-        },
-        darpan:{
-          title:"NGO Darpan Certificate",
-          desc:"NGO Darpan (NITI Aayog) related document — supports profile verification."
-        },
-        bylaws:{
-          title:"NGO Bylaws",
-          desc:"Rules, objectives, and working structure of the organization — foundation of operations."
-        },
-        "12a":{
-          title:"12A Certificate",
-          desc:"12A document — related to income tax recognition of the organization."
-        },
-        "80g":{
-          title:"80G Certificate",
-          desc:"80G document — related to donor tax benefits (where applicable)."
-        }
-      }
-    }
-  };
-
-  const btnHi=document.getElementById("btnHi");
-  const btnEn=document.getElementById("btnEn");
-
-  function applyActive(lang){
-    if(lang==="en"){
-      btnEn.classList.add("active");
-      btnHi.classList.remove("active");
-    }else{
-      btnHi.classList.add("active");
-      btnEn.classList.remove("active");
-    }
-  }
-  function buildDocs(lang){
-    const d=t[lang];
-    const grid=document.getElementById("docsGrid");
-    grid.innerHTML="";
-
-    docs.forEach(item=>{
-      const meta = d.items[item.key];
-
-      const card=document.createElement("div");
-      card.className="docCard";
-
-      card.innerHTML=`
-        <div class="docTop">
-          <div class="docIcon">${item.icon}</div>
-          <div>
-            <h3>${meta.title}</h3>
-            <p class="muted">${meta.desc}</p>
-          </div>
-        </div>
-
-        <div class="docBtns">
-          <a class="btn secondary" target="_blank" rel="noreferrer" href="${item.file}">
-            ${d.view}
-          </a>
-          <a class="btn primary" download href="${item.file}">
-            ${d.download}
-          </a>
-        </div>
-      `;
-
-      grid.appendChild(card);
-    });
-  }
-
-  function setLang(lang){
-    const d=t[lang];
-    document.documentElement.lang=(lang==="hi")?"hi":"en";
-
-    // Brand
-    document.getElementById("brandText").textContent=d.brand;
-    document.getElementById("brandSub").textContent=d.sub;
-
-    // Menu desktop
-    document.getElementById("mHome").textContent=d.menu.home;
-    document.getElementById("mAbout").textContent=d.menu.a;
-    document.getElementById("mWork").textContent=d.menu.w;
-    document.getElementById("mDocs").textContent=d.menu.d;
-    document.getElementById("mDonate").textContent=d.menu.dn;
-    document.getElementById("mGallery").textContent=d.menu.g;
-    document.getElementById("mContact").textContent=d.menu.c;
-
-    // Menu mobile
-    document.getElementById("mmHome").textContent=d.menu.home;
-    document.getElementById("mmAbout").textContent=d.menu.a;
-    document.getElementById("mmWork").textContent=d.menu.w;
-    document.getElementById("mmDocs").textContent=d.menu.d;
-    document.getElementById("mmDonate").textContent=d.menu.dn;
-    document.getElementById("mmGallery").textContent=d.menu.g;
-    document.getElementById("mmContact").textContent=d.menu.c;
-
-    // Hero
-    document.getElementById("badgeTop").textContent=d.badge;
-    document.getElementById("title").textContent=d.title;
-    document.getElementById("tagline").textContent=d.tagline;
-    document.getElementById("btnContact").textContent=d.btnContact;
-    document.getElementById("btnDonate").textContent=d.btnDonate;
-    document.getElementById("note").textContent=d.note;
-
-    // Legal
-    document.getElementById("legalTitle").textContent=d.legalTitle;
-    document.getElementById("legalLine2").textContent=d.legalLine2;
-
-    // Docs section
-    document.getElementById("docsTitle").textContent=d.docsTitle;
-    document.getElementById("docsSub").textContent=d.docsSub;
-
-    // Footer
-    document.getElementById("foot").textContent=d.brand;
-
-    buildDocs(lang);
-
-    applyActive(lang);
-    mobilePanel.classList.remove("open");
-  }
-
-  btnHi.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","hi");
-    setLang("hi");
-  });
-
-  btnEn.addEventListener("click",()=>{
-    localStorage.setItem("bas_lang","en");
-    setLang("en");
-  });
-
-  // Init
-  document.getElementById("year").textContent=new Date().getFullYear();
-  const savedLang = localStorage.getItem("bas_lang") || "hi";
-  applyActive(savedLang);
-  setLang(savedLang);
-</script>
   
-<script src="lang.js"></script>
+<script src="assets/js/main.js"></script>
   
 </body>
 </html>
