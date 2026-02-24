@@ -296,6 +296,49 @@ id="donateFloat"></a>
 
 <div id="footer"></div>
 
+  <script>
+
+/* ===== HERO SLIDER ===== */
+
+const slides=document.querySelectorAll(".slide");
+const nextBtn=document.querySelector(".right");
+const prevBtn=document.querySelector(".left");
+
+let slideIndex=0;
+
+function showSlide(n){
+
+slides.forEach(s=>s.classList.remove("active"));
+
+slideIndex=(n+slides.length)%slides.length;
+
+slides[slideIndex].classList.add("active");
+}
+
+/* arrows */
+if(nextBtn){
+nextBtn.onclick=()=>showSlide(slideIndex+1);
+}
+
+if(prevBtn){
+prevBtn.onclick=()=>showSlide(slideIndex-1);
+}
+
+/* auto slide */
+setInterval(()=>{
+showSlide(slideIndex+1);
+},5000);
+
+/* click image → donate */
+slides.forEach(()=>{
+document.querySelectorAll(".slide img")
+.forEach(img=>{
+img.onclick=()=>location.href="donate.html";
+});
+});
+
+</script>
+
 <script>
 
 /* ===== IMPACT COUNTER ENGINE ===== */
@@ -344,6 +387,7 @@ counterStarted=true;
 
 </body>
 </html>
+
 
 
 
