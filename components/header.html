@@ -89,6 +89,19 @@ display:flex;
 gap:8px;
 align-items:flex-end;  /* ✅ toggle baseline */
 }
+.pill{
+border:1px solid #e2e8f0;
+background:#fff;
+padding:8px 12px;
+border-radius:999px;
+font-weight:900;
+cursor:pointer;
+}
+
+.pill.active{
+background:linear-gradient(135deg,#0b5aa6,#083a6c);
+color:#fff;
+}
 .langToggle{
 border:1px solid #e2e8f0;
 padding:8px 16px;
@@ -108,20 +121,6 @@ transition:.3s;
 transform:translateY(-1px);
 box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
-.pill{
-border:1px solid #e2e8f0;
-background:#fff;
-padding:8px 12px;
-border-radius:999px;
-font-weight:900;
-cursor:pointer;
-}
-
-.pill.active{
-background:linear-gradient(135deg,#0b5aa6,#083a6c);
-color:#fff;
-}
-
 </style>
 <header id="globalHeader" class="mainHeader">
 
@@ -150,7 +149,7 @@ color:#fff;
 
 <div class="langToggle" id="langToggle">
 <span id="langLabel">हिन्दी</span>
-</div>
+  
 <script>
 let currentLang = localStorage.getItem("lang") || "hi";
 
@@ -170,7 +169,6 @@ location.reload();
 
 updateLangUI();
 </script>
-</div>
 
 </header>
 
