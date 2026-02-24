@@ -76,22 +76,6 @@ document.getElementById("btnEn")
 }
 
 
-// ================= TOGGLE =================
-function initLanguageToggle(){
-
-document.getElementById("btnHi").onclick=()=>{
-localStorage.setItem("bas_lang","hi");
-applyLanguage();
-};
-
-document.getElementById("btnEn").onclick=()=>{
-localStorage.setItem("bas_lang","en");
-applyLanguage();
-};
-
-}
-
-
 // ================= ACTIVE MENU =================
 function setActiveMenu(){
 
@@ -105,5 +89,30 @@ link.style.color="#0b5aa6";
 });
 
 }
+
+});
+/* ===== NEW SINGLE LANGUAGE TOGGLE ===== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+let currentLang = localStorage.getItem("lang") || "hi";
+
+const toggle = document.getElementById("langToggle");
+const label = document.getElementById("langLabel");
+
+if (!toggle || !label) return;
+
+function updateLangUI() {
+label.textContent =
+currentLang === "hi" ? "हिन्दी" : "English";
+}
+
+toggle.addEventListener("click", function () {
+currentLang = currentLang === "hi" ? "en" : "hi";
+localStorage.setItem("lang", currentLang);
+location.reload();
+});
+
+updateLangUI();
 
 });
