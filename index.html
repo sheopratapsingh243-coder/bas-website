@@ -112,7 +112,72 @@ animation:pulse 2s infinite;text-decoration:none;}
 margin-top:60px;
 min-height:200px;
 }
-  
+/* ===== PREMIUM IMPACT SECTION ===== */
+
+.impact{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:28px;
+margin:70px 0;
+text-align:center;
+}
+
+@media(max-width:900px){
+.impact{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:500px){
+.impact{grid-template-columns:1fr;}
+}
+
+/* CARD */
+.impactBox{
+background:#fff;
+border-radius:22px;
+padding:32px 20px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+/* TOP GRADIENT LINE */
+.impactBox::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:linear-gradient(90deg,#0b5aa6,#f58b1f);
+}
+
+/* HOVER EFFECT */
+.impactBox:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+
+/* ICON */
+.impactIcon{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* NUMBER */
+.impactBox h2{
+font-size:42px;
+color:#0b5aa6;
+margin:10px 0 6px;
+font-weight:900;
+}
+
+/* LABEL */
+.impactBox span{
+font-size:15px;
+font-weight:700;
+color:#475569;
+}  
 </style>
 </head>
 
@@ -147,8 +212,27 @@ min-height:200px;
 <div class="impact">
 
 <div class="impactBox">
+<div class="impactIcon">🎓</div>
 <h2 data-count="2500">0</h2>
 <span id="impact1"></span>
+</div>
+
+<div class="impactBox">
+<div class="impactIcon">🏥</div>
+<h2 data-count="1800">0</h2>
+<span id="impact2"></span>
+</div>
+
+<div class="impactBox">
+<div class="impactIcon">🐄</div>
+<h2 data-count="950">0</h2>
+<span id="impact3"></span>
+</div>
+
+<div class="impactBox">
+<div class="impactIcon">👴</div>
+<h2 data-count="1200">0</h2>
+<span id="impact4"></span>
 </div>
 
 <div class="impactBox">
@@ -260,6 +344,7 @@ counterStarted=true;
 
 </body>
 </html>
+
 
 
 
