@@ -166,20 +166,6 @@
 
 <div id="header"></div>
 
-<script>
-fetch("components/header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-
-setTimeout(()=>{
-if(typeof initLang==="function"){
-initLang();
-}
-},200);
-});
-</script>
-
 <main id="top">
 
   <!-- HERO -->
@@ -273,14 +259,8 @@ initLang();
       file:"./assets/docs/80g-certificate.pdf"
     }
   ];
-
-<footer>
-  <div class="wrap">
-    © <span id="year"></span> <span id="foot">भारत अभ्युदय संस्थान</span> • 8604669454 • 7355181465
-  </div>
-</footer>
-
-<a class="wa" href="https://wa.me/918604669454" target="_blank" rel="noreferrer">WhatsApp</a>
+    
+<div id="footer"></div>
 
 <script src="assets/js/main.js"></script>
   
