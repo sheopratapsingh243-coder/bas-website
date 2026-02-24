@@ -12,24 +12,27 @@ setTimeout(()=>{
 applyLanguage();
 setActiveMenu();
 
-// ===== LANGUAGE TOGGLE =====
+// ===== INSTANT LANGUAGE TOGGLE =====
 const toggle=document.getElementById("langToggle");
 
 if(toggle){
+
 toggle.addEventListener("click",()=>{
 
 let lang=localStorage.getItem("bas_lang") || "hi";
 lang=lang==="hi"?"en":"hi";
 
 localStorage.setItem("bas_lang",lang);
-location.reload();
+
+// ✅ NO RELOAD
+applyLanguage();
 
 });
+
 }
 
 },100);
-});
-
+  
 // ================= FOOTER LOAD =================
 fetch("components/footer.html")
 .then(res => res.text())
