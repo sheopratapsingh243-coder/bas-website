@@ -382,11 +382,33 @@ counterStarted=true;
 });
 
 </script>
+
+  <script>
+
+/* ===== VISITOR COUNTER ===== */
+
+let visitorCount =
+parseInt(document.getElementById("visit")?.innerText || 0);
+
+/* increase every 4 sec */
+setInterval(()=>{
+
+visitorCount++;
+const v=document.getElementById("visit");
+
+if(v){
+v.innerText=visitorCount.toLocaleString();
+}
+
+},4000);
+
+</script>
   
 <script src="/assets/js/main.js"></script>
 
 </body>
 </html>
+
 
 
 
