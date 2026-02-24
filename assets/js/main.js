@@ -134,6 +134,9 @@ const d=t[lang];
 const setText=(id,value)=>{
 const el=document.getElementById(id);
 if(el) el.textContent=value;
+  if(typeof runCounter==="function"){
+runCounter();
+}
 };
 
 /* HEADER */
