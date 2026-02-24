@@ -1,12 +1,5 @@
-<style>  
-#globalHeader .wrap{
-max-width:1120px;
-margin:auto;
-padding:0 16px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
+<style>
+
 #globalHeader{
 position:sticky;
 top:0;
@@ -16,45 +9,70 @@ backdrop-filter:blur(10px);
 border-bottom:1px solid rgba(226,232,240,.95);
 }
 
+#globalHeader .wrap{
+max-width:1120px;
+margin:auto;
+padding:0 16px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* ===== NAV ===== */
+
 .nav{
 display:flex;
 align-items:center;
 justify-content:space-between;
 min-height:70px;
 }
-}
+
+/* ===== BRAND AREA ===== */
+
 .brand{
 display:flex;
 align-items:center;
 gap:12px;
 text-decoration:none;
 }
+
+/* LOGO */
+
 .logo{
-height:52px;
-width:52px;
+height:54px;
+width:54px;
 border-radius:50%;
 object-fit:cover;
 display:block;
 }
-  
+
+/* TEXT BLOCK */
+
+.brandText{
+display:flex;
+flex-direction:column;
+justify-content:center;
+line-height:1.2;
+}
+
+/* NAME */
+
 .brandText b{
-display:block;
 font-size:16px;
 color:#000;
 font-weight:900;
 }
+
+/* TAGLINE */
 
 .brandText span{
 font-size:13px;
 color:#0b5aa6;
 font-weight:600;
 }
-.brandText{
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-  
+
+/* ===== MENU ===== */
+
 .menu{
 display:flex;
 gap:18px;
@@ -69,6 +87,8 @@ color:#475569;
 .menu a:hover{
 color:#0b5aa6;
 }
+
+/* ===== LANGUAGE TOGGLE ===== */
 
 .toggle{
 display:flex;
@@ -90,37 +110,3 @@ color:#fff;
 }
 
 </style>
-<header id="globalHeader" class="mainHeader">
-
-<div class="wrap nav">
-
-<a class="brand" href="/index.html">
-<img src="/assets/logo.jpg" class="logo">
-
-<div class="brandText">
-<b id="brandText">भारत अभ्युदय संस्थान</b>
-<span id="brandSub">
-अभ्युदय से आत्मनिर्भर भारत तक
-</span>
-</div>
-</a>
-
-<nav class="menu">
-<a id="mHome" href="/index.html">मुख्य पृष्ठ</a>
-<a id="mAbout" href="/about.html">परिचय</a>
-<a id="mWork" href="/initiatives.html">हमारे प्रयास</a>
-<a id="mDocs" href="/documents.html">दस्तावेज़</a>
-<a id="mDonate" href="/donate.html">दान करें</a>
-<a id="mGallery" href="/gallery.html">गैलरी</a>
-<a id="mContact" href="/contact.html">संपर्क</a>
-</nav>
-
-<div class="toggle">
-<button id="btnHi" class="pill active">हिन्दी</button>
-<button id="btnEn" class="pill">English</button>
-</div>
-
-</div>
-
-</header>
-
