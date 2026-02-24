@@ -19,62 +19,56 @@ border-bottom:1px solid rgba(226,232,240,.95);
 .nav{
 display:flex;
 justify-content:space-between;
-align-items:flex-end;   /* ✅ MAIN FIX */
-min-height:78px;
+align-items:center;
+min-height:84px;
 }
 
 .brand{
 display:flex;
-align-items:flex-end;   /* ✅ logo + text same baseline */
-gap:14px;
+align-items:center;
+gap:16px;
 text-decoration:none;
 }
 
 .logo{
-height:64px;   /* pehle 56px tha */
-width:64px;
+height:68px;
+width:68px;
 border-radius:50%;
 object-fit:cover;
-display:block;
 flex-shrink:0;
-margin-bottom:2px;
 }
   
+.brandText{
+display:flex;
+flex-direction:column;
+justify-content:center;
+line-height:1.2;
+}
+
 .brandText b{
-display:block;
-font-size:18px;
-color:#000;
+font-size:19px;
 font-weight:900;
-letter-spacing:.3px;
+color:#111827;
 }
 
 .brandText span{
 font-size:13px;
 color:#0b5aa6;
 font-weight:600;
-margin-top:2px;
-}
-.brandText{
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-line-height:1.15;
-padding-bottom:2px; /* micro alignment */
 }
 
-  .brand:hover{
+.brand:hover{
 opacity:.9;
 }
 .wrap{
 align-items:flex-end;
 }
- .menu{
+.menu{
 display:flex;
-gap:20px;
-font-weight:900;
-align-items:flex-end;   /* ✅ menu baseline */
+align-items:center;
+gap:26px;
+font-weight:800;
 }
-
 .menu a{
 text-decoration:none;
 color:#475569;
@@ -103,18 +97,21 @@ background:linear-gradient(135deg,#0b5aa6,#083a6c);
 color:#fff;
 }
 .langToggle{
-border:1px solid #e2e8f0;
-padding:8px 16px;
-border-radius:999px;
-font-weight:900;
-cursor:pointer;
-background:linear-gradient(135deg,#0b5aa6,#083a6c);
+background:#0b5aa6;
 color:#fff;
+padding:10px 22px;
+border-radius:999px;
+font-weight:800;
+cursor:pointer;
 display:flex;
 align-items:center;
 justify-content:center;
-min-width:95px;
-transition:.3s;
+transition:.25s;
+}
+
+.langToggle:hover{
+background:#083a6c;
+transform:translateY(-1px);
 }
 
 .langToggle:hover{
