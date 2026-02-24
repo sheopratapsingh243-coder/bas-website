@@ -83,6 +83,58 @@ border:1px solid var(--border);
 border-radius:18px;
 padding:14px;
 }
+  /* ================= PREMIUM LIST DESIGN ================= */
+
+#valuesList,
+#areasList,
+#stepsList{
+list-style:none;
+padding:0;
+margin-top:12px;
+display:grid;
+gap:10px;
+}
+
+#valuesList li,
+#areasList li,
+#stepsList li{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+padding:10px 14px;
+border-radius:12px;
+font-weight:700;
+color:#334155;
+transition:.25s;
+position:relative;
+padding-left:36px;
+}
+
+#valuesList li::before,
+#areasList li::before,
+#stepsList li::before{
+content:"✓";
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+color:#0b5aa6;
+font-weight:900;
+}
+
+#valuesList li:hover,
+#areasList li:hover,
+#stepsList li:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+background:#fff;
+}
+
+/* equal card height */
+.grid3 .card{
+height:100%;
+display:flex;
+flex-direction:column;
+}
 </style>
 </head>
 
