@@ -167,7 +167,52 @@ id="donateFloat"></a>
 
 <div id="footer"></div>
 
+  <script>
+
+/* ===== IMPACT COUNTER ===== */
+
+function runCounter(){
+
+const counters=document.querySelectorAll("[data-count]");
+
+counters.forEach(counter=>{
+
+counter.innerText="0";
+
+let target=+counter.dataset.count;
+let count=0;
+let step=target/120;
+
+function update(){
+count+=step;
+
+if(count<target){
+counter.innerText=Math.floor(count);
+requestAnimationFrame(update);
+}else{
+counter.innerText=target;
+}
+}
+
+update();
+
+});
+
+}
+
+let counterStarted=false;
+
+window.addEventListener("scroll",()=>{
+if(!counterStarted){
+runCounter();
+counterStarted=true;
+}
+});
+
+</script>
+
 <script src="/assets/js/main.js"></script>
 
 </body>
 </html>
+
