@@ -31,8 +31,8 @@ text-decoration:none;
 }
 
 .logo{
-height:56px;
-width:56px;
+height:64px;   /* pehle 56px tha */
+width:64px;
 border-radius:50%;
 object-fit:cover;
 display:block;
@@ -89,7 +89,25 @@ display:flex;
 gap:8px;
 align-items:flex-end;  /* ✅ toggle baseline */
 }
+.langToggle{
+border:1px solid #e2e8f0;
+padding:8px 16px;
+border-radius:999px;
+font-weight:900;
+cursor:pointer;
+background:linear-gradient(135deg,#0b5aa6,#083a6c);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+min-width:95px;
+transition:.3s;
+}
 
+.langToggle:hover{
+transform:translateY(-1px);
+box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
 .pill{
 border:1px solid #e2e8f0;
 background:#fff;
@@ -130,11 +148,28 @@ color:#fff;
 <a id="mContact" href="/contact.html">संपर्क</a>
 </nav>
 
-<div class="toggle">
-<button id="btnHi" class="pill active">हिन्दी</button>
-<button id="btnEn" class="pill">English</button>
+<div class="langToggle" id="langToggle">
+<span id="langLabel">हिन्दी</span>
 </div>
+<script>
+let currentLang = localStorage.getItem("lang") || "hi";
 
+const toggle = document.getElementById("langToggle");
+const label = document.getElementById("langLabel");
+
+function updateLangUI(){
+label.textContent =
+currentLang === "hi" ? "हिन्दी" : "English";
+}
+
+toggle.onclick = ()=>{
+currentLang = currentLang === "hi" ? "en" : "hi";
+localStorage.setItem("lang",currentLang);
+location.reload();
+};
+
+updateLangUI();
+</script>
 </div>
 
 </header>
