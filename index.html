@@ -17,7 +17,13 @@
 --shadow:0 15px 40px rgba(0,0,0,.1);
 --max:1120px;
 }
-body{margin:0;font-family:system-ui;background:#fff;overflow-x:hidden;}
+body{
+margin:0;
+font-family:system-ui;
+background:#fff;
+overflow-x:hidden;
+padding-top:80px;   /* ✅ HEADER SPACE FIX */
+}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
 .hero{padding:20px 0}
 .heroGrid{display:grid;gap:20px;align-items:center;}
@@ -408,6 +414,7 @@ v.innerText=visitorCount.toLocaleString();
 
 </body>
 </html>
+
 
 
 
