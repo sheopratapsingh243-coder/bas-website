@@ -356,12 +356,9 @@ setText("mContact",d.contact);
 
 Object.keys(d).forEach(k=>{
 const el=document.getElementById(k);
-if(!el) return;
-
-/* initiatives hero protection only */
-if(el.id === "initTitle" || el.id === "initTagline") return;
-
-el.textContent = d[k];
+if(el && !el.closest(".hero")){
+el.textContent=d[k];
+}
 });
 
 setList("valuesList",d.valuesList);
