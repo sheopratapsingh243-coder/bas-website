@@ -8,11 +8,12 @@ align-items:center;
 justify-content:space-between;
 }
 #globalHeader{
-position:sticky;
+position:fixed;
 top:0;
-z-index:50;
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(10px);
+left:0;
+width:100%;
+z-index:9999;
+background:#ffffff;
 border-bottom:1px solid rgba(226,232,240,.95);
 }
 #header{
@@ -127,6 +128,15 @@ transform:translateY(-1px);
 .langToggle:hover{
 transform:translateY(-1px);
 box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+  body{
+padding-top:84px;
+}
+
+@media(max-width:768px){
+body{
+padding-top:96px;
+}
 }
 </style>
 <header id="globalHeader" class="mainHeader">
