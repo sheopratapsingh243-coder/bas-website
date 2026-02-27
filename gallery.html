@@ -29,6 +29,9 @@ overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
+  main{
+display:block;
+}
 
   /* SECTION */
 section{padding:50px 0;text-align:center}
@@ -91,20 +94,7 @@ color:var(--muted);background:#fff;font-size:14px;
 
 <div id="header"></div>
 
-<script>
-fetch("components/header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-
-setTimeout(()=>{
-if(typeof initLang==="function"){
-initLang();
-}
-},200);
-});
-</script>
-
+<main>
 <section>
 <div class="wrap">
 <div class="badge">Service • Trust • Impact</div>
@@ -140,10 +130,11 @@ initLang();
 
 </div>
 </section>
+</main>
 
 <div id="footer"></div>
 
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 
 </body>
 </html>
