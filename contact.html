@@ -1,177 +1,199 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Contact | Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Contact Bharat Abhyudaya Sansthan." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <style>
-    :root{
-      --brand:#0b5aa6;
-      --accent:#f58b1f;
-      --fg:#0b1220;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:20px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--fg);
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        #fff;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    section{padding:22px 0}
-    h1{margin:10px 0 0;font-size:30px;letter-spacing:-.7px}
-    h2{margin:0;font-size:20px;letter-spacing:-.4px}
-    p{margin:10px 0 0}
-    .muted{color:var(--muted)}
-    .small{font-size:14px}
-    
-    /* Page */
-    .heroCard{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
+<title>Contact • Bharat Abhyudaya Sansthan</title>
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      margin-top:16px;
-    }
-    @media(min-width:980px){
-      .grid{grid-template-columns:1fr 1fr;gap:18px}
-    }
+<style>
 
-    .card{
-      background:#fff;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:16px;
-    }
+:root{
+--brand:#0b5aa6;
+--accent:#f58b1f;
+--border:#e2e8f0;
+--radius:20px;
+--shadow:0 16px 40px rgba(0,0,0,.08);
+--max:1120px;
+}
 
-    .line{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 0;
-      border-bottom:1px dashed rgba(226,232,240,.95);
-      font-size:14px;
-      flex-wrap:wrap;
-    }
-    .line b{font-weight:950}
-    .line span{color:var(--muted);font-weight:900}
+body{
+margin:0;
+font-family:system-ui;
+background:#f8fafc;
+}
 
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
+.wrap{
+max-width:var(--max);
+margin:auto;
+padding:0 16px;
+}
 
-    iframe{
-      width:100%;
-      height:360px;
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:22px;
-      margin-top:12px;
-    }
+main{
+display:block;
+}
 
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
-    }
-  </style>
+/* HERO */
+
+.hero{
+padding:40px 0;
+}
+
+.hero h1{
+font-size:38px;
+color:var(--brand);
+margin:0;
+}
+
+.hero p{
+color:#475569;
+line-height:1.8;
+max-width:720px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+gap:24px;
+margin-top:30px;
+}
+
+@media(min-width:900px){
+.grid{
+grid-template-columns:1fr 1fr;
+}
+}
+
+/* CARD */
+
+.card{
+background:#fff;
+border-radius:var(--radius);
+padding:26px;
+box-shadow:var(--shadow);
+border:1px solid var(--border);
+}
+
+.card h3{
+margin-top:0;
+color:var(--brand);
+}
+
+.info{
+margin:10px 0;
+color:#475569;
+line-height:1.7;
+}
+
+/* FORM */
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid var(--border);
+font-family:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.btn{
+margin-top:14px;
+background:var(--accent);
+color:#fff;
+border:none;
+padding:14px;
+border-radius:12px;
+font-weight:900;
+cursor:pointer;
+width:100%;
+}
+
+</style>
 </head>
 
-<body>
+<body class="contactPage">
 
-<div id="header"></div>
+<!-- GLOBAL HEADER -->
+<div id="header" style="height:106px"></div>
 
 <main>
 
-  <section>
-    <div class="wrap">
-      <div class="heroCard">
-        <h1 id="pageTitle">संपर्क करें</h1>
-        <p class="muted" id="pageSub">
-          यदि आप संस्था से जुड़ना चाहते हैं या किसी भी प्रकार की सहायता/जानकारी चाहते हैं, तो नीचे दिए गए माध्यमों से संपर्क करें।
-        </p>
-      </div>
+<section class="hero">
+<div class="wrap">
 
-      <div class="grid">
+<h1 id="contactTitle">
+संपर्क करें
+</h1>
 
-        <!-- Contact Details -->
-        <div class="card">
-          <h2 id="infoTitle">संपर्क विवरण</h2>
+<p id="contactTagline">
+यदि आप सेवा कार्यों में सहयोग करना चाहते हैं,
+दान संबंधी जानकारी प्राप्त करना चाहते हैं
+या किसी जरूरतमंद व्यक्ति की सहायता हेतु
+संस्था से जुड़ना चाहते हैं,
+तो हमसे सीधे संपर्क कर सकते हैं।
+</p>
 
-          <div class="line"><b id="a1">पता</b><span id="addr">481, शादिपुर खुर्द, जयराम नगर, विधायक रोड, तहसील सदर, फतेहपुर, 212601 (उ.प्र.)</span></div>
-          <div class="line"><b id="a2">फोन</b><span>8604669454, 7355181465</span></div>
-          <div class="line"><b id="a3">Email</b><span>sheopratapsingh243@gmail.com</span></div>
-          <div class="line" style="border-bottom:none"><b id="a4">WhatsApp</b><span>+91 8604669454</span></div>
+</div>
+</section>
 
-          <div class="btnRow">
-            <a class="btn primary" href="https://wa.me/918604669454" target="_blank" rel="noreferrer" id="btnWA">WhatsApp</a>
-            <a class="btn secondary" href="donate.html" id="btnDonate">दान करें</a>
-          </div>
 
-          <p class="muted small" style="margin-top:12px" id="note">
-            नोट: आप चाहें तो WhatsApp पर सीधे message करके संस्था से जुड़ सकते हैं।
-          </p>
-        </div>
+<section>
+<div class="wrap">
 
-        <!-- Map -->
-        <div class="card">
-          <h2 id="mapTitle">स्थान (Map)</h2>
-          <p class="muted small" id="mapSub">
-            नीचे दिए गए मानचित्र के माध्यम से आप स्थान देख सकते हैं।
-          </p>
+<div class="grid">
 
-          <iframe
-            title="Bharat Abhyudaya Sansthan Location"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=481%20Shadipur%20Khurd%20Jayram%20Nagar%20Vidhayak%20Road%20Fatehpur%20212601&output=embed">
-          </iframe>
-        </div>
+<!-- CONTACT INFO -->
+<div class="card">
 
-      </div>
-    </div>
-  </section>
+<h3 id="officeTitle">कार्यालय संपर्क</h3>
+
+<p class="info" id="addrText">
+481, शादिपुर खुर्द, जयराम नगर,
+फतेहपुर, उत्तर प्रदेश
+</p>
+
+<p class="info">
+<b>Phone:</b><br>
+<span id="phoneText">
+8604669454, 7355181465
+</span>
+</p>
+
+<p class="info">
+<b>Email:</b><br>
+<span id="emailText">
+sheopratapsingh243@gmail.com
+</span>
+</p>
+
+</div>
+
+
+<!-- CONTACT FORM -->
+<div class="card">
+
+<h3 id="formTitle">संदेश भेजें</h3>
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+
+<button class="btn" id="sendBtn">
+Send Message
+</button>
+
+</div>
+
+</div>
+
+</div>
+</section>
 
 </main>
 
