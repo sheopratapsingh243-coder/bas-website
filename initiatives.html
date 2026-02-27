@@ -20,22 +20,21 @@ max-width:1150px;
 margin:auto;
 padding:0 20px;
 }
-
+main{
+display:block;
+}
 /* ===== HERO ===== */
 
 .hero{
-padding:140px 0 40px;
+padding:40px 0;
 }
 
 @media(max-width:768px){
 .hero{
-padding:160px 0 40px;
+padding:50px 0;
 }
 }
 
-#header + section.hero{
-margin-top:12px;
-}
 
 .hero h1{
 font-size:42px;
@@ -198,7 +197,8 @@ height:260px;
 <!-- GLOBAL HEADER -->
 <div id="header"></div>
 
-<!-- HERO -->
+<main>
+
 <section class="hero">
 <div class="wrap">
 
@@ -343,7 +343,7 @@ track.style.transform=
 setInterval(()=>move(1),6000);
 
 </script>
-
+</main>
 <div id="footer"></div>
 
 <script src="/assets/js/main.js"></script>
