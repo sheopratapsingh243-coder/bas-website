@@ -354,9 +354,11 @@ setText("mDonate",d.donate);
 setText("mGallery",d.gallery);
 setText("mContact",d.contact);
 
-/* ABOUT */
 Object.keys(d).forEach(k=>{
-if(typeof d[k]==="string") setText(k,d[k]);
+const el=document.getElementById(k);
+if(el && !el.closest(".hero")){
+el.textContent=d[k];
+}
 });
 
 setList("valuesList",d.valuesList);
