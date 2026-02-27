@@ -388,22 +388,3 @@ link.style.color="#0b5aa6";
 
 });
 
-/* ===============================
-   GLOBAL HERO OVERLAP FIX
-================================ */
-
-function applyHeaderOffset(){
-
-const header = document.querySelector("#globalHeader");
-
-if(!header) return;
-
-const headerHeight = header.offsetHeight;
-
-document.documentElement.style
-.setProperty("--header-height", headerHeight + "px");
-
-}
-
-window.addEventListener("load", applyHeaderOffset);
-window.addEventListener("resize", applyHeaderOffset);
