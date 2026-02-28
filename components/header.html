@@ -1,146 +1,4 @@
-<style>  
-#globalHeader .wrap{
-max-width:1120px;
-margin:auto;
-padding:0 16px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-#globalHeader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:9999;
-background:#ffffff;
-border-bottom:1px solid rgba(226,232,240,.95);
-}
-#header{
-height:84px;
-}
-  /* ===== GLOBAL HERO FIX ===== */
-
-  
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-min-height:84px;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:16px;
-text-decoration:none;
-
-padding-top:2px;
-}
-
-.logo{
-height:68px;
-width:68px;
-border-radius:50%;
-object-fit:cover;
-flex-shrink:0;
-
-transform:translateY(-6px);
-}
-  
-.brandText{
-display:flex;
-flex-direction:column;
-justify-content:center;
-line-height:1.2;
-}
-
-.brandText b{
-font-size:19px;
-font-weight:900;
-color:#111827;
-}
-
-.brandText span{
-font-size:13px;
-color:#0b5aa6;
-font-weight:600;
-}
-
-.brand:hover{
-opacity:.9;
-}
-.wrap{
-align-items:flex-end;
-}
-.menu{
-display:flex;
-align-items:center;
-gap:26px;
-font-weight:800;
-}
-.menu a{
-text-decoration:none;
-color:#475569;
-}
-
-.menu a:hover{
-color:#0b5aa6;
-}
-
-.toggle{
-display:flex;
-gap:8px;
-align-items:flex-end;  /* ✅ toggle baseline */
-}
-.pill{
-border:1px solid #e2e8f0;
-background:#fff;
-padding:8px 12px;
-border-radius:999px;
-font-weight:900;
-cursor:pointer;
-}
-
-.pill.active{
-background:linear-gradient(135deg,#0b5aa6,#083a6c);
-color:#fff;
-}
-.langToggle{
-background:#0b5aa6;
-color:#fff;
-padding:10px 22px;
-border-radius:999px;
-font-weight:800;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-transition:.25s;
-margin-left:18px;
-}
-
-.langToggle:hover{
-background:#083a6c;
-transform:translateY(-1px);
-}
-
-.langToggle:hover{
-transform:translateY(-1px);
-box-shadow:0 4px 10px rgba(0,0,0,.08);
-}
-  body{
-padding-top:84px;
-}
-
-@media(max-width:768px){
-body{
-padding-top:96px;
-}
-}
-main{ padding-top: var(--header-height); }
-</style>
-<header id="globalHeader" class="mainHeader">
+<header id="globalHeader">
 
 <div class="wrap nav">
 
@@ -168,30 +26,80 @@ main{ padding-top: var(--header-height); }
 <div class="langToggle" id="langToggle">
 <span id="langLabel">हिन्दी</span>
 </div>
-  
+
+</div>
 </header>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
 
-let currentLang = localStorage.getItem("lang") || "hi";
+<style>
 
-const toggle = document.getElementById("langToggle");
-const label = document.getElementById("langLabel");
-
-if(!toggle || !label) return;
-
-function updateLangUI(){
-label.textContent =
-currentLang === "hi" ? "हिन्दी" : "English";
+#globalHeader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:9999;
+background:#fff;
+border-bottom:1px solid #e2e8f0;
 }
 
-toggle.addEventListener("click", function(){
-currentLang = currentLang === "hi" ? "en" : "hi";
-localStorage.setItem("lang", currentLang);
-location.reload();
-});
+#globalHeader .wrap{
+max-width:1120px;
+margin:auto;
+padding:0 16px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+min-height:84px;
+}
 
-updateLangUI();
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+text-decoration:none;
+}
 
-});
-</script>
+.logo{
+height:64px;
+width:64px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.brandText b{
+font-size:18px;
+font-weight:900;
+color:#111827;
+}
+
+.brandText span{
+font-size:13px;
+color:#0b5aa6;
+font-weight:600;
+}
+
+.menu{
+display:flex;
+gap:24px;
+font-weight:800;
+}
+
+.menu a{
+text-decoration:none;
+color:#475569;
+}
+
+.menu a:hover{
+color:#0b5aa6;
+}
+
+.langToggle{
+background:#0b5aa6;
+color:#fff;
+padding:10px 20px;
+border-radius:999px;
+cursor:pointer;
+font-weight:800;
+}
+
+</style>
