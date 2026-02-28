@@ -149,10 +149,10 @@ setText("initTagline",d.initTagline);
 
 /* Toggle label */
 const label=document.getElementById("langLabel");
-if(label){
-label.textContent = lang==="hi" ? "हिन्दी" : "English";
-}
 
+if(label){
+label.textContent =
+lang==="hi" ? "English" : "हिन्दी";
 }
 
 
