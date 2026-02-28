@@ -3,18 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Our Initiatives • Bharat Abhyudaya Sansthan</title>
-
+  
 <style>
-/* ✅ YOUR CSS FULL SAME — NOT TOUCHED */
-body{margin:0;font-family:system-ui;background:#f6f9fc}
-.wrap{max-width:1150px;margin:auto;padding:0 20px}
-.hero{padding:40px 0}
-.hero h1{font-size:42px;color:#0b5aa6}
-.hero p{color:#475569;line-height:1.8}
+  
+body{
+margin:0;
+font-family:system-ui,Segoe UI,Roboto;
+background:#f6f9fc;
+overflow-x:hidden;
+}
 
-.sliderSection{position:relative;padding:40px 0 70px}
-.track{display:flex;transition:.6s ease}
+.wrap{
+max-width:1150px;
+margin:auto;
+padding:0 20px;
+}
+main{
+display:block;
+}
+/* ===== HERO ===== */
+
+.hero{
+padding:40px 0;
+}
+
+@media(max-width:768px){
+.hero{
+padding:50px 0;
+}
+}
+
+
+.hero h1{
+font-size:42px;
+color:#0b5aa6;
+margin:0;
+}
+
+.hero p{
+color:#475569;
+line-height:1.8;
+font-size:17px;
+max-width:700px;
+}
+
+/* ===== SLIDER ===== */
+
+.sliderSection{
+position:relative;
+padding:40px 0 70px;
+}
+
+.trackWrap{
+overflow:hidden;
+}
+
+.track{
+display:flex;
+transition:.6s ease;
+}
+
 .slide{
 flex:0 0 100%;
 display:grid;
@@ -24,44 +74,143 @@ border-radius:28px;
 overflow:hidden;
 box-shadow:0 30px 80px rgba(0,0,0,.12);
 }
-.poster{width:100%;height:520px;object-fit:cover}
-.slideBody{padding:40px;display:flex;flex-direction:column;gap:18px}
-.tag{background:#e8f1fb;color:#0b5aa6;padding:8px 14px;border-radius:999px;font-weight:800}
-.slideTitle{font-size:28px;font-weight:900}
-.desc{color:#475569;line-height:1.8}
-.impact{background:#fff4e8;padding:15px;border-radius:16px;font-weight:700}
-.slideBtns{display:flex;gap:12px}
-.btn{padding:14px 18px;border-radius:14px;font-weight:900;text-decoration:none}
-.donate{background:#f58b1f;color:#fff}
-.contact{background:#0b5aa6;color:#fff}
+
+.poster{
+width:100%;
+height:520px;
+object-fit:cover;
+display:block;
+}
+
+.slideBody{
+padding:40px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.tag{
+background:#e8f1fb;
+color:#0b5aa6;
+padding:8px 14px;
+border-radius:999px;
+font-weight:800;
+width:max-content;
+}
+
+.slideTitle{
+font-size:28px;
+font-weight:900;
+}
+
+.desc{
+color:#475569;
+line-height:1.8;
+}
+
+.impact{
+background:#fff4e8;
+padding:15px;
+border-radius:16px;
+font-weight:700;
+}
+
+/* BUTTONS */
+
+.slideBtns{
+display:flex;
+gap:12px;
+margin-top:10px;
+}
+
+.btn{
+padding:14px 18px;
+border-radius:14px;
+font-weight:900;
+text-decoration:none;
+}
+
+.donate{
+background:#f58b1f;
+color:#fff;
+}
+
+.contact{
+background:#0b5aa6;
+color:#fff;
+}
+
+/* ===== ARROWS ===== */
+
 .arrow{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-width:55px;height:55px;border-radius:50%;
-background:#fff;border:none;font-size:26px;cursor:pointer;
+width:55px;
+height:55px;
+border-radius:50%;
+background:#fff;
+border:none;
+box-shadow:0 20px 50px rgba(0,0,0,.2);
+font-size:26px;
+cursor:pointer;
+z-index:10;
 }
-.prev{left:20px}
-.next{right:20px}
+
+.prev{left:20px;}
+.next{right:20px;}
+
+/* ===== WHATSAPP ===== */
+
+.wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:14px 16px;
+border-radius:50px;
+font-weight:900;
+text-decoration:none;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.slide{
+grid-template-columns:1fr;
+}
+
+.poster{
+height:260px;
+}
+
+}
+
 </style>
 </head>
 
 <body class="initiativesPage">
 
+<!-- GLOBAL HEADER -->
 <div id="header"></div>
-
 <main>
 
-<!-- HERO -->
 <section class="hero">
 <div class="wrap">
 
-<h1 id="initTitle"></h1>
-<p id="initTagline"></p>
+<h1 id="initTitle">
+हमारे सेवा प्रयास 
+</h1>
+
+<p id="initTitl">
+भारत अभ्युदय संस्थान शिक्षा,  स्वास्थ्य, महिला सशक्तिकरण,  आपदा सहायता एवं मानवीय सेवा के क्षेत्रों में पूर्ण पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है। प्रत्येक सहयोग प्रत्यक्ष रूप से जरूरतमंद व्यक्तियों तक पहुंचाने हेतु सत्यापन आधारित प्रणाली अपनी जाति है। 
+</p>
 
 </div>
 </section>
-
 <!-- SLIDER -->
 <section class="sliderSection">
 
@@ -70,57 +219,140 @@ background:#fff;border:none;font-size:26px;cursor:pointer;
 
 <div class="track" id="track">
 
-<!-- ===== EDUCATION ===== -->
+<!-- EDUCATION -->
 <div class="slide">
 <img src="assets/initiatives/shiksha-sarathi.png" class="poster">
 <div class="slideBody">
-
-<div class="tag" id="eduTag"></div>
-<div class="slideTitle" id="eduTitle"></div>
-<div class="desc" id="eduDesc"></div>
-<div class="impact" id="eduImpact"></div>
-
+<div class="tag">Education Support</div>
+<div class="slideTitle">शिक्षा सारथी अभियान</div>
+<div class="desc">
+ग्रामीण एवं आर्थिक रूप से कमजोर बच्चों को अध्ययन सामग्री,
+मार्गदर्शन एवं निरंतर शैक्षिक सहयोग प्रदान किया जाता है।
+शिक्षा को दीर्घकालिक सामाजिक परिवर्तन का आधार मानते हुए
+हम बच्चों को केवल सहायता नहीं बल्कि भविष्य निर्माण का
+अवसर प्रदान करते हैं। प्रत्येक सहयोग का उपयोग सीधे
+छात्र सहायता कार्यक्रमों में किया जाता है।
+</div>
+<div class="impact">
+₹1500 सहयोग = एक बच्चे की वार्षिक शिक्षा सहायता।
+</div>
 <div class="slideBtns">
-<a href="donate.html" class="btn donate" id="donateBtn1"></a>
-<a href="contact.html" class="btn contact" id="contactBtn1"></a>
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact</a>
+</div>
+</div>
 </div>
 
-</div>
-</div>
-
-<!-- ===== HEALTH ===== -->
+<!-- HEALTH -->
 <div class="slide">
 <img src="assets/initiatives/health.png" class="poster">
 <div class="slideBody">
-
-<div class="tag" id="healthTag"></div>
-<div class="slideTitle" id="healthTitle"></div>
-<div class="desc" id="healthDesc"></div>
-<div class="impact" id="healthImpact"></div>
-
+<div class="tag">Healthcare</div>
+<div class="slideTitle">स्वास्थ्य सहायता सेवा</div>
+<div class="desc">
+आर्थिक रूप से कमजोर मरीजों को दवाइयाँ, जांच सहायता,
+आपातकालीन चिकित्सा सहयोग तथा अस्पताल पहुँच सहायता
+प्रदान की जाती है। समय पर उपचार कई जीवन बचाता है।
+संस्था सत्यापित मामलों में प्राथमिक स्वास्थ्य सहायता
+प्रदान कर मानवीय सेवा को प्राथमिकता देती है।
+</div>
+<div class="impact">
+आपका सहयोग जीवन रक्षा में सहायक बन सकता है।
+</div>
 <div class="slideBtns">
-<a href="donate.html" class="btn donate" id="donateBtn2"></a>
-<a href="contact.html" class="btn contact" id="contactBtn2"></a>
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact</a>
+</div>
+</div>
 </div>
 
-</div>
-</div>
-
-<!-- ===== WOMEN ===== -->
+<!-- WOMEN -->
 <div class="slide">
 <img src="assets/initiatives/women.png" class="poster">
 <div class="slideBody">
-
-<div class="tag" id="womenTag"></div>
-<div class="slideTitle" id="womenTitle"></div>
-<div class="desc" id="womenDesc"></div>
-<div class="impact" id="womenImpact"></div>
-
+<div class="tag">Women Empowerment</div>
+<div class="slideTitle">महिला आत्मनिर्भरता</div>
+<div class="desc">
+महिलाओं को कौशल प्रशिक्षण, जागरूकता एवं आजीविका
+सहयोग प्रदान कर आर्थिक आत्मनिर्भरता की दिशा में
+प्रोत्साहित किया जाता है। आत्मनिर्भर महिला पूरे
+परिवार एवं समाज को सशक्त बनाती है।
+यह कार्यक्रम दीर्घकालिक सामाजिक स्थिरता का आधार है।
+</div>
+<div class="impact">
+एक प्रशिक्षित महिला = सशक्त परिवार।
+</div>
 <div class="slideBtns">
-<a href="donate.html" class="btn donate" id="donateBtn3"></a>
-<a href="contact.html" class="btn contact" id="contactBtn3"></a>
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact</a>
+</div>
+</div>
 </div>
 
+<!-- AMBULANCE -->
+<div class="slide">
+<img src="assets/initiatives/ambulance.png" class="poster">
+<div class="slideBody">
+<div class="tag">Emergency Service</div>
+<div class="slideTitle">निःशुल्क एम्बुलेंस सहायता</div>
+<div class="desc">
+आपातकालीन परिस्थितियों में मरीजों को सुरक्षित एवं
+समय पर अस्पताल पहुँचाना जीवन रक्षा का महत्वपूर्ण
+भाग है। संस्था जरूरतमंदों के लिए परिवहन सहायता
+उपलब्ध कराती है ताकि आर्थिक अभाव उपचार में बाधा
+न बने।
+</div>
+<div class="impact">
+समय पर सहायता = बची हुई जिंदगी।
+</div>
+<div class="slideBtns">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact</a>
+</div>
+</div>
+</div>
+
+<!-- OLD AGE -->
+<div class="slide">
+<img src="assets/initiatives/oldage.png" class="poster">
+<div class="slideBody">
+<div class="tag">Elder Care</div>
+<div class="slideTitle">वृद्धजन सम्मान सेवा</div>
+<div class="desc">
+असहाय एवं जरूरतमंद वृद्धजनों को भोजन, स्वास्थ्य
+सहयोग एवं मानवीय सम्मान प्रदान किया जाता है।
+हमारा उद्देश्य उन्हें सुरक्षित एवं सम्मानजनक जीवन
+प्रदान करना है।
+</div>
+<div class="impact">
+सम्मानपूर्ण जीवन हर व्यक्ति का अधिकार।
+</div>
+<div class="slideBtns">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact</a>
+</div>
+</div>
+</div>
+
+<!-- HERITAGE -->
+<div class="slide">
+<img src="assets/initiatives/heritage.png" class="poster">
+<div class="slideBody">
+<div class="tag">Heritage Conservation</div>
+<div class="slideTitle">धरोहर संरक्षण</div>
+<div class="desc">
+स्थानीय सांस्कृतिक एवं ऐतिहासिक धरोहरों के संरक्षण
+के माध्यम से सामाजिक जागरूकता बढ़ाई जाती है।
+यह पहल समाज को अपनी जड़ों से जोड़ने एवं
+सांस्कृतिक पहचान सुरक्षित रखने का प्रयास है।
+</div>
+<div class="impact">
+संस्कृति संरक्षण = समाज की पहचान।
+</div>
+<div class="slideBtns">
+<a href="donate.html" class="btn donate">Donate Now</a>
+<a href="contact.html" class="btn contact">Contact</a>
+</div>
 </div>
 </div>
 
@@ -128,9 +360,12 @@ background:#fff;border:none;font-size:26px;cursor:pointer;
 
 </section>
 
-</main>
-
-<div id="footer"></div>
+<!-- WHATSAPP -->
+<a class="wa"
+href="https://wa.me/918604669454"
+target="_blank">
+WhatsApp
+</a>
 
 <script>
 let index=0;
@@ -144,6 +379,8 @@ track.style.transform=`translateX(-${index*100}%)`;
 
 setInterval(()=>move(1),6000);
 </script>
+</main>
+<div id="footer"></div>
 
 <script src="/assets/js/main.js"></script>
 
