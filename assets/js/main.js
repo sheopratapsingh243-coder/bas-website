@@ -170,6 +170,20 @@ label.textContent =
 lang==="hi" ? "English" : "हिन्दी";
 }
 
+function applyLanguage(){
+
+   ...
+   /* toggle label */
+   const label=document.getElementById("langLabel");
+
+   if(label){
+      label.textContent =
+      lang==="hi" ? "English" : "हिन्दी";
+   }
+
+}   // ✅ applyLanguage CLOSED
+
+
 
 /* ================= ACTIVE MENU ================= */
 
@@ -183,8 +197,6 @@ if(link.getAttribute("href").includes(current)){
 link.style.color="#0b5aa6";
 }
 });
-
-/* ===== END applyLanguage ===== */
 
 }
 
