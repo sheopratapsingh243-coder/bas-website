@@ -318,7 +318,7 @@ tr2d:"Real local impact.",
 
 tr3t:"Transparency",
 tr3d:"Responsible fund usage."
-  initTitle:"Our Initiatives",
+initTitle:"Our Initiatives",
 
 initTagline:
 "Bharat Abhyudaya Sansthan works with transparency and accountability in education, healthcare, women empowerment and humanitarian services ensuring verified support reaches genuine beneficiaries.",
