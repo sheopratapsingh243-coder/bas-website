@@ -320,35 +320,28 @@ tr3d:"Responsible fund usage."
 };
 
 
+// ================= APPLY LANGUAGE =================
 function applyLanguage(){
 
-const lang = localStorage.getItem("bas_lang") || "hi";
-const d = t[lang];
-
-/* ---------- helpers ---------- */
+const lang=localStorage.getItem("bas_lang") || "hi";
+const d=t[lang];
 
 const setText=(id,val)=>{
 const el=document.getElementById(id);
-if(el && typeof val==="string"){
-el.textContent = val;
-}
+if(el) el.textContent=val;
 };
 
 const setList=(id,arr)=>{
 const el=document.getElementById(id);
 if(!el || !arr) return;
-
 el.innerHTML="";
-arr.forEach(item=>{
+arr.forEach(i=>{
 const li=document.createElement("li");
-li.textContent=item;
+li.textContent=i;
 el.appendChild(li);
 });
 };
-
-
-/* ---------- HEADER ---------- */
-
+/* HEADER */
 setText("brandText",d.brand);
 setText("brandSub",d.sub);
 
@@ -360,40 +353,26 @@ setText("mDonate",d.donate);
 setText("mGallery",d.gallery);
 setText("mContact",d.contact);
 
-
-/* ---------- GLOBAL CONTENT ---------- */
-
-Object.keys(d).forEach(key=>{
-
-/* protect initiatives hero */
-if(key==="initTitle" || key==="initTagline") return;
-
-const el=document.getElementById(key);
-if(!el) return;
-
-if(typeof d[key]==="string"){
-el.textContent=d[key];
+Object.keys(d).forEach(k=>{
+const el=document.getElementById(k);
+if(el && !el.closest(".hero")){
+el.textContent=d[k];
 }
-
 });
-
-
-/* ---------- LISTS ---------- */
 
 setList("valuesList",d.valuesList);
 setList("areasList",d.areasList);
 setList("stepsList",d.stepsList);
 
-
-/* ---------- TOGGLE LABEL ---------- */
-
+/* Toggle */
 const label=document.getElementById("langLabel");
 if(label){
-label.textContent =
-lang==="hi" ? "हिन्दी" : "English";
+label.textContent=lang==="hi"?"हिन्दी":"English";
 }
 
 }
+
+
 // ================= ACTIVE MENU =================
 function setActiveMenu(){
 
