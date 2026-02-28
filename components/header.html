@@ -13,7 +13,12 @@
 </div>
 </a>
 
-<nav class="menu">
+<!-- MOBILE MENU BUTTON -->
+<div class="menuToggle" id="menuToggle">
+☰
+</div>
+
+<nav class="menu" id="mainMenu">
 <a id="mHome" href="/index.html">मुख्य पृष्ठ</a>
 <a id="mAbout" href="/about.html">परिचय</a>
 <a id="mWork" href="/initiatives.html">हमारे प्रयास</a>
@@ -112,4 +117,58 @@ cursor:pointer;
 margin-left:14px;
 white-space:nowrap;
 }
+/* ===== MOBILE MENU ===== */
+
+.menuToggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+font-weight:900;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.menuToggle{
+display:block;
+}
+
+.menu{
+position:absolute;
+top:84px;
+left:0;
+width:100%;
+background:#fff;
+flex-direction:column;
+align-items:flex-start;
+padding:20px;
+gap:18px;
+display:none;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.menu.show{
+display:flex;
+}
+
+.langToggle{
+margin-left:auto;
+margin-right:10px;
+}
+
+}
 </style>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+
+const toggle=document.getElementById("menuToggle");
+const menu=document.getElementById("mainMenu");
+
+if(toggle && menu){
+toggle.onclick=()=>{
+menu.classList.toggle("show");
+};
+}
+
+});
+</script>
