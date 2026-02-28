@@ -196,3 +196,6 @@ if(link.getAttribute("href").includes(current)){
 link.style.color="#0b5aa6";
 }
 });
+
+/* ===== END DOMContentLoaded ===== */
+});
