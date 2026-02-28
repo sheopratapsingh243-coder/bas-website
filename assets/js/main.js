@@ -172,7 +172,6 @@ lang==="hi" ? "English" : "हिन्दी";
 
 function applyLanguage(){
 
-   ...
    /* toggle label */
    const label=document.getElementById("langLabel");
 
