@@ -124,8 +124,16 @@ const d = t[lang];
 if(!d) return;
 
 const setText=(id,val)=>{
+
+try{
 const el=document.getElementById(id);
-if(el) el.textContent=val;
+if(el && val!==undefined){
+el.textContent = val;
+}
+}catch(e){
+console.warn("Missing element:",id);
+}
+
 };
 
 /* HEADER */
