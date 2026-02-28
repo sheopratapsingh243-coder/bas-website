@@ -13,23 +13,30 @@ if(headerContainer){
 headerContainer.innerHTML = data;
 }
 
-/* init functions AFTER header load */
+/* run AFTER header injected */
+setTimeout(()=>{
+
+try{
 initAfterHeader();
-
-/* ===== SAFE AUTO HEADER SPACING ===== */
-
-requestAnimationFrame(()=>{
-
-const globalHeader =
-document.querySelector("#globalHeader");
-
-if(globalHeader){
-document.body.style.paddingTop =
-globalHeader.offsetHeight + "px";
+applyLanguage();
+}catch(e){
+console.error("Init error:",e);
 }
 
-});
+/* AUTO HEADER HEIGHT */
+const gh =
+document.getElementById("globalHeader");
 
+if(gh){
+document.body.style.paddingTop =
+gh.offsetHeight + "px";
+}
+
+},60);
+
+})
+.catch(err=>{
+console.error("Header load failed:",err);
 });
 /* ================= FOOTER LOAD ================= */
 
