@@ -6,27 +6,20 @@ fetch("components/header.html")
 .then(res => res.text())
 .then(data => {
 
-const headerContainer =
-document.getElementById("header");
+const headerContainer = document.getElementById("header");
 
 if(headerContainer){
 headerContainer.innerHTML = data;
 }
 
-/* run AFTER header injected */
+/* AFTER HEADER LOAD */
 setTimeout(()=>{
 
-try{
 initAfterHeader();
 applyLanguage();
-}catch(e){
-console.error("Init error:",e);
-}
 
 /* AUTO HEADER HEIGHT */
-const gh =
-document.getElementById("globalHeader");
-
+const gh = document.getElementById("globalHeader");
 if(gh){
 document.body.style.paddingTop =
 gh.offsetHeight + "px";
@@ -38,6 +31,8 @@ gh.offsetHeight + "px";
 .catch(err=>{
 console.error("Header load failed:",err);
 });
+
+
 /* ================= FOOTER LOAD ================= */
 
 fetch("components/footer.html")
@@ -52,16 +47,16 @@ if(footer) footer.innerHTML=data;
 
 function initAfterHeader(){
 
-applyLanguage();
 setActiveMenu();
 
-/* toggle */
 const toggle=document.getElementById("langToggle");
 
 if(toggle){
 toggle.addEventListener("click",()=>{
 
-let lang=localStorage.getItem("bas_lang") || "hi";
+let lang =
+localStorage.getItem("bas_lang") || "hi";
+
 lang = lang==="hi" ? "en" : "hi";
 
 localStorage.setItem("bas_lang",lang);
@@ -76,7 +71,7 @@ applyLanguage();
 
 /* ================= LANGUAGE DATA ================= */
 
-const t = window.translationData || {
+const t = {
 
 hi:{
 brand:"भारत अभ्युदय संस्थान",
@@ -95,7 +90,7 @@ heroText:"आपका सहयोग शिक्षा, स्वास्थ
 
 initTitle:"हमारे सेवा प्रयास",
 initTagline:
-"भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं मानवीय सेवा में पारदर्शिता, उत्तरदायित्व और समर्पण के साथ कार्य करता है। प्रत्येक सहयोग सत्यापित लाभार्थियों तक पहुँचाया जाता है।"
+"भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं मानवीय सेवा में पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है।"
 },
 
 en:{
@@ -115,7 +110,7 @@ heroText:"Your support helps build an Atmanirbhar Bharat.",
 
 initTitle:"Our Initiatives",
 initTagline:
-"Bharat Abhyudaya Sansthan works with transparency and accountability ensuring verified support reaches genuine beneficiaries."
+"Bharat Abhyudaya Sansthan works with transparency ensuring verified support reaches genuine beneficiaries."
 }
 
 };
@@ -125,22 +120,17 @@ initTagline:
 
 function applyLanguage(){
 
-const lang = localStorage.getItem("bas_lang") || "hi";
-const d = t[lang];
+const lang =
+localStorage.getItem("bas_lang") || "hi";
 
+const d = t[lang];
 if(!d) return;
 
 const setText=(id,val)=>{
-
-try{
 const el=document.getElementById(id);
 if(el && val!==undefined){
 el.textContent = val;
 }
-}catch(e){
-console.warn("Missing element:",id);
-}
-
 };
 
 /* HEADER */
@@ -155,47 +145,38 @@ setText("mDonate",d.donate);
 setText("mGallery",d.gallery);
 setText("mContact",d.contact);
 
-/* HERO SAFE UPDATE ✅ */
+/* HERO */
 setText("heroTitle",d.heroTitle);
 setText("heroText",d.heroText);
 
 setText("initTitle",d.initTitle);
 setText("initTagline",d.initTagline);
 
-/* Toggle label */
+/* Toggle Label */
 const label=document.getElementById("langLabel");
-
 if(label){
 label.textContent =
 lang==="hi" ? "English" : "हिन्दी";
 }
 
-function applyLanguage(){
-
-   /* toggle label */
-   const label=document.getElementById("langLabel");
-
-   if(label){
-      label.textContent =
-      lang==="hi" ? "English" : "हिन्दी";
-   }
-
-}   // ✅ applyLanguage CLOSED
-
+}
 
 
 /* ================= ACTIVE MENU ================= */
 
 function setActiveMenu(){
 
-const current=location.pathname.split("/").pop();
+const current =
+location.pathname.split("/").pop();
 
 document.querySelectorAll(".menu a")
 .forEach(link=>{
-if(link.getAttribute("href").includes(current)){
+if(link.getAttribute("href")
+.includes(current)){
 link.style.color="#0b5aa6";
 }
 });
 
-/* ===== END DOMContentLoaded ===== */
+}
+
 });
