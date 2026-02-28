@@ -145,13 +145,48 @@ setText("mDonate",d.donate);
 setText("mGallery",d.gallery);
 setText("mContact",d.contact);
 
-/* HERO */
+/* ===== PAGE BASED TRANSLATION ===== */
+
+const page=document.body.className;
+
+/* HOME */
+if(page.includes("homePage")){
 setText("heroTitle",d.heroTitle);
 setText("heroText",d.heroText);
-
 setText("initTitle",d.initTitle);
 setText("initTagline",d.initTagline);
+}
 
+/* INITIATIVES */
+if(page.includes("initiativesPage")){
+setText("initTitle",d.initTitle);
+setText("initTagline",d.initTagline);
+}
+
+/* ABOUT */
+if(page.includes("aboutPage")){
+setText("title",d.brand);
+}
+
+/* DONATE */
+if(page.includes("donatePage")){
+setText("title",d.donate);
+}
+
+/* DOCUMENTS */
+if(page.includes("docsPage")){
+setText("title",d.docs);
+}
+
+/* CONTACT */
+if(page.includes("contactPage")){
+setText("contactTitle",d.contact);
+}
+
+/* GALLERY */
+if(page.includes("galleryPage")){
+setText("titleText",d.gallery);
+}
 /* Toggle Label */
 const label=document.getElementById("langLabel");
 if(label){
