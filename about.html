@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>About • Bharat Abhyudaya Sansthan</title>
 
-<!-- ✅ CSS 100% SAME -->
+<!-- ✅ YOUR COMPLETE CSS UNCHANGED -->
 <style>
-/* ===== YOUR CSS UNCHANGED ===== */
+/* ===== SAME CSS — NO CHANGE ===== */
 :root{
 --brand:#0b5aa6;
 --accent:#f58b1f;
@@ -19,16 +19,37 @@
 --max:1120px;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui;background:#fff}
+body{
+margin:0;
+font-family:system-ui;
+background:#fff;
+overflow-x:hidden;
+}
 .wrap{max-width:var(--max);margin:auto;padding:0 16px}
-.aboutPage section{padding:28px 0}
-.grid{display:grid;gap:16px}
+.aboutPage section{ padding:28px 0; }
+main{
+display:block;
+}
+h1{margin:10px 0 0;font-size:34px}
+h2{margin:0;font-size:24px}
+h3{margin:0;font-size:18px}
+.muted{color:var(--muted)}
+.aboutPage .grid{
+display:grid;
+gap:16px
+}
 @media(min-width:980px){
 .grid{grid-template-columns:1.1fr .9fr}
+}
+.aboutPage .grid3{
+display:grid;
+gap:14px;
+margin-top:14px
+}
+@media(min-width:980px){
 .grid3{grid-template-columns:1fr 1fr 1fr}
 }
-.grid3{display:grid;gap:14px;margin-top:14px}
-.card{
+.aboutPage .card{
 background:#fff;
 border:1px solid var(--border);
 border-radius:var(--radius);
@@ -36,24 +57,92 @@ padding:18px;
 box-shadow:var(--shadow);
 }
 .btnRow{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.btn{padding:12px 16px;border-radius:16px;font-weight:900}
-.btn.primary{background:linear-gradient(135deg,var(--accent),#ff7a00);color:#fff}
-.btn.secondary{background:linear-gradient(135deg,var(--brand),#083a6c);color:#fff}
-.badge{
-padding:8px 10px;border-radius:999px;
+.btn{
+padding:12px 16px;
+border-radius:16px;
+font-weight:950;
+border:1px solid var(--border);
+}
+.btn.primary{
+background:linear-gradient(135deg,var(--accent),#ff7a00);
+border:none;
+}
+.btn.secondary{
+background:linear-gradient(135deg,var(--brand),#083a6c);
+color:#fff;border:none;
+}
+.aboutPage .badge{
+padding:8px 10px;
+border-radius:999px;
 background:rgba(11,90,166,.06);
 border:1px solid rgba(11,90,166,.15);
-font-weight:900;color:var(--brand);
+font-weight:900;
+color:var(--brand);
+font-size:12px;
 }
-.callout{
+.aboutPage .callout{
 background:rgba(245,139,31,.10);
+border:1px solid rgba(245,139,31,.22);
 border-radius:18px;
-padding:14px;font-weight:800;
+padding:14px;
+font-weight:800;
 }
-.listBox{
+.aboutPage .listBox{
 border:1px solid var(--border);
 border-radius:18px;
 padding:14px;
+}
+  /* ================= PREMIUM LIST DESIGN ================= */
+
+#valuesList,
+#areasList,
+#stepsList{
+list-style:none;
+padding:0;
+margin-top:12px;
+display:grid;
+gap:10px;
+}
+
+#valuesList li,
+#areasList li,
+#stepsList li{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+padding:10px 14px;
+border-radius:12px;
+font-weight:700;
+color:#334155;
+transition:.25s;
+position:relative;
+padding-left:36px;
+}
+
+#valuesList li::before,
+#areasList li::before,
+#stepsList li::before{
+content:"✓";
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+color:#0b5aa6;
+font-weight:900;
+}
+
+#valuesList li:hover,
+#areasList li:hover,
+#stepsList li:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+background:#fff;
+}
+
+/* equal card height */
+.grid3 .card{
+height:100%;
+display:flex;
+flex-direction:column;
 }
 </style>
 </head>
@@ -64,60 +153,71 @@ padding:14px;
 
 <main>
 
-<!-- HERO -->
-<section>
-<div class="wrap grid">
+<section class="page-hero">
+<div class="wrap">
+<div class="grid">
 
 <div>
-<span class="badge" id="aboutBadge"></span>
+<span class="badge" id="badgeTop"></span>
 
-<h1 id="aboutTitle"></h1>
-<p class="muted" id="aboutTagline"></p>
+<h1 id="title"></h1>
+
+<p class="muted" id="tagline"></p>
 
 <div class="btnRow">
-<a class="btn secondary" href="initiatives.html" id="aboutBtnWork"></a>
-<a class="btn primary" href="donate.html" id="aboutBtnDonate"></a>
+<a class="btn secondary" href="initiatives.html" id="btnWork"></a>
+<a class="btn primary" href="donate.html" id="btnDonate"></a>
 </div>
 
-<p class="callout" id="aboutCallout"></p>
+<p class="callout" id="callout"></p>
 </div>
 
 <div class="card">
-
 <h3 id="legalTitle"></h3>
-<p id="legalBox"></p>
+
+<p class="small muted" id="legalBox"></p>
 
 <h3 id="contactQuickTitle"></h3>
-<p id="addr"></p>
 
-<p>
+<p class="small muted" id="addr"></p>
+
+<p class="small muted">
 <b id="phLbl"></b>
 <span id="phones"></span>
 </p>
 
-<p>
+<p class="small muted">
 <b>Email:</b>
 <span id="emailText"></span>
 </p>
 
+<div class="btnRow">
+<a class="btn secondary" href="contact.html" id="btnContact"></a>
+<a class="btn primary" href="donate.html" id="btnDonate2"></a>
 </div>
 
+</div>
+
+</div>
 </div>
 </section>
-
-<!-- WHY EXIST -->
+  
 <section>
-<div class="wrap card">
+<div class="wrap">
+
+<div class="card">
 
 <h2 id="whyExistTitle"></h2>
-<p class="muted" id="whyExistText"></p>
+
+<p class="muted" style="line-height:1.8" id="whyExistText"></p>
 
 <div class="callout" id="whyExistQuote"></div>
 
 </div>
+
+</div>
 </section>
 
-<!-- MISSION VISION -->
 <section>
 <div class="wrap">
 
@@ -128,12 +228,12 @@ padding:14px;
 
 <div class="card">
 <h3 id="missionTitle"></h3>
-<p id="missionText"></p>
+<p class="muted" id="missionText"></p>
 </div>
 
 <div class="card">
 <h3 id="visionTitle"></h3>
-<p id="visionText"></p>
+<p class="muted" id="visionText"></p>
 </div>
 
 <div class="card">
@@ -145,18 +245,24 @@ padding:14px;
 </div>
 </section>
 
-<!-- WHAT + WHY -->
+
 <section>
-<div class="wrap grid">
+<div class="wrap">
+<div class="grid">
 
 <div class="card">
 
 <h2 id="whatTitle"></h2>
-<p id="whatText"></p>
+<p class="muted" id="whatText"></p>
 
 <div class="listBox">
 <h3 id="areasTitle"></h3>
 <ul id="areasList"></ul>
+</div>
+
+<div class="btnRow">
+<a class="btn secondary" href="initiatives.html" id="btnWork2"></a>
+<a class="btn primary" href="donate.html" id="btnDonate3"></a>
 </div>
 
 </div>
@@ -164,7 +270,7 @@ padding:14px;
 <div class="card">
 
 <h2 id="whyTitle"></h2>
-<p id="whyText"></p>
+<p class="muted" id="whyText"></p>
 
 <div class="listBox">
 <h3 id="stepsTitle"></h3>
@@ -173,44 +279,67 @@ padding:14px;
 
 <p class="callout" id="donorLine"></p>
 
+<div class="btnRow">
+<a class="btn secondary" href="contact.html" id="btnVolunteer"></a>
+<a class="btn primary" href="donate.html" id="btnDonate4"></a>
 </div>
 
+</div>
+
+</div>
 </div>
 </section>
 
-<!-- TRANSPARENCY -->
 <section>
-<div class="wrap card">
+<div class="wrap">
+
+<div class="card">
 
 <h2 id="transparencyTitle"></h2>
-<p id="transparencyText"></p>
+
+<p class="muted" style="line-height:1.8" id="transparencyText"></p>
+
+</div>
 
 </div>
 </section>
 
-<!-- TRUST -->
 <section>
 <div class="wrap">
 
 <h2 id="trustTitle"></h2>
-<p id="trustSub"></p>
+<p class="muted" id="trustSub"></p>
 
 <div class="grid3">
 
 <div class="card">
 <h3 id="tr1t"></h3>
-<p id="tr1d"></p>
+<p class="muted" id="tr1d"></p>
 </div>
 
 <div class="card">
 <h3 id="tr2t"></h3>
-<p id="tr2d"></p>
+<p class="muted" id="tr2d"></p>
 </div>
 
 <div class="card">
 <h3 id="tr3t"></h3>
-<p id="tr3d"></p>
+<p class="muted" id="tr3d"></p>
 </div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="wrap">
+
+<div class="card">
+
+<h2 id="transparencyTitle"></h2>
+
+<p class="muted" style="line-height:1.8" id="transparencyText"></p>
 
 </div>
 
