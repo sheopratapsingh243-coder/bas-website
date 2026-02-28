@@ -121,32 +121,41 @@ white-space:nowrap;
 
 .menuToggle{
 display:none;
-font-size:26px;
+font-size:28px;
 cursor:pointer;
 font-weight:900;
+margin-left:auto;
+padding-right:6px;
+z-index:100000;
 }
-
 /* MOBILE */
 @media(max-width:900px){
+
+.nav{
+display:flex;
+align-items:center;
+}
+
+}
 
 .menuToggle{
 display:block;
 }
 
 .menu{
-position:absolute;
+position:fixed;
 top:84px;
 left:0;
 width:100%;
 background:#fff;
 flex-direction:column;
 align-items:flex-start;
-padding:20px;
+padding:22px;
 gap:18px;
 display:none;
-box-shadow:0 15px 40px rgba(0,0,0,.1);
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+z-index:99999;
 }
-
 .menu.show{
 display:flex;
 }
