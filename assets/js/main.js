@@ -6,36 +6,31 @@ fetch("components/header.html")
 .then(res => res.text())
 .then(data => {
 
-const header = document.getElementById("header");
-if(header) header.innerHTML = data;
+const headerContainer =
+document.getElementById("header");
 
-initAfterHeader();
-
-fetch("components/header.html")
-.then(res => res.text())
-.then(data => {
-
-const header = document.getElementById("header");
-if(header) header.innerHTML = data;
-
-initAfterHeader();
-
-/* ===== AUTO HEADER SPACING FIX ===== */
-
-setTimeout(() => {
-
-const globalHeader =
-document.getElementById("globalHeader");
-
-if(globalHeader){
-const h = globalHeader.offsetHeight;
-document.body.style.paddingTop = h + "px";
+if(headerContainer){
+headerContainer.innerHTML = data;
 }
 
-},100);
+/* init functions AFTER header load */
+initAfterHeader();
+
+/* ===== SAFE AUTO HEADER SPACING ===== */
+
+requestAnimationFrame(()=>{
+
+const globalHeader =
+document.querySelector("#globalHeader");
+
+if(globalHeader){
+document.body.style.paddingTop =
+globalHeader.offsetHeight + "px";
+}
 
 });
 
+});
 /* ================= FOOTER LOAD ================= */
 
 fetch("components/footer.html")
