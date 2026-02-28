@@ -11,6 +11,29 @@ if(header) header.innerHTML = data;
 
 initAfterHeader();
 
+fetch("components/header.html")
+.then(res => res.text())
+.then(data => {
+
+const header = document.getElementById("header");
+if(header) header.innerHTML = data;
+
+initAfterHeader();
+
+/* ===== AUTO HEADER SPACING FIX ===== */
+
+setTimeout(() => {
+
+const globalHeader =
+document.getElementById("globalHeader");
+
+if(globalHeader){
+const h = globalHeader.offsetHeight;
+document.body.style.paddingTop = h + "px";
+}
+
+},100);
+
 });
 
 /* ================= FOOTER LOAD ================= */
