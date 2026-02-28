@@ -179,9 +179,12 @@ tr2t:"स्थानीय कार्य",
 tr2d:"जमीनी स्तर पर वास्तविक सहायता।",
 
 tr3t:"पारदर्शिता",
-tr3d:"दान के उपयोग में स्पष्टता।"
-},
+tr3d:"दान के उपयोग में स्पष्टता।",
+initTitle:"हमारे सेवा प्रयास",
 
+initTagline:
+"भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, आपदा सहायता एवं मानवीय सेवा के क्षेत्रों में पूर्ण पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है। प्रत्येक सहयोग सत्यापित लाभार्थियों तक पहुँचाया जाता है।",
+},
 /* ================= ENGLISH ================= */
 en:{
 brand:"Bharat Abhyudaya Sansthan",
@@ -315,6 +318,10 @@ tr2d:"Real local impact.",
 
 tr3t:"Transparency",
 tr3d:"Responsible fund usage."
+  initTitle:"Our Initiatives",
+
+initTagline:
+"Bharat Abhyudaya Sansthan works with transparency and accountability in education, healthcare, women empowerment and humanitarian services ensuring verified support reaches genuine beneficiaries.",
 }
 
 };
