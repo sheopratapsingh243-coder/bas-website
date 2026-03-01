@@ -92,12 +92,7 @@ initTitle:"हमारे सेवा प्रयास",
 initTagline:
 "भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं मानवीय सेवा में पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है।"
 },
-gauTag:"गौ सेवा",
-gauTitle:"गौसेवा एवं गौशाला सहयोग",
-gauDesc:
-"संस्था निराश्रित एवं असहाय गौवंश के संरक्षण, पोषण एवं चिकित्सा सहायता हेतु निरंतर कार्य कर रही है। गौशालाओं को चारा, उपचार एवं देखभाल सहयोग प्रदान किया जाता है। यह पहल केवल पशु सेवा नहीं बल्कि भारतीय संस्कृति, पर्यावरण संतुलन एवं मानवीय संवेदनाओं के संरक्षण का भी माध्यम है।",
-gauImpact:
-"₹1100 सहयोग = एक गौमाता के भोजन एवं देखभाल में सहायता।",
+
 en:{
 brand:"Bharat Abhyudaya Sansthan",
 sub:"Upliftment to Self-Reliant India",
@@ -119,12 +114,7 @@ initTagline:
 }
 
 };
-gauTag:"Cow Protection",
-gauTitle:"GauSeva & Gaushala Support",
-gauDesc:
-"The organization supports shelter, nutrition and medical care for abandoned and injured cattle. Assistance is provided to local gaushalas ensuring proper feeding and treatment. This initiative promotes compassion, ecological balance and preservation of cultural values.",
-gauImpact:
-"₹1100 support helps care for one rescued cow.",
+
 
 /* ================= APPLY LANGUAGE ================= */
 
