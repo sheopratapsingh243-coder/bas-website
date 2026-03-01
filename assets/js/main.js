@@ -90,7 +90,7 @@ heroText:"आपका सहयोग शिक्षा, स्वास्थ
 
 initTitle:"हमारे सेवा प्रयास",
 initTagline:
-"भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं मानवीय सेवा में पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है।"
+"भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं मानवीय सेवा में पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है।",
 /* ===== ABOUT PAGE ===== */
 
 badgeTop:"परिचय",
@@ -145,7 +145,7 @@ heroText:"Your support helps build an Atmanirbhar Bharat.",
 
 initTitle:"Our Initiatives",
 initTagline:
-"Bharat Abhyudaya Sansthan works with transparency ensuring verified support reaches genuine beneficiaries."
+"Bharat Abhyudaya Sansthan works with transparency ensuring verified support reaches genuine beneficiaries.",
   /* ===== ABOUT PAGE ===== */
 
 badgeTop:"About Us",
