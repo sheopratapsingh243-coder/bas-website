@@ -390,16 +390,40 @@ WhatsApp
 </a>
 
 <script>
+
 let index=0;
 const track=document.getElementById("track");
 const slides=document.querySelectorAll(".slide");
 
+let autoSlide;
+
+/* MOVE */
 function move(n){
 index=(index+n+slides.length)%slides.length;
 track.style.transform=`translateX(-${index*100}%)`;
 }
 
-setInterval(()=>move(1),6000);
+/* AUTO START */
+function startSlider(){
+autoSlide=setInterval(()=>move(1),6000);
+}
+
+/* STOP */
+function stopSlider(){
+clearInterval(autoSlide);
+}
+
+/* START INIT */
+startSlider();
+
+/* PAUSE ON HOVER */
+track.addEventListener("mouseenter",stopSlider);
+track.addEventListener("mouseleave",startSlider);
+
+/* TOUCH MOBILE PAUSE */
+track.addEventListener("touchstart",stopSlider);
+track.addEventListener("touchend",startSlider);
+
 </script>
 </main>
 <div id="footer"></div>
