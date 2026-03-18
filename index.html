@@ -6,6 +6,167 @@
   <title>Bharat Abhyudaya Sansthan | Service, Trust & Impact</title>
   <meta name="description" content="Bharat Abhyudaya Sansthan is a registered NGO working for education, healthcare, women empowerment, emergency aid, cow care and heritage conservation.">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .hero h1{
+      font-size: clamp(2rem, 3.8vw, 3.15rem) !important;
+      line-height: 1.14;
+    }
+
+    .initiatives-slider{
+      position: relative;
+      margin-top: 26px;
+    }
+
+    .initiative-slide{
+      display: none;
+      animation: fadeSlide .45s ease;
+    }
+
+    .initiative-slide.active{
+      display: block;
+    }
+
+    @keyframes fadeSlide{
+      from{opacity:.35; transform:translateY(8px)}
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    .initiative-shell{
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, .10);
+      border: 1px solid rgba(226,232,240,.9);
+    }
+
+    .initiative-shell img{
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .initiative-overlay{
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 28px;
+      background: linear-gradient(to top, rgba(2,6,23,.86), rgba(2,6,23,.28), transparent);
+      color: #fff;
+    }
+
+    .initiative-overlay .program-tag{
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .initiative-overlay h3{
+      margin: 0 0 10px;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .initiative-overlay p{
+      margin: 0;
+      max-width: 900px;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,.92);
+    }
+
+    .initiative-metrics{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .initiative-metrics div{
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+
+    .initiative-metrics strong{
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+
+    .initiative-metrics span{
+      font-size: .92rem;
+      line-height: 1.45;
+      color: rgba(255,255,255,.92);
+    }
+
+    .slider-arrow{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 10px 24px rgba(15,23,42,.15);
+    }
+
+    .slider-arrow.prev{ left: 16px; }
+    .slider-arrow.next{ right: 16px; }
+
+    .slider-dots{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .slider-dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #cbd5e1;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .slider-dot.active{
+      width: 28px;
+      background: #0b5aa6;
+    }
+
+    .slider-cta{
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px){
+      .initiative-shell img{
+        height: 320px;
+      }
+      .initiative-overlay{
+        padding: 20px 18px;
+      }
+      .initiative-metrics{
+        grid-template-columns: 1fr;
+      }
+      .slider-arrow{
+        width: 42px;
+        height: 42px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="header"></div>
@@ -63,70 +224,124 @@
   </section>
 
   <section class="section">
-    <div class="wrap">
-      <span class="kicker" data-hi="मुख्य पहलें" data-en="Core initiatives"></span>
-      <h2 class="section-title" data-hi="जहाँ आपकी सहायता वास्तविक परिवर्तन बनती है" data-en="Where your support turns into meaningful change"></h2>
-      <p class="section-sub" data-hi="प्रत्येक कार्यक्रम को इस प्रकार प्रस्तुत किया गया है कि दानकर्ता, स्वयंसेवक और साझेदार यह स्पष्ट रूप से समझ सकें कि सहयोग कहाँ और कैसे उपयोगी बनता है।" data-en="Each programme is presented so donors, volunteers and partners can clearly understand where support goes and how it becomes useful."></p>
+  <div class="wrap">
+    <span class="kicker" data-hi="मुख्य पहलें" data-en="Core initiatives"></span>
+    <h2 class="section-title" data-hi="जहाँ आपकी सहायता वास्तविक परिवर्तन बनती है" data-en="Where your support turns into meaningful change"></h2>
+    <p class="section-sub" data-hi="प्रत्येक कार्यक्रम को इस प्रकार प्रस्तुत किया गया है कि दानकर्ता, स्वयंसेवक और साझेदार यह स्पष्ट रूप से समझ सकें कि सहयोग कहाँ और कैसे उपयोगी बनता है।" data-en="Each programme is presented so donors, volunteers and partners can clearly understand where support goes and how it becomes useful."></p>
 
-      <div class="program-grid" style="margin-top:26px">
-        <article class="program-card">
+    <div class="initiatives-slider" id="initiativesSlider">
+
+      <button class="slider-arrow prev" id="initiativePrev" type="button" aria-label="Previous slide">&#10094;</button>
+      <button class="slider-arrow next" id="initiativeNext" type="button" aria-label="Next slide">&#10095;</button>
+
+      <div class="initiative-slide active">
+        <article class="initiative-shell">
           <img src="assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi">
-          <div class="body">
+          <div class="initiative-overlay">
             <span class="program-tag" data-hi="शिक्षा" data-en="Education"></span>
             <h3 data-hi="शिक्षा सारथी" data-en="Shiksha Sarathi"></h3>
             <p data-hi="आर्थिक रूप से कमजोर बच्चों को अध्ययन सामग्री, मार्गदर्शन, प्रेरणा और निरंतर शैक्षिक सहयोग उपलब्ध कराने की पहल।" data-en="An initiative focused on study materials, mentoring, motivation and sustained educational support for children from economically weaker families."></p>
-            <div class="program-metrics"><div><strong>01</strong><span data-hi="सपना: कोई बच्चा संसाधन के अभाव में न रुके" data-en="Goal: no child should stop due to lack of resources"></span></div><div><strong>02</strong><span data-hi="फोकस: सामग्री + मार्गदर्शन + निरंतरता" data-en="Focus: materials + guidance + continuity"></span></div></div>
-          </div>
-        </article>
-        <article class="program-card">
-          <img src="assets/initiatives/health.png" alt="Healthcare">
-          <div class="body">
-            <span class="program-tag" data-hi="स्वास्थ्य" data-en="Healthcare"></span>
-            <h3 data-hi="स्वास्थ्य सहायता" data-en="Healthcare Support"></h3>
-            <p data-hi="आवश्यक परिस्थितियों में स्वास्थ्य संबंधी मार्गदर्शन, सहयोग, जागरूकता और पहुँच बढ़ाने के लिए मानवीय हस्तक्षेप।" data-en="A humanitarian intervention designed to expand access, awareness, support and guidance for healthcare needs in urgent circumstances."></p>
-            <div class="program-metrics"><div><strong>24x7</strong><span data-hi="आपातकालीन समन्वय की प्राथमिकता" data-en="Priority for emergency coordination"></span></div><div><strong>Care</strong><span data-hi="राहत से आगे, सम्मानजनक देखभाल" data-en="Beyond relief, dignified care"></span></div></div>
-          </div>
-        </article>
-        <article class="program-card">
-          <img src="assets/initiatives/women.png" alt="Women Empowerment">
-          <div class="body">
-            <span class="program-tag" data-hi="महिला सशक्तिकरण" data-en="Women Empowerment"></span>
-            <h3 data-hi="महिला आत्मनिर्भरता" data-en="Women Self-Reliance"></h3>
-            <p data-hi="महिलाओं और युवतियों के लिए कौशल, आत्मविश्वास, स्वावलंबन और गरिमापूर्ण अवसरों की दिशा में संवेदनशील पहल।" data-en="A focused effort to expand skills, confidence, self-reliance and dignified opportunities for women and young girls."></p>
-            <div class="program-metrics"><div><strong>Skills</strong><span data-hi="कौशल आधारित स्वावलंबन" data-en="Skill-based independence"></span></div><div><strong>Growth</strong><span data-hi="सम्मानजनक सामाजिक भागीदारी" data-en="Dignified social participation"></span></div></div>
-          </div>
-        </article>
-        <article class="program-card">
-          <img src="assets/initiatives/ambulance.png" alt="Emergency Ambulance">
-          <div class="body">
-            <span class="program-tag" data-hi="आपातकालीन सेवा" data-en="Emergency Service"></span>
-            <h3 data-hi="निःशुल्क एम्बुलेंस सहयोग" data-en="Free Ambulance Assistance"></h3>
-            <p data-hi="जरूरतमंद रोगियों और परिवारों को कठिन समय में शीघ्र एवं मानवीय परिवहन सहायता उपलब्ध कराने का प्रयास।" data-en="An effort to support needy patients and families with timely, humane transport assistance during difficult moments."></p>
-            <div class="program-metrics"><div><strong>Rapid</strong><span data-hi="समय पर पहुँच का लक्ष्य" data-en="Aim: timely response"></span></div><div><strong>Relief</strong><span data-hi="संकट की घड़ी में सहारा" data-en="Support during crisis"></span></div></div>
-          </div>
-        </article>
-        <article class="program-card">
-          <img src="assets/initiatives/gauseva.png" alt="Cow Care">
-          <div class="body">
-            <span class="program-tag" data-hi="गौसेवा" data-en="Cow Care"></span>
-            <h3 data-hi="गौसंरक्षण एवं सेवा" data-en="Cow Protection & Care"></h3>
-            <p data-hi="असहाय, बीमार या घायल गौवंश के लिए भोजन, देखभाल और सेवा के माध्यम से करुणा आधारित सहयोग।" data-en="Compassion-led support for helpless, ill or injured cows through feed, care and humane assistance."></p>
-            <div class="program-metrics"><div><strong>Care</strong><span data-hi="चारा, सेवा और संरक्षण" data-en="Feed, care and protection"></span></div><div><strong>Compassion</strong><span data-hi="मानवीय संवेदना पर आधारित प्रयास" data-en="Built on humane compassion"></span></div></div>
-          </div>
-        </article>
-        <article class="program-card">
-          <img src="assets/initiatives/heritage.png" alt="Heritage">
-          <div class="body">
-            <span class="program-tag" data-hi="धरोहर" data-en="Heritage"></span>
-            <h3 data-hi="धरोहर संरक्षण" data-en="Heritage Conservation"></h3>
-            <p data-hi="स्थानीय इतिहास, सांस्कृतिक विरासत और सामुदायिक पहचान को सम्मान के साथ संरक्षित और जागरूक बनाने की दिशा में पहल।" data-en="An initiative to preserve local history, cultural heritage and community identity with respect and public awareness."></p>
-            <div class="program-metrics"><div><strong>Culture</strong><span data-hi="संस्कृति और स्मृति का संरक्षण" data-en="Preserving culture and memory"></span></div><div><strong>Identity</strong><span data-hi="स्थानीय विरासत का सम्मान" data-en="Respect for local heritage"></span></div></div>
+            <div class="initiative-metrics">
+              <div><strong>01</strong><span data-hi="सपना: कोई बच्चा संसाधन के अभाव में न रुके" data-en="Goal: no child should stop due to lack of resources"></span></div>
+              <div><strong>02</strong><span data-hi="फोकस: सामग्री + मार्गदर्शन + निरंतरता" data-en="Focus: materials + guidance + continuity"></span></div>
+            </div>
           </div>
         </article>
       </div>
-    </div>
-  </section>
 
+      <div class="initiative-slide">
+        <article class="initiative-shell">
+          <img src="assets/initiatives/health.png" alt="Healthcare">
+          <div class="initiative-overlay">
+            <span class="program-tag" data-hi="स्वास्थ्य" data-en="Healthcare"></span>
+            <h3 data-hi="स्वास्थ्य सहायता" data-en="Healthcare Support"></h3>
+            <p data-hi="आवश्यक परिस्थितियों में स्वास्थ्य संबंधी मार्गदर्शन, सहयोग, जागरूकता और पहुँच बढ़ाने के लिए मानवीय हस्तक्षेप।" data-en="A humanitarian intervention designed to expand access, awareness, support and guidance for healthcare needs in urgent circumstances."></p>
+            <div class="initiative-metrics">
+              <div><strong>24x7</strong><span data-hi="आपातकालीन समन्वय की प्राथमिकता" data-en="Priority for emergency coordination"></span></div>
+              <div><strong>Care</strong><span data-hi="राहत से आगे, सम्मानजनक देखभाल" data-en="Beyond relief, dignified care"></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="initiative-slide">
+        <article class="initiative-shell">
+          <img src="assets/initiatives/women.png" alt="Women Empowerment">
+          <div class="initiative-overlay">
+            <span class="program-tag" data-hi="महिला सशक्तिकरण" data-en="Women Empowerment"></span>
+            <h3 data-hi="महिला आत्मनिर्भरता" data-en="Women Self-Reliance"></h3>
+            <p data-hi="महिलाओं और युवतियों के लिए कौशल, आत्मविश्वास, स्वावलंबन और गरिमापूर्ण अवसरों की दिशा में संवेदनशील पहल।" data-en="A focused effort to expand skills, confidence, self-reliance and dignified opportunities for women and young girls."></p>
+            <div class="initiative-metrics">
+              <div><strong>Skills</strong><span data-hi="कौशल आधारित स्वावलंबन" data-en="Skill-based independence"></span></div>
+              <div><strong>Growth</strong><span data-hi="सम्मानजनक सामाजिक भागीदारी" data-en="Dignified social participation"></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="initiative-slide">
+        <article class="initiative-shell">
+          <img src="assets/initiatives/ambulance.png" alt="Emergency Ambulance">
+          <div class="initiative-overlay">
+            <span class="program-tag" data-hi="आपातकालीन सेवा" data-en="Emergency Service"></span>
+            <h3 data-hi="निःशुल्क एम्बुलेंस सहयोग" data-en="Free Ambulance Assistance"></h3>
+            <p data-hi="जरूरतमंद रोगियों और परिवारों को कठिन समय में शीघ्र एवं मानवीय परिवहन सहायता उपलब्ध कराने का प्रयास।" data-en="An effort to support needy patients and families with timely, humane transport assistance during difficult moments."></p>
+            <div class="initiative-metrics">
+              <div><strong>Rapid</strong><span data-hi="समय पर पहुँच का लक्ष्य" data-en="Aim: timely response"></span></div>
+              <div><strong>Relief</strong><span data-hi="संकट की घड़ी में सहारा" data-en="Support during crisis"></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="initiative-slide">
+        <article class="initiative-shell">
+          <img src="assets/initiatives/gauseva.png" alt="Cow Care">
+          <div class="initiative-overlay">
+            <span class="program-tag" data-hi="गौसेवा" data-en="Cow Care"></span>
+            <h3 data-hi="गौसंरक्षण एवं सेवा" data-en="Cow Protection & Care"></h3>
+            <p data-hi="असहाय, बीमार या घायल गौवंश के लिए भोजन, देखभाल और सेवा के माध्यम से करुणा आधारित सहयोग।" data-en="Compassion-led support for helpless, ill or injured cows through feed, care and humane assistance."></p>
+            <div class="initiative-metrics">
+              <div><strong>Care</strong><span data-hi="चारा, सेवा और संरक्षण" data-en="Feed, care and protection"></span></div>
+              <div><strong>Compassion</strong><span data-hi="मानवीय संवेदना पर आधारित प्रयास" data-en="Built on humane compassion"></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="initiative-slide">
+        <article class="initiative-shell">
+          <img src="assets/initiatives/heritage.png" alt="Heritage">
+          <div class="initiative-overlay">
+            <span class="program-tag" data-hi="धरोहर" data-en="Heritage"></span>
+            <h3 data-hi="धरोहर संरक्षण" data-en="Heritage Conservation"></h3>
+            <p data-hi="स्थानीय इतिहास, सांस्कृतिक विरासत और सामुदायिक पहचान को सम्मान के साथ संरक्षित और जागरूक बनाने की दिशा में पहल।" data-en="An initiative to preserve local history, cultural heritage and community identity with respect and public awareness."></p>
+            <div class="initiative-metrics">
+              <div><strong>Culture</strong><span data-hi="संस्कृति और स्मृति का संरक्षण" data-en="Preserving culture and memory"></span></div>
+              <div><strong>Identity</strong><span data-hi="स्थानीय विरासत का सम्मान" data-en="Respect for local heritage"></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="slider-dots" id="initiativeDots">
+        <span class="slider-dot active" data-slide="0"></span>
+        <span class="slider-dot" data-slide="1"></span>
+        <span class="slider-dot" data-slide="2"></span>
+        <span class="slider-dot" data-slide="3"></span>
+        <span class="slider-dot" data-slide="4"></span>
+        <span class="slider-dot" data-slide="5"></span>
+      </div>
+
+      <div class="slider-cta">
+        <a href="donate.html" class="btn btn-primary" data-hi="Donate Now" data-en="Donate Now"></a>
+        <a href="initiatives.html" class="btn btn-secondary" data-hi="Read More" data-en="Read More"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
   <section class="section tight">
     <div class="wrap">
       <div class="grid-2">
@@ -169,7 +384,79 @@
 
   <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
   <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
-  <div id="footer"></div>
+    <div id="footer"></div>
+
+  <script>
+    (function(){
+      let currentSlide = 0;
+      let sliderTimer;
+
+      function initInitiativesSlider(){
+        const slides = document.querySelectorAll('.initiative-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.getElementById('initiativePrev');
+        const nextBtn = document.getElementById('initiativeNext');
+
+        if(!slides.length) return;
+
+        function showSlide(index){
+          slides.forEach((slide, i)=>{
+            slide.classList.toggle('active', i === index);
+          });
+          dots.forEach((dot, i)=>{
+            dot.classList.toggle('active', i === index);
+          });
+          currentSlide = index;
+        }
+
+        function nextSlide(){
+          const next = (currentSlide + 1) % slides.length;
+          showSlide(next);
+        }
+
+        function prevSlide(){
+          const prev = (currentSlide - 1 + slides.length) % slides.length;
+          showSlide(prev);
+        }
+
+        function startAuto(){
+          stopAuto();
+          sliderTimer = setInterval(nextSlide, 5000);
+        }
+
+        function stopAuto(){
+          if(sliderTimer) clearInterval(sliderTimer);
+        }
+
+        if(nextBtn){
+          nextBtn.addEventListener('click', ()=>{
+            nextSlide();
+            startAuto();
+          });
+        }
+
+        if(prevBtn){
+          prevBtn.addEventListener('click', ()=>{
+            prevSlide();
+            startAuto();
+          });
+        }
+
+        dots.forEach((dot, i)=>{
+          dot.addEventListener('click', ()=>{
+            showSlide(i);
+            startAuto();
+          });
+        });
+
+        showSlide(0);
+        startAuto();
+      }
+
+      document.addEventListener('DOMContentLoaded', initInitiativesSlider);
+    })();
+  </script>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
