@@ -2,10 +2,10 @@
   const state = { lang: localStorage.getItem('bas_lang') || 'hi' };
 
   function setLangLabel(){
-    const label = document.getElementById('langLabel');
-    if(label) label.textContent = state.lang === 'hi' ? 'हिन्दी' : 'English';
-    document.documentElement.lang = state.lang;
-  }
+  const label = document.getElementById('langLabel');
+  if(label) label.textContent = state.lang === 'hi' ? 'English' : 'हिन्दी';
+  document.documentElement.lang = state.lang;
+}
 
   function applyLanguage(){
     document.querySelectorAll('[data-hi]').forEach(el=>{
@@ -20,11 +20,6 @@
       if(val !== null) el.setAttribute('placeholder', val);
     });
     setLangLabel();
-    const toggle = document.getElementById("langToggle");
-
-if(toggle){
-toggle.innerText = lang === "hi" ? "EN" : "हिंदी";
-}
 
   }
 
