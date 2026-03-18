@@ -1,366 +1,112 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Donate • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Donate to Bharat Abhyudaya Sansthan. Support education, health, women empowerment, old age care, GauSeva and community help." />
-
-  <style>
-    :root{
-      --brand:#0b5aa6;
-      --accent:#f58b1f;
-      --fg:#0b1220;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:20px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--fg);
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        #fff;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    main{
-display:block;
-}
-    section{padding:28px 0}
-    
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    h3{margin:0;font-size:18px;letter-spacing:-.2px}
-    p{margin:10px 0 0}
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:8px 0;color:var(--muted);line-height:1.65}
-    .muted{color:var(--muted)}
-    .small{font-size:14px}
-    .hr{height:1px;background:rgba(226,232,240,.95);margin:16px 0}
-
-    /* Layout */
-    .hero{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    @media(min-width:980px){
-      .hero{grid-template-columns:1.05fr .95fr;gap:22px}
-    }
-
-    .grid2{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:18px;
-    }
-    @media(min-width:980px){
-      .grid2{grid-template-columns:1fr 1fr}
-    }
-
-    .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .badge{
-      display:inline-flex;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(11,90,166,.06);
-      border:1px solid rgba(11,90,166,.15);
-      font-weight:950;
-      color:var(--brand);
-      font-size:12px;
-    }
-
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
-      justify-content:center;
-      flex:1;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
-
-    .infoRow{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-      margin-top:12px;
-    }
-    .kv{
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:18px;
-      padding:12px 14px;
-      background:rgba(255,255,255,.95);
-    }
-    .kv b{display:block;font-size:12px;color:var(--muted);letter-spacing:.2px}
-    .kv span{display:block;margin-top:4px;font-weight:950;font-size:15px;color:var(--fg)}
-    .copyBtn{
-      margin-top:10px;
-      width:100%;
-      border-radius:16px;
-      padding:12px 14px;
-      font-weight:950;
-      cursor:pointer;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.06);
-    }
-    .copyBtn:hover{background:rgba(11,90,166,.10)}
-
-    .note{
-      background:rgba(245,139,31,.10);
-      border:1px solid rgba(245,139,31,.22);
-      border-radius:18px;
-      padding:14px;
-      line-height:1.7;
-      font-weight:850;
-      margin-top:14px;
-    }
-
-    .qrBox{
-      border:1px dashed rgba(226,232,240,.95);
-      border-radius:22px;
-      padding:14px;
-      background:rgba(255,255,255,.92);
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .qrImg{
-      width:100%;
-      max-width:320px;
-      border-radius:18px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;
-      display:none;
-    }
-
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
-
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donate | Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Support Bharat Abhyudaya Sansthan through transparent giving for education, healthcare, women empowerment and humanitarian service.">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
+  <div id="header"></div>
+  <div class="topbar-space"></div>
 
-<body class="donatePage">
-  
-<div id="header"></div>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker" data-hi="दान करें" data-en="Support the Mission"></span>
+        <h1 data-hi="आपका सहयोग किसी के लिए राहत, अवसर और गरिमा बन सकता है।" data-en="Your support can become relief, opportunity and dignity for someone in need."></h1>
+        <p data-hi="भारत अभ्युदय संस्थान में सहयोग का अर्थ केवल आर्थिक योगदान नहीं है। इसका अर्थ है ऐसे कार्यों में भागीदारी जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, आपातकालीन सहायता, गौसेवा और समुदाय कल्याण को वास्तविक आधार देते हैं।" data-en="At Bharat Abhyudaya Sansthan, giving is more than a financial act. It is participation in efforts that strengthen education, healthcare, women empowerment, emergency support, cow care and community welfare in practical ways."></p>
+        <div class="impact-band" data-hi="महत्त्वपूर्ण: नीचे बैंक और UPI स्थानों पर अपने वास्तविक विवरण अवश्य भरें। अभी ये placeholders हैं ताकि वेबसाइट structure professionally ready रहे।" data-en="Important: Please replace the bank and UPI placeholders below with your actual payment details. They are currently placeholders so the website remains structurally ready."></div>
+      </div>
+      <div class="hero-panel">
+        <div class="kv-grid">
+          <div class="kv"><b data-hi="पंजीकरण" data-en="Registration"></b><span>FAT/02340/2024-2025</span></div>
+          <div class="kv"><b>PAN</b><span>AANAB2855N</span></div>
+          <div class="kv"><b data-hi="ईमेल" data-en="Email"></b><span>sheopratapsingh243@gmail.com</span></div>
+          <div class="kv"><b data-hi="संपर्क" data-en="Phone"></b><span>8604669454</span></div>
+        </div>
+        <div class="btn-row">
+          <a href="documents.html" class="btn btn-secondary" data-hi="दस्तावेज़ देखें" data-en="View Documents"></a>
+          <a href="contact.html" class="btn btn-primary" data-hi="सहायता चाहिए?" data-en="Need Help?"></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<main id="top">
+  <section class="section">
+    <div class="wrap info-grid">
+      <div class="card">
+        <h2 data-hi="बैंक ट्रांसफर" data-en="Bank Transfer"></h2>
+        <p class="section-sub" style="font-size:16px" data-hi="यदि आप बैंक के माध्यम से सहयोग देना चाहते हैं, तो नीचे दिए विवरण का उपयोग करें। भुगतान करने से पहले इन्हें अपने वास्तविक account details से बदलना आवश्यक है।" data-en="If you wish to support through bank transfer, use the information below. Please replace these placeholders with your real account details before publishing."></p>
+        <div class="kv-grid">
+          <div class="kv"><b data-hi="खाता नाम" data-en="Account Name"></b><span>Bharat Abhyudaya Sansthan</span></div>
+          <div class="kv"><b data-hi="खाता संख्या" data-en="Account Number"></b><span>ADD-YOUR-ACCOUNT-NUMBER</span></div>
+          <div class="kv"><b>IFSC</b><span>ADD-YOUR-IFSC</span></div>
+          <div class="kv"><b data-hi="बैंक नाम" data-en="Bank Name"></b><span>ADD-YOUR-BANK-NAME</span></div>
+          <div class="kv"><b data-hi="शाखा" data-en="Branch"></b><span>ADD-YOUR-BRANCH</span></div>
+          <div class="kv"><b data-hi="भुगतान का उद्देश्य" data-en="Purpose"></b><span data-hi="सामान्य दान / कार्यक्रम सहयोग" data-en="General donation / programme support"></span></div>
+        </div>
+        <div id="bankCopyText" class="hidden">Bharat Abhyudaya Sansthan | ADD-YOUR-ACCOUNT-NUMBER | ADD-YOUR-IFSC | ADD-YOUR-BANK-NAME | ADD-YOUR-BRANCH</div>
+        <div class="btn-row"><button class="btn btn-secondary" type="button" id="copyBankBtn" data-hi="बैंक विवरण कॉपी करें" data-en="Copy bank details"></button></div>
+      </div>
 
-  <!-- HERO -->
-  <section>
+      <div class="card">
+        <h2 data-hi="UPI / त्वरित दान" data-en="UPI / Quick Giving"></h2>
+        <p class="section-sub" style="font-size:16px" data-hi="यदि आप UPI से सहयोग लेना चाहते हैं, तो नीचे वास्तविक UPI ID जोड़ें। QR code उपलब्ध हो तो उसे भी यहाँ जोड़ा जा सकता है।" data-en="If you want to accept support via UPI, add the real UPI ID below. You may also place a QR code here when available."></p>
+        <div class="kv-grid">
+          <div class="kv"><b>UPI ID</b><span>ADD-YOUR-UPI-ID</span></div>
+          <div class="kv"><b data-hi="स्थिति" data-en="Status"></b><span data-hi="प्रकाशन से पहले अपडेट करें" data-en="Update before publishing"></span></div>
+          <div class="kv"><b data-hi="दान रसीद" data-en="Donation receipt"></b><span data-hi="अनुरोध पर उपलब्ध" data-en="Available on request"></span></div>
+          <div class="kv"><b data-hi="संपर्क सहायता" data-en="Support help"></b><span>8604669454</span></div>
+        </div>
+        <div id="upiCopyText" class="hidden">ADD-YOUR-UPI-ID</div>
+        <div class="btn-row"><button class="btn btn-secondary" type="button" id="copyUpiBtn" data-hi="UPI ID कॉपी करें" data-en="Copy UPI ID"></button></div>
+        <div class="notice" style="margin-top:18px" data-hi="जब वास्तविक UPI ID और QR उपलब्ध हों, तो इस सेक्शन को तुरंत live donation use-case के लिए उपयोग किया जा सकता है।" data-en="Once your actual UPI ID and QR are available, this section can be used immediately for live donations."></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap grid-2">
+      <div class="highlight">
+        <h2 class="section-title" style="font-size:34px" data-hi="आपका सहयोग कहाँ उपयोगी हो सकता है" data-en="Where your support can help"></h2>
+        <ul class="check-list">
+          <li data-hi="शिक्षा सामग्री, मार्गदर्शन और जरूरतमंद बच्चों की सहायता" data-en="Learning materials, mentoring and support for children in need"></li>
+          <li data-hi="स्वास्थ्य सहायता, मानवीय राहत और आपातकालीन सहयोग" data-en="Healthcare support, humanitarian relief and emergency assistance"></li>
+          <li data-hi="महिला आत्मनिर्भरता, कौशल विकास और सामाजिक सशक्तिकरण" data-en="Women self-reliance, skill development and social empowerment"></li>
+          <li data-hi="गौसेवा, वृद्धजन सहायता और सामुदायिक कल्याण" data-en="Cow care, elder support and community welfare"></li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <h2 class="section-title" style="font-size:34px" data-hi="हम पारदर्शिता कैसे बनाए रखते हैं" data-en="How we maintain transparency"></h2>
+        <ul class="value-list">
+          <li data-hi="कानूनी दस्तावेज़ वेबसाइट पर उपलब्ध" data-en="Core legal documents made available on the website"></li>
+          <li data-hi="सहयोग को उद्देश्यपूर्ण सामाजिक उपयोग की दिशा देना" data-en="Using support in a purpose-driven social context"></li>
+          <li data-hi="संवाद, सत्यापन और विश्वसनीय प्रस्तुति पर जोर" data-en="Emphasis on communication, verification and credible presentation"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
-      <div class="hero">
-
+      <div class="cta-strip">
         <div>
-          <span class="badge" id="badgeTop">Donate with Trust</span>
-          <h1 id="title">दान करें</h1>
-          <p class="muted" id="tagline" style="line-height:1.75">
-            आपका योगदान किसी जरूरतमंद बच्चे की शिक्षा, किसी मरीज की सहायता, किसी वृद्धजन के सम्मान,
-            गौसेवा, महिला सशक्तिकरण, और संकट के समय राहत का आधार बन सकता है।
-          </p>
-
-          <div class="btnRow">
-            <a class="btn secondary" href="contact.html" id="btnContact">संपर्क करें</a>
-            <a class="btn primary" href="initiatives.html" id="btnWork">हमारे प्रयास देखें</a>
-          </div>
-
-          <p class="note" id="note">
-            हम पारदर्शिता में विश्वास रखते हैं। आप donation के बाद हमें message कर सकते हैं, ताकि आपका योगदान
-            सही रूप से रिकॉर्ड किया जा सके।
-          </p>
+          <h3 data-hi="आप चाहें तो किसी विशेष कार्यक्रम को भी सहयोग दे सकते हैं।" data-en="You may also choose to support a specific initiative."></h3>
+          <p data-hi="यदि आप शिक्षा, महिला सशक्तिकरण, आपातकालीन सहायता, गौसेवा या अन्य किसी पहल को लक्षित सहयोग देना चाहते हैं, तो संपर्क पृष्ठ के माध्यम से जानकारी साझा करें।" data-en="If you would like to direct support toward education, women empowerment, emergency assistance, cow care or any other initiative, please reach out through the contact page."></p>
         </div>
-
-        <div class="card">
-          <h3 id="legalTitle">कानूनी / पंजीकरण विवरण</h3>
-          <p class="small muted" style="margin-top:10px" id="legalBox">
-            Registration No.: <b>FAT/02340/2024-2025</b><br>
-            Date: <b>05/07/2024</b><br>
-            Valid: <b>04/07/2029</b><br>
-            PAN: <b>AANAB2855N</b>
-          </p>
-
-          <div class="hr"></div>
-
-          <p class="small muted" id="legalLine2" style="line-height:1.7">
-            Documents like Registration, PAN, NGO Darpan, 12A, 80G are available on the Documents page.
-          </p>
-
-          <div class="btnRow" style="margin-top:12px">
-            <a class="btn secondary" href="documents.html" id="btnDocs">दस्तावेज़ देखें</a>
-            <a class="btn primary" href="contact.html" id="btnHelp">सहायता चाहिए?</a>
-          </div>
+        <div class="btn-row">
+          <a href="initiatives.html" class="btn btn-light" data-hi="पहलें देखें" data-en="View initiatives"></a>
+          <a href="contact.html" class="btn btn-primary" data-hi="संपर्क करें" data-en="Contact Us"></a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- DONATION METHODS -->
-  <section>
-    <div class="wrap">
-      <h2 id="methodsTitle">Donation Methods</h2>
-      <p class="muted" id="methodsSub">
-        You can donate using Bank Transfer or UPI. Please share your name and transaction reference after donation.
-      </p>
-
-      <div class="grid2">
-
-        <!-- BANK -->
-        <div class="card">
-          <h3 id="bankTitle">Bank Transfer</h3>
-          <p class="muted" id="bankSub" style="line-height:1.7">
-            You can transfer your donation directly to our official NGO bank account.
-          </p>
-
-          <div class="infoRow">
-            <div class="kv">
-              <b id="kAccNameLbl">Account Name</b>
-              <span id="kAccName">Bharat Abhyudaya Sansthan</span>
-            </div>
-            <div class="kv">
-              <b id="kAccNoLbl">Account Number</b>
-              <span id="kAccNo">XXXXXX (Add your number)</span>
-            </div>
-            <div class="kv">
-              <b id="kIfscLbl">IFSC Code</b>
-              <span id="kIfsc">XXXXXX (Add IFSC)</span>
-            </div>
-            <div class="kv">
-              <b id="kBankLbl">Bank Name</b>
-              <span id="kBank">XXXXXX (Add Bank)</span>
-            </div>
-            <div class="kv">
-              <b id="kBranchLbl">Branch</b>
-              <span id="kBranch">XXXXXX (Add Branch)</span>
-            </div>
-          </div>
-
-          <button class="copyBtn" id="copyBankBtn" type="button">
-            Copy Bank Details
-          </button>
-
-          <p class="small muted" style="margin-top:10px" id="bankHint">
-            Tip: After donation, send your name + amount + transaction reference on WhatsApp.
-          </p>
-        </div>
-
-        <!-- UPI -->
-        <div class="card">
-          <h3 id="upiTitle">UPI / QR</h3>
-          <p class="muted" id="upiSub" style="line-height:1.7">
-            If you prefer UPI, you can donate using UPI ID or scanning QR code.
-          </p>
-
-          <div class="infoRow">
-            <div class="kv">
-              <b id="kUpiLbl">UPI ID</b>
-              <span id="kUpi">yourupi@bank (Add UPI)</span>
-            </div>
-          </div>
-
-          <button class="copyBtn" id="copyUpiBtn" type="button">
-            Copy UPI ID
-          </button>
-
-          <div class="qrBox" style="margin-top:14px">
-            <b id="qrTitle" style="font-size:14px">QR Code (Optional)</b>
-            <p class="small muted" id="qrSub" style="margin:0;line-height:1.65">
-              Upload your QR image as <b>assets/qr.png</b> and it will appear here automatically.
-            </p>
-            <img class="qrImg" id="qrImg" src="./assets/qr.png" alt="Donation QR Code">
-          </div>
-        </div>
-
-      </div>
-
-      <div class="note" id="receiptNote">
-        दान करने के बाद कृपया अपना नाम, राशि और transaction reference हमें WhatsApp या Contact page के माध्यम से भेजें,
-        ताकि हम सही रिकॉर्ड रख सकें।
-      </div>
-    </div>
-  </section>
-
-  <!-- DONOR TRUST -->
-  <section>
-    <div class="wrap">
-      <h2 id="trustTitle">Donor Trust & Transparency</h2>
-      <p class="muted" id="trustSub">
-        We respect every contribution. Our goal is to use donations responsibly and transparently.
-      </p>
-
-      <div class="grid2">
-
-        <div class="card">
-          <h3 id="t1t">Where your donation helps</h3>
-          <ul id="t1list">
-            <li>Education support for children (books, stationery, guidance)</li>
-            <li>Health help (basic medical assistance, medicines)</li>
-            <li>Women empowerment (skills & awareness)</li>
-            <li>Old age care (support & dignity)</li>
-            <li>GauSeva & gaushala support</li>
-            <li>Community help during emergencies</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 id="t2t">Good practices we follow</h3>
-          <ul id="t2list">
-            <li>Clear identity and legal documents on website</li>
-            <li>Donor communication through contact/WhatsApp</li>
-            <li>Responsible usage based on local needs</li>
-            <li>Respect for donor intent and purpose</li>
-            <li>Continuous improvement through feedback</li>
-          </ul>
-
-          <div class="btnRow" style="margin-top:14px">
-            <a class="btn secondary" href="documents.html" id="btnDocs2">Documents</a>
-            <a class="btn primary" href="contact.html" id="btnContact2">Contact</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<div id="footer"></div>
-
-<script src="/assets/js/main.js"></script>
+  <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+  <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+  <div id="footer"></div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
