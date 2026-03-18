@@ -1,180 +1,27 @@
 <header id="globalHeader">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="Bharat Abhyudaya Sansthan" class="brand-logo">
+      <div class="brand-copy">
+        <b data-hi="भारत अभ्युदय संस्थान" data-en="Bharat Abhyudaya Sansthan"></b>
+        <span data-hi="अभ्युदय से आत्मनिर्भर भारत तक" data-en="From upliftment to a self-reliant India"></span>
+      </div>
+    </a>
 
-<div class="wrap nav">
+    <nav class="nav" id="mainMenu">
+      <a href="index.html" data-hi="मुख्य पृष्ठ" data-en="Home"></a>
+      <a href="about.html" data-hi="परिचय" data-en="About"></a>
+      <a href="initiatives.html" data-hi="हमारे प्रयास" data-en="Initiatives"></a>
+      <a href="documents.html" data-hi="दस्तावेज़" data-en="Documents"></a>
+      <a href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+      <a href="gallery.html" data-hi="गैलरी" data-en="Gallery"></a>
+      <a href="contact.html" data-hi="संपर्क" data-en="Contact"></a>
+    </nav>
 
-<a class="brand" href="/index.html">
-<img src="/assets/logo.jpg" class="logo">
-
-<div class="brandText">
-<b id="brandText">भारत अभ्युदय संस्थान</b>
-<span id="brandSub">
-अभ्युदय से आत्मनिर्भर भारत तक
-</span>
-</div>
-</a>
-
-<!-- MOBILE MENU BUTTON -->
-<div class="menuToggle" id="menuToggle">
-☰
-</div>
-
-<nav class="menu" id="mainMenu">
-<a id="mHome" href="/index.html">मुख्य पृष्ठ</a>
-<a id="mAbout" href="/about.html">परिचय</a>
-<a id="mWork" href="/initiatives.html">हमारे प्रयास</a>
-<a id="mDocs" href="/documents.html">दस्तावेज़</a>
-<a id="mDonate" href="/donate.html">दान करें</a>
-<a id="mGallery" href="/gallery.html">गैलरी</a>
-<a id="mContact" href="/contact.html">संपर्क</a>
-</nav>
-
-<div class="langToggle" id="langToggle">
-<span id="langLabel">हिन्दी</span>
-</div>
-
-</div>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="donate.html" data-hi="अभी सहयोग करें" data-en="Support Now"></a>
+      <button class="lang-toggle" id="langToggle" type="button"><span id="langLabel">हिन्दी</span></button>
+      <button class="menu-toggle" id="menuToggle" type="button">☰</button>
+    </div>
+  </div>
 </header>
-
-<style>
-
-#globalHeader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:9999;
-background:#fff;
-border-bottom:1px solid #e2e8f0;
-}
-
-#globalHeader .wrap{
-max-width:1120px;
-margin:auto;
-padding:0 16px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-min-height:84px;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:14px;
-text-decoration:none;
-}
-
-.logo{
-height:64px;
-width:64px;
-border-radius:50%;
-object-fit:cover;
-}
-
-.brandText{
-display:flex;
-flex-direction:column;
-justify-content:center;
-line-height:1.2;
-}
-
-.brandText b{
-font-size:18px;
-font-weight:900;
-color:#111827;
-}
-
-.brandText span{
-font-size:13px;
-color:#0b5aa6;
-font-weight:600;
-margin-top:2px;
-}
-.menu{
-display:flex;
-align-items:center;
-gap:26px;
-margin-right:18px;
-font-weight:800;
-}
-
-.menu a{
-text-decoration:none;
-color:#475569;
-}
-
-.menu a:hover{
-color:#0b5aa6;
-}
-
-.langToggle{
-background:#0b5aa6;
-color:#fff;
-padding:10px 22px;
-border-radius:999px;
-font-weight:800;
-cursor:pointer;
-margin-left:14px;
-white-space:nowrap;
-}
-/* ===== MOBILE MENU ===== */
-
-.menuToggle{
-display:none;
-font-size:28px;
-cursor:pointer;
-font-weight:900;
-margin-left:auto;
-padding-right:6px;
-z-index:100000;
-}
-/* MOBILE */
-@media(max-width:900px){
-
-.menuToggle{
-display:block;
-margin-left:auto;
-font-size:28px;
-cursor:pointer;
-z-index:100000;
-}
-
-.menu{
-position:fixed;
-top:84px;
-left:0;
-width:100%;
-background:#fff;
-flex-direction:column;
-align-items:flex-start;
-padding:22px;
-gap:18px;
-display:none;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-z-index:99999;
-}
-.menu.show{
-display:flex;
-}
-
-.langToggle{
-margin-left:auto;
-margin-right:10px;
-}
-
-}
-</style>
-<script>
-document.addEventListener("DOMContentLoaded",()=>{
-
-const toggle=document.getElementById("menuToggle");
-const menu=document.getElementById("mainMenu");
-
-if(toggle && menu){
-toggle.onclick=()=>{
-menu.classList.toggle("show");
-};
-}
-
-});
-</script>
