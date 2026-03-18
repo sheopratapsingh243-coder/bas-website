@@ -26,7 +26,6 @@ if(toggle){
 toggle.innerText = lang === "hi" ? "EN" : "हिंदी";
 }
 
-}
   }
 
   function setActiveMenu(){
