@@ -1,205 +1,55 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Contact • Bharat Abhyudaya Sansthan</title>
-
-<style>
-
-:root{
---brand:#0b5aa6;
---accent:#f58b1f;
---border:#e2e8f0;
---radius:20px;
---shadow:0 16px 40px rgba(0,0,0,.08);
---max:1120px;
-}
-
-body{
-margin:0;
-font-family:system-ui;
-background:#f8fafc;
-}
-
-.wrap{
-max-width:var(--max);
-margin:auto;
-padding:0 16px;
-}
-
-main{
-display:block;
-}
-
-/* HERO */
-
-.hero{
-padding:40px 0;
-}
-
-.hero h1{
-font-size:38px;
-color:var(--brand);
-margin:0;
-}
-
-.hero p{
-color:#475569;
-line-height:1.8;
-max-width:720px;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-gap:24px;
-margin-top:30px;
-}
-
-@media(min-width:900px){
-.grid{
-grid-template-columns:1fr 1fr;
-}
-}
-
-/* CARD */
-
-.card{
-background:#fff;
-border-radius:var(--radius);
-padding:26px;
-box-shadow:var(--shadow);
-border:1px solid var(--border);
-}
-
-.card h3{
-margin-top:0;
-color:var(--brand);
-}
-
-.info{
-margin:10px 0;
-color:#475569;
-line-height:1.7;
-}
-
-/* FORM */
-
-input,textarea{
-width:100%;
-padding:12px;
-margin-top:10px;
-border-radius:10px;
-border:1px solid var(--border);
-font-family:inherit;
-}
-
-textarea{
-min-height:120px;
-resize:vertical;
-}
-
-.btn{
-margin-top:14px;
-background:var(--accent);
-color:#fff;
-border:none;
-padding:14px;
-border-radius:12px;
-font-weight:900;
-cursor:pointer;
-width:100%;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Contact Bharat Abhyudaya Sansthan for support, volunteering, donations, partnerships or programme coordination.">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
+  <div id="header"></div>
+  <div class="topbar-space"></div>
 
-<body class="contactPage">
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker" data-hi="संपर्क" data-en="Contact"></span>
+      <h1 data-hi="सहयोग, स्वयंसेवा, साझेदारी या सहायता — हमसे जुड़िए।" data-en="For support, volunteering, partnership or assistance — get in touch."></h1>
+      <p data-hi="यदि आप संस्था के किसी कार्यक्रम से जुड़ना चाहते हैं, किसी जरूरतमंद मामले की सूचना साझा करना चाहते हैं, या दान/साझेदारी पर चर्चा करना चाहते हैं, तो हमसे संपर्क कर सकते हैं।" data-en="Whether you want to engage with a programme, share a verified case in need, or discuss donations and partnerships, you can reach out to us here."></p>
+    </div>
+  </section>
 
-<!-- GLOBAL HEADER -->
-<div id="header"></div>
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div class="card contact-card">
+        <h2 data-hi="कार्यालय एवं संपर्क विवरण" data-en="Office & Contact Details"></h2>
+        <div class="kv-grid">
+          <div class="kv"><b data-hi="स्थान" data-en="Location"></b><span data-hi="फतेहपुर, उत्तर प्रदेश" data-en="Fatehpur, Uttar Pradesh"></span></div>
+          <div class="kv"><b data-hi="मोबाइल" data-en="Phone"></b><span>8604669454</span></div>
+          <div class="kv"><b data-hi="ईमेल" data-en="Email"></b><span>sheopratapsingh243@gmail.com</span></div>
+          <div class="kv"><b data-hi="उद्देश्य" data-en="Purpose"></b><span data-hi="सामाजिक सेवा एवं जनसहयोग" data-en="Social service & community support"></span></div>
+        </div>
+        <div class="notice" style="margin-top:18px" data-hi="Google Maps के इस block को आप अपने वास्तविक pinned location link से बाद में और अधिक सटीक बना सकते हैं।" data-en="You can later make this Google Maps block more precise by replacing it with your exact pinned location link."></div>
+        <iframe title="Fatehpur Map" src="https://www.google.com/maps?q=Fatehpur%20Uttar%20Pradesh&output=embed" loading="lazy"></iframe>
+      </div>
 
-<main>
+      <div class="card">
+        <h2 data-hi="त्वरित संदेश भेजें" data-en="Send a quick message"></h2>
+        <p class="section-sub" style="font-size:16px" data-hi="यह फॉर्म WhatsApp message draft खोलता है, ताकि technical backend के बिना भी website visitor तुरंत संपर्क कर सके।" data-en="This form opens a WhatsApp message draft so that visitors can contact you instantly even without a technical backend."></p>
+        <form id="contactForm" class="form-grid" style="margin-top:18px">
+          <input id="nameField" class="input" required data-hi-placeholder="आपका नाम" data-en-placeholder="Your name" placeholder="आपका नाम">
+          <input id="phoneField" class="input" required data-hi-placeholder="मोबाइल नंबर" data-en-placeholder="Phone number" placeholder="मोबाइल नंबर">
+          <textarea id="messageField" required data-hi-placeholder="अपना संदेश लिखें" data-en-placeholder="Write your message" placeholder="अपना संदेश लिखें"></textarea>
+          <button class="btn btn-primary" type="submit" data-hi="WhatsApp पर भेजें" data-en="Send via WhatsApp"></button>
+        </form>
+        <div class="impact-band" data-hi="सुझाव: भविष्य में आप Netlify Forms, Formspree या Google Forms integration जोड़कर इस form को email/database based form में भी बदल सकते हैं।" data-en="Suggestion: In the future, you can turn this into an email/database-based form by integrating Netlify Forms, Formspree or Google Forms."></div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-<div class="wrap">
-
-<h1 id="contactTitle">
-संपर्क करें
-</h1>
-
-<p id="contactTagline">
-यदि आप सेवा कार्यों में सहयोग करना चाहते हैं,
-दान संबंधी जानकारी प्राप्त करना चाहते हैं
-या किसी जरूरतमंद व्यक्ति की सहायता हेतु
-संस्था से जुड़ना चाहते हैं,
-तो हमसे सीधे संपर्क कर सकते हैं।
-</p>
-
-</div>
-</section>
-
-
-<section>
-<div class="wrap">
-
-<div class="grid">
-
-<!-- CONTACT INFO -->
-<div class="card">
-
-<h3 id="officeTitle">कार्यालय संपर्क</h3>
-
-<p class="info" id="addrText">
-481, शादिपुर खुर्द, जयराम नगर,
-फतेहपुर, उत्तर प्रदेश
-</p>
-
-<p class="info">
-<b>Phone:</b><br>
-<span id="phoneText">
-8604669454, 7355181465
-</span>
-</p>
-
-<p class="info">
-<b>Email:</b><br>
-<span id="emailText">
-sheopratapsingh243@gmail.com
-</span>
-</p>
-
-</div>
-
-
-<!-- CONTACT FORM -->
-<div class="card">
-
-<h3 id="formTitle">संदेश भेजें</h3>
-
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Message"></textarea>
-
-<button class="btn" id="sendBtn">
-Send Message
-</button>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-</main>
-
-<div id="footer"></div>
-
-<script src="/assets/js/main.js"></script>
-
+  <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+  <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+  <div id="footer"></div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
