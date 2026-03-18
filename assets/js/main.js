@@ -20,6 +20,13 @@
       if(val !== null) el.setAttribute('placeholder', val);
     });
     setLangLabel();
+    const toggle = document.getElementById("langToggle");
+
+if(toggle){
+toggle.innerText = lang === "hi" ? "EN" : "हिंदी";
+}
+
+}
   }
 
   function setActiveMenu(){
