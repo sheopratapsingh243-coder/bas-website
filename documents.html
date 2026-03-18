@@ -1,277 +1,104 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Documents • Bharat Abhyudaya Sansthan</title>
-  <meta name="description" content="Official documents of Bharat Abhyudaya Sansthan - registration, PAN, NGO Darpan, bylaws, 12A and 80G." />
-
-  <style>
-    :root{
-      --brand:#0b5aa6;
-      --accent:#f58b1f;
-      --fg:#0b1220;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --shadow:0 16px 40px rgba(2,6,23,.10);
-      --radius:20px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--fg);
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-        #fff;
-      overflow-x:hidden;
-
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-    main{
-display:block;
-}
-    section{padding:28px 0}
-   
-    h1{margin:10px 0 0;font-size:34px;letter-spacing:-.7px}
-    h2{margin:0;font-size:24px;letter-spacing:-.4px}
-    h3{margin:0;font-size:18px;letter-spacing:-.2px}
-    p{margin:10px 0 0}
-    .muted{color:var(--muted)}
-    .small{font-size:14px}
-
-    /* Cards */
-    .card{
-      background:#fff;border:1px solid rgba(226,232,240,.95);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    @media(min-width:980px){
-      .hero{grid-template-columns:1.05fr .95fr;gap:22px}
-    }
-
-    .badge{
-      display:inline-flex;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(11,90,166,.06);
-      border:1px solid rgba(11,90,166,.15);
-      font-weight:950;
-      color:var(--brand);
-      font-size:12px;
-    }
-
-    .btnRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{
-      border-radius:16px;padding:12px 16px;font-size:14px;
-      border:1px solid rgba(226,232,240,.95);
-      background:#fff;cursor:pointer;
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:950;
-      justify-content:center;
-      flex:1;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ff7a00);
-      border-color:transparent;font-weight:950;
-    }
-    .btn.secondary{
-      background:linear-gradient(135deg,var(--brand),#083a6c);
-      color:#fff;border-color:transparent;font-weight:950;
-    }
-
-    .docsGrid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:18px;
-    }
-    @media(min-width:900px){
-      .docsGrid{grid-template-columns:1fr 1fr}
-    }
-
-    .docCard{
-      border:1px solid rgba(226,232,240,.95);
-      border-radius:22px;
-      background:#fff;
-      box-shadow:0 16px 40px rgba(2,6,23,.10);
-      overflow:hidden;
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .docTop{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .docIcon{
-      width:48px;height:48px;
-      border-radius:18px;
-      border:1px solid rgba(226,232,240,.95);
-      background:rgba(11,90,166,.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      flex:0 0 auto;
-    }
-
-    .docCard h3{margin:0}
-    .docCard p{margin:0;color:var(--muted);line-height:1.65}
-
-    .docBtns{
-      display:flex;
-      gap:10px;
-      margin-top:6px;
-    }
-    .docBtns a{flex:1}
-
-    .note{
-      background:rgba(245,139,31,.10);
-      border:1px solid rgba(245,139,31,.22);
-      border-radius:18px;
-      padding:14px;
-      line-height:1.7;
-      font-weight:850;
-    }
-
-    footer{
-      border-top:1px solid rgba(226,232,240,.95);
-      padding:18px 0;margin-top:10px;color:var(--muted);
-      background:#fff;font-size:14px;
-    }
-
-    /* Floating WhatsApp */
-    .wa{
-      position:fixed;right:16px;bottom:16px;z-index:999;
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#fff;padding:12px 14px;border-radius:999px;
-      box-shadow:0 18px 45px rgba(2,6,23,.22);
-      font-weight:950;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documents | Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="View the registration, PAN, NGO Darpan and compliance documents of Bharat Abhyudaya Sansthan.">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
+  <div id="header"></div>
+  <div class="topbar-space"></div>
 
-<body class="docsPage">
-
-<div id="header"></div>
-  
-<main id="top">
-
-<!-- HERO -->
-
-<section>
-    
-<div class="wrap">
-  
-<div class="hero">
-
-<div>
-<span class="badge" id="badgeTop">Verified Documents</span>
-<h1 id="title">दस्तावेज़</h1>
-<p class="muted" id="tagline" style="line-height:1.75">
-            भारत अभ्युदय संस्थान पारदर्शिता और विश्वसनीयता को सर्वोच्च प्राथमिकता देता है।
-            इस पृष्ठ पर संस्था के प्रमुख पंजीकरण, पहचान और कानूनी दस्तावेज़ उपलब्ध हैं।
-</p>
-
-<div class="btnRow">
-<a class="btn secondary" href="contact.html" id="btnContact">संपर्क करें</a>
-<a class="btn primary" href="donate.html" id="btnDonate">दान करें</a>
-</div>
-
-<p class="note" style="margin-top:14px" id="note">
-            यदि किसी दस्तावेज़ के बारे में अतिरिक्त जानकारी चाहिए, तो आप हमसे संपर्क कर सकते हैं।
-</p>
-</div>
-
-<!-- Legal info (not removed) -->
-<div class="card">
-<h3 id="legalTitle">कानूनी / पंजीकरण विवरण</h3>
-<p class="small muted" style="margin-top:10px" id="legalBox">
-            Registration No.: <b>FAT/02340/2024-2025</b><br>
-            Date: <b>05/07/2024</b><br>
-            Valid: <b>04/07/2029</b><br>
-            PAN: <b>AANAB2855N</b>
-</p>
-
-<div style="height:1px;background:rgba(226,232,240,.95);margin:14px 0"></div>
-
-<p class="small muted" id="legalLine2" style="line-height:1.7">
-            This page is created to strengthen transparency and donor trust. You may view or download the documents below.
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-  <!-- DOCUMENTS -->
-  <section>
-    <div class="wrap">
-      <h2 id="docsTitle">Available Documents</h2>
-      <p class="muted" id="docsSub">
-        View or download the documents. These help verify the NGO identity and legal status.
-      </p>
-
-      <div class="docsGrid" id="docsGrid"></div>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker" data-hi="दस्तावेज़ एवं अनुपालन" data-en="Documents & Compliance"></span>
+        <h1 data-hi="विश्वास के लिए दस्तावेज़ भी उतने ही आवश्यक हैं जितनी सेवा।" data-en="Documents are as essential to trust as service itself."></h1>
+        <p data-hi="हम मानते हैं कि किसी भी सामाजिक संस्था को अपनी वैधता, पंजीकरण और मूलभूत अनुपालन दस्तावेज़ स्पष्ट रूप से उपलब्ध कराने चाहिए। इससे दानकर्ता, सहयोगी और समुदाय — सभी के लिए भरोसा मजबूत होता है।" data-en="We believe every social organisation should make its legitimacy, registration and core compliance records clearly accessible. This strengthens trust for donors, collaborators and the community alike."></p>
+        <div class="btn-row">
+          <a href="donate.html" class="btn btn-primary" data-hi="सहयोग पृष्ठ" data-en="Go to Donate"></a>
+          <a href="contact.html" class="btn btn-secondary" data-hi="संपर्क करें" data-en="Contact Us"></a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="kv-grid">
+          <div class="kv"><b data-hi="पंजीकरण संख्या" data-en="Registration No."></b><span>FAT/02340/2024-2025</span></div>
+          <div class="kv"><b>PAN</b><span>AANAB2855N</span></div>
+          <div class="kv"><b data-hi="अनुपालन दृष्टिकोण" data-en="Compliance approach"></b><span data-hi="पारदर्शी एवं सत्यापनीय" data-en="Transparent and verifiable"></span></div>
+          <div class="kv"><b data-hi="उद्देश्य" data-en="Purpose"></b><span data-hi="विश्वास निर्माण" data-en="Building trust"></span></div>
+        </div>
+        <div class="notice" data-hi="महत्त्वपूर्ण: किसी भी भुगतान, दान या साझेदारी से पहले दानकर्ता/साझेदार संबंधित विवरण का स्वयं भी सत्यापन कर सकते हैं।" data-en="Important: Before any payment, donation or partnership, donors and partners may independently verify the relevant records."></div>
+      </div>
     </div>
   </section>
 
-</main>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker" data-hi="उपलब्ध दस्तावेज़" data-en="Available documents"></span>
+      <h2 class="section-title" data-hi="मुख्य कानूनी और संस्थागत अभिलेख" data-en="Core legal and institutional records"></h2>
+      <p class="section-sub" data-hi="नीचे उपलब्ध दस्तावेज़ संस्था की वैधता, पंजीकरण तथा अनुपालन स्थिति को समझने में सहायक हैं।" data-en="The documents below help explain the organisation’s legitimacy, registration and compliance status."></p>
 
-<script>
-const docs = [
-  {
-    key:"reg",
-    icon:"📄",
-    file:"./assets/docs/registration-certificate.pdf"
-  },
-  {
-    key:"pan",
-    icon:"🪪",
-    file:"./assets/docs/pan-card.pdf"
-  },
-  {
-    key:"darpan",
-    icon:"🏛️",
-    file:"./assets/docs/ngo-darpan-certificate.pdf"
-  },
-  {
-    key:"bylaws",
-    icon:"📘",
-    file:"./assets/docs/bylaws.pdf"
-  },
-  {
-    key:"12a",
-    icon:"✅",
-    file:"./assets/docs/12a-certificate.pdf"
-  },
-  {
-    key:"80g",
-    icon:"⭐",
-    file:"./assets/docs/80g-certificate.pdf"
-  }
-];
-</script>
+      <div class="doc-grid" style="margin-top:26px">
+        <article class="doc-card">
+          <h3 data-hi="पंजीकरण प्रमाणपत्र" data-en="Registration Certificate"></h3>
+          <p data-hi="संस्था के विधिक पंजीकरण से संबंधित मूल दस्तावेज़।" data-en="Primary document confirming the legal registration of the organisation."></p>
+          <div class="doc-actions"><a class="btn btn-secondary" href="assets/docs/registration-certificate.pdf" target="_blank" data-hi="खोलें" data-en="Open"></a></div>
+        </article>
+        <article class="doc-card">
+          <h3 data-hi="पैन कार्ड" data-en="PAN Card"></h3>
+          <p data-hi="संस्था के कर-संबंधी पहचान अभिलेख के रूप में।" data-en="Tax identity document of the organisation."></p>
+          <div class="doc-actions"><a class="btn btn-secondary" href="assets/docs/pan-card.pdf" target="_blank" data-hi="खोलें" data-en="Open"></a></div>
+        </article>
+        <article class="doc-card">
+          <h3 data-hi="NGO Darpan प्रमाणपत्र" data-en="NGO Darpan Certificate"></h3>
+          <p data-hi="संस्था की संबंधित पोर्टल पर उपलब्धता और सत्यापन से संबंधित अभिलेख।" data-en="Record associated with the organisation’s presence and verification on the relevant portal."></p>
+          <div class="doc-actions"><a class="btn btn-secondary" href="assets/docs/ngo-darpan-certificate.pdf" target="_blank" data-hi="खोलें" data-en="Open"></a></div>
+        </article>
+        <article class="doc-card">
+          <h3>12A Certificate</h3>
+          <p data-hi="आयकर अधिनियम के तहत संस्था की संबंधित स्थिति से जुड़ा दस्तावेज़।" data-en="Document related to the organisation’s status under the Income Tax framework."></p>
+          <div class="doc-actions"><a class="btn btn-secondary" href="assets/docs/12a-certificate.pdf" target="_blank" data-hi="खोलें" data-en="Open"></a></div>
+        </article>
+        <article class="doc-card">
+          <h3>80G Certificate</h3>
+          <p data-hi="दान संबंधी कर लाभ के परिप्रेक्ष्य में महत्त्वपूर्ण अनुपालन दस्तावेज़।" data-en="An important compliance document in the context of donation-related tax benefit."></p>
+          <div class="doc-actions"><a class="btn btn-secondary" href="assets/docs/80g-certificate.pdf" target="_blank" data-hi="खोलें" data-en="Open"></a></div>
+        </article>
+        <article class="doc-card">
+          <h3 data-hi="उपनियम / Bylaws" data-en="Bylaws"></h3>
+          <p data-hi="संस्था के संचालन, उद्देश्य और आंतरिक संरचना को समझने हेतु।" data-en="Useful for understanding the organisation’s structure, objectives and governing rules."></p>
+          <div class="doc-actions"><a class="btn btn-secondary" href="assets/docs/bylaws.pdf" target="_blank" data-hi="खोलें" data-en="Open"></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<div id="footer"></div>
+  <section class="section tight">
+    <div class="wrap grid-2">
+      <div class="highlight">
+        <h2 class="section-title" style="font-size:34px" data-hi="दस्तावेज़ सार्वजनिक रखने का लाभ" data-en="Why public documentation matters"></h2>
+        <ul class="check-list">
+          <li data-hi="दानकर्ताओं का भरोसा मजबूत होता है।" data-en="It strengthens donor confidence."></li>
+          <li data-hi="साझेदारी में वैधता और गंभीरता दिखती है।" data-en="It demonstrates legitimacy and seriousness in partnerships."></li>
+          <li data-hi="संस्था की पारदर्शी कार्यशैली स्पष्ट होती है।" data-en="It signals a transparent way of working."></li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <h2 class="section-title" style="font-size:34px" data-hi="अगला कदम" data-en="Next step"></h2>
+        <p class="section-sub" style="font-size:16px" data-hi="यदि आप सहयोग करना चाहते हैं, तो दस्तावेज़ देखने के बाद हमारे दान पृष्ठ या संपर्क पृष्ठ पर जाएँ।" data-en="If you would like to support the organisation, you may review these records and then proceed to the donate or contact page."></p>
+        <div class="btn-row">
+          <a href="donate.html" class="btn btn-primary" data-hi="दान पृष्ठ" data-en="Donate Page"></a>
+          <a href="contact.html" class="btn btn-secondary" data-hi="संपर्क पृष्ठ" data-en="Contact Page"></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="/assets/js/main.js"></script>
-
+  <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+  <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+  <div id="footer"></div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
