@@ -1,313 +1,129 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-/* ================= HEADER LOAD ================= */
-
-fetch("components/header.html")
-.then(res => res.text())
-.then(data => {
-
-const headerContainer = document.getElementById("header");
-
-if(headerContainer){
-headerContainer.innerHTML = data;
-}
-
-/* AFTER HEADER LOAD */
-setTimeout(()=>{
-
-initAfterHeader();
-applyLanguage();
-
-/* AUTO HEADER HEIGHT */
-const gh = document.getElementById("globalHeader");
-if(gh){
-document.body.style.paddingTop =
-gh.offsetHeight + "px";
-}
-
-},60);
-
-})
-.catch(err=>{
-console.error("Header load failed:",err);
-});
-
-
-/* ================= FOOTER LOAD ================= */
-
-fetch("components/footer.html")
-.then(res => res.text())
-.then(data=>{
-const footer=document.getElementById("footer");
-if(footer) footer.innerHTML=data;
-});
-
-
-/* ================= INIT AFTER HEADER ================= */
-
-function initAfterHeader(){
-
-setActiveMenu();
-
-const toggle=document.getElementById("langToggle");
-
-if(toggle){
-toggle.addEventListener("click",()=>{
-
-let lang =
-localStorage.getItem("bas_lang") || "hi";
-
-lang = lang==="hi" ? "en" : "hi";
-
-localStorage.setItem("bas_lang",lang);
-
-applyLanguage();
-
-});
-}
-
-}
-
-
-/* ================= LANGUAGE DATA ================= */
-
-const t = {
-
-hi:{
-brand:"भारत अभ्युदय संस्थान",
-sub:"अभ्युदय से आत्मनिर्भर भारत तक",
-
-home:"मुख्य पृष्ठ",
-about:"परिचय",
-work:"हमारे प्रयास",
-docs:"दस्तावेज़",
-donate:"दान करें",
-gallery:"गैलरी",
-contact:"संपर्क",
-
-heroTitle:"भारत अभ्युदय संस्थान",
-heroText:"आपका सहयोग शिक्षा, स्वास्थ्य सेवा, महिला सशक्तिकरण एवं सामाजिक कल्याण के माध्यम से आत्मनिर्भर भारत निर्माण में सहायक है।",
-
-initTitle:"हमारे सेवा प्रयास",
-initTagline:
-"भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं मानवीय सेवा में पारदर्शिता और उत्तरदायित्व के साथ कार्य करता है।",
-/* ===== ABOUT PAGE ===== */
-
-badgeTop:"परिचय",
-
-tagline:
-"शिक्षा, स्वास्थ्य, महिला सशक्तिकरण एवं सामाजिक सेवा के माध्यम से आत्मनिर्भर समाज निर्माण हेतु समर्पित संस्था।",
-
-btnWork:"हमारे प्रयास देखें",
-btnDonate:"दान करें",
-
-callout:
-"हम पारदर्शिता, उत्तरदायित्व एवं मानवीय सेवा के सिद्धांतों पर कार्य करते हैं।",
-
-legalTitle:"कानूनी विवरण",
-legalBox:
-"Registration No: FAT/02340/2024-2025 | PAN: AANAB2855N",
-
-contactQuickTitle:"त्वरित संपर्क",
-phLbl:"फोन:",
-addr:"फतेहपुर, उत्तर प्रदेश",
-
-whyExistTitle:"हम क्यों अस्तित्व में हैं",
-whyExistText:
-"समाज के वंचित एवं जरूरतमंद वर्ग तक वास्तविक सहायता पहुँचाने के उद्देश्य से संस्था कार्यरत है।",
-
-whyExistQuote:
-"सेवा ही समाज परिवर्तन का सबसे प्रभावी माध्यम है।",
-
-missionTitle:"हमारा मिशन",
-missionText:
-"जरूरतमंद व्यक्तियों को शिक्षा, स्वास्थ्य एवं सामाजिक सहयोग उपलब्ध कराना।",
-
-visionTitle:"हमारा विजन",
-visionText:
-"आत्मनिर्भर, शिक्षित एवं सशक्त भारत का निर्माण।"
-},
-
-en:{
-brand:"Bharat Abhyudaya Sansthan",
-sub:"Upliftment to Self-Reliant India",
-
-home:"Home",
-about:"About",
-work:"Initiatives",
-docs:"Documents",
-donate:"Donate",
-gallery:"Gallery",
-contact:"Contact",
-
-heroTitle:"Bharat Abhyudaya Sansthan",
-heroText:"Your support helps build an Atmanirbhar Bharat.",
-
-initTitle:"Our Initiatives",
-initTagline:
-"Bharat Abhyudaya Sansthan works with transparency ensuring verified support reaches genuine beneficiaries.",
-  /* ===== ABOUT PAGE ===== */
-
-badgeTop:"About Us",
-
-tagline:
-"A social organization working for education, healthcare and empowerment.",
-
-btnWork:"View Initiatives",
-btnDonate:"Donate Now",
-
-callout:
-"We work with transparency, accountability and humanitarian values.",
-
-legalTitle:"Legal Details",
-legalBox:
-"Registration No: FAT/02340/2024-2025 | PAN: AANAB2855N",
-
-contactQuickTitle:"Quick Contact",
-phLbl:"Phone:",
-addr:"Fatehpur, Uttar Pradesh",
-
-whyExistTitle:"Why We Exist",
-whyExistText:
-"Our mission is to deliver verified support to the needy sections of society.",
-
-whyExistQuote:
-"Service is the strongest driver of social change.",
-
-missionTitle:"Our Mission",
-missionText:
-"Providing education, healthcare and humanitarian assistance.",
-
-visionTitle:"Our Vision",
-visionText:
-"Building a self-reliant and empowered India."
-}
-
-};
-
-
-/* ================= APPLY LANGUAGE ================= */
-
-function applyLanguage(){
-
-const lang =
-localStorage.getItem("bas_lang") || "hi";
-
-const d = t[lang];
-if(!d) return;
-
-const setText=(id,val)=>{
-const el=document.getElementById(id);
-if(el && val!==undefined){
-el.textContent = val;
-}
-};
-
-/* HEADER */
-setText("brandText",d.brand);
-setText("brandSub",d.sub);
-
-setText("mHome",d.home);
-setText("mAbout",d.about);
-setText("mWork",d.work);
-setText("mDocs",d.docs);
-setText("mDonate",d.donate);
-setText("mGallery",d.gallery);
-setText("mContact",d.contact);
-
-/* ===== PAGE BASED TRANSLATION ===== */
-
-const page=document.body.className;
-
-/* HOME */
-if(page.includes("homePage")){
-setText("heroTitle",d.heroTitle);
-setText("heroText",d.heroText);
-setText("initTitle",d.initTitle);
-setText("initTagline",d.initTagline);
-}
-
-/* INITIATIVES */
-if(page.includes("initiativesPage")){
-setText("initTitle",d.initTitle);
-setText("initTagline",d.initTagline);
-}
-
-/* ABOUT */
-if(page.includes("aboutPage")){
-
-setText("badgeTop",d.badgeTop);
-setText("title",d.brand);
-setText("tagline",d.tagline);
-
-setText("btnWork",d.btnWork);
-setText("btnDonate",d.btnDonate);
-
-setText("callout",d.callout);
-
-setText("legalTitle",d.legalTitle);
-setText("legalBox",d.legalBox);
-
-setText("contactQuickTitle",d.contactQuickTitle);
-setText("phLbl",d.phLbl);
-setText("addr",d.addr);
-
-setText("whyExistTitle",d.whyExistTitle);
-setText("whyExistText",d.whyExistText);
-setText("whyExistQuote",d.whyExistQuote);
-
-setText("missionTitle",d.missionTitle);
-setText("missionText",d.missionText);
-
-setText("visionTitle",d.visionTitle);
-setText("visionText",d.visionText);
-
-}
-
-/* DONATE */
-if(page.includes("donatePage")){
-setText("title",d.donate);
-}
-
-/* DOCUMENTS */
-if(page.includes("docsPage")){
-setText("title",d.docs);
-}
-
-/* CONTACT */
-if(page.includes("contactPage")){
-setText("contactTitle",d.contact);
-}
-
-/* GALLERY */
-if(page.includes("galleryPage")){
-setText("titleText",d.gallery);
-}
-/* Toggle Label */
-const label=document.getElementById("langLabel");
-if(label){
-label.textContent =
-lang==="hi" ? "English" : "हिन्दी";
-}
-
-}
-
-
-/* ================= ACTIVE MENU ================= */
-
-function setActiveMenu(){
-
-const current =
-location.pathname.split("/").pop();
-
-document.querySelectorAll(".menu a")
-.forEach(link=>{
-if(link.getAttribute("href")
-.includes(current)){
-link.style.color="#0b5aa6";
-}
-});
-
-}
-
-});
+(function(){
+  const state = { lang: localStorage.getItem('bas_lang') || 'hi' };
+
+  function setLangLabel(){
+    const label = document.getElementById('langLabel');
+    if(label) label.textContent = state.lang === 'hi' ? 'हिन्दी' : 'English';
+    document.documentElement.lang = state.lang;
+  }
+
+  function applyLanguage(){
+    document.querySelectorAll('[data-hi]').forEach(el=>{
+      const val = el.getAttribute('data-' + state.lang);
+      if(val !== null){
+        if(el.hasAttribute('data-html')) el.innerHTML = val;
+        else el.textContent = val;
+      }
+    });
+    document.querySelectorAll('[data-hi-placeholder]').forEach(el=>{
+      const val = el.getAttribute('data-' + state.lang + '-placeholder');
+      if(val !== null) el.setAttribute('placeholder', val);
+    });
+    setLangLabel();
+  }
+
+  function setActiveMenu(){
+    const current = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav a').forEach(a=>{
+      const href = a.getAttribute('href');
+      a.classList.toggle('active', href === current || (current === '' && href === 'index.html'));
+    });
+  }
+
+  function wireHeader(){
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainMenu');
+    if(menuToggle && nav){
+      menuToggle.onclick = () => nav.classList.toggle('open');
+      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>nav.classList.remove('open')));
+    }
+    const langToggle = document.getElementById('langToggle');
+    if(langToggle){
+      langToggle.onclick = ()=>{
+        state.lang = state.lang === 'hi' ? 'en' : 'hi';
+        localStorage.setItem('bas_lang', state.lang);
+        applyLanguage();
+      };
+    }
+    setActiveMenu();
+    applyLanguage();
+  }
+
+  function loadPartial(id, file, cb){
+    const target = document.getElementById(id);
+    if(!target) return;
+    fetch(file).then(r=>r.text()).then(html=>{
+      target.innerHTML = html;
+      cb && cb();
+    }).catch(console.error);
+  }
+
+  function copyText(text, btn){
+    navigator.clipboard.writeText(text).then(()=>{
+      if(!btn) return;
+      const original = btn.textContent;
+      btn.textContent = state.lang === 'hi' ? 'कॉपी हो गया' : 'Copied';
+      setTimeout(()=>btn.textContent = original, 1400);
+    }).catch(()=>{});
+  }
+
+  function wireCopies(){
+    const bankBtn = document.getElementById('copyBankBtn');
+    const upiBtn = document.getElementById('copyUpiBtn');
+    if(bankBtn){
+      bankBtn.addEventListener('click', ()=> copyText(document.getElementById('bankCopyText').textContent.trim(), bankBtn));
+    }
+    if(upiBtn){
+      upiBtn.addEventListener('click', ()=> copyText(document.getElementById('upiCopyText').textContent.trim(), upiBtn));
+    }
+  }
+
+  function animateCounters(){
+    const counters = document.querySelectorAll('[data-count]');
+    if(!counters.length) return;
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const end = parseInt(el.getAttribute('data-count'),10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(end/40));
+        const timer = setInterval(()=>{
+          cur += step;
+          if(cur >= end){
+            cur = end;
+            clearInterval(timer);
+          }
+          el.textContent = cur.toLocaleString('en-IN') + suffix;
+        }, 36);
+        obs.unobserve(el);
+      });
+    }, {threshold:.4});
+    counters.forEach(c=>obs.observe(c));
+  }
+
+  function wireContactForm(){
+    const form = document.getElementById('contactForm');
+    if(!form) return;
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('nameField').value.trim());
+      const phone = encodeURIComponent(document.getElementById('phoneField').value.trim());
+      const msg = encodeURIComponent(document.getElementById('messageField').value.trim());
+      const text = state.lang === 'hi'
+        ? `नमस्ते, मैं ${name} बोल रहा/रही हूँ। फोन: ${phone}. संदेश: ${msg}`
+        : `Hello, this is ${name}. Phone: ${phone}. Message: ${msg}`;
+      window.open(`https://wa.me/918604669454?text=${text}`, '_blank');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    loadPartial('header', 'components/header.html', wireHeader);
+    loadPartial('footer', 'components/footer.html', applyLanguage);
+    applyLanguage();
+    animateCounters();
+    wireCopies();
+    wireContactForm();
+  });
+})();
