@@ -1,140 +1,63 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gallery • Bharat Abhyudaya Sansthan</title>
-
-<style>
-:root{
---brand:#0b5aa6;
---accent:#f58b1f;
---fg:#0b1220;
---muted:#475569;
---border:#e2e8f0;
---shadow:0 16px 40px rgba(2,6,23,.10);
---radius:20px;
---max:1120px;
-}
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-color:var(--fg);
-background:
-radial-gradient(1200px 700px at 20% -10%, rgba(245,139,31,.18), transparent 60%),
-radial-gradient(900px 600px at 85% 0%, rgba(11,90,166,.16), transparent 55%),
-#fff;
-overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-.wrap{max-width:var(--max);margin:auto;padding:0 16px}
-  main{
-display:block;
-}
-
-  /* SECTION */
-section{padding:50px 0;text-align:center}
-.badge{
-display:inline-flex;padding:8px 12px;border-radius:999px;
-background:rgba(11,90,166,.06);
-border:1px solid rgba(11,90,166,.15);
-font-weight:950;color:var(--brand);font-size:12px;
-}
-h1{margin:14px 0;font-size:34px}
-.muted{color:var(--muted);line-height:1.7}
-
-/* SLIDER */
-.slider{
-position:relative;
-max-width:850px;
-margin:40px auto 0;
-}
-.slide{display:none}
-.slide.active{display:block}
-.slide img{
-width:100%;
-height:auto;
-border-radius:20px;
-box-shadow:var(--shadow);
-}
-.arrow{
-position:absolute;top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.5);
-color:#fff;border:none;
-font-size:24px;width:45px;height:45px;
-border-radius:50%;cursor:pointer;
-}
-.prev{left:-25px}
-.next{right:-25px}
-
-/* GRID */
-.galleryGrid{
-margin-top:60px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-.galleryGrid img{
-width:100%;height:200px;
-object-fit:cover;border-radius:16px;
-box-shadow:var(--shadow);
-}
-
-footer{
-border-top:1px solid rgba(226,232,240,.95);
-padding:18px 0;margin-top:40px;
-color:var(--muted);background:#fff;font-size:14px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Bharat Abhyudaya Sansthan</title>
+  <meta name="description" content="Gallery of service activities, field work and community initiatives by Bharat Abhyudaya Sansthan.">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
+  <div id="header"></div>
+  <div class="topbar-space"></div>
 
-<body class="galleryPage">
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker" data-hi="गैलरी" data-en="Gallery"></span>
+      <h1 data-hi="हमारी सेवा गतिविधियों की झलकियाँ।" data-en="Snapshots of our service activities."></h1>
+      <p data-hi="फोटो गैलरी केवल दृश्य प्रस्तुति नहीं है; यह संस्था के ज़मीनी जुड़ाव, समुदाय सहभागिता और कार्यक्रम-आधारित कार्यों की कहानी भी है।" data-en="The gallery is not just a visual section; it is also a story of field engagement, community participation and programme-based work."></p>
+    </div>
+  </section>
 
-<div id="header"></div>
+  <section class="section tight">
+    <div class="wrap">
+      <div class="gallery-grid">
+        <img src="assets/gallery/1.jpg" alt="Gallery 1">
+        <img src="assets/gallery/2.jpg" alt="Gallery 2">
+        <img src="assets/gallery/3.jpg" alt="Gallery 3">
+        <img src="assets/gallery/4.jpg" alt="Gallery 4">
+        <img src="assets/gallery/5.jpg" alt="Gallery 5">
+        <img src="assets/gallery/6.jpg" alt="Gallery 6">
+        <img src="assets/gallery/7.jpg" alt="Gallery 7">
+        <img src="assets/gallery/8.jpg" alt="Gallery 8">
+      </div>
+    </div>
+  </section>
 
-<main>
-<section>
-<div class="wrap">
-<div class="badge">Service • Trust • Impact</div>
-<h1 id="titleText">गैलरी</h1>
-<p class="muted" id="descText">हमारी सेवा गतिविधियों की झलकियाँ।</p>
+  <section class="section">
+    <div class="wrap grid-2">
+      <div class="highlight">
+        <h2 class="section-title" style="font-size:34px" data-hi="गैलरी क्यों महत्त्वपूर्ण है" data-en="Why the gallery matters"></h2>
+        <ul class="check-list">
+          <li data-hi="संस्था का कार्य केवल शब्दों में नहीं, दृश्य रूप में भी दिखता है।" data-en="The organisation’s work becomes visible not only through words, but through visuals."></li>
+          <li data-hi="दानकर्ता और समर्थक ज़मीनी जुड़ाव का अनुभव कर पाते हैं।" data-en="Donors and supporters get a sense of ground-level engagement."></li>
+          <li data-hi="सामुदायिक भरोसा और सार्वजनिक पहचान मजबूत होती है।" data-en="Community trust and public identity become stronger."></li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <h2 class="section-title" style="font-size:34px" data-hi="आगे क्या जोड़ा जा सकता है" data-en="What can be added later"></h2>
+        <ul class="value-list">
+          <li data-hi="कार्यक्रम-आधारित albums या categories" data-en="Programme-based albums or categories"></li>
+          <li data-hi="Lightbox viewer और image captions" data-en="A lightbox viewer and image captions"></li>
+          <li data-hi="वीडियो highlights या field stories" data-en="Video highlights or field stories"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<div class="slider">
-<button class="arrow prev" onclick="changeSlide(-1)">❮</button>
-<button class="arrow next" onclick="changeSlide(1)">❯</button>
-
-<div class="slide active"><img src="assets/gallery/1.jpg"></div>
-<div class="slide"><img src="assets/gallery/2.jpg"></div>
-<div class="slide"><img src="assets/gallery/3.jpg"></div>
-<div class="slide"><img src="assets/gallery/4.jpg"></div>
-<div class="slide"><img src="assets/gallery/5.jpg"></div>
-<div class="slide"><img src="assets/gallery/6.jpg"></div>
-<div class="slide"><img src="assets/gallery/7.jpg"></div>
-<div class="slide"><img src="assets/gallery/8.jpg"></div>
-</div>
-
-<h2 style="margin-top:60px">सभी तस्वीरें</h2>
-
-<div class="galleryGrid">
-<img src="assets/gallery/1.jpg">
-<img src="assets/gallery/2.jpg">
-<img src="assets/gallery/3.jpg">
-<img src="assets/gallery/4.jpg">
-<img src="assets/gallery/5.jpg">
-<img src="assets/gallery/6.jpg">
-<img src="assets/gallery/7.jpg">
-<img src="assets/gallery/8.jpg">
-</div>
-
-</div>
-</section>
-</main>
-
-<div id="footer"></div>
-
-<script src="/assets/js/main.js"></script>
-
+  <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+  <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+  <div id="footer"></div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
