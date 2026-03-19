@@ -8,166 +8,265 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    .hero h1{
-      font-size: clamp(2rem, 3.8vw, 3.15rem) !important;
-      line-height: 1.14;
-    }
+  .hero h1{
+    font-size: clamp(1.9rem, 3.3vw, 2.85rem) !important;
+    line-height: 1.16;
+    max-width: 820px;
+  }
 
-    .initiatives-slider{
-      position: relative;
-      margin-top: 26px;
-    }
+  .hero p{
+    max-width: 760px;
+  }
 
-    .initiative-slide{
-      display: none;
-      animation: fadeSlide .45s ease;
-    }
+  .hero .btn-row{
+    gap: 14px;
+    flex-wrap: wrap;
+  }
 
-    .initiative-slide.active{
-      display: block;
-    }
+  .hero .btn-primary{
+    box-shadow: 0 14px 30px rgba(11, 90, 166, .22);
+  }
 
-    @keyframes fadeSlide{
-      from{opacity:.35; transform:translateY(8px)}
-      to{opacity:1; transform:translateY(0)}
-    }
+  .hero .btn-primary:hover{
+    transform: translateY(-1px);
+  }
 
+  .impact-band{
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .section-title{
+    letter-spacing: -.02em;
+  }
+
+  .initiatives-slider.fullwidth-cinematic{
+    position: relative;
+    margin-top: 30px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 0 8px;
+  }
+
+  .initiative-slide{
+    display: none;
+    animation: fadeSlide .5s ease;
+  }
+
+  .initiative-slide.active{
+    display: block;
+  }
+
+  @keyframes fadeSlide{
+    from{opacity:.35; transform:translateY(10px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+
+  .initiative-shell{
+    position: relative;
+    min-height: 560px;
+    border-radius: 0;
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .16);
+  }
+
+  .initiative-shell img{
+    width: 100%;
+    height: 560px;
+    object-fit: contain;
+    background:
+      linear-gradient(180deg, rgba(15,23,42,.08), rgba(15,23,42,.18)),
+      #f8fafc;
+    display: block;
+  }
+
+  .initiative-overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: end;
+    padding: 48px min(7vw, 80px) 54px;
+    background: linear-gradient(to right, rgba(2,6,23,.82) 0%, rgba(2,6,23,.54) 36%, rgba(2,6,23,.18) 62%, rgba(2,6,23,.06) 100%);
+    color: #fff;
+  }
+
+  .initiative-copy{
+    max-width: 720px;
+  }
+
+  .initiative-overlay .program-tag{
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(6px);
+  }
+
+  .initiative-overlay h3{
+    margin: 0 0 14px;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.14;
+    color: #fff;
+    max-width: 680px;
+  }
+
+  .initiative-overlay p{
+    margin: 0;
+    max-width: 680px;
+    font-size: 1.03rem;
+    line-height: 1.78;
+    color: rgba(255,255,255,.94);
+  }
+
+  .initiative-metrics{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 220px));
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .initiative-metrics div{
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 18px;
+    padding: 13px 15px;
+  }
+
+  .initiative-metrics strong{
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+
+  .initiative-metrics span{
+    font-size: .93rem;
+    line-height: 1.45;
+    color: rgba(255,255,255,.92);
+  }
+
+  .slider-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 54px;
+    height: 54px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 26px;
+    background: rgba(255,255,255,.92);
+    color: #0f172a;
+    box-shadow: 0 12px 30px rgba(15,23,42,.18);
+  }
+
+  .slider-arrow.prev{ left: 24px; }
+  .slider-arrow.next{ right: 24px; }
+
+  .slider-dots{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px auto 0;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .slider-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: .25s ease;
+  }
+
+  .slider-dot.active{
+    width: 30px;
+    background: #0b5aa6;
+  }
+
+  .slider-cta{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin: 24px auto 0;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .slider-cta .btn{
+    min-width: 190px;
+  }
+
+  .slider-cta .btn-primary{
+    position: relative;
+    box-shadow: 0 18px 34px rgba(11,90,166,.24);
+  }
+
+  .slider-cta .btn-primary::after{
+    content: "→";
+    margin-left: 8px;
+  }
+
+  .slider-note{
+    text-align: center;
+    margin: 14px auto 0;
+    max-width: 760px;
+    padding: 0 20px;
+    font-size: .98rem;
+    line-height: 1.7;
+    color: #475569;
+  }
+
+  .cta-strip{
+    border-radius: 26px;
+    box-shadow: 0 20px 50px rgba(15,23,42,.08);
+  }
+
+  @media (max-width: 900px){
     .initiative-shell{
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 18px 50px rgba(15, 23, 42, .10);
-      border: 1px solid rgba(226,232,240,.9);
+      min-height: 430px;
     }
 
     .initiative-shell img{
-      width: 100%;
-      height: 440px;
-      object-fit: contain;
-background: #f8fafc;
-      display: block;
+      height: 430px;
     }
 
     .initiative-overlay{
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 28px;
-      background: linear-gradient(to top, rgba(2,6,23,.86), rgba(2,6,23,.28), transparent);
-      color: #fff;
+      padding: 28px 18px 26px;
+      background: linear-gradient(to top, rgba(2,6,23,.84), rgba(2,6,23,.40), rgba(2,6,23,.14));
     }
 
-    .initiative-overlay .program-tag{
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .initiative-overlay h3{
-      margin: 0 0 10px;
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      line-height: 1.2;
-      color: #fff;
-    }
-
-    .initiative-overlay p{
-      margin: 0;
-      max-width: 900px;
-      font-size: 1rem;
-      line-height: 1.65;
-      color: rgba(255,255,255,.92);
+    .initiative-copy{
+      max-width: 100%;
     }
 
     .initiative-metrics{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .initiative-metrics div{
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 16px;
-      padding: 12px 14px;
-    }
-
-    .initiative-metrics strong{
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 4px;
-      color: #fff;
-    }
-
-    .initiative-metrics span{
-      font-size: .92rem;
-      line-height: 1.45;
-      color: rgba(255,255,255,.92);
+      grid-template-columns: 1fr;
+      max-width: 100%;
     }
 
     .slider-arrow{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 3;
-      width: 48px;
-      height: 48px;
-      border: 0;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 24px;
-      background: rgba(255,255,255,.92);
-      box-shadow: 0 10px 24px rgba(15,23,42,.15);
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
     }
 
-    .slider-arrow.prev{ left: 16px; }
-    .slider-arrow.next{ right: 16px; }
-
-    .slider-dots{
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .slider-dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #cbd5e1;
-      cursor: pointer;
-      transition: .25s ease;
-    }
-
-    .slider-dot.active{
-      width: 28px;
-      background: #0b5aa6;
-    }
-
-    .slider-cta{
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 22px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px){
-      .initiative-shell img{
-        height: 320px;
-      }
-      .initiative-overlay{
-        padding: 20px 18px;
-      }
-      .initiative-metrics{
-        grid-template-columns: 1fr;
-      }
-      .slider-arrow{
-        width: 42px;
-        height: 42px;
-      }
-    }
-  </style>
+    .slider-arrow.prev{ left: 12px; }
+    .slider-arrow.next{ right: 12px; }
+  }
+</style>
 </head>
 <body>
   <div id="header"></div>
@@ -230,7 +329,7 @@ background: #f8fafc;
     <h2 class="section-title" data-hi="जहाँ आपकी सहायता वास्तविक परिवर्तन बनती है" data-en="Where your support turns into meaningful change"></h2>
     <p class="section-sub" data-hi="प्रत्येक कार्यक्रम को इस प्रकार प्रस्तुत किया गया है कि दानकर्ता, स्वयंसेवक और साझेदार यह स्पष्ट रूप से समझ सकें कि सहयोग कहाँ और कैसे उपयोगी बनता है।" data-en="Each programme is presented so donors, volunteers and partners can clearly understand where support goes and how it becomes useful."></p>
 
-    <div class="initiatives-slider" id="initiativesSlider">
+    <div class="initiatives-slider fullwidth-cinematic" id="initiativesSlider">
 
       <button class="slider-arrow prev" id="initiativePrev" type="button" aria-label="Previous slide">&#10094;</button>
       <button class="slider-arrow next" id="initiativeNext" type="button" aria-label="Next slide">&#10095;</button>
@@ -239,6 +338,7 @@ background: #f8fafc;
         <article class="initiative-shell">
           <img src="assets/initiatives/shiksha-sarathi-slider.jpg" alt="Shiksha Sarathi">
           <div class="initiative-overlay">
+            <div class="initiative-copy">
             <span class="program-tag" data-hi="शिक्षा" data-en="Education"></span>
             <h3 data-hi="शिक्षा सारथी" data-en="Shiksha Sarathi"></h3>
             <p data-hi="आर्थिक रूप से कमजोर बच्चों को अध्ययन सामग्री, मार्गदर्शन, प्रेरणा और निरंतर शैक्षिक सहयोग उपलब्ध कराने की पहल।" data-en="An initiative focused on study materials, mentoring, motivation and sustained educational support for children from economically weaker families."></p>
@@ -254,6 +354,7 @@ background: #f8fafc;
         <article class="initiative-shell">
           <img src="assets/initiatives/health-slider.jpg" alt="Healthcare">
           <div class="initiative-overlay">
+            <div class="initiative-copy">
             <span class="program-tag" data-hi="स्वास्थ्य" data-en="Healthcare"></span>
             <h3 data-hi="स्वास्थ्य सहायता" data-en="Healthcare Support"></h3>
             <p data-hi="आवश्यक परिस्थितियों में स्वास्थ्य संबंधी मार्गदर्शन, सहयोग, जागरूकता और पहुँच बढ़ाने के लिए मानवीय हस्तक्षेप।" data-en="A humanitarian intervention designed to expand access, awareness, support and guidance for healthcare needs in urgent circumstances."></p>
@@ -269,6 +370,7 @@ background: #f8fafc;
         <article class="initiative-shell">
           <img src="assets/initiatives/women-slider.jpg" alt="Women Empowerment">
           <div class="initiative-overlay">
+            <div class="initiative-copy">
             <span class="program-tag" data-hi="महिला सशक्तिकरण" data-en="Women Empowerment"></span>
             <h3 data-hi="महिला आत्मनिर्भरता" data-en="Women Self-Reliance"></h3>
             <p data-hi="महिलाओं और युवतियों के लिए कौशल, आत्मविश्वास, स्वावलंबन और गरिमापूर्ण अवसरों की दिशा में संवेदनशील पहल।" data-en="A focused effort to expand skills, confidence, self-reliance and dignified opportunities for women and young girls."></p>
@@ -284,6 +386,7 @@ background: #f8fafc;
         <article class="initiative-shell">
           <img src="assets/initiatives/ambulance-slider.jpg" alt="Emergency Ambulance">
           <div class="initiative-overlay">
+            <div class="initiative-copy">
             <span class="program-tag" data-hi="आपातकालीन सेवा" data-en="Emergency Service"></span>
             <h3 data-hi="निःशुल्क एम्बुलेंस सहयोग" data-en="Free Ambulance Assistance"></h3>
             <p data-hi="जरूरतमंद रोगियों और परिवारों को कठिन समय में शीघ्र एवं मानवीय परिवहन सहायता उपलब्ध कराने का प्रयास।" data-en="An effort to support needy patients and families with timely, humane transport assistance during difficult moments."></p>
@@ -299,6 +402,7 @@ background: #f8fafc;
         <article class="initiative-shell">
           <img src="assets/initiatives/gauseva-slider.jpg" alt="Cow Care">
           <div class="initiative-overlay">
+            <div class="initiative-copy">
             <span class="program-tag" data-hi="गौसेवा" data-en="Cow Care"></span>
             <h3 data-hi="गौसंरक्षण एवं सेवा" data-en="Cow Protection & Care"></h3>
             <p data-hi="असहाय, बीमार या घायल गौवंश के लिए भोजन, देखभाल और सेवा के माध्यम से करुणा आधारित सहयोग।" data-en="Compassion-led support for helpless, ill or injured cows through feed, care and humane assistance."></p>
@@ -314,6 +418,7 @@ background: #f8fafc;
         <article class="initiative-shell">
           <img src="assets/initiatives/heritage-slider.jpg" alt="Heritage">
           <div class="initiative-overlay">
+            <div class="initiative-copy">
             <span class="program-tag" data-hi="धरोहर" data-en="Heritage"></span>
             <h3 data-hi="धरोहर संरक्षण" data-en="Heritage Conservation"></h3>
             <p data-hi="स्थानीय इतिहास, सांस्कृतिक विरासत और सामुदायिक पहचान को सम्मान के साथ संरक्षित और जागरूक बनाने की दिशा में पहल।" data-en="An initiative to preserve local history, cultural heritage and community identity with respect and public awareness."></p>
