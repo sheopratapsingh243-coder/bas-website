@@ -79,30 +79,26 @@
     }
   }
 
-  function animateCounters(){
-    const counters = document.querySelectorAll('[data-count]');
-    if(!counters.length) return;
-    const obs = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        const el = entry.target;
-        const end = parseInt(el.getAttribute('data-count'),10) || 0;
-        const suffix = el.getAttribute('data-suffix') || '';
-        let cur = 0;
-        const step = Math.max(1, Math.ceil(end/40));
-        const timer = setInterval(()=>{
-          cur += step;
-          if(cur >= end){
-            cur = end;
-            clearInterval(timer);
-          }
-          el.textContent = cur.toLocaleString('en-IN') + suffix;
-        }, 36);
-        obs.unobserve(el);
-      });
-    }, {threshold:.4});
-    counters.forEach(c=>obs.observe(c));
-  }
+function animateCounters(){
+  const counters = document.querySelectorAll('[data-count]');
+  if(!counters.length) return;
+
+  counters.forEach(el=>{
+    const end = parseInt(el.getAttribute('data-count'), 10) || 0;
+    const suffix = el.getAttribute('data-suffix') || '';
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(end / 50));
+
+    const timer = setInterval(()=>{
+      cur += step;
+      if(cur >= end){
+        cur = end;
+        clearInterval(timer);
+      }
+      el.textContent = cur.toLocaleString('en-IN') + suffix;
+    }, 30);
+  });
+}
 
   function wireContactForm(){
     const form = document.getElementById('contactForm');
