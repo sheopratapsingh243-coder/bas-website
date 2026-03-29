@@ -620,6 +620,18 @@
     return d.toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' });
   }
 
+  function makeAckNumber() {
+    const now = new Date();
+    const fyStart = now.getMonth() >= 3 ? now.getFullYear() : now.getFullYear() - 1;
+    const fyEndShort = String((fyStart + 1)).slice(-2);
+
+    const today = now.toISOString().slice(0,10).replace(/-/g,'');
+    let seq = Number(localStorage.getItem('bas_ack_seq') || '0') + 1;
+    localStorage.setItem('bas_ack_seq', String(seq));
+
+    return `BAS/ACK/${fyStart}-${fyEndShort}/${today}/${String(seq).padStart(4,'0')}`;
+  }
+
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw0DKQh7z3AAg9prDLyWHy3IXF7adfSVwiMPXSOSBlT0OxU3ga0NxRin3SCnO2xGnC1QA/exec";
 
   document.getElementById('receiptForm').addEventListener('submit', async function(e){
@@ -642,51 +654,40 @@
       return;
     }
 
-    const payload = {
-      donorName,
-      mobile,
-      email,
-      pan,
-      address,
-      amount,
-      paymentDate,
-      paymentMode,
-      txnRef,
-      purpose,
-      consent
-    };
+    const submitBtn = document.querySelector('#receiptForm button[type="submit"]');
+    if(submitBtn){
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+    }
+
+    const ackNo = makeAckNumber();
+    const generatedOn = new Date().toLocaleString('en-IN', {
+      day:'2-digit', month:'long', year:'numeric',
+      hour:'2-digit', minute:'2-digit'
+    });
+
+    const formData = new FormData();
+    formData.append('donorName', donorName);
+    formData.append('mobile', mobile);
+    formData.append('email', email);
+    formData.append('pan', pan);
+    formData.append('address', address);
+    formData.append('amount', amount);
+    formData.append('paymentDate', paymentDate);
+    formData.append('paymentMode', paymentMode);
+    formData.append('txnRef', txnRef);
+    formData.append('purpose', purpose);
+    formData.append('consent', consent ? 'Yes' : 'No');
 
     try {
-      const submitBtn = document.querySelector('#receiptForm button[type="submit"]');
-      if(submitBtn){
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
-      }
-
-      const res = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify(payload),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        body: formData,
+        mode: 'no-cors'
       });
 
-      const result = await res.json();
-
-      if(!result.success){
-        alert('Submission failed. Please try again.');
-        if(submitBtn){
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Generate Provisional Acknowledgement';
-        }
-        return;
-      }
-
-      document.getElementById('ackNo').textContent = result.ackNo;
-      document.getElementById('generatedOn').textContent = new Date(result.generatedOn).toLocaleString('en-IN', {
-        day:'2-digit', month:'long', year:'numeric',
-        hour:'2-digit', minute:'2-digit'
-      });
+      document.getElementById('ackNo').textContent = ackNo;
+      document.getElementById('generatedOn').textContent = generatedOn;
 
       document.getElementById('rDonorName').textContent = donorName;
       document.getElementById('rMobile').textContent = mobile;
@@ -703,16 +704,10 @@
       block.classList.add('show');
       block.scrollIntoView({ behavior:'smooth', block:'start' });
 
-      if(submitBtn){
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Generate Provisional Acknowledgement';
-      }
-
     } catch(err){
-      alert('Error connecting to server. Please try again.');
+      alert('Submission may not have completed. Please try again.');
       console.error(err);
-
-      const submitBtn = document.querySelector('#receiptForm button[type="submit"]');
+    } finally {
       if(submitBtn){
         submitBtn.disabled = false;
         submitBtn.textContent = 'Generate Provisional Acknowledgement';
