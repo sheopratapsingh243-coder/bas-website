@@ -6,6 +6,108 @@
   <title>Donate | Bharat Abhyudaya Sansthan</title>
   <meta name="description" content="Support Bharat Abhyudaya Sansthan through transparent giving for education, healthcare, women empowerment and humanitarian service.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  .donate-hero-panel{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .qr-hero-box{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:28px;
+    box-shadow:0 18px 48px rgba(2,6,23,.08);
+    padding:24px;
+    text-align:center;
+  }
+
+  .qr-hero-box h3{
+    margin:0 0 16px;
+    font-size:1.55rem;
+    line-height:1.2;
+    color:#0b1220;
+  }
+
+  .hero-qr-img{
+    width:100%;
+    max-width:280px;
+    border-radius:18px;
+    display:block;
+    margin:0 auto 16px;
+    box-shadow:0 12px 28px rgba(2,6,23,.10);
+    transition:transform .2s ease;
+  }
+
+  .hero-qr-img:hover{
+    transform:scale(1.02);
+  }
+
+  .hero-qr-text{
+    margin:0 auto 14px;
+    max-width:300px;
+    font-size:.98rem;
+    line-height:1.6;
+    color:#475569;
+  }
+
+  .hero-qr-btns{
+    justify-content:center;
+    gap:12px;
+    margin-top:10px;
+  }
+
+  .hero-qr-btns .btn{
+    min-width:170px;
+  }
+
+  .mini-bank-line{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid #e2e8f0;
+    font-size:.95rem;
+    color:#334155;
+    word-break:break-all;
+  }
+
+  .bank-copy-row{
+    margin-top:18px;
+    display:flex;
+    justify-content:flex-start;
+  }
+
+  .bank-copy-row .btn{
+    min-width:220px;
+  }
+
+  @media (max-width:768px){
+    .qr-hero-box{
+      max-width:100%;
+      border-radius:22px;
+      padding:20px;
+    }
+
+    .hero-qr-img{
+      max-width:240px;
+    }
+
+    .hero-qr-btns .btn{
+      min-width:unset;
+      width:100%;
+    }
+
+    .bank-copy-row{
+      justify-content:center;
+    }
+
+    .bank-copy-row .btn{
+      width:100%;
+      min-width:unset;
+    }
+  }
+</style>
 </head>
 <body>
   <div id="header"></div>
@@ -19,8 +121,43 @@
         <p data-hi="भारत अभ्युदय संस्थान में सहयोग का अर्थ केवल आर्थिक योगदान नहीं है। इसका अर्थ है ऐसे कार्यों में भागीदारी जो शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, आपातकालीन सहायता, गौसेवा और समुदाय कल्याण को वास्तविक आधार देते हैं।" data-en="At Bharat Abhyudaya Sansthan, giving is more than a financial act. It is participation in efforts that strengthen education, healthcare, women empowerment, emergency support, cow care and community welfare in practical ways."></p>
         <div class="impact-band" data-hi="आपका सहयोग शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, आपातकालीन सहायता और सामुदायिक कल्याण के कार्यों को मजबूत बना सकता है। नीचे QR कोड और बैंक विवरण दोनों उपलब्ध हैं।" data-en="Your support can strengthen our work in education, healthcare, women empowerment, cow care, emergency assistance and community welfare. Both QR and bank transfer options are available below."></div>
       </div>
-      <div class="hero-panel">
-       <div class="kv-grid">
+      <div class="hero-panel donate-hero-panel">
+  <div class="qr-hero-box">
+    <h3 data-hi="अभी स्कैन करके दान करें" data-en="Scan and Donate Instantly"></h3>
+
+    <a href="upi://pay?pa=bhar79915111751@barodampay&pn=Bharat%20Abhyudaya%20Sansthan">
+      <img src="assets/donation-qr.jpg" alt="Donation QR Code" class="hero-qr-img">
+    </a>
+
+    <p class="hero-qr-text"
+       data-hi="PhonePe, Google Pay, Paytm या किसी भी UPI app से scan करें"
+       data-en="Scan with PhonePe, Google Pay, Paytm or any UPI app">
+    </p>
+
+    <div class="btn-row hero-qr-btns">
+      <a href="upi://pay?pa=bhar79915111751@barodampay&pn=Bharat%20Abhyudaya%20Sansthan"
+         class="btn btn-primary"
+         data-hi="UPI App से भुगतान करें"
+         data-en="Pay via UPI App"></a>
+
+      <a href="documents.html" class="btn btn-secondary"
+         data-hi="दस्तावेज़ देखें"
+         data-en="View Documents"></a>
+    </div>
+
+    <div class="mini-bank-line">
+      <strong>UPI ID:</strong> bhar79915111751@barodampay
+    </div>
+  </div>
+</div>
+  </section>
+
+  <section class="section">
+    <div class="wrap info-grid">
+      <div class="card">
+        <h2 data-hi="बैंक ट्रांसफर" data-en="Bank Transfer"></h2>
+        <p class="section-sub" style="font-size:16px" data-hi="यदि आप बैंक ट्रांसफर के माध्यम से सहयोग देना चाहते हैं, तो नीचे दिए गए आधिकारिक बैंक विवरण का उपयोग करें।" data-en="If you wish to support through bank transfer, please use the official bank details below."></p>
+          <div class="kv-grid">
   <div class="kv"><b data-hi="खाता नाम" data-en="Account Name"></b><span>Bharat Abhyudaya Sansthan</span></div>
   <div class="kv"><b data-hi="खाता संख्या" data-en="Account Number"></b><span>50310200000751</span></div>
   <div class="kv"><b>IFSC</b><span>BARB0PATFAT</span></div>
@@ -28,28 +165,10 @@
   <div class="kv"><b data-hi="शाखा" data-en="Branch"></b><span>Patel Nagar, Fatehpur</span></div>
   <div class="kv"><b data-hi="भुगतान का उद्देश्य" data-en="Purpose"></b><span data-hi="सामान्य दान / कार्यक्रम सहयोग" data-en="General donation / programme support"></span></div>
 </div>
-        <div class="btn-row">
-          <a href="documents.html" class="btn btn-secondary" data-hi="दस्तावेज़ देखें" data-en="View Documents"></a>
-          <a href="contact.html" class="btn btn-primary" data-hi="सहायता चाहिए?" data-en="Need Help?"></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap info-grid">
-      <div class="card">
-        <h2 data-hi="बैंक ट्रांसफर" data-en="Bank Transfer"></h2>
-        <p class="section-sub" style="font-size:16px" data-hi="यदि आप बैंक के माध्यम से सहयोग देना चाहते हैं, तो नीचे दिए विवरण का उपयोग करें। भुगतान करने से पहले इन्हें अपने वास्तविक account details से बदलना आवश्यक है।" data-en="If you wish to support through bank transfer, use the information below. Please replace these placeholders with your real account details before publishing."></p>
-          <div class="kv"><b data-hi="खाता नाम" data-en="Account Name"></b><span>Bharat Abhyudaya Sansthan</span></div>
-          <div class="kv"><b data-hi="खाता संख्या" data-en="Account Number"></b><span>ADD-YOUR-ACCOUNT-NUMBER</span></div>
-          <div class="kv"><b>IFSC</b><span>ADD-YOUR-IFSC</span></div>
-          <div class="kv"><b data-hi="बैंक नाम" data-en="Bank Name"></b><span>ADD-YOUR-BANK-NAME</span></div>
-          <div class="kv"><b data-hi="शाखा" data-en="Branch"></b><span>ADD-YOUR-BRANCH</span></div>
-          <div class="kv"><b data-hi="भुगतान का उद्देश्य" data-en="Purpose"></b><span data-hi="सामान्य दान / कार्यक्रम सहयोग" data-en="General donation / programme support"></span></div>
-        </div>
         <div id="bankCopyText" class="hidden">Bharat Abhyudaya Sansthan | 50310200000751 | BARB0PATFAT | Bank of Baroda | Patel Nagar, Fatehpur</div>
-        <div class="btn-row"><button class="btn btn-secondary" type="button" id="copyBankBtn" data-hi="बैंक विवरण कॉपी करें" data-en="Copy bank details"></button></div>
+        <div class="bank-copy-row">
+  <button class="btn btn-secondary" type="button" id="copyBankBtn" data-hi="बैंक विवरण कॉपी करें" data-en="Copy Bank Details"></button>
+</div>
       </div>
 
       <div class="card">
