@@ -69,15 +69,11 @@
   }
 
   function wireCopies(){
-    const bankBtn = document.getElementById('copyBankBtn');
-    const upiBtn = document.getElementById('copyUpiBtn');
-    if(bankBtn){
-      bankBtn.addEventListener('click', ()=> copyText(document.getElementById('bankCopyText').textContent.trim(), bankBtn));
-    }
-    if(upiBtn){
-      upiBtn.addEventListener('click', ()=> copyText(document.getElementById('upiCopyText').textContent.trim(), upiBtn));
-    }
+  const bankBtn = document.getElementById('copyBankBtn');
+  if(bankBtn){
+    bankBtn.addEventListener('click', ()=> copyText(document.getElementById('bankCopyText').textContent.trim(), bankBtn));
   }
+}
 
 function animateCounters(){
   const counters = document.querySelectorAll('[data-count]');
