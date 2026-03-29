@@ -1,132 +1,681 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Donation Receipt | Bharat Abhyudaya Sansthan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bharat Abhyudaya Sansthan | Donation Receipt Request</title>
+  <meta name="description" content="Request a provisional donation acknowledgement and final 80G receipt from Bharat Abhyudaya Sansthan.">
+  <style>
+    :root{
+      --brand:#0b5aa6;
+      --accent:#f58b1f;
+      --fg:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --ok:#166534;
+      --okbg:#ecfdf5;
+      --shadow:0 18px 50px rgba(2,6,23,.08);
+      --radius:22px;
+      --max:920px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--fg);
+      background:linear-gradient(180deg,#f8fbff 0%,#f8fafc 100%);
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:0 16px;
+    }
+    .top-actions{
+      max-width:var(--max);
+      margin:24px auto 0;
+      padding:0 16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .back-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#334155;
+    }
+    .back-btn.primary{
+      background:#eef4ff;
+      color:var(--brand);
+      border-color:#d9e6ff;
+    }
+    .page{
+      max-width:var(--max);
+      margin:18px auto 40px;
+      padding:0 16px;
+    }
+    .hero{
+      background:linear-gradient(135deg,#ffffff 0%,#f7fbff 100%);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+    }
+    .kicker{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:#eef4ff;
+      color:var(--brand);
+      font-size:.88rem;
+      font-weight:700;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(1.8rem,3vw,2.45rem);
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    .lead{
+      margin:0;
+      font-size:1.02rem;
+      line-height:1.72;
+      color:var(--muted);
+      max-width:680px;
+    }
+    .hero-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+    }
+    .hero-card h3{
+      margin:0 0 12px;
+      font-size:1.15rem;
+    }
+    .mini-list{
+      display:grid;
+      gap:10px;
+    }
+    .mini-item{
+      padding:12px 14px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid #edf2f7;
+    }
+    .mini-item b{
+      display:block;
+      margin-bottom:4px;
+      font-size:.9rem;
+    }
+    .mini-item span{
+      color:#475569;
+      font-size:.95rem;
+      word-break:break-word;
+    }
 
-<style>
-body{
-  font-family:system-ui;
-  margin:0;
-  background:#f8fafc;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:22px;
+      margin-top:22px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+    .card h2{
+      margin:0 0 14px;
+      font-size:1.45rem;
+      line-height:1.2;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.7;
+    }
 
-.container{
-  max-width:800px;
-  margin:40px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+    .field.full{
+      grid-column:1/-1;
+    }
+    label{
+      font-size:.94rem;
+      font-weight:700;
+      color:#334155;
+    }
+    input, textarea, select{
+      width:100%;
+      border:1px solid #dbe3ee;
+      border-radius:14px;
+      padding:12px 14px;
+      font:inherit;
+      color:var(--fg);
+      background:#fff;
+      outline:none;
+    }
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color:#9fc2ee;
+      box-shadow:0 0 0 4px rgba(11,90,166,.08);
+    }
 
-h1{
-  margin-bottom:20px;
-}
+    .consent{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-top:6px;
+      padding:14px;
+      border:1px solid #e7edf5;
+      border-radius:16px;
+      background:#fbfdff;
+    }
+    .consent input{
+      width:18px;
+      height:18px;
+      margin-top:2px;
+      padding:0;
+      box-shadow:none;
+    }
+    .consent p{
+      margin:0;
+      color:#475569;
+      font-size:.95rem;
+      line-height:1.6;
+    }
 
-input, textarea, select{
-  width:100%;
-  padding:10px;
-  margin:8px 0 16px;
-  border:1px solid #ddd;
-  border-radius:8px;
-}
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .btn{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:.98rem;
+    }
+    .btn-primary{
+      background:var(--brand);
+      color:#fff;
+      box-shadow:0 14px 30px rgba(11,90,166,.22);
+    }
+    .btn-secondary{
+      background:#eef4ff;
+      color:var(--brand);
+      border:1px solid #d9e6ff;
+    }
+    .note{
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:#fffaf1;
+      border:1px solid #fde7bf;
+      color:#7c5a10;
+      line-height:1.65;
+      font-size:.95rem;
+    }
 
-button{
-  background:#0b5aa6;
-  color:#fff;
-  padding:12px 20px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
+    .side-box{
+      display:grid;
+      gap:16px;
+    }
+    .quick{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid #e7edf5;
+      background:#fbfdff;
+    }
+    .quick h3{
+      margin:0 0 10px;
+      font-size:1.06rem;
+    }
+    .quick ul{
+      margin:0;
+      padding-left:18px;
+      color:#475569;
+      line-height:1.7;
+    }
+    .quick li + li{
+      margin-top:6px;
+    }
 
-button:hover{
-  background:#094a8c;
-}
+    .receipt{
+      display:none;
+      margin-top:22px;
+      padding:24px;
+      border-radius:22px;
+      border:1px solid #dbe7f6;
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+    }
+    .receipt.show{
+      display:block;
+    }
+    .ack{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--okbg);
+      color:var(--ok);
+      font-weight:800;
+      font-size:.92rem;
+      margin-bottom:14px;
+    }
+    .receipt-head{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      padding-bottom:16px;
+      margin-bottom:18px;
+      border-bottom:1px dashed #cbd5e1;
+    }
+    .org h3{
+      margin:0 0 6px;
+      font-size:1.35rem;
+    }
+    .org p, .meta p{
+      margin:4px 0;
+      color:#475569;
+      line-height:1.55;
+    }
+    .meta{
+      min-width:240px;
+    }
+    .receipt-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px 18px;
+      margin-top:10px;
+    }
+    .r-item{
+      padding:12px 14px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid #edf2f7;
+    }
+    .r-item b{
+      display:block;
+      margin-bottom:5px;
+      font-size:.9rem;
+      color:#334155;
+    }
+    .r-item span{
+      color:#0f172a;
+      line-height:1.5;
+      word-break:break-word;
+    }
+    .r-item.full{
+      grid-column:1/-1;
+    }
 
-.receipt{
-  display:none;
-  margin-top:30px;
-  border-top:2px dashed #ccc;
-  padding-top:20px;
-}
-</style>
+    .receipt-note{
+      margin-top:18px;
+      padding:16px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      color:#475569;
+      line-height:1.7;
+      font-size:.95rem;
+    }
+    .print-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    @media print{
+      .top-actions, .hero, form, .print-row, .note, .side-box{ display:none !important; }
+      body{ background:#fff; }
+      .page{ margin:0; padding:0; max-width:none; }
+      .card{ box-shadow:none; border:none; padding:0; }
+      .receipt{ display:block !important; border:none; padding:0; margin:0; }
+    }
+
+    @media (max-width: 860px){
+      .hero, .grid{
+        grid-template-columns:1fr;
+      }
+      .form-grid, .receipt-grid{
+        grid-template-columns:1fr;
+      }
+      .page{
+        margin-top:14px;
+      }
+      .hero{
+        padding:22px;
+      }
+      .card{
+        padding:20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <div style="max-width:800px; margin:24px auto 0; padding:0 16px; display:flex; gap:10px; flex-wrap:wrap;">
-  <a href="donate.html" style="display:inline-block; text-decoration:none; background:#eef2ff; color:#0b5aa6; padding:10px 16px; border-radius:999px; font-weight:600;">
-    ← Back to Donate
-  </a>
-  <a href="index.html" style="display:inline-block; text-decoration:none; background:#fff; color:#334155; padding:10px 16px; border-radius:999px; font-weight:600; border:1px solid #e2e8f0;">
-    Home
-  </a>
-</div>
 
-<div class="container">
+  <div class="top-actions">
+    <a href="donate.html" class="back-btn primary">← Back to Donate</a>
+    <a href="index.html" class="back-btn">Home</a>
+  </div>
 
-<h1>Donation Receipt Form</h1>
+  <div class="page">
+    <section class="hero">
+      <div>
+        <span class="kicker">80G Receipt Support</span>
+        <h1>Request your provisional donation acknowledgement.</h1>
+        <p class="lead">
+          Fill in your donation details below to generate a provisional acknowledgement for your records.
+          The final verified 80G receipt can be issued after transaction validation by Bharat Abhyudaya Sansthan.
+        </p>
+      </div>
 
-<form id="receiptForm">
+      <div class="hero-card">
+        <h3>Before you continue</h3>
+        <div class="mini-list">
+          <div class="mini-item">
+            <b>Keep payment details ready</b>
+            <span>UPI reference number, UTR number, amount and payment date should match your transaction.</span>
+          </div>
+          <div class="mini-item">
+            <b>PAN is recommended</b>
+            <span>For final 80G receipt and tax documentation, donor PAN should be accurate.</span>
+          </div>
+          <div class="mini-item">
+            <b>Verification still applies</b>
+            <span>This page gives a provisional acknowledgement. Final 80G receipt is subject to validation.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<input type="text" id="name" placeholder="Full Name" required>
-<input type="text" id="mobile" placeholder="Mobile Number" required>
-<input type="email" id="email" placeholder="Email" required>
-<textarea id="address" placeholder="Full Address" required></textarea>
-<input type="text" id="pan" placeholder="PAN Number" required>
+    <div class="grid">
+      <section class="card">
+        <h2>Donation Receipt Request Form</h2>
+        <p class="sub">
+          Please enter the same donor and transaction details that were used while making the payment.
+        </p>
 
-<input type="number" id="amount" placeholder="Donation Amount" required>
-<input type="date" id="date" required>
+        <form id="receiptForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="donorName">Full Name *</label>
+              <input type="text" id="donorName" required>
+            </div>
 
-<select id="mode">
-<option>UPI</option>
-<option>Bank Transfer</option>
-</select>
+            <div class="field">
+              <label for="mobile">Mobile Number *</label>
+              <input type="tel" id="mobile" required>
+            </div>
 
-<input type="text" id="txn" placeholder="Transaction ID / UTR / UPI Ref No." required>
+            <div class="field">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" required>
+            </div>
 
-<button type="submit">Generate Provisional Receipt</button>
+            <div class="field">
+              <label for="pan">PAN Number *</label>
+              <input type="text" id="pan" required>
+            </div>
 
-</form>
+            <div class="field full">
+              <label for="address">Full Address *</label>
+              <textarea id="address" required></textarea>
+            </div>
 
-<!-- RECEIPT -->
-<div class="receipt" id="receipt">
+            <div class="field">
+              <label for="amount">Donation Amount (₹) *</label>
+              <input type="number" id="amount" min="1" required>
+            </div>
 
-<h2>Bharat Abhyudaya Sansthan</h2>
+            <div class="field">
+              <label for="paymentDate">Payment Date *</label>
+              <input type="date" id="paymentDate" required>
+            </div>
 
-<p><b>Provisional Donation Receipt</b></p>
+            <div class="field">
+              <label for="paymentMode">Payment Mode *</label>
+              <select id="paymentMode" required>
+                <option value="UPI">UPI</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Cash Deposit">Cash Deposit</option>
+                <option value="Cheque">Cheque</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
 
-<p><b>Name:</b> <span id="r_name"></span></p>
-<p><b>Amount:</b> ₹<span id="r_amount"></span></p>
-<p><b>Date:</b> <span id="r_date"></span></p>
-<p><b>Mode:</b> <span id="r_mode"></span></p>
-<p><b>Transaction ID:</b> <span id="r_txn"></span></p>
+            <div class="field">
+              <label for="txnRef">Transaction ID / UTR / UPI Ref No. *</label>
+              <input type="text" id="txnRef" required>
+            </div>
 
-<p style="margin-top:20px; font-size:14px; color:#555;">
-This is a provisional acknowledgement. Final 80G receipt will be issued after verification.
-</p>
+            <div class="field full">
+              <label for="purpose">Purpose of Donation</label>
+              <input type="text" id="purpose" placeholder="General donation / Education / Healthcare / Other">
+            </div>
 
-<button onclick="window.print()">Download / Print Receipt</button>
+            <div class="field full">
+              <div class="consent">
+                <input type="checkbox" id="consent" required>
+                <p>
+                  I confirm that the above information is true to the best of my knowledge and that the payment
+                  details submitted here correspond to my donation. I understand that the final 80G receipt is
+                  subject to verification by Bharat Abhyudaya Sansthan.
+                </p>
+              </div>
+            </div>
+          </div>
 
-</div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Generate Provisional Acknowledgement</button>
+            <a href="donate.html" class="btn btn-secondary">Return to Donate Page</a>
+          </div>
+        </form>
 
-</div>
+        <div class="note">
+          This form currently generates a provisional acknowledgement only. Final official 80G receipt should be
+          issued after payment verification and internal approval.
+        </div>
 
-<script>
-document.getElementById("receiptForm").addEventListener("submit", function(e){
-e.preventDefault();
+        <section class="receipt" id="receiptBlock">
+          <div class="ack">Acknowledgement generated successfully</div>
 
-document.getElementById("receipt").style.display="block";
+          <div class="receipt-head">
+            <div class="org">
+              <h3>Bharat Abhyudaya Sansthan</h3>
+              <p>Registration No.: FAT/02340/2024-2025</p>
+              <p>PAN: AANAB2855N</p>
+              <p>Email: sheopratapsingh243@gmail.com | Mobile: 8604669454</p>
+            </div>
 
-document.getElementById("r_name").innerText=document.getElementById("name").value;
-document.getElementById("r_amount").innerText=document.getElementById("amount").value;
-document.getElementById("r_date").innerText=document.getElementById("date").value;
-document.getElementById("r_mode").innerText=document.getElementById("mode").value;
-document.getElementById("r_txn").innerText=document.getElementById("txn").value;
-});
-</script>
+            <div class="meta">
+              <p><b>Provisional Acknowledgement No.:</b><br><span id="ackNo"></span></p>
+              <p><b>Generated On:</b><br><span id="generatedOn"></span></p>
+              <p><b>Status:</b><br>Pending verification</p>
+            </div>
+          </div>
 
+          <div class="receipt-grid">
+            <div class="r-item">
+              <b>Donor Name</b>
+              <span id="rDonorName"></span>
+            </div>
+            <div class="r-item">
+              <b>Mobile Number</b>
+              <span id="rMobile"></span>
+            </div>
+            <div class="r-item">
+              <b>Email</b>
+              <span id="rEmail"></span>
+            </div>
+            <div class="r-item">
+              <b>PAN Number</b>
+              <span id="rPan"></span>
+            </div>
+            <div class="r-item">
+              <b>Donation Amount</b>
+              <span id="rAmount"></span>
+            </div>
+            <div class="r-item">
+              <b>Payment Date</b>
+              <span id="rPaymentDate"></span>
+            </div>
+            <div class="r-item">
+              <b>Payment Mode</b>
+              <span id="rPaymentMode"></span>
+            </div>
+            <div class="r-item">
+              <b>Transaction Reference</b>
+              <span id="rTxnRef"></span>
+            </div>
+            <div class="r-item full">
+              <b>Address</b>
+              <span id="rAddress"></span>
+            </div>
+            <div class="r-item full">
+              <b>Purpose of Donation</b>
+              <span id="rPurpose"></span>
+            </div>
+          </div>
+
+          <div class="receipt-note">
+            This is a <b>provisional donation acknowledgement</b> generated on the basis of donor-submitted details.
+            Final verified 80G receipt will be issued after transaction verification by Bharat Abhyudaya Sansthan.
+            Please keep your payment proof ready for any clarification.
+          </div>
+
+          <div class="print-row">
+            <button type="button" class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+            <a href="donate.html" class="btn btn-secondary">Back to Donate</a>
+          </div>
+        </section>
+      </section>
+
+      <aside class="side-box">
+        <div class="card quick">
+          <h3>Useful information</h3>
+          <ul>
+            <li>Use the exact transaction reference from your banking or UPI app.</li>
+            <li>If donation was made by someone else on your behalf, mention your own name carefully.</li>
+            <li>For final 80G receipt, donor identity details should match your submitted form.</li>
+          </ul>
+        </div>
+
+        <div class="card quick">
+          <h3>Need help?</h3>
+          <ul>
+            <li>Email: sheopratapsingh243@gmail.com</li>
+            <li>Mobile: 8604669454</li>
+            <li>WhatsApp: 8604669454</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    function makeAckNumber() {
+      const now = new Date();
+      const fyStart = now.getMonth() >= 3 ? now.getFullYear() : now.getFullYear() - 1;
+      const fyEndShort = String((fyStart + 1)).slice(-2);
+
+      const today = now.toISOString().slice(0,10).replace(/-/g,'');
+      let seq = Number(localStorage.getItem('bas_ack_seq') || '0') + 1;
+      localStorage.setItem('bas_ack_seq', String(seq));
+
+      return `BAS/ACK/${fyStart}-${fyEndShort}/${today}/${String(seq).padStart(4,'0')}`;
+    }
+
+    function formatDateDisplay(dateStr){
+      if(!dateStr) return '';
+      const d = new Date(dateStr);
+      if(isNaN(d.getTime())) return dateStr;
+      return d.toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' });
+    }
+
+    document.getElementById('receiptForm').addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const donorName = document.getElementById('donorName').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const pan = document.getElementById('pan').value.trim().toUpperCase();
+      const address = document.getElementById('address').value.trim();
+      const amount = document.getElementById('amount').value.trim();
+      const paymentDate = document.getElementById('paymentDate').value;
+      const paymentMode = document.getElementById('paymentMode').value;
+      const txnRef = document.getElementById('txnRef').value.trim();
+      const purpose = document.getElementById('purpose').value.trim() || 'General donation';
+      const consent = document.getElementById('consent').checked;
+
+      if(!consent){
+        alert('Please confirm the declaration before proceeding.');
+        return;
+      }
+
+      const ackNo = makeAckNumber();
+      const generatedOn = new Date().toLocaleString('en-IN', {
+        day:'2-digit', month:'long', year:'numeric',
+        hour:'2-digit', minute:'2-digit'
+      });
+
+      document.getElementById('ackNo').textContent = ackNo;
+      document.getElementById('generatedOn').textContent = generatedOn;
+
+      document.getElementById('rDonorName').textContent = donorName;
+      document.getElementById('rMobile').textContent = mobile;
+      document.getElementById('rEmail').textContent = email;
+      document.getElementById('rPan').textContent = pan;
+      document.getElementById('rAddress').textContent = address;
+      document.getElementById('rAmount').textContent = '₹ ' + Number(amount).toLocaleString('en-IN');
+      document.getElementById('rPaymentDate').textContent = formatDateDisplay(paymentDate);
+      document.getElementById('rPaymentMode').textContent = paymentMode;
+      document.getElementById('rTxnRef').textContent = txnRef;
+      document.getElementById('rPurpose').textContent = purpose;
+
+      const block = document.getElementById('receiptBlock');
+      block.classList.add('show');
+      block.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  </script>
 </body>
 </html>
