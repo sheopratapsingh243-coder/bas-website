@@ -613,53 +613,80 @@
   </div>
 
   <script>
-    function makeAckNumber() {
-      const now = new Date();
-      const fyStart = now.getMonth() >= 3 ? now.getFullYear() : now.getFullYear() - 1;
-      const fyEndShort = String((fyStart + 1)).slice(-2);
+  function formatDateDisplay(dateStr){
+    if(!dateStr) return '';
+    const d = new Date(dateStr);
+    if(isNaN(d.getTime())) return dateStr;
+    return d.toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' });
+  }
 
-      const today = now.toISOString().slice(0,10).replace(/-/g,'');
-      let seq = Number(localStorage.getItem('bas_ack_seq') || '0') + 1;
-      localStorage.setItem('bas_ack_seq', String(seq));
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw0DKQh7z3AAg9prDLyWHy3IXF7adfSVwiMPXSOSBlT0OxU3ga0NxRin3SCnO2xGnC1QA/exec";
 
-      return `BAS/ACK/${fyStart}-${fyEndShort}/${today}/${String(seq).padStart(4,'0')}`;
+  document.getElementById('receiptForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    const donorName = document.getElementById('donorName').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pan = document.getElementById('pan').value.trim().toUpperCase();
+    const address = document.getElementById('address').value.trim();
+    const amount = document.getElementById('amount').value.trim();
+    const paymentDate = document.getElementById('paymentDate').value;
+    const paymentMode = document.getElementById('paymentMode').value;
+    const txnRef = document.getElementById('txnRef').value.trim();
+    const purpose = document.getElementById('purpose').value.trim() || 'General donation';
+    const consent = document.getElementById('consent').checked;
+
+    if(!consent){
+      alert('Please confirm the declaration before proceeding.');
+      return;
     }
 
-    function formatDateDisplay(dateStr){
-      if(!dateStr) return '';
-      const d = new Date(dateStr);
-      if(isNaN(d.getTime())) return dateStr;
-      return d.toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' });
-    }
+    const payload = {
+      donorName,
+      mobile,
+      email,
+      pan,
+      address,
+      amount,
+      paymentDate,
+      paymentMode,
+      txnRef,
+      purpose,
+      consent
+    };
 
-    document.getElementById('receiptForm').addEventListener('submit', function(e){
-      e.preventDefault();
+    try {
+      const submitBtn = document.querySelector('#receiptForm button[type="submit"]');
+      if(submitBtn){
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+      }
 
-      const donorName = document.getElementById('donorName').value.trim();
-      const mobile = document.getElementById('mobile').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const pan = document.getElementById('pan').value.trim().toUpperCase();
-      const address = document.getElementById('address').value.trim();
-      const amount = document.getElementById('amount').value.trim();
-      const paymentDate = document.getElementById('paymentDate').value;
-      const paymentMode = document.getElementById('paymentMode').value;
-      const txnRef = document.getElementById('txnRef').value.trim();
-      const purpose = document.getElementById('purpose').value.trim() || 'General donation';
-      const consent = document.getElementById('consent').checked;
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-      if(!consent){
-        alert('Please confirm the declaration before proceeding.');
+      const result = await res.json();
+
+      if(!result.success){
+        alert('Submission failed. Please try again.');
+        if(submitBtn){
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Generate Provisional Acknowledgement';
+        }
         return;
       }
 
-      const ackNo = makeAckNumber();
-      const generatedOn = new Date().toLocaleString('en-IN', {
+      document.getElementById('ackNo').textContent = result.ackNo;
+      document.getElementById('generatedOn').textContent = new Date(result.generatedOn).toLocaleString('en-IN', {
         day:'2-digit', month:'long', year:'numeric',
         hour:'2-digit', minute:'2-digit'
       });
-
-      document.getElementById('ackNo').textContent = ackNo;
-      document.getElementById('generatedOn').textContent = generatedOn;
 
       document.getElementById('rDonorName').textContent = donorName;
       document.getElementById('rMobile').textContent = mobile;
@@ -675,7 +702,23 @@
       const block = document.getElementById('receiptBlock');
       block.classList.add('show');
       block.scrollIntoView({ behavior:'smooth', block:'start' });
-    });
-  </script>
+
+      if(submitBtn){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Generate Provisional Acknowledgement';
+      }
+
+    } catch(err){
+      alert('Error connecting to server. Please try again.');
+      console.error(err);
+
+      const submitBtn = document.querySelector('#receiptForm button[type="submit"]');
+      if(submitBtn){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Generate Provisional Acknowledgement';
+      }
+    }
+  });
+</script>
 </body>
 </html>
