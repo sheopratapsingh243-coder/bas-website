@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donation Receipt | Bharat Abhyudaya Sansthan</title>
+
+<style>
+body{
+  font-family:system-ui;
+  margin:0;
+  background:#f8fafc;
+}
+
+.container{
+  max-width:800px;
+  margin:40px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+  margin-bottom:20px;
+}
+
+input, textarea, select{
+  width:100%;
+  padding:10px;
+  margin:8px 0 16px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+button{
+  background:#0b5aa6;
+  color:#fff;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#094a8c;
+}
+
+.receipt{
+  display:none;
+  margin-top:30px;
+  border-top:2px dashed #ccc;
+  padding-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Donation Receipt Form</h1>
+
+<form id="receiptForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="text" id="mobile" placeholder="Mobile Number" required>
+<input type="email" id="email" placeholder="Email" required>
+<textarea id="address" placeholder="Full Address" required></textarea>
+<input type="text" id="pan" placeholder="PAN Number" required>
+
+<input type="number" id="amount" placeholder="Donation Amount" required>
+<input type="date" id="date" required>
+
+<select id="mode">
+<option>UPI</option>
+<option>Bank Transfer</option>
+</select>
+
+<input type="text" id="txn" placeholder="Transaction ID / UTR / UPI Ref No." required>
+
+<button type="submit">Generate Provisional Receipt</button>
+
+</form>
+
+<!-- RECEIPT -->
+<div class="receipt" id="receipt">
+
+<h2>Bharat Abhyudaya Sansthan</h2>
+
+<p><b>Provisional Donation Receipt</b></p>
+
+<p><b>Name:</b> <span id="r_name"></span></p>
+<p><b>Amount:</b> ₹<span id="r_amount"></span></p>
+<p><b>Date:</b> <span id="r_date"></span></p>
+<p><b>Mode:</b> <span id="r_mode"></span></p>
+<p><b>Transaction ID:</b> <span id="r_txn"></span></p>
+
+<p style="margin-top:20px; font-size:14px; color:#555;">
+This is a provisional acknowledgement. Final 80G receipt will be issued after verification.
+</p>
+
+<button onclick="window.print()">Download / Print Receipt</button>
+
+</div>
+
+</div>
+
+<script>
+document.getElementById("receiptForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+document.getElementById("receipt").style.display="block";
+
+document.getElementById("r_name").innerText=document.getElementById("name").value;
+document.getElementById("r_amount").innerText=document.getElementById("amount").value;
+document.getElementById("r_date").innerText=document.getElementById("date").value;
+document.getElementById("r_mode").innerText=document.getElementById("mode").value;
+document.getElementById("r_txn").innerText=document.getElementById("txn").value;
+});
+</script>
+
+</body>
+</html>
