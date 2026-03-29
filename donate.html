@@ -54,13 +54,39 @@
 
       <div class="card">
   <h2 data-hi="QR कोड द्वारा दान" data-en="Donate via QR Code"></h2>
-  <p class="section-sub" style="font-size:16px" data-hi="आप किसी भी UPI app के माध्यम से नीचे दिए गए QR code को scan करके सीधे सहयोग कर सकते हैं।" data-en="You can support instantly by scanning the QR code below using any UPI app."></p>
 
+  <p class="section-sub" style="font-size:16px"
+     data-hi="आप किसी भी UPI app के माध्यम से नीचे दिए गए QR code को scan करके सीधे सहयोग कर सकते हैं।"
+     data-en="You can support instantly by scanning the QR code below using any UPI app.">
+  </p>
+
+  <!-- QR IMAGE CLICKABLE -->
   <div style="text-align:center; margin-top:20px;">
-    <img src="assets/donation-qr.jpg" alt="Donation QR Code" style="max-width:320px; width:100%; border-radius:16px; box-shadow:0 12px 32px rgba(2,6,23,.10);">
+    <a href="upi://pay?pa=bhar79915111751@barodampay&pn=Bharat%20Abhyudaya%20Sansthan">
+      <img src="assets/donation-qr.jpg"
+           alt="Donation QR Code"
+           style="max-width:320px; width:100%; border-radius:16px; box-shadow:0 12px 32px rgba(2,6,23,.10);">
+    </a>
   </div>
 
-  <div class="notice" style="margin-top:18px" data-hi="स्कैन करने के लिए PhonePe, Google Pay, Paytm या किसी भी UPI app का उपयोग करें। भुगतान के बाद आवश्यकता होने पर संस्था से संपर्क किया जा सकता है।" data-en="Use PhonePe, Google Pay, Paytm or any UPI-enabled app to scan. You may contact the organisation after payment if needed."></div>
+  <!-- DIRECT BUTTON -->
+  <div class="btn-row" style="justify-content:center; margin-top:18px;">
+    <a href="upi://pay?pa=bhar79915111751@barodampay&pn=Bharat%20Abhyudaya%20Sansthan"
+       class="btn btn-primary"
+       data-hi="UPI App से भुगतान करें"
+       data-en="Pay via UPI App">
+    </a>
+  </div>
+
+  <!-- UPI ID SHOW -->
+  <div style="margin-top:16px; text-align:center; font-size:14px;">
+    <strong>UPI ID:</strong> bhar79915111751@barodampay
+  </div>
+
+  <div class="notice" style="margin-top:18px"
+       data-hi="स्कैन करने के लिए PhonePe, Google Pay, Paytm या किसी भी UPI app का उपयोग करें।"
+       data-en="Use PhonePe, Google Pay, Paytm or any UPI-enabled app.">
+  </div>
 </div>
   </section>
 
