@@ -6,6 +6,74 @@
   <title>About | Bharat Abhyudaya Sansthan</title>
   <meta name="description" content="Learn about Bharat Abhyudaya Sansthan, its mission, values, community approach and commitment to transparency.">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+  /* SAME FONT SCALE AS INDEX */
+  .hero h1{
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem) !important;
+    line-height: 1.16;
+    max-width: 680px;
+    margin-bottom: 14px;
+  }
+
+  .hero p{
+    max-width: 640px;
+    font-size: .95rem;
+    line-height: 1.68;
+  }
+
+  .hero .btn-row{
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .hero .btn-row .btn{
+    min-width: 168px;
+  }
+
+  .impact-band{
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+
+  .section-title{
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem) !important;
+    letter-spacing: -.02em;
+  }
+
+  .section-sub{
+    font-size: .95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .value-list li,
+  .check-list li,
+  .steps li{
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  .quote{
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .cta-strip p{
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 900px){
+    .hero h1{
+      font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
+    }
+
+    .hero p{
+      font-size: .92rem;
+    }
+  }
+  </style>
 </head>
 <body>
   <div id="header"></div>
@@ -38,15 +106,15 @@
     <div class="wrap grid-3 mission-grid">
       <div class="card">
         <h2 data-hi="हम क्यों हैं" data-en="Why we exist"></h2>
-        <p class="section-sub" style="font-size:16px" data-hi="समाज में ऐसे अनेक परिवार, बच्चे, महिलाएँ, रोगी और वृद्धजन हैं जिन्हें छोटी-सी समय पर सहायता भी बड़ी राहत दे सकती है। संस्था का जन्म इसी विचार से हुआ कि सत्यापित आवश्यकता तक सहयोग पहुँचना चाहिए।" data-en="There are many families, children, women, patients and elderly people for whom timely support can make a profound difference. The organisation was founded on the belief that support should reach verified need."></p>
+        <p class="section-sub" data-hi="समाज में ऐसे अनेक परिवार, बच्चे, महिलाएँ, रोगी और वृद्धजन हैं जिन्हें छोटी-सी समय पर सहायता भी बड़ी राहत दे सकती है। संस्था का जन्म इसी विचार से हुआ कि सत्यापित आवश्यकता तक सहयोग पहुँचना चाहिए।" data-en="There are many families, children, women, patients and elderly people for whom timely support can make a profound difference. The organisation was founded on the belief that support should reach verified need."></p>
       </div>
       <div class="card">
         <h2 data-hi="हमारा मिशन" data-en="Our mission"></h2>
-        <p class="section-sub" style="font-size:16px" data-hi="शिक्षा, स्वास्थ्य, स्वावलंबन, संरक्षण और मानवीय सहयोग के माध्यम से जरूरतमंद व्यक्तियों के जीवन में उपयोगी, गरिमापूर्ण और स्थायी परिवर्तन लाना।" data-en="To create useful, dignified and sustainable change in the lives of people in need through education, healthcare, self-reliance, protection and humanitarian support."></p>
+        <p class="section-sub" data-hi="शिक्षा, स्वास्थ्य, स्वावलंबन, संरक्षण और मानवीय सहयोग के माध्यम से जरूरतमंद व्यक्तियों के जीवन में उपयोगी, गरिमापूर्ण और स्थायी परिवर्तन लाना।" data-en="To create useful, dignified and sustainable change in the lives of people in need through education, healthcare, self-reliance, protection and humanitarian support."></p>
       </div>
       <div class="card">
         <h2 data-hi="हमारा विज़न" data-en="Our vision"></h2>
-        <p class="section-sub" style="font-size:16px" data-hi="ऐसा आत्मनिर्भर और संवेदनशील समाज जहाँ संसाधनों की कमी किसी व्यक्ति की गरिमा, शिक्षा, स्वास्थ्य या अवसरों को बाधित न करे।" data-en="A self-reliant and compassionate society where lack of resources does not block anyone’s dignity, education, healthcare or opportunities."></p>
+        <p class="section-sub" data-hi="ऐसा आत्मनिर्भर और संवेदनशील समाज जहाँ संसाधनों की कमी किसी व्यक्ति की गरिमा, शिक्षा, स्वास्थ्य या अवसरों को बाधित न करे।" data-en="A self-reliant and compassionate society where lack of resources does not block anyone’s dignity, education, healthcare or opportunities."></p>
       </div>
     </div>
   </section>
@@ -55,7 +123,7 @@
     <div class="wrap grid-2">
       <div class="highlight">
         <span class="kicker" data-hi="मुख्य मूल्य" data-en="Core values"></span>
-        <h2 class="section-title" style="font-size:34px" data-hi="हमारी संस्था किन सिद्धांतों पर चलती है" data-en="What principles guide our organisation"></h2>
+        <h2 class="section-title" data-hi="हमारी संस्था किन सिद्धांतों पर चलती है" data-en="What principles guide our organisation"></h2>
         <ul class="value-list">
           <li data-hi="पारदर्शिता — दस्तावेज़, उद्देश्य और वैधता को सार्वजनिक रूप से स्पष्ट रखना।" data-en="Transparency — keeping documents, purpose and legitimacy publicly clear."></li>
           <li data-hi="उत्तरदायित्व — प्राप्त सहयोग को जिम्मेदारीपूर्वक उपयोग में लाना।" data-en="Accountability — using received support responsibly."></li>
@@ -65,7 +133,7 @@
       </div>
       <div class="highlight">
         <span class="kicker" data-hi="कार्य क्षेत्र" data-en="Areas of work"></span>
-        <h2 class="section-title" style="font-size:34px" data-hi="हम किन मुद्दों पर सक्रिय हैं" data-en="Where we are actively working"></h2>
+        <h2 class="section-title" data-hi="हम किन मुद्दों पर सक्रिय हैं" data-en="Where we are actively working"></h2>
         <ul class="check-list">
           <li data-hi="शिक्षा सहायता और अध्ययन सामग्री" data-en="Educational support and learning materials"></li>
           <li data-hi="स्वास्थ्य सहायता एवं आपातकालीन सहयोग" data-en="Healthcare support and emergency assistance"></li>
@@ -88,15 +156,15 @@
     <div class="wrap grid-3 mission-grid">
       <div class="card">
         <h3 data-hi="दानकर्ता के लिए" data-en="For donors"></h3>
-        <p class="section-sub" style="font-size:16px" data-hi="हमारा प्रयास है कि सहयोग करने वाले व्यक्ति या संस्था को यह स्पष्ट अनुभव हो कि उनका योगदान उद्देश्यपूर्ण, वैध और सामाजिक रूप से उपयोगी है।" data-en="We strive to ensure that every donor or institution feels their support is purposeful, legitimate and socially useful."></p>
+        <p class="section-sub" data-hi="हमारा प्रयास है कि सहयोग करने वाले व्यक्ति या संस्था को यह स्पष्ट अनुभव हो कि उनका योगदान उद्देश्यपूर्ण, वैध और सामाजिक रूप से उपयोगी है।" data-en="We strive to ensure that every donor or institution feels their support is purposeful, legitimate and socially useful."></p>
       </div>
       <div class="card">
         <h3 data-hi="समुदाय के लिए" data-en="For communities"></h3>
-        <p class="section-sub" style="font-size:16px" data-hi="संस्था समुदाय के साथ संवाद, सहभागिता और संवेदनशीलता के आधार पर कार्य करती है ताकि सहायता केवल पहुँच न जाए, बल्कि सार्थक बने।" data-en="The organisation works with dialogue, participation and sensitivity so that support does not merely arrive, but actually matters."></p>
+        <p class="section-sub" data-hi="संस्था समुदाय के साथ संवाद, सहभागिता और संवेदनशीलता के आधार पर कार्य करती है ताकि सहायता केवल पहुँच न जाए, बल्कि सार्थक बने।" data-en="The organisation works with dialogue, participation and sensitivity so that support does not merely arrive, but actually matters."></p>
       </div>
       <div class="card">
         <h3 data-hi="भविष्य के लिए" data-en="For the future"></h3>
-        <p class="section-sub" style="font-size:16px" data-hi="हम ऐसे मॉडल की ओर बढ़ना चाहते हैं जहाँ संस्थागत भरोसा, बेहतर दस्तावेज़ीकरण और दीर्घकालिक सामाजिक प्रभाव साथ-साथ विकसित हों।" data-en="We aim to build a model where institutional trust, stronger documentation and long-term social impact grow together."></p>
+        <p class="section-sub" data-hi="हम ऐसे मॉडल की ओर बढ़ना चाहते हैं जहाँ संस्थागत भरोसा, बेहतर दस्तावेज़ीकरण और दीर्घकालिक सामाजिक प्रभाव साथ-साथ विकसित हों।" data-en="We aim to build a model where institutional trust, stronger documentation and long-term social impact grow together."></p>
       </div>
     </div>
   </section>
