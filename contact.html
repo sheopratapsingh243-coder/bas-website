@@ -6,7 +6,85 @@
   <title>Contact | Bharat Abhyudaya Sansthan</title>
   <meta name="description" content="Contact Bharat Abhyudaya Sansthan for support, volunteering, donations, partnerships or programme coordination.">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+  /* SAME FONT SCALE */
+  .hero h1{
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem) !important;
+    line-height: 1.16;
+    max-width: 680px;
+    margin-bottom: 14px;
+  }
+
+  .hero p{
+    max-width: 640px;
+    font-size: .95rem;
+    line-height: 1.68;
+  }
+
+  .hero{
+    overflow: hidden;
+  }
+
+  .hero .wrap{
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-title{
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem) !important;
+    letter-spacing: -.02em;
+  }
+
+  .section-sub{
+    font-size: .95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .kv span{
+    font-size: .95rem;
+  }
+
+  .notice{
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  .form-grid input,
+  .form-grid textarea{
+    font-size: .95rem;
+  }
+
+  .impact-band{
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+
+  iframe{
+    width:100%;
+    height:260px;
+    border:0;
+    border-radius:14px;
+    margin-top:16px;
+  }
+
+  @media (max-width: 900px){
+    .hero h1{
+      font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
+    }
+
+    .hero p,
+    .section-sub,
+    .notice,
+    .impact-band,
+    .form-grid input,
+    .form-grid textarea{
+      font-size:.92rem !important;
+    }
+  }
+  </style>
 </head>
+
 <body>
   <div id="header"></div>
   <div class="topbar-space"></div>
@@ -21,35 +99,76 @@
 
   <section class="section">
     <div class="wrap contact-grid">
+
+      <!-- LEFT SIDE -->
       <div class="card contact-card">
         <h2 data-hi="कार्यालय एवं संपर्क विवरण" data-en="Office & Contact Details"></h2>
+
         <div class="kv-grid">
           <div class="kv"><b data-hi="स्थान" data-en="Location"></b><span data-hi="फतेहपुर, उत्तर प्रदेश" data-en="Fatehpur, Uttar Pradesh"></span></div>
           <div class="kv"><b data-hi="मोबाइल" data-en="Phone"></b><span>8604669454</span></div>
           <div class="kv"><b data-hi="ईमेल" data-en="Email"></b><span>sheopratapsingh243@gmail.com</span></div>
           <div class="kv"><b data-hi="उद्देश्य" data-en="Purpose"></b><span data-hi="सामाजिक सेवा एवं जनसहयोग" data-en="Social service & community support"></span></div>
         </div>
-        <div class="notice" style="margin-top:18px" data-hi="Google Maps के इस block को आप अपने वास्तविक pinned location link से बाद में और अधिक सटीक बना सकते हैं।" data-en="You can later make this Google Maps block more precise by replacing it with your exact pinned location link."></div>
-        <iframe title="Fatehpur Map" src="https://www.google.com/maps?q=Fatehpur%20Uttar%20Pradesh&output=embed" loading="lazy"></iframe>
+
+        <div class="notice" style="margin-top:18px"
+             data-hi="आप इस map को अपने exact location link से replace कर सकते हैं।"
+             data-en="You can replace this map with your exact pinned location.">
+        </div>
+
+        <iframe src="https://www.google.com/maps?q=Fatehpur%20Uttar%20Pradesh&output=embed"></iframe>
       </div>
 
+      <!-- RIGHT SIDE -->
       <div class="card">
         <h2 data-hi="त्वरित संदेश भेजें" data-en="Send a quick message"></h2>
-        <p class="section-sub" style="font-size:16px" data-hi="यह फॉर्म WhatsApp message draft खोलता है, ताकि technical backend के बिना भी website visitor तुरंत संपर्क कर सके।" data-en="This form opens a WhatsApp message draft so that visitors can contact you instantly even without a technical backend."></p>
+
+        <p class="section-sub"
+           data-hi="यह form WhatsApp message draft खोलता है, जिससे visitor तुरंत संपर्क कर सकता है।"
+           data-en="This form opens a WhatsApp message draft for instant communication.">
+        </p>
+
         <form id="contactForm" class="form-grid" style="margin-top:18px">
-          <input id="nameField" class="input" required data-hi-placeholder="आपका नाम" data-en-placeholder="Your name" placeholder="आपका नाम">
-          <input id="phoneField" class="input" required data-hi-placeholder="मोबाइल नंबर" data-en-placeholder="Phone number" placeholder="मोबाइल नंबर">
-          <textarea id="messageField" required data-hi-placeholder="अपना संदेश लिखें" data-en-placeholder="Write your message" placeholder="अपना संदेश लिखें"></textarea>
-          <button class="btn btn-primary" type="submit" data-hi="WhatsApp पर भेजें" data-en="Send via WhatsApp"></button>
+          <input id="nameField" class="input" required placeholder="आपका नाम">
+          <input id="phoneField" class="input" required placeholder="मोबाइल नंबर">
+          <textarea id="messageField" required placeholder="अपना संदेश लिखें"></textarea>
+
+          <button class="btn btn-primary" type="submit"
+            data-hi="WhatsApp पर भेजें"
+            data-en="Send via WhatsApp"></button>
         </form>
-        <div class="impact-band" data-hi="सुझाव: भविष्य में आप Netlify Forms, Formspree या Google Forms integration जोड़कर इस form को email/database based form में भी बदल सकते हैं।" data-en="Suggestion: In the future, you can turn this into an email/database-based form by integrating Netlify Forms, Formspree or Google Forms."></div>
+
+        <div class="impact-band"
+             data-hi="भविष्य में इसे email form में भी convert किया जा सकता है (Google Forms / Netlify)।"
+             data-en="This can later be converted into an email-based form (Google Forms / Netlify).">
+        </div>
       </div>
+
     </div>
   </section>
 
   <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
-  <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+  <a class="donate-float" href="donate.html">Donate</a>
+
   <div id="footer"></div>
   <script src="assets/js/main.js"></script>
+
+  <!-- WhatsApp Form Script -->
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("nameField").value;
+    let phone = document.getElementById("phoneField").value;
+    let msg = document.getElementById("messageField").value;
+
+    let text = `Name: ${name}\nPhone: ${phone}\nMessage: ${msg}`;
+
+    let url = "https://wa.me/918604669454?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+  });
+  </script>
+
 </body>
 </html>
