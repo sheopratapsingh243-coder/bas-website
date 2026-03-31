@@ -6,6 +6,86 @@
   <title>Gallery | Bharat Abhyudaya Sansthan</title>
   <meta name="description" content="Gallery of service activities, field work and community initiatives by Bharat Abhyudaya Sansthan.">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+  /* SAME FONT SCALE */
+  .hero h1{
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem) !important;
+    line-height: 1.16;
+    max-width: 680px;
+    margin-bottom: 14px;
+  }
+
+  .hero p{
+    max-width: 640px;
+    font-size: .95rem;
+    line-height: 1.68;
+  }
+
+  .hero{
+    overflow: hidden;
+  }
+
+  .hero .wrap{
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-title{
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem) !important;
+    letter-spacing: -.02em;
+  }
+
+  .check-list li,
+  .value-list li{
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:18px;
+  }
+
+  .gallery-grid img{
+    width:100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display:block;
+    border-radius:18px;
+    box-shadow:0 14px 34px rgba(2,6,23,.10);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+
+  .gallery-grid img:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(2,6,23,.14);
+  }
+
+  @media (max-width: 900px){
+    .hero h1{
+      font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
+    }
+
+    .hero p,
+    .check-list li,
+    .value-list li{
+      font-size:.92rem;
+    }
+
+    .gallery-grid{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:14px;
+    }
+  }
+
+  @media (max-width: 520px){
+    .gallery-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+  </style>
 </head>
 <body>
   <div id="header"></div>
@@ -37,15 +117,16 @@
   <section class="section">
     <div class="wrap grid-2">
       <div class="highlight">
-        <h2 class="section-title" style="font-size:34px" data-hi="गैलरी क्यों महत्त्वपूर्ण है" data-en="Why the gallery matters"></h2>
+        <h2 class="section-title" data-hi="गैलरी क्यों महत्त्वपूर्ण है" data-en="Why the gallery matters"></h2>
         <ul class="check-list">
           <li data-hi="संस्था का कार्य केवल शब्दों में नहीं, दृश्य रूप में भी दिखता है।" data-en="The organisation’s work becomes visible not only through words, but through visuals."></li>
           <li data-hi="दानकर्ता और समर्थक ज़मीनी जुड़ाव का अनुभव कर पाते हैं।" data-en="Donors and supporters get a sense of ground-level engagement."></li>
           <li data-hi="सामुदायिक भरोसा और सार्वजनिक पहचान मजबूत होती है।" data-en="Community trust and public identity become stronger."></li>
         </ul>
       </div>
+
       <div class="highlight">
-        <h2 class="section-title" style="font-size:34px" data-hi="आगे क्या जोड़ा जा सकता है" data-en="What can be added later"></h2>
+        <h2 class="section-title" data-hi="आगे क्या जोड़ा जा सकता है" data-en="What can be added later"></h2>
         <ul class="value-list">
           <li data-hi="कार्यक्रम-आधारित albums या categories" data-en="Programme-based albums or categories"></li>
           <li data-hi="Lightbox viewer और image captions" data-en="A lightbox viewer and image captions"></li>
