@@ -82,23 +82,23 @@
     overflow: hidden;
   }
 
+  /* IMAGE TOP, CONTENT BELOW */
   .initiative-feature-grid{
     display: grid;
-    grid-template-columns: 1.08fr .92fr;
-    gap: 0;
+    grid-template-columns: 1fr;
   }
 
   .initiative-feature-media{
-    min-height: 100%;
     background: linear-gradient(180deg, rgba(11,90,166,.08), rgba(245,139,31,.08));
+    line-height: 0;
   }
 
   .initiative-feature-media img{
     width: 100%;
-    height: 100%;
+    height: clamp(220px, 38vw, 420px);
     display: block;
     object-fit: cover;
-    min-height: 100%;
+    object-position: center;
   }
 
   .initiative-feature-body{
@@ -240,13 +240,8 @@
       font-size: .92rem;
     }
 
-    .initiative-feature-grid{
-      grid-template-columns: 1fr;
-    }
-
     .initiative-feature-media img{
-      min-height: 240px;
-      max-height: 320px;
+      height: clamp(190px, 52vw, 280px);
     }
 
     .initiative-feature-body{
@@ -281,7 +276,7 @@
       <div class="initiative-feature">
         <div class="initiative-feature-grid">
           <div class="initiative-feature-media">
-           <img src="assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi">
+            <img src="assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Detailed Section">
           </div>
 
           <div class="initiative-feature-body">
