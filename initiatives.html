@@ -69,6 +69,162 @@
     line-height: 1.6;
   }
 
+  /* NEW: SHIKSHA SARATHI DETAIL SECTION */
+  .initiative-detail{
+    padding-top: 8px;
+  }
+
+  .initiative-feature{
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .initiative-feature-grid{
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 0;
+  }
+
+  .initiative-feature-media{
+    min-height: 100%;
+    background: linear-gradient(180deg, rgba(11,90,166,.08), rgba(245,139,31,.08));
+  }
+
+  .initiative-feature-media img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    min-height: 100%;
+  }
+
+  .initiative-feature-body{
+    padding: 28px;
+  }
+
+  .initiative-kicker{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(11,90,166,.08);
+    color: var(--brand);
+    border: 1px solid rgba(11,90,166,.12);
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: .82rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .initiative-feature-body h2{
+    margin: 0 0 12px;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    line-height: 1.18;
+    letter-spacing: -.02em;
+  }
+
+  .initiative-lead{
+    margin: 0 0 18px;
+    font-size: .98rem;
+    line-height: 1.72;
+    color: var(--muted);
+  }
+
+  .initiative-blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .initiative-box{
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .initiative-box h3{
+    margin: 0 0 10px;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .initiative-box p{
+    margin: 0;
+    font-size: .94rem;
+    line-height: 1.68;
+    color: var(--muted);
+  }
+
+  .initiative-box ul{
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .initiative-box li{
+    margin: 0 0 8px;
+    font-size: .94rem;
+    line-height: 1.62;
+    color: var(--muted);
+  }
+
+  .support-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .support-item{
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 15px;
+  }
+
+  .support-item strong{
+    display: block;
+    margin-bottom: 4px;
+    font-size: .95rem;
+  }
+
+  .support-item span{
+    font-size: .92rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .cost-list{
+    margin-top: 10px;
+  }
+
+  .cost-list li strong{
+    color: var(--fg);
+  }
+
+  .timeline-list li,
+  .trust-list li{
+    margin-bottom: 8px;
+  }
+
+  .initiative-cta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .initiative-note{
+    margin-top: 14px;
+    font-size: .92rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
   @media (max-width: 900px){
     .hero h1{
       font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
@@ -82,6 +238,27 @@
     .steps li,
     .check-list li{
       font-size: .92rem;
+    }
+
+    .initiative-feature-grid{
+      grid-template-columns: 1fr;
+    }
+
+    .initiative-feature-media img{
+      min-height: 240px;
+      max-height: 320px;
+    }
+
+    .initiative-feature-body{
+      padding: 20px;
+    }
+
+    .initiative-blocks{
+      grid-template-columns: 1fr;
+    }
+
+    .support-grid{
+      grid-template-columns: 1fr;
     }
   }
   </style>
@@ -105,10 +282,10 @@
         <div class="body">
           <span class="program-tag" data-hi="शिक्षा" data-en="Education"></span>
           <h3 data-hi="शिक्षा सारथी अभियान" data-en="Shiksha Sarathi Campaign"></h3>
-          <p data-hi="बच्चों और विद्यार्थियों के लिए अध्ययन सामग्री, प्रेरणा, मार्गदर्शन और शिक्षा जारी रखने की उपयोगी सहायता।" data-en="Practical support for children and students through learning materials, motivation, guidance and continuity in education."></p>
+          <p data-hi="हमारा प्रमुख शिक्षा कार्यक्रम, जिसका उद्देश्य आर्थिक रूप से कमजोर बच्चों को अध्ययन सामग्री, स्कूल आवश्यकताएँ और शैक्षिक सहयोग देकर ड्रॉपआउट रोकना है।" data-en="Our flagship education programme focused on preventing dropouts by providing study kits, school essentials and academic support to underprivileged children."></p>
           <div class="program-metrics">
-            <div><strong data-hi="Access" data-en="Access"></strong><span data-hi="जरूरतमंद विद्यार्थियों तक सहयोग" data-en="Support for students in need"></span></div>
-            <div><strong data-hi="Future" data-en="Future"></strong><span data-hi="अवसरों का विस्तार" data-en="Expanding opportunity"></span></div>
+            <div><strong data-hi="5000+" data-en="5000+"></strong><span data-hi="FY 2026–27 में लक्षित बच्चे" data-en="Target children in FY 2026–27"></span></div>
+            <div><strong data-hi="₹2500–₹3000" data-en="₹2500–₹3000"></strong><span data-hi="प्रति बच्चे अनुमानित सहयोग लागत" data-en="Approximate support cost per child"></span></div>
           </div>
           <div class="btn-row"><a class="btn btn-primary" href="donate.html" data-hi="इस पहल को सहयोग दें" data-en="Support this initiative"></a></div>
         </div>
@@ -211,6 +388,104 @@
           <div class="btn-row"><a class="btn btn-primary" href="contact.html" data-hi="युवा कार्यक्रम से जुड़ें" data-en="Join youth programmes"></a></div>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- NEW: DETAILED SHIKSHA SARATHI SECTION -->
+  <section class="section initiative-detail">
+    <div class="wrap">
+      <div class="initiative-feature">
+        <div class="initiative-feature-grid">
+          <div class="initiative-feature-media">
+            <img src="assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Detailed Section">
+          </div>
+
+          <div class="initiative-feature-body">
+            <span class="initiative-kicker" data-hi="📚 प्रमुख पहल" data-en="📚 Flagship Initiative"></span>
+            <h2 data-hi="शिक्षा सारथी — कोई भी बच्चा केवल अध्ययन सामग्री के अभाव में स्कूल न छोड़े" data-en="Shiksha Sarathi — No child should leave school due to lack of basic learning resources"></h2>
+            <p class="initiative-lead" data-hi="“शिक्षा सारथी” हमारा प्रमुख कार्यक्रम है, जिसका उद्देश्य आर्थिक रूप से कमजोर परिवारों के बच्चों को अध्ययन सामग्री, स्कूल आवश्यकताएँ और शैक्षिक सहयोग देकर उन्हें शिक्षा से जोड़े रखना है।" data-en="“Shiksha Sarathi” is our flagship programme with a simple but powerful vision: no child should drop out of school because they lack basic learning resources, school essentials and academic support."></p>
+
+            <div class="initiative-blocks">
+              <div class="initiative-box">
+                <h3 data-hi="🎯 अभियान उद्देश्य (FY 2026–27)" data-en="🎯 Campaign Objective (FY 2026–27)"></h3>
+                <p data-hi="5000 वंचित एवं जरूरतमंद बच्चों को संपूर्ण स्टडी किट और आवश्यक शैक्षिक सहायता उपलब्ध कराना।" data-en="To support 5000 underprivileged children by providing complete study kits and essential academic support."></p>
+              </div>
+
+              <div class="initiative-box">
+                <h3 data-hi="💔 हम किस चुनौती को संबोधित कर रहे हैं" data-en="💔 The Challenge We Are Addressing"></h3>
+                <ul>
+                  <li data-hi="कई ग्रामीण और आर्थिक रूप से कमजोर परिवारों के बच्चे कॉपियाँ, किताबें और स्टेशनरी जैसी बुनियादी सामग्री के अभाव में पढ़ाई से पीछे रह जाते हैं।" data-en="In many rural and economically weaker communities, children fall behind because they lack basic study materials such as notebooks, books and stationery."></li>
+                  <li data-hi="छोटी आर्थिक कमी भी स्कूल अनुपस्थिति, पढ़ाई में गिरावट और अंततः ड्रॉपआउट का कारण बन जाती है।" data-en="Even a small financial gap can lead to absenteeism, declining academic performance and eventual dropout."></li>
+                  <li data-hi="यह पहल शिक्षा और आशा के बीच बने इस अंतर को भरने का प्रयास है।" data-en="This initiative aims to bridge that gap and keep children connected to education and hope."></li>
+                </ul>
+              </div>
+
+              <div class="initiative-box">
+                <h3 data-hi="👧👦 लाभार्थी कौन होंगे" data-en="👧👦 Who Will Benefit"></h3>
+                <ul>
+                  <li data-hi="आर्थिक रूप से कमजोर परिवारों के बच्चे" data-en="Children from economically weaker families"></li>
+                  <li data-hi="ग्रामीण और अर्ध-शहरी क्षेत्रों के विद्यार्थी" data-en="Rural and semi-urban students"></li>
+                  <li data-hi="वे छात्र जो आर्थिक कठिनाई के कारण ड्रॉपआउट के जोखिम में हैं" data-en="Students at risk of dropping out due to financial hardship"></li>
+                </ul>
+              </div>
+
+              <div class="initiative-box">
+                <h3 data-hi="💰 सहयोग मॉडल एवं लागत संरचना" data-en="💰 Support Model & Cost Structure"></h3>
+                <p data-hi="प्रति बच्चे अनुमानित सहयोग लागत: ₹2500 – ₹3000" data-en="Per child support cost: ₹2500 – ₹3000"></p>
+                <ul class="cost-list">
+                  <li data-hi="<strong>स्टडी किट:</strong> किताबें, कॉपियाँ, स्टेशनरी — ₹2000" data-en="<strong>Study Kit:</strong> Books, notebooks, stationery — ₹2000"></li>
+                  <li data-hi="<strong>स्कूल आवश्यकताएँ:</strong> बैग एवं उपयोगी सामग्री — ₹700" data-en="<strong>School Essentials:</strong> Bag and useful supplies — ₹700"></li>
+                  <li data-hi="<strong>वितरण एवं लॉजिस्टिक्स:</strong> ₹100" data-en="<strong>Distribution & Logistics:</strong> ₹100"></li>
+                  <li data-hi="<strong>प्रशासन एवं मॉनिटरिंग:</strong> ₹200" data-en="<strong>Administration & Monitoring:</strong> ₹200"></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="initiative-box" style="margin-top:16px;">
+              <h3 data-hi="🤝 दानदाताओं के लिए सहयोग विकल्प" data-en="🤝 Support Options for Donors"></h3>
+              <p data-hi="आप अपनी इच्छा के अनुसार जितने भी बच्चों को सहयोग देना चाहें, दे सकते हैं:" data-en="You may support as many children as you wish:"></p>
+
+              <div class="support-grid">
+                <div class="support-item"><strong data-hi="1 बच्चा" data-en="1 Child"></strong><span data-hi="₹2500 – ₹3000" data-en="₹2500 – ₹3000"></span></div>
+                <div class="support-item"><strong data-hi="5 बच्चे" data-en="5 Children"></strong><span data-hi="₹12,500 – ₹15,000" data-en="₹12,500 – ₹15,000"></span></div>
+                <div class="support-item"><strong data-hi="10 बच्चे" data-en="10 Children"></strong><span data-hi="₹25,000 – ₹30,000" data-en="₹25,000 – ₹30,000"></span></div>
+                <div class="support-item"><strong data-hi="25 बच्चे" data-en="25 Children"></strong><span data-hi="₹62,500 – ₹75,000" data-en="₹62,500 – ₹75,000"></span></div>
+                <div class="support-item"><strong data-hi="50 बच्चे" data-en="50 Children"></strong><span data-hi="₹1,25,000 – ₹1,50,000" data-en="₹1,25,000 – ₹1,50,000"></span></div>
+                <div class="support-item"><strong data-hi="100 बच्चे" data-en="100 Children"></strong><span data-hi="₹2,50,000 – ₹3,00,000" data-en="₹2,50,000 – ₹3,00,000"></span></div>
+              </div>
+            </div>
+
+            <div class="initiative-blocks" style="margin-top:16px;">
+              <div class="initiative-box">
+                <h3 data-hi="📅 परियोजना समयरेखा (FY 2026–27)" data-en="📅 Project Timeline (FY 2026–27)"></h3>
+                <ul class="timeline-list">
+                  <li data-hi="अप्रैल – मई 2026: लाभार्थियों की पहचान एवं बेसलाइन सर्वे" data-en="April – May 2026: Beneficiary identification & baseline survey"></li>
+                  <li data-hi="जून 2026: अध्ययन सामग्री की खरीद" data-en="June 2026: Procurement of study materials"></li>
+                  <li data-hi="जून – जुलाई 2026: वितरण चरण" data-en="June – July 2026: Distribution phases"></li>
+                  <li data-hi="अगस्त – सितंबर 2026: अंतिम रिपोर्टिंग" data-en="Aug – Sept 2026: Final reporting"></li>
+                  <li data-hi="जुलाई 2026 – मार्च 2027: मॉनिटरिंग एवं प्रभाव आकलन" data-en="July 2026 – March 2027: Monitoring & impact assessment"></li>
+                </ul>
+              </div>
+
+              <div class="initiative-box">
+                <h3 data-hi="🔍 पारदर्शिता एवं भरोसा" data-en="🔍 Transparency & Trust"></h3>
+                <ul class="trust-list">
+                  <li data-hi="धनराशि का उचित एवं उद्देश्यपूर्ण उपयोग" data-en="Proper utilization of funds"></li>
+                  <li data-hi="नियमित अपडेट्स और दस्तावेज़ीकरण" data-en="Regular updates and documentation"></li>
+                  <li data-hi="आधिकारिक दान रसीदें" data-en="Official donation receipts"></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="initiative-cta">
+              <a class="btn btn-primary" href="https://razorpay.me/@basindia" target="_blank" rel="noopener" data-hi="अभी दान करें" data-en="Donate Now"></a>
+              <a class="btn btn-outline" href="donate.html" data-hi="दान पृष्ठ देखें" data-en="View Donate Page"></a>
+            </div>
+
+            <p class="initiative-note" data-hi="आप अपनी इच्छा के अनुसार एक बच्चे से लेकर अनेक बच्चों तक का सहयोग चुन सकते हैं। आपका योगदान केवल सामग्री नहीं देता, बल्कि एक बच्चे को स्कूल से जोड़े रखने की वास्तविक संभावना भी देता है।" data-en="You may choose to support one child or many. Your contribution does not just provide materials—it helps keep a child connected to school, continuity and hope."></p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
