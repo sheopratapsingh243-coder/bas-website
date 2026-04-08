@@ -70,15 +70,27 @@
   }
 
   .btn-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+    align-items: center;
+  }
+
+  .btn-row .btn,
+  .detail-actions .btn{
+    min-width: 150px;
+    text-align: center;
   }
 
   /* DETAIL SECTIONS */
   .initiative-detail{
     padding-top: 8px;
+  }
+
+  .detail-divider{
+    border-top: 1px solid #e2e8f0;
+    margin: 8px 0 24px;
   }
 
   .initiative-feature{
@@ -239,6 +251,14 @@
     color: var(--muted);
   }
 
+  .detail-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 18px;
+    align-items: center;
+  }
+
   .detail-toggle-content{
     display: none;
     animation: fadeBlock .28s ease;
@@ -287,6 +307,11 @@
     .support-grid{
       grid-template-columns: 1fr;
     }
+
+    .btn-row .btn,
+    .detail-actions .btn{
+      min-width: 140px;
+    }
   }
   </style>
 </head>
@@ -305,6 +330,8 @@
   <!-- PROGRAM GRID JUST BELOW HERO -->
   <section class="section tight">
     <div class="wrap program-grid">
+
+      <!-- 1. SHIKSHA -->
       <article class="program-card">
         <img src="assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi">
         <div class="body">
@@ -328,116 +355,7 @@
         </div>
       </article>
 
-      <article class="program-card">
-        <img src="assets/initiatives/health.png" alt="Health Support">
-        <div class="body">
-          <span class="program-tag" data-hi="स्वास्थ्य" data-en="Healthcare"></span>
-          <h3 data-hi="स्वास्थ्य सहायता सेवा" data-en="Healthcare Support Service"></h3>
-          <p data-hi="स्वास्थ्य संबंधी ज़रूरतों, जागरूकता, पहुँच और मानवीय सहायता को बेहतर बनाने की दिशा में सहयोग।" data-en="Support aimed at strengthening access, awareness and humanitarian help around healthcare needs."></p>
-          <div class="program-metrics">
-            <div>
-              <strong data-hi="Care" data-en="Care"></strong>
-              <span data-hi="राहत से आगे सहानुभूतिपूर्ण सहयोग" data-en="Compassionate support beyond relief"></span>
-            </div>
-            <div>
-              <strong data-hi="Reach" data-en="Reach"></strong>
-              <span data-hi="उचित समय पर सहायता" data-en="Timely support"></span>
-            </div>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="contact.html" data-hi="समन्वय हेतु संपर्क" data-en="Contact for coordination"></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="program-card">
-        <img src="assets/initiatives/women.png" alt="Women Empowerment">
-        <div class="body">
-          <span class="program-tag" data-hi="महिला सशक्तिकरण" data-en="Women Empowerment"></span>
-          <h3 data-hi="महिला आत्मनिर्भरता कार्यक्रम" data-en="Women Self-Reliance Programme"></h3>
-          <p data-hi="महिलाओं और युवतियों के लिए कौशल, आत्मविश्वास, आजीविका उन्मुख सोच और सामाजिक सम्मान की दिशा में समर्थन।" data-en="Support for women and young girls through skills, confidence, livelihood orientation and social dignity."></p>
-          <div class="program-metrics">
-            <div>
-              <strong data-hi="Skills" data-en="Skills"></strong>
-              <span data-hi="स्वावलंबन की नींव" data-en="Foundation for independence"></span>
-            </div>
-            <div>
-              <strong data-hi="Dignity" data-en="Dignity"></strong>
-              <span data-hi="सम्मानजनक अवसर" data-en="Respectful opportunities"></span>
-            </div>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="donate.html" data-hi="महिला पहल को समर्थन" data-en="Support women-focused work"></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="program-card">
-        <img src="assets/initiatives/gauseva.png" alt="Gauseva">
-        <div class="body">
-          <span class="program-tag" data-hi="गौसेवा" data-en="Cow Care"></span>
-          <h3 data-hi="गौसंरक्षण एवं सेवा" data-en="Cow Protection & Care"></h3>
-          <p data-hi="बीमार, घायल या असहाय गौवंश के लिए भोजन, देखभाल और करुणा-आधारित सहयोग उपलब्ध कराने का प्रयास।" data-en="An effort to provide feed, care and compassion-led support to ill, injured or helpless cows."></p>
-          <div class="program-metrics">
-            <div>
-              <strong data-hi="Feed" data-en="Feed"></strong>
-              <span data-hi="चारा और नियमित देखभाल" data-en="Feed and regular care"></span>
-            </div>
-            <div>
-              <strong data-hi="Protection" data-en="Protection"></strong>
-              <span data-hi="जीवन और कल्याण की रक्षा" data-en="Protecting life and wellbeing"></span>
-            </div>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="donate.html" data-hi="गौसेवा में सहयोग" data-en="Support cow care"></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="program-card">
-        <img src="assets/initiatives/ambulance.png" alt="Ambulance">
-        <div class="body">
-          <span class="program-tag" data-hi="आपातकालीन सहायता" data-en="Emergency Support"></span>
-          <h3 data-hi="निःशुल्क एम्बुलेंस सहायता" data-en="Free Ambulance Assistance"></h3>
-          <p data-hi="गंभीर परिस्थितियों में रोगियों और परिवारों को समय पर परिवहन सहायता और मानवीय सहयोग देने की पहल।" data-en="An initiative to offer timely transport assistance and humane support to patients and families in critical situations."></p>
-          <div class="program-metrics">
-            <div>
-              <strong data-hi="Rapid" data-en="Rapid"></strong>
-              <span data-hi="आपातकालीन प्रतिक्रिया" data-en="Emergency response"></span>
-            </div>
-            <div>
-              <strong data-hi="Support" data-en="Support"></strong>
-              <span data-hi="परिवारों के लिए राहत" data-en="Relief for families"></span>
-            </div>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="contact.html" data-hi="आपातकालीन संपर्क" data-en="Emergency contact"></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="program-card">
-        <img src="assets/initiatives/oldage.png" alt="Elder Care">
-        <div class="body">
-          <span class="program-tag" data-hi="वृद्धजन" data-en="Elder Care"></span>
-          <h3 data-hi="वृद्धजन सम्मान सेवा" data-en="Elder Dignity Support"></h3>
-          <p data-hi="वृद्धजनों के सम्मान, संवेदना और आवश्यक सहयोग की दिशा में सामुदायिक सहारा उपलब्ध कराने का प्रयास।" data-en="An effort to provide community support with dignity, care and sensitivity for elderly citizens."></p>
-          <div class="program-metrics">
-            <div>
-              <strong data-hi="Care" data-en="Care"></strong>
-              <span data-hi="सम्मानजनक सहयोग" data-en="Dignified support"></span>
-            </div>
-            <div>
-              <strong data-hi="Presence" data-en="Presence"></strong>
-              <span data-hi="अकेलेपन में सहारा" data-en="Support against isolation"></span>
-            </div>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="contact.html" data-hi="जानकारी साझा करें" data-en="Share a case"></a>
-          </div>
-        </div>
-      </article>
-
+      <!-- 2. HERITAGE -->
       <article class="program-card">
         <img src="assets/initiatives/heritage.png" alt="Heritage Conservation">
         <div class="body">
@@ -461,6 +379,122 @@
         </div>
       </article>
 
+      <!-- 3. HEALTH -->
+      <article class="program-card">
+        <img src="assets/initiatives/health.png" alt="Health Support">
+        <div class="body">
+          <span class="program-tag" data-hi="स्वास्थ्य" data-en="Healthcare"></span>
+          <h3 data-hi="स्वास्थ्य सहायता सेवा" data-en="Healthcare Support Service"></h3>
+          <p data-hi="स्वास्थ्य संबंधी ज़रूरतों, जागरूकता, पहुँच और मानवीय सहायता को बेहतर बनाने की दिशा में सहयोग।" data-en="Support aimed at strengthening access, awareness and humanitarian help around healthcare needs."></p>
+          <div class="program-metrics">
+            <div>
+              <strong data-hi="Care" data-en="Care"></strong>
+              <span data-hi="राहत से आगे सहानुभूतिपूर्ण सहयोग" data-en="Compassionate support beyond relief"></span>
+            </div>
+            <div>
+              <strong data-hi="Reach" data-en="Reach"></strong>
+              <span data-hi="उचित समय पर सहायता" data-en="Timely support"></span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact.html" data-hi="समन्वय हेतु संपर्क" data-en="Contact for coordination"></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. WOMEN -->
+      <article class="program-card">
+        <img src="assets/initiatives/women.png" alt="Women Empowerment">
+        <div class="body">
+          <span class="program-tag" data-hi="महिला सशक्तिकरण" data-en="Women Empowerment"></span>
+          <h3 data-hi="महिला आत्मनिर्भरता कार्यक्रम" data-en="Women Self-Reliance Programme"></h3>
+          <p data-hi="महिलाओं और युवतियों के लिए कौशल, आत्मविश्वास, आजीविका उन्मुख सोच और सामाजिक सम्मान की दिशा में समर्थन।" data-en="Support for women and young girls through skills, confidence, livelihood orientation and social dignity."></p>
+          <div class="program-metrics">
+            <div>
+              <strong data-hi="Skills" data-en="Skills"></strong>
+              <span data-hi="स्वावलंबन की नींव" data-en="Foundation for independence"></span>
+            </div>
+            <div>
+              <strong data-hi="Dignity" data-en="Dignity"></strong>
+              <span data-hi="सम्मानजनक अवसर" data-en="Respectful opportunities"></span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="donate.html" data-hi="महिला पहल को समर्थन" data-en="Support women-focused work"></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. GAUSEVA -->
+      <article class="program-card">
+        <img src="assets/initiatives/gauseva.png" alt="Gauseva">
+        <div class="body">
+          <span class="program-tag" data-hi="गौसेवा" data-en="Cow Care"></span>
+          <h3 data-hi="गौसंरक्षण एवं सेवा" data-en="Cow Protection & Care"></h3>
+          <p data-hi="बीमार, घायल या असहाय गौवंश के लिए भोजन, देखभाल और करुणा-आधारित सहयोग उपलब्ध कराने का प्रयास।" data-en="An effort to provide feed, care and compassion-led support to ill, injured or helpless cows."></p>
+          <div class="program-metrics">
+            <div>
+              <strong data-hi="Feed" data-en="Feed"></strong>
+              <span data-hi="चारा और नियमित देखभाल" data-en="Feed and regular care"></span>
+            </div>
+            <div>
+              <strong data-hi="Protection" data-en="Protection"></strong>
+              <span data-hi="जीवन और कल्याण की रक्षा" data-en="Protecting life and wellbeing"></span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="donate.html" data-hi="गौसेवा में सहयोग" data-en="Support cow care"></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. AMBULANCE -->
+      <article class="program-card">
+        <img src="assets/initiatives/ambulance.png" alt="Ambulance">
+        <div class="body">
+          <span class="program-tag" data-hi="आपातकालीन सहायता" data-en="Emergency Support"></span>
+          <h3 data-hi="निःशुल्क एम्बुलेंस सहायता" data-en="Free Ambulance Assistance"></h3>
+          <p data-hi="गंभीर परिस्थितियों में रोगियों और परिवारों को समय पर परिवहन सहायता और मानवीय सहयोग देने की पहल।" data-en="An initiative to offer timely transport assistance and humane support to patients and families in critical situations."></p>
+          <div class="program-metrics">
+            <div>
+              <strong data-hi="Rapid" data-en="Rapid"></strong>
+              <span data-hi="आपातकालीन प्रतिक्रिया" data-en="Emergency response"></span>
+            </div>
+            <div>
+              <strong data-hi="Support" data-en="Support"></strong>
+              <span data-hi="परिवारों के लिए राहत" data-en="Relief for families"></span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact.html" data-hi="आपातकालीन संपर्क" data-en="Emergency contact"></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. OLD AGE -->
+      <article class="program-card">
+        <img src="assets/initiatives/oldage.png" alt="Elder Care">
+        <div class="body">
+          <span class="program-tag" data-hi="वृद्धजन" data-en="Elder Care"></span>
+          <h3 data-hi="वृद्धजन सम्मान सेवा" data-en="Elder Dignity Support"></h3>
+          <p data-hi="वृद्धजनों के सम्मान, संवेदना और आवश्यक सहयोग की दिशा में सामुदायिक सहारा उपलब्ध कराने का प्रयास।" data-en="An effort to provide community support with dignity, care and sensitivity for elderly citizens."></p>
+          <div class="program-metrics">
+            <div>
+              <strong data-hi="Care" data-en="Care"></strong>
+              <span data-hi="सम्मानजनक सहयोग" data-en="Dignified support"></span>
+            </div>
+            <div>
+              <strong data-hi="Presence" data-en="Presence"></strong>
+              <span data-hi="अकेलेपन में सहारा" data-en="Support against isolation"></span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact.html" data-hi="जानकारी साझा करें" data-en="Share a case"></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. SKILL -->
       <article class="program-card">
         <img src="assets/initiatives/skill.png" alt="Skill Development">
         <div class="body">
@@ -488,7 +522,14 @@
   <!-- DETAILED SHIKSHA SARATHI SECTION BELOW GRID -->
   <section class="section initiative-detail detail-toggle-content" id="shikshaDetailSection">
     <div class="wrap">
+      <div class="detail-divider"></div>
       <h2 class="initiative-section-heading" data-hi="शिक्षा सारथी — कोई भी बच्चा केवल अध्ययन सामग्री के अभाव में स्कूल न छोड़े" data-en="Shiksha Sarathi — No child should leave school due to lack of basic learning resources"></h2>
+
+      <div class="detail-actions">
+        <a class="btn btn-primary" href="https://razorpay.me/@basindia" target="_blank" rel="noopener" data-hi="अभी दान करें" data-en="Donate Now"></a>
+        <button type="button" class="btn btn-outline toggle-readmore" data-target="shikshaDetailSection"></button>
+      </div>
+
       <div class="initiative-feature">
         <div class="initiative-feature-grid">
           <div class="initiative-feature-media">
@@ -600,7 +641,14 @@
   <!-- DETAILED HERITAGE SECTION BELOW GRID -->
   <section class="section initiative-detail detail-toggle-content" id="heritageDetailSection">
     <div class="wrap">
+      <div class="detail-divider"></div>
       <h2 class="initiative-section-heading" data-hi="धरोहर संरक्षण — स्थानीय इतिहास, संस्कृति और विरासत को सुरक्षित रखने की संगठित पहल" data-en="Heritage Conservation — A structured initiative to preserve local history, culture and heritage"></h2>
+
+      <div class="detail-actions">
+        <a class="btn btn-primary" href="https://razorpay.me/@basindia" target="_blank" rel="noopener" data-hi="अभी दान करें" data-en="Donate Now"></a>
+        <button type="button" class="btn btn-outline toggle-readmore" data-target="heritageDetailSection"></button>
+      </div>
+
       <div class="initiative-feature">
         <div class="initiative-feature-grid">
           <div class="initiative-feature-media">
@@ -721,48 +769,58 @@
         btn.textContent = isOpen ? labels[lang].close : labels[lang].open;
       }
 
+      function getButtonsForTarget(targetId){
+        return document.querySelectorAll('.toggle-readmore[data-target="' + targetId + '"]');
+      }
+
+      function updateButtonsForTarget(targetId, isOpen){
+        getButtonsForTarget(targetId).forEach((btn)=>{
+          setButtonLabel(btn, isOpen);
+        });
+      }
+
       function closeOtherDetailSections(currentId){
         document.querySelectorAll('.detail-toggle-content').forEach((section)=>{
           if(section.id !== currentId){
             section.classList.remove('open');
-          }
-        });
-
-        document.querySelectorAll('.toggle-readmore').forEach((btn)=>{
-          const targetId = btn.getAttribute('data-target');
-          if(targetId !== currentId){
-            setButtonLabel(btn, false);
+            updateButtonsForTarget(section.id, false);
           }
         });
       }
 
+      function toggleSection(targetId){
+        const target = document.getElementById(targetId);
+        if(!target) return;
+
+        const wasOpen = target.classList.contains('open');
+
+        closeOtherDetailSections(targetId);
+
+        if(wasOpen){
+          target.classList.remove('open');
+          updateButtonsForTarget(targetId, false);
+          return;
+        }
+
+        target.classList.add('open');
+        updateButtonsForTarget(targetId, true);
+
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 120);
+      }
+
       function initReadMoreToggles(){
         const buttons = document.querySelectorAll('.toggle-readmore');
+
         buttons.forEach((btn)=>{
           const targetId = btn.getAttribute('data-target');
           const target = document.getElementById(targetId);
-          if(!target) return;
-
-          const isOpen = target.classList.contains('open');
+          const isOpen = target && target.classList.contains('open');
           setButtonLabel(btn, isOpen);
 
           btn.addEventListener('click', function(){
-            const wasOpen = target.classList.contains('open');
-
-            closeOtherDetailSections(targetId);
-
-            if(wasOpen){
-              target.classList.remove('open');
-              setButtonLabel(btn, false);
-              return;
-            }
-
-            target.classList.add('open');
-            setButtonLabel(btn, true);
-
-            setTimeout(() => {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 120);
+            toggleSection(targetId);
           });
         });
       }
