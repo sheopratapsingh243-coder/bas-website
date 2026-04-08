@@ -69,7 +69,7 @@
     line-height: 1.6;
   }
 
-  /* SHIKSHA SARATHI DETAIL SECTION */
+  /* DETAIL SECTIONS */
   .initiative-detail{
     padding-top: 8px;
   }
@@ -81,34 +81,42 @@
     box-shadow: var(--shadow);
     overflow: hidden;
   }
-    
-  /* IMAGE TOP, CONTENT BELOW */
-.initiative-feature-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-}
 
-.initiative-feature-media{
-  background: #f8fafc;
-  line-height: 0;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .initiative-feature-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-.initiative-feature-media img{
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 16px;
-}
+  .initiative-feature-media{
+    background: #f8fafc;
+    line-height: 0;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .initiative-feature-media img{
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 16px;
+  }
+
+  .initiative-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 28px 22px;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
   .initiative-feature-body{
-    padding: 28px;
+    padding: 0 28px 28px;
   }
 
   .initiative-kicker{
@@ -166,7 +174,8 @@
     color: var(--muted);
   }
 
-  .initiative-box ul{
+  .initiative-box ul,
+  .initiative-box ol{
     margin: 0;
     padding-left: 18px;
   }
@@ -231,6 +240,24 @@
     color: var(--muted);
   }
 
+  .detail-toggle-content{
+    display: none;
+    animation: fadeBlock .28s ease;
+  }
+
+  .detail-toggle-content.open{
+    display: block;
+  }
+
+  .toggle-readmore{
+    cursor: pointer;
+  }
+
+  @keyframes fadeBlock{
+    from{opacity:0; transform:translateY(8px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
   @media (max-width: 900px){
     .hero h1{
       font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
@@ -250,8 +277,12 @@
       height: clamp(190px, 52vw, 280px);
     }
 
+    .initiative-actions{
+      padding: 0 20px 18px;
+    }
+
     .initiative-feature-body{
-      padding: 20px;
+      padding: 0 20px 20px;
     }
 
     .initiative-blocks{
@@ -277,7 +308,7 @@
   </section>
 
   <!-- DETAILED SHIKSHA SARATHI SECTION JUST BELOW HERO -->
-  <section class="section initiative-detail">
+  <section class="section initiative-detail" id="shiksha-sarathi-detail">
     <div class="wrap">
       <span class="kicker" data-hi="शिक्षा सारथी अभियान" data-en="Shiksha Sarathi Campaign"></span>
       <div class="initiative-feature">
@@ -286,7 +317,12 @@
             <img src="assets/initiatives/shiksha-sarathi.png" alt="Shiksha Sarathi Detailed Section">
           </div>
 
-          <div class="initiative-feature-body">
+          <div class="initiative-actions">
+            <a class="btn btn-primary" href="https://razorpay.me/@basindia" target="_blank" rel="noopener" data-hi="अभी दान करें" data-en="Donate Now"></a>
+            <button type="button" class="btn btn-outline toggle-readmore" data-target="shikshaDetails"></button>
+          </div>
+
+          <div class="initiative-feature-body detail-toggle-content" id="shikshaDetails">
             <span class="initiative-kicker" data-hi="📚 प्रमुख पहल" data-en="📚 Flagship Initiative"></span>
             <h2 data-hi="शिक्षा सारथी — कोई भी बच्चा केवल अध्ययन सामग्री के अभाव में स्कूल न छोड़े" data-en="Shiksha Sarathi — No child should leave school due to lack of basic learning resources"></h2>
             <p class="initiative-lead" data-hi="“शिक्षा सारथी” हमारा प्रमुख कार्यक्रम है, जिसका उद्देश्य आर्थिक रूप से कमजोर परिवारों के बच्चों को अध्ययन सामग्री, स्कूल आवश्यकताएँ और शैक्षिक सहयोग देकर उन्हें शिक्षा से जोड़े रखना है।" data-en="“Shiksha Sarathi” is our flagship programme with a simple but powerful vision: no child should drop out of school because they lack basic learning resources, school essentials and academic support."></p>
@@ -334,32 +370,26 @@
               <div class="support-grid">
                 <div class="support-item">
                   <strong data-hi="1 बच्चा" data-en="1 Child"></strong>
-                    
                   <span data-hi="₹2500 – ₹3000" data-en="₹2500 – ₹3000"></span>
                 </div>
                 <div class="support-item">
                   <strong data-hi="5 बच्चे" data-en="5 Children"></strong>
-                    
                   <span data-hi="₹12,500 – ₹15,000" data-en="₹12,500 – ₹15,000"></span>
                 </div>
                 <div class="support-item">
                   <strong data-hi="10 बच्चे" data-en="10 Children"></strong>
-                    
                   <span data-hi="₹25,000 – ₹30,000" data-en="₹25,000 – ₹30,000"></span>
                 </div>
                 <div class="support-item">
                   <strong data-hi="25 बच्चे" data-en="25 Children"></strong>
-                    
                   <span data-hi="₹62,500 – ₹75,000" data-en="₹62,500 – ₹75,000"></span>
                 </div>
                 <div class="support-item">
                   <strong data-hi="50 बच्चे" data-en="50 Children"></strong>
-                    
                   <span data-hi="₹1,25,000 – ₹1,50,000" data-en="₹1,25,000 – ₹1,50,000"></span>
                 </div>
                 <div class="support-item">
                   <strong data-hi="100 बच्चे" data-en="100 Children"></strong>
-                    
                   <span data-hi="₹2,50,000 – ₹3,00,000" data-en="₹2,50,000 – ₹3,00,000"></span>
                 </div>
               </div>
@@ -387,12 +417,94 @@
               </div>
             </div>
 
-            <div class="initiative-cta">
-              <a class="btn btn-primary" href="https://razorpay.me/@basindia" target="_blank" rel="noopener" data-hi="अभी दान करें" data-en="Donate Now"></a>
-              <a class="btn btn-outline" href="donate.html" data-hi="दान पृष्ठ देखें" data-en="View Donate Page"></a>
+            <p class="initiative-note" data-hi="आप अपनी इच्छा के अनुसार एक बच्चे से लेकर अनेक बच्चों तक का सहयोग चुन सकते हैं। आपका योगदान केवल सामग्री नहीं देता, बल्कि एक बच्चे को स्कूल से जोड़े रखने की वास्तविक संभावना भी देता है।" data-en="You may choose to support one child or many. Your contribution does not just provide materials—it helps keep a child connected to school, continuity and hope."></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERITAGE CONSERVATION SECTION ADDED BELOW SHIKSHA SARATHI -->
+  <section class="section initiative-detail" id="heritage-conservation-detail">
+    <div class="wrap">
+      <span class="kicker" data-hi="धरोहर संरक्षण कार्यक्रम" data-en="Heritage Conservation Programme"></span>
+      <div class="initiative-feature">
+        <div class="initiative-feature-grid">
+          <div class="initiative-feature-media">
+            <img src="assets/initiatives/heritage.png" alt="Heritage Conservation Detailed Section">
+          </div>
+
+          <div class="initiative-actions">
+            <a class="btn btn-primary" href="https://razorpay.me/@basindia" target="_blank" rel="noopener" data-hi="अभी दान करें" data-en="Donate Now"></a>
+            <button type="button" class="btn btn-outline toggle-readmore" data-target="heritageDetails"></button>
+          </div>
+
+          <div class="initiative-feature-body detail-toggle-content" id="heritageDetails">
+            <span class="initiative-kicker" data-hi="🏛️ सांस्कृतिक पहल" data-en="🏛️ Cultural Initiative"></span>
+            <h2 data-hi="धरोहर संरक्षण — स्थानीय इतिहास, संस्कृति और विरासत को सुरक्षित रखने की संगठित पहल" data-en="Heritage Conservation — A structured initiative to preserve local history, culture and heritage"></h2>
+            <p class="initiative-lead" data-hi="यह कार्यक्रम स्थानीय स्तर पर प्राचीन और महत्त्वपूर्ण धरोहरों की पहचान, संरक्षण, मरम्मत, सामुदायिक सहभागिता और सम्मानजनक पुनर्स्थापन पर केंद्रित है, ताकि नई पीढ़ी अपनी जड़ों, इतिहास और सांस्कृतिक पहचान से जुड़ी रह सके।" data-en="This programme focuses on identifying, protecting, restoring and respectfully reviving important local heritage assets so that younger generations remain connected to their roots, history and cultural identity."></p>
+
+            <div class="initiative-blocks">
+              <div class="initiative-box">
+                <h3 data-hi="🏰 हम किन धरोहरों पर कार्य करते हैं" data-en="🏰 What We Conserve"></h3>
+                <ul>
+                  <li data-hi="पुराने मंदिर" data-en="Ancient temples"></li>
+                  <li data-hi="किले और दुर्ग संरचनाएँ" data-en="Forts and fortified structures"></li>
+                  <li data-hi="कुएँ एवं बावलियाँ" data-en="Traditional wells and stepwells"></li>
+                  <li data-hi="ऐतिहासिक भवन" data-en="Historical buildings"></li>
+                  <li data-hi="पारंपरिक और सांस्कृतिक महत्व की स्थानीय संरचनाएँ" data-en="Traditional and culturally important local structures"></li>
+                </ul>
+              </div>
+
+              <div class="initiative-box">
+                <h3 data-hi="🌍 कार्यक्रम का उद्देश्य" data-en="🌍 Programme Objective"></h3>
+                <p data-hi="स्थानीय इतिहास, संस्कृति और सामुदायिक स्मृति को संरक्षित करना, समाज में विरासत के प्रति सम्मान बढ़ाना तथा स्थानीय धरोहरों को सुरक्षित कर भविष्य की पीढ़ियों तक पहुँचाना।" data-en="To preserve local history, culture and collective memory, strengthen social respect for heritage, and pass valuable heritage assets on to future generations."></p>
+              </div>
             </div>
 
-            <p class="initiative-note" data-hi="आप अपनी इच्छा के अनुसार एक बच्चे से लेकर अनेक बच्चों तक का सहयोग चुन सकते हैं। आपका योगदान केवल सामग्री नहीं देता, बल्कि एक बच्चे को स्कूल से जोड़े रखने की वास्तविक संभावना भी देता है।" data-en="You may choose to support one child or many. Your contribution does not just provide materials—it helps keep a child connected to school, continuity and hope."></p>
+            <div class="initiative-box" style="margin-top:16px;">
+              <h3 data-hi="📋 हम यह कार्य कैसे करते हैं — चरणबद्ध प्रक्रिया" data-en="📋 How We Work — Step-by-Step Process"></h3>
+              <ol>
+                <li data-hi="स्थानीय स्तर पर धरोहरों का सर्वे कर उनकी पहचान की जाती है।" data-en="Heritage sites are surveyed and identified at the local level."></li>
+                <li data-hi="प्रत्येक धरोहर के सामाजिक, ऐतिहासिक और सांस्कृतिक प्रभाव, मूल्य और महत्व का अध्ययन किया जाता है।" data-en="Its social, historical and cultural value, impact and significance are studied."></li>
+                <li data-hi="चिन्हित या सूचीबद्ध धरोहरों को उनकी आयु, सामाजिक प्रभाव, आवश्यकता तथा प्रस्तावित लागत बनाम उपलब्ध धनराशि के आधार पर प्राथमिकता दी जाती है।" data-en="Identified or listed sites are prioritized based on age, social impact, urgency, and proposed cost versus available funds."></li>
+                <li data-hi="स्वीकृत परियोजना के अनुसार आवश्यक सामग्री एवं सेवाओं की खरीद/प्रोक्योरमेंट की जाती है।" data-en="Required materials and services are procured as per the approved project plan."></li>
+                <li data-hi="चल रहे संरक्षण या निर्माण कार्यों की उचित देखरेख ऑब्जर्विंग कमेटी द्वारा की जाती है।" data-en="Ongoing conservation or restoration work is properly supervised by an observing committee."></li>
+                <li data-hi="सभी चल रही परियोजनाओं की नियमित प्रगति रिपोर्ट President को प्रस्तुत की जाती है।" data-en="Regular progress reports of all ongoing projects are submitted to the President."></li>
+                <li data-hi="जो भी परियोजना पूर्ण होती है उसकी अंतिम रिपोर्ट President और donors को साझा की जाती है।" data-en="Final reports of completed projects are shared with the President and donors."></li>
+                <li data-hi="पूर्ण परियोजनाओं के उद्घाटन हेतु तिथि society की decision-making committee द्वारा निर्धारित की जाती है, तथा chief guest और donors को आमंत्रण भेजा जाता है।" data-en="For completed projects, the inauguration date is decided by the society’s decision-making committee, and invitations are sent to the chief guest and donors."></li>
+                <li data-hi="उद्घाटन समारोह में उपस्थित donors का सम्मान chief guest द्वारा कराया जाता है।" data-en="Donors attending the inauguration ceremony are honored by the chief guest."></li>
+              </ol>
+            </div>
+
+            <div class="initiative-blocks" style="margin-top:16px;">
+              <div class="initiative-box">
+                <h3 data-hi="🧭 प्राथमिकता निर्धारण के आधार" data-en="🧭 Basis of Prioritization"></h3>
+                <ul>
+                  <li data-hi="धरोहर की प्राचीनता" data-en="Age of the heritage structure"></li>
+                  <li data-hi="उसका सामाजिक एवं सांस्कृतिक प्रभाव" data-en="Its social and cultural impact"></li>
+                  <li data-hi="तत्काल संरक्षण की आवश्यकता" data-en="Urgency of conservation"></li>
+                  <li data-hi="प्रस्तावित लागत बनाम उपलब्ध धन" data-en="Proposed cost versus available funds"></li>
+                </ul>
+              </div>
+
+              <div class="initiative-box">
+                <h3 data-hi="🤝 सामुदायिक एवं दानदाता सहभागिता" data-en="🤝 Community & Donor Participation"></h3>
+                <ul>
+                  <li data-hi="स्थानीय लोगों की सहभागिता से सर्वे और संरक्षण" data-en="Survey and conservation with local participation"></li>
+                  <li data-hi="कार्य प्रगति की जिम्मेदार रिपोर्टिंग" data-en="Responsible reporting of work progress"></li>
+                  <li data-hi="पूर्ण परियोजनाओं की साझा उपलब्धि" data-en="Shared celebration of completed projects"></li>
+                  <li data-hi="दानदाताओं का सार्वजनिक सम्मान" data-en="Public recognition of donors"></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="initiative-box" style="margin-top:16px;">
+              <h3 data-hi="🔍 हमारा स्थानीय दृष्टिकोण" data-en="🔍 Our Local Approach"></h3>
+              <p data-hi="इस कार्यक्रम के अंतर्गत सभी कार्य स्थानीय स्तर पर धरोहरों के सर्वे, समुदाय संवाद, प्राथमिकता निर्धारण, पारदर्शी कार्यान्वयन और उत्तरदायी रिपोर्टिंग के माध्यम से किए जाते हैं।" data-en="All work under this programme is carried out through local-level heritage surveys, community dialogue, clear prioritization, transparent implementation and accountable reporting."></p>
+            </div>
+
+            <p class="initiative-note" data-hi="धरोहर संरक्षण केवल इमारत बचाने का कार्य नहीं है; यह स्मृति, पहचान, इतिहास और सामुदायिक गौरव को सुरक्षित रखने की प्रक्रिया है। आपका सहयोग किसी धरोहर को पुनर्जीवित कर सकता है।" data-en="Heritage conservation is not only about saving structures; it is about preserving memory, identity, history and collective pride. Your support can help revive an important heritage asset."></p>
           </div>
         </div>
       </div>
@@ -588,6 +700,69 @@
   <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
   <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
   <div id="footer"></div>
+
   <script src="assets/js/main.js"></script>
+  <script>
+    (function(){
+      function currentLang(){
+        return localStorage.getItem('bas_lang') || 'hi';
+      }
+
+      function setButtonLabel(btn, isOpen){
+        const lang = currentLang();
+        const labels = {
+          hi: { open: 'पूरा विवरण पढ़ें', close: 'विवरण बंद करें' },
+          en: { open: 'Read More', close: 'Hide Details' }
+        };
+        btn.textContent = isOpen ? labels[lang].close : labels[lang].open;
+      }
+
+      function initReadMoreToggles(){
+        const buttons = document.querySelectorAll('.toggle-readmore');
+        buttons.forEach((btn)=>{
+          const targetId = btn.getAttribute('data-target');
+          const target = document.getElementById(targetId);
+          if(!target) return;
+
+          const isOpen = target.classList.contains('open');
+          setButtonLabel(btn, isOpen);
+
+          btn.addEventListener('click', function(){
+            const opened = target.classList.toggle('open');
+            setButtonLabel(btn, opened);
+
+            if(opened){
+              setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 120);
+            }
+          });
+        });
+      }
+
+      function refreshToggleTexts(){
+        document.querySelectorAll('.toggle-readmore').forEach((btn)=>{
+          const targetId = btn.getAttribute('data-target');
+          const target = document.getElementById(targetId);
+          const isOpen = target && target.classList.contains('open');
+          setButtonLabel(btn, isOpen);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function(){
+        initReadMoreToggles();
+        refreshToggleTexts();
+
+        const langToggle = document.getElementById('langToggle');
+        if(langToggle){
+          langToggle.addEventListener('click', function(){
+            setTimeout(refreshToggleTexts, 80);
+          });
+        }
+      });
+
+      window.addEventListener('storage', refreshToggleTexts);
+    })();
+  </script>
 </body>
 </html>
