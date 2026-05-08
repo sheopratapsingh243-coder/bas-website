@@ -277,6 +277,114 @@
     to{opacity:1; transform:translateY(0);}
   }
 
+    /* FULL SCREEN IMAGE VIEWER FOR PROGRAM GRID */
+.program-card > img{
+  cursor: zoom-in;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.program-card > img:hover{
+  transform: scale(1.02);
+  filter: brightness(.96);
+}
+
+.image-lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(2, 6, 23, .88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.image-lightbox.open{
+  display: flex;
+}
+
+.image-lightbox-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-lightbox img{
+  max-width: 96vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+  background: #fff;
+}
+
+.image-lightbox-close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0,0,0,.28);
+}
+
+.image-lightbox-close:hover{
+  background: #f1f5f9;
+}
+
+.image-lightbox-caption{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  max-width: 90vw;
+  background: rgba(255,255,255,.92);
+  color: #0f172a;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0,0,0,.18);
+}
+
+body.lightbox-lock{
+  overflow: hidden;
+}
+
+@media (max-width: 700px){
+  .image-lightbox{
+    padding: 12px;
+  }
+
+  .image-lightbox img{
+    max-width: 96vw;
+    max-height: 84vh;
+    border-radius: 14px;
+  }
+
+  .image-lightbox-close{
+    top: 10px;
+    right: 10px;
+  }
+
+  .image-lightbox-caption{
+    bottom: 12px;
+    font-size: .78rem;
+    border-radius: 14px;
+  }
+}
   @media (max-width: 900px){
     .hero h1{
       font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
@@ -1631,6 +1739,14 @@
     </div>
   </section>
 
+  <!-- FULL SCREEN PROGRAM IMAGE VIEWER -->
+<div class="image-lightbox" id="programImageLightbox" aria-hidden="true">
+  <div class="image-lightbox-inner">
+    <button type="button" class="image-lightbox-close" id="programImageClose" aria-label="Close image">&times;</button>
+    <img id="programImagePreview" src="" alt="">
+    <div class="image-lightbox-caption" id="programImageCaption"></div>
+  </div>
+</div>
   <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
   <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
   <div id="footer"></div>
@@ -1731,5 +1847,77 @@
       window.addEventListener('storage', refreshToggleTexts);
     })();
   </script>
+
+  <script>
+  (function(){
+    function initProgramImageLightbox(){
+      const lightbox = document.getElementById('programImageLightbox');
+      const previewImg = document.getElementById('programImagePreview');
+      const caption = document.getElementById('programImageCaption');
+      const closeBtn = document.getElementById('programImageClose');
+
+      if(!lightbox || !previewImg || !caption || !closeBtn) return;
+
+      const gridImages = document.querySelectorAll('.program-grid .program-card > img');
+
+      function openLightbox(img){
+        previewImg.src = img.getAttribute('src');
+        previewImg.alt = img.getAttribute('alt') || 'Program image';
+        caption.textContent = img.getAttribute('alt') || '';
+
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-lock');
+      }
+
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-lock');
+
+        setTimeout(function(){
+          if(!lightbox.classList.contains('open')){
+            previewImg.src = '';
+            previewImg.alt = '';
+            caption.textContent = '';
+          }
+        }, 200);
+      }
+
+      gridImages.forEach(function(img){
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.setAttribute('title', 'Click to view full image');
+
+        img.addEventListener('click', function(){
+          openLightbox(img);
+        });
+
+        img.addEventListener('keydown', function(e){
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            openLightbox(img);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e){
+        if(e.target === lightbox || e.target.classList.contains('image-lightbox-inner')){
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && lightbox.classList.contains('open')){
+          closeLightbox();
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initProgramImageLightbox);
+  })();
+</script>
 </body>
 </html>
