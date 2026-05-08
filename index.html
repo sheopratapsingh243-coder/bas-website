@@ -115,13 +115,23 @@
     box-shadow: 0 24px 60px rgba(15, 23, 42, .16);
   }
 
-  .initiative-shell img{
-    width: 100%;
-    height: 520px;
-    object-fit: contain;
-    background: #f8fafc;
-    display: block;
-  }
+  .initiative-shell{
+  position: relative;
+  min-height: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .16);
+  cursor: pointer;
+}
+
+.initiative-shell img{
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 
   /* OVERLAP CONTENT REMOVED */
   .initiative-overlay{
@@ -238,8 +248,10 @@
     }
 
     .initiative-shell img{
-      height: 430px;
-    }
+  height: 430px;
+  object-fit: cover;
+  object-position: center;
+}
 
     .slider-arrow{
       width: 44px;
@@ -325,67 +337,69 @@
         <button class="slider-arrow prev" id="initiativePrev" type="button" aria-label="Previous slide">&#10094;</button>
         <button class="slider-arrow next" id="initiativeNext" type="button" aria-label="Next slide">&#10095;</button>
 
-        <div class="initiative-slide active">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/shikshasarathi.png" alt="Shiksha Sarathi">
-          </article>
-        </div>
+       <div class="initiative-slide active" data-detail-url="initiatives.html#shikshaDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/shikshasarathi.png" alt="Shiksha Sarathi">
+  </article>
+</div>
 
-        <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/heritage-conservation.png" alt="Heritage">
-          </article>
-        </div>
+<div class="initiative-slide" data-detail-url="initiatives.html#heritageDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/heritage-conservation.png" alt="Heritage Conservation">
+  </article>
+</div>
 
-        <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/ambulance-seva.png" alt="Emergency Ambulance">
-          </article>
-        </div>
+<div class="initiative-slide" data-detail-url="initiatives.html#ambulanceDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/ambulance-seva.png" alt="Jeevan Rakshak Ambulance Seva">
+  </article>
+</div>
 
-        <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/gau-seva.png" alt="Cow Service">
-          </article>
-        </div>
+<div class="initiative-slide" data-detail-url="initiatives.html#gausevaDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/gau-seva.png" alt="Gau Seva">
+  </article>
+</div>
 
-        <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/women-empowerment.png" alt="Women Empowerment">
-          </article>
-        </div>
+<div class="initiative-slide" data-detail-url="initiatives.html#womenDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/women-empowerment.png" alt="Women Empowerment">
+  </article>
+</div>
 
-        <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/elder-dignity.png" alt="Elder Dignity">
-          </article>
-        </div>
-        
-         <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/youth-skills.png" alt="Youth Skills">
-          </article>
-        </div>
+<div class="initiative-slide" data-detail-url="initiatives.html#elderDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/elder-dignity.png" alt="Elder Dignity Support">
+  </article>
+</div>
 
-        <div class="initiative-slide">
-          <article class="initiative-shell">
-            <img src="assets/initiatives/enviromental-conservation.png" alt="Enviromental Conservation">
-          </article>
-        </div>
+<div class="initiative-slide" data-detail-url="initiatives.html#skillDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/youth-skills.png" alt="Youth Skills">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#environmentDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/enviromental-conservation.png" alt="Environmental Conservation">
+  </article>
+</div>
 
         <div class="slider-dots" id="initiativeDots">
-          <span class="slider-dot active" data-slide="0"></span>
-          <span class="slider-dot" data-slide="1"></span>
-          <span class="slider-dot" data-slide="2"></span>
-          <span class="slider-dot" data-slide="3"></span>
-          <span class="slider-dot" data-slide="4"></span>
-          <span class="slider-dot" data-slide="5"></span>
-        </div>
+  <span class="slider-dot active" data-slide="0"></span>
+  <span class="slider-dot" data-slide="1"></span>
+  <span class="slider-dot" data-slide="2"></span>
+  <span class="slider-dot" data-slide="3"></span>
+  <span class="slider-dot" data-slide="4"></span>
+  <span class="slider-dot" data-slide="5"></span>
+  <span class="slider-dot" data-slide="6"></span>
+  <span class="slider-dot" data-slide="7"></span>
+</div>
 
         <div class="slider-cta">
-          <a href="donate.html" class="btn btn-primary" data-hi="Donate Now" data-en="Donate Now"></a>
-          <a href="initiatives.html" class="btn btn-secondary" data-hi="Read More" data-en="Read More"></a>
-        </div>
+  <a href="donate.html" class="btn btn-primary" data-hi="Donate Now" data-en="Donate Now"></a>
+  <a href="initiatives.html#shikshaDetailSection" id="sliderReadMoreBtn" class="btn btn-secondary" data-hi="Read More" data-en="Read More"></a>
+</div>
       </div>
     </div>
   </section>
@@ -435,78 +449,111 @@
   <div id="footer"></div>
 
   <script>
-    (function(){
-      let currentSlide = 0;
-      let sliderTimer;
+  (function(){
+    let currentSlide = 0;
+    let sliderTimer;
 
-      function initInitiativesSlider(){
-        const slides = document.querySelectorAll('.initiative-slide');
-        const dots = document.querySelectorAll('.slider-dot');
-        const prevBtn = document.getElementById('initiativePrev');
-        const nextBtn = document.getElementById('initiativeNext');
+    function initInitiativesSlider(){
+      const slides = document.querySelectorAll('.initiative-slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      const prevBtn = document.getElementById('initiativePrev');
+      const nextBtn = document.getElementById('initiativeNext');
+      const readMoreBtn = document.getElementById('sliderReadMoreBtn');
 
-        if(!slides.length) return;
+      if(!slides.length) return;
 
-        function showSlide(index){
-          slides.forEach((slide, i)=>{
-            slide.classList.toggle('active', i === index);
-          });
-
-          dots.forEach((dot, i)=>{
-            dot.classList.toggle('active', i === index);
-          });
-
-          currentSlide = index;
-        }
-
-        function nextSlide(){
-          const next = (currentSlide + 1) % slides.length;
-          showSlide(next);
-        }
-
-        function prevSlide(){
-          const prev = (currentSlide - 1 + slides.length) % slides.length;
-          showSlide(prev);
-        }
-
-        function startAuto(){
-          stopAuto();
-          sliderTimer = setInterval(nextSlide, 5000);
-        }
-
-        function stopAuto(){
-          if(sliderTimer) clearInterval(sliderTimer);
-        }
-
-        if(nextBtn){
-          nextBtn.addEventListener('click', ()=>{
-            nextSlide();
-            startAuto();
-          });
-        }
-
-        if(prevBtn){
-          prevBtn.addEventListener('click', ()=>{
-            prevSlide();
-            startAuto();
-          });
-        }
-
-        dots.forEach((dot, i)=>{
-          dot.addEventListener('click', ()=>{
-            showSlide(i);
-            startAuto();
-          });
-        });
-
-        showSlide(0);
-        startAuto();
+      function getSlideUrl(index){
+        const slide = slides[index];
+        return slide ? slide.getAttribute('data-detail-url') : 'initiatives.html';
       }
 
-      document.addEventListener('DOMContentLoaded', initInitiativesSlider);
-    })();
-  </script>
+      function updateReadMoreLink(index){
+        if(readMoreBtn){
+          readMoreBtn.href = getSlideUrl(index);
+        }
+      }
 
+      function showSlide(index){
+        slides.forEach((slide, i)=>{
+          slide.classList.toggle('active', i === index);
+        });
+
+        dots.forEach((dot, i)=>{
+          dot.classList.toggle('active', i === index);
+        });
+
+        currentSlide = index;
+        updateReadMoreLink(index);
+      }
+
+      function nextSlide(){
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function prevSlide(){
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+      }
+
+      function startAuto(){
+        stopAuto();
+        sliderTimer = setInterval(nextSlide, 5000);
+      }
+
+      function stopAuto(){
+        if(sliderTimer) clearInterval(sliderTimer);
+      }
+
+      slides.forEach((slide, i)=>{
+        const shell = slide.querySelector('.initiative-shell');
+
+        if(shell){
+          shell.setAttribute('tabindex', '0');
+          shell.setAttribute('role', 'link');
+          shell.setAttribute('title', 'Open programme details');
+
+          shell.addEventListener('click', ()=>{
+            window.location.href = getSlideUrl(i);
+          });
+
+          shell.addEventListener('keydown', (e)=>{
+            if(e.key === 'Enter' || e.key === ' '){
+              e.preventDefault();
+              window.location.href = getSlideUrl(i);
+            }
+          });
+        }
+      });
+
+      if(nextBtn){
+        nextBtn.addEventListener('click', ()=>{
+          nextSlide();
+          startAuto();
+        });
+      }
+
+      if(prevBtn){
+        prevBtn.addEventListener('click', ()=>{
+          prevSlide();
+          startAuto();
+        });
+      }
+
+      dots.forEach((dot, i)=>{
+        dot.addEventListener('click', ()=>{
+          showSlide(i);
+          startAuto();
+        });
+      });
+
+      showSlide(0);
+      startAuto();
+    }
+
+    document.addEventListener('DOMContentLoaded', initInitiativesSlider);
+  })();
+</script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
