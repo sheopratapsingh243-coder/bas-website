@@ -2098,5 +2098,34 @@ body.lightbox-lock{
   document.addEventListener('DOMContentLoaded', initProgramImageLightbox);
 })();
 </script>
+
+  <script>
+  (function(){
+    function openDetailFromHash(){
+      const hash = window.location.hash;
+      if(!hash) return;
+
+      const target = document.querySelector(hash);
+      if(!target) return;
+
+      if(target.classList.contains('detail-toggle-content')){
+        target.classList.add('open');
+      }
+
+      setTimeout(function(){
+        const headerOffset = 95;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }, 250);
+    }
+
+    document.addEventListener('DOMContentLoaded', openDetailFromHash);
+    window.addEventListener('hashchange', openDetailFromHash);
+  })();
+</script>
 </body>
 </html>
