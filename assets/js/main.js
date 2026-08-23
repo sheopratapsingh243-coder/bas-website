@@ -35,8 +35,16 @@
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.getElementById('mainMenu');
     if(menuToggle && nav){
-      menuToggle.onclick = () => nav.classList.toggle('open');
-      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>nav.classList.remove('open')));
+      menuToggle.onclick = () => {
+        const open = nav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.textContent = open ? '×' : '☰';
+      };
+      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+        nav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      }));
     }
     const langToggle = document.getElementById('langToggle');
     if(langToggle){
