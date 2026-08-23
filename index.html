@@ -1,28 +1,565 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>भारत अभ्युदय संस्थान | सेवा, सम्मान और सामाजिक परिवर्तन</title>
-  <meta name="description" content="भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य, महिला सशक्तिकरण, गौसेवा, पर्यावरण और मानवीय सहायता के लिए कार्यरत पंजीकृत सामाजिक संस्था है।">
-  <meta name="theme-color" content="#073b66"><meta property="og:title" content="भारत अभ्युदय संस्थान"><meta property="og:description" content="सेवा से सम्मान, सहयोग से परिवर्तन।"><meta property="og:type" content="website"><meta property="og:url" content="https://bharatabhyudayasansthan.org/"><meta property="og:image" content="https://bharatabhyudayasansthan.org/assets/shiksha.jpg">
-  <link rel="canonical" href="https://bharatabhyudayasansthan.org/"><link rel="preload" href="assets/shiksha.jpg" as="image"><link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bharat Abhyudaya Sansthan | Service, Trust & Impact</title>
+  <meta name="description" content="Bharat Abhyudaya Sansthan is a registered NGO working for education, healthcare, women empowerment, emergency aid, cow care and heritage conservation.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+  .hero h1{
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem) !important;
+    line-height: 1.16;
+    max-width: 680px;
+    margin-bottom: 14px;
+  }
+
+  .hero p{
+    max-width: 640px;
+    font-size: .95rem;
+    line-height: 1.68;
+  }
+
+  .hero .btn-row{
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .hero .btn-row .btn{
+    min-width: 168px;
+  }
+
+  .hero .btn-primary{
+    box-shadow: 0 14px 30px rgba(11, 90, 166, .22);
+    transform: translateY(0);
+  }
+
+  .hero .btn-primary:hover{
+    transform: translateY(-1px);
+  }
+
+  .impact-band{
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+
+  .section-title{
+    letter-spacing: -.02em;
+  }
+
+  .hero-side .hero-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-image{
+    overflow: hidden;
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 22px 50px rgba(15, 23, 42, .10);
+    padding: 18px;
+  }
+
+  .hero-image img{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    object-fit: cover;
+  }
+
+  .hero-image-actions{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-image-actions .btn{
+    min-width: 180px;
+  }
+
+  .initiatives-slider.fullwidth-cinematic{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  .initiative-slide{
+    display: none;
+    animation: fadeSlide .5s ease;
+  }
+
+  .initiative-slide.active{
+    display: block;
+  }
+
+  @keyframes fadeSlide{
+    from{opacity:.35; transform:translateY(10px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+
+  .initiative-shell{
+    position: relative;
+    min-height: 520px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .16);
+  }
+
+  .initiative-shell{
+  position: relative;
+  height: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eaf4ff, #ffffff, #fff3e6);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .16);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initiative-shell img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: transparent;
+}
+
+  /* OVERLAP CONTENT REMOVED */
+  .initiative-overlay{
+    display: none !important;
+  }
+
+  .slider-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    background: rgba(255,255,255,.94);
+    color: #0f172a;
+    box-shadow: 0 12px 30px rgba(15,23,42,.18);
+  }
+
+  .slider-arrow.prev{ left: 18px; }
+  .slider-arrow.next{ right: 18px; }
+
+  .slider-dots{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px auto 0;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .slider-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: .25s ease;
+  }
+
+  .slider-dot.active{
+    width: 30px;
+    background: #0b5aa6;
+  }
+
+  .slider-cta{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin: 24px auto 0;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .slider-cta .btn{
+    min-width: 190px;
+  }
+
+  .slider-cta .btn-primary{
+    position: relative;
+    box-shadow: 0 18px 34px rgba(11,90,166,.24);
+  }
+
+  .slider-note{
+    text-align: center;
+    margin: 14px auto 0;
+    max-width: 760px;
+    padding: 0 20px;
+    font-size: .98rem;
+    line-height: 1.7;
+    color: #475569;
+  }
+
+  .cta-strip{
+    border-radius: 26px;
+    box-shadow: 0 20px 50px rgba(15,23,42,.08);
+  }
+
+  @media (max-width: 900px){
+    .hero h1{
+      font-size: clamp(1.45rem, 7vw, 1.95rem) !important;
+    }
+
+    .hero p{
+      font-size: .92rem;
+    }
+
+    .hero-image{
+      padding: 14px;
+      border-radius: 22px;
+    }
+
+    .hero-image img{
+      border-radius: 14px;
+    }
+
+    .hero-image-actions{
+      justify-content: stretch;
+    }
+
+    .hero-image-actions .btn{
+      min-width: 150px;
+      flex: 1 1 160px;
+      text-align: center;
+    }
+
+    .initiative-shell{
+  height: 430px;
+  min-height: auto;
+  border-radius: 22px;
+}
+
+.initiative-shell img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+    .slider-arrow{
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
+    }
+
+    .slider-arrow.prev{ left: 12px; }
+    .slider-arrow.next{ right: 12px; }
+  }
+  </style>
 </head>
-<body class="home-page"><a class="skip-link" href="#mainContent">मुख्य सामग्री पर जाएँ</a><div id="header"></div><div class="topbar-space"></div>
-<main id="mainContent">
-  <section class="home-hero"><div class="wrap home-hero-grid">
-    <div class="home-hero-copy"><span class="eyebrow" data-hi="पंजीकृत • पारदर्शी • जनसहभागी" data-en="Registered • Transparent • Community-led"></span><h1 data-hi="सेवा से सम्मान। सहयोग से स्थायी परिवर्तन।" data-en="Dignity through service. Lasting change through support."></h1><p data-hi="भारत अभ्युदय संस्थान जरूरतमंद परिवारों तक शिक्षा, स्वास्थ्य, आजीविका और मानवीय सहायता पहुँचाता है—सम्मान, सत्यापन और जवाबदेही के साथ।" data-en="Bharat Abhyudaya Sansthan connects underserved families with education, healthcare, livelihoods and humanitarian support—with dignity, verification and accountability."></p><div class="hero-actions"><a class="btn btn-primary" href="donate.html" data-hi="अभी सहयोग करें" data-en="Support Now"></a><a class="btn btn-light" href="initiatives.html" data-hi="हमारा काम देखें" data-en="Explore Our Work"></a></div><div class="trust-row" aria-label="Organisation credentials"><div><strong>2024</strong><span data-hi="से पंजीकृत" data-en="Registered since"></span></div><div><strong>8</strong><span data-hi="प्रमुख पहलें" data-en="Core initiatives"></span></div><div><strong>80G</strong><span data-hi="कर लाभ उपलब्ध" data-en="Tax benefit available"></span></div></div></div>
-    <div class="home-hero-visual"><img src="assets/shiksha.jpg" alt="बच्चों को शैक्षिक सामग्री प्रदान करते संस्था के कार्यकर्ता" width="1200" height="900"><div class="visual-caption"><span class="pulse-dot"></span><div><strong data-hi="शिक्षा सारथी अभियान" data-en="Shiksha Sarathi Initiative"></strong><small data-hi="हर बच्चे तक सीखने के जरूरी साधन" data-en="Essential learning resources for every child"></small></div></div></div>
-  </div><div class="wrap credibility-strip"><span data-hi="विश्वास और अनुपालन" data-en="Trust & compliance"></span><b>Society Registered</b><b>NGO Darpan</b><b>12A</b><b>80G</b><b>PAN Verified</b><a href="documents.html" data-hi="दस्तावेज़ देखें →" data-en="View documents →"></a></div></section>
+<body>
+  <div id="header"></div>
+  <div class="topbar-space"></div>
 
-  <section class="section home-programmes"><div class="wrap"><div class="section-heading-row"><div><span class="eyebrow" data-hi="हमारी प्रमुख पहलें" data-en="Our core initiatives"></span><h2 class="section-title" data-hi="आपका सहयोग, ज़मीन पर सीधा प्रभाव" data-en="Your support, translated into action"></h2></div><a class="text-link" href="initiatives.html" data-hi="सभी पहलें देखें →" data-en="View all initiatives →"></a></div><div class="impact-cards">
-    <article class="impact-card featured"><img src="assets/initiatives/shiksha-sarathi-slider.jpg" alt="शिक्षा सारथी"><div class="impact-card-body"><span>01</span><h3 data-hi="शिक्षा सारथी" data-en="Shiksha Sarathi"></h3><p data-hi="वंचित बच्चों के लिए अध्ययन सामग्री, स्कूल आवश्यकताएँ और शैक्षिक सहयोग।" data-en="Learning kits, school essentials and educational support for underserved children."></p><a href="initiatives.html#shikshaDetailSection" data-hi="विस्तार से जानें" data-en="Learn more"></a></div></article>
-    <article class="impact-card"><img src="assets/initiatives/ambulance-slider.jpg" alt="जीवन रक्षक एम्बुलेंस सेवा" loading="lazy"><div class="impact-card-body"><span>02</span><h3 data-hi="जीवन रक्षक सेवा" data-en="Jeevan Rakshak"></h3><p data-hi="ज़रूरतमंद रोगियों के लिए समय पर निःशुल्क एम्बुलेंस सहायता।" data-en="Timely ambulance assistance for patients in need."></p><a href="initiatives.html#ambulanceDetailSection" data-hi="विस्तार से जानें" data-en="Learn more"></a></div></article>
-    <article class="impact-card"><img src="assets/initiatives/women-slider.jpg" alt="महिला स्वावलंबन" loading="lazy"><div class="impact-card-body"><span>03</span><h3 data-hi="महिला स्वावलंबन" data-en="Women’s Self-Reliance"></h3><p data-hi="कौशल, आजीविका और आर्थिक आत्मनिर्भरता की दिशा में सहयोग।" data-en="Skills, livelihoods and pathways to economic independence."></p><a href="initiatives.html#womenDetailSection" data-hi="विस्तार से जानें" data-en="Learn more"></a></div></article>
-  </div></div></section>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker" data-hi="पंजीकृत • पारदर्शी • जनसेवी संस्था" data-en="Registered • Transparent • Community-focused NGO"></span>
+        <h1 data-hi="सेवा से सम्मान, सहयोग से परिवर्तन, और विश्वास से आत्मनिर्भर भारत।" data-en="Dignity through service, change through support, and a self-reliant India through trust."></h1>
+        <p data-hi="भारत अभ्युदय संस्थान शिक्षा, स्वास्थ्य सेवा, महिला सशक्तिकरण, वृद्धजन सहायता, आपातकालीन सहयोग, गौसेवा और धरोहर संरक्षण के माध्यम से समाज के वास्तविक जरूरतमंद वर्ग तक प्रभावशाली, उत्तरदायी और सम्मानजनक सहायता पहुँचाने के लिए कार्यरत है।" data-en="Bharat Abhyudaya Sansthan works to deliver impactful, accountable and dignified support to genuinely underserved communities through education, healthcare, women empowerment, elder care, emergency assistance, cow care and heritage conservation."></p>
 
-  <section class="section process-section"><div class="wrap process-grid"><div><span class="eyebrow" data-hi="जवाबदेह कार्यप्रणाली" data-en="Accountable delivery"></span><h2 class="section-title" data-hi="सहयोग से प्रभाव तक—हर चरण स्पष्ट" data-en="From support to impact—every step is clear"></h2><p class="section-sub" data-hi="हम सहायता को केवल वितरण नहीं, बल्कि आवश्यकता, सत्यापन और परिणाम से जुड़ी जिम्मेदार प्रक्रिया मानते हैं।" data-en="We see aid not as distribution alone, but as a responsible process rooted in need, verification and outcomes."></p><a class="btn btn-secondary" href="about.html" data-hi="संस्था के बारे में" data-en="About the Organisation"></a></div><ol class="process-list"><li><span>1</span><div><h3 data-hi="वास्तविक आवश्यकता की पहचान" data-en="Identify genuine need"></h3><p data-hi="स्थानीय संवाद और प्राथमिक जानकारी के आधार पर।" data-en="Through local engagement and primary information."></p></div></li><li><span>2</span><div><h3 data-hi="सत्यापन और प्राथमिकता" data-en="Verify and prioritise"></h3><p data-hi="संसाधन सबसे अधिक जरूरत वाले लाभार्थियों तक पहुँचें।" data-en="So resources reach those who need them most."></p></div></li><li><span>3</span><div><h3 data-hi="सहायता और फॉलो-अप" data-en="Deliver and follow up"></h3><p data-hi="सम्मानजनक सहायता के साथ प्रभाव का निरंतर आकलन।" data-en="Dignified delivery with continued impact review."></p></div></li></ol></div></section>
+        <div class="btn-row">
+          <a href="donate.html" class="btn btn-primary" data-hi="आज ही सहयोग करें" data-en="Make an Impact Today"></a>
+          <a href="initiatives.html" class="btn btn-secondary" data-hi="हमारी पहलें देखें" data-en="Explore Our Initiatives"></a>
+          <a href="documents.html" class="btn btn-light" data-hi="पारदर्शिता देखें" data-en="View Transparency"></a>
+        </div>
 
-  <section class="section trust-section"><div class="wrap trust-panel"><div><span class="eyebrow light" data-hi="पारदर्शिता पहले" data-en="Transparency first"></span><h2 data-hi="दान से पहले जाँचें। विश्वास के साथ जुड़ें।" data-en="Verify before you give. Partner with confidence."></h2><p data-hi="पंजीकरण, PAN, NGO Darpan, 12A, 80G और संस्था के उपनियम सार्वजनिक रूप से उपलब्ध हैं।" data-en="Registration, PAN, NGO Darpan, 12A, 80G and organisational bylaws are publicly available."></p></div><div class="trust-actions"><a class="btn btn-primary" href="documents.html" data-hi="सभी दस्तावेज़ देखें" data-en="View All Documents"></a><a class="btn btn-outline-light" href="contact.html" data-hi="हमसे बात करें" data-en="Talk to Us"></a></div></div></section>
-  <section class="section final-cta-section"><div class="wrap final-cta"><p data-hi="एक छोटा सहयोग भी किसी परिवार के लिए बड़ा बदलाव बन सकता है।" data-en="Even a small contribution can create a meaningful change for a family."></p><h2 data-hi="आज एक सार्थक बदलाव का हिस्सा बनें।" data-en="Be part of meaningful change today."></h2><div class="hero-actions"><a class="btn btn-primary" href="donate.html" data-hi="दान करें" data-en="Donate Now"></a><a class="btn btn-secondary" href="https://wa.me/918604669454" target="_blank" rel="noopener" data-hi="WhatsApp पर जुड़ें" data-en="Connect on WhatsApp"></a></div></div></section>
-</main>
-<a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank" rel="noopener" aria-label="WhatsApp पर संपर्क करें">WhatsApp</a><a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a><div id="footer"></div><script src="assets/js/main.js"></script></body></html>
+        <div class="impact-band" data-hi="हमारा लक्ष्य केवल सहायता देना नहीं, बल्कि भरोसे के साथ दीर्घकालिक परिवर्तन सुनिश्चित करना है — ताकि हर दान, हर प्रयास और हर साझेदारी का मापनीय सामाजिक प्रभाव दिखाई दे।" data-en="Our goal is not just to provide assistance, but to create measurable long-term change with trust — so every donation, every effort and every partnership produces visible social impact."></div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-panel">
+          <div class="hero-image">
+            <img src="assets/shiksha.jpg" alt="Education support">
+          </div>
+
+          <div class="hero-image-actions">
+            <a href="https://rzp.io/rzp/PfLSQ0HB" class="btn btn-primary" data-hi="Donate Now" data-en="Donate Now"></a>
+            <a href="initiatives.html" class="btn btn-secondary" data-hi="Read More" data-en="Read More"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><strong data-count="12" data-suffix="+">0</strong><span data-hi="मुख्य सेवा क्षेत्रों में कार्य" data-en="Core areas of intervention"></span></div>
+        <div class="stat"><strong data-count="169000" data-suffix="+">0</strong><span data-hi="समुदाय सहभागिता व पहुँच" data-en="Community reach & engagement"></span></div>
+        <div class="stat"><strong data-count="7" data-suffix="+">0</strong><span data-hi="सक्रिय जनसेवी अभियान" data-en="Active public service initiatives"></span></div>
+        <div class="stat"><strong data-count="100" data-suffix="%">0</strong><span data-hi="पारदर्शिता और दस्तावेज़ उपलब्धता" data-en="Transparency and document availability"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="grid-3 mission-grid">
+        <div class="card">
+          <h2 data-hi="हमारा दृष्टिकोण" data-en="Our approach"></h2>
+          <p class="section-sub" style="font-size:16px" data-hi="हम सहायता को एक सम्मानजनक प्रक्रिया मानते हैं। इसलिए ज़मीन पर काम, वास्तविक ज़रूरत की पहचान, समुदाय से संवाद और जवाबदेही हमारी कार्यशैली के मूल तत्व हैं।" data-en="We treat assistance as a dignified process. Ground-level work, identification of genuine need, community dialogue and accountability are central to our operating model."></p>
+        </div>
+        <div class="card">
+          <h2 data-hi="हमारा वचन" data-en="Our promise"></h2>
+          <p class="section-sub" style="font-size:16px" data-hi="जो भी सहयोग मिले, उसका उपयोग उद्देश्यपूर्ण, पारदर्शी और प्रभावमुखी रूप से किया जाए — यही संस्था की बुनियादी प्रतिबद्धता है।" data-en="Every contribution should be used with purpose, transparency and an outcomes-oriented mindset — that is our foundational commitment."></p>
+        </div>
+        <div class="card">
+          <h2 data-hi="क्यों महत्त्वपूर्ण" data-en="Why it matters"></h2>
+          <p class="section-sub" style="font-size:16px" data-hi="जब संस्था विश्वास, दस्तावेज़, प्रभाव और सामाजिक संवेदनशीलता को साथ लेकर चलती है, तब दानकर्ता, स्वयंसेवक और लाभार्थी — तीनों के बीच मजबूत भरोसा बनता है।" data-en="When an institution combines trust, documentation, measurable impact and social sensitivity, it builds strong confidence among donors, volunteers and beneficiaries alike."></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker" data-hi="मुख्य पहलें" data-en="Core initiatives"></span>
+      <h2 class="section-title" data-hi="जहाँ आपकी सहायता वास्तविक परिवर्तन बनती है" data-en="Where your support turns into meaningful change"></h2>
+      <p class="section-sub" data-hi="प्रत्येक कार्यक्रम को इस प्रकार प्रस्तुत किया गया है कि दानकर्ता, स्वयंसेवक और साझेदार यह स्पष्ट रूप से समझ सकें कि सहयोग कहाँ और कैसे उपयोगी बनता है।" data-en="Each programme is presented so donors, volunteers and partners can clearly understand where support goes and how it becomes useful."></p>
+
+      <div class="initiatives-slider fullwidth-cinematic" id="initiativesSlider">
+        <button class="slider-arrow prev" id="initiativePrev" type="button" aria-label="Previous slide">&#10094;</button>
+        <button class="slider-arrow next" id="initiativeNext" type="button" aria-label="Next slide">&#10095;</button>
+
+       <div class="initiative-slide active" data-detail-url="initiatives.html#shikshaDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/shikshasarathi.png" alt="Shiksha Sarathi">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#heritageDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/heritage-conservation.png" alt="Heritage Conservation">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#ambulanceDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/ambulance-seva.png" alt="Jeevan Rakshak Ambulance Seva">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#gausevaDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/gau-seva.png" alt="Gau Seva">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#womenDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/women-empowerment.png" alt="Women Empowerment">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#elderDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/elder-dignity.png" alt="Elder Dignity Support">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#skillDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/youth-skills.png" alt="Youth Skills">
+  </article>
+</div>
+
+<div class="initiative-slide" data-detail-url="initiatives.html#environmentDetailSection">
+  <article class="initiative-shell">
+    <img src="assets/initiatives/environmental-conservation.png" alt="Environmental Conservation">
+  </article>
+</div>
+
+        <div class="slider-dots" id="initiativeDots">
+  <span class="slider-dot active" data-slide="0"></span>
+  <span class="slider-dot" data-slide="1"></span>
+  <span class="slider-dot" data-slide="2"></span>
+  <span class="slider-dot" data-slide="3"></span>
+  <span class="slider-dot" data-slide="4"></span>
+  <span class="slider-dot" data-slide="5"></span>
+  <span class="slider-dot" data-slide="6"></span>
+  <span class="slider-dot" data-slide="7"></span>
+</div>
+
+        <div class="slider-cta">
+  <a href="donate.html" class="btn btn-primary" data-hi="Donate Now" data-en="Donate Now"></a>
+  <a href="initiatives.html#shikshaDetailSection" id="sliderReadMoreBtn" class="btn btn-secondary" data-hi="Read More" data-en="Read More"></a>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="highlight">
+          <span class="kicker" data-hi="दानकर्ता भरोसा" data-en="Donor confidence"></span>
+          <h2 class="section-title" style="font-size:34px" data-hi="क्यों लोग पारदर्शी संस्थाओं के साथ जुड़ना चाहते हैं" data-en="Why people choose transparent organisations"></h2>
+          <ul class="value-list">
+            <li data-hi="कानूनी दस्तावेज़ और मूलभूत अनुपालन सार्वजनिक रूप से उपलब्ध हैं।" data-en="Legal documents and core compliance records are publicly accessible."></li>
+            <li data-hi="कार्यक्रमों को भावनात्मक अपील के साथ-साथ सामाजिक उपयोगिता के आधार पर प्रस्तुत किया गया है।" data-en="Programmes are presented not only emotionally, but with clear social utility."></li>
+            <li data-hi="सहयोग को केवल दान नहीं, बल्कि जिम्मेदार साझेदारी माना जाता है।" data-en="Support is treated not merely as charity, but as a responsible partnership."></li>
+          </ul>
+        </div>
+        <div class="highlight">
+          <span class="kicker" data-hi="हमारी कार्यशैली" data-en="How we work"></span>
+          <h2 class="section-title" style="font-size:34px" data-hi="संवेदनशीलता, सत्यापन और प्रभाव — तीनों पर समान ध्यान" data-en="Sensitivity, verification and impact — with equal attention to all three"></h2>
+          <ul class="steps">
+            <li data-hi="आवश्यकता की पहचान और समुदाय से संवाद" data-en="Need identification and dialogue with the community"></li>
+            <li data-hi="संसाधनों का उद्देश्यपूर्ण उपयोग और प्राथमिकता आधारित सहयोग" data-en="Purposeful use of resources and priority-based support"></li>
+            <li data-hi="विश्वास, दस्तावेज़ और दीर्घकालिक प्रभाव की दिशा में सतत प्रयास" data-en="Continuous effort toward trust, documentation and long-term impact"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-strip">
+        <div>
+          <h3 data-hi="सिर्फ दान नहीं, एक जिम्मेदार सामाजिक साझेदारी।" data-en="Not just a donation, but a responsible social partnership."></h3>
+          <p data-hi="यदि आप शिक्षा, स्वास्थ्य, महिला सशक्तिकरण या मानवीय सहायता के क्षेत्र में वास्तविक प्रभाव छोड़ना चाहते हैं, तो भारत अभ्युदय संस्थान के साथ जुड़िए।" data-en="If you want to create real impact in education, healthcare, women empowerment or humanitarian support, partner with Bharat Abhyudaya Sansthan."></p>
+        </div>
+        <div class="btn-row" style="justify-content:flex-start">
+          <a href="donate.html" class="btn btn-primary" data-hi="दान पृष्ठ पर जाएँ" data-en="Go to Donate Page"></a>
+          <a href="contact.html" class="btn btn-light" data-hi="संपर्क करें" data-en="Contact Us"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp-float" href="https://wa.me/918604669454" target="_blank">WhatsApp</a>
+  <a class="donate-float" href="donate.html" data-hi="दान करें" data-en="Donate"></a>
+  <div id="footer"></div>
+
+  <script>
+  (function(){
+    let currentSlide = 0;
+    let sliderTimer;
+
+    function initInitiativesSlider(){
+      const slides = document.querySelectorAll('.initiative-slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      const prevBtn = document.getElementById('initiativePrev');
+      const nextBtn = document.getElementById('initiativeNext');
+      const readMoreBtn = document.getElementById('sliderReadMoreBtn');
+
+      if(!slides.length) return;
+
+      function getSlideUrl(index){
+        const slide = slides[index];
+        return slide ? slide.getAttribute('data-detail-url') : 'initiatives.html';
+      }
+
+      function updateReadMoreLink(index){
+        if(readMoreBtn){
+          readMoreBtn.href = getSlideUrl(index);
+        }
+      }
+
+      function showSlide(index){
+        slides.forEach((slide, i)=>{
+          slide.classList.toggle('active', i === index);
+        });
+
+        dots.forEach((dot, i)=>{
+          dot.classList.toggle('active', i === index);
+        });
+
+        currentSlide = index;
+        updateReadMoreLink(index);
+      }
+
+      function nextSlide(){
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function prevSlide(){
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+      }
+
+      function startAuto(){
+        stopAuto();
+        sliderTimer = setInterval(nextSlide, 5000);
+      }
+
+      function stopAuto(){
+        if(sliderTimer) clearInterval(sliderTimer);
+      }
+
+      slides.forEach((slide, i)=>{
+        const shell = slide.querySelector('.initiative-shell');
+
+        if(shell){
+          shell.setAttribute('tabindex', '0');
+          shell.setAttribute('role', 'link');
+          shell.setAttribute('title', 'Open programme details');
+
+          shell.addEventListener('click', ()=>{
+            window.location.href = getSlideUrl(i);
+          });
+
+          shell.addEventListener('keydown', (e)=>{
+            if(e.key === 'Enter' || e.key === ' '){
+              e.preventDefault();
+              window.location.href = getSlideUrl(i);
+            }
+          });
+        }
+      });
+
+      if(nextBtn){
+        nextBtn.addEventListener('click', ()=>{
+          nextSlide();
+          startAuto();
+        });
+      }
+
+      if(prevBtn){
+        prevBtn.addEventListener('click', ()=>{
+          prevSlide();
+          startAuto();
+        });
+      }
+
+      dots.forEach((dot, i)=>{
+        dot.addEventListener('click', ()=>{
+          showSlide(i);
+          startAuto();
+        });
+      });
+
+      showSlide(0);
+      startAuto();
+    }
+
+    document.addEventListener('DOMContentLoaded', initInitiativesSlider);
+  })();
+</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
