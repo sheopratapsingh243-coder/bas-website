@@ -8,7 +8,7 @@
       </div>
     </a>
 
-    <nav class="nav" id="mainMenu">
+    <nav class="nav" id="mainMenu" aria-label="Primary navigation">
       <a href="index.html" data-hi="मुख्य पृष्ठ" data-en="Home"></a>
       <a href="about.html" data-hi="परिचय" data-en="About"></a>
       <a href="initiatives.html" data-hi="हमारे प्रयास" data-en="Initiatives"></a>
@@ -19,8 +19,9 @@
     </nav>
 
     <div class="header-actions">
-      <button class="lang-toggle" id="langToggle" type="button"><span id="langLabel">हिन्दी</span></button>
-      <button class="menu-toggle" id="menuToggle" type="button">☰</button>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Change language"><span id="langLabel">हिन्दी</span></button>
+      <a class="header-donate" href="donate.html" data-hi="सहयोग करें" data-en="Donate"></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
