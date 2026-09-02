@@ -145,6 +145,34 @@ textarea{min-height:150px;resize:vertical}
 .text-center{text-align:center}
 .hidden{display:none!important}
 
+/* India–Nepal flood relief campaign */
+.flood-appeal{background:linear-gradient(135deg,#071f35 0%,#0b4f78 58%,#0c6d82 100%);color:#fff;position:relative;overflow:hidden}
+.flood-appeal:before,.flood-initiative:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.06);right:-140px;top:-190px;pointer-events:none}
+.flood-initiative{position:relative;background:linear-gradient(180deg,#eef8fb 0%,#fff 100%);border-top:1px solid #d8eaf0;border-bottom:1px solid #d8eaf0;scroll-margin-top:100px}
+.flood-appeal-grid{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);gap:50px;align-items:center}
+.flood-poster{display:block;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 28px 70px rgba(2,15,28,.28);transition:transform .25s ease,box-shadow .25s ease}
+.flood-poster:hover{transform:translateY(-4px);box-shadow:0 34px 80px rgba(2,15,28,.35)}
+.flood-poster img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.flood-appeal-copy h2{font-size:clamp(30px,4.2vw,50px);line-height:1.13;letter-spacing:-.025em;margin:16px 0;color:inherit}
+.flood-appeal-copy>p{font-size:17px;line-height:1.75;margin:0;color:#dcecf5}
+.flood-initiative .flood-appeal-copy{color:var(--brand-dark)}
+.flood-initiative .flood-appeal-copy>p{color:#455d6c}
+.flood-live{display:inline-flex;align-items:center;padding:8px 13px;border-radius:999px;background:#fff1e2;color:#a94208;font-size:13px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+.flood-supplies{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}
+.flood-supplies span{padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-weight:800;font-size:14px}
+.flood-initiative .flood-supplies span{background:#fff;border-color:#cfe1e8;color:#21485e}
+.flood-trust,.flood-accountability{padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);font-size:14px!important;line-height:1.65!important}
+.flood-accountability{background:#fff;border-color:#cfe1e8;margin-top:18px}
+.flood-accountability h3{font-size:16px;margin:0 0 6px;color:var(--brand-dark)}
+.flood-accountability p{font-size:14px;line-height:1.65;color:#4d6270;margin:0}
+.flood-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.flood-donate{box-shadow:0 14px 30px rgba(242,140,40,.3);animation:floodPulse 2.2s ease-in-out infinite}
+.flood-amounts{display:block;margin-top:15px;line-height:1.65;font-weight:800;color:#bfe1ef}
+.flood-initiative .flood-amounts{color:#526b79}
+@keyframes floodPulse{0%,100%{box-shadow:0 12px 28px rgba(242,140,40,.25)}50%{box-shadow:0 16px 38px rgba(242,140,40,.48)}}
+@media(max-width:860px){.flood-appeal-grid{grid-template-columns:1fr;gap:30px}.flood-poster{width:min(560px,100%);margin:auto}.flood-appeal-copy h2{font-size:clamp(28px,8vw,40px)}}
+@media(prefers-reduced-motion:reduce){.flood-donate{animation:none}.flood-poster{transition:none}}
+
 /* 2026 professional visual system */
 :root{--brand:#0b6396;--brand-dark:#073b66;--accent:#f28c28;--ink:#122230;--cream:#fffaf3;--max:1240px}
 body{color:var(--ink);background:#fff;font-family:"Noto Sans Devanagari",Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
